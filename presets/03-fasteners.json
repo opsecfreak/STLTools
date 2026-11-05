@@ -1,0 +1,151 @@
+{
+  "group": "Fasteners and Small Parts",
+  "presets": [
+    {
+      "id": "fast-box-6x4",
+      "name": "Small parts box 6 x 4 with lid",
+      "generator": "parts-box",
+      "description": "24 compartments, press-fit lid.",
+      "tags": [
+        "box"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 100,
+        "height": 30,
+        "compartmentsX": 6,
+        "compartmentsY": 4
+      }
+    },
+    {
+      "id": "fast-box-5x3",
+      "name": "Screw box 5 x 3 with lid",
+      "generator": "parts-box",
+      "description": "15 compartments, press-fit lid.",
+      "tags": [
+        "box"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 100,
+        "height": 35,
+        "compartmentsX": 5,
+        "compartmentsY": 3
+      }
+    },
+    {
+      "id": "fast-box-4x2-deep",
+      "name": "Deep box 4 x 2 with lid",
+      "generator": "parts-box",
+      "description": "8 deep compartments.",
+      "tags": [
+        "box"
+      ],
+      "params": {
+        "width": 160,
+        "depth": 90,
+        "height": 50,
+        "compartmentsX": 4,
+        "compartmentsY": 2,
+        "wall": 2.0
+      }
+    },
+    {
+      "id": "fast-washers",
+      "name": "Washer and nut tray 3 x 2",
+      "generator": "stack-bin",
+      "description": "Small stacking tray with scoop.",
+      "tags": [
+        "small"
+      ],
+      "params": {
+        "width": 75,
+        "depth": 100,
+        "height": 30,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 2,
+        "scoopRadius": 6,
+        "cornerRadius": 4,
+        "labelType": "emboss",
+        "labelText": "NUTS / WASHERS",
+        "labelHeight": 8
+      }
+    },
+    {
+      "id": "fast-hex-bits-6x4",
+      "name": "1/4 in hex bit holder 6 x 4",
+      "generator": "holder-block",
+      "description": "24 hex pockets for 1/4 in (6.35 mm) bits.",
+      "tags": [
+        "bits"
+      ],
+      "params": {
+        "shape": "hex",
+        "itemSize": 6.35,
+        "clearance": 0.3,
+        "pocketDepth": 12,
+        "columns": 6,
+        "rows": 4
+      }
+    },
+    {
+      "id": "fast-hex-bits-strip",
+      "name": "1/4 in hex bit strip 12 x 1",
+      "generator": "holder-block",
+      "description": "Single row of 12 bits.",
+      "tags": [
+        "bits"
+      ],
+      "params": {
+        "shape": "hex",
+        "itemSize": 6.35,
+        "clearance": 0.3,
+        "pocketDepth": 12,
+        "columns": 12,
+        "rows": 1,
+        "border": 3
+      }
+    },
+    {
+      "id": "fast-hex-bits-labeled",
+      "name": "1/4 in hex bit holder 8 x 2, labeled",
+      "generator": "holder-block",
+      "description": "16 bits with raised text on the front ledge.",
+      "tags": [
+        "bits",
+        "labeled"
+      ],
+      "params": {
+        "shape": "hex",
+        "itemSize": 6.35,
+        "clearance": 0.3,
+        "pocketDepth": 12,
+        "columns": 8,
+        "rows": 2,
+        "frontLedge": 10,
+        "labelType": "emboss",
+        "labelText": "BITS",
+        "labelHeight": 8
+      }
+    },
+    {
+      "id": "fast-pins-round",
+      "name": "Round pin / drill bit holder 10 x 3",
+      "generator": "holder-block",
+      "description": "30 round 3.5 mm pockets. Change item size per block.",
+      "tags": [
+        "bits"
+      ],
+      "params": {
+        "shape": "round",
+        "itemSize": 3.5,
+        "clearance": 0.3,
+        "pocketDepth": 15,
+        "columns": 10,
+        "rows": 3,
+        "spacing": 3
+      }
+    }
+  ]
+}

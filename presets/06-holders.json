@@ -1,0 +1,138 @@
+{
+  "group": "Holders",
+  "presets": [
+    {
+      "id": "holder-aa",
+      "name": "AA battery holder 6 x 4",
+      "generator": "holder-block",
+      "description": "24 AA cells (14.5 mm), half depth.",
+      "tags": [
+        "batteries"
+      ],
+      "params": {
+        "shape": "round",
+        "itemSize": 14.5,
+        "clearance": 0.5,
+        "pocketDepth": 25,
+        "columns": 6,
+        "rows": 4,
+        "spacing": 2
+      }
+    },
+    {
+      "id": "holder-aaa",
+      "name": "AAA battery holder 6 x 4",
+      "generator": "holder-block",
+      "description": "24 AAA cells (10.5 mm).",
+      "tags": [
+        "batteries"
+      ],
+      "params": {
+        "shape": "round",
+        "itemSize": 10.5,
+        "clearance": 0.5,
+        "pocketDepth": 22,
+        "columns": 6,
+        "rows": 4,
+        "spacing": 2
+      }
+    },
+    {
+      "id": "holder-coin-cells",
+      "name": "Coin cell holder CR2032 x 10",
+      "generator": "holder-block",
+      "description": "10 slots for 20 x 3.2 mm coin cells.",
+      "tags": [
+        "batteries"
+      ],
+      "params": {
+        "shape": "slot",
+        "itemSize": 20,
+        "itemSize2": 3.2,
+        "clearance": 0.6,
+        "pocketDepth": 12,
+        "columns": 2,
+        "rows": 5,
+        "spacing": 2.5
+      }
+    },
+    {
+      "id": "holder-usb-sticks",
+      "name": "USB-A stick holder 10",
+      "generator": "holder-block",
+      "description": "10 slots for USB-A plugs (12 x 4.5 mm).",
+      "tags": [
+        "storage"
+      ],
+      "params": {
+        "shape": "slot",
+        "itemSize": 12,
+        "itemSize2": 4.5,
+        "clearance": 0.6,
+        "pocketDepth": 12,
+        "columns": 2,
+        "rows": 5,
+        "spacing": 3
+      }
+    },
+    {
+      "id": "holder-sd-microsd",
+      "name": "SD card holder 12, labeled",
+      "generator": "holder-block",
+      "description": "12 SD card slots with raised text on a front ledge.",
+      "tags": [
+        "storage",
+        "labeled"
+      ],
+      "params": {
+        "shape": "slot",
+        "itemSize": 24,
+        "itemSize2": 2.1,
+        "clearance": 0.6,
+        "pocketDepth": 16,
+        "columns": 2,
+        "rows": 6,
+        "spacing": 2.5,
+        "frontLedge": 10,
+        "labelType": "emboss",
+        "labelText": "SD CARDS",
+        "labelHeight": 7
+      }
+    },
+    {
+      "id": "holder-markers-desk",
+      "name": "Desk marker block 4 x 3",
+      "generator": "holder-block",
+      "description": "12 round 13 mm pockets, 40 mm deep.",
+      "tags": [
+        "markers"
+      ],
+      "params": {
+        "shape": "round",
+        "itemSize": 12,
+        "clearance": 1,
+        "pocketDepth": 40,
+        "columns": 4,
+        "rows": 3,
+        "spacing": 3
+      }
+    },
+    {
+      "id": "holder-screwdriver-bits-tall",
+      "name": "Long bit / driver block 8 x 2",
+      "generator": "holder-block",
+      "description": "Hex pockets 30 mm deep for long bits and bit drivers.",
+      "tags": [
+        "bits"
+      ],
+      "params": {
+        "shape": "hex",
+        "itemSize": 6.35,
+        "clearance": 0.4,
+        "pocketDepth": 30,
+        "columns": 8,
+        "rows": 2
+      }
+    }
+  ]
+}

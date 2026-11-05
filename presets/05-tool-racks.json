@@ -1,0 +1,194 @@
+{
+  "group": "Tool Racks",
+  "presets": [
+    {
+      "id": "rack-screwdrivers-8",
+      "name": "Screwdriver rack 8 (pegboard)",
+      "generator": "tool-rack",
+      "description": "8 round 9 mm holes for shafts up to about 8 mm.",
+      "tags": [
+        "drivers"
+      ],
+      "params": {
+        "width": 160,
+        "holeShape": "round",
+        "holeSize": 9,
+        "holeCount": 8,
+        "shelfDepth": 35
+      }
+    },
+    {
+      "id": "rack-screwdrivers-2row",
+      "name": "Screwdriver rack 2 rows (pegboard)",
+      "generator": "tool-rack",
+      "description": "16 round 8 mm holes in 2 rows.",
+      "tags": [
+        "drivers"
+      ],
+      "params": {
+        "width": 160,
+        "holeShape": "round",
+        "holeSize": 8,
+        "holeCount": 8,
+        "rows": 2,
+        "shelfDepth": 50
+      }
+    },
+    {
+      "id": "rack-precision-drivers",
+      "name": "Precision driver rack 10 (pegboard)",
+      "generator": "tool-rack",
+      "description": "10 round 6 mm holes.",
+      "tags": [
+        "drivers",
+        "repair"
+      ],
+      "params": {
+        "width": 140,
+        "holeShape": "round",
+        "holeSize": 6,
+        "holeCount": 10,
+        "shelfDepth": 28
+      }
+    },
+    {
+      "id": "rack-pliers",
+      "name": "Pliers rack 5 (pegboard)",
+      "generator": "tool-rack",
+      "description": "5 slots 14 x 35 mm. Handles drop through, the joint rests on top.",
+      "tags": [
+        "pliers"
+      ],
+      "params": {
+        "width": 160,
+        "holeShape": "slot",
+        "holeSize": 14,
+        "slotLength": 35,
+        "holeCount": 5,
+        "shelfDepth": 50,
+        "shelfThickness": 8
+      }
+    },
+    {
+      "id": "rack-tweezers",
+      "name": "Tweezer rack 8 (pegboard)",
+      "generator": "tool-rack",
+      "description": "8 side-to-side slots 4 x 14 mm.",
+      "tags": [
+        "repair"
+      ],
+      "params": {
+        "width": 150,
+        "holeShape": "slotX",
+        "holeSize": 4,
+        "slotLength": 14,
+        "holeCount": 8,
+        "shelfDepth": 25
+      }
+    },
+    {
+      "id": "rack-scissors",
+      "name": "Scissors / snips rack 4 (pegboard)",
+      "generator": "tool-rack",
+      "description": "4 slots 10 x 30 mm.",
+      "tags": [
+        "cutters"
+      ],
+      "params": {
+        "width": 120,
+        "holeShape": "slot",
+        "holeSize": 10,
+        "slotLength": 30,
+        "holeCount": 4,
+        "shelfDepth": 45
+      }
+    },
+    {
+      "id": "rack-allen-keys",
+      "name": "Allen key rack 2 rows (pegboard)",
+      "generator": "tool-rack",
+      "description": "2 rows of 4.5 mm square holes.",
+      "tags": [
+        "drivers"
+      ],
+      "params": {
+        "width": 120,
+        "holeShape": "square",
+        "holeSize": 4.5,
+        "holeCount": 10,
+        "rows": 2,
+        "shelfDepth": 35
+      }
+    },
+    {
+      "id": "rack-wrenches",
+      "name": "Wrench rack, open front (pegboard)",
+      "generator": "tool-rack",
+      "description": "6 slots open to the front. Wrenches hang by the head.",
+      "tags": [
+        "wrenches"
+      ],
+      "params": {
+        "width": 180,
+        "holeShape": "slot",
+        "holeSize": 9,
+        "slotLength": 20,
+        "holeCount": 6,
+        "holeOpenFront": true,
+        "shelfDepth": 30,
+        "shelfThickness": 8
+      }
+    },
+    {
+      "id": "rack-markers",
+      "name": "Marker / pen rack 10 (pegboard)",
+      "generator": "tool-rack",
+      "description": "10 round 13 mm holes with a front lip.",
+      "tags": [
+        "markers"
+      ],
+      "params": {
+        "width": 170,
+        "holeShape": "round",
+        "holeSize": 13,
+        "holeCount": 10,
+        "shelfDepth": 30
+      }
+    },
+    {
+      "id": "rack-screwdrivers-screw",
+      "name": "Screwdriver rack 8 (screw mount)",
+      "generator": "tool-rack",
+      "description": "Same as the pegboard rack, screws to a wall or bench.",
+      "tags": [
+        "drivers",
+        "wall"
+      ],
+      "params": {
+        "mount": "screw",
+        "width": 160,
+        "holeShape": "round",
+        "holeSize": 9,
+        "holeCount": 8,
+        "shelfDepth": 35
+      }
+    },
+    {
+      "id": "rack-soldering",
+      "name": "Soldering tools rack (pegboard)",
+      "generator": "tool-rack",
+      "description": "Mixed: 6 round 10 mm holes for tips, solder wick, flux pens.",
+      "tags": [
+        "electronics"
+      ],
+      "params": {
+        "width": 130,
+        "holeShape": "round",
+        "holeSize": 10,
+        "holeCount": 6,
+        "shelfDepth": 35,
+        "frontLip": 4
+      }
+    }
+  ]
+}

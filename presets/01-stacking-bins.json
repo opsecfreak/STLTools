@@ -1,0 +1,174 @@
+{
+  "group": "Stacking Bins",
+  "presets": [
+    {
+      "id": "bin-xs-75x100",
+      "name": "XS bin 75 x 100 x 50",
+      "generator": "stack-bin",
+      "description": "Small open-front stacking bin. Stacks with other 75 x 100 bins.",
+      "tags": [
+        "small"
+      ],
+      "params": {
+        "width": 75,
+        "depth": 100,
+        "height": 50,
+        "frontWallHeight": 26,
+        "cornerRadius": 4
+      }
+    },
+    {
+      "id": "bin-xs-75x100-closed",
+      "name": "XS closed bin with scoop 75 x 100 x 45",
+      "generator": "stack-bin",
+      "description": "Closed front and finger scoop for tiny parts. Stacks with other 75 x 100 bins.",
+      "tags": [
+        "small",
+        "scoop"
+      ],
+      "params": {
+        "width": 75,
+        "depth": 100,
+        "height": 45,
+        "openFront": false,
+        "scoopRadius": 12,
+        "cornerRadius": 4
+      }
+    },
+    {
+      "id": "bin-s-100x150",
+      "name": "S bin 100 x 150 x 70",
+      "generator": "stack-bin",
+      "description": "General open-front stacking bin. Stacks with other 100 x 150 bins.",
+      "tags": [
+        "general"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 70
+      }
+    },
+    {
+      "id": "bin-s-100x150-split",
+      "name": "S bin, 2 front/back compartments",
+      "generator": "stack-bin",
+      "description": "100 x 150 x 70 with a divider front to back.",
+      "tags": [
+        "general",
+        "dividers"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 70,
+        "compartmentsY": 2
+      }
+    },
+    {
+      "id": "bin-s-100x150-tray",
+      "name": "S low tray 100 x 150 x 40, 3 compartments",
+      "generator": "stack-bin",
+      "description": "Low stacking tray with 3 compartments front to back and a scoop.",
+      "tags": [
+        "tray",
+        "dividers"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 40,
+        "openFront": false,
+        "compartmentsY": 3,
+        "scoopRadius": 10
+      }
+    },
+    {
+      "id": "bin-s-100x150-tall",
+      "name": "S tall bin 100 x 150 x 120",
+      "generator": "stack-bin",
+      "description": "Tall bin for long or bulky items.",
+      "tags": [
+        "tall"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 120,
+        "frontWallHeight": 50,
+        "wall": 2.0
+      }
+    },
+    {
+      "id": "bin-m-150x150",
+      "name": "M bin 150 x 150 x 80",
+      "generator": "stack-bin",
+      "description": "Medium open-front stacking bin. Stacks with other 150 x 150 bins.",
+      "tags": [
+        "general"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 80,
+        "frontWallHeight": 35,
+        "wall": 2.0,
+        "floor": 2.0
+      }
+    },
+    {
+      "id": "bin-m-150x150-grid",
+      "name": "M shallow 3 x 3 grid bin 150 x 150 x 40",
+      "generator": "stack-bin",
+      "description": "Shallow stacking bin with 9 compartments for small parts.",
+      "tags": [
+        "small",
+        "dividers"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 3
+      }
+    },
+    {
+      "id": "bin-l-200x150",
+      "name": "L bin 200 x 150 x 90",
+      "generator": "stack-bin",
+      "description": "Large open-front stacking bin. Needs a 200 mm bed.",
+      "tags": [
+        "large"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 150,
+        "height": 90,
+        "frontWallHeight": 40,
+        "wall": 2.0,
+        "floor": 2.0
+      }
+    },
+    {
+      "id": "bin-l-200x150-split",
+      "name": "L bin, 2 side-by-side compartments",
+      "generator": "stack-bin",
+      "description": "200 x 150 x 90 split left/right.",
+      "tags": [
+        "large",
+        "dividers"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 150,
+        "height": 90,
+        "frontWallHeight": 40,
+        "wall": 2.0,
+        "floor": 2.0,
+        "compartmentsX": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "group": "RC Aircraft",
+  "presets": [
+    {
+      "id": "rc-wing-trainer-1200",
+      "name": "Trainer wing 1200 mm span (half)",
+      "generator": "rc-wing",
+      "description": "NACA 2412, 200 to 150 mm chord, 2 deg washout, 3 sections.",
+      "tags": [
+        "wing"
+      ],
+      "params": {
+        "airfoil": "2412",
+        "halfSpan": 600,
+        "rootChord": 200,
+        "tipChord": 150,
+        "washout": 2
+      }
+    },
+    {
+      "id": "rc-wing-sport-1000",
+      "name": "Sport / aerobatic wing 1000 mm span (half)",
+      "generator": "rc-wing",
+      "description": "NACA 0012 symmetric, 180 to 130 mm chord.",
+      "tags": [
+        "wing"
+      ],
+      "params": {
+        "airfoil": "0012",
+        "halfSpan": 500,
+        "rootChord": 180,
+        "tipChord": 130,
+        "sparDiameter": 6.2
+      }
+    },
+    {
+      "id": "rc-wing-glider-1600",
+      "name": "Glider wing 1600 mm span (half)",
+      "generator": "rc-wing",
+      "description": "NACA 4412, high lift, 170 to 110 mm chord, 3 deg washout.",
+      "tags": [
+        "wing"
+      ],
+      "params": {
+        "airfoil": "4412",
+        "halfSpan": 800,
+        "rootChord": 170,
+        "tipChord": 110,
+        "washout": 3,
+        "sparDiameter": 6.2
+      }
+    }
+  ]
+}

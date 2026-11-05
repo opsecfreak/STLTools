@@ -118,3 +118,38 @@ button:disabled { opacity: 0.5; cursor: wait; }
   #viewer { height: 50vh; }
   #output { max-height: none; }
 }
+
+/* ---------- v2: tabs, presets, shop ---------- */
+.tabs { display: flex; gap: 4px; }
+.tab { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.tab.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.pane[hidden] { display: none; }
+.muted { color: var(--muted); font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.row > input[type=search] { flex: 1 1 160px; width: auto; }
+.row > select { flex: 0 1 auto; width: auto; max-width: 100%; }
+.picker { margin: 10px 0 4px; }
+.preset-list, .item-list { list-style: none; margin: 0 0 8px; padding: 0; border: 1px solid var(--border); border-radius: 6px; overflow-y: auto; }
+.preset-list { max-height: 210px; }
+.preset-list li { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; cursor: pointer; border-bottom: 1px solid var(--border); }
+.preset-list li:last-child { border-bottom: 0; }
+.preset-list li:hover { background: var(--bg); }
+.preset-list li.active { background: var(--accent); color: var(--accent-text); }
+.preset-list li.active .pgroup { color: inherit; }
+.pgroup { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.item-list { max-height: 45vh; }
+.item-list li { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 10px; border-bottom: 1px solid var(--border); border-left: 5px solid var(--cat, transparent); }
+.item-list li.empty { border-left: 0; padding: 12px; }
+.item-list .info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.item-list .btns { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.item-list button { padding: 4px 8px; font-size: 12px; }
+.item-list .pick { width: auto; }
+.card { border: 1px solid var(--border); border-radius: 6px; padding: 10px; margin: 12px 0; }
+.card h2 { font-size: 15px; margin: 0 0 8px; }
+.card[hidden] { display: none; }
+.card .field > label[for] { display: block; color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+.cat-row { display: grid; grid-template-columns: 70px 1fr 44px 32px; gap: 4px; margin-bottom: 4px; }
+.cat-row input[type=color] { padding: 0; height: 32px; }
+.cat-row button { padding: 4px; }
+#parts a { margin-left: auto; }
+.actions { flex-wrap: wrap; }

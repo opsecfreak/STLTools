@@ -1,12 +1,17 @@
 import partsBox from '../generators/parts-box.js';
 import rcWing from '../generators/rc-wing.js';
+import stackBin from '../generators/stack-bin.js';
+import labelCard from '../generators/label-card.js';
+import hook from '../generators/hook.js';
+import toolRack from '../generators/tool-rack.js';
+import holderBlock from '../generators/holder-block.js';
 import { resolveParams } from './params.js';
 import { initKernel, createScope, toPlainMesh } from './kernel.js';
 
 // To add a generator: create src/generators/<id>.js exporting
 // { id, name, description, params, generate(params, k) } and add it here.
 // k is a kernel scope from src/core/kernel.js. Return { parts: [{ name, manifold }], warnings, notes }.
-const GENERATORS = [partsBox, rcWing];
+const GENERATORS = [stackBin, partsBox, holderBlock, hook, toolRack, labelCard, rcWing];
 
 const byId = new Map(GENERATORS.map((g) => [g.id, g]));
 
@@ -33,7 +38,7 @@ export async function generate(id, input = {}) {
   try {
     const result = g.generate(params, k);
     const parts = result.parts.map(({ name, manifold }) => ({ name, mesh: toPlainMesh(manifold) }));
-    return { id, params, parts, warnings: result.warnings ?? [], notes: result.notes ?? [] };
+    return { id, params, parts, warnings: result.warnings ?? [], notes: result.notes ?? [], meta: result.meta ?? {} };
   } finally {
     k.free();
   }

@@ -1,0 +1,65 @@
+{
+  "group": "Boxes",
+  "presets": [
+    {
+      "id": "box-small-parts",
+      "name": "Small parts box 3 x 2 with lid",
+      "generator": "parts-box",
+      "description": "Default parts box.",
+      "tags": [
+        "box"
+      ],
+      "params": {}
+    },
+    {
+      "id": "box-flat",
+      "name": "Flat organizer 6 x 4 with lid",
+      "generator": "parts-box",
+      "description": "20 mm tall flat box.",
+      "tags": [
+        "box"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 100,
+        "height": 20,
+        "compartmentsX": 6,
+        "compartmentsY": 4
+      }
+    },
+    {
+      "id": "box-deep-2x2",
+      "name": "Deep box 2 x 2 with lid",
+      "generator": "parts-box",
+      "description": "60 mm tall.",
+      "tags": [
+        "box"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 100,
+        "height": 60,
+        "compartmentsX": 2,
+        "compartmentsY": 2,
+        "wall": 2.0
+      }
+    },
+    {
+      "id": "box-open-tray",
+      "name": "Open tray 4 x 1, no lid",
+      "generator": "parts-box",
+      "description": "Bench tray, no lid.",
+      "tags": [
+        "tray"
+      ],
+      "params": {
+        "width": 160,
+        "depth": 60,
+        "height": 25,
+        "compartmentsX": 4,
+        "compartmentsY": 1,
+        "lid": false
+      }
+    }
+  ]
+}

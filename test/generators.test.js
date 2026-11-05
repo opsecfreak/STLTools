@@ -2,13 +2,15 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { generate, listGenerators } from '../src/core/registry.js';
 import { resolveParams, ParamError } from '../src/core/params.js';
-import { toStl, meshStats, openEdgeCount } from '../src/core/export.js';
+import { toStl, meshStats, openEdgeCount, stlEdgeIssues } from '../src/core/export.js';
+import { listPresets } from '../src/core/presets.js';
 import { naca4Outline, sectionAt } from '../src/core/airfoil.js';
 
 const near = (a, b, tol, msg) => assert.ok(Math.abs(a - b) <= tol, `${msg}: ${a} vs ${b} (tol ${tol})`);
 
 function assertPrintable(part) {
   assert.equal(openEdgeCount(part.mesh), 0, `${part.name} has open or flipped edges`);
+  assert.equal(stlEdgeIssues(part.mesh), 0, `${part.name} has non-manifold or zero-length edges after STL rounding`);
   const s = meshStats(part.mesh);
   assert.ok(s.volumeMm3 > 0, `${part.name} has non-positive volume (inside-out)`);
   near(s.min[2], 0, 0.01, `${part.name} should sit on the bed (min z)`);
@@ -115,4 +117,64 @@ test('stl: binary and ascii output are well formed', async () => {
   const ascii = toStl(mesh, { binary: false }).toString();
   assert.ok(ascii.startsWith('solid'));
   assert.equal(ascii.match(/facet normal/g).length, tris);
+});
+
+test('every preset generates printable parts', async () => {
+  const presets = listPresets();
+  assert.ok(presets.length >= 60, `expected a big preset library, got ${presets.length}`);
+  for (const p of presets) {
+    const r = await generate(p.generator, p.params);
+    for (const part of r.parts) assertPrintable(part);
+    const labelRoom = r.warnings.filter((w) => /No room/.test(w));
+    assert.deepEqual(labelRoom, [], `${p.id}: ${labelRoom.join(' ')}`);
+  }
+});
+
+test('stack-bin: size, foot fits inside an identical bin, label card size reported', async () => {
+  const r = await generate('stack-bin', { width: 100, depth: 150, height: 70 });
+  const s = assertPrintable(r.parts[0]);
+  assert.equal(s.size[0], 100);
+  assert.equal(s.size[2], 70);
+  // foot width = W - 2 * (wall + clearance) must be < cavity width = W - 2 * wall
+  const p = r.params;
+  assert.ok(p.width - 2 * (p.wall + p.stackClearance) < p.width - 2 * p.wall);
+  assert.deepEqual(r.meta.labelCard, { width: 72, height: 14 });
+});
+
+test('stack-bin: emboss and deboss text change the volume in the right direction', async () => {
+  const base = { labelText: 'M3 SCREWS', labelLine2: 'FAS-001', openFront: false };
+  const none = meshStats((await generate('stack-bin', { ...base, labelType: 'none' })).parts[0].mesh).volumeMm3;
+  const up = meshStats((await generate('stack-bin', { ...base, labelType: 'emboss' })).parts[0].mesh).volumeMm3;
+  const down = meshStats((await generate('stack-bin', { ...base, labelType: 'deboss', wall: 2.4 })).parts[0].mesh).volumeMm3;
+  const thick = meshStats((await generate('stack-bin', { ...base, labelType: 'none', wall: 2.4 })).parts[0].mesh).volumeMm3;
+  assert.ok(up > none, 'raised text adds material');
+  assert.ok(down < thick, 'recessed text removes material');
+});
+
+test('hook and tool-rack: every mount type works and sits on the bed', async () => {
+  for (const mount of ['pegboard', 'screw', 'adhesive']) {
+    for (const style of ['j', 'straight', 'double']) assertPrintable((await generate('hook', { mount, style })).parts[0]);
+    for (const holeShape of ['round', 'slot', 'slotX', 'square', 'hex']) assertPrintable((await generate('tool-rack', { mount, holeShape })).parts[0]);
+  }
+});
+
+test('hook: printed on its side, so print height equals hook width', async () => {
+  const r = await generate('hook', { width: 14 });
+  near(meshStats(r.parts[0].mesh).size[2], 14, 0.01, 'print height');
+});
+
+test('holder-block: pocket count and outer size', async () => {
+  const r = await generate('holder-block', { shape: 'round', itemSize: 10, clearance: 0, columns: 3, rows: 2, spacing: 2, border: 4, base: 2, pocketDepth: 10, chamfer: 0, cornerRadius: 0 });
+  const s = assertPrintable(r.parts[0]);
+  assert.deepEqual(s.size, [3 * 10 + 2 * 2 + 8, 2 * 10 + 2 + 8, 12]);
+  const solid = s.size[0] * s.size[1] * 12;
+  near(s.volumeMm3, solid - 6 * Math.PI * 25 * 10, 15, 'block minus 6 pockets');
+});
+
+test('label-card: raised text sits on the card', async () => {
+  const r = await generate('label-card', { width: 72, height: 14, thickness: 0.8, textHeight: 0.6 });
+  const s = assertPrintable(r.parts[0]);
+  near(s.size[2], 1.4, 0.02, 'card + text height');
+  const blank = await generate('label-card', { text: '', line2: '' });
+  assert.ok(blank.warnings.some((w) => /blank/.test(w)));
 });

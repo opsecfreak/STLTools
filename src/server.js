@@ -5,8 +5,13 @@
 //   GET  /api/generators           generator list with parameter schemas
 //   POST /api/generate/:id         body: JSON params -> part list + stats + download URLs
 //   GET  /api/stl/:job/:part.stl   binary STL for one part of a finished job
+//   GET  /api/presets              preset library
+//   GET  /api/categories           shop categories      PUT  replaces the list
+//   GET  /api/catalog              shop items           POST adds one
+//   PUT  /api/catalog/:code        edit an item         DELETE removes it
+//   POST /api/catalog/:code/generate   item STL(s) with its label text + label card
 //
-// Env: HOST (default 127.0.0.1), PORT (default 3000)
+// Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
 
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -17,6 +22,8 @@ import { generate, listGenerators } from './core/registry.js';
 import { ParamError } from './core/params.js';
 import { toStl, meshStats } from './core/export.js';
 import { initKernel } from './core/kernel.js';
+import { listPresets } from './core/presets.js';
+import { createCatalog, CatalogError } from './core/catalog.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PUBLIC_DIR = join(ROOT, 'public');
@@ -84,31 +91,63 @@ async function serveStatic(res, baseDir, relPath) {
   }
 }
 
-async function handleGenerate(req, res, id) {
-  const input = await readBody(req);
-  const result = await generate(id, input);
-  const key = createHash('sha256').update(JSON.stringify([id, result.params])).digest('hex').slice(0, 16);
+/** Cache a generation result for download and build the JSON reply. */
+function publish(id, result, extra = {}) {
+  const key = createHash('sha256').update(JSON.stringify([id, result.params, extra.item?.code ?? '', extra.item?.updatedAt ?? ''])).digest('hex').slice(0, 16);
   const files = new Map();
+  const prefix = extra.item ? extra.item.code : id;
   const parts = result.parts.map(({ name, mesh }) => {
-    files.set(name, toStl(mesh, { name: `${id}-${name}` }));
+    files.set(name, toStl(mesh, { name: `${prefix}-${name}` }));
     return {
       name,
       url: `/api/stl/${key}/${encodeURIComponent(name)}.stl`,
-      filename: `${id}-${name}.stl`,
+      filename: `${prefix}-${name}.stl`,
       stats: meshStats(mesh),
     };
   });
-  remember(key, { id, files });
-  send(res, 200, { id, job: key, params: result.params, parts, warnings: result.warnings, notes: result.notes });
+  remember(key, { prefix, files });
+  return { id, job: key, params: result.params, parts, warnings: result.warnings, notes: result.notes, ...extra };
+}
+
+async function handleGenerate(req, res, id) {
+  const input = await readBody(req);
+  const result = await generate(id, input);
+  send(res, 200, publish(id, result));
 }
 
 async function route(req, res) {
   const url = new URL(req.url, 'http://localhost');
   const path = decodeURIComponent(url.pathname);
+  let m;
 
   if (req.method === 'GET' && path === '/api/generators') return send(res, 200, listGenerators());
+  if (req.method === 'GET' && path === '/api/presets') return send(res, 200, listPresets());
 
-  let m = path.match(/^\/api\/generate\/([a-z0-9-]+)$/);
+  if (path === '/api/categories') {
+    if (req.method === 'GET') return send(res, 200, await catalog.categories());
+    if (req.method === 'PUT') return send(res, 200, await catalog.setCategories(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  if (path === '/api/catalog') {
+    if (req.method === 'GET') return send(res, 200, await catalog.items());
+    if (req.method === 'POST') return send(res, 201, await catalog.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  m = path.match(/^\/api\/catalog\/([A-Z0-9]{2,5}-\d{3,})(\/generate)?$/);
+  if (m) {
+    const [, code, gen] = m;
+    if (gen) {
+      if (req.method !== 'POST') return send(res, 405, 'Use POST');
+      const result = await catalog.generate(code);
+      return send(res, 200, publish(result.id, result, { item: result.item }));
+    }
+    if (req.method === 'GET') return send(res, 200, await catalog.get(code));
+    if (req.method === 'PUT') return send(res, 200, await catalog.update(code, await readBody(req)));
+    if (req.method === 'DELETE') { await catalog.remove(code); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
+
+  m = path.match(/^\/api\/generate\/([a-z0-9-]+)$/);
   if (m) {
     if (req.method !== 'POST') return send(res, 405, 'Use POST');
     return handleGenerate(req, res, m[1]);
@@ -121,7 +160,7 @@ async function route(req, res) {
     if (!file) return send(res, 404, 'Expired or unknown. Generate again.');
     return send(res, 200, file, {
       'content-type': 'model/stl',
-      'content-disposition': `attachment; filename="${job.id}-${m[2]}.stl"`,
+      'content-disposition': `attachment; filename="${job.prefix}-${m[2]}.stl"`,
     });
   }
 
@@ -131,12 +170,16 @@ async function route(req, res) {
   return serveStatic(res, PUBLIC_DIR, path === '/' ? 'index.html' : path.slice(1));
 }
 
-export function startServer({ host = HOST, port = PORT } = {}) {
+let catalog = createCatalog();
+
+export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
+  if (dataDir) catalog = createCatalog({ dataDir });
   const server = createServer(async (req, res) => {
     try {
       await route(req, res);
     } catch (err) {
       if (err instanceof ParamError) return send(res, 400, { error: err.message, errors: err.errors });
+      if (err instanceof CatalogError) return send(res, err.status, { error: err.message });
       const status = err.status ?? (/Unknown generator/.test(err.message) ? 404 : 422);
       if (status >= 500 || status === 422) console.error(`[${req.method} ${req.url}]`, err.message);
       send(res, status, { error: err.message });

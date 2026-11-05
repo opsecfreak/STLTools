@@ -1,0 +1,217 @@
+{
+  "group": "Hooks",
+  "presets": [
+    {
+      "id": "hook-peg-j-short",
+      "name": "Pegboard J hook short",
+      "generator": "hook",
+      "description": "35 mm arm, small tip.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "j",
+        "armLength": 35,
+        "tipHeight": 10,
+        "width": 10
+      }
+    },
+    {
+      "id": "hook-peg-j",
+      "name": "Pegboard J hook",
+      "generator": "hook",
+      "description": "50 mm arm, 15 mm tip.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "j",
+        "armLength": 50,
+        "tipHeight": 15,
+        "width": 12
+      }
+    },
+    {
+      "id": "hook-peg-j-long",
+      "name": "Pegboard J hook long",
+      "generator": "hook",
+      "description": "80 mm arm for coils and bags.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "j",
+        "armLength": 80,
+        "armThickness": 9,
+        "tipHeight": 15,
+        "width": 14,
+        "gusset": 12
+      }
+    },
+    {
+      "id": "hook-peg-straight",
+      "name": "Pegboard straight hook",
+      "generator": "hook",
+      "description": "Straight arm angled 15 deg up.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "straight",
+        "armLength": 60,
+        "armAngle": 15,
+        "width": 10,
+        "armThickness": 7
+      }
+    },
+    {
+      "id": "hook-peg-double",
+      "name": "Pegboard double hook",
+      "generator": "hook",
+      "description": "Long lower arm plus short upper arm.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "double",
+        "armLength": 55,
+        "tipHeight": 12,
+        "width": 12,
+        "plateHeight": 55
+      }
+    },
+    {
+      "id": "hook-peg-cable",
+      "name": "Pegboard cable cradle",
+      "generator": "hook",
+      "description": "Wide cradle so cables do not kink.",
+      "tags": [
+        "pegboard",
+        "cables"
+      ],
+      "params": {
+        "style": "j",
+        "width": 40,
+        "armLength": 60,
+        "armThickness": 8,
+        "tipHeight": 25,
+        "gusset": 12
+      }
+    },
+    {
+      "id": "hook-peg-thin-board",
+      "name": "Hook for 1/8 in pegboard",
+      "generator": "hook",
+      "description": "4.4 mm pegs for 3/16 in holes in 1/8 in board.",
+      "tags": [
+        "pegboard"
+      ],
+      "params": {
+        "style": "j",
+        "armLength": 45,
+        "tipHeight": 12,
+        "width": 10,
+        "pegDiameter": 4.4,
+        "boardThickness": 3.2
+      }
+    },
+    {
+      "id": "hook-screw-j",
+      "name": "Screw-mount J hook",
+      "generator": "hook",
+      "description": "Single countersunk screw.",
+      "tags": [
+        "wall"
+      ],
+      "params": {
+        "mount": "screw",
+        "style": "j",
+        "armLength": 50,
+        "tipHeight": 15,
+        "width": 16
+      }
+    },
+    {
+      "id": "hook-screw-utility",
+      "name": "Screw-mount utility hook large",
+      "generator": "hook",
+      "description": "Big hook for cords, hoses, straps.",
+      "tags": [
+        "wall",
+        "heavy"
+      ],
+      "params": {
+        "mount": "screw",
+        "style": "j",
+        "width": 30,
+        "armLength": 90,
+        "armThickness": 10,
+        "tipHeight": 30,
+        "tipThickness": 7,
+        "plateHeight": 70,
+        "gusset": 15,
+        "plateThickness": 5
+      }
+    },
+    {
+      "id": "hook-screw-extension-cord",
+      "name": "Extension cord hook",
+      "generator": "hook",
+      "description": "Deep cradle for a coiled extension cord.",
+      "tags": [
+        "wall",
+        "heavy",
+        "cables"
+      ],
+      "params": {
+        "mount": "screw",
+        "style": "j",
+        "width": 40,
+        "armLength": 120,
+        "armThickness": 12,
+        "tipHeight": 40,
+        "tipThickness": 8,
+        "plateHeight": 80,
+        "gusset": 20,
+        "plateThickness": 5
+      }
+    },
+    {
+      "id": "hook-tape-small",
+      "name": "Tape-on small hook",
+      "generator": "hook",
+      "description": "Flat back for mounting tape. Light loads only.",
+      "tags": [
+        "adhesive"
+      ],
+      "params": {
+        "mount": "adhesive",
+        "style": "j",
+        "width": 15,
+        "armLength": 25,
+        "armThickness": 6,
+        "tipHeight": 8,
+        "plateHeight": 35
+      }
+    },
+    {
+      "id": "hook-tape-headset",
+      "name": "Tape-on headset hook",
+      "generator": "hook",
+      "description": "Wide flat-back cradle for a headset.",
+      "tags": [
+        "adhesive"
+      ],
+      "params": {
+        "mount": "adhesive",
+        "style": "j",
+        "width": 35,
+        "armLength": 50,
+        "armThickness": 8,
+        "tipHeight": 15,
+        "plateHeight": 50,
+        "gusset": 10
+      }
+    }
+  ]
+}
