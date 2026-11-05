@@ -75,10 +75,12 @@ function snapshotUrl(printer, cam) {
   const u = String(cam.snapshot_url ?? '');
   if (!u) return null;
   if (/^https?:\/\//i.test(u)) return u;
-  // Relative webcam paths are served by the web server on the printer host
-  // (normally port 80), not by Moonraker's port 7125.
+  // Relative webcam paths are served by the printer's web server (Mainsail /
+  // nginx). If the printer was added by Moonraker's own port 7125, use the
+  // default web port instead; any other port (80, 4408, ...) is the web server.
   const base = new URL(printer.url);
-  return `${base.protocol}//${base.hostname}${u.startsWith('/') ? '' : '/'}${u}`;
+  const host = base.port === '7125' ? base.hostname : base.host;
+  return `${base.protocol}//${host}${u.startsWith('/') ? '' : '/'}${u}`;
 }
 
 export function createPrinters({ dataDir }) {

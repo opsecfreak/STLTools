@@ -17,6 +17,10 @@
 //   POST /api/projects/:id/items   add a part        POST /api/projects/:id/build  ZIP of every part
 //   GET  /api/favorites            POST /api/favorites/toggle { kind, id }
 //   POST /api/thumbs/lookup        PUT /api/thumbs/:key (PNG)   GET /api/thumbs/:key.png
+//   Printers (Klipper / Moonraker, VIEW ONLY + G-code upload that never starts a print):
+//   GET/POST /api/printers, PUT/DELETE /api/printers/:id, POST /api/printers/probe, GET /api/printers/scan
+//   GET /api/printers/:id/{status,files,history,webcams}   GET /api/printers/:id/metadata?filename=
+//   GET /api/printers/:id/thumb?path=   GET /api/printers/:id/snapshot?cam=0   PUT /api/printers/:id/upload?filename=
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
 
@@ -35,6 +39,7 @@ import { createDesignStore } from './core/designs.js';
 import { createZip } from './core/zip.js';
 import { createProjects, createFavorites } from './core/projects.js';
 import { createThumbStore, jobKey } from './core/thumbs.js';
+import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
 import { randomBytes } from 'node:crypto';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -245,6 +250,43 @@ async function route(req, res) {
   if (path === '/api/favorites' && req.method === 'GET') return send(res, 200, await favorites.list());
   if (path === '/api/favorites/toggle' && req.method === 'POST') return send(res, 200, await favorites.toggle(await readBody(req)));
 
+  // ---- printers (view only) ----
+  if (path === '/api/printers') {
+    if (req.method === 'GET') return send(res, 200, await printers.list());
+    if (req.method === 'POST') return send(res, 201, await printers.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  if (path === '/api/printers/probe' && req.method === 'POST') {
+    const b = await readBody(req);
+    return send(res, 200, await printers.probe(b.url, b.apiKey));
+  }
+  if (path === '/api/printers/scan' && req.method === 'GET') return send(res, 200, await scanLan());
+  m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})(?:\/([a-z]+))?$/);
+  if (m) {
+    const [, id, sub] = m;
+    if (!sub) {
+      if (req.method === 'PUT') return send(res, 200, await printers.update(id, await readBody(req)));
+      if (req.method === 'DELETE') { await printers.remove(id); return send(res, 204, ''); }
+      return send(res, 405, 'Method not allowed');
+    }
+    if (sub === 'upload') {
+      if (req.method !== 'PUT') return send(res, 405, 'Use PUT');
+      const data = await readRaw(req, MAX_UPLOAD_BYTES + 1);
+      return send(res, 200, await printers.upload(id, url.searchParams.get('filename'), data, url.searchParams.get('path') ?? ''));
+    }
+    if (req.method !== 'GET') return send(res, 405, 'Read-only: use GET');
+    if (sub === 'status') return send(res, 200, await printers.status(id));
+    if (sub === 'files') return send(res, 200, await printers.files(id));
+    if (sub === 'history') return send(res, 200, await printers.history(id, Number(url.searchParams.get('limit') ?? 20)));
+    if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
+    if (sub === 'metadata') return send(res, 200, await printers.metadata(id, url.searchParams.get('filename') ?? ''));
+    if (sub === 'thumb' || sub === 'snapshot') {
+      const img = sub === 'thumb' ? await printers.thumbnail(id, url.searchParams.get('path')) : await printers.snapshot(id, Number(url.searchParams.get('cam') ?? 0));
+      return send(res, 200, img.data, { 'content-type': img.type, 'cache-control': sub === 'thumb' ? 'public, max-age=3600' : 'no-store' });
+    }
+    return send(res, 404, 'Unknown printer endpoint');
+  }
+
   // ---- thumbnails ----
   if (path === '/api/thumbs/lookup' && req.method === 'POST') {
     const body = await readBody(req);
@@ -297,6 +339,7 @@ let designs = createDesignStore();
 let projects = createProjects({ dataDir: catalog.dataDir, designs });
 let favorites = createFavorites({ dataDir: catalog.dataDir });
 let thumbs = createThumbStore({ dataDir: catalog.dataDir, version: PKG.version });
+let printers = createPrinters({ dataDir: catalog.dataDir });
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
   if (dataDir) {
@@ -305,6 +348,7 @@ export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
     projects = createProjects({ dataDir, designs });
     favorites = createFavorites({ dataDir });
     thumbs = createThumbStore({ dataDir, version: PKG.version });
+    printers = createPrinters({ dataDir });
   }
   const server = createServer(async (req, res) => {
     try {

@@ -1,37 +1,7 @@
 import { createViewer } from './viewer.js';
 
-const $ = (id) => document.getElementById(id);
-const el = (tag, props = {}, ...children) => {
-  const n = document.createElement(tag);
-  for (const [k, v] of Object.entries(props)) {
-    if (k === 'dataset') Object.assign(n.dataset, v);
-    else if (k.includes('-')) n.setAttribute(k, v);
-    else n[k] = v;
-  }
-  for (const c of children) n.append(c);
-  return n;
-};
+import { $, el, api, store, SECTIONS, SECTION_NAMES } from './lib.js';
 
-// ---------- api / storage ----------
-async function api(method, url, body) {
-  const res = await fetch(url, {
-    method,
-    headers: body ? { 'content-type': 'application/json' } : {},
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (res.status === 204) return null;
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.errors ? data.errors.join('\n') : data.error || res.statusText);
-  return data;
-}
-
-// Per-viewer conveniences only (last tab, last preset). Shared data lives on the server.
-const store = {
-  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* ignore */ } },
-};
-
-const SECTIONS = ['shop', 'planes', 'quads', 'accessories', 'robotics'];
 const state = {
   tab: 'shop', shopSub: 'design',
   generators: [], presets: [], categories: [], items: [], designs: [],
@@ -311,7 +281,7 @@ async function onStlFiles(e) {
 }
 
 // ---------- My Designs ----------
-const sectionName = { shop: 'Shop', planes: 'Planes', quads: 'Quadcopters', accessories: 'Accessories', robotics: 'Robotics' };
+const sectionName = SECTION_NAMES;
 
 async function refreshDesigns() {
   state.designs = await api('GET', '/api/designs');
