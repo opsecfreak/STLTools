@@ -96,3 +96,28 @@ export function openEdgeCount(mesh) {
   }
   return bad;
 }
+
+/**
+ * The check a slicer effectively does: weld vertices by their float32 STL
+ * position and count edges not shared by exactly two triangles, plus
+ * zero-length edges. 0 = clean STL.
+ */
+export function stlEdgeIssues(mesh) {
+  const { positions: p, indices: idx } = mesh;
+  const f = new Float32Array(p);
+  const key = (i) => `${f[i * 3]},${f[i * 3 + 1]},${f[i * 3 + 2]}`;
+  const edges = new Map();
+  let degenerate = 0;
+  for (let t = 0; t < idx.length; t += 3) {
+    for (let j = 0; j < 3; j++) {
+      const a = key(idx[t + j]);
+      const b = key(idx[t + ((j + 1) % 3)]);
+      if (a === b) { degenerate++; continue; }
+      const k = a < b ? `${a}|${b}` : `${b}|${a}`;
+      edges.set(k, (edges.get(k) ?? 0) + 1);
+    }
+  }
+  let bad = degenerate;
+  for (const c of edges.values()) if (c !== 2) bad++;
+  return bad;
+}

@@ -17,22 +17,75 @@
 <body>
   <header>
     <h1>STL Tools</h1>
-    <label class="picker">Generator
-      <select id="generator"></select>
-    </label>
-    <p id="description"></p>
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="designs" class="tab active">Designs</button>
+      <button type="button" role="tab" data-tab="shop" class="tab">Shop</button>
+    </nav>
   </header>
   <main>
     <aside>
-      <form id="params"></form>
-      <div class="actions">
-        <button id="run" type="button">Generate</button>
-        <button id="reset" type="button" class="secondary">Defaults</button>
-        <button id="saveParams" type="button" class="secondary">Save params</button>
-      </div>
+      <!-- Designs tab -->
+      <section id="tab-designs" class="pane">
+        <div class="presets">
+          <div class="row">
+            <input id="presetSearch" type="search" placeholder="Search presets: props, hook, bits..." aria-label="Search presets">
+            <select id="presetGroup" aria-label="Preset group"><option value="">All groups</option></select>
+          </div>
+          <ul id="presetList" class="preset-list"></ul>
+        </div>
+        <label class="picker">Generator
+          <select id="generator"></select>
+        </label>
+        <p id="description" class="muted"></p>
+        <form id="params"></form>
+        <div class="actions">
+          <button id="run" type="button">Generate</button>
+          <button id="reset" type="button" class="secondary">Defaults</button>
+          <button id="saveParams" type="button" class="secondary">Save params</button>
+          <button id="toShop" type="button" class="secondary">Add to shop</button>
+        </div>
+      </section>
+
+      <!-- Shop tab -->
+      <section id="tab-shop" class="pane" hidden>
+        <div class="row">
+          <select id="shopFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+          <input id="shopSearch" type="search" placeholder="Search items" aria-label="Search items">
+        </div>
+        <ul id="itemList" class="item-list"></ul>
+        <div class="row">
+          <button id="printLabels" type="button" class="secondary">Print paper labels</button>
+          <button id="editCategories" type="button" class="secondary">Edit categories</button>
+        </div>
+
+        <form id="itemForm" class="card">
+          <h2 id="itemFormTitle">Add item</h2>
+          <div class="field"><label for="itemCategory">Category</label><select id="itemCategory" required></select></div>
+          <div class="field"><label for="itemName">Name (label line 1)</label><input id="itemName" maxlength="40" required placeholder="e.g. 5IN PROPS"></div>
+          <div class="field"><label for="itemLocation">Location (optional)</label><input id="itemLocation" maxlength="24" placeholder="e.g. A2"></div>
+          <div class="field"><label for="itemPreset">Design</label><select id="itemPreset" required></select></div>
+          <div class="field"><label for="itemNotes">Notes</label><input id="itemNotes" maxlength="500"></div>
+          <p id="itemOverrides" class="muted"></p>
+          <div class="row">
+            <button type="submit" id="itemSave">Add item</button>
+            <button type="button" id="itemCancel" class="secondary" hidden>Cancel edit</button>
+          </div>
+        </form>
+
+        <form id="catForm" class="card" hidden>
+          <h2>Categories</h2>
+          <p class="muted">Code is 2-5 letters or digits and starts each item code (PRP-001). Color shows on paper labels.</p>
+          <div id="catRows"></div>
+          <div class="row">
+            <button type="button" id="catAdd" class="secondary">Add category</button>
+            <button type="submit">Save categories</button>
+            <button type="button" id="catClose" class="secondary">Close</button>
+          </div>
+        </form>
+      </section>
     </aside>
     <section class="viewer-wrap">
-      <div id="viewer"><div id="status">Pick parameters and press Generate.</div></div>
+      <div id="viewer"><div id="status">Pick a preset or set parameters and press Generate.</div></div>
       <div id="output">
         <ul id="parts"></ul>
         <ul id="warnings"></ul>

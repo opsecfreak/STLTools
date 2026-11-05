@@ -1,0 +1,50 @@
+{
+  "group": "Labels",
+  "presets": [
+    {
+      "id": "label-card-53",
+      "name": "Label card 53.5 x 14 (75 mm bins)",
+      "generator": "label-card",
+      "description": "Fits the slot on 75 mm wide bins.",
+      "tags": [
+        "labels"
+      ],
+      "params": {
+        "width": 53.5,
+        "height": 14,
+        "text": "PARTS",
+        "line2": "MSC-001"
+      }
+    },
+    {
+      "id": "label-card-72",
+      "name": "Label card 72 x 14 (100 mm bins)",
+      "generator": "label-card",
+      "description": "Fits the slot on 100 mm wide bins.",
+      "tags": [
+        "labels"
+      ],
+      "params": {
+        "width": 72,
+        "height": 14,
+        "text": "M3 SCREWS",
+        "line2": "FAS-001"
+      }
+    },
+    {
+      "id": "label-card-110",
+      "name": "Label card 110 x 14 (150 / 200 mm bins)",
+      "generator": "label-card",
+      "description": "Fits the slot on 150 and 200 mm wide bins.",
+      "tags": [
+        "labels"
+      ],
+      "params": {
+        "width": 110,
+        "height": 14,
+        "text": "PROPS 5IN",
+        "line2": "PRP-001"
+      }
+    }
+  ]
+}

@@ -38,7 +38,8 @@ export function resolveParams(schema, input = {}) {
 
   for (const [key, def] of Object.entries(schema)) {
     let value = input[key];
-    if (value === undefined || value === null || value === '') value = def.default;
+    // An empty string means "use the default", except for text, where empty is a real value.
+    if (value === undefined || value === null || (value === '' && def.type !== 'string')) value = def.default;
 
     switch (def.type) {
       case 'number':
@@ -68,6 +69,10 @@ export function resolveParams(schema, input = {}) {
       }
       case 'string': {
         const s = String(value).trim();
+        if (def.maxLength !== undefined && s.length > def.maxLength) {
+          errors.push(`${key}: longer than ${def.maxLength} characters`);
+          continue;
+        }
         if (def.pattern && !new RegExp(def.pattern).test(s)) {
           errors.push(`${key}: "${s}" does not match required format${def.help ? ` (${def.help})` : ''}`);
           continue;

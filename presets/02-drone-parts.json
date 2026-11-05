@@ -1,0 +1,468 @@
+{
+  "group": "Drone Parts",
+  "presets": [
+    {
+      "id": "drone-props-3in",
+      "name": "Props 3 in",
+      "generator": "stack-bin",
+      "description": "Inside about 97 x 97 mm. Fits 3 in (76 mm) props laid flat.",
+      "tags": [
+        "props"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 100,
+        "height": 50,
+        "frontWallHeight": 26,
+        "labelText": "PROPS 3IN",
+        "labelLine2": "PRP"
+      }
+    },
+    {
+      "id": "drone-props-5in",
+      "name": "Props 5 in",
+      "generator": "stack-bin",
+      "description": "Inside about 146 x 146 mm. Fits 5 in (127 mm) props laid flat.",
+      "tags": [
+        "props"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 60,
+        "frontWallHeight": 26,
+        "wall": 2.0,
+        "labelText": "PROPS 5IN",
+        "labelLine2": "PRP"
+      }
+    },
+    {
+      "id": "drone-props-7in",
+      "name": "Props 7 in",
+      "generator": "stack-bin",
+      "description": "Inside about 196 x 196 mm. Fits 7 in (178 mm) props. Needs a 200 x 200 mm bed.",
+      "tags": [
+        "props",
+        "large"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 200,
+        "height": 60,
+        "frontWallHeight": 26,
+        "wall": 2.0,
+        "floor": 2.0,
+        "labelText": "PROPS 7IN",
+        "labelLine2": "PRP"
+      }
+    },
+    {
+      "id": "drone-props-whoop",
+      "name": "Props tiny whoop, 2 x 2",
+      "generator": "stack-bin",
+      "description": "4 compartments for 31-40 mm whoop props.",
+      "tags": [
+        "props",
+        "small"
+      ],
+      "params": {
+        "width": 75,
+        "depth": 100,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 2,
+        "compartmentsY": 2,
+        "scoopRadius": 8,
+        "cornerRadius": 4,
+        "labelText": "WHOOP PROPS",
+        "labelLine2": "PRP"
+      }
+    },
+    {
+      "id": "drone-motors",
+      "name": "Motors, 3 x 3",
+      "generator": "stack-bin",
+      "description": "9 cells of about 47 mm. For 5 in class motors. Check your bell size.",
+      "tags": [
+        "motors"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 60,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 3,
+        "wall": 2.0,
+        "labelText": "MOTORS",
+        "labelLine2": "MOT"
+      }
+    },
+    {
+      "id": "drone-motors-small",
+      "name": "Motors small, 3 x 3",
+      "generator": "stack-bin",
+      "description": "9 cells of about 31 mm for micro motors.",
+      "tags": [
+        "motors",
+        "small"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 100,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 3,
+        "labelText": "MICRO MOTORS",
+        "labelLine2": "MOT"
+      }
+    },
+    {
+      "id": "drone-fc-esc",
+      "name": "Flight controllers and ESCs, 3 x 3",
+      "generator": "stack-bin",
+      "description": "9 cells of about 47 mm. Fits 30.5 and 20 mm mount boards. Keep boards in ESD bags.",
+      "tags": [
+        "electronics"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 50,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 3,
+        "wall": 2.0,
+        "labelText": "FC / ESC",
+        "labelLine2": "ESC"
+      }
+    },
+    {
+      "id": "drone-lipo",
+      "name": "LiPo batteries, 2 wide",
+      "generator": "stack-bin",
+      "description": "Two 96 x 146 mm compartments. Not a fire enclosure: store LiPos in a LiPo-safe container.",
+      "tags": [
+        "batteries",
+        "large"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 150,
+        "height": 80,
+        "frontWallHeight": 40,
+        "wall": 2.0,
+        "floor": 2.0,
+        "compartmentsX": 2,
+        "labelText": "LIPO",
+        "labelLine2": "BAT"
+      }
+    },
+    {
+      "id": "drone-connectors",
+      "name": "Connectors, 4 x 4",
+      "generator": "stack-bin",
+      "description": "16 cells of about 35 mm for XT30/XT60, JST and plugs.",
+      "tags": [
+        "connectors",
+        "small"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 4,
+        "compartmentsY": 4,
+        "labelText": "CONNECTORS",
+        "labelLine2": "CON"
+      }
+    },
+    {
+      "id": "drone-screws",
+      "name": "Screws M2 / M3, 4 x 2 with scoop",
+      "generator": "stack-bin",
+      "description": "8 compartments with a front scoop.",
+      "tags": [
+        "fasteners",
+        "small"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 4,
+        "compartmentsY": 2,
+        "scoopRadius": 10,
+        "labelText": "M2 / M3 SCREWS",
+        "labelLine2": "FAS"
+      }
+    },
+    {
+      "id": "drone-standoffs",
+      "name": "Standoffs, 5 x 2",
+      "generator": "stack-bin",
+      "description": "10 compartments for standoffs and spacers.",
+      "tags": [
+        "fasteners"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 100,
+        "height": 40,
+        "openFront": false,
+        "compartmentsX": 5,
+        "compartmentsY": 2,
+        "labelText": "STANDOFFS",
+        "labelLine2": "FAS"
+      }
+    },
+    {
+      "id": "drone-antennas",
+      "name": "Antennas, long bin",
+      "generator": "stack-bin",
+      "description": "Long single bin, inside about 196 x 96 mm.",
+      "tags": [
+        "radio"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 100,
+        "height": 50,
+        "frontWallHeight": 26,
+        "wall": 2.0,
+        "labelText": "ANTENNAS",
+        "labelLine2": "RAD"
+      }
+    },
+    {
+      "id": "drone-cameras-vtx",
+      "name": "Cameras and VTX, 2 x 2",
+      "generator": "stack-bin",
+      "description": "4 cells of about 72 mm.",
+      "tags": [
+        "cameras"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 60,
+        "openFront": false,
+        "compartmentsX": 2,
+        "compartmentsY": 2,
+        "wall": 2.0,
+        "labelText": "CAMERAS / VTX",
+        "labelLine2": "CAM"
+      }
+    },
+    {
+      "id": "drone-gps-rx",
+      "name": "GPS and receivers, 2 x 2",
+      "generator": "stack-bin",
+      "description": "4 cells of about 48 x 72 mm.",
+      "tags": [
+        "radio",
+        "gps"
+      ],
+      "params": {
+        "width": 100,
+        "depth": 150,
+        "height": 50,
+        "openFront": false,
+        "compartmentsX": 2,
+        "compartmentsY": 2,
+        "labelText": "GPS / RX",
+        "labelLine2": "RAD"
+      }
+    },
+    {
+      "id": "drone-frame-parts",
+      "name": "Frame parts and arms",
+      "generator": "stack-bin",
+      "description": "Large open bin for arms, plates and canopies.",
+      "tags": [
+        "frame",
+        "large"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 150,
+        "height": 60,
+        "frontWallHeight": 28,
+        "wall": 2.0,
+        "floor": 2.0,
+        "labelText": "FRAME PARTS",
+        "labelLine2": "FRM"
+      }
+    },
+    {
+      "id": "drone-gimbal-parts",
+      "name": "Gimbal and camera repair parts, 3 x 2",
+      "generator": "stack-bin",
+      "description": "6 compartments with scoop for ribbon cables, dampers and small parts.",
+      "tags": [
+        "repair"
+      ],
+      "params": {
+        "width": 150,
+        "depth": 150,
+        "height": 45,
+        "openFront": false,
+        "compartmentsX": 3,
+        "compartmentsY": 2,
+        "scoopRadius": 12,
+        "labelText": "GIMBAL PARTS",
+        "labelLine2": "GMB"
+      }
+    },
+    {
+      "id": "drone-heatshrink-wire",
+      "name": "Wire and heat shrink, long",
+      "generator": "stack-bin",
+      "description": "Long bin for wire offcuts and heat shrink sticks.",
+      "tags": [
+        "wire"
+      ],
+      "params": {
+        "width": 200,
+        "depth": 100,
+        "height": 60,
+        "frontWallHeight": 28,
+        "wall": 2.0,
+        "compartmentsX": 2,
+        "labelText": "WIRE / SHRINK",
+        "labelLine2": "CON"
+      }
+    },
+    {
+      "id": "drone-sd-cards",
+      "name": "SD card holder, 8 slots",
+      "generator": "holder-block",
+      "description": "SD cards (24 x 2.1 mm) standing up.",
+      "tags": [
+        "storage"
+      ],
+      "params": {
+        "shape": "slot",
+        "itemSize": 24,
+        "itemSize2": 2.1,
+        "clearance": 0.6,
+        "pocketDepth": 16,
+        "columns": 1,
+        "rows": 8,
+        "spacing": 2.5,
+        "labelType": "none"
+      }
+    },
+    {
+      "id": "drone-microsd",
+      "name": "microSD holder, 12 slots",
+      "generator": "holder-block",
+      "description": "microSD cards (11 x 1.0 mm) standing up.",
+      "tags": [
+        "storage"
+      ],
+      "params": {
+        "shape": "slot",
+        "itemSize": 11,
+        "itemSize2": 1.0,
+        "clearance": 0.6,
+        "pocketDepth": 8,
+        "columns": 2,
+        "rows": 6,
+        "spacing": 2.5
+      }
+    },
+    {
+      "id": "drone-whoop-cells",
+      "name": "1S whoop battery holder, 4 x 3",
+      "generator": "holder-block",
+      "description": "Rectangular pockets. Measure your cells and set item size X / Y first.",
+      "tags": [
+        "batteries"
+      ],
+      "params": {
+        "shape": "square",
+        "itemSize": 12,
+        "itemSize2": 7.5,
+        "clearance": 0.6,
+        "pocketDepth": 25,
+        "columns": 4,
+        "rows": 3,
+        "spacing": 2.5
+      }
+    },
+    {
+      "id": "drone-18650",
+      "name": "18650 cell holder, 4 x 3",
+      "generator": "holder-block",
+      "description": "Round pockets for 18650 cells (about 18-18.5 mm).",
+      "tags": [
+        "batteries"
+      ],
+      "params": {
+        "shape": "round",
+        "itemSize": 18.5,
+        "clearance": 0.5,
+        "pocketDepth": 25,
+        "columns": 4,
+        "rows": 3,
+        "spacing": 2.5
+      }
+    },
+    {
+      "id": "drone-goggles-hook",
+      "name": "FPV goggles hook (pegboard)",
+      "generator": "hook",
+      "description": "Wide cradle hook for goggles or a radio.",
+      "tags": [
+        "hooks"
+      ],
+      "params": {
+        "style": "j",
+        "width": 40,
+        "armLength": 70,
+        "armThickness": 8,
+        "tipHeight": 22,
+        "plateHeight": 45,
+        "gusset": 12
+      }
+    },
+    {
+      "id": "drone-radio-hook",
+      "name": "Radio transmitter hook (pegboard)",
+      "generator": "hook",
+      "description": "Wide J hook for a transmitter by its handle.",
+      "tags": [
+        "hooks"
+      ],
+      "params": {
+        "style": "j",
+        "width": 30,
+        "armLength": 55,
+        "armThickness": 8,
+        "tipHeight": 15,
+        "gusset": 10
+      }
+    },
+    {
+      "id": "drone-hex-drivers",
+      "name": "Hex driver rack 6 (pegboard)",
+      "generator": "tool-rack",
+      "description": "6 round 6.5 mm holes for 1.5 / 2 / 2.5 / 3 mm hex drivers.",
+      "tags": [
+        "tools"
+      ],
+      "params": {
+        "width": 110,
+        "holeShape": "round",
+        "holeSize": 6.5,
+        "holeCount": 6,
+        "shelfDepth": 30,
+        "mountColumns": 2
+      }
+    }
+  ]
+}

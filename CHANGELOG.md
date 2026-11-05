@@ -1,5 +1,11 @@
 # Changelog
 
+## v2 (0.2.0) - 2026-11-05
+
+Changed: new generators `stack-bin`, `hook`, `tool-rack`, `holder-block`, `label-card`. Text engine for raised/recessed labels. 82 presets in `presets/`. Shop catalog (categories, item codes, auto label text, paper label sheet). Web UI tabs, preset browser, Add to shop. CLI `presets` and `preset` commands.
+Fixed: STL edge check now also catches edges that break after float32 rounding (found and fixed slivers in chamfers, peg bends and countersinks). Empty text fields now stay empty instead of falling back to defaults.
+Untested: physical prints of every new part. Stack fit (0.4 mm clearance), label slot fit, pegboard peg fit and hook strength need test prints.
+
 ## v1 (0.1.0) - 2026-11-05
 
 Changed: first release. Core on manifold-3d, CLI, web UI with 3D preview, systemd unit. Generators: `parts-box` (compartments, press-fit lid) and `rc-wing` (NACA 4-digit, taper, sweep, washout, spars, sectioning, mirror).

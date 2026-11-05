@@ -3,3 +3,5 @@ out/
 *.stl
 !examples/**/*.stl
 .DS_Store
+# shop catalog data (your inventory); back it up separately or remove this line to track it
+data/

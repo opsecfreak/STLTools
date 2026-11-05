@@ -45,9 +45,60 @@ export function createScope() {
       return t(core.offset(rr, 'Round', 2, segmentsPerCorner * 4));
     },
 
-    /** Closed 2D polygon from [[x, y], ...]. */
+    /** Closed 2D polygon from [[x, y], ...]. Winding direction does not matter. */
     polygon(points) {
-      return t(CrossSection.ofPolygons([points], 'Positive'));
+      return t(CrossSection.ofPolygons([points], 'NonZero'));
+    },
+
+    /** Several contours (outlines and holes) as one 2D shape. */
+    polygons(contours, fillRule = 'NonZero') {
+      return t(CrossSection.ofPolygons(contours, fillRule));
+    },
+
+    /** Prism: 2D outline given as [[y, z], ...], extruded along X from x0 to x1. */
+    prismX(yz, x0, x1) {
+      const cs = k.polygon(yz.map(([y, z]) => [-z, y]));
+      return t(t(t(Manifold.extrude(cs, x1 - x0)).rotate([0, 90, 0])).translate([x0, 0, 0]));
+    },
+
+    /** Prism: 2D outline given as [[x, z], ...], extruded along Y from y0 to y1. */
+    prismY(xz, y0, y1) {
+      const cs = k.polygon(xz.map(([x, z]) => [x, -z]));
+      return t(t(t(Manifold.extrude(cs, y1 - y0)).rotate([-90, 0, 0])).translate([0, y0, 0]));
+    },
+
+    /** Prism: 2D outline given as [[x, y], ...], extruded along Z from z0 to z1. */
+    prismZ(xy, z0, z1) {
+      return t(t(Manifold.extrude(k.polygon(xy), z1 - z0)).translate([0, 0, z0]));
+    },
+
+    /**
+     * Loft between two convex 2D outlines at heights zA < zB (convex hull of
+     * their vertices). Used for 45 degree chamfers between rounded rectangles.
+     */
+    loftConvex(csA, zA, csB, zB) {
+      const pts = [];
+      for (const poly of csA.toPolygons()) for (const [x, y] of poly) pts.push([x, y, zA]);
+      for (const poly of csB.toPolygons()) for (const [x, y] of poly) pts.push([x, y, zB]);
+      return t(Manifold.hull(pts));
+    },
+
+    hull(list) {
+      return t(Manifold.hull(list));
+    },
+
+    intersect(a, b) {
+      return t(Manifold.intersection(a, b));
+    },
+
+    rotate(m, degrees) {
+      return t(m.rotate(degrees));
+    },
+
+    /** Center on X/Y and drop onto the bed (min Z = 0). */
+    placeOnBed(m) {
+      const { min, max } = m.boundingBox();
+      return t(m.translate([-(min[0] + max[0]) / 2, -(min[1] + max[1]) / 2, -min[2]]));
     },
 
     extrude(cs, height, nDivisions = 0) {
@@ -90,10 +141,12 @@ export function createScope() {
     },
 
     union(list) {
+      list = list.filter(Boolean);
       return list.length === 1 ? list[0] : t(Manifold.union(list));
     },
 
     difference(a, cutters) {
+      cutters = cutters.filter(Boolean);
       if (!cutters.length) return a;
       return t(Manifold.difference([a, ...cutters]));
     },
@@ -127,7 +180,15 @@ export function createScope() {
 export function toPlainMesh(manifold) {
   const status = manifold.status();
   if (status !== 'NoError') throw new Error(`Geometry kernel error: ${status}`);
-  const mesh = manifold.getMesh();
+  // Merge vertices closer than 5 microns (far below printer resolution). Without this, tiny slivers left by
+  // booleans become zero-length edges once STL rounds to float32.
+  const clean = manifold.simplify(0.005);
+  let mesh;
+  try {
+    mesh = clean.getMesh();
+  } finally {
+    clean.delete();
+  }
   const n = mesh.numProp;
   const vp = mesh.vertProperties;
   const count = vp.length / n;
@@ -138,4 +199,27 @@ export function toPlainMesh(manifold) {
     positions[i * 3 + 2] = vp[i * n + 2];
   }
   return { positions, indices: Uint32Array.from(mesh.triVerts) };
+}
+
+/**
+ * Teardrop outline for a hole printed with its axis horizontal: a circle with
+ * a 45 degree point toward +X (rotate it so the point faces print-up).
+ * Removes the need for support inside horizontal holes.
+ */
+export function teardrop(radius, segments = 32) {
+  const pts = [[radius * Math.SQRT2, 0]];
+  for (let i = 0; i <= segments; i++) {
+    const a = Math.PI / 4 + (i * (3 * Math.PI / 2)) / segments;
+    pts.push([radius * Math.cos(a), radius * Math.sin(a)]);
+  }
+  return pts;
+}
+
+/** Regular polygon points, first vertex on +X. */
+export function regularPolygon(radius, sides, rotationDeg = 0) {
+  const r0 = (rotationDeg * Math.PI) / 180;
+  return Array.from({ length: sides }, (_, i) => {
+    const a = r0 + (i * 2 * Math.PI) / sides;
+    return [radius * Math.cos(a), radius * Math.sin(a)];
+  });
 }

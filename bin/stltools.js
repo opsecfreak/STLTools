@@ -4,6 +4,7 @@ import { join, resolve } from 'node:path';
 import { generate, listGenerators, getGenerator } from '../src/core/registry.js';
 import { ParamError } from '../src/core/params.js';
 import { toStl, meshStats } from '../src/core/export.js';
+import { listPresets, getPreset } from '../src/core/presets.js';
 
 const USAGE = `stltools - parametric STL generator (units: mm)
 
@@ -11,6 +12,8 @@ Usage:
   stltools list                         List generators
   stltools info <generator>             Show parameters and defaults
   stltools gen <generator> [options]    Generate STL files
+  stltools presets [search]             List ready-made designs (filter by word)
+  stltools preset <preset-id> [options] Generate a preset; flags override its values
 
 Options for gen:
   --<param> <value>      Set a parameter, e.g. --width 100 --lid false
@@ -22,6 +25,8 @@ Options for gen:
 Examples:
   stltools gen parts-box --width 100 --depth 60 --height 30 --compartmentsX 4
   stltools gen rc-wing --airfoil 4412 --halfSpan 500 --rootChord 200 --tipChord 150
+  stltools presets drone
+  stltools preset drone-props-5in --labelText "PROPS 5IN" -o out
 `;
 
 function parseArgs(argv) {
@@ -51,6 +56,20 @@ function cmdList() {
   for (const g of listGenerators()) console.log(`${g.id.padEnd(14)} ${g.description}`);
 }
 
+function cmdPresets(filter) {
+  const f = (filter ?? '').toLowerCase();
+  let group = null;
+  for (const p of listPresets()) {
+    const hay = [p.id, p.name, p.group, p.generator, ...p.tags].join(' ').toLowerCase();
+    if (f && !hay.includes(f)) continue;
+    if (p.group !== group) {
+      group = p.group;
+      console.log(`\n[${group}]`);
+    }
+    console.log(`  ${p.id.padEnd(30)} ${p.name}`);
+  }
+}
+
 function cmdInfo(id) {
   const g = getGenerator(id);
   console.log(`${g.name} (${g.id})\n${g.description}\n`);
@@ -67,11 +86,11 @@ function cmdInfo(id) {
   }
 }
 
-async function cmdGen(id, opts) {
-  let input = {};
+async function cmdGen(id, opts, base = {}) {
+  let input = { ...base };
   if (opts.paramsFile) input = JSON.parse(readFileSync(opts.paramsFile, 'utf8'));
   // A saved .params.json from a previous run has { generator, params }
-  if (input.params && input.generator) input = input.params;
+  if (input.params && input.generator) input = { ...base, ...input.params };
   Object.assign(input, opts.params);
 
   const t0 = Date.now();
@@ -99,9 +118,15 @@ async function main() {
   const [cmd, id] = positional;
   if (opts.help || !cmd) return console.log(USAGE);
   if (cmd === 'list') return cmdList();
+  if (cmd === 'presets') return cmdPresets(id);
   if (!id) throw new Error(`"${cmd}" needs a generator id. Run "stltools list".`);
   if (cmd === 'info') return cmdInfo(id);
   if (cmd === 'gen') return cmdGen(id, opts);
+  if (cmd === 'preset') {
+    const preset = getPreset(id);
+    console.log(`${preset.name}: ${preset.description}`);
+    return cmdGen(preset.generator, { ...opts, name: opts.name ?? preset.id }, preset.params);
+  }
   throw new Error(`Unknown command "${cmd}".\n\n${USAGE}`);
 }
 
