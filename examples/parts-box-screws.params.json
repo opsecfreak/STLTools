@@ -1,0 +1,21 @@
+{
+  "generator": "parts-box",
+  "params": {
+    "width": 150,
+    "depth": 100,
+    "height": 35,
+    "wall": 1.6,
+    "floor": 1.2,
+    "cornerRadius": 4,
+    "compartmentsX": 5,
+    "compartmentsY": 3,
+    "dividerThickness": 1.2,
+    "dividerHeight": 0,
+    "lid": true,
+    "lidThickness": 1.6,
+    "lipHeight": 4,
+    "lipWall": 1.2,
+    "clearance": 0.25,
+    "segments": 12
+  }
+}

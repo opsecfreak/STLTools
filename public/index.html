@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STL Tools</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/vendor/three/build/three.module.js",
+        "three/addons/": "/vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>STL Tools</h1>
+    <label class="picker">Generator
+      <select id="generator"></select>
+    </label>
+    <p id="description"></p>
+  </header>
+  <main>
+    <aside>
+      <form id="params"></form>
+      <div class="actions">
+        <button id="run" type="button">Generate</button>
+        <button id="reset" type="button" class="secondary">Defaults</button>
+        <button id="saveParams" type="button" class="secondary">Save params</button>
+      </div>
+    </aside>
+    <section class="viewer-wrap">
+      <div id="viewer"><div id="status">Pick parameters and press Generate.</div></div>
+      <div id="output">
+        <ul id="parts"></ul>
+        <ul id="warnings"></ul>
+        <ul id="notes"></ul>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

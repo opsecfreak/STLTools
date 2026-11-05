@@ -1,0 +1,29 @@
+# systemd unit for the STL Tools web UI.
+# Install:
+#   sudo cp deploy/stltools.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now stltools
+[Unit]
+Description=STL Tools parametric STL generator (web UI)
+After=network.target
+
+[Service]
+Type=simple
+User=stltools
+Group=stltools
+WorkingDirectory=/opt/stltools
+ExecStart=/usr/bin/node /opt/stltools/src/server.js
+Environment=NODE_ENV=production
+# 127.0.0.1 = this machine only. Use 0.0.0.0 to allow other machines on the LAN.
+Environment=HOST=127.0.0.1
+Environment=PORT=3000
+Restart=on-failure
+RestartSec=3
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

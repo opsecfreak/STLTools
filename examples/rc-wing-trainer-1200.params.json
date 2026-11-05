@@ -1,0 +1,22 @@
+{
+  "generator": "rc-wing",
+  "params": {
+    "airfoil": "2412",
+    "airfoilPoints": 60,
+    "minTrailingEdge": 0.8,
+    "halfSpan": 600,
+    "rootChord": 200,
+    "tipChord": 150,
+    "sweep": 0,
+    "washout": 2,
+    "sparDiameter": 8.2,
+    "sparPosition": 25,
+    "sparLength": 70,
+    "rearSparDiameter": 3.1,
+    "rearSparPosition": 60,
+    "rearSparLength": 25,
+    "maxSectionHeight": 200,
+    "bothSides": false,
+    "holeSegments": 32
+  }
+}

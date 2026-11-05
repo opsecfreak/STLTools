@@ -1,0 +1,28 @@
+{
+  "name": "stltools",
+  "version": "0.1.0",
+  "description": "Parametric STL generator for 3D printing: parts boxes, RC wings, and more. CLI + web UI.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "stltools": "bin/stltools.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js",
+    "examples": "node bin/stltools.js gen parts-box -o out && node bin/stltools.js gen rc-wing -o out"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opsecfreak/STLTools.git"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "manifold-3d": "3.5.3",
+    "three": "0.170.0"
+  }
+}
