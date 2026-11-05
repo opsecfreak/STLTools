@@ -1,56 +1,63 @@
 # STL Tools
 
-Parametric STL generator for organizing a shop and building RC parts. Pick a ready-made design, change any value, get a watertight STL, slice and print.
+Parametric STL generator for a drone / RC / robotics shop. Pick one of 285 ready-made designs, change any size, get a watertight STL, slice and print.
 
-- **Web UI**: preset browser, live 3D preview, per-part STL download, shop catalog with labels.
-- **CLI**: scripting and batch jobs.
-- **Library**: `import { generate, toStl } from './src/index.js'`.
+- **Web UI** with tabs for Shop, Planes, Quadcopters, Accessories, Robotics and My Designs. Live 3D preview, per-part STL or one ZIP, open any STL file from your computer to view it.
+- **Saved designs** and a **shop catalog** stored on the server (the Pi), so every device sees the same data.
+- **CLI** for scripting and batch jobs. **Library** for other Node projects.
 
 Units are millimeters, because slicers read STL as mm.
 
-## Quick start on a Raspberry Pi
+## Download and run
 
-Recommended setup: a Pi 4 or 5 in the shop runs it 24/7. Open it from a PC or phone on the same network.
+No install of Node.js or anything else needed: each release package includes it.
 
-```bash
-git clone https://github.com/opsecfreak/STLTools.git ~/STLTools
-```
+1. GitHub > **Releases** > newest release > download the file for your computer (Windows, Mac Apple / Intel, Linux, Raspberry Pi 64 / 32-bit).
+2. Unpack it and read `README-FIRST.txt`.
+3. Start it: **Start STL Tools.bat** (Windows), **STL Tools.app** (macOS), `./start.sh` (Linux / Pi).
 
-```bash
-sudo bash ~/STLTools/deploy/install-pi.sh
-```
-
-Then open `http://<pi-hostname>.local:3000`. Full guide, updates, backups and remote access: [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
+Step-by-step instructions for every system, including a Raspberry Pi shop server: [docs/INSTALL.md](docs/INSTALL.md). What to test first and how to send feedback: [docs/TESTING.md](docs/TESTING.md).
 
 ## Documentation
 
 | Doc | Covers |
 |-----|--------|
+| [docs/INSTALL.md](docs/INSTALL.md) | Download and install on Windows, macOS, Linux, Raspberry Pi; upgrade; uninstall |
+| [docs/TESTING.md](docs/TESTING.md) | First test checklist, test prints, feedback template |
+| [docs/EXTENDING.md](docs/EXTENDING.md) | Adding generators and presets without breaking anything; release steps |
+| [custom/README.md](custom/README.md) | Your own generators and presets |
 | [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) | Pi setup, updates, rollback, backups, Tailscale, troubleshooting |
 | [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
 | [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
 | [src/generators/README.md](src/generators/README.md) | Writing a new generator, kernel functions, printability rules |
+| [docs/PRINTERS.md](docs/PRINTERS.md) | Plan for slicing on the Pi and sending to a Klipper printer (not built yet) |
 | [CHANGELOG.md](CHANGELOG.md) | Versions |
 
 ## What it makes
 
-| Generator | What it makes | Prints |
-|-----------|---------------|--------|
-| `stack-bin` | Stackable bin. Foot drops into the bin below. Compartments, finger scoop, open front, label slot or raised/recessed text. | Upright |
-| `parts-box` | Box with a compartment grid and a press-fit lid. | Upright |
-| `holder-block` | Block with round, hex, square or slot pockets: bits, batteries, SD cards, USB sticks, drivers, markers. | Upright |
-| `hook` | J hook, angled hook, double hook, wide cradle. Pegboard, screw or tape mount. | On its side |
-| `tool-rack` | Shelf with holes or slots for screwdrivers, pliers, tweezers, wrenches. Pegboard, screw or tape mount. | Upright |
-| `label-card` | Card with raised text that drops into a bin label slot. | Flat |
-| `rc-wing` | Tapered NACA 4-digit wing half with spars, split into printer-height sections. | Root down |
+39 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
 
-All parts print without supports.
+| Tab | Generators | Presets |
+|-----|-----------|---------|
+| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card` | 79 |
+| Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 22 |
+| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires | 30 |
+| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 107 |
+| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, plus board / sensor / battery mounts | 45 |
 
-## Presets
+Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 
-82 ready-made designs in 9 groups: Stacking Bins, Drone Parts, Fasteners and Small Parts, Hooks, Tool Racks, Holders, Boxes, Labels, RC Aircraft. They live as JSON in [`presets/`](presets/). Edit a file or add your own; each preset is a generator id plus the values that differ from its defaults. Every preset is generated and checked by `npm test`.
+All parts print without supports. Each part comes out in its print orientation.
 
-Sizes in preset descriptions (prop lengths, battery and card sizes) are nominal. Measure your parts before a big print run.
+## Presets, saved designs and files
+
+- **Presets** are the starting points in each tab. They are JSON files in [`presets/`](presets/); add your own there.
+- **Save design** stores the current settings on the server under **My Designs**. Load, Make, Rename, Export or Delete them there. Saved designs survive updates and are shared by every device that opens the server.
+- **Export / Import** downloads or loads a `.params.json` file. The CLI reads the same files.
+- **Open STL file** shows any STL from your computer in the 3D view (nothing is uploaded).
+- **Download all (ZIP)** gets every part of a multi-part design (wing sections and ailerons, clamp halves, box and lid) in one file.
+
+Sizes in preset descriptions (props, batteries, servos, boards, motors) are nominal. Measure your parts before a big print run.
 
 ## Shop catalog and labels
 
@@ -68,9 +75,9 @@ Label styles on bins and holders:
 - **Raised text**: change filament at the first text layer for two colors.
 - **Recessed text**: fill with paint marker.
 
-Catalog data is saved as JSON in `data/` (`STLTOOLS_DATA` to change). Back it up.
+Catalog data (`catalog.json`, `categories.json`) and saved designs (`designs.json`) are JSON files in `data/` (`STLTOOLS_DATA` to change). Back that folder up.
 
-## Install
+## Run from source (developers)
 
 Needs Node.js 18 or newer. No build step. No Docker.
 
@@ -138,6 +145,7 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 
 | Method | Path | Purpose |
 |--------|------|---------|
+| GET | `/api/version` | Version, counts, data folder, custom file problems |
 | GET | `/api/generators` | Generators with parameter schemas |
 | GET | `/api/presets` | Preset library |
 | POST | `/api/generate/:id` | JSON params in, parts with stats and download URLs out |
@@ -146,6 +154,9 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 | GET / POST | `/api/catalog` | List / add shop items |
 | GET / PUT / DELETE | `/api/catalog/:code` | Read / edit / delete an item |
 | POST | `/api/catalog/:code/generate` | Item STL(s) with label text, plus a label card |
+| GET / POST | `/api/designs` | List / save designs |
+| GET / PUT / DELETE | `/api/designs/:id` | Read / update / delete a saved design |
+| GET | `/api/zip/:job` | All parts of a job as one ZIP |
 
 ## Print notes
 
@@ -169,6 +180,20 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 - Print each section on its root face. Low infill (gyroid 5-8%) or 2-3 perimeters with 0% infill.
 - Spar hole = tube OD + 0.1 to 0.2 mm.
 
+**Tube clamps and joints**
+- Bore = tube OD + 2 x clearance. 0.1-0.2 mm clearance for a clamp you tighten; negative values grip harder.
+- Clamps print with the tube vertical so the ring layers wrap the tube. Joints print flat with teardrop bores.
+- PETG, ASA or nylon hold clamping force better than PLA.
+
+**Planes**
+- Ailerons, elevators and rudders come out as separate `surfaceN` parts with the hinge gap and a leading-edge bevel. Top hinge = tape hinge; center hinge = pin or CA hinges.
+- The servo pocket opens through the bottom skin. A wire channel runs to the root.
+
+**Robotics**
+- Gears: mating gears need the same module. Center distance = module x (teeth1 + teeth2) / 2.
+- GT2 pulley tooth shape is approximate. Test-fit the belt first.
+- NEMA dimensions follow the NEMA standard; check your motor's datasheet.
+
 ## How it works
 
 - Geometry kernel: [manifold-3d](https://github.com/elalish/manifold) (WASM, also used by OpenSCAD). Booleans always give closed, consistently oriented meshes.
@@ -178,16 +203,18 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 
 ## Add a generator or preset
 
-- New design from an existing generator: add a preset. See [presets/README.md](presets/README.md).
-- New kind of part: write a generator. See [src/generators/README.md](src/generators/README.md).
+- Quickest: **Save design** in the web UI (stored on the server, no files).
+- Your own presets and generators: drop them in `custom/` (desktop app: your user data folder). Broken files are skipped, never fatal. See [custom/README.md](custom/README.md).
+- Core additions: [docs/EXTENDING.md](docs/EXTENDING.md), [presets/README.md](presets/README.md), [src/generators/README.md](src/generators/README.md).
 
 ## Known limits
 
 - Generation runs on the server's main thread. Very large values block other requests until done.
 - No user accounts. Anyone who can reach the port can edit the catalog.
 - STL only. 3MF (with colors for labels) is on the roadmap.
+- No slicing or printer connection yet. Download the STL and slice it in your normal slicer.
 - Memory grows about 5 MB per 1000 generations (WASM allocator). A service restart clears it.
 
 ## Roadmap ideas
 
-Gridfinity-compatible bins and baseplates, wall rail for open-front bins, drawer inserts, QR codes on labels, 3MF output, wing ailerons and servo bays.
+Slicing on the Pi and sending to a Klipper / Mainsail printer (see [docs/PRINTERS.md](docs/PRINTERS.md)), Gridfinity-compatible bins, wall rail for open-front bins, QR codes on labels, 3MF output, folding GPS mast, gimbal yokes, cable chains, wing dihedral joiners.

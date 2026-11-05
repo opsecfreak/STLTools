@@ -1,5 +1,17 @@
 # Changelog
 
+## v4 (0.4.0) - 2026-11-05
+
+Changed: clamp types snap-on clip, two-piece (fits mid-tube) and collar. New `component-mount` generator: tray, board pad, cradle, cup, cable clips or support post on a zip-tie saddle, bolt-on clamp kit (2 parts), screw plate or tape: ESC on an arm, receiver, VTX / FC pads, battery trays, GPS posts, lights, sensors, Pi boards. 51 new presets (285 total). Desktop packages with Node.js included (Windows, macOS Apple / Intel app, Linux, Raspberry Pi 64 / 32-bit) plus installers; per-user data folder so upgrades never touch your work. Generators and presets load automatically; your own go in `custom/` and are skipped (not fatal) if broken; helpers passed to `generate(p, k, lib)`. `/api/version`, version and problem badge in the UI. CI on Node 18 / 20 / 22 and a tag-driven release workflow. Docs: INSTALL, TESTING, EXTENDING.
+Fixed: snap clip lead-in corner on the opening face (STL slivers). Custom `.js` generators failed on Node 18 outside the app folder; the launcher now marks the custom folder as ES modules and `.mjs` is accepted.
+Untested: everything on real hardware: installers on Windows / macOS / Pi, the unsigned-app warnings, and all v3 / v4 parts as printed parts.
+
+## v3 (0.3.0) - 2026-11-05
+
+Changed: tabs for Shop, Planes, Quadcopters, Accessories, Robotics, My Designs. 31 new generators (38 total): tube clamps (5 types), tube joints (10 types), plugs / caps / feet, spacers, GPS mast, antenna, zip-tie, camera cage, action-cam, connector panel, FC adapter, TPU grommets, damper plates, multirotor frame, tube motor mount, prop guard, landing leg, control horn, servo mount, pin hinge, firewall mount, former, wheel, gear / rack, pulley, NEMA stepper mount, bearing block, shaft coupler, link bar, knob, enclosure. Wing: total wingspan input, ailerons / elevator / rudder cut as separate parts, servo pocket and wire channel. 152 new presets (234 total). Saved designs on the server (My Designs), params import/export, local STL viewer, ZIP download. Printer / slicer plan in docs/PRINTERS.md.
+Fixed: tangent and edge-aligned surfaces that left slivers in the STL (tube joint hub, motor mount, knob chamfer). Old saves with `halfSpan` convert to `wingspan` automatically.
+Untested: physical prints of the new parts. Clamp grip, joint fit, gear mesh, GT2 belt fit, bearing press fit and aileron throw need test prints. Breaking: `rc-wing` parameter `halfSpan` is now `wingspan` (old files still load).
+
 ## v2.1 (0.2.1) - 2026-11-05
 
 Changed: Raspberry Pi installer/updater `deploy/install-pi.sh` (systemd, LAN access by default). Docs: `docs/RASPBERRY-PI.md`, `deploy/README.md`, `presets/README.md`, `src/generators/README.md`, main README index.

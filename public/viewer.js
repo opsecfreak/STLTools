@@ -63,14 +63,23 @@ export function createViewer(container) {
     return cache.get(url);
   };
 
-  /** Show parts side by side on the plate. parts: [{ url }] */
+  /** Parse STL bytes (from a local file) into a geometry. */
+  function parse(arrayBuffer) {
+    return loader.parse(arrayBuffer);
+  }
+
+  /** Show parts side by side on the plate. parts: [{ url } | { geometry }] */
+  let showToken = 0;
   async function show(parts) {
-    group.clear();
+    // Only the newest call draws: an older, slower call stops when a newer one starts.
+    const token = ++showToken;
+    const meshes = [];
     const material = new THREE.MeshStandardMaterial({ color: 0x3d8bfd, roughness: 0.55, metalness: 0.05 });
     let offsetX = 0;
     const all = new THREE.Box3();
     for (const part of parts) {
-      const geometry = await load(part.url);
+      const geometry = part.geometry ?? (await load(part.url));
+      if (token !== showToken) return;
       geometry.computeBoundingBox();
       const bb = geometry.boundingBox;
       const mesh = new THREE.Mesh(geometry, material);
@@ -78,11 +87,15 @@ export function createViewer(container) {
       mesh.position.y = -(bb.min.y + bb.max.y) / 2;
       mesh.position.z = -bb.min.z;
       offsetX += bb.max.x - bb.min.x + 10;
+      meshes.push(mesh);
+    }
+    group.clear();
+    for (const mesh of meshes) {
       group.add(mesh);
       all.expandByObject(mesh);
     }
     frame(all);
   }
 
-  return { show };
+  return { show, parse };
 }

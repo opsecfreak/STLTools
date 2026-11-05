@@ -7,6 +7,7 @@ import { mountParamSchema, buildMount } from '../core/mounts.js';
 export default {
   id: 'tool-rack',
   name: 'Tool Rack',
+  sections: ['shop'],
   description: 'Shelf with a row (or rows) of holes or slots for screwdrivers, hex drivers, pliers, tweezers and bits. Pegboard, screw or tape mount.',
   params: {
     width: { type: 'number', default: 150, min: 30, max: 300, step: 1, unit: 'mm', label: 'Width (X)', group: 'Shelf' },

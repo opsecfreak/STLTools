@@ -1,0 +1,303 @@
+{
+  "group": "Wings, Tails and Plane Parts",
+  "section": "planes",
+  "presets": [
+    {
+      "id": "plane-wing-park-900",
+      "name": "Park flyer wing 900 mm",
+      "generator": "rc-wing",
+      "description": "NACA 2412, 160 to 120 mm chord, ailerons, 9 g servo pockets.",
+      "tags": [
+        "wing"
+      ],
+      "params": {
+        "airfoil": "2412",
+        "wingspan": 900,
+        "rootChord": 160,
+        "tipChord": 120,
+        "surfaceStart": 180,
+        "surfaceLength": 250,
+        "servoPosition": 140
+      }
+    },
+    {
+      "id": "plane-wing-plain-800",
+      "name": "Plain wing panel 800 mm (no cuts)",
+      "generator": "rc-wing",
+      "description": "No control surface or servo pocket. For testing airfoils and print settings.",
+      "tags": [
+        "wing"
+      ],
+      "params": {
+        "wingspan": 800,
+        "controlSurface": "none",
+        "servoBay": false
+      }
+    },
+    {
+      "id": "plane-hstab-400",
+      "name": "Horizontal stabilizer 400 mm with elevator",
+      "generator": "rc-wing",
+      "description": "NACA 0009, 110 to 80 mm chord, full-span elevator, center hinge.",
+      "tags": [
+        "tail"
+      ],
+      "params": {
+        "airfoil": "0009",
+        "wingspan": 400,
+        "rootChord": 110,
+        "tipChord": 80,
+        "sparDiameter": 4.2,
+        "sparLength": 90,
+        "rearSparDiameter": 0,
+        "surfaceStart": 5,
+        "surfaceLength": 190,
+        "surfaceChord": 35,
+        "hingeStyle": "center",
+        "servoBay": false,
+        "wireChannel": 0,
+        "minTrailingEdge": 0.8
+      }
+    },
+    {
+      "id": "plane-vstab-fin",
+      "name": "Vertical fin 180 mm with rudder",
+      "generator": "rc-wing",
+      "description": "NACA 0009 fin, 140 to 90 mm chord, 25 deg sweep, rudder. Print one panel (no mirror).",
+      "tags": [
+        "tail"
+      ],
+      "params": {
+        "airfoil": "0009",
+        "wingspan": 360,
+        "rootChord": 140,
+        "tipChord": 90,
+        "sweep": 25,
+        "sparDiameter": 3.2,
+        "sparLength": 40,
+        "rearSparDiameter": 0,
+        "surfaceStart": 10,
+        "surfaceLength": 165,
+        "surfaceChord": 35,
+        "hingeStyle": "center",
+        "servoBay": false,
+        "wireChannel": 0
+      }
+    },
+    {
+      "id": "plane-horn-micro",
+      "name": "Control horn micro x4",
+      "generator": "control-horn",
+      "description": "14 mm horn, 3 holes for 1.2 mm wire.",
+      "tags": [
+        "horn"
+      ],
+      "params": {
+        "hornHeight": 14,
+        "holes": 3,
+        "holeDiameter": 1.3,
+        "holeSpacing": 3,
+        "baseLength": 16,
+        "baseWidth": 8,
+        "count": 4
+      }
+    },
+    {
+      "id": "plane-horn",
+      "name": "Control horn x2",
+      "generator": "control-horn",
+      "description": "18 mm horn, 3 holes for 1.5 mm wire.",
+      "tags": [
+        "horn"
+      ],
+      "params": {}
+    },
+    {
+      "id": "plane-horn-large",
+      "name": "Control horn large x2",
+      "generator": "control-horn",
+      "description": "24 mm horn, 4 holes for clevis pins.",
+      "tags": [
+        "horn"
+      ],
+      "params": {
+        "hornHeight": 24,
+        "holes": 4,
+        "holeDiameter": 2.1,
+        "holeSpacing": 4,
+        "baseLength": 28,
+        "baseWidth": 12,
+        "baseThickness": 2,
+        "hornThickness": 3
+      }
+    },
+    {
+      "id": "plane-servo-tray-9g",
+      "name": "Servo tray 9 g class",
+      "generator": "servo-mount",
+      "description": "Body 23 x 12.5 mm, ears 28 mm. Measure your servo.",
+      "tags": [
+        "servo"
+      ],
+      "params": {}
+    },
+    {
+      "id": "plane-servo-tray-standard",
+      "name": "Servo tray standard size",
+      "generator": "servo-mount",
+      "description": "Body about 40.5 x 20 mm, ears 49 mm. Measure your servo.",
+      "tags": [
+        "servo"
+      ],
+      "params": {
+        "servoLength": 40.5,
+        "servoWidth": 20,
+        "earSpacing": 49,
+        "earHole": 3
+      }
+    },
+    {
+      "id": "plane-hinge",
+      "name": "Pin hinge 30 mm",
+      "generator": "pin-hinge",
+      "description": "5 knuckles, 1.75 mm filament pin.",
+      "tags": [
+        "hinge"
+      ],
+      "params": {}
+    },
+    {
+      "id": "plane-hinge-hatch",
+      "name": "Hatch hinge 80 mm",
+      "generator": "pin-hinge",
+      "description": "9 knuckles, wide leaves for hatches and canopies.",
+      "tags": [
+        "hinge"
+      ],
+      "params": {
+        "length": 80,
+        "knuckles": 9,
+        "leafWidth": 12,
+        "screwHoles": 3
+      }
+    },
+    {
+      "id": "plane-firewall-22xx",
+      "name": "Firewall mount 16 x 19 motor",
+      "generator": "firewall-mount",
+      "description": "2 deg down, 2 deg right thrust, 32 mm firewall screws.",
+      "tags": [
+        "motor"
+      ],
+      "params": {}
+    },
+    {
+      "id": "plane-firewall-25",
+      "name": "Firewall mount 25 x 25 motor",
+      "generator": "firewall-mount",
+      "description": "For larger motors with a 25 mm pattern. Check your motor.",
+      "tags": [
+        "motor"
+      ],
+      "params": {
+        "plateSize": 52,
+        "motorPatternA": 25,
+        "motorPatternB": 25,
+        "firewallSpacing": 42,
+        "centerHole": 12,
+        "minThickness": 5
+      }
+    },
+    {
+      "id": "plane-former-box",
+      "name": "Fuselage former 60 x 70",
+      "generator": "fuselage-former",
+      "description": "Rounded box former, 4 stringer notches.",
+      "tags": [
+        "fuselage"
+      ],
+      "params": {
+        "width": 60,
+        "height": 70,
+        "cornerRadius": 10
+      }
+    },
+    {
+      "id": "plane-former-oval",
+      "name": "Fuselage former oval 80 x 90",
+      "generator": "fuselage-former",
+      "description": "Oval former, 6 stringers.",
+      "tags": [
+        "fuselage"
+      ],
+      "params": {
+        "shape": "oval",
+        "width": 80,
+        "height": 90,
+        "stringers": 6
+      }
+    },
+    {
+      "id": "plane-former-cabin",
+      "name": "Fuselage former cabin 100 x 110",
+      "generator": "fuselage-former",
+      "description": "Large rounded former.",
+      "tags": [
+        "fuselage"
+      ],
+      "params": {
+        "width": 100,
+        "height": 110,
+        "cornerRadius": 20,
+        "rim": 8,
+        "stringers": 6,
+        "thickness": 3.5
+      }
+    },
+    {
+      "id": "plane-wheel-50",
+      "name": "Wheel 50 mm",
+      "generator": "rc-wheel",
+      "description": "Spoked, 3 mm axle. TPU recommended.",
+      "tags": [
+        "wheel"
+      ],
+      "params": {}
+    },
+    {
+      "id": "plane-wheel-75",
+      "name": "Wheel 75 mm",
+      "generator": "rc-wheel",
+      "description": "Spoked, 4 mm axle.",
+      "tags": [
+        "wheel"
+      ],
+      "params": {
+        "diameter": 75,
+        "width": 22,
+        "axleHole": 4.2,
+        "hubDiameter": 14,
+        "hubWidth": 24,
+        "rimWall": 5
+      }
+    },
+    {
+      "id": "plane-wheel-tail",
+      "name": "Tail wheel 25 mm",
+      "generator": "rc-wheel",
+      "description": "Solid, 2 mm axle.",
+      "tags": [
+        "wheel"
+      ],
+      "params": {
+        "diameter": 25,
+        "width": 8,
+        "edgeRadius": 2,
+        "style": "solid",
+        "axleHole": 2.1,
+        "hubDiameter": 7,
+        "hubWidth": 9
+      }
+    }
+  ]
+}

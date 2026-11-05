@@ -1,0 +1,7 @@
+#!/bin/bash
+# STL Tools.app entry point. Starts the server (or reuses a running one) and opens the browser.
+# Quit the app from the Dock to stop the server. Log: ~/Library/Logs/STLTools.log
+RES="$(cd "$(dirname "$0")/../Resources" && pwd)"
+LOG="$HOME/Library/Logs/STLTools.log"
+mkdir -p "$HOME/Library/Logs"
+exec "$RES/node/bin/node" "$RES/app/bin/stltools-app.js" "$@" >>"$LOG" 2>&1

@@ -153,3 +153,36 @@ button:disabled { opacity: 0.5; cursor: wait; }
 .cat-row button { padding: 4px; }
 #parts a { margin-left: auto; }
 .actions { flex-wrap: wrap; }
+
+/* ---------- v3: section tabs, sub tabs, viewer bar, library ---------- */
+.tabs { overflow-x: auto; flex-wrap: nowrap; max-width: 100%; scrollbar-width: thin; }
+.tab { white-space: nowrap; }
+header { flex-wrap: nowrap; }
+header h1 { white-space: nowrap; }
+.subtabs { display: flex; gap: 4px; margin-bottom: 8px; }
+.subtab { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 5px 10px; font-size: 13px; }
+.subtab.active { background: var(--text); color: var(--panel); border-color: var(--text); }
+.subtabs[hidden] { display: none; }
+.picker-row { align-items: center; justify-content: space-between; }
+.picker-row .picker { margin: 0; flex: 1 1 auto; }
+.picker-row .picker select { flex: 1; width: auto; min-width: 0; }
+.check-inline { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
+.check-inline input { width: auto; }
+.viewer-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 6px 12px; border-bottom: 1px solid var(--border); background: var(--panel); }
+.viewer-bar #status { color: var(--muted); font-size: 12px; position: static; }
+.viewer-bar #status.error { color: #d1242f; }
+a.button { display: inline-block; padding: 8px 14px; border-radius: 4px; background: var(--accent); color: var(--accent-text); font-weight: 600; text-decoration: none; font-size: 14px; }
+a.button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+a.button[hidden] { display: none; }
+button.small, a.button.small { padding: 4px 10px; font-size: 12px; }
+#pane-library .item-list { max-height: none; }
+#pane-library .row > a.button { padding: 6px 10px; font-size: 13px; }
+@media (max-width: 760px) {
+  header { flex-wrap: wrap; }
+  .tabs { width: 100%; }
+}
+#designList li { flex-wrap: wrap; }
+#designList .info { flex: 1 1 100%; }
+#designList .btns { justify-content: flex-start; }
+.viewer-bar .version { margin-left: auto; color: var(--muted); font-size: 11px; }
+button.issues { background: #d1242f; color: #fff; }

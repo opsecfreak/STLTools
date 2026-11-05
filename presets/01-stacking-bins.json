@@ -1,5 +1,6 @@
 {
   "group": "Stacking Bins",
+  "section": "shop",
   "presets": [
     {
       "id": "bin-xs-75x100",

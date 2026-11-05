@@ -25,6 +25,7 @@ function steppedSolid(k, W, D, r, footInset, footH, z0, zTop, seg) {
 export default {
   id: 'stack-bin',
   name: 'Stackable Bin',
+  sections: ['shop'],
   description: 'Parts bin that stacks on bins of the same footprint. Compartments, finger scoop, open front and label slot options. No supports.',
   params: {
     width: { type: 'number', default: 100, min: 30, max: 300, step: 1, unit: 'mm', label: 'Outer width (X)', group: 'Bin' },

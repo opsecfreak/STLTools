@@ -1,7 +1,7 @@
 {
   "name": "stltools",
-  "version": "0.2.1",
-  "description": "Parametric STL generator for shop organization and RC: stacking bins, hooks, tool racks, holders, labels, RC wings. CLI + web UI.",
+  "version": "0.4.0",
+  "description": "Parametric STL generator for a drone, RC and robotics shop: bins, labels, tube clamps and joints, quad and plane parts, gears and mounts. Web UI + CLI.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
@@ -9,6 +9,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "app": "node bin/stltools-app.js",
+    "package": "node scripts/package.mjs",
     "test": "node --test test/*.test.js",
     "examples": "node bin/stltools.js gen parts-box -o out && node bin/stltools.js gen rc-wing -o out"
   },

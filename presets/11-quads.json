@@ -1,0 +1,279 @@
+{
+  "group": "Frames and Quad Parts",
+  "section": "quads",
+  "presets": [
+    {
+      "id": "quad-frame-5in",
+      "name": "5 in X frame 220 mm",
+      "generator": "multirotor-frame",
+      "description": "4 arms, 16 x 19 motors, 30.5 + 20 FC holes, top plate.",
+      "tags": [
+        "frame"
+      ],
+      "params": {}
+    },
+    {
+      "id": "quad-frame-3in",
+      "name": "3 in X frame 140 mm",
+      "generator": "multirotor-frame",
+      "description": "Small 4 arm frame, 12 x 12 motors, 20 + 25.5 FC holes.",
+      "tags": [
+        "frame"
+      ],
+      "params": {
+        "wheelbase": 140,
+        "propInches": 3,
+        "armWidth": 10,
+        "thickness": 4,
+        "motorPad": 20,
+        "motorPatternA": 12,
+        "motorPatternB": 12,
+        "motorCenterHole": 5,
+        "centerSize": 40,
+        "fcPattern": 20,
+        "fcPattern2": 25.5,
+        "standoffSpacing": 32
+      }
+    },
+    {
+      "id": "quad-frame-7in",
+      "name": "7 in X frame 300 mm",
+      "generator": "multirotor-frame",
+      "description": "Long range size, 16 x 19 motors. Needs a 250 mm bed.",
+      "tags": [
+        "frame",
+        "large"
+      ],
+      "params": {
+        "wheelbase": 300,
+        "propInches": 7,
+        "armWidth": 16,
+        "thickness": 6,
+        "motorPad": 32,
+        "centerSize": 60,
+        "standoffSpacing": 48
+      }
+    },
+    {
+      "id": "quad-frame-plus",
+      "name": "5 in plus frame 220 mm",
+      "generator": "multirotor-frame",
+      "description": "Plus (+) layout.",
+      "tags": [
+        "frame"
+      ],
+      "params": {
+        "armOffset": 0
+      }
+    },
+    {
+      "id": "quad-frame-tri",
+      "name": "Tricopter frame 300 mm",
+      "generator": "multirotor-frame",
+      "description": "3 arms for 7 in props.",
+      "tags": [
+        "frame"
+      ],
+      "params": {
+        "arms": 3,
+        "wheelbase": 300,
+        "propInches": 7,
+        "armOffset": 90,
+        "armWidth": 16,
+        "thickness": 6,
+        "motorPad": 32,
+        "centerSize": 60,
+        "standoffSpacing": 45
+      }
+    },
+    {
+      "id": "quad-frame-hex",
+      "name": "Hexacopter frame 550 mm",
+      "generator": "multirotor-frame",
+      "description": "6 arms for 10 in props. Print in parts or on a large bed.",
+      "tags": [
+        "frame",
+        "large"
+      ],
+      "params": {
+        "arms": 6,
+        "wheelbase": 550,
+        "propInches": 10,
+        "armOffset": 0,
+        "armWidth": 18,
+        "thickness": 6,
+        "motorPad": 36,
+        "centerSize": 90,
+        "standoffSpacing": 66
+      }
+    },
+    {
+      "id": "quad-frame-octo",
+      "name": "Octocopter frame 400 mm",
+      "generator": "multirotor-frame",
+      "description": "8 arms for 5 in props.",
+      "tags": [
+        "frame",
+        "large"
+      ],
+      "params": {
+        "arms": 8,
+        "wheelbase": 400,
+        "propInches": 5,
+        "armOffset": 22.5,
+        "armWidth": 14,
+        "centerSize": 80,
+        "standoffSpacing": 60
+      }
+    },
+    {
+      "id": "quad-motor-mount-16",
+      "name": "Motor mount, 16 mm round arm",
+      "generator": "motor-mount",
+      "description": "Clamps a 16 mm tube arm, 16 x 19 motor.",
+      "tags": [
+        "motor",
+        "tube"
+      ],
+      "params": {}
+    },
+    {
+      "id": "quad-motor-mount-12",
+      "name": "Motor mount, 12 mm round arm",
+      "generator": "motor-mount",
+      "description": "Clamps a 12 mm tube arm, 16 x 19 motor.",
+      "tags": [
+        "motor",
+        "tube"
+      ],
+      "params": {
+        "tubeSize": 12,
+        "padDiameter": 28
+      }
+    },
+    {
+      "id": "quad-motor-mount-sq10",
+      "name": "Motor mount, 10 mm square arm",
+      "generator": "motor-mount",
+      "description": "Clamps a 10 x 10 mm square tube, 16 x 19 motor.",
+      "tags": [
+        "motor",
+        "tube"
+      ],
+      "params": {
+        "tubeShape": "square",
+        "tubeSize": 10,
+        "padDiameter": 28
+      }
+    },
+    {
+      "id": "quad-motor-mount-22",
+      "name": "Motor mount, 22 mm round arm, large motor",
+      "generator": "motor-mount",
+      "description": "22 mm tube, 25 x 25 motor pattern, M4 clamp bolt. Check your motor.",
+      "tags": [
+        "motor",
+        "tube",
+        "large"
+      ],
+      "params": {
+        "tubeSize": 22,
+        "padDiameter": 44,
+        "motorPatternA": 25,
+        "motorPatternB": 25,
+        "clampLength": 32,
+        "clampBolt": "M4",
+        "plateThickness": 5,
+        "centerHole": 12
+      }
+    },
+    {
+      "id": "quad-guard-2in",
+      "name": "Prop guard 2 in",
+      "generator": "prop-guard",
+      "description": "Whoop-size duct ring, 9 x 9 motor holes.",
+      "tags": [
+        "guard"
+      ],
+      "params": {
+        "propInches": 2,
+        "spokes": 4,
+        "motorPatternA": 9,
+        "motorPatternB": 9,
+        "hubDiameter": 16,
+        "ringHeight": 10
+      }
+    },
+    {
+      "id": "quad-guard-3in",
+      "name": "Prop guard 3 in",
+      "generator": "prop-guard",
+      "description": "12 x 12 motor holes.",
+      "tags": [
+        "guard"
+      ],
+      "params": {}
+    },
+    {
+      "id": "quad-guard-5in",
+      "name": "Prop guard 5 in",
+      "generator": "prop-guard",
+      "description": "16 x 19 motor holes, 4 spokes.",
+      "tags": [
+        "guard"
+      ],
+      "params": {
+        "propInches": 5,
+        "spokes": 4,
+        "motorPatternA": 16,
+        "motorPatternB": 19,
+        "motorHole": 3.3,
+        "hubDiameter": 28,
+        "ringHeight": 15,
+        "ringWall": 2,
+        "thickness": 3
+      }
+    },
+    {
+      "id": "quad-leg",
+      "name": "Landing leg 60 mm",
+      "generator": "landing-leg",
+      "description": "Bolt-on leg, 15 deg splay.",
+      "tags": [
+        "legs"
+      ],
+      "params": {}
+    },
+    {
+      "id": "quad-leg-tall",
+      "name": "Landing leg 100 mm",
+      "generator": "landing-leg",
+      "description": "Tall leg for gimbals and cameras.",
+      "tags": [
+        "legs"
+      ],
+      "params": {
+        "legLength": 100,
+        "splay": 20,
+        "topDiameter": 12,
+        "bottomDiameter": 8,
+        "footDiameter": 18
+      }
+    },
+    {
+      "id": "quad-leg-socket-10",
+      "name": "Landing leg on a 10 mm tube",
+      "generator": "landing-leg",
+      "description": "Socket for a 10 mm tube, short foot extension.",
+      "tags": [
+        "legs",
+        "tube"
+      ],
+      "params": {
+        "mount": "socket",
+        "legLength": 40,
+        "splay": 0
+      }
+    }
+  ]
+}

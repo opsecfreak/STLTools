@@ -6,6 +6,7 @@ import { labelParamSchema, frontLabel } from '../core/labels.js';
 export default {
   id: 'holder-block',
   name: 'Holder Block',
+  sections: ['shop'],
   description: 'Block with a grid of round, hex, square or slot pockets. Bits, batteries, SD cards, USB sticks, drivers, markers.',
   params: {
     shape: {

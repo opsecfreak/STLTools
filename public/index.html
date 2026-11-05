@@ -17,37 +17,52 @@
 <body>
   <header>
     <h1>STL Tools</h1>
-    <nav class="tabs" role="tablist">
-      <button type="button" role="tab" data-tab="designs" class="tab active">Designs</button>
+    <nav class="tabs" role="tablist" aria-label="Sections">
       <button type="button" role="tab" data-tab="shop" class="tab">Shop</button>
+      <button type="button" role="tab" data-tab="planes" class="tab">Planes</button>
+      <button type="button" role="tab" data-tab="quads" class="tab">Quadcopters</button>
+      <button type="button" role="tab" data-tab="accessories" class="tab">Accessories</button>
+      <button type="button" role="tab" data-tab="robotics" class="tab">Robotics</button>
+      <button type="button" role="tab" data-tab="library" class="tab">My Designs</button>
     </nav>
   </header>
   <main>
     <aside>
-      <!-- Designs tab -->
-      <section id="tab-designs" class="pane">
+      <!-- Designer: used by Shop / Planes / Quadcopters / Accessories / Robotics -->
+      <section id="pane-design" class="pane">
+        <div id="shopSwitch" class="subtabs" hidden>
+          <button type="button" data-sub="design" class="subtab active">Designs</button>
+          <button type="button" data-sub="catalog" class="subtab">Shop catalog</button>
+        </div>
         <div class="presets">
           <div class="row">
-            <input id="presetSearch" type="search" placeholder="Search presets: props, hook, bits..." aria-label="Search presets">
+            <input id="presetSearch" type="search" placeholder="Search presets" aria-label="Search presets">
             <select id="presetGroup" aria-label="Preset group"><option value="">All groups</option></select>
           </div>
           <ul id="presetList" class="preset-list"></ul>
         </div>
-        <label class="picker">Generator
-          <select id="generator"></select>
-        </label>
+        <div class="row picker-row">
+          <label class="picker">Generator <select id="generator"></select></label>
+          <label class="check-inline"><input type="checkbox" id="allGenerators"> show all</label>
+        </div>
         <p id="description" class="muted"></p>
         <form id="params"></form>
         <div class="actions">
           <button id="run" type="button">Generate</button>
           <button id="reset" type="button" class="secondary">Defaults</button>
-          <button id="saveParams" type="button" class="secondary">Save params</button>
+          <button id="saveDesign" type="button" class="secondary" title="Save to My Designs on this server">Save design</button>
+          <button id="saveParams" type="button" class="secondary" title="Download a .params.json file">Export</button>
+          <button id="openParams" type="button" class="secondary" title="Load a .params.json file">Import</button>
           <button id="toShop" type="button" class="secondary">Add to shop</button>
         </div>
       </section>
 
-      <!-- Shop tab -->
-      <section id="tab-shop" class="pane" hidden>
+      <!-- Shop catalog -->
+      <section id="pane-catalog" class="pane" hidden>
+        <div class="subtabs">
+          <button type="button" data-sub="design" class="subtab">Designs</button>
+          <button type="button" data-sub="catalog" class="subtab active">Shop catalog</button>
+        </div>
         <div class="row">
           <select id="shopFilter" aria-label="Filter by category"><option value="">All categories</option></select>
           <input id="shopSearch" type="search" placeholder="Search items" aria-label="Search items">
@@ -57,7 +72,6 @@
           <button id="printLabels" type="button" class="secondary">Print paper labels</button>
           <button id="editCategories" type="button" class="secondary">Edit categories</button>
         </div>
-
         <form id="itemForm" class="card">
           <h2 id="itemFormTitle">Add item</h2>
           <div class="field"><label for="itemCategory">Category</label><select id="itemCategory" required></select></div>
@@ -71,7 +85,6 @@
             <button type="button" id="itemCancel" class="secondary" hidden>Cancel edit</button>
           </div>
         </form>
-
         <form id="catForm" class="card" hidden>
           <h2>Categories</h2>
           <p class="muted">Code is 2-5 letters or digits and starts each item code (PRP-001). Color shows on paper labels.</p>
@@ -83,9 +96,26 @@
           </div>
         </form>
       </section>
+
+      <!-- My Designs -->
+      <section id="pane-library" class="pane" hidden>
+        <p class="muted">Designs saved on this server. Load one to change it, Make to generate it, Export to keep a file copy.</p>
+        <div class="row">
+          <input id="librarySearch" type="search" placeholder="Search saved designs" aria-label="Search saved designs">
+          <button id="libraryImport" type="button" class="secondary">Import file</button>
+          <a id="libraryExportAll" class="button secondary" href="/api/designs" download="stltools-designs.json">Export all</a>
+        </div>
+        <ul id="designList" class="item-list"></ul>
+      </section>
     </aside>
     <section class="viewer-wrap">
-      <div id="viewer"><div id="status">Pick a preset or set parameters and press Generate.</div></div>
+      <div class="viewer-bar">
+        <button id="openStl" type="button" class="secondary small" title="View an STL file from your computer">Open STL file</button>
+        <a id="zipAll" class="button small" hidden>Download all (ZIP)</a>
+        <span id="status" role="status">Pick a preset or set parameters and press Generate.</span>
+        <span id="appVersion" class="version"></span>
+      </div>
+      <div id="viewer"></div>
       <div id="output">
         <ul id="parts"></ul>
         <ul id="warnings"></ul>
@@ -93,6 +123,8 @@
       </div>
     </section>
   </main>
+  <input id="fileParams" type="file" accept=".json,application/json" hidden>
+  <input id="fileStl" type="file" accept=".stl" multiple hidden>
   <script type="module" src="/app.js"></script>
 </body>
 </html>

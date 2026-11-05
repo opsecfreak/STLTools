@@ -1,0 +1,417 @@
+{
+  "group": "Mounts, Dampening and Hardware",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "gps-mast",
+      "name": "GPS mast, 8 mm tube",
+      "generator": "gps-mast",
+      "description": "30.5 mm base pattern, 32 mm round top, wire hole.",
+      "tags": [
+        "gps"
+      ],
+      "params": {}
+    },
+    {
+      "id": "gps-mast-20",
+      "name": "GPS mast, 20 x 20 base",
+      "generator": "gps-mast",
+      "description": "Small base for 20 mm stacks.",
+      "tags": [
+        "gps"
+      ],
+      "params": {
+        "baseHoleSpacing": 20,
+        "baseSize": 28,
+        "baseBolt": "M2",
+        "topSize": 26
+      }
+    },
+    {
+      "id": "gps-mast-printed",
+      "name": "GPS mast, printed 50 mm",
+      "generator": "gps-mast",
+      "description": "Printed mast, no tube needed.",
+      "tags": [
+        "gps"
+      ],
+      "params": {
+        "mast": "printed",
+        "mastHeight": 50,
+        "mastOD": 10
+      }
+    },
+    {
+      "id": "gps-mast-square-top",
+      "name": "GPS mast, square bolted top",
+      "generator": "gps-mast",
+      "description": "25 mm square top with 4 M2 holes.",
+      "tags": [
+        "gps"
+      ],
+      "params": {
+        "topShape": "square",
+        "topSize": 32,
+        "topHoleSpacing": 25
+      }
+    },
+    {
+      "id": "antenna-sma",
+      "name": "SMA antenna mount, 30 deg",
+      "generator": "antenna-mount",
+      "description": "Single connector, zip-tie base.",
+      "tags": [
+        "antenna"
+      ],
+      "params": {}
+    },
+    {
+      "id": "antenna-sma-v",
+      "name": "SMA antenna V pair",
+      "generator": "antenna-mount",
+      "description": "Two connectors in a V for diversity receivers.",
+      "tags": [
+        "antenna"
+      ],
+      "params": {
+        "count": 2
+      }
+    },
+    {
+      "id": "antenna-sma-screw",
+      "name": "SMA mount, vertical, screw base",
+      "generator": "antenna-mount",
+      "description": "Straight up, 2 screws.",
+      "tags": [
+        "antenna"
+      ],
+      "params": {
+        "tilt": 0,
+        "baseMount": "screws"
+      }
+    },
+    {
+      "id": "zip-anchor",
+      "name": "Zip-tie anchor, screw",
+      "generator": "zip-tie-mount",
+      "description": "Center screw under the tie tunnel.",
+      "tags": [
+        "zip"
+      ],
+      "params": {}
+    },
+    {
+      "id": "zip-anchor-cross",
+      "name": "Zip-tie anchor, cross",
+      "generator": "zip-tie-mount",
+      "description": "Two tunnels at 90 deg.",
+      "tags": [
+        "zip"
+      ],
+      "params": {
+        "cross": true
+      }
+    },
+    {
+      "id": "zip-anchor-flat-x10",
+      "name": "Zip-tie anchors flat x10",
+      "generator": "zip-tie-mount",
+      "description": "For tape or glue.",
+      "tags": [
+        "zip"
+      ],
+      "params": {
+        "mount": "flat",
+        "height": 6,
+        "count": 10
+      }
+    },
+    {
+      "id": "cam-cage-micro",
+      "name": "FPV camera cage, micro 19 mm",
+      "generator": "camera-mount",
+      "description": "TPU cage for 19 mm cameras.",
+      "tags": [
+        "camera"
+      ],
+      "params": {}
+    },
+    {
+      "id": "cam-cage-nano",
+      "name": "FPV camera cage, nano 14 mm",
+      "generator": "camera-mount",
+      "description": "TPU cage for 14 mm cameras.",
+      "tags": [
+        "camera"
+      ],
+      "params": {
+        "cameraWidth": 14,
+        "screwHeight": 8,
+        "depth": 12
+      }
+    },
+    {
+      "id": "cam-cage-full",
+      "name": "FPV camera cage, full 22 mm",
+      "generator": "camera-mount",
+      "description": "TPU cage for 22 mm cameras.",
+      "tags": [
+        "camera"
+      ],
+      "params": {
+        "cameraWidth": 22,
+        "screwHeight": 12,
+        "depth": 18
+      }
+    },
+    {
+      "id": "action-cam-3",
+      "name": "Action cam mount, 3 fingers",
+      "generator": "action-cam-mount",
+      "description": "Strap base.",
+      "tags": [
+        "camera"
+      ],
+      "params": {}
+    },
+    {
+      "id": "action-cam-2",
+      "name": "Action cam mount, 2 fingers",
+      "generator": "action-cam-mount",
+      "description": "2-finger version.",
+      "tags": [
+        "camera"
+      ],
+      "params": {
+        "fingers": 2,
+        "nutRecess": false
+      }
+    },
+    {
+      "id": "action-cam-tilt-20",
+      "name": "Action cam mount, 20 deg wedge",
+      "generator": "action-cam-mount",
+      "description": "3 fingers on a 20 deg wedge.",
+      "tags": [
+        "camera"
+      ],
+      "params": {
+        "tilt": 20
+      }
+    },
+    {
+      "id": "fc-adapter-30-20",
+      "name": "FC adapter 30.5 to 20",
+      "generator": "fc-adapter",
+      "description": "20 x 20 board on a 30.5 frame.",
+      "tags": [
+        "fc"
+      ],
+      "params": {}
+    },
+    {
+      "id": "fc-adapter-30-20-45",
+      "name": "FC adapter 30.5 to 20, rotated 45",
+      "generator": "fc-adapter",
+      "description": "Board pattern turned 45 deg.",
+      "tags": [
+        "fc"
+      ],
+      "params": {
+        "innerRotate": 45
+      }
+    },
+    {
+      "id": "fc-adapter-30-25",
+      "name": "FC adapter 30.5 to 25.5",
+      "generator": "fc-adapter",
+      "description": "Whoop boards on a 30.5 frame. Board pattern rotated 45 deg to clear the frame holes.",
+      "tags": [
+        "fc"
+      ],
+      "params": {
+        "innerPattern": 25.5,
+        "innerRotate": 45,
+        "innerHole": 2.2
+      }
+    },
+    {
+      "id": "fc-adapter-20-16",
+      "name": "FC adapter 20 to 16",
+      "generator": "fc-adapter",
+      "description": "16 x 16 board on a 20 x 20 frame.",
+      "tags": [
+        "fc"
+      ],
+      "params": {
+        "outerPattern": 20,
+        "outerHole": 2.4,
+        "innerPattern": 16,
+        "innerRotate": 45,
+        "innerHole": 1.7,
+        "bossDiameter": 4,
+        "centerCutout": 6
+      }
+    },
+    {
+      "id": "grommets-x8",
+      "name": "Soft-mount grommets x8",
+      "generator": "soft-grommet",
+      "description": "For 3.6 mm board holes. TPU.",
+      "tags": [
+        "damping"
+      ],
+      "params": {
+        "count": 8
+      }
+    },
+    {
+      "id": "grommets-4mm-x8",
+      "name": "Soft-mount grommets x8, 4 mm holes",
+      "generator": "soft-grommet",
+      "description": "For 4 mm board holes. TPU.",
+      "tags": [
+        "damping"
+      ],
+      "params": {
+        "boardHole": 4,
+        "screwHole": 2.6,
+        "flangeDiameter": 7,
+        "count": 8
+      }
+    },
+    {
+      "id": "damper-plates",
+      "name": "Gimbal damper plates 50 x 40",
+      "generator": "damper-plate",
+      "description": "4 damping balls, 20 and 30.5 mm screw patterns.",
+      "tags": [
+        "damping",
+        "gimbal"
+      ],
+      "params": {}
+    },
+    {
+      "id": "damper-plates-small",
+      "name": "Camera damper plates 30 x 30",
+      "generator": "damper-plate",
+      "description": "Small balls, 20 mm frame pattern.",
+      "tags": [
+        "damping",
+        "gimbal"
+      ],
+      "params": {
+        "ballSpacingX": 30,
+        "ballSpacingY": 30,
+        "ballHole": 5,
+        "topHoleSpacing": 0,
+        "bottomHoleSpacing": 20,
+        "margin": 5
+      }
+    },
+    {
+      "id": "panel-connector",
+      "name": "Connector panel 16 x 8.5 cutout",
+      "generator": "connector-mount",
+      "description": "Rectangular cutout. Measure your plug first.",
+      "tags": [
+        "panel"
+      ],
+      "params": {}
+    },
+    {
+      "id": "panel-switch-12",
+      "name": "Switch panel 12 mm round",
+      "generator": "connector-mount",
+      "description": "Round cutout for a 12 mm panel switch or button.",
+      "tags": [
+        "panel"
+      ],
+      "params": {
+        "cutoutShape": "round",
+        "cutoutWidth": 12,
+        "plateWidth": 30,
+        "plateHeight": 20,
+        "holeSpacing": 22
+      }
+    },
+    {
+      "id": "spacer-m3-10",
+      "name": "M3 spacer 10 mm x4",
+      "generator": "spacer",
+      "description": "6 mm OD, M3 slip fit.",
+      "tags": [
+        "spacer"
+      ],
+      "params": {
+        "count": 4
+      }
+    },
+    {
+      "id": "spacer-m3-20-hex",
+      "name": "M3 hex standoff 20 mm x4",
+      "generator": "spacer",
+      "description": "Hex 5.5 mm, threads M3 into the plastic.",
+      "tags": [
+        "spacer",
+        "standoff"
+      ],
+      "params": {
+        "shape": "hex",
+        "outerDiameter": 5.5,
+        "innerDiameter": 2.6,
+        "length": 20,
+        "count": 4
+      }
+    },
+    {
+      "id": "standoff-m2-8-hex",
+      "name": "M2 hex standoff 8 mm x8",
+      "generator": "spacer",
+      "description": "Hex 4 mm, threads M2.",
+      "tags": [
+        "standoff"
+      ],
+      "params": {
+        "shape": "hex",
+        "outerDiameter": 4,
+        "innerDiameter": 1.7,
+        "length": 8,
+        "count": 8
+      }
+    },
+    {
+      "id": "washer-m3-x20",
+      "name": "M3 washers x20",
+      "generator": "spacer",
+      "description": "7 mm OD, 0.8 mm thick.",
+      "tags": [
+        "washer"
+      ],
+      "params": {
+        "outerDiameter": 7,
+        "innerDiameter": 3.3,
+        "length": 0.8,
+        "count": 20,
+        "chamfer": 0
+      }
+    },
+    {
+      "id": "bushing-flanged-8",
+      "name": "Flanged bushing 8 mm shaft",
+      "generator": "spacer",
+      "description": "10 mm long, 14 mm flange.",
+      "tags": [
+        "bushing"
+      ],
+      "params": {
+        "outerDiameter": 11,
+        "innerDiameter": 8.2,
+        "length": 10,
+        "flangeDiameter": 14,
+        "flangeThickness": 1.5,
+        "count": 2
+      }
+    }
+  ]
+}

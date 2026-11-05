@@ -1,0 +1,322 @@
+{
+  "group": "Snap, Collar and Two-piece Clamps",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "clamp-snap-8",
+      "name": "Snap-on clip + plate, 8 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 8 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 8,
+        "plateWidth": 36,
+        "mountHoleSpacing": 26
+      }
+    },
+    {
+      "id": "clamp-snap-10",
+      "name": "Snap-on clip + plate, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 10 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 10,
+        "plateWidth": 36,
+        "mountHoleSpacing": 26
+      }
+    },
+    {
+      "id": "clamp-snap-12",
+      "name": "Snap-on clip + plate, 12 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 12 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 12,
+        "plateWidth": 38,
+        "mountHoleSpacing": 28
+      }
+    },
+    {
+      "id": "clamp-snap-16",
+      "name": "Snap-on clip + plate, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 16 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 16,
+        "plateWidth": 42,
+        "mountHoleSpacing": 32
+      }
+    },
+    {
+      "id": "clamp-snap-20",
+      "name": "Snap-on clip + plate, 20 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 20 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 20,
+        "plateWidth": 46,
+        "mountHoleSpacing": 36
+      }
+    },
+    {
+      "id": "clamp-snap-25",
+      "name": "Snap-on clip + plate, 25 mm",
+      "generator": "tube-clamp",
+      "description": "Push-on C clip for a 25 mm tube, no bolts. PETG or TPU.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 25,
+        "plateWidth": 51,
+        "mountHoleSpacing": 41
+      }
+    },
+    {
+      "id": "clip-snap-10",
+      "name": "Snap-on clip only, 10 mm",
+      "generator": "tube-clamp",
+      "description": "C clip with no plate, for clipping things to a 10 mm tube.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 10,
+        "basePlate": false,
+        "length": 10
+      }
+    },
+    {
+      "id": "clip-snap-16",
+      "name": "Snap-on clip only, 16 mm",
+      "generator": "tube-clamp",
+      "description": "C clip with no plate, for clipping things to a 16 mm tube.",
+      "tags": [
+        "clamp",
+        "snap"
+      ],
+      "params": {
+        "type": "snap",
+        "tubeOD": 16,
+        "basePlate": false,
+        "length": 10
+      }
+    },
+    {
+      "id": "collar-8",
+      "name": "Collar / end stop, 8 mm",
+      "generator": "tube-clamp",
+      "description": "Set-screw collar for a 8 mm tube or shaft.",
+      "tags": [
+        "collar"
+      ],
+      "params": {
+        "type": "collar",
+        "tubeOD": 8,
+        "length": 12
+      }
+    },
+    {
+      "id": "collar-10",
+      "name": "Collar / end stop, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Set-screw collar for a 10 mm tube or shaft.",
+      "tags": [
+        "collar"
+      ],
+      "params": {
+        "type": "collar",
+        "tubeOD": 10,
+        "length": 12
+      }
+    },
+    {
+      "id": "collar-16",
+      "name": "Collar / end stop, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Set-screw collar for a 16 mm tube or shaft.",
+      "tags": [
+        "collar"
+      ],
+      "params": {
+        "type": "collar",
+        "tubeOD": 16,
+        "length": 16
+      }
+    },
+    {
+      "id": "collar-20",
+      "name": "Collar / end stop, 20 mm",
+      "generator": "tube-clamp",
+      "description": "Set-screw collar for a 20 mm tube or shaft.",
+      "tags": [
+        "collar"
+      ],
+      "params": {
+        "type": "collar",
+        "tubeOD": 20,
+        "length": 16
+      }
+    },
+    {
+      "id": "clamp-2pc-10",
+      "name": "Two-piece clamp + plate, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Fits anywhere on an assembled 10 mm tube.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 10,
+        "length": 18,
+        "mountHoleSpacing": 42,
+        "plateWidth": 52
+      }
+    },
+    {
+      "id": "clamp-2pc-ring-10",
+      "name": "Two-piece ring clamp, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Two halves, no plate. Joins or reinforces a 10 mm tube mid-span.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 10,
+        "basePlate": false,
+        "length": 18
+      }
+    },
+    {
+      "id": "clamp-2pc-16",
+      "name": "Two-piece clamp + plate, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Fits anywhere on an assembled 16 mm tube.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 16,
+        "length": 18,
+        "mountHoleSpacing": 48,
+        "plateWidth": 58
+      }
+    },
+    {
+      "id": "clamp-2pc-ring-16",
+      "name": "Two-piece ring clamp, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Two halves, no plate. Joins or reinforces a 16 mm tube mid-span.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 16,
+        "basePlate": false,
+        "length": 18
+      }
+    },
+    {
+      "id": "clamp-2pc-20",
+      "name": "Two-piece clamp + plate, 20 mm",
+      "generator": "tube-clamp",
+      "description": "Fits anywhere on an assembled 20 mm tube.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 20,
+        "length": 22,
+        "mountHoleSpacing": 52,
+        "plateWidth": 62
+      }
+    },
+    {
+      "id": "clamp-2pc-ring-20",
+      "name": "Two-piece ring clamp, 20 mm",
+      "generator": "tube-clamp",
+      "description": "Two halves, no plate. Joins or reinforces a 20 mm tube mid-span.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 20,
+        "basePlate": false,
+        "length": 22
+      }
+    },
+    {
+      "id": "clamp-2pc-25",
+      "name": "Two-piece clamp + plate, 25 mm",
+      "generator": "tube-clamp",
+      "description": "Fits anywhere on an assembled 25 mm tube.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 25,
+        "length": 22,
+        "mountHoleSpacing": 57,
+        "plateWidth": 67
+      }
+    },
+    {
+      "id": "clamp-2pc-ring-25",
+      "name": "Two-piece ring clamp, 25 mm",
+      "generator": "tube-clamp",
+      "description": "Two halves, no plate. Joins or reinforces a 25 mm tube mid-span.",
+      "tags": [
+        "clamp",
+        "two-piece"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 25,
+        "basePlate": false,
+        "length": 22
+      }
+    }
+  ]
+}

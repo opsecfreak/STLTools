@@ -1,0 +1,568 @@
+{
+  "group": "Gears, Motion and Robot Parts",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "gear-m1-20",
+      "name": "Gear module 1, 20 teeth",
+      "generator": "gear",
+      "description": "20 T spur, 5 mm bore. Pairs with the 40 T for 2:1.",
+      "tags": [
+        "gear"
+      ],
+      "params": {
+        "module": 1,
+        "teeth": 20,
+        "thickness": 6,
+        "hubDiameter": 12,
+        "hubHeight": 5
+      }
+    },
+    {
+      "id": "gear-m1-40",
+      "name": "Gear module 1, 40 teeth",
+      "generator": "gear",
+      "description": "40 T spur, 5 mm bore, hub. 30 mm center distance to the 20 T.",
+      "tags": [
+        "gear"
+      ],
+      "params": {
+        "module": 1,
+        "teeth": 40,
+        "thickness": 6,
+        "hubDiameter": 14,
+        "hubHeight": 5,
+        "lighten": true
+      }
+    },
+    {
+      "id": "gear-nema17-pinion",
+      "name": "Stepper pinion module 1.5, 15 teeth",
+      "generator": "gear",
+      "description": "5 mm D-shaft bore, hub with set screw.",
+      "tags": [
+        "gear",
+        "stepper"
+      ],
+      "params": {
+        "module": 1.5,
+        "teeth": 15,
+        "boreType": "d",
+        "hubDiameter": 12,
+        "hubHeight": 6
+      }
+    },
+    {
+      "id": "gear-herringbone-45",
+      "name": "Herringbone module 1.5, 45 teeth",
+      "generator": "gear",
+      "description": "Quiet, no axial thrust. 8 mm bore.",
+      "tags": [
+        "gear"
+      ],
+      "params": {
+        "type": "herringbone",
+        "module": 1.5,
+        "teeth": 45,
+        "thickness": 10,
+        "bore": 8,
+        "lighten": true
+      }
+    },
+    {
+      "id": "gear-helical-30",
+      "name": "Helical module 1, 30 teeth",
+      "generator": "gear",
+      "description": "20 deg helix.",
+      "tags": [
+        "gear"
+      ],
+      "params": {
+        "type": "helical",
+        "module": 1,
+        "teeth": 30,
+        "thickness": 8
+      }
+    },
+    {
+      "id": "gear-rack-m1.5",
+      "name": "Rack module 1.5, 30 teeth",
+      "generator": "gear",
+      "description": "141 mm rack for linear motion with the 15 T pinion.",
+      "tags": [
+        "gear",
+        "rack"
+      ],
+      "params": {
+        "type": "rack",
+        "module": 1.5,
+        "teeth": 30,
+        "thickness": 8,
+        "rackHeight": 6
+      }
+    },
+    {
+      "id": "pulley-gt2-20",
+      "name": "GT2 pulley 20 T, 5 mm bore",
+      "generator": "pulley",
+      "description": "6 mm belt, set screw hub.",
+      "tags": [
+        "pulley"
+      ],
+      "params": {}
+    },
+    {
+      "id": "pulley-gt2-16",
+      "name": "GT2 pulley 16 T, 5 mm bore",
+      "generator": "pulley",
+      "description": "6 mm belt.",
+      "tags": [
+        "pulley"
+      ],
+      "params": {
+        "teeth": 16,
+        "hubDiameter": 12
+      }
+    },
+    {
+      "id": "pulley-gt2-36-8",
+      "name": "GT2 pulley 36 T, 8 mm bore",
+      "generator": "pulley",
+      "description": "Reduction pulley.",
+      "tags": [
+        "pulley"
+      ],
+      "params": {
+        "teeth": 36,
+        "bore": 8,
+        "hubDiameter": 18
+      }
+    },
+    {
+      "id": "idler-623",
+      "name": "Smooth idler for a 623 bearing",
+      "generator": "pulley",
+      "description": "10 mm bore takes a 623 bearing. Flanged.",
+      "tags": [
+        "pulley"
+      ],
+      "params": {
+        "type": "smooth",
+        "smoothDiameter": 14,
+        "bore": 10,
+        "boreClearance": 0.05,
+        "hubDiameter": 0,
+        "beltWidth": 6
+      }
+    },
+    {
+      "id": "nema17-bracket",
+      "name": "NEMA 17 L-bracket",
+      "generator": "stepper-mount",
+      "description": "Slotted base for belt tension.",
+      "tags": [
+        "stepper"
+      ],
+      "params": {}
+    },
+    {
+      "id": "nema17-plate",
+      "name": "NEMA 17 face plate",
+      "generator": "stepper-mount",
+      "description": "Flat plate.",
+      "tags": [
+        "stepper"
+      ],
+      "params": {
+        "style": "plate"
+      }
+    },
+    {
+      "id": "nema14-bracket",
+      "name": "NEMA 14 L-bracket",
+      "generator": "stepper-mount",
+      "description": "",
+      "tags": [
+        "stepper"
+      ],
+      "params": {
+        "size": "nema14",
+        "baseDepth": 32,
+        "baseBolt": "M3"
+      }
+    },
+    {
+      "id": "nema23-bracket",
+      "name": "NEMA 23 L-bracket",
+      "generator": "stepper-mount",
+      "description": "Heavy bracket, 6 mm plate.",
+      "tags": [
+        "stepper"
+      ],
+      "params": {
+        "size": "nema23",
+        "thickness": 6,
+        "baseDepth": 60,
+        "baseBolt": "M5"
+      }
+    },
+    {
+      "id": "bearing-608-flange",
+      "name": "608 bearing flange block",
+      "generator": "bearing-block",
+      "description": "22 x 7 mm pocket, 8 mm shaft.",
+      "tags": [
+        "bearing"
+      ],
+      "params": {}
+    },
+    {
+      "id": "bearing-608-pillow",
+      "name": "608 pillow block",
+      "generator": "bearing-block",
+      "description": "Horizontal shaft.",
+      "tags": [
+        "bearing"
+      ],
+      "params": {
+        "style": "pillow"
+      }
+    },
+    {
+      "id": "bearing-625-flange",
+      "name": "625 bearing flange block",
+      "generator": "bearing-block",
+      "description": "16 x 5 mm pocket.",
+      "tags": [
+        "bearing"
+      ],
+      "params": {
+        "bearing": "625",
+        "bolt": "M3"
+      }
+    },
+    {
+      "id": "bearing-lm8uu",
+      "name": "LM8UU linear bearing block",
+      "generator": "bearing-block",
+      "description": "8 mm rod, flange style.",
+      "tags": [
+        "bearing",
+        "linear"
+      ],
+      "params": {
+        "bearing": "LM8UU"
+      }
+    },
+    {
+      "id": "bearing-6001-pillow",
+      "name": "6001 pillow block",
+      "generator": "bearing-block",
+      "description": "12 mm shaft.",
+      "tags": [
+        "bearing"
+      ],
+      "params": {
+        "bearing": "6001",
+        "style": "pillow",
+        "wall": 5
+      }
+    },
+    {
+      "id": "coupler-5-8",
+      "name": "Shaft coupler 5 to 8 mm",
+      "generator": "shaft-coupler",
+      "description": "Stepper to lead screw.",
+      "tags": [
+        "coupler"
+      ],
+      "params": {}
+    },
+    {
+      "id": "coupler-5-5",
+      "name": "Shaft coupler 5 to 5 mm",
+      "generator": "shaft-coupler",
+      "description": "",
+      "tags": [
+        "coupler"
+      ],
+      "params": {
+        "boreB": 5,
+        "outerDiameter": 18
+      }
+    },
+    {
+      "id": "coupler-8-8",
+      "name": "Shaft coupler 8 to 8 mm",
+      "generator": "shaft-coupler",
+      "description": "",
+      "tags": [
+        "coupler"
+      ],
+      "params": {
+        "boreA": 8,
+        "outerDiameter": 22,
+        "length": 30
+      }
+    },
+    {
+      "id": "link-7-m3",
+      "name": "Link bar 7 holes, M3",
+      "generator": "link-bar",
+      "description": "10 mm pitch.",
+      "tags": [
+        "link"
+      ],
+      "params": {}
+    },
+    {
+      "id": "link-15-m3",
+      "name": "Link bar 15 holes, M3",
+      "generator": "link-bar",
+      "description": "10 mm pitch, 150 mm.",
+      "tags": [
+        "link"
+      ],
+      "params": {
+        "holes": 15
+      }
+    },
+    {
+      "id": "link-5-m4-nut",
+      "name": "Link bar 5 holes, M4 nut traps",
+      "generator": "link-bar",
+      "description": "15 mm pitch, hex traps.",
+      "tags": [
+        "link"
+      ],
+      "params": {
+        "holes": 5,
+        "pitch": 15,
+        "holeDiameter": 4.5,
+        "holeShape": "hex",
+        "width": 13,
+        "thickness": 6
+      }
+    },
+    {
+      "id": "link-slot",
+      "name": "Slotted strip 100 mm",
+      "generator": "link-bar",
+      "description": "Continuous slot for adjustable mounting.",
+      "tags": [
+        "link"
+      ],
+      "params": {
+        "holes": 10,
+        "holeShape": "slot",
+        "width": 12
+      }
+    },
+    {
+      "id": "knob-pot-6",
+      "name": "Pot knob, 6 mm D-shaft",
+      "generator": "knob",
+      "description": "25 mm ribbed knob with pointer.",
+      "tags": [
+        "knob"
+      ],
+      "params": {}
+    },
+    {
+      "id": "knob-large-40",
+      "name": "Large knob 40 mm",
+      "generator": "knob",
+      "description": "Lobed grip, 6 mm D-shaft.",
+      "tags": [
+        "knob"
+      ],
+      "params": {
+        "diameter": 40,
+        "height": 18,
+        "grip": "lobes",
+        "gripCount": 7
+      }
+    },
+    {
+      "id": "knob-m6-star",
+      "name": "Star knob for M6 bolt",
+      "generator": "knob",
+      "description": "Hex head / nut pocket 10 mm AF, 6.5 mm through hole.",
+      "tags": [
+        "knob",
+        "shop"
+      ],
+      "params": {
+        "diameter": 35,
+        "height": 14,
+        "grip": "lobes",
+        "gripCount": 5,
+        "shaft": "hexnut",
+        "shaftDiameter": 10,
+        "shaftDepth": 6,
+        "throughBolt": 6.5,
+        "pointer": false
+      }
+    },
+    {
+      "id": "knob-m8-star",
+      "name": "Star knob for M8 bolt",
+      "generator": "knob",
+      "description": "Hex 13 mm AF pocket, 8.5 mm through hole.",
+      "tags": [
+        "knob",
+        "shop"
+      ],
+      "params": {
+        "diameter": 45,
+        "height": 16,
+        "grip": "lobes",
+        "gripCount": 5,
+        "shaft": "hexnut",
+        "shaftDiameter": 13,
+        "shaftDepth": 7,
+        "throughBolt": 8.5,
+        "pointer": false
+      }
+    },
+    {
+      "id": "enclosure-pi4-size",
+      "name": "Enclosure for a Pi 4 size board",
+      "generator": "enclosure",
+      "description": "85 x 56 board, 58 x 49 holes, port cutout on the right wall. Check against your board.",
+      "tags": [
+        "enclosure",
+        "pi"
+      ],
+      "params": {}
+    },
+    {
+      "id": "enclosure-pi-zero-size",
+      "name": "Enclosure for a Pi Zero size board",
+      "generator": "enclosure",
+      "description": "65 x 30 board, 58 x 23 holes.",
+      "tags": [
+        "enclosure",
+        "pi"
+      ],
+      "params": {
+        "innerWidth": 70,
+        "innerDepth": 35,
+        "innerHeight": 18,
+        "standoffX": 58,
+        "standoffY": 23,
+        "boardOffsetX": 0,
+        "portWall": "back",
+        "portWidth": 50,
+        "portHeight": 8,
+        "portBottom": 4,
+        "vents": 3
+      }
+    },
+    {
+      "id": "enclosure-fc-30",
+      "name": "Enclosure for a 30.5 mm stack",
+      "generator": "enclosure",
+      "description": "For a flight controller / ESC stack on a bench or ground station.",
+      "tags": [
+        "enclosure",
+        "fc"
+      ],
+      "params": {
+        "innerWidth": 46,
+        "innerDepth": 46,
+        "innerHeight": 28,
+        "standoffX": 30.5,
+        "standoffY": 30.5,
+        "boardOffsetX": 0,
+        "standoffHole": 2.6,
+        "portWall": "front",
+        "portWidth": 24,
+        "portHeight": 10,
+        "portBottom": 6,
+        "vents": 4
+      }
+    },
+    {
+      "id": "enclosure-generic",
+      "name": "Project box 100 x 60 x 40",
+      "generator": "enclosure",
+      "description": "No standoffs, front port cutout.",
+      "tags": [
+        "enclosure"
+      ],
+      "params": {
+        "innerWidth": 100,
+        "innerDepth": 60,
+        "innerHeight": 40,
+        "standoffX": 0,
+        "portWall": "front",
+        "portWidth": 30,
+        "portHeight": 12
+      }
+    },
+    {
+      "id": "robot-servo-bracket",
+      "name": "Servo L-bracket, standard size",
+      "generator": "servo-mount",
+      "description": "For pan / tilt and robot joints.",
+      "tags": [
+        "servo"
+      ],
+      "params": {
+        "style": "bracket",
+        "servoLength": 40.5,
+        "servoWidth": 20,
+        "earSpacing": 49,
+        "earHole": 3,
+        "baseDepth": 30
+      }
+    },
+    {
+      "id": "robot-servo-bracket-9g",
+      "name": "Servo L-bracket, 9 g class",
+      "generator": "servo-mount",
+      "description": "",
+      "tags": [
+        "servo"
+      ],
+      "params": {
+        "style": "bracket"
+      }
+    },
+    {
+      "id": "robot-hinge",
+      "name": "Robot joint hinge 40 mm",
+      "generator": "pin-hinge",
+      "description": "Thicker leaves, 3 mm pin.",
+      "tags": [
+        "hinge"
+      ],
+      "params": {
+        "length": 40,
+        "leafThickness": 3,
+        "knuckleDiameter": 7,
+        "pinHole": 3.1,
+        "leafWidth": 15,
+        "screwHoles": 2,
+        "screwHole": 3.4
+      }
+    },
+    {
+      "id": "robot-wheel-60",
+      "name": "Robot wheel 60 mm, 5 mm D-shaft",
+      "generator": "rc-wheel",
+      "description": "Use the knob or gear bore styles for other shafts.",
+      "tags": [
+        "wheel"
+      ],
+      "params": {
+        "diameter": 60,
+        "width": 20,
+        "axleHole": 5.2,
+        "hubDiameter": 14,
+        "hubWidth": 22
+      }
+    }
+  ]
+}

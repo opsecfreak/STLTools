@@ -1,0 +1,14 @@
+{
+  "group": "My presets",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "my-clamp-12-long",
+      "name": "My 12 mm clamp, long plate",
+      "generator": "tube-clamp",
+      "description": "Example custom preset. Copy this file without the leading underscore to use it.",
+      "tags": ["mine"],
+      "params": { "type": "mount", "tubeOD": 12, "length": 30, "mountHolesAlong": 2, "plateWidth": 44, "mountHoleSpacing": 32 }
+    }
+  ]
+}

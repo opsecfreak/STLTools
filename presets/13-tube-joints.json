@@ -1,0 +1,439 @@
+{
+  "group": "Tube Joints, Plugs and Feet",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "joint-straight-10",
+      "name": "Straight coupler, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Straight coupler for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "straight",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-straight-16",
+      "name": "Straight coupler, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Straight coupler for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "straight",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-elbow-10",
+      "name": "Elbow 90 deg, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Elbow 90 deg for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "elbow",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-elbow-16",
+      "name": "Elbow 90 deg, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Elbow 90 deg for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "elbow",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-elbow-120-10",
+      "name": "Elbow 120 deg, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Elbow 120 deg for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "elbow",
+        "tubeOD": 10,
+        "angle": 120,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-elbow-120-16",
+      "name": "Elbow 120 deg, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Elbow 120 deg for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "elbow",
+        "tubeOD": 16,
+        "angle": 120,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-tee-10",
+      "name": "Tee, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Tee for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "tee",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-tee-16",
+      "name": "Tee, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Tee for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "tee",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-cross-10",
+      "name": "Cross, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Cross for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "cross",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-cross-16",
+      "name": "Cross, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Cross for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "cross",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-y-60-10",
+      "name": "Y 60 deg, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Y 60 deg for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "y",
+        "tubeOD": 10,
+        "angle": 60,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-y-60-16",
+      "name": "Y 60 deg, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Y 60 deg for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "y",
+        "tubeOD": 16,
+        "angle": 60,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-radial-6-10",
+      "name": "Radial hub 6 arms, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Radial hub 6 arms for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "radial",
+        "tubeOD": 10,
+        "arms": 6,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-radial-6-16",
+      "name": "Radial hub 6 arms, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Radial hub 6 arms for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "radial",
+        "tubeOD": 16,
+        "arms": 6,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-corner-10",
+      "name": "3-way corner, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "3-way corner for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "corner",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-corner-16",
+      "name": "3-way corner, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "3-way corner for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "corner",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-tee-up-10",
+      "name": "Tee + up, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "Tee + up for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "tee-up",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-tee-up-16",
+      "name": "Tee + up, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "Tee + up for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "tee-up",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-corner-4-10",
+      "name": "4-way, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "4-way for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "corner-4",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-corner-4-16",
+      "name": "4-way, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "4-way for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "corner-4",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "joint-cross-up-10",
+      "name": "5-way, 10 mm tube",
+      "generator": "tube-joint",
+      "description": "5-way for 10 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "cross-up",
+        "tubeOD": 10,
+        "socketDepth": 20,
+        "wall": 2.4
+      }
+    },
+    {
+      "id": "joint-cross-up-16",
+      "name": "5-way, 16 mm tube",
+      "generator": "tube-joint",
+      "description": "5-way for 16 mm tubes.",
+      "tags": [
+        "joint"
+      ],
+      "params": {
+        "type": "cross-up",
+        "tubeOD": 16,
+        "socketDepth": 28,
+        "wall": 3
+      }
+    },
+    {
+      "id": "tube-plug-10x8",
+      "name": "Tube plug 10 x 8 mm",
+      "generator": "tube-cap",
+      "description": "Press-fit plug for a 10 mm OD / 8 mm ID tube.",
+      "tags": [
+        "plug"
+      ],
+      "params": {}
+    },
+    {
+      "id": "tube-plug-16x14-m3",
+      "name": "Tube plug 16 x 14 mm, M3 hole",
+      "generator": "tube-cap",
+      "description": "Plug with a 3.4 mm through hole.",
+      "tags": [
+        "plug"
+      ],
+      "params": {
+        "tubeOD": 16,
+        "tubeID": 14,
+        "centerHole": 3.4,
+        "depth": 12
+      }
+    },
+    {
+      "id": "tube-plug-20x18-insert",
+      "name": "Tube plug 20 x 18 mm, insert hole",
+      "generator": "tube-cap",
+      "description": "Blind 4 mm hole for an M3 heat-set insert. Check your insert size.",
+      "tags": [
+        "plug"
+      ],
+      "params": {
+        "tubeOD": 20,
+        "tubeID": 18,
+        "centerHole": 4,
+        "centerHoleDepth": 8,
+        "depth": 14
+      }
+    },
+    {
+      "id": "tube-cap-10",
+      "name": "Tube end cap 10 mm",
+      "generator": "tube-cap",
+      "description": "Cap over a 10 mm tube.",
+      "tags": [
+        "cap"
+      ],
+      "params": {
+        "type": "cap"
+      }
+    },
+    {
+      "id": "tube-cap-16",
+      "name": "Tube end cap 16 mm",
+      "generator": "tube-cap",
+      "description": "Cap over a 16 mm tube.",
+      "tags": [
+        "cap"
+      ],
+      "params": {
+        "type": "cap",
+        "tubeOD": 16,
+        "tubeID": 14,
+        "depth": 12
+      }
+    },
+    {
+      "id": "tube-foot-10",
+      "name": "Angled foot 10 mm, 15 deg",
+      "generator": "tube-cap",
+      "description": "Foot pad for a 10 mm leg at 15 deg. TPU.",
+      "tags": [
+        "foot"
+      ],
+      "params": {
+        "type": "foot"
+      }
+    },
+    {
+      "id": "tube-foot-16",
+      "name": "Angled foot 16 mm, 20 deg",
+      "generator": "tube-cap",
+      "description": "Foot pad for a 16 mm leg at 20 deg. TPU.",
+      "tags": [
+        "foot"
+      ],
+      "params": {
+        "type": "foot",
+        "tubeOD": 16,
+        "tubeID": 14,
+        "footAngle": 20,
+        "depth": 14,
+        "endThickness": 3
+      }
+    }
+  ]
+}

@@ -5,14 +5,14 @@ const el = (tag, props = {}, ...children) => {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(props)) {
     if (k === 'dataset') Object.assign(n.dataset, v);
-    else if (k.includes('-')) n.setAttribute(k, v); // aria-*, data-*
+    else if (k.includes('-')) n.setAttribute(k, v);
     else n[k] = v;
   }
   for (const c of children) n.append(c);
   return n;
 };
 
-// ---------- api ----------
+// ---------- api / storage ----------
 async function api(method, url, body) {
   const res = await fetch(url, {
     method,
@@ -25,64 +25,54 @@ async function api(method, url, body) {
   return data;
 }
 
-// Per-viewer conveniences only. Shop data lives on the server.
+// Per-viewer conveniences only (last tab, last preset). Shared data lives on the server.
 const store = {
   get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* ignore */ } },
 };
 
+const SECTIONS = ['shop', 'planes', 'quads', 'accessories', 'robotics'];
 const state = {
-  generators: [], presets: [], categories: [], items: [],
-  current: null,       // generator
-  preset: null,        // preset loaded into the form, if any
-  lastResult: null,
-  pendingOverrides: null, // from "Add to shop"
-  editing: null,       // item code being edited
+  tab: 'shop', shopSub: 'design',
+  generators: [], presets: [], categories: [], items: [], designs: [],
+  current: null, preset: null, design: null,
+  lastResult: null, pendingOverrides: null, editing: null,
 };
 
 const viewer = createViewer($('viewer'));
 
-// ---------- output panel ----------
+// ---------- output ----------
 function setStatus(text, isError = false) {
   $('status').textContent = text;
   $('status').classList.toggle('error', isError);
 }
-
-function list(node, items) {
-  node.replaceChildren(...items.map((t) => el('li', { textContent: t })));
-}
+const list = (node, items) => node.replaceChildren(...items.map((t) => el('li', { textContent: t })));
 
 function renderResult(result) {
   state.lastResult = result;
-  const rows = result.parts.map((part) => {
-    const s = part.stats;
-    return el('li', { dataset: { name: part.name } },
-      el('span', { className: 'name', textContent: part.name, title: 'Show only this part', onclick: () => viewer.show([part]) }),
-      el('span', { className: 'stats', textContent: `${s.size.join(' x ')} mm, ${(s.volumeMm3 / 1000).toFixed(1)} cm3` }),
-      el('a', { href: part.url, download: part.filename, textContent: 'Download STL' }));
-  });
-  if (result.parts.length > 1) {
-    rows.push(el('li', {},
-      el('span', { className: 'name', textContent: 'show all', onclick: () => viewer.show(result.parts) }),
-      el('a', { href: '#', textContent: 'Download all', onclick: (e) => { e.preventDefault(); downloadAll(result.parts); } })));
-  }
+  const rows = result.parts.map((part) => el('li', {},
+    el('span', { className: 'name', textContent: part.name, title: 'Show only this part', onclick: () => viewer.show([part]) }),
+    el('span', { className: 'stats', textContent: `${part.stats.size.join(' x ')} mm, ${(part.stats.volumeMm3 / 1000).toFixed(1)} cm3` }),
+    el('a', { href: part.url, download: part.filename, textContent: 'STL' })));
+  if (result.parts.length > 1) rows.push(el('li', {}, el('span', { className: 'name', textContent: 'show all', onclick: () => viewer.show(result.parts) })));
   $('parts').replaceChildren(...rows);
   list($('warnings'), result.warnings);
   list($('notes'), result.notes);
+  $('zipAll').hidden = !result.zip;
+  if (result.zip) $('zipAll').href = result.zip;
 }
 
-function downloadAll(parts) {
-  parts.forEach((p, i) => setTimeout(() => el('a', { href: p.url, download: p.filename }).click(), i * 300));
-}
-
+let runToken = 0;
 async function runAndShow(promise, label) {
+  const token = ++runToken; // ignore results from older requests that finish late
   setStatus(`Generating ${label}...`);
   $('run').disabled = true;
   try {
     const result = await promise;
+    if (token !== runToken) return null;
     renderResult(result);
     await viewer.show(result.parts);
-    setStatus('');
+    setStatus(`${label}: ${result.parts.length} part${result.parts.length > 1 ? 's' : ''}`);
     return result;
   } catch (err) {
     setStatus(err.message, true);
@@ -92,8 +82,9 @@ async function runAndShow(promise, label) {
   }
 }
 
-// ---------- designs tab: form ----------
+// ---------- parameter form ----------
 const fieldId = (key) => `p-${key}`;
+const defaultsOf = (gen) => Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
 
 function buildForm(gen, values) {
   const form = $('params');
@@ -148,40 +139,52 @@ function readForm(gen) {
   return out;
 }
 
-function selectGenerator(id, values = null, preset = null) {
-  state.current = state.generators.find((g) => g.id === id) ?? state.generators[0];
-  state.preset = preset;
+function generatorsForTab() {
+  if ($('allGenerators').checked) return state.generators;
+  return state.generators.filter((g) => g.sections.includes(state.tab));
+}
+
+function fillGeneratorSelect() {
+  const gens = generatorsForTab();
+  $('generator').replaceChildren(...gens.map((g) => el('option', { value: g.id, textContent: g.name })));
+  if (state.current && gens.some((g) => g.id === state.current.id)) $('generator').value = state.current.id;
+}
+
+/** Load a generator into the form. source = { preset } | { design } | null */
+function loadGenerator(id, values = null, source = {}) {
+  state.current = state.generators.find((g) => g.id === id) ?? generatorsForTab()[0];
+  state.preset = source.preset ?? null;
+  state.design = source.design ?? null;
+  if (![...$('generator').options].some((o) => o.value === state.current.id)) {
+    $('generator').append(el('option', { value: state.current.id, textContent: state.current.name }));
+  }
   $('generator').value = state.current.id;
-  $('description').textContent = preset ? `${preset.name}: ${preset.description}` : state.current.description;
-  buildForm(state.current, values ?? store.get(`params:${state.current.id}`));
-  store.set('generator', state.current.id);
+  const what = state.design ? `Saved design "${state.design.name}"` : state.preset ? state.preset.name : state.current.name;
+  $('description').textContent = `${what}: ${state.preset?.description || state.current.description}`;
+  buildForm(state.current, values ?? defaultsOf(state.current));
   highlightPreset();
 }
 
-function loadPreset(preset) {
+function loadPreset(preset, generateNow = true) {
   const gen = state.generators.find((g) => g.id === preset.generator);
-  const values = Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
-  Object.assign(values, preset.params);
-  selectGenerator(gen.id, values, preset);
-  store.set('preset', preset.id);
-  run();
+  loadGenerator(gen.id, { ...defaultsOf(gen), ...preset.params }, { preset });
+  store.set(`preset:${state.tab}`, preset.id);
+  if (generateNow) run();
 }
 
 function run() {
   const params = readForm(state.current);
-  store.set(`params:${state.current.id}`, params);
-  return runAndShow(api('POST', `/api/generate/${state.current.id}`, params), state.current.name);
+  return runAndShow(api('POST', `/api/generate/${state.current.id}`, params), state.design?.name ?? state.preset?.name ?? state.current.name);
 }
 
 /** Form values that differ from the loaded preset (or generator defaults). */
 function overridesFromForm() {
   const gen = state.current;
-  const base = Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
-  if (state.preset) Object.assign(base, state.preset.params);
+  const base = { ...defaultsOf(gen), ...(state.preset?.params ?? {}) };
   const now = readForm(gen);
   const out = {};
   for (const [k, def] of Object.entries(gen.params)) {
-    if (['labelText', 'labelLine2', 'text', 'line2'].includes(k)) continue; // the shop fills these
+    if (['labelText', 'labelLine2', 'text', 'line2'].includes(k)) continue;
     const a = def.type === 'boolean' ? Boolean(now[k]) : String(now[k]);
     const b = def.type === 'boolean' ? Boolean(base[k]) : String(base[k]);
     if (a !== b) out[k] = def.type === 'number' || def.type === 'integer' ? Number(now[k]) : now[k];
@@ -189,18 +192,25 @@ function overridesFromForm() {
   return out;
 }
 
-// ---------- designs tab: preset browser ----------
+// ---------- preset browser ----------
+function presetsForTab() {
+  return state.presets.filter((p) => p.section === state.tab);
+}
+
+function renderPresetGroups() {
+  const groups = [...new Set(presetsForTab().map((p) => p.group))];
+  $('presetGroup').replaceChildren(el('option', { value: '', textContent: 'All groups' }), ...groups.map((g) => el('option', { value: g, textContent: g })));
+}
+
 function renderPresets() {
   const q = $('presetSearch').value.trim().toLowerCase();
   const group = $('presetGroup').value;
-  const items = state.presets.filter((p) => (!group || p.group === group)
-    && (!q || [p.id, p.name, p.description, p.group, ...p.tags].join(' ').toLowerCase().includes(q)));
-  $('presetList').replaceChildren(...items.map((p) => el('li', {
-    dataset: { id: p.id },
-    title: p.description,
-    onclick: () => loadPreset(p),
-  }, el('span', { className: 'pname', textContent: p.name }), el('span', { className: 'pgroup', textContent: p.group }))));
+  const items = presetsForTab().filter((p) => (!group || p.group === group)
+    && (!q || [p.id, p.name, p.description, p.group, p.generator, ...p.tags].join(' ').toLowerCase().includes(q)));
+  $('presetList').replaceChildren(...items.map((p) => el('li', { dataset: { id: p.id }, title: p.description, onclick: () => loadPreset(p) },
+    el('span', { className: 'pname', textContent: p.name }), el('span', { className: 'pgroup', textContent: p.group }))));
   if (!items.length) $('presetList').append(el('li', { className: 'muted', textContent: 'No presets match.' }));
+  $('presetSearch').placeholder = `Search ${presetsForTab().length} presets`;
   highlightPreset();
 }
 
@@ -208,7 +218,159 @@ function highlightPreset() {
   for (const li of $('presetList').children) li.classList.toggle('active', li.dataset.id === state.preset?.id);
 }
 
-// ---------- shop tab ----------
+// ---------- tabs ----------
+function showPane(name) {
+  $('pane-design').hidden = name !== 'design';
+  $('pane-catalog').hidden = name !== 'catalog';
+  $('pane-library').hidden = name !== 'library';
+}
+
+function switchTab(tab, { keepForm = false } = {}) {
+  state.tab = tab;
+  store.set('tab', tab);
+  for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === tab);
+  if (tab === 'library') {
+    showPane('library');
+    refreshDesigns().catch((err) => setStatus(err.message, true));
+    return;
+  }
+  $('presetSearch').value = '';
+  $('shopSwitch').hidden = tab !== 'shop';
+  showPane(tab === 'shop' && state.shopSub === 'catalog' ? 'catalog' : 'design');
+  if (tab === 'shop' && state.shopSub === 'catalog') refreshShop().catch((err) => setStatus(err.message, true));
+  fillGeneratorSelect();
+  renderPresetGroups();
+  renderPresets();
+  if (!keepForm) {
+    const last = state.presets.find((p) => p.id === store.get(`preset:${tab}`) && p.section === tab);
+    const first = last ?? presetsForTab()[0];
+    if (first) loadPreset(first);
+    else loadGenerator(generatorsForTab()[0].id);
+  }
+}
+
+function switchShopSub(sub) {
+  state.shopSub = sub;
+  for (const b of document.querySelectorAll('.subtab')) b.classList.toggle('active', b.dataset.sub === sub);
+  showPane(sub === 'catalog' ? 'catalog' : 'design');
+  if (sub === 'catalog') refreshShop().catch((err) => setStatus(err.message, true));
+}
+
+// ---------- files: params import/export, local STL viewing ----------
+function downloadJson(obj, filename) {
+  const a = el('a', { href: URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2) + '\n'], { type: 'application/json' })), download: filename });
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function exportParams() {
+  downloadJson({ generator: state.current.id, params: readForm(state.current) }, `${state.design?.id ?? state.preset?.id ?? state.current.id}.params.json`);
+}
+
+let importTarget = 'form';
+async function onParamsFile(e) {
+  const file = e.target.files[0];
+  e.target.value = '';
+  if (!file) return;
+  try {
+    const data = JSON.parse(await file.text());
+    const entries = Array.isArray(data) ? data : [data];
+    if (importTarget === 'library') {
+      for (const d of entries) await api('POST', '/api/designs', { name: d.name ?? file.name.replace(/\.(params\.)?json$/, ''), generator: d.generator, params: d.params, section: d.section, notes: d.notes });
+      await refreshDesigns();
+      setStatus(`Imported ${entries.length} design(s).`);
+    } else {
+      const d = entries[0];
+      const gen = state.generators.find((g) => g.id === d.generator);
+      if (!gen) throw new Error(`Unknown generator "${d.generator}" in ${file.name}`);
+      loadGenerator(gen.id, { ...defaultsOf(gen), ...d.params });
+      $('description').textContent = `Imported ${file.name}`;
+      run();
+    }
+  } catch (err) {
+    setStatus(`Import failed: ${err.message}`, true);
+  }
+}
+
+async function onStlFiles(e) {
+  const files = [...e.target.files];
+  e.target.value = '';
+  if (!files.length) return;
+  try {
+    const parts = [];
+    for (const f of files) parts.push({ name: f.name, geometry: viewer.parse(await f.arrayBuffer()) });
+    await viewer.show(parts);
+    $('parts').replaceChildren(...parts.map((p) => el('li', {}, el('span', { className: 'name', textContent: p.name }), el('span', { className: 'stats', textContent: 'local file (view only)' }))));
+    list($('warnings'), []);
+    list($('notes'), ['Viewing local STL files. They are not uploaded.']);
+    $('zipAll').hidden = true;
+    setStatus(`Viewing ${files.length} file(s)`);
+  } catch (err) {
+    setStatus(`Could not read STL: ${err.message}`, true);
+  }
+}
+
+// ---------- My Designs ----------
+const sectionName = { shop: 'Shop', planes: 'Planes', quads: 'Quadcopters', accessories: 'Accessories', robotics: 'Robotics' };
+
+async function refreshDesigns() {
+  state.designs = await api('GET', '/api/designs');
+  renderDesigns();
+}
+
+function renderDesigns() {
+  const q = $('librarySearch').value.trim().toLowerCase();
+  const items = state.designs.filter((d) => !q || [d.name, d.generator, d.section, d.notes].join(' ').toLowerCase().includes(q));
+  const genName = (id) => state.generators.find((g) => g.id === id)?.name ?? id;
+  const rows = items.map((d) => el('li', {},
+    el('div', { className: 'info' },
+      el('strong', { textContent: d.name }),
+      el('div', { className: 'muted', textContent: `${genName(d.generator)} / ${sectionName[d.section] ?? d.section} / ${new Date(d.updatedAt).toLocaleString()}` })),
+    el('div', { className: 'btns' },
+      el('button', { type: 'button', textContent: 'Load', onclick: () => openDesign(d) }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Make', onclick: () => runAndShow(api('POST', `/api/generate/${d.generator}`, d.params), d.name) }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Rename', onclick: () => renameDesign(d) }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Export', onclick: () => downloadJson({ name: d.name, generator: d.generator, section: d.section, params: d.params, notes: d.notes }, `${d.id}.params.json`) }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Delete', onclick: () => deleteDesign(d) }))));
+  if (!rows.length) rows.push(el('li', { className: 'muted empty', textContent: state.designs.length ? 'No saved designs match.' : 'No saved designs yet. Press "Save design" in any tab.' }));
+  $('designList').replaceChildren(...rows);
+}
+
+function openDesign(d) {
+  const tab = SECTIONS.includes(d.section) ? d.section : 'shop';
+  state.shopSub = 'design';
+  switchTab(tab, { keepForm: true });
+  const gen = state.generators.find((g) => g.id === d.generator);
+  loadGenerator(gen.id, { ...defaultsOf(gen), ...d.params }, { design: d, preset: state.presets.find((p) => p.id === d.presetId) });
+  run();
+}
+
+async function saveDesign() {
+  const suggested = state.design?.name ?? state.preset?.name ?? state.current.name;
+  const name = prompt(state.design ? 'Save changes as (keep the name to overwrite):' : 'Name for this design:', suggested);
+  if (!name) return;
+  const body = { name, generator: state.current.id, params: readForm(state.current), section: state.tab, presetId: state.preset?.id ?? null };
+  try {
+    const saved = state.design && name === state.design.name
+      ? await api('PUT', `/api/designs/${state.design.id}`, body)
+      : await api('POST', '/api/designs', body);
+    state.design = saved;
+    setStatus(`Saved "${saved.name}" to My Designs.`);
+  } catch (err) { setStatus(err.message, true); }
+}
+
+async function renameDesign(d) {
+  const name = prompt('New name:', d.name);
+  if (!name || name === d.name) return;
+  try { await api('PUT', `/api/designs/${d.id}`, { name }); await refreshDesigns(); } catch (err) { alert(err.message); }
+}
+
+async function deleteDesign(d) {
+  if (!confirm(`Delete saved design "${d.name}"? This cannot be undone.`)) return;
+  try { await api('DELETE', `/api/designs/${d.id}`); await refreshDesigns(); } catch (err) { alert(err.message); }
+}
+
+// ---------- shop catalog ----------
 const catByCode = (code) => state.categories.find((c) => c.code === code);
 const presetById = (id) => state.presets.find((p) => p.id === id);
 
@@ -216,15 +378,15 @@ function presetOptions(select, selected) {
   select.replaceChildren();
   const groups = new Map();
   for (const p of state.presets) {
-    if (!groups.has(p.group)) groups.set(p.group, el('optgroup', { label: p.group }));
-    groups.get(p.group).append(el('option', { value: p.id, textContent: p.name, selected: p.id === selected }));
+    const label = `${sectionName[p.section]}: ${p.group}`;
+    if (!groups.has(label)) groups.set(label, el('optgroup', { label }));
+    groups.get(label).append(el('option', { value: p.id, textContent: p.name, selected: p.id === selected }));
   }
   select.append(...groups.values());
 }
 
 function categoryOptions() {
-  const opts = state.categories.map((c) => el('option', { value: c.code, textContent: `${c.code}  ${c.name}` }));
-  $('itemCategory').replaceChildren(...opts);
+  $('itemCategory').replaceChildren(...state.categories.map((c) => el('option', { value: c.code, textContent: `${c.code}  ${c.name}` })));
   const filter = $('shopFilter').value;
   $('shopFilter').replaceChildren(el('option', { value: '', textContent: 'All categories' }),
     ...state.categories.map((c) => el('option', { value: c.code, textContent: `${c.code}  ${c.name} (${state.items.filter((i) => i.category === c.code).length})` })));
@@ -238,15 +400,14 @@ function renderItems() {
     .filter((i) => (!cat || i.category === cat) && (!q || [i.code, i.name, i.location, i.notes].join(' ').toLowerCase().includes(q)))
     .sort((a, b) => a.code.localeCompare(b.code));
   const rows = items.map((item) => {
-    const c = catByCode(item.category);
     const preset = presetById(item.presetId);
-    return el('li', { style: `--cat:${c?.color ?? '#888'}` },
+    return el('li', { style: `--cat:${catByCode(item.category)?.color ?? '#888'}` },
       el('input', { type: 'checkbox', className: 'pick', value: item.code, title: 'Include in paper labels' }),
       el('div', { className: 'info' },
         el('div', {}, el('strong', { textContent: item.code }), document.createTextNode(`  ${item.name}`)),
         el('div', { className: 'muted', textContent: [preset?.name ?? item.presetId, item.location && `at ${item.location}`, Object.keys(item.overrides ?? {}).length ? 'custom' : ''].filter(Boolean).join(' / ') })),
       el('div', { className: 'btns' },
-        el('button', { type: 'button', textContent: 'Make', onclick: () => makeItem(item) }),
+        el('button', { type: 'button', textContent: 'Make', onclick: () => runAndShow(api('POST', `/api/catalog/${item.code}/generate`), item.code) }),
         el('button', { type: 'button', className: 'secondary', textContent: 'Edit', onclick: () => editItem(item) }),
         el('button', { type: 'button', className: 'secondary', textContent: 'Delete', onclick: () => deleteItem(item) })));
   });
@@ -260,10 +421,6 @@ async function refreshShop() {
   renderItems();
 }
 
-function makeItem(item) {
-  return runAndShow(api('POST', `/api/catalog/${item.code}/generate`), item.code);
-}
-
 function resetItemForm() {
   state.editing = null;
   state.pendingOverrides = null;
@@ -272,14 +429,13 @@ function resetItemForm() {
   $('itemSave').textContent = 'Add item';
   $('itemCancel').hidden = true;
   $('itemCategory').disabled = false;
-  presetOptions($('itemPreset'), store.get('preset') ?? 'bin-s-100x150');
+  presetOptions($('itemPreset'), store.get('preset:shop') ?? 'bin-s-100x150');
   showOverrides();
 }
 
 function showOverrides() {
   const o = state.pendingOverrides ?? (state.editing ? state.items.find((i) => i.code === state.editing)?.overrides : null) ?? {};
-  const n = Object.keys(o).length;
-  $('itemOverrides').textContent = n ? `Custom settings on top of the design: ${Object.entries(o).map(([k, v]) => `${k}=${v}`).join(', ')}` : '';
+  $('itemOverrides').textContent = Object.keys(o).length ? `Custom settings on top of the design: ${Object.entries(o).map(([k, v]) => `${k}=${v}`).join(', ')}` : '';
 }
 
 function editItem(item) {
@@ -289,7 +445,7 @@ function editItem(item) {
   $('itemSave').textContent = 'Save changes';
   $('itemCancel').hidden = false;
   $('itemCategory').value = item.category;
-  $('itemCategory').disabled = true; // the code depends on the category
+  $('itemCategory').disabled = true;
   $('itemName').value = item.name;
   $('itemLocation').value = item.location ?? '';
   $('itemNotes').value = item.notes ?? '';
@@ -300,50 +456,40 @@ function editItem(item) {
 
 async function deleteItem(item) {
   if (!confirm(`Delete ${item.code} ${item.name}? This cannot be undone.`)) return;
-  try {
-    await api('DELETE', `/api/catalog/${item.code}`);
-    await refreshShop();
-  } catch (err) { alert(err.message); }
+  try { await api('DELETE', `/api/catalog/${item.code}`); await refreshShop(); } catch (err) { alert(err.message); }
 }
 
 async function saveItem(e) {
   e.preventDefault();
-  const body = {
-    category: $('itemCategory').value,
-    name: $('itemName').value,
-    location: $('itemLocation').value,
-    presetId: $('itemPreset').value,
-    notes: $('itemNotes').value,
-  };
+  const body = { category: $('itemCategory').value, name: $('itemName').value, location: $('itemLocation').value, presetId: $('itemPreset').value, notes: $('itemNotes').value };
   if (state.pendingOverrides) body.overrides = state.pendingOverrides;
   else if (!state.editing) body.overrides = {};
   try {
-    const item = state.editing
-      ? await api('PUT', `/api/catalog/${state.editing}`, body)
-      : await api('POST', '/api/catalog', body);
+    const item = state.editing ? await api('PUT', `/api/catalog/${state.editing}`, body) : await api('POST', '/api/catalog', body);
     resetItemForm();
     await refreshShop();
-    await makeItem(item);
+    await runAndShow(api('POST', `/api/catalog/${item.code}/generate`), item.code);
   } catch (err) { alert(err.message); }
 }
 
 function sendToShop() {
-  const preset = state.preset;
-  if (!preset) {
-    alert('Load a preset first (shop items are built from presets). Pick the closest preset, change values, then press Add to shop.');
+  if (!state.preset) {
+    alert('Shop items are built from presets. Load the closest preset, change values, then press Add to shop.');
     return;
   }
-  switchTab('shop');
+  const preset = state.preset;
+  const overrides = overridesFromForm();
+  const labelGuess = $(fieldId('labelText'))?.value || $(fieldId('text'))?.value || '';
+  if (state.tab !== 'shop') switchTab('shop', { keepForm: true });
+  switchShopSub('catalog');
   resetItemForm();
   presetOptions($('itemPreset'), preset.id);
-  state.pendingOverrides = overridesFromForm();
+  state.pendingOverrides = overrides;
   showOverrides();
-  const labelGuess = $(fieldId('labelText'))?.value || $(fieldId('text'))?.value || '';
   $('itemName').value = labelGuess;
   $('itemName').focus();
 }
 
-// categories editor
 function catRow(c = { code: '', name: '', color: '#6e7781' }) {
   return el('div', { className: 'cat-row' },
     el('input', { className: 'code', value: c.code, maxLength: 5, placeholder: 'CODE', 'aria-label': 'Code' }),
@@ -352,70 +498,52 @@ function catRow(c = { code: '', name: '', color: '#6e7781' }) {
     el('button', { type: 'button', className: 'secondary', textContent: 'x', title: 'Remove', onclick: (e) => e.target.parentElement.remove() }));
 }
 
-function openCategories() {
-  $('catRows').replaceChildren(...state.categories.map(catRow));
-  $('catForm').hidden = false;
-  $('catForm').scrollIntoView({ behavior: 'smooth' });
-}
-
 async function saveCategories(e) {
   e.preventDefault();
-  const list = [...$('catRows').children].map((r) => ({
-    code: r.querySelector('.code').value, name: r.querySelector('.cname').value, color: r.querySelector('.color').value,
-  })).filter((c) => c.code.trim());
-  try {
-    await api('PUT', '/api/categories', list);
-    $('catForm').hidden = true;
-    await refreshShop();
-  } catch (err) { alert(err.message); }
+  const rows = [...$('catRows').children].map((r) => ({ code: r.querySelector('.code').value, name: r.querySelector('.cname').value, color: r.querySelector('.color').value })).filter((c) => c.code.trim());
+  try { await api('PUT', '/api/categories', rows); $('catForm').hidden = true; await refreshShop(); } catch (err) { alert(err.message); }
 }
 
-function printLabels() {
-  const picked = [...document.querySelectorAll('#itemList .pick:checked')].map((c) => c.value);
-  window.open(`/labels.html${picked.length ? `?codes=${encodeURIComponent(picked.join(','))}` : ''}`, '_blank');
-}
-
-// ---------- tabs ----------
-function switchTab(name) {
-  for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === name);
-  $('tab-designs').hidden = name !== 'designs';
-  $('tab-shop').hidden = name !== 'shop';
-  store.set('tab', name);
-  if (name === 'shop') refreshShop().catch((err) => setStatus(err.message, true));
-}
-
-// ---------- init ----------
+// ---------- wire up ----------
 $('run').onclick = run;
-$('reset').onclick = () => buildForm(state.current, state.preset ? { ...state.preset.params } : null);
-$('saveParams').onclick = () => {
-  const body = JSON.stringify({ generator: state.current.id, params: readForm(state.current) }, null, 2);
-  const a = el('a', { href: URL.createObjectURL(new Blob([body + '\n'], { type: 'application/json' })), download: `${state.preset?.id ?? state.current.id}.params.json` });
-  a.click();
-  URL.revokeObjectURL(a.href);
-};
+$('reset').onclick = () => buildForm(state.current, { ...defaultsOf(state.current), ...(state.preset?.params ?? {}), ...(state.design?.params ?? {}) });
+$('saveDesign').onclick = saveDesign;
+$('saveParams').onclick = exportParams;
+$('openParams').onclick = () => { importTarget = 'form'; $('fileParams').click(); };
+$('libraryImport').onclick = () => { importTarget = 'library'; $('fileParams').click(); };
+$('fileParams').onchange = onParamsFile;
+$('openStl').onclick = () => $('fileStl').click();
+$('fileStl').onchange = onStlFiles;
 $('toShop').onclick = sendToShop;
-$('generator').onchange = () => selectGenerator($('generator').value);
+$('generator').onchange = () => loadGenerator($('generator').value);
+$('allGenerators').onchange = fillGeneratorSelect;
 $('params').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); run(); } };
 $('presetSearch').oninput = renderPresets;
 $('presetGroup').onchange = renderPresets;
+$('librarySearch').oninput = renderDesigns;
 $('shopFilter').onchange = renderItems;
 $('shopSearch').oninput = renderItems;
 $('itemForm').onsubmit = saveItem;
 $('itemCancel').onclick = resetItemForm;
-$('editCategories').onclick = openCategories;
+$('editCategories').onclick = () => { $('catRows').replaceChildren(...state.categories.map(catRow)); $('catForm').hidden = false; $('catForm').scrollIntoView({ behavior: 'smooth' }); };
 $('catAdd').onclick = () => $('catRows').append(catRow());
 $('catClose').onclick = () => { $('catForm').hidden = true; };
 $('catForm').onsubmit = saveCategories;
-$('printLabels').onclick = printLabels;
+$('printLabels').onclick = () => {
+  const picked = [...document.querySelectorAll('#itemList .pick:checked')].map((c) => c.value);
+  window.open(`/labels.html${picked.length ? `?codes=${encodeURIComponent(picked.join(','))}` : ''}`, '_blank');
+};
 for (const b of document.querySelectorAll('.tab')) b.onclick = () => switchTab(b.dataset.tab);
+for (const b of document.querySelectorAll('.subtab')) b.onclick = () => switchShopSub(b.dataset.sub);
 
-[state.generators, state.presets] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets')]);
-$('generator').append(...state.generators.map((g) => el('option', { value: g.id, textContent: g.name })));
-$('presetGroup').append(...[...new Set(state.presets.map((p) => p.group))].map((g) => el('option', { value: g, textContent: g })));
-renderPresets();
+let version;
+[state.generators, state.presets, version] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets'), api('GET', '/api/version')]);
+$('appVersion').textContent = `v${version.version} / ${version.generators} generators / ${version.presets} presets`;
+if (version.issues.length) {
+  const badge = el('button', { type: 'button', className: 'issues small', textContent: `${version.issues.length} custom file problem${version.issues.length > 1 ? 's' : ''}`, title: 'Custom generators or presets that were skipped' });
+  badge.onclick = () => { list($('warnings'), version.issues.map((i) => `Skipped: ${i}`)); };
+  $('appVersion').after(badge);
+}
 resetItemForm();
-
-const lastPreset = state.presets.find((p) => p.id === store.get('preset'));
-if (lastPreset) loadPreset(lastPreset);
-else loadPreset(state.presets[0]);
-if (store.get('tab') === 'shop') switchTab('shop');
+const startTab = store.get('tab');
+switchTab([...SECTIONS, 'library'].includes(startTab) ? startTab : 'shop');

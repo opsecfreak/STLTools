@@ -1,0 +1,45 @@
+name: Release
+
+# Push a tag like v0.4.0 to build every desktop / Pi package and publish a GitHub release.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to (re)build, e.g. v0.4.0'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - name: Check tag matches package.json version
+        run: |
+          TAG="${{ github.event.inputs.tag || github.ref_name }}"
+          VER="v$(node -p "require('./package.json').version")"
+          if [ "$TAG" != "$VER" ]; then echo "Tag $TAG does not match package.json $VER"; exit 1; fi
+      - name: Build packages
+        run: node scripts/package.mjs
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ github.event.inputs.tag || github.ref_name }}"
+          VER="$(node -p "require('./package.json').version")"
+          gh release delete "$TAG" --yes --cleanup-tag=false 2>/dev/null || true
+          gh release create "$TAG" dist/*.zip dist/*.tar.gz dist/SHA256SUMS.txt \
+            --title "STL Tools $TAG" \
+            --notes-file dist/RELEASE_NOTES.md

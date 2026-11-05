@@ -4,6 +4,7 @@
 export default {
   id: 'parts-box',
   name: 'Parts Box',
+  sections: ['shop'],
   description: 'Rounded storage box with a grid of compartments and an optional press-fit lid. Prints without supports.',
   params: {
     width: { type: 'number', default: 120, min: 10, max: 400, step: 1, unit: 'mm', label: 'Outer width (X)', group: 'Box' },

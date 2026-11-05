@@ -8,7 +8,7 @@ import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getPreset } from './presets.js';
-import { getGenerator, generate } from './registry.js';
+import { getGenerator, generate, migrateInput } from './registry.js';
 import { resolveParams } from './params.js';
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
@@ -188,7 +188,7 @@ export function createCatalog({ dataDir = process.env.STLTOOLS_DATA ?? join(ROOT
     async resolve(item) {
       const preset = checkPreset(item.presetId);
       const g = getGenerator(preset.generator);
-      const params = { ...preset.params, ...item.overrides };
+      const params = migrateInput(g, { ...preset.params, ...item.overrides });
       const [line1, line2] = this.labelLines(item);
       if ('labelText' in g.params) { params.labelText = line1; params.labelLine2 = line2; }
       if (g.id === 'label-card') { params.text = line1; params.line2 = line2; }
