@@ -15,19 +15,21 @@ export default {
 };
 ```
 
-Register it in [`src/core/registry.js`](../core/registry.js).
+Register it in [`src/core/registry.js`](../core/registry.js). Set `sections` (tabs it appears in) and, if you rename parameters later, a `migrate(input)` function that converts old saved files (see `rc-wing.js`).
 
-## Generators
+## Files
 
-| File | Print orientation | Notes |
-|------|-------------------|-------|
-| `stack-bin.js` | Upright | Stepped foot with a 45 deg chamfer. Dividers stop below the foot of the bin on top. |
-| `parts-box.js` | Upright, lid plate-down | Lid lip fits inside the walls with `clearance` per side. |
-| `holder-block.js` | Upright | Pockets are item size + clearance. Entry chamfer by scaled extrusion. |
-| `hook.js` | On its side | Outline is drawn in the Y/Z plane and extruded along X, then rotated so X is print Z. |
-| `tool-rack.js` | Upright, shelf on bed | Diamond pegboard pegs (45 deg overhang only). |
-| `label-card.js` | Flat | Text margin 2.6 mm keeps text inside the slot window. |
-| `rc-wing.js` | Root face down | Root airfoil extruded, then each vertex warped for taper, sweep and twist. |
+| File | Generators | Print orientation |
+|------|-----------|-------------------|
+| `stack-bin.js`, `parts-box.js`, `holder-block.js`, `label-card.js` | Shop storage | Upright / flat |
+| `hook.js`, `tool-rack.js` | Shop hooks and racks | Hook on its side, rack upright |
+| `rc-wing.js` | Wings and tails with control surfaces and servo pocket | Root face down |
+| `plane-parts.js` | control-horn, servo-mount, pin-hinge, firewall-mount, fuselage-former, rc-wheel | Flat / base down |
+| `quad-parts.js` | multirotor-frame, motor-mount, prop-guard, landing-leg | Flat / motor side down / mount down |
+| `tube-clamp.js` | Clamps: split, mount, saddle, parallel, cross | Tube A vertical |
+| `tube-joint.js`, `tube-cap.js` | Joints, plugs, caps, feet | Flat-bottom sockets / end down |
+| `spacer.js`, `gps-mast.js`, `small-mounts.js`, `fc-parts.js` | Hardware, GPS, antenna, zip-tie, cameras, panels, FC adapter, grommets, dampers | Upright / plate down |
+| `robotics.js` | gear, pulley, stepper-mount, bearing-block, shaft-coupler, link-bar, knob, enclosure | Flat / base down |
 
 ## Parameter schema
 
@@ -62,13 +64,19 @@ From [`src/core/kernel.js`](../core/kernel.js). Every object made through `k` is
 | `loftConvex(csA, zA, csB, zB)` | Convex loft (chamfers) |
 | `union`, `difference`, `intersect`, `hull` | Booleans |
 | `translate`, `rotate`, `mirror`, `placeOnBed` | Transforms |
+| `cylZ`, `coneZ`, `hexZ` | Cylinder, cone, hex prism along Z |
+| `holeX`, `holeY` | Horizontal teardrop holes (print without support) |
+| `dropToBed` | Move to Z = 0 without re-centering X/Y |
 
-Helpers: `teardrop(r)` for horizontal holes, `regularPolygon(r, n)`.
+Helpers: `teardrop(r)`, `regularPolygon(r, n)` in `kernel.js`; bolt sizes (`BOLTS`, `boltParam`, `bolt`) and hole patterns (`squarePattern`, `crossPattern`, `circlePattern`, `rotate2d`) in [`src/core/hardware.js`](../core/hardware.js).
 
 ## Rules
 
 1. Put each part on the bed (min Z = 0) in the orientation it should print.
 2. No supports. Overhangs at 45 deg or less, teardrop horizontal holes, chamfers under ledges.
 3. Overlap solids you union. Do not let them touch only along an edge or at a point, and do not stack thin 0.01 mm slabs: both leave edges that break after STL rounding.
-4. Report problems in `warnings` and print tips in `notes`. Do not throw for fixable inputs.
-5. Add a test in `test/generators.test.js`. `npm test` also generates every preset and checks every mesh.
+4. Avoid tangent surfaces: a round hub exactly as wide as a flat socket, or a cone that reaches a plane exactly at a vertex. Make one 0.3-0.5 mm bigger or smaller so the surfaces cross.
+5. When a round cutter meets a faceted outline, use an odd segment count (for example 101) so edges never line up.
+6. Build a hole and its countersink (or any two cutters on one axis) as one convex hull, not two touching solids.
+7. Report problems in `warnings` and print tips in `notes`. Do not throw for fixable inputs.
+8. Add presets. `npm test` generates every preset and every select option of every generator and checks each mesh.

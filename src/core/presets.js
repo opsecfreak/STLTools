@@ -5,7 +5,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getGenerator } from './registry.js';
+import { getGenerator, migrateInput } from './registry.js';
 import { resolveParams } from './params.js';
 
 const PRESET_DIR = join(dirname(dirname(dirname(fileURLToPath(import.meta.url)))), 'presets');
@@ -23,11 +23,12 @@ function load() {
       seen.add(p.id);
       const g = getGenerator(p.generator);
       try {
+        p.params = migrateInput(g, p.params);
         resolveParams(g.params, p.params);
       } catch (err) {
         throw new Error(`Preset "${p.id}" in ${file}: ${err.message}`);
       }
-      presets.push({ ...p, group: data.group, tags: p.tags ?? [] });
+      presets.push({ ...p, group: data.group, section: p.section ?? data.section ?? 'shop', tags: p.tags ?? [] });
     }
   }
   return presets;

@@ -95,6 +95,38 @@ export function createScope() {
       return t(m.rotate(degrees));
     },
 
+    /** Cylinder along Z at (x, y) from z0 to z1. */
+    cylZ(r, x, y, z0, z1, segments = 48) {
+      return t(t(Manifold.cylinder(z1 - z0, r, r, segments)).translate([x, y, z0]));
+    },
+
+    /** Cone / frustum along Z at (x, y): radius r0 at z0, r1 at z1. */
+    coneZ(r0, r1, x, y, z0, z1, segments = 48) {
+      return t(t(Manifold.cylinder(z1 - z0, r0, r1, segments)).translate([x, y, z0]));
+    },
+
+    /** Hex prism along Z, size across flats, flats facing +/-Y. */
+    hexZ(af, x, y, z0, z1, rotDeg = 0) {
+      const R = af / Math.sqrt(3);
+      return k.prismZ(regularPolygon(R, 6, rotDeg).map(([a, b]) => [a + x, b + y]), z0, z1);
+    },
+
+    /** Horizontal hole along X (teardrop, point up so it prints without support). */
+    holeX(r, y, z, x0, x1, segments = 32) {
+      return k.prismX(teardrop(r, segments).map(([u, v]) => [y + v, z + u]), x0, x1);
+    },
+
+    /** Horizontal hole along Y (teardrop, point up). */
+    holeY(r, x, z, y0, y1, segments = 32) {
+      return k.prismY(teardrop(r, segments).map(([u, v]) => [x + v, z + u]), y0, y1);
+    },
+
+    /** Drop onto the bed (min Z = 0) without moving X/Y. */
+    dropToBed(m) {
+      const { min } = m.boundingBox();
+      return t(m.translate([0, 0, -min[2]]));
+    },
+
     /** Center on X/Y and drop onto the bed (min Z = 0). */
     placeOnBed(m) {
       const { min, max } = m.boundingBox();

@@ -1,5 +1,6 @@
 {
   "group": "Drone Parts",
+  "section": "shop",
   "presets": [
     {
       "id": "drone-props-3in",

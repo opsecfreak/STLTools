@@ -23,6 +23,7 @@ function bar(y0, z0, aDeg, L, t) {
 export default {
   id: 'hook',
   name: 'Hook',
+  sections: ['shop'],
   description: 'J hook, angled hook, double coat-style hook or wide cradle for cables and gear. Pegboard, screw or tape mount. Prints on its side, no supports.',
   params: {
     style: {

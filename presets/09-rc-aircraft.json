@@ -1,53 +1,65 @@
 {
-  "group": "RC Aircraft",
+  "group": "Wings and Tails",
+  "section": "planes",
   "presets": [
     {
       "id": "rc-wing-trainer-1200",
-      "name": "Trainer wing 1200 mm span (half)",
+      "name": "Trainer wing 1200 mm span",
       "generator": "rc-wing",
-      "description": "NACA 2412, 200 to 150 mm chord, 2 deg washout, 3 sections.",
+      "description": "NACA 2412, 200 to 150 mm chord, 2 deg washout, 3 sections. Aileron and 9 g servo pocket included; adjust in Control surface / Servo.",
       "tags": [
         "wing"
       ],
       "params": {
         "airfoil": "2412",
-        "halfSpan": 600,
         "rootChord": 200,
         "tipChord": 150,
-        "washout": 2
+        "washout": 2,
+        "wingspan": 1200,
+        "surfaceStart": 300,
+        "surfaceLength": 280,
+        "servoPosition": 260
       }
     },
     {
       "id": "rc-wing-sport-1000",
-      "name": "Sport / aerobatic wing 1000 mm span (half)",
+      "name": "Sport / aerobatic wing 1000 mm span",
       "generator": "rc-wing",
-      "description": "NACA 0012 symmetric, 180 to 130 mm chord.",
+      "description": "NACA 0012 symmetric, 180 to 130 mm chord. Aileron and 9 g servo pocket included; adjust in Control surface / Servo.",
       "tags": [
         "wing"
       ],
       "params": {
         "airfoil": "0012",
-        "halfSpan": 500,
         "rootChord": 180,
         "tipChord": 130,
-        "sparDiameter": 6.2
+        "sparDiameter": 6.2,
+        "wingspan": 1000,
+        "surfaceStart": 150,
+        "surfaceLength": 330,
+        "servoPosition": 120,
+        "servoChordPos": 45
       }
     },
     {
       "id": "rc-wing-glider-1600",
-      "name": "Glider wing 1600 mm span (half)",
+      "name": "Glider wing 1600 mm span",
       "generator": "rc-wing",
-      "description": "NACA 4412, high lift, 170 to 110 mm chord, 3 deg washout.",
+      "description": "NACA 4412, high lift, 170 to 110 mm chord, 3 deg washout. Aileron and 9 g servo pocket included; adjust in Control surface / Servo.",
       "tags": [
         "wing"
       ],
       "params": {
         "airfoil": "4412",
-        "halfSpan": 800,
         "rootChord": 170,
         "tipChord": 110,
         "washout": 3,
-        "sparDiameter": 6.2
+        "sparDiameter": 6.2,
+        "wingspan": 1600,
+        "surfaceStart": 450,
+        "surfaceLength": 330,
+        "servoPosition": 400,
+        "servoDepth": 10
       }
     }
   ]

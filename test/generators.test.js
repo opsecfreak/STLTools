@@ -50,7 +50,7 @@ test('parts-box: warns when dividers hit the lid lip', async () => {
 
 test('rc-wing: splits into sections that fit the printer', async () => {
   const r = await generate('rc-wing', { halfSpan: 500, maxSectionHeight: 180 });
-  assert.equal(r.parts.length, 3);
+  assert.equal(r.parts.filter((pt) => pt.name.includes('section')).length, 3);
   for (const part of r.parts) {
     const s = assertPrintable(part);
     assert.ok(s.size[2] <= 180 + 1e-6, `${part.name} is ${s.size[2]} mm tall`);
@@ -58,7 +58,7 @@ test('rc-wing: splits into sections that fit the printer', async () => {
 });
 
 test('rc-wing: root chord and thickness match the airfoil', async () => {
-  const r = await generate('rc-wing', { airfoil: '0012', rootChord: 200, tipChord: 200, halfSpan: 100, sparDiameter: 0, rearSparDiameter: 0 });
+  const r = await generate('rc-wing', { airfoil: '0012', rootChord: 200, tipChord: 200, halfSpan: 100, sparDiameter: 0, rearSparDiameter: 0, controlSurface: 'none', servoBay: false });
   const s = assertPrintable(r.parts[0]);
   near(s.size[0], 200, 0.5, 'chord');
   near(s.size[1], 0.12 * 200, 0.3, 'max thickness of NACA 0012');
@@ -74,8 +74,8 @@ test('rc-wing: root chord and thickness match the airfoil', async () => {
 });
 
 test('rc-wing: spar holes remove material and mirrored side is produced', async () => {
-  const solid = await generate('rc-wing', { sparDiameter: 0, rearSparDiameter: 0, halfSpan: 200 });
-  const holed = await generate('rc-wing', { sparDiameter: 8, rearSparDiameter: 0, sparLength: 100, halfSpan: 200, bothSides: true });
+  const solid = await generate('rc-wing', { sparDiameter: 0, rearSparDiameter: 0, halfSpan: 200, controlSurface: 'none', servoBay: false });
+  const holed = await generate('rc-wing', { sparDiameter: 8, rearSparDiameter: 0, sparLength: 100, halfSpan: 200, bothSides: true, controlSurface: 'none', servoBay: false });
   const removed = meshStats(solid.parts[0].mesh).volumeMm3 - meshStats(holed.parts[0].mesh).volumeMm3;
   near(removed, Math.PI * 16 * 200, 60, 'spar hole volume');
   assert.deepEqual(holed.parts.map((p) => p.name), ['right-section1', 'left-section1']);

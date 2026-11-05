@@ -1,5 +1,11 @@
 # Changelog
 
+## v3 (0.3.0) - 2026-11-05
+
+Changed: tabs for Shop, Planes, Quadcopters, Accessories, Robotics, My Designs. 31 new generators (38 total): tube clamps (5 types), tube joints (10 types), plugs / caps / feet, spacers, GPS mast, antenna, zip-tie, camera cage, action-cam, connector panel, FC adapter, TPU grommets, damper plates, multirotor frame, tube motor mount, prop guard, landing leg, control horn, servo mount, pin hinge, firewall mount, former, wheel, gear / rack, pulley, NEMA stepper mount, bearing block, shaft coupler, link bar, knob, enclosure. Wing: total wingspan input, ailerons / elevator / rudder cut as separate parts, servo pocket and wire channel. 152 new presets (234 total). Saved designs on the server (My Designs), params import/export, local STL viewer, ZIP download. Printer / slicer plan in docs/PRINTERS.md.
+Fixed: tangent and edge-aligned surfaces that left slivers in the STL (tube joint hub, motor mount, knob chamfer). Old saves with `halfSpan` convert to `wingspan` automatically.
+Untested: physical prints of the new parts. Clamp grip, joint fit, gear mesh, GT2 belt fit, bearing press fit and aileron throw need test prints. Breaking: `rc-wing` parameter `halfSpan` is now `wingspan` (old files still load).
+
 ## v2.1 (0.2.1) - 2026-11-05
 
 Changed: Raspberry Pi installer/updater `deploy/install-pi.sh` (systemd, LAN access by default). Docs: `docs/RASPBERRY-PI.md`, `deploy/README.md`, `presets/README.md`, `src/generators/README.md`, main README index.

@@ -4,17 +4,23 @@ Ready-made designs. Each preset is a generator plus the values that differ from 
 
 ## Files
 
-| File | Group |
-|------|-------|
-| `01-stacking-bins.json` | Stacking Bins (75 x 100, 100 x 150, 150 x 150, 200 x 150 families) |
-| `02-drone-parts.json` | Drone Parts (props, motors, FC/ESC, LiPo, connectors, gimbal, SD cards, hooks) |
-| `03-fasteners.json` | Fasteners and Small Parts (boxes, trays, bit holders) |
-| `04-hooks.json` | Hooks (pegboard, screw, tape) |
-| `05-tool-racks.json` | Tool Racks (drivers, pliers, tweezers, wrenches, markers) |
-| `06-holders.json` | Holders (batteries, coin cells, USB, SD, markers) |
-| `07-boxes.json` | Boxes with lids |
-| `08-labels.json` | Label cards sized for each bin width |
-| `09-rc-aircraft.json` | RC wings |
+| File | Tab | Group |
+|------|-----|-------|
+| `01-stacking-bins.json` | Shop | Stacking Bins |
+| `02-drone-parts.json` | Shop | Drone Parts (bins, holders, hooks for parts storage) |
+| `03-fasteners.json` | Shop | Fasteners and Small Parts |
+| `04-hooks.json` | Shop | Hooks |
+| `05-tool-racks.json` | Shop | Tool Racks |
+| `06-holders.json` | Shop | Holders |
+| `07-boxes.json` | Shop | Boxes |
+| `08-labels.json` | Shop | Labels |
+| `09-rc-aircraft.json` | Planes | Wings and Tails |
+| `10-planes-parts.json` | Planes | Wings, tails, horns, servo mounts, hinges, firewalls, formers, wheels |
+| `11-quads.json` | Quadcopters | Frames, motor mounts, prop guards, landing legs |
+| `12-tube-clamps.json` | Accessories | Carbon tube clamps, 8 to 25 mm |
+| `13-tube-joints.json` | Accessories | Tube joints, plugs, caps, feet |
+| `14-mounts-hardware.json` | Accessories | GPS masts, antenna, camera, FC adapters, dampening, spacers |
+| `15-robotics.json` | Robotics | Gears, pulleys, stepper and bearing mounts, couplers, links, knobs, enclosures |
 
 Files load in name order. The number prefix sets the group order in the UI.
 
@@ -23,6 +29,7 @@ Files load in name order. The number prefix sets the group order in the UI.
 ```json
 {
   "group": "Drone Parts",
+  "section": "shop",
   "presets": [
     {
       "id": "drone-props-5in",
@@ -40,7 +47,8 @@ Files load in name order. The number prefix sets the group order in the UI.
 |-------|------|
 | `id` | Unique across all files. Lowercase, dashes. Shop items point to it, so do not rename an id that is in use. |
 | `name` | Shown in the preset list. |
-| `generator` | One of: `stack-bin`, `parts-box`, `holder-block`, `hook`, `tool-rack`, `label-card`, `rc-wing`. |
+| `section` (file level, or per preset) | Tab: `shop`, `planes`, `quads`, `accessories`, `robotics`. |
+| `generator` | Any generator id. Run `node bin/stltools.js list`. |
 | `description` | One or two sentences. Say what fits. Mark sizes that need checking. |
 | `tags` | Search words. |
 | `params` | Only values that differ from the generator defaults. Run `node bin/stltools.js info <generator>` for names and limits. |
@@ -48,7 +56,7 @@ Files load in name order. The number prefix sets the group order in the UI.
 ## Add a preset
 
 1. Find the closest preset in the web UI and change values until it looks right.
-2. Press **Save params** to download the full parameter set.
+2. Press **Export** to download the full parameter set.
 3. Copy only the values you changed into a new entry in the right file.
 4. Run the tests. They generate every preset and check the mesh.
 

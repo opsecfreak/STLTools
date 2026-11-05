@@ -26,4 +26,4 @@ Note: for access away from the shop, use a private VPN such as Tailscale. Do not
 |----------|---------|---------|
 | `HOST` | `127.0.0.1` (installer: `0.0.0.0`) | Listen address |
 | `PORT` | `3000` | Web port |
-| `STLTOOLS_DATA` | `./data` (service: `/opt/stltools/data`) | Shop catalog folder. Back it up. |
+| `STLTOOLS_DATA` | `./data` (service: `/opt/stltools/data`) | Shop catalog and saved designs (`catalog.json`, `categories.json`, `designs.json`). Back it up. |

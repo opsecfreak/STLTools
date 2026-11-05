@@ -8,6 +8,7 @@ const TEXT_MARGIN = 2.6; // keeps text inside the slot window (window lips cover
 export default {
   id: 'label-card',
   name: 'Label Card',
+  sections: ['shop'],
   description: 'Flat card with raised text that drops into a bin label slot. Change filament at the text layer for two colors.',
   params: {
     text: { type: 'string', default: 'M3 SCREWS', maxLength: 40, label: 'Line 1', group: 'Text' },

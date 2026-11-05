@@ -10,6 +10,9 @@
 //   GET  /api/catalog              shop items           POST adds one
 //   PUT  /api/catalog/:code        edit an item         DELETE removes it
 //   POST /api/catalog/:code/generate   item STL(s) with its label text + label card
+//   GET  /api/designs              saved designs        POST saves one
+//   GET/PUT/DELETE /api/designs/:id
+//   GET  /api/zip/:job             all parts of a job as one ZIP
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
 
@@ -24,6 +27,8 @@ import { toStl, meshStats } from './core/export.js';
 import { initKernel } from './core/kernel.js';
 import { listPresets } from './core/presets.js';
 import { createCatalog, CatalogError } from './core/catalog.js';
+import { createDesignStore } from './core/designs.js';
+import { createZip } from './core/zip.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PUBLIC_DIR = join(ROOT, 'public');
@@ -106,7 +111,7 @@ function publish(id, result, extra = {}) {
     };
   });
   remember(key, { prefix, files });
-  return { id, job: key, params: result.params, parts, warnings: result.warnings, notes: result.notes, ...extra };
+  return { id, job: key, zip: parts.length > 1 ? `/api/zip/${key}` : null, params: result.params, parts, warnings: result.warnings, notes: result.notes, ...extra };
 }
 
 async function handleGenerate(req, res, id) {
@@ -147,6 +152,27 @@ async function route(req, res) {
     return send(res, 405, 'Method not allowed');
   }
 
+  if (path === '/api/designs') {
+    if (req.method === 'GET') return send(res, 200, await designs.list());
+    if (req.method === 'POST') return send(res, 201, await designs.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  m = path.match(/^\/api\/designs\/([a-z0-9-]{3,60})$/);
+  if (m) {
+    if (req.method === 'GET') return send(res, 200, await designs.get(m[1]));
+    if (req.method === 'PUT') return send(res, 200, await designs.update(m[1], await readBody(req)));
+    if (req.method === 'DELETE') { await designs.remove(m[1]); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
+
+  m = path.match(/^\/api\/zip\/([a-f0-9]{16})$/);
+  if (m && req.method === 'GET') {
+    const job = jobs.get(m[1]);
+    if (!job) return send(res, 404, 'Expired or unknown. Generate again.');
+    const zip = createZip([...job.files].map(([name, data]) => ({ name: `${job.prefix}-${name}.stl`, data })));
+    return send(res, 200, zip, { 'content-type': 'application/zip', 'content-disposition': `attachment; filename="${job.prefix}.zip"` });
+  }
+
   m = path.match(/^\/api\/generate\/([a-z0-9-]+)$/);
   if (m) {
     if (req.method !== 'POST') return send(res, 405, 'Use POST');
@@ -171,9 +197,13 @@ async function route(req, res) {
 }
 
 let catalog = createCatalog();
+let designs = createDesignStore();
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
-  if (dataDir) catalog = createCatalog({ dataDir });
+  if (dataDir) {
+    catalog = createCatalog({ dataDir });
+    designs = createDesignStore({ dataDir });
+  }
   const server = createServer(async (req, res) => {
     try {
       await route(req, res);

@@ -1,0 +1,290 @@
+{
+  "group": "Carbon Tube Clamps",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "clamp-mount-8",
+      "name": "Tube clamp + plate, 8 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 8 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 8,
+        "plateWidth": 32,
+        "mountHoleSpacing": 22,
+        "length": 16,
+        "bolt": "M3"
+      }
+    },
+    {
+      "id": "clamp-mount-10",
+      "name": "Tube clamp + plate, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 10 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 10,
+        "plateWidth": 34,
+        "mountHoleSpacing": 24,
+        "length": 16,
+        "bolt": "M3"
+      }
+    },
+    {
+      "id": "clamp-mount-12",
+      "name": "Tube clamp + plate, 12 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 12 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 12,
+        "plateWidth": 36,
+        "mountHoleSpacing": 26,
+        "length": 16,
+        "bolt": "M3"
+      }
+    },
+    {
+      "id": "clamp-mount-16",
+      "name": "Tube clamp + plate, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 16 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 16,
+        "plateWidth": 40,
+        "mountHoleSpacing": 30,
+        "length": 20,
+        "bolt": "M3"
+      }
+    },
+    {
+      "id": "clamp-mount-20",
+      "name": "Tube clamp + plate, 20 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 20 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 20,
+        "plateWidth": 44,
+        "mountHoleSpacing": 34,
+        "length": 20,
+        "bolt": "M4"
+      }
+    },
+    {
+      "id": "clamp-mount-25",
+      "name": "Tube clamp + plate, 25 mm",
+      "generator": "tube-clamp",
+      "description": "Ring for a 25 mm tube with a flat mounting plate.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 25,
+        "plateWidth": 49,
+        "mountHoleSpacing": 39,
+        "length": 20,
+        "bolt": "M4"
+      }
+    },
+    {
+      "id": "clamp-split-10",
+      "name": "Split ring clamp, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Pinch-bolt ring for a 10 mm tube.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "split",
+        "tubeOD": 10,
+        "length": 16
+      }
+    },
+    {
+      "id": "clamp-split-16",
+      "name": "Split ring clamp, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Pinch-bolt ring for a 16 mm tube.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "split",
+        "tubeOD": 16,
+        "length": 22
+      }
+    },
+    {
+      "id": "clamp-split-22",
+      "name": "Split ring clamp, 22 mm",
+      "generator": "tube-clamp",
+      "description": "Pinch-bolt ring for a 22 mm tube.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "split",
+        "tubeOD": 22,
+        "length": 22
+      }
+    },
+    {
+      "id": "clamp-saddle-10",
+      "name": "Saddle strap, 10 mm",
+      "generator": "tube-clamp",
+      "description": "Screws a 10 mm tube down onto a surface.",
+      "tags": [
+        "clamp",
+        "strap"
+      ],
+      "params": {
+        "type": "saddle",
+        "tubeOD": 10,
+        "plateWidth": 36,
+        "length": 14
+      }
+    },
+    {
+      "id": "clamp-saddle-16",
+      "name": "Saddle strap, 16 mm",
+      "generator": "tube-clamp",
+      "description": "Screws a 16 mm tube down onto a surface.",
+      "tags": [
+        "clamp",
+        "strap"
+      ],
+      "params": {
+        "type": "saddle",
+        "tubeOD": 16,
+        "plateWidth": 42,
+        "length": 14
+      }
+    },
+    {
+      "id": "clamp-saddle-25",
+      "name": "Saddle strap, 25 mm",
+      "generator": "tube-clamp",
+      "description": "Screws a 25 mm tube down onto a surface.",
+      "tags": [
+        "clamp",
+        "strap"
+      ],
+      "params": {
+        "type": "saddle",
+        "tubeOD": 25,
+        "plateWidth": 51,
+        "length": 14
+      }
+    },
+    {
+      "id": "clamp-parallel-10-10",
+      "name": "Parallel clamp 10 + 10 mm",
+      "generator": "tube-clamp",
+      "description": "Two parallel 10 mm tubes, two-piece.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "parallel",
+        "tubeOD": 10,
+        "tubeOD2": 10
+      }
+    },
+    {
+      "id": "clamp-parallel-16-10",
+      "name": "Parallel clamp 16 + 10 mm",
+      "generator": "tube-clamp",
+      "description": "A 10 mm tube alongside a 16 mm tube.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "parallel",
+        "tubeOD": 16,
+        "tubeOD2": 10,
+        "length": 20
+      }
+    },
+    {
+      "id": "clamp-cross-10-10",
+      "name": "Cross clamp 10 x 10 mm",
+      "generator": "tube-clamp",
+      "description": "Two 10 mm tubes at 90 deg.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "cross",
+        "tubeOD": 10,
+        "tubeOD2": 10
+      }
+    },
+    {
+      "id": "clamp-cross-16-16",
+      "name": "Cross clamp 16 x 16 mm",
+      "generator": "tube-clamp",
+      "description": "Two 16 mm tubes at 90 deg.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "cross",
+        "tubeOD": 16,
+        "tubeOD2": 16,
+        "length": 22
+      }
+    },
+    {
+      "id": "clamp-cross-20-10",
+      "name": "Cross clamp 20 x 10 mm",
+      "generator": "tube-clamp",
+      "description": "10 mm tube across a 20 mm tube.",
+      "tags": [
+        "clamp"
+      ],
+      "params": {
+        "type": "cross",
+        "tubeOD": 20,
+        "tubeOD2": 10,
+        "length": 24,
+        "bolt": "M4"
+      }
+    },
+    {
+      "id": "clamp-mount-10-long",
+      "name": "Tube clamp + long plate, 10 mm, 4 holes",
+      "generator": "tube-clamp",
+      "description": "40 mm long with 2 rows of countersunk holes.",
+      "tags": [
+        "clamp",
+        "mount"
+      ],
+      "params": {
+        "tubeOD": 10,
+        "length": 40,
+        "mountHolesAlong": 2,
+        "countersink": true,
+        "plateWidth": 40,
+        "mountHoleSpacing": 28
+      }
+    }
+  ]
+}

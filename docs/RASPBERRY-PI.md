@@ -103,7 +103,7 @@ Note: the next update run moves you back to the latest `main`.
 
 ## 5. Back up the shop catalog
 
-Your categories and items are in `/opt/stltools/data`. Everything else can be reinstalled.
+Your shop catalog and saved designs are in `/opt/stltools/data`. Everything else can be reinstalled.
 
 1. Copy the folder to your PC (run on the PC).
 
