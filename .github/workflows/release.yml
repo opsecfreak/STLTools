@@ -1,45 +1,68 @@
 name: Release
 
-# Push a tag like v0.4.0 to build every desktop / Pi package and publish a GitHub release.
+# Publishes a GitHub release with every desktop / Raspberry Pi package.
+#
+# Runs when:
+#   - main changes and package.json has a version with no release yet
+#     (bump the version in a PR, merge it, the release appears automatically)
+#   - a tag v<version> is pushed (rebuilds that release)
+#   - started by hand (Actions > Release > Run workflow): builds the current version
 on:
   push:
+    branches: [main]
     tags: ['v*']
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Existing tag to (re)build, e.g. v0.4.0'
-        required: true
 
 permissions:
   contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.tag || github.ref }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci --no-audit --no-fund
-      - run: npm test
-      - name: Check tag matches package.json version
-        run: |
-          TAG="${{ github.event.inputs.tag || github.ref_name }}"
-          VER="v$(node -p "require('./package.json').version")"
-          if [ "$TAG" != "$VER" ]; then echo "Tag $TAG does not match package.json $VER"; exit 1; fi
-      - name: Build packages
-        run: node scripts/package.mjs
-      - name: Publish release
+      - name: Decide tag
+        id: tag
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="${{ github.event.inputs.tag || github.ref_name }}"
-          VER="$(node -p "require('./package.json').version")"
-          gh release delete "$TAG" --yes --cleanup-tag=false 2>/dev/null || true
+          VER="v$(node -p "require('./package.json').version")"
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            if [ "${{ github.ref_name }}" != "$VER" ]; then echo "Tag ${{ github.ref_name }} does not match package.json $VER"; exit 1; fi
+            echo "mode=rebuild" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=rebuild" >> "$GITHUB_OUTPUT"
+          elif gh release view "$VER" >/dev/null 2>&1; then
+            echo "Release $VER already exists; nothing to do."
+            echo "mode=skip" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=new" >> "$GITHUB_OUTPUT"
+          fi
+          echo "tag=$VER" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v4
+        if: steps.tag.outputs.mode != 'skip'
+        with:
+          node-version: 22
+          cache: npm
+      - if: steps.tag.outputs.mode != 'skip'
+        run: npm ci --no-audit --no-fund
+      - if: steps.tag.outputs.mode != 'skip'
+        run: npm test
+      - name: Build packages
+        if: steps.tag.outputs.mode != 'skip'
+        run: node scripts/package.mjs
+      - name: Publish release
+        if: steps.tag.outputs.mode != 'skip'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          gh release delete "$TAG" --yes 2>/dev/null || true
           gh release create "$TAG" dist/*.zip dist/*.tar.gz dist/SHA256SUMS.txt \
+            --target "$GITHUB_SHA" \
             --title "STL Tools $TAG" \
             --notes-file dist/RELEASE_NOTES.md

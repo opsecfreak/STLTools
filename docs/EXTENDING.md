@@ -45,6 +45,6 @@ npm start
 ```
 
 5. Bump the version in `package.json`, add a `CHANGELOG.md` entry (changed / fixed / untested).
-6. Release: merge to `main`, then push a tag `v<version>`. GitHub Actions tests, builds every package and publishes the release.
+6. Release: merge the PR into `main`. When `package.json` has a version with no release yet, GitHub Actions tests, builds every package, creates the tag and publishes the release. To rebuild a release: Actions > Release > Run workflow.
 
 Details on the kernel, helpers and printability rules: [`src/generators/README.md`](../src/generators/README.md).
