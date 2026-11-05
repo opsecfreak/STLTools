@@ -8,6 +8,30 @@ Parametric STL generator for organizing a shop and building RC parts. Pick a rea
 
 Units are millimeters, because slicers read STL as mm.
 
+## Quick start on a Raspberry Pi
+
+Recommended setup: a Pi 4 or 5 in the shop runs it 24/7. Open it from a PC or phone on the same network.
+
+```bash
+git clone https://github.com/opsecfreak/STLTools.git ~/STLTools
+```
+
+```bash
+sudo bash ~/STLTools/deploy/install-pi.sh
+```
+
+Then open `http://<pi-hostname>.local:3000`. Full guide, updates, backups and remote access: [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
+
+## Documentation
+
+| Doc | Covers |
+|-----|--------|
+| [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) | Pi setup, updates, rollback, backups, Tailscale, troubleshooting |
+| [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
+| [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
+| [src/generators/README.md](src/generators/README.md) | Writing a new generator, kernel functions, printability rules |
+| [CHANGELOG.md](CHANGELOG.md) | Versions |
+
 ## What it makes
 
 | Generator | What it makes | Prints |
@@ -102,37 +126,13 @@ Each run writes one STL per part plus `<name>.params.json`. Feed it back with `-
 
 ## Run as a system service (systemd)
 
-1. Create a service user.
+On a Raspberry Pi or any Debian-based Linux, the installer does everything (Node.js, service user, `/opt/stltools`, systemd unit) and also updates an existing install:
 
 ```bash
-sudo useradd --system --home /opt/stltools --shell /usr/sbin/nologin stltools
+sudo bash deploy/install-pi.sh
 ```
 
-2. Copy the project to `/opt/stltools` and install dependencies.
-
-```bash
-sudo cp -r . /opt/stltools && cd /opt/stltools && sudo npm ci --omit=dev
-```
-
-3. Create the data folder and set ownership.
-
-```bash
-sudo mkdir -p /opt/stltools/data && sudo chown -R stltools:stltools /opt/stltools
-```
-
-4. Install and start the unit.
-
-```bash
-sudo cp deploy/stltools.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now stltools
-```
-
-5. Check that it runs.
-
-```bash
-systemctl status stltools
-```
-
-Note: to reach it from other devices, set `Environment=HOST=0.0.0.0` in `/etc/systemd/system/stltools.service`, then run `sudo systemctl daemon-reload && sudo systemctl restart stltools`.
+See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) for the full walkthrough.
 
 ## API
 
@@ -176,13 +176,10 @@ Note: to reach it from other devices, set `Environment=HOST=0.0.0.0` in `/etc/sy
 - Text: Roboto Condensed Bold (SIL Open Font License) via opentype.js, turned into outlines and extruded.
 - Horizontal holes use a teardrop shape so they print without support.
 
-## Add a generator
+## Add a generator or preset
 
-1. Create `src/generators/<id>.js`. Export `{ id, name, description, params, generate(p, k) }`.
-2. Declare `params` as a schema: `type` (number, integer, boolean, string, select), `default`, `min`, `max`, `unit`, `label`, `group`, `help`. The CLI flags and the web form come from it. Reuse `labelParamSchema()` (`src/core/labels.js`) and `mountParamSchema()` (`src/core/mounts.js`).
-3. Build geometry with the kernel scope `k` (`src/core/kernel.js`). Wrap any direct manifold call in `k.track()` so its WASM memory is freed.
-4. Return `{ parts: [{ name, manifold }], warnings, notes, meta }`. Put each part on the bed in its print orientation.
-5. Add it to `src/core/registry.js`, add presets in `presets/`, add a test, run `npm test`.
+- New design from an existing generator: add a preset. See [presets/README.md](presets/README.md).
+- New kind of part: write a generator. See [src/generators/README.md](src/generators/README.md).
 
 ## Known limits
 

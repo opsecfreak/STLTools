@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1 (0.2.1) - 2026-11-05
+
+Changed: Raspberry Pi installer/updater `deploy/install-pi.sh` (systemd, LAN access by default). Docs: `docs/RASPBERRY-PI.md`, `deploy/README.md`, `presets/README.md`, `src/generators/README.md`, main README index.
+Fixed: n/a.
+Untested: the installer on real Pi hardware. It was tested on Debian-based Linux with a systemctl stand-in (fresh install, update run, catalog data kept).
+
 ## v2 (0.2.0) - 2026-11-05
 
 Changed: new generators `stack-bin`, `hook`, `tool-rack`, `holder-block`, `label-card`. Text engine for raised/recessed labels. 82 presets in `presets/`. Shop catalog (categories, item codes, auto label text, paper label sheet). Web UI tabs, preset browser, Add to shop. CLI `presets` and `preset` commands.
