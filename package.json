@@ -1,6 +1,6 @@
 {
   "name": "stltools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Parametric STL generator for shop organization and RC: stacking bins, hooks, tool racks, holders, labels, RC wings. CLI + web UI.",
   "type": "module",
   "main": "src/index.js",
