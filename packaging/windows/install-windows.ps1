@@ -4,6 +4,10 @@
 $ErrorActionPreference = 'Stop'
 $src = Split-Path -Parent $PSScriptRoot
 $dest = Join-Path $env:LOCALAPPDATA 'Programs\STL Tools'
+if ((Resolve-Path $src).Path.TrimEnd('\') -eq $dest.TrimEnd('\')) {
+  Write-Host 'STL Tools is already installed here. Run the installer from a new download to upgrade.'
+  exit 0
+}
 Write-Host "Installing STL Tools to $dest"
 if (Test-Path $dest) {
   foreach ($old in @('app', 'node')) {
