@@ -1,0 +1,234 @@
+{
+  "group": "Arm and Frame Mounts",
+  "section": "quads",
+  "presets": [
+    {
+      "id": "esc-on-arm-16",
+      "name": "ESC tray on a 16 mm arm",
+      "generator": "component-mount",
+      "description": "Single ESC up to about 45 x 22 x 12 mm (measure yours). Zip-ties to the arm.",
+      "tags": [
+        "esc",
+        "arm"
+      ],
+      "params": {
+        "itemWidth": 22,
+        "itemLength": 45,
+        "itemHeight": 12,
+        "tubeOD": 16
+      }
+    },
+    {
+      "id": "esc-on-arm-12",
+      "name": "ESC tray on a 12 mm arm",
+      "generator": "component-mount",
+      "description": "Small ESC up to about 35 x 17 x 8 mm.",
+      "tags": [
+        "esc",
+        "arm"
+      ],
+      "params": {
+        "itemWidth": 17,
+        "itemLength": 35,
+        "itemHeight": 8,
+        "tubeOD": 12
+      }
+    },
+    {
+      "id": "esc-on-arm-25-clamp",
+      "name": "ESC tray, bolt-on two-piece clamp, 25 mm",
+      "generator": "component-mount",
+      "description": "Large ESC up to about 60 x 28 x 15 mm on a 25 mm tube; clamp fits mid-arm.",
+      "tags": [
+        "esc",
+        "arm",
+        "clamp"
+      ],
+      "params": {
+        "itemWidth": 28,
+        "itemLength": 60,
+        "itemHeight": 15,
+        "tubeOD": 25,
+        "base": "clamp-kit",
+        "clampType": "two-piece",
+        "clampLength": 22,
+        "straps": 2
+      }
+    },
+    {
+      "id": "esc-on-arm-20-clamp",
+      "name": "ESC tray, bolt-on clamp, 20 mm",
+      "generator": "component-mount",
+      "description": "ESC up to about 50 x 25 x 12 mm, slide-on clamp.",
+      "tags": [
+        "esc",
+        "arm",
+        "clamp"
+      ],
+      "params": {
+        "itemWidth": 25,
+        "itemLength": 50,
+        "itemHeight": 12,
+        "tubeOD": 20,
+        "base": "clamp-kit"
+      }
+    },
+    {
+      "id": "rx-tray-on-tube-10",
+      "name": "Receiver tray on a 10 mm tube",
+      "generator": "component-mount",
+      "description": "Receiver up to about 30 x 20 x 8 mm.",
+      "tags": [
+        "receiver"
+      ],
+      "params": {
+        "itemWidth": 20,
+        "itemLength": 30,
+        "itemHeight": 8,
+        "tubeOD": 10,
+        "straps": 1
+      }
+    },
+    {
+      "id": "vtx-pad-20-on-tube-16",
+      "name": "VTX pad 20 x 20 on a 16 mm tube",
+      "generator": "component-mount",
+      "description": "20 x 20 board on M2 bosses, zip-tied to a tube.",
+      "tags": [
+        "vtx",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 20,
+        "padPatternY": 20,
+        "padHole": 1.7,
+        "bossDiameter": 4,
+        "bossHeight": 3,
+        "tubeOD": 16
+      }
+    },
+    {
+      "id": "fc-pad-30-on-tube-20",
+      "name": "FC pad 30.5 on a 20 mm tube, clamp",
+      "generator": "component-mount",
+      "description": "30.5 mm stack on a bolt-on clamp.",
+      "tags": [
+        "fc",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "base": "clamp-kit",
+        "tubeOD": 20,
+        "straps": 0
+      }
+    },
+    {
+      "id": "gps-post-on-arm",
+      "name": "GPS mast post on a 16 mm arm",
+      "generator": "component-mount",
+      "description": "Vertical 8 mm socket on a tube saddle for a GPS mast.",
+      "tags": [
+        "gps",
+        "post"
+      ],
+      "params": {
+        "holder": "post",
+        "postTubeOD": 8,
+        "postHeight": 5,
+        "socketDepth": 14,
+        "tubeOD": 16,
+        "straps": 2
+      }
+    },
+    {
+      "id": "battery-tray-straps",
+      "name": "Battery tray with strap slots",
+      "generator": "component-mount",
+      "description": "About 80 x 40 x 30 mm pack, two 20 mm straps, screw plate. Measure your pack.",
+      "tags": [
+        "battery"
+      ],
+      "params": {
+        "itemWidth": 40,
+        "itemLength": 80,
+        "itemHeight": 30,
+        "wallHeight": 10,
+        "endStops": "both",
+        "straps": 2,
+        "strapWidth": 21,
+        "base": "plate"
+      }
+    },
+    {
+      "id": "battery-tray-on-tube-20",
+      "name": "Battery tray on a 20 mm tube",
+      "generator": "component-mount",
+      "description": "About 100 x 45 x 35 mm pack on a tube, two 20 mm straps.",
+      "tags": [
+        "battery"
+      ],
+      "params": {
+        "itemWidth": 45,
+        "itemLength": 100,
+        "itemHeight": 35,
+        "wallHeight": 10,
+        "endStops": "both",
+        "straps": 2,
+        "strapWidth": 21,
+        "tubeOD": 20
+      }
+    },
+    {
+      "id": "buzzer-cup-12",
+      "name": "Buzzer cup 12 mm",
+      "generator": "component-mount",
+      "description": "Cup for a 12 mm buzzer, tape base.",
+      "tags": [
+        "buzzer"
+      ],
+      "params": {
+        "holder": "cup",
+        "itemDiameter": 12,
+        "cupDepth": 8,
+        "base": "tape",
+        "straps": 0
+      }
+    },
+    {
+      "id": "led-cradle-on-arm",
+      "name": "LED / light cradle on a 12 mm arm",
+      "generator": "component-mount",
+      "description": "Cradle for a light up to 10 mm diameter, 30 mm long.",
+      "tags": [
+        "led"
+      ],
+      "params": {
+        "holder": "cradle",
+        "itemDiameter": 10,
+        "itemLength": 30,
+        "tubeOD": 12,
+        "straps": 2
+      }
+    },
+    {
+      "id": "motor-wire-guide-16",
+      "name": "Motor wire guide on a 16 mm arm",
+      "generator": "component-mount",
+      "description": "3 clips for 3.5 mm motor wires.",
+      "tags": [
+        "cables",
+        "arm"
+      ],
+      "params": {
+        "holder": "cable",
+        "itemDiameter": 3.5,
+        "cableCount": 3,
+        "tubeOD": 16,
+        "straps": 1,
+        "itemLength": 10
+      }
+    }
+  ]
+}

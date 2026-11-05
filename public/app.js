@@ -62,11 +62,14 @@ function renderResult(result) {
   if (result.zip) $('zipAll').href = result.zip;
 }
 
+let runToken = 0;
 async function runAndShow(promise, label) {
+  const token = ++runToken; // ignore results from older requests that finish late
   setStatus(`Generating ${label}...`);
   $('run').disabled = true;
   try {
     const result = await promise;
+    if (token !== runToken) return null;
     renderResult(result);
     await viewer.show(result.parts);
     setStatus(`${label}: ${result.parts.length} part${result.parts.length > 1 ? 's' : ''}`);
@@ -533,7 +536,14 @@ $('printLabels').onclick = () => {
 for (const b of document.querySelectorAll('.tab')) b.onclick = () => switchTab(b.dataset.tab);
 for (const b of document.querySelectorAll('.subtab')) b.onclick = () => switchShopSub(b.dataset.sub);
 
-[state.generators, state.presets] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets')]);
+let version;
+[state.generators, state.presets, version] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets'), api('GET', '/api/version')]);
+$('appVersion').textContent = `v${version.version} / ${version.generators} generators / ${version.presets} presets`;
+if (version.issues.length) {
+  const badge = el('button', { type: 'button', className: 'issues small', textContent: `${version.issues.length} custom file problem${version.issues.length > 1 ? 's' : ''}`, title: 'Custom generators or presets that were skipped' });
+  badge.onclick = () => { list($('warnings'), version.issues.map((i) => `Skipped: ${i}`)); };
+  $('appVersion').after(badge);
+}
 resetItemForm();
 const startTab = store.get('tab');
 switchTab([...SECTIONS, 'library'].includes(startTab) ? startTab : 'shop');

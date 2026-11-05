@@ -39,7 +39,7 @@ export default {
   id: 'tube-clamp',
   name: 'Tube Clamp',
   sections: ['accessories', 'quads', 'robotics'],
-  description: 'Clamps for carbon fiber tubes and rods: split ring, mount plate, saddle strap, parallel and cross clamps. Every size is adjustable.',
+  description: 'Clamps for carbon fiber tubes and rods: split ring, mount plate, saddle strap, parallel, cross, snap-on clip, two-piece (fits mid-tube), collar. Every size is adjustable.',
   params: {
     type: {
       type: 'select', default: 'mount', group: 'Clamp', label: 'Clamp type',
@@ -49,6 +49,9 @@ export default {
         { value: 'saddle', label: 'Saddle strap (screw to surface)' },
         { value: 'parallel', label: 'Two parallel tubes (2 pieces)' },
         { value: 'cross', label: 'Two tubes at 90 deg' },
+        { value: 'snap', label: 'Snap-on C clip (no bolt)' },
+        { value: 'two-piece', label: 'Two-piece (fits mid-tube)' },
+        { value: 'collar', label: 'Collar / end stop (set screw)' },
       ],
     },
     tubeOD: { type: 'number', default: 10, min: 2, max: 80, step: 0.05, unit: 'mm', label: 'Tube A outer diameter', group: 'Tube' },
@@ -64,6 +67,8 @@ export default {
     nutTrap: { type: 'boolean', default: true, label: 'Hex nut trap', group: 'Bolts' },
     earLength: { type: 'number', default: 0, min: 0, max: 40, step: 0.5, unit: 'mm', label: 'Bolt ear length (0 = auto)', group: 'Bolts' },
 
+    basePlate: { type: 'boolean', default: true, label: 'Mounting plate (snap / two-piece)', group: 'Mount plate' },
+    snapOpening: { type: 'number', default: 0.82, min: 0.5, max: 0.97, step: 0.01, label: 'Snap opening (x tube OD)', group: 'Clamp', help: 'Smaller = tighter snap. PETG 0.8-0.85, TPU 0.7, PLA 0.88.' },
     plateWidth: { type: 'number', default: 36, min: 8, max: 300, step: 0.5, unit: 'mm', label: 'Plate width', group: 'Mount plate', help: 'Mount and saddle types.' },
     plateThickness: { type: 'number', default: 4, min: 1.5, max: 20, step: 0.1, unit: 'mm', label: 'Plate thickness', group: 'Mount plate' },
     mountBolt: boltParam('Mount plate', 'M3', 'Mounting screw'),
@@ -129,23 +134,81 @@ export default {
 
     let parts = [];
 
+    // Flat mounting plate on the -X side of the ring (mounting face is its outer side).
+    const addPlate = (add, cut, R) => {
+      const xFace = -R - p.plateThickness + Math.min(p.wall, 1.5);
+      const xBack = xFace + p.plateThickness;
+      add.push(k.cuboid([p.plateThickness, p.plateWidth, L], [(xFace + xBack) / 2, 0, L / 2]));
+      const half = p.mountHoleSpacing / 2;
+      const ys = p.mountHoleSpacing > 0 ? [-half, half] : [0];
+      if (p.mountHoleSpacing > 0 && half - mb.head / 2 < R * 0.7) warnings.push(`Mount holes at ${p.mountHoleSpacing} mm spacing sit under the ring. Increase mountHoleSpacing to at least ${(2 * (R * 0.7 + mb.head / 2)).toFixed(1)} mm.`);
+      if (p.mountHoleSpacing === 0) warnings.push('One center mount hole sits under the tube. Use spacing > 0 unless you drill through the tube side.');
+      if (half + mb.head / 2 > p.plateWidth / 2) warnings.push('Mount holes are outside the plate. Raise plateWidth or lower mountHoleSpacing.');
+      cut.push(...mountHoles(xFace, xBack, ys));
+      notes.push(`Mounting face is flat, ${p.plateWidth} x ${L} mm, ${(R - Math.min(p.wall, 1.5) + p.plateThickness).toFixed(1)} mm from the tube center.`);
+      return { xFace, ys };
+    };
+
     if (p.type === 'split' || p.type === 'mount') {
       const ring = splitRing(0, rA, RA, 1);
       const add = [...ring.add];
       const cut = [...ring.cut];
-      if (p.type === 'mount') {
-        const xFace = -RA - p.plateThickness + Math.min(p.wall, 1.5); // mounting face
-        const xBack = xFace + p.plateThickness;
-        add.push(k.cuboid([p.plateThickness, p.plateWidth, L], [(xFace + xBack) / 2, 0, L / 2]));
-        const half = p.mountHoleSpacing / 2;
-        const ys = p.mountHoleSpacing > 0 ? [-half, half] : [0];
-        if (p.mountHoleSpacing > 0 && half - mb.head / 2 < RA * 0.7) warnings.push(`Mount holes at ${p.mountHoleSpacing} mm spacing sit under the ring. Increase mountHoleSpacing to at least ${(2 * (RA * 0.7 + mb.head / 2)).toFixed(1)} mm.`);
-        if (p.mountHoleSpacing === 0) warnings.push('One center mount hole sits under the tube. Use spacing > 0 unless you drill through the tube side.');
-        if (half + mb.head / 2 > p.plateWidth / 2) warnings.push('Mount holes are outside the plate. Raise plateWidth or lower mountHoleSpacing.');
-        cut.push(...mountHoles(xFace, xBack, ys));
-        notes.push(`Mounting face is flat, ${p.plateWidth} x ${L} mm, ${(RA - Math.min(p.wall, 1.5) + p.plateThickness).toFixed(1)} mm from the tube center.`);
-      }
+      if (p.type === 'mount') addPlate(add, cut, RA);
       parts.push({ name: 'clamp', manifold: k.difference(k.union(add), cut) });
+    } else if (p.type === 'snap') {
+      const w = p.tubeOD * p.snapOpening;
+      const add = [k.cylZ(RA, 0, 0, 0, L, SEG)];
+      const cut = [
+        k.cylZ(rA, 0, 0, -1, L + 1, SEG),
+        k.cuboid([RA + 2, w, L + 2], [(RA + 2) / 2, 0, L / 2]),
+        // 45 deg lead-in so the tube pushes in easily
+        k.prismZ([[RA - 1.6, w / 2 - 0.4], [RA + 1, w / 2 + 2.2], [RA + 1, -w / 2 - 2.2], [RA - 1.6, -w / 2 + 0.4]], -1, L + 1), // corners inside the opening, not on its face
+      ];
+      if (p.basePlate) addPlate(add, cut, RA);
+      parts.push({ name: 'snap-clip', manifold: k.difference(k.union(add), cut) });
+      notes.push(`Opening ${w.toFixed(2)} mm for a ${p.tubeOD} mm tube (${Math.round(p.snapOpening * 100)}%). Too tight: raise snapOpening by 0.02. Too loose: lower it or reduce clearance.`);
+      if (p.wall > 3.5) warnings.push('Thick walls make a stiff snap. 2-3 mm walls flex better.');
+    } else if (p.type === 'collar') {
+      const Rc = p.nutTrap ? Math.max(RA, rA + b.nutH + 3.2) : RA;
+      const cut = [k.cylZ(rA, 0, 0, -1, L + 1, SEG), k.holeX((p.nutTrap ? b.clear : b.tap) / 2, 0, L / 2, 0, Rc + 1, 24)];
+      if (p.nutTrap) {
+        const w = b.nutAF + 0.3;
+        cut.push(k.cuboid([b.nutH + 0.4, w, L / 2 + w / 2 + 1], [rA + (Rc - rA) / 2, 0, L / 2 - w / 2 + (L / 2 + w / 2 + 1) / 2]));
+        if (L < w + 2) warnings.push('Collar is short for the nut slot. Raise length.');
+      }
+      parts.push({ name: 'collar', manifold: k.difference(k.cylZ(Rc, 0, 0, 0, L, SEG), cut) });
+      notes.push(`Collar ${(2 * Rc).toFixed(1)} mm OD. ${p.nutTrap ? `Drop an ${p.bolt} nut into the top slot, then thread a set screw from the side.` : `Thread an ${p.bolt} set screw straight into the plastic.`}`);
+    } else if (p.type === 'two-piece') {
+      // Ring split on the Y/Z plane with bolted ears at +/-Y. Each half goes on from the side, so
+      // the clamp fits anywhere along a tube that is already assembled.
+      const earHalfX = p.slitGap / 2 + Math.max(b.nutH + 1.6, b.headH + 1.6, 3);
+      const yEar = RA + earLen / 2 - 0.5;
+      const add = [
+        k.cylZ(RA, 0, 0, 0, L, SEG),
+        k.cuboid([2 * earHalfX, 2 * (RA + earLen), L], [0, 0, L / 2]),
+      ];
+      const cut = [k.cylZ(rA, 0, 0, -1, L + 1, SEG)];
+      const Rn = (b.nutAF + 0.3) / Math.sqrt(3);
+      for (const y of [-yEar, yEar]) {
+        for (const z of zs) {
+          cut.push(k.holeX(b.clear / 2, y, z, -earHalfX - 1, earHalfX + 1));
+          cut.push(k.holeX(b.head / 2 + 0.3, y, z, earHalfX - b.headH - 0.3, earHalfX + 1));
+          if (p.nutTrap) cut.push(k.prismX(regularPolygon(Rn, 6, 90).map(([u, v]) => [y + u, z + v]), -earHalfX - 1, -earHalfX + b.nutH + 0.4));
+        }
+      }
+      const body = k.difference(k.union(add), cut);
+      const big = 4 * (RA + earLen + p.plateWidth);
+      let baseHalf = k.intersect(body, k.cuboid([big, big, L + 2], [-big / 2 - p.slitGap / 2, 0, L / 2]));
+      const capHalf = k.intersect(body, k.cuboid([big, big, L + 2], [big / 2 + p.slitGap / 2, 0, L / 2]));
+      if (p.basePlate) {
+        const pa = [baseHalf];
+        const pc = [];
+        const { ys } = addPlate(pa, pc, RA);
+        if (p.mountHoleSpacing > 0 && ys.some((y) => Math.abs(y) - mb.head / 2 < RA + earLen)) warnings.push(`Plate screws at ${p.mountHoleSpacing} mm sit behind the bolt ears; a screwdriver cannot reach them. Use at least ${(2 * (RA + earLen + mb.head / 2 + 1)).toFixed(0)} mm.`);
+        baseHalf = k.difference(k.union(pa), pc);
+      }
+      parts.push({ name: 'base-half', manifold: baseHalf }, { name: 'cap-half', manifold: capHalf });
+      notes.push(`Two halves, ${2 * zs.length} ${p.bolt} bolts through the ears. Nut traps on the base half.`);
     } else if (p.type === 'saddle') {
       const base = -rA + 0.3; // strap face sits 0.3 mm above the tube's contact line: tightening squeezes the tube
       const earT = p.plateThickness;

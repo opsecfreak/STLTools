@@ -184,3 +184,5 @@ button.small, a.button.small { padding: 4px 10px; font-size: 12px; }
 #designList li { flex-wrap: wrap; }
 #designList .info { flex: 1 1 100%; }
 #designList .btns { justify-content: flex-start; }
+.viewer-bar .version { margin-left: auto; color: var(--muted); font-size: 11px; }
+button.issues { background: #d1242f; color: #fff; }

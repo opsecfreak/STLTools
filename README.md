@@ -1,6 +1,6 @@
 # STL Tools
 
-Parametric STL generator for a drone / RC / robotics shop. Pick one of 234 ready-made designs, change any size, get a watertight STL, slice and print.
+Parametric STL generator for a drone / RC / robotics shop. Pick one of 285 ready-made designs, change any size, get a watertight STL, slice and print.
 
 - **Web UI** with tabs for Shop, Planes, Quadcopters, Accessories, Robotics and My Designs. Live 3D preview, per-part STL or one ZIP, open any STL file from your computer to view it.
 - **Saved designs** and a **shop catalog** stored on the server (the Pi), so every device sees the same data.
@@ -8,24 +8,24 @@ Parametric STL generator for a drone / RC / robotics shop. Pick one of 234 ready
 
 Units are millimeters, because slicers read STL as mm.
 
-## Quick start on a Raspberry Pi
+## Download and run
 
-Recommended setup: a Pi 4 or 5 in the shop runs it 24/7. Open it from a PC or phone on the same network.
+No install of Node.js or anything else needed: each release package includes it.
 
-```bash
-git clone https://github.com/opsecfreak/STLTools.git ~/STLTools
-```
+1. GitHub > **Releases** > newest release > download the file for your computer (Windows, Mac Apple / Intel, Linux, Raspberry Pi 64 / 32-bit).
+2. Unpack it and read `README-FIRST.txt`.
+3. Start it: **Start STL Tools.bat** (Windows), **STL Tools.app** (macOS), `./start.sh` (Linux / Pi).
 
-```bash
-sudo bash ~/STLTools/deploy/install-pi.sh
-```
-
-Then open `http://<pi-hostname>.local:3000`. Full guide, updates, backups and remote access: [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
+Step-by-step instructions for every system, including a Raspberry Pi shop server: [docs/INSTALL.md](docs/INSTALL.md). What to test first and how to send feedback: [docs/TESTING.md](docs/TESTING.md).
 
 ## Documentation
 
 | Doc | Covers |
 |-----|--------|
+| [docs/INSTALL.md](docs/INSTALL.md) | Download and install on Windows, macOS, Linux, Raspberry Pi; upgrade; uninstall |
+| [docs/TESTING.md](docs/TESTING.md) | First test checklist, test prints, feedback template |
+| [docs/EXTENDING.md](docs/EXTENDING.md) | Adding generators and presets without breaking anything; release steps |
+| [custom/README.md](custom/README.md) | Your own generators and presets |
 | [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) | Pi setup, updates, rollback, backups, Tailscale, troubleshooting |
 | [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
 | [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
@@ -35,15 +35,15 @@ Then open `http://<pi-hostname>.local:3000`. Full guide, updates, backups and re
 
 ## What it makes
 
-38 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
+39 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
 
 | Tab | Generators | Presets |
 |-----|-----------|---------|
 | Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card` | 79 |
 | Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 22 |
-| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg` | 17 |
-| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 78 |
-| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure` | 38 |
+| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires | 30 |
+| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 107 |
+| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, plus board / sensor / battery mounts | 45 |
 
 Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 
@@ -77,7 +77,7 @@ Label styles on bins and holders:
 
 Catalog data (`catalog.json`, `categories.json`) and saved designs (`designs.json`) are JSON files in `data/` (`STLTOOLS_DATA` to change). Back that folder up.
 
-## Install
+## Run from source (developers)
 
 Needs Node.js 18 or newer. No build step. No Docker.
 
@@ -145,6 +145,7 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 
 | Method | Path | Purpose |
 |--------|------|---------|
+| GET | `/api/version` | Version, counts, data folder, custom file problems |
 | GET | `/api/generators` | Generators with parameter schemas |
 | GET | `/api/presets` | Preset library |
 | POST | `/api/generate/:id` | JSON params in, parts with stats and download URLs out |
@@ -202,8 +203,9 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 
 ## Add a generator or preset
 
-- New design from an existing generator: add a preset. See [presets/README.md](presets/README.md).
-- New kind of part: write a generator. See [src/generators/README.md](src/generators/README.md).
+- Quickest: **Save design** in the web UI (stored on the server, no files).
+- Your own presets and generators: drop them in `custom/` (desktop app: your user data folder). Broken files are skipped, never fatal. See [custom/README.md](custom/README.md).
+- Core additions: [docs/EXTENDING.md](docs/EXTENDING.md), [presets/README.md](presets/README.md), [src/generators/README.md](src/generators/README.md).
 
 ## Known limits
 

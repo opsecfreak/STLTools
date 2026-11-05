@@ -25,12 +25,14 @@ import { generate, listGenerators } from './core/registry.js';
 import { ParamError } from './core/params.js';
 import { toStl, meshStats } from './core/export.js';
 import { initKernel } from './core/kernel.js';
-import { listPresets } from './core/presets.js';
+import { listPresets, presetIssues } from './core/presets.js';
+import { registryIssues } from './core/registry.js';
 import { createCatalog, CatalogError } from './core/catalog.js';
 import { createDesignStore } from './core/designs.js';
 import { createZip } from './core/zip.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
+const PKG = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'));
 const PUBLIC_DIR = join(ROOT, 'public');
 const THREE_DIR = join(ROOT, 'node_modules', 'three');
 const HOST = process.env.HOST ?? '127.0.0.1';
@@ -127,6 +129,13 @@ async function route(req, res) {
 
   if (req.method === 'GET' && path === '/api/generators') return send(res, 200, listGenerators());
   if (req.method === 'GET' && path === '/api/presets') return send(res, 200, listPresets());
+  if (req.method === 'GET' && path === '/api/version') {
+    return send(res, 200, {
+      name: 'stltools', version: PKG.version, node: process.versions.node,
+      generators: listGenerators().length, presets: listPresets().length,
+      dataDir: catalog.dataDir, issues: [...registryIssues(), ...presetIssues()],
+    });
+  }
 
   if (path === '/api/categories') {
     if (req.method === 'GET') return send(res, 200, await catalog.categories());

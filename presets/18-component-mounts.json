@@ -1,0 +1,187 @@
+{
+  "group": "Component Mounts",
+  "section": "accessories",
+  "presets": [
+    {
+      "id": "mount-tray-plate",
+      "name": "Component tray, screw plate",
+      "generator": "component-mount",
+      "description": "General tray 45 x 22 x 12 mm with zip-tie slots, countersunk screws.",
+      "tags": [
+        "tray"
+      ],
+      "params": {
+        "base": "plate"
+      }
+    },
+    {
+      "id": "mount-bec-on-tube-10",
+      "name": "BEC / power module on a 10 mm tube",
+      "generator": "component-mount",
+      "description": "Item up to about 25 x 15 x 8 mm.",
+      "tags": [
+        "power"
+      ],
+      "params": {
+        "itemWidth": 15,
+        "itemLength": 25,
+        "itemHeight": 8,
+        "tubeOD": 10,
+        "straps": 1
+      }
+    },
+    {
+      "id": "mount-power-module-tape",
+      "name": "Power module tray, tape",
+      "generator": "component-mount",
+      "description": "Item up to about 35 x 25 x 10 mm, flat base.",
+      "tags": [
+        "power"
+      ],
+      "params": {
+        "itemWidth": 25,
+        "itemLength": 35,
+        "itemHeight": 10,
+        "base": "tape"
+      }
+    },
+    {
+      "id": "mount-flashlight-25",
+      "name": "Flashlight cradle 25 mm",
+      "generator": "component-mount",
+      "description": "Cradle for a 25 mm light, screw plate, strap slots.",
+      "tags": [
+        "light"
+      ],
+      "params": {
+        "holder": "cradle",
+        "itemDiameter": 25,
+        "itemLength": 45,
+        "base": "plate"
+      }
+    },
+    {
+      "id": "mount-sensor-cup-30",
+      "name": "Sensor cup 30 mm, tape",
+      "generator": "component-mount",
+      "description": "Cup for a round sensor or puck up to 30 mm.",
+      "tags": [
+        "sensor"
+      ],
+      "params": {
+        "holder": "cup",
+        "itemDiameter": 30,
+        "cupDepth": 12,
+        "base": "tape",
+        "straps": 0
+      }
+    },
+    {
+      "id": "support-post-10",
+      "name": "Tube support post 10 mm, plate",
+      "generator": "component-mount",
+      "description": "Vertical socket for a 10 mm tube on a screw plate.",
+      "tags": [
+        "support",
+        "post"
+      ],
+      "params": {
+        "holder": "post",
+        "postTubeOD": 10,
+        "base": "plate",
+        "straps": 0
+      }
+    },
+    {
+      "id": "brace-post-on-tube",
+      "name": "Tube brace post on a 16 mm tube",
+      "generator": "component-mount",
+      "description": "Holds a 10 mm brace tube upright off a 16 mm tube.",
+      "tags": [
+        "support",
+        "post"
+      ],
+      "params": {
+        "holder": "post",
+        "postTubeOD": 10,
+        "postHeight": 10,
+        "tubeOD": 16,
+        "straps": 2
+      }
+    },
+    {
+      "id": "brace-post-clamp-20",
+      "name": "Tube brace post, bolt-on clamp, 20 mm",
+      "generator": "component-mount",
+      "description": "10 mm brace socket on a two-piece clamp for a 20 mm tube.",
+      "tags": [
+        "support",
+        "post",
+        "clamp"
+      ],
+      "params": {
+        "holder": "post",
+        "postTubeOD": 10,
+        "postHeight": 10,
+        "tubeOD": 20,
+        "base": "clamp-kit",
+        "clampType": "two-piece",
+        "straps": 0
+      }
+    },
+    {
+      "id": "cable-clips-tape-5x4",
+      "name": "Cable clips 5 x 4 mm, tape",
+      "generator": "component-mount",
+      "description": "Stick-on row of 5 clips.",
+      "tags": [
+        "cables"
+      ],
+      "params": {
+        "holder": "cable",
+        "itemDiameter": 4,
+        "cableCount": 5,
+        "base": "tape",
+        "straps": 0,
+        "itemLength": 10
+      }
+    },
+    {
+      "id": "cable-clips-plate-3x6",
+      "name": "Cable clips 3 x 6 mm, screw",
+      "generator": "component-mount",
+      "description": "3 clips for 6 mm cables, screw plate.",
+      "tags": [
+        "cables"
+      ],
+      "params": {
+        "holder": "cable",
+        "itemDiameter": 6,
+        "cableCount": 3,
+        "base": "plate",
+        "straps": 0,
+        "itemLength": 12
+      }
+    },
+    {
+      "id": "cable-clips-tube-2x8-clamp",
+      "name": "Cable clips 2 x 8 mm on a 20 mm tube, clamp",
+      "generator": "component-mount",
+      "description": "Thick power leads along a tube.",
+      "tags": [
+        "cables",
+        "clamp"
+      ],
+      "params": {
+        "holder": "cable",
+        "itemDiameter": 8,
+        "cableCount": 2,
+        "base": "clamp-kit",
+        "clampType": "snap",
+        "tubeOD": 20,
+        "straps": 0,
+        "itemLength": 14
+      }
+    }
+  ]
+}

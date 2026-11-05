@@ -15,7 +15,7 @@ export default {
 };
 ```
 
-Register it in [`src/core/registry.js`](../core/registry.js). Set `sections` (tabs it appears in) and, if you rename parameters later, a `migrate(input)` function that converts old saved files (see `rc-wing.js`).
+Files in this folder load automatically (no registry edit). Every exported object with `{ id, params, generate }` becomes a generator. `generate(p, k, lib)` also receives `lib` = shared helpers (`hardware`, `labels`, `mounts`, `teardrop`, `regularPolygon`). Set `sections` (tabs it appears in) and, if you rename parameters later, a `migrate(input)` function that converts old saved files (see `rc-wing.js`).
 
 ## Files
 
@@ -26,7 +26,8 @@ Register it in [`src/core/registry.js`](../core/registry.js). Set `sections` (ta
 | `rc-wing.js` | Wings and tails with control surfaces and servo pocket | Root face down |
 | `plane-parts.js` | control-horn, servo-mount, pin-hinge, firewall-mount, fuselage-former, rc-wheel | Flat / base down |
 | `quad-parts.js` | multirotor-frame, motor-mount, prop-guard, landing-leg | Flat / motor side down / mount down |
-| `tube-clamp.js` | Clamps: split, mount, saddle, parallel, cross | Tube A vertical |
+| `tube-clamp.js` | Clamps: split, mount, saddle, parallel, cross, snap, two-piece, collar | Tube A vertical |
+| `component-mount.js` | Holder (tray / pad / cradle / cup / cable / post) on a base (saddle / clamp kit / plate / tape) | Base down |
 | `tube-joint.js`, `tube-cap.js` | Joints, plugs, caps, feet | Flat-bottom sockets / end down |
 | `spacer.js`, `gps-mast.js`, `small-mounts.js`, `fc-parts.js` | Hardware, GPS, antenna, zip-tie, cameras, panels, FC adapter, grommets, dampers | Upright / plate down |
 | `robotics.js` | gear, pulley, stepper-mount, bearing-block, shaft-coupler, link-bar, knob, enclosure | Flat / base down |

@@ -1,0 +1,134 @@
+{
+  "group": "Robot Mounts",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "pi4-pad-on-tube-20",
+      "name": "Pi 4 size board on a 20 mm tube",
+      "generator": "component-mount",
+      "description": "58 x 49 mm holes, M2.5 thread, two-piece bolt-on clamp. Check against your board.",
+      "tags": [
+        "pi",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 58,
+        "padPatternY": 49,
+        "padHole": 2.2,
+        "bossDiameter": 5,
+        "bossHeight": 5,
+        "base": "clamp-kit",
+        "clampType": "two-piece",
+        "tubeOD": 20,
+        "straps": 0
+      }
+    },
+    {
+      "id": "pi-zero-pad-plate",
+      "name": "Pi Zero size board pad, screws",
+      "generator": "component-mount",
+      "description": "58 x 23 mm holes, M2.5 thread.",
+      "tags": [
+        "pi",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 58,
+        "padPatternY": 23,
+        "padHole": 2.2,
+        "bossDiameter": 5,
+        "bossHeight": 4,
+        "base": "plate",
+        "straps": 0
+      }
+    },
+    {
+      "id": "pi-camera-pad",
+      "name": "Pi camera module pad",
+      "generator": "component-mount",
+      "description": "21 x 12.5 mm holes, M2 thread, tape base. Check against your module.",
+      "tags": [
+        "camera",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 21,
+        "padPatternY": 12.5,
+        "padHole": 1.7,
+        "bossDiameter": 3.6,
+        "bossHeight": 3,
+        "base": "tape",
+        "straps": 0
+      }
+    },
+    {
+      "id": "nano-tray-tape",
+      "name": "Small board tray 44 x 19 mm",
+      "generator": "component-mount",
+      "description": "Tray for a small dev board up to about 44 x 19 x 8 mm.",
+      "tags": [
+        "board"
+      ],
+      "params": {
+        "itemWidth": 19,
+        "itemLength": 44,
+        "itemHeight": 8,
+        "base": "tape",
+        "straps": 0,
+        "endStops": "both"
+      }
+    },
+    {
+      "id": "battery-18650-cradle",
+      "name": "18650 cell cradle",
+      "generator": "component-mount",
+      "description": "Cradle for one 18650 cell (about 18.5 x 65 mm), strap slots, screws.",
+      "tags": [
+        "battery"
+      ],
+      "params": {
+        "holder": "cradle",
+        "itemDiameter": 18.5,
+        "itemLength": 66,
+        "base": "plate"
+      }
+    },
+    {
+      "id": "puck-sensor-cup-70",
+      "name": "Puck sensor cup 70 mm",
+      "generator": "component-mount",
+      "description": "Cup for a round puck sensor up to 70 mm. Measure yours.",
+      "tags": [
+        "sensor",
+        "lidar"
+      ],
+      "params": {
+        "holder": "cup",
+        "itemDiameter": 70,
+        "cupDepth": 10,
+        "base": "plate",
+        "straps": 0
+      }
+    },
+    {
+      "id": "robot-cable-guide",
+      "name": "Cable guide 4 x 5 mm, screw",
+      "generator": "component-mount",
+      "description": "4 clips for 5 mm cables.",
+      "tags": [
+        "cables"
+      ],
+      "params": {
+        "holder": "cable",
+        "itemDiameter": 5,
+        "cableCount": 4,
+        "base": "plate",
+        "straps": 0,
+        "itemLength": 10
+      }
+    }
+  ]
+}

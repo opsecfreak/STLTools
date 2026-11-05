@@ -21,6 +21,12 @@ Ready-made designs. Each preset is a generator plus the values that differ from 
 | `13-tube-joints.json` | Accessories | Tube joints, plugs, caps, feet |
 | `14-mounts-hardware.json` | Accessories | GPS masts, antenna, camera, FC adapters, dampening, spacers |
 | `15-robotics.json` | Robotics | Gears, pulleys, stepper and bearing mounts, couplers, links, knobs, enclosures |
+| `16-clamp-types.json` | Accessories | Snap-on clips, collars, two-piece clamps |
+| `17-quad-arm-mounts.json` | Quadcopters | ESC, receiver, VTX, FC, GPS, battery, light and wire mounts on arms |
+| `18-component-mounts.json` | Accessories | General component trays, cradles, cups, cable clips, support posts |
+| `19-robot-mounts.json` | Robotics | Pi / camera / board pads, sensor cups, cell cradles, cable guides |
+
+Your own presets go in `custom/presets/` (see [custom/README.md](../custom/README.md)).
 
 Files load in name order. The number prefix sets the group order in the UI.
 

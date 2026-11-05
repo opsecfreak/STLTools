@@ -1,5 +1,7 @@
 # Run STL Tools on a Raspberry Pi
 
+Easiest way (no GitHub login on the Pi): use the release package and `install-linux.sh --service --lan`, see [INSTALL.md](INSTALL.md#5-raspberry-pi-shop-server). This page covers the git-based install, which also works and updates with `git pull`.
+
 The Pi runs the web UI 24/7 in the shop. Open it from a PC, tablet or phone on the same network. The Pi only generates the STL files. Slice and print from your normal slicer.
 
 ## What you need
