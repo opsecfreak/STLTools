@@ -1,6 +1,6 @@
 # STL Tools: MTS personal edition
 
-> **This is branch `mts-personal`: the personalized build for MobileTechSpecialists.** It is the newest public STL Tools plus the shop's own parts list (98 parts), print ideas, assembly specs and the presets linked to those parts. Download it from the [`v1.0.0-mts.1` pre-release](https://github.com/opsecfreak/STLTools/releases/tag/v1.0.0-mts.1). The public edition is on [`main`](https://github.com/opsecfreak/STLTools/tree/main) ([Latest release](https://github.com/opsecfreak/STLTools/releases/latest)).
+> **This is branch `mts-personal`: the personalized build for MobileTechSpecialists.** It is the newest public STL Tools plus the shop's own parts list (98 parts), print ideas, assembly specs and the presets linked to those parts. Download it from the [`v1.0.1-mts.1` pre-release](https://github.com/opsecfreak/STLTools/releases/tag/v1.0.1-mts.1). The public edition is on [`main`](https://github.com/opsecfreak/STLTools/tree/main) ([Latest release](https://github.com/opsecfreak/STLTools/releases/latest)).
 >
 > First start: open **My Parts** > **Load this list** (MTS starter data). Your projects and ownership filters then use your parts.
 >
@@ -21,7 +21,17 @@ It runs on a Windows or Linux desktop (the main target), macOS or a Raspberry Pi
 2. Unpack it and start it: **Start STL Tools.bat** (Windows), **STL Tools.app** (macOS), `./start.sh` (Linux / Pi).
 3. On **Home**, press a **Make something** button (for example *Tube clamp*), set the sizes, press **Download STL**.
 
-Full steps: [docs/INSTALL.md](docs/INSTALL.md). From source: [Run from source](#run-from-source-developers).
+With Node.js 18+ already installed, the npm package is the quickest way (no download folder to manage):
+
+```bash
+npm install -g https://github.com/opsecfreak/STLTools/releases/download/v1.0.1-mts.1/stltools-1.0.1-mts.1.tgz
+```
+
+```bash
+stltools app
+```
+
+(Once it is on npmjs.com: `npx stltools app`.) Full steps: [docs/INSTALL.md](docs/INSTALL.md). From source: [Run from source](#run-from-source-developers).
 
 ## What it does
 
@@ -67,8 +77,8 @@ STL Tools is licensed under the [Apache License 2.0](LICENSE); third-party compo
 
 | Branch | What it is | Releases |
 |---|---|---|
-| `main` | The public release line, with a generic example parts list. | `v1.0.0` and later ([Latest](https://github.com/opsecfreak/STLTools/releases/latest)) |
-| `mts-personal` | **MTS personal edition**: the newest public version plus one repair shop's real parts list (98 parts), print ideas, assembly specs and the part-linked presets. Kept up to date by merging `main` into it. | Pre-releases `v1.0.0-mts.1`, `v1.0.0-mts.2`... |
+| `main` | The public release line, with a generic example parts list. | `v1.0.0` and later ([Latest](https://github.com/opsecfreak/STLTools/releases/latest)); npm package `stltools` |
+| `mts-personal` | **MTS personal edition**: the newest public version plus one repair shop's real parts list (98 parts), print ideas, assembly specs and the part-linked presets. Kept up to date by merging `main` into it. | Pre-releases `v<public version>-mts.<n>` (for example `v1.0.1-mts.1`); not on npm |
 | `mts-personal-data` | Snapshot of that shop's data as it was in v0.8.0, before the public release. Read-only history. | none |
 
 Contributions: [CONTRIBUTING.md](CONTRIBUTING.md). Developers and AI agents: [AGENTS.md](AGENTS.md).

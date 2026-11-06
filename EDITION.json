@@ -2,7 +2,7 @@
   "edition": "mts",
   "name": "MTS personal edition",
   "seed": "mts-v1",
-  "publicBase": "1.0.0",
+  "publicBase": "1.0.1",
   "branch": "mts-personal",
   "note": "Public STL Tools plus the MTS shop's parts list, print ideas, assembly specs and part-linked presets."
 }

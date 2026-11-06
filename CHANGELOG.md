@@ -1,16 +1,20 @@
 # Changelog
 
+## 1.0.1-mts.1 - 2026-11-06 (MTS personal edition)
+
+Public STL Tools 1.0.1 (npm package, `stltools app`) plus the MTS shop data: My Parts starter list `seed/mts-v1` (98 parts, 14 categories, ownership, sizes and measure / conflict / unverified flags; 25 print ideas; the PTZ, CGO3+ top plate, SV07 plane and Tattu / ZD550 tray specs attached to their projects) and the 104 `mts-*` presets linked to those parts. The public `hw-*` copies and the example list are left out so nothing shows twice. Previous personal build: 1.0.0-mts.1.
+Fixed: n/a.
+Untested: same as 1.0.1.
+
 ## 1.0.0-mts.1 - 2026-11-06 (MTS personal edition)
 
-Public STL Tools 1.0.0 plus the MTS shop data. Changed: My Parts starter list `seed/mts-v1` (98 parts in 14 categories with ownership, quantity, sizes and measure / conflict / unverified flags; 25 print ideas; the PTZ, CGO3+ top plate, SV07 plane and Tattu / ZD550 tray specs attached to their projects). Presets `mts-*` (104) linked to those parts, plus part links on the Pi, TF-Luna, XIAO, lidar, Typhoon and gimbal presets; the public `hw-*` copies and the example list are left out so nothing shows twice. The app shows "MTS personal edition" next to the version.
-Fixed: n/a.
-Untested: same as 1.0.0 (new parts as prints; sizes marked MEASURE).
+First personal build on top of public 1.0.0 (same data as above).
 
-## Unreleased (main)
+## 1.0.1 - 2026-11-06
 
-Changed: personal editions: EDITION.json marks a build like the MTS personal edition (branch `mts-personal`), shown next to the version in the app; versions with a suffix (`1.0.0-mts.1`) publish as pre-releases so the public Latest release stays; tests skip public-only checks on a personal edition. README and AGENTS.md describe the branches.
+Changed: npm package: the release now includes `stltools-<version>.tgz` (346 KB; install with `npm install -g <release link>`, then `stltools app`); `stltools app` starts the web app from the CLI; `stltools-app` command; the Release workflow publishes to npmjs.com when the repository has an `NPM_TOKEN` secret (plus a manual "Publish to npm" workflow). Personal editions: EDITION.json marks a build like the MTS personal edition (branch `mts-personal`), shown next to the version in the app; versions with a suffix (`1.0.0-mts.1`) publish as pre-releases so the public Latest release stays; tests skip public-only checks on a personal edition. README and AGENTS.md describe the branches.
 Fixed: n/a.
-Untested: n/a (no app changes).
+Untested: the npm package on Windows and macOS (tested: install from the .tgz on Linux, CLI generation, `stltools app`).
 
 ## 1.0.0 - 2026-11-06 (first public release)
 

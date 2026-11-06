@@ -1,11 +1,12 @@
 {
   "name": "stltools",
-  "version": "1.0.0-mts.1",
+  "version": "1.0.1-mts.1",
   "description": "Parametric STL generator for drone, RC, robotics and workshop parts: thousands of presets, assemblies, print time estimates, Klipper printer status (view only). Web UI + CLI.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "stltools": "bin/stltools.js"
+    "stltools": "bin/stltools.js",
+    "stltools-app": "bin/stltools-app.js"
   },
   "scripts": {
     "start": "node src/server.js",
@@ -22,7 +23,6 @@
     "url": "git+https://github.com/opsecfreak/STLTools.git"
   },
   "license": "Apache-2.0",
-  "private": true,
   "dependencies": {
     "@fontsource/roboto-condensed": "5.2.8",
     "manifold-3d": "3.5.3",
@@ -44,5 +44,24 @@
     "robotics",
     "klipper",
     "manifold"
-  ]
+  ],
+  "files": [
+    "bin/",
+    "src/",
+    "public/",
+    "presets/",
+    "printer-profiles/",
+    "seed/",
+    "custom/",
+    "deploy/",
+    "docs/",
+    "!docs/screenshots/",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
