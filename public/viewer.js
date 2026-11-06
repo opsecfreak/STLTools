@@ -99,3 +99,58 @@ export function createViewer(container) {
 
   return { show, parse };
 }
+
+/**
+ * Offscreen renderer for grid thumbnails. One WebGL context is shared by all
+ * cards (browsers allow only a few). render(parts) -> PNG Blob.
+ */
+export function createThumbnailer(width = 320, height = 240) {
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(1);
+  renderer.setSize(width, height, false);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xeef1f5);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 1.7));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.8);
+  sun.position.set(1, -1.5, 2);
+  scene.add(sun);
+  const camera = new THREE.PerspectiveCamera(35, width / height, 0.1, 50000);
+  camera.up.set(0, 0, 1);
+  const material = new THREE.MeshStandardMaterial({ color: 0x3d8bfd, roughness: 0.55, metalness: 0.05 });
+  const loader = new STLLoader();
+
+  async function render(parts) {
+    const group = new THREE.Group();
+    let offsetX = 0;
+    const all = new THREE.Box3();
+    for (const part of parts) {
+      const geometry = await loader.loadAsync(part.url);
+      geometry.computeBoundingBox();
+      const bb = geometry.boundingBox;
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(offsetX - bb.min.x, -(bb.min.y + bb.max.y) / 2, -bb.min.z);
+      offsetX += bb.max.x - bb.min.x + 8;
+      group.add(mesh);
+      all.expandByObject(mesh);
+    }
+    scene.add(group);
+    const size = all.getSize(new THREE.Vector3());
+    const center = all.getCenter(new THREE.Vector3());
+    const r = Math.max(size.length() / 2, 5);
+    const dir = new THREE.Vector3(0.75, -1.15, 0.85).normalize();
+    const dist = r / Math.sin((camera.fov * Math.PI) / 360) * 0.92;
+    camera.position.copy(center).addScaledVector(dir, dist);
+    camera.near = dist / 100;
+    camera.far = dist * 10;
+    camera.lookAt(center);
+    camera.updateProjectionMatrix();
+    renderer.render(scene, camera);
+    scene.remove(group);
+    group.traverse((o) => o.geometry?.dispose());
+    return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+  }
+  return { render };
+}

@@ -13,12 +13,19 @@
 //   GET  /api/designs              saved designs        POST saves one
 //   GET/PUT/DELETE /api/designs/:id
 //   GET  /api/zip/:job             all parts of a job as one ZIP
+//   GET/POST /api/projects, GET/PUT/DELETE /api/projects/:id
+//   POST /api/projects/:id/items   add a part        POST /api/projects/:id/build  ZIP of every part
+//   GET  /api/favorites            POST /api/favorites/toggle { kind, id }
+//   POST /api/thumbs/lookup        PUT /api/thumbs/:key (PNG)   GET /api/thumbs/:key.png
+//   Printers (Klipper / Moonraker, VIEW ONLY + G-code upload that never starts a print):
+//   GET/POST /api/printers, PUT/DELETE /api/printers/:id, POST /api/printers/probe, GET /api/printers/scan
+//   GET /api/printers/:id/{status,files,history,webcams}   GET /api/printers/:id/metadata?filename=
+//   GET /api/printers/:id/thumb?path=   GET /api/printers/:id/snapshot?cam=0   PUT /api/printers/:id/upload?filename=
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
 
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
 import { extname, join, normalize, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generate, listGenerators } from './core/registry.js';
@@ -30,6 +37,10 @@ import { registryIssues } from './core/registry.js';
 import { createCatalog, CatalogError } from './core/catalog.js';
 import { createDesignStore } from './core/designs.js';
 import { createZip } from './core/zip.js';
+import { createProjects, createFavorites } from './core/projects.js';
+import { createThumbStore, jobKey } from './core/thumbs.js';
+import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
+import { randomBytes } from 'node:crypto';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PKG = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'));
@@ -85,6 +96,44 @@ async function readBody(req) {
   }
 }
 
+async function readRaw(req, max) {
+  let size = 0;
+  const chunks = [];
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > max) throw Object.assign(new Error('Request body too large'), { status: 413 });
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
+const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'part';
+
+/** Generate every part of a project into one downloadable ZIP job. */
+async function buildProject(project, { onlyUnprinted = false } = {}) {
+  const files = new Map();
+  const lines = [`Project: ${project.name}`, project.description ? `\n${project.description}\n` : '', 'Parts (number, name, quantity to print):'];
+  const errors = [];
+  let n = 0;
+  for (const item of project.items) {
+    n++;
+    if (onlyUnprinted && item.printed) continue;
+    const base = `${String(n).padStart(2, '0')}-${slug(item.name)}${item.qty > 1 ? `-x${item.qty}` : ''}`;
+    try {
+      const { generator, params } = await projects.resolveItem(item);
+      const r = await generate(generator, params);
+      for (const pt of r.parts) files.set(`${base}-${pt.name}`, toStl(pt.mesh, { name: `${base}-${pt.name}` }));
+      lines.push(`${n}. ${item.name}  x${item.qty}${item.printed ? '  (printed)' : ''}${item.note ? `  - ${item.note}` : ''}`);
+    } catch (err) {
+      errors.push(`${item.name}: ${err.message}`);
+      lines.push(`${n}. ${item.name}  NOT BUILT: ${err.message}`);
+    }
+  }
+  const key = randomBytes(8).toString('hex');
+  remember(key, { prefix: slug(project.name), files, extra: [{ name: 'README.txt', data: Buffer.from(lines.join('\n') + '\n') }] });
+  return { zip: `/api/zip/${key}`, files: files.size, errors };
+}
+
 /** Serve a file from baseDir without allowing ../ escapes. */
 async function serveStatic(res, baseDir, relPath) {
   const full = normalize(join(baseDir, relPath));
@@ -100,7 +149,7 @@ async function serveStatic(res, baseDir, relPath) {
 
 /** Cache a generation result for download and build the JSON reply. */
 function publish(id, result, extra = {}) {
-  const key = createHash('sha256').update(JSON.stringify([id, result.params, extra.item?.code ?? '', extra.item?.updatedAt ?? ''])).digest('hex').slice(0, 16);
+  const key = jobKey(id, result.params, extra.item?.code ?? '', extra.item?.updatedAt ?? '');
   const files = new Map();
   const prefix = extra.item ? extra.item.code : id;
   const parts = result.parts.map(({ name, mesh }) => {
@@ -174,11 +223,91 @@ async function route(req, res) {
     return send(res, 405, 'Method not allowed');
   }
 
+  // ---- projects ----
+  if (path === '/api/projects') {
+    if (req.method === 'GET') return send(res, 200, await projects.list());
+    if (req.method === 'POST') return send(res, 201, await projects.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  m = path.match(/^\/api\/projects\/([a-z0-9-]{3,60})(\/items|\/build)?$/);
+  if (m) {
+    const [, id, sub] = m;
+    if (sub === '/items') {
+      if (req.method !== 'POST') return send(res, 405, 'Use POST');
+      return send(res, 200, await projects.addItem(id, await readBody(req)));
+    }
+    if (sub === '/build') {
+      if (req.method !== 'POST') return send(res, 405, 'Use POST');
+      return send(res, 200, await buildProject(await projects.get(id), { onlyUnprinted: url.searchParams.get('unprinted') === '1' }));
+    }
+    if (req.method === 'GET') return send(res, 200, await projects.get(id));
+    if (req.method === 'PUT') return send(res, 200, await projects.update(id, await readBody(req)));
+    if (req.method === 'DELETE') { await projects.remove(id); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
+
+  // ---- favorites ----
+  if (path === '/api/favorites' && req.method === 'GET') return send(res, 200, await favorites.list());
+  if (path === '/api/favorites/toggle' && req.method === 'POST') return send(res, 200, await favorites.toggle(await readBody(req)));
+
+  // ---- printers (view only) ----
+  if (path === '/api/printers') {
+    if (req.method === 'GET') return send(res, 200, await printers.list());
+    if (req.method === 'POST') return send(res, 201, await printers.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  if (path === '/api/printers/probe' && req.method === 'POST') {
+    const b = await readBody(req);
+    return send(res, 200, await printers.probe(b.url, b.apiKey));
+  }
+  if (path === '/api/printers/scan' && req.method === 'GET') return send(res, 200, await scanLan());
+  m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})(?:\/([a-z]+))?$/);
+  if (m) {
+    const [, id, sub] = m;
+    if (!sub) {
+      if (req.method === 'PUT') return send(res, 200, await printers.update(id, await readBody(req)));
+      if (req.method === 'DELETE') { await printers.remove(id); return send(res, 204, ''); }
+      return send(res, 405, 'Method not allowed');
+    }
+    if (sub === 'upload') {
+      if (req.method !== 'PUT') return send(res, 405, 'Use PUT');
+      const data = await readRaw(req, MAX_UPLOAD_BYTES + 1);
+      return send(res, 200, await printers.upload(id, url.searchParams.get('filename'), data, url.searchParams.get('path') ?? ''));
+    }
+    if (req.method !== 'GET') return send(res, 405, 'Read-only: use GET');
+    if (sub === 'status') return send(res, 200, await printers.status(id));
+    if (sub === 'files') return send(res, 200, await printers.files(id));
+    if (sub === 'history') return send(res, 200, await printers.history(id, Number(url.searchParams.get('limit') ?? 20)));
+    if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
+    if (sub === 'metadata') return send(res, 200, await printers.metadata(id, url.searchParams.get('filename') ?? ''));
+    if (sub === 'thumb' || sub === 'snapshot') {
+      const img = sub === 'thumb' ? await printers.thumbnail(id, url.searchParams.get('path')) : await printers.snapshot(id, Number(url.searchParams.get('cam') ?? 0));
+      return send(res, 200, img.data, { 'content-type': img.type, 'cache-control': sub === 'thumb' ? 'public, max-age=3600' : 'no-store' });
+    }
+    return send(res, 404, 'Unknown printer endpoint');
+  }
+
+  // ---- thumbnails ----
+  if (path === '/api/thumbs/lookup' && req.method === 'POST') {
+    const body = await readBody(req);
+    return send(res, 200, await thumbs.lookup(Array.isArray(body) ? body : []));
+  }
+  m = path.match(/^\/api\/thumbs\/([a-f0-9]{16})(\.png)?$/);
+  if (m) {
+    if (req.method === 'PUT') return send(res, 200, await thumbs.put(m[1], await readRaw(req, 300 * 1024 + 1)));
+    if (req.method === 'GET') {
+      const png = await thumbs.get(m[1]);
+      if (!png) return send(res, 404, 'No thumbnail yet');
+      return send(res, 200, png, { 'content-type': 'image/png', 'cache-control': 'public, max-age=86400' });
+    }
+    return send(res, 405, 'Method not allowed');
+  }
+
   m = path.match(/^\/api\/zip\/([a-f0-9]{16})$/);
   if (m && req.method === 'GET') {
     const job = jobs.get(m[1]);
     if (!job) return send(res, 404, 'Expired or unknown. Generate again.');
-    const zip = createZip([...job.files].map(([name, data]) => ({ name: `${job.prefix}-${name}.stl`, data })));
+    const zip = createZip([...[...job.files].map(([name, data]) => ({ name: `${job.prefix}-${name}.stl`, data })), ...(job.extra ?? [])]);
     return send(res, 200, zip, { 'content-type': 'application/zip', 'content-disposition': `attachment; filename="${job.prefix}.zip"` });
   }
 
@@ -207,11 +336,19 @@ async function route(req, res) {
 
 let catalog = createCatalog();
 let designs = createDesignStore();
+let projects = createProjects({ dataDir: catalog.dataDir, designs });
+let favorites = createFavorites({ dataDir: catalog.dataDir });
+let thumbs = createThumbStore({ dataDir: catalog.dataDir, version: PKG.version });
+let printers = createPrinters({ dataDir: catalog.dataDir });
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
   if (dataDir) {
     catalog = createCatalog({ dataDir });
     designs = createDesignStore({ dataDir });
+    projects = createProjects({ dataDir, designs });
+    favorites = createFavorites({ dataDir });
+    thumbs = createThumbStore({ dataDir, version: PKG.version });
+    printers = createPrinters({ dataDir });
   }
   const server = createServer(async (req, res) => {
     try {

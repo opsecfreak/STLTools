@@ -1,5 +1,11 @@
 # Changelog
 
+## v5 (0.5.0) - 2026-11-06
+
+Changed: Home page (tabs, favorites, projects, recent designs, printer status). Advanced search across presets, saved designs, generators and projects with filters and a query syntax (`tubeOD:16`, `teeth>=30`, `tab:quads`, `-snap`, phrases). Grid and list views with 3D previews rendered once in the browser and cached on the server. Favorites (server-side, every device). Projects: parts with quantity, notes and printed status, one-ZIP build with a parts list. Printers tab for Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd): status, temperatures, progress, layer, time left, files with thumbnails, history, webcam snapshots, LAN scan, G-code upload that never starts a print. View only: no control endpoints exist. URL routing so Back works and pages can be bookmarked.
+Fixed: n/a.
+Untested: the Printers tab against a real SV07 (tested against a mock Moonraker built from the official API docs); preview rendering speed on a Raspberry Pi.
+
 ## v4 (0.4.0) - 2026-11-05
 
 Changed: clamp types snap-on clip, two-piece (fits mid-tube) and collar. New `component-mount` generator: tray, board pad, cradle, cup, cable clips or support post on a zip-tie saddle, bolt-on clamp kit (2 parts), screw plate or tape: ESC on an arm, receiver, VTX / FC pads, battery trays, GPS posts, lights, sensors, Pi boards. 51 new presets (285 total). Desktop packages with Node.js included (Windows, macOS Apple / Intel app, Linux, Raspberry Pi 64 / 32-bit) plus installers; per-user data folder so upgrades never touch your work. Generators and presets load automatically; your own go in `custom/` and are skipped (not fatal) if broken; helpers passed to `generate(p, k, lib)`. `/api/version`, version and problem badge in the UI. CI on Node 18 / 20 / 22 and a tag-driven release workflow. Docs: INSTALL, TESTING, EXTENDING.

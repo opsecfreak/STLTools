@@ -1,37 +1,9 @@
 import { createViewer } from './viewer.js';
 
-const $ = (id) => document.getElementById(id);
-const el = (tag, props = {}, ...children) => {
-  const n = document.createElement(tag);
-  for (const [k, v] of Object.entries(props)) {
-    if (k === 'dataset') Object.assign(n.dataset, v);
-    else if (k.includes('-')) n.setAttribute(k, v);
-    else n[k] = v;
-  }
-  for (const c of children) n.append(c);
-  return n;
-};
+import { $, el, api, store, SECTIONS, SECTION_NAMES } from './lib.js';
+import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton } from './home.js';
+import { renderPrinters, stopPrinters } from './printers.js';
 
-// ---------- api / storage ----------
-async function api(method, url, body) {
-  const res = await fetch(url, {
-    method,
-    headers: body ? { 'content-type': 'application/json' } : {},
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (res.status === 204) return null;
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.errors ? data.errors.join('\n') : data.error || res.statusText);
-  return data;
-}
-
-// Per-viewer conveniences only (last tab, last preset). Shared data lives on the server.
-const store = {
-  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* ignore */ } },
-};
-
-const SECTIONS = ['shop', 'planes', 'quads', 'accessories', 'robotics'];
 const state = {
   tab: 'shop', shopSub: 'design',
   generators: [], presets: [], categories: [], items: [], designs: [],
@@ -163,6 +135,19 @@ function loadGenerator(id, values = null, source = {}) {
   $('description').textContent = `${what}: ${state.preset?.description || state.current.description}`;
   buildForm(state.current, values ?? defaultsOf(state.current));
   highlightPreset();
+  const fav = state.design ? ['design', state.design.id] : state.preset ? ['preset', state.preset.id] : ['generator', state.current.id];
+  $('designStar').replaceChildren(starButton(...fav));
+}
+
+/** What "Add to project" stores: the preset or saved design if unchanged, else a snapshot of the settings. */
+function currentSelection() {
+  const gen = state.current;
+  const now = readForm(gen);
+  const norm = (d, v) => (d.type === 'boolean' ? String(Boolean(v)) : String(v));
+  const same = (base) => Object.entries(gen.params).every(([k, d]) => norm(d, now[k]) === norm(d, base[k]));
+  if (state.design && same({ ...defaultsOf(gen), ...state.design.params })) return { kind: 'design', ref: state.design.id, name: state.design.name };
+  if (state.preset && state.preset.generator === gen.id && same({ ...defaultsOf(gen), ...state.preset.params })) return { kind: 'preset', ref: state.preset.id, name: state.preset.name };
+  return { kind: 'custom', generator: gen.id, params: now, name: `${state.design?.name ?? state.preset?.name ?? gen.name} (custom)` };
 }
 
 function loadPreset(preset, generateNow = true) {
@@ -225,10 +210,52 @@ function showPane(name) {
   $('pane-library').hidden = name !== 'library';
 }
 
-function switchTab(tab, { keepForm = false } = {}) {
-  state.tab = tab;
-  store.set('tab', tab);
+// ---------- routing: #home #shop ... #projects #project/<id> #printers #library ----------
+const PAGES = ['home', 'projects', 'printers'];
+
+function markTab(tab) {
   for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === tab);
+}
+
+async function showPage(name, arg) {
+  stopPrinters();
+  markTab(name === 'project' ? 'projects' : name);
+  document.querySelector('main').classList.add('full');
+  const page = $('page');
+  page.hidden = false;
+  page.replaceChildren(el('p', { className: 'muted', textContent: 'Loading...' }));
+  try {
+    if (name === 'home') await renderHome(page);
+    else if (name === 'projects') await renderProjects(page);
+    else if (name === 'project') await renderProject(page, arg);
+    else if (name === 'printers') await renderPrinters(page);
+  } catch (err) {
+    page.replaceChildren(el('p', { className: 'error', textContent: err.message }));
+  }
+}
+
+/** Show a tab and put it in the address bar (so Back works and links can be shared). */
+function go(hash, opts) {
+  if (location.hash !== `#${hash}`) history.pushState(null, '', `#${hash}`);
+  route(hash, opts);
+}
+
+function route(hash = location.hash.slice(1), opts = {}) {
+  const [name, arg] = hash.split('/');
+  store.set('tab', name || 'home');
+  if (!name || name === 'home') return showPage('home');
+  if (PAGES.includes(name)) return showPage(name);
+  if (name === 'project' && arg) return showPage('project', decodeURIComponent(arg));
+  if ([...SECTIONS, 'library'].includes(name)) return showTab(name, opts);
+  return showPage('home');
+}
+
+function showTab(tab, { keepForm = false } = {}) {
+  stopPrinters();
+  document.querySelector('main').classList.remove('full');
+  $('page').hidden = true;
+  state.tab = tab;
+  markTab(tab);
   if (tab === 'library') {
     showPane('library');
     refreshDesigns().catch((err) => setStatus(err.message, true));
@@ -311,7 +338,7 @@ async function onStlFiles(e) {
 }
 
 // ---------- My Designs ----------
-const sectionName = { shop: 'Shop', planes: 'Planes', quads: 'Quadcopters', accessories: 'Accessories', robotics: 'Robotics' };
+const sectionName = SECTION_NAMES;
 
 async function refreshDesigns() {
   state.designs = await api('GET', '/api/designs');
@@ -339,7 +366,7 @@ function renderDesigns() {
 function openDesign(d) {
   const tab = SECTIONS.includes(d.section) ? d.section : 'shop';
   state.shopSub = 'design';
-  switchTab(tab, { keepForm: true });
+  go(tab, { keepForm: true });
   const gen = state.generators.find((g) => g.id === d.generator);
   loadGenerator(gen.id, { ...defaultsOf(gen), ...d.params }, { design: d, preset: state.presets.find((p) => p.id === d.presetId) });
   run();
@@ -480,7 +507,7 @@ function sendToShop() {
   const preset = state.preset;
   const overrides = overridesFromForm();
   const labelGuess = $(fieldId('labelText'))?.value || $(fieldId('text'))?.value || '';
-  if (state.tab !== 'shop') switchTab('shop', { keepForm: true });
+  if (state.tab !== 'shop') go('shop', { keepForm: true });
   switchShopSub('catalog');
   resetItemForm();
   presetOptions($('itemPreset'), preset.id);
@@ -533,7 +560,10 @@ $('printLabels').onclick = () => {
   const picked = [...document.querySelectorAll('#itemList .pick:checked')].map((c) => c.value);
   window.open(`/labels.html${picked.length ? `?codes=${encodeURIComponent(picked.join(','))}` : ''}`, '_blank');
 };
-for (const b of document.querySelectorAll('.tab')) b.onclick = () => switchTab(b.dataset.tab);
+for (const b of document.querySelectorAll('.tab')) b.onclick = () => go(b.dataset.tab);
+window.addEventListener('popstate', () => route());
+window.addEventListener('hashchange', () => route());
+$('toProject').onclick = () => addToProject(currentSelection());
 for (const b of document.querySelectorAll('.subtab')) b.onclick = () => switchShopSub(b.dataset.sub);
 
 let version;
@@ -545,5 +575,20 @@ if (version.issues.length) {
   $('appVersion').after(badge);
 }
 resetItemForm();
-const startTab = store.get('tab');
-switchTab([...SECTIONS, 'library'].includes(startTab) ? startTab : 'shop');
+await refreshDesigns().catch(() => {});
+await initHome({
+  state,
+  openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); },
+  openDesign,
+  openGenerator: (id, params) => {
+    const g = state.generators.find((x) => x.id === id);
+    state.shopSub = 'design';
+    go(g.sections[0], { keepForm: true });
+    loadGenerator(id, params ? { ...defaultsOf(g), ...params } : null);
+    run();
+  },
+  goTab: (t) => go(t),
+  refreshDesigns,
+  toast: (msg) => setStatus(msg),
+});
+route(location.hash.slice(1) || 'home');
