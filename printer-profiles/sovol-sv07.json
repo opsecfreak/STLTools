@@ -28,7 +28,8 @@
     "webPort": 80,
     "hostnameHints": [
       "sv07",
-      "sovol"
+      "sovol",
+      "mkspi"
     ]
   },
   "verified": false,

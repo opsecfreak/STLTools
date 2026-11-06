@@ -19,7 +19,7 @@ import { randomBytes } from 'node:crypto';
 import { networkInterfaces } from 'node:os';
 import { createJsonFile } from './jsonstore.js';
 import { CatalogError } from './catalog.js';
-import { getProfile } from './profiles.js';
+import { getProfile, listProfiles } from './profiles.js';
 
 // Printer host boards (the SV07 runs Klipper on a small ARM board) can be slow
 // while printing, so allow a few seconds before calling it offline.
@@ -107,6 +107,13 @@ const cleanModel = (m) => (m && /^[a-z0-9][a-z0-9-]{1,40}$/.test(String(m)) ? St
 /** Best guess of the printer profile from the Klipper host name (sovol, sv07...). Empty if unknown. */
 export function guessModel(hostname) {
   const h = String(hostname ?? '').toLowerCase();
+  if (!h) return '';
+  // A profile can claim host names (moonraker.hostnameHints) and a priority: a personal
+  // profile for the same printer (priority > 0) wins over the shipped one.
+  const hit = listProfiles()
+    .filter((p) => (p.moonraker?.hostnameHints ?? []).some((x) => h.includes(String(x).toLowerCase())))
+    .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0];
+  if (hit) return hit.id;
   // Stock SV07 images name the host "mkspi" (MKS Pi host board) or after the printer.
   if (/sv0?7|mkspi|sovol/.test(h)) return 'sovol-sv07';
   return '';

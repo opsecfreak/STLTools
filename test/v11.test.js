@@ -159,11 +159,11 @@ test('webcam: Moonraker lists none -> Mainsail default path (SV07 profile) is tr
 });
 
 test('real SV07 setup: mkspi host, Mainsail-only webcam list, camera service down, printer name', async () => {
-  assert.equal(guessModel('mkspi'), 'sovol-sv07', 'stock SV07 host board name');
+  assert.match(guessModel('mkspi'), /^sovol-sv07/, 'stock SV07 host board name');
   const real = await startMockMoonraker({ hostname: 'mkspi', webcams: 'mainsail', webcamUp: false });
   try {
     const d = (await j('POST', '/api/printers/diagnose', { url: `127.0.0.1:${real.port}` })).body;
-    assert.equal(d.model, 'sovol-sv07');
+    assert.match(d.model, /^sovol-sv07/);
     assert.equal(d.name, 'Shop printer', 'name from Mainsail settings');
     const cam = d.steps.find((x) => x.step === 'Webcam');
     assert.equal(cam.warn, true, 'listed but not answering is a warning, not a failure');
