@@ -67,8 +67,48 @@ export function registryIssues() {
   return [...loadIssues];
 }
 
+// Settings shown in the UI's Simple mode. A generator can set its own `basic`
+// list; these cover the built-in ones. Without a list the UI shows the first
+// parameter group plus whatever the loaded preset changes.
+const BASIC = {
+  'stack-bin': ['width', 'depth', 'height', 'compartmentsX', 'compartmentsY', 'labelType', 'labelText'],
+  'parts-box': ['width', 'depth', 'height', 'compartmentsX', 'compartmentsY', 'lid'],
+  'holder-block': ['shape', 'itemSize', 'columns', 'rows', 'pocketDepth'],
+  hook: ['style', 'width', 'armLength', 'mount'],
+  'tool-rack': ['holeShape', 'holeSize', 'holeCount', 'rows', 'mount'],
+  'label-card': ['text', 'line2', 'width', 'height'],
+  'tube-clamp': ['type', 'tubeOD', 'tubeOD2', 'length', 'bolt'],
+  'tube-joint': ['type', 'tubeOD', 'socketDepth', 'setScrew'],
+  'tube-cap': ['type', 'tubeOD', 'tubeID'],
+  spacer: ['shape', 'outerDiameter', 'innerDiameter', 'length', 'count'],
+  'component-mount': ['holder', 'itemWidth', 'itemLength', 'itemHeight', 'itemDiameter', 'base', 'tubeOD'],
+  'sbc-case': ['board', 'cooling', 'headroom', 'ears'],
+  'sensor-bracket': ['bodyLength', 'bodyWidth', 'bodyDepth', 'base', 'tilt', 'tubeOD'],
+  'lidar-mount': ['shape', 'plateDiameter', 'pattern', 'holeSpacingX', 'holeSpacingY', 'holeCircle', 'standoff', 'mount'],
+  'repair-stand': ['notchWidth', 'notchDepth', 'shape', 'clearHeight'],
+  'extrusion-bracket': ['profile', 'type', 'holesPerLeg'],
+  'motor-clamp': ['bodyDiameter', 'flatHeight', 'clampLength'],
+  gear: ['type', 'module', 'teeth', 'thickness', 'bore'],
+  pulley: ['type', 'teeth', 'beltWidth', 'bore'],
+  'shaft-coupler': ['boreA', 'boreB', 'length'],
+  'bearing-block': ['bearing', 'style', 'bolt'],
+  'stepper-mount': ['size', 'style'],
+  knob: ['diameter', 'height', 'grip', 'shaft', 'shaftDiameter'],
+  'link-bar': ['holes', 'pitch', 'holeDiameter', 'holeShape'],
+  enclosure: ['innerWidth', 'innerDepth', 'innerHeight', 'portWall', 'vents'],
+  'fit-test': ['mode', 'nominal', 'step', 'count', 'depth'],
+  'rc-wing': ['wingspan', 'rootChord', 'tipChord', 'airfoil', 'controlSurface', 'servoBay'],
+  'multirotor-frame': ['arms', 'wheelbase', 'propInches', 'motorPatternA', 'motorPatternB'],
+  'motor-mount': ['tubeShape', 'tubeSize', 'motorPatternA', 'motorPatternB'],
+  'servo-mount': ['style', 'servoLength', 'servoWidth', 'earSpacing'],
+};
+
 export function listGenerators() {
-  return GENERATORS.map(({ id, name, description, params, sections }) => ({ id, name, description, params, sections: sections ?? ['shop'] }));
+  return GENERATORS.map(({ id, name, description, params, sections, basic, assembly }) => ({
+    id, name, description, params, sections: sections ?? ['shop'],
+    basic: (basic ?? BASIC[id] ?? []).filter((k) => params[k]),
+    assembly: Boolean(assembly),
+  }));
 }
 
 export function getGenerator(id) {
@@ -94,7 +134,12 @@ export async function generate(id, input = {}) {
   const k = createScope();
   try {
     const result = g.generate(params, k, LIB);
-    const parts = result.parts.map(({ name, manifold }) => ({ name, mesh: toPlainMesh(manifold) }));
+    // `assembled` (optional, from k.pose()): 4x4 column-major matrix that moves the
+    // print-oriented part to its place in the assembly, for the "Assembled" 3D view.
+    const parts = result.parts.map(({ name, manifold, assembled, qty, material }) => ({
+      name, mesh: toPlainMesh(manifold),
+      ...(assembled ? { assembled } : {}), ...(qty > 1 ? { qty } : {}), ...(material ? { material } : {}),
+    }));
     return { id, params, parts, warnings: result.warnings ?? [], notes: result.notes ?? [], meta: result.meta ?? {} };
   } finally {
     k.free();

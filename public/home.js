@@ -9,6 +9,8 @@ import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES
 import { thumbImg, thumbStl } from './thumbs.js';
 import { formatDuration } from '/shared/estimate.js';
 import { ownershipOf, ownBadge } from './parts.js';
+import { createViewer } from './viewer.js';
+import { createEstimateBox } from './viewtools.js';
 import { printerChips } from './printers.js';
 
 let ctx = null; // set by initHome: { state, openPreset, openDesign, openGenerator, openStl, openShopItem, goTab, refreshDesigns, refreshLibrary, toast }
@@ -472,6 +474,50 @@ export async function renderProject(page, id) {
     try { showEstimate((await api('POST', `/api/projects/${p.id}/build?unprinted=1`)).estimate); } catch (err) { estLine.textContent = err.message; } finally { e.target.disabled = false; }
   } });
   const exportBtn = el('a', { className: 'button secondary', href: `/api/projects/${p.id}/export`, download: '', textContent: 'Export project file', title: 'One file with the parts list, saved designs and imported STLs. Import it on another computer.' });
+  // ---- parts table with print time / filament per part, and the 3D assembly view
+  const asm = el('div');
+  const asmBtn = el('button', { type: 'button', textContent: 'Show parts, print times and 3D assembly', onclick: () => drawAssembly() });
+  async function drawAssembly() {
+    asmBtn.disabled = true;
+    asm.replaceChildren(el('p', { className: 'muted', textContent: 'Building every part...' }));
+    let r;
+    try { r = await api('POST', `/api/projects/${p.id}/build`); } catch (err) { asm.replaceChildren(el('p', { className: 'error', textContent: err.message })); asmBtn.disabled = false; return; }
+    asmBtn.disabled = false;
+    showEstimate(r.estimate);
+    if (!r.parts.length) { asm.replaceChildren(el('p', { className: 'muted', textContent: 'No parts to build.' })); return; }
+    stopProjectView();
+    const view = el('div', { className: 'asm-view' });
+    const tableBox = el('div', { className: 'estimate' });
+    const placeBox = el('div');
+    const layoutSel = el('select', {}, el('option', { value: 'assembled', textContent: 'Assembled (placed)' }), el('option', { value: 'plate', textContent: 'Print plate (side by side)' }));
+    asm.replaceChildren(el('div', { className: 'asm-box' }, view, el('div', { className: 'asm-side' }, el('label', {}, '3D layout ', layoutSel), placeBox)), tableBox,
+      el('p', { className: 'muted', textContent: 'Assembly generators (gimbals) bring their own part positions. Move whole items with X / Y / Z (mm) and turn them (degrees); positions are saved with the project. The ZIP has every STL in print orientation.' }));
+    asmViewer = createViewer(view, settingsViewer());
+    const est = createEstimateBox(tableBox, asmViewer, { onShowPart: (i) => asmViewer.show([partsWithPlace()[i]], { layout: 'plate' }) });
+    est.update(r.parts.map((pt) => ({ name: pt.name, stats: pt.stats, url: pt.url, filename: pt.filename, qty: pt.qty })));
+    // default places: items without one go side by side along X
+    // one place per item (kept here: `p` is replaced after every save)
+    let cursor = 0;
+    const span = (idx) => Math.max(20, ...r.parts.filter((pt) => pt.item === idx).map((pt) => Math.max(...pt.stats.size)));
+    const places = p.items.map((it, idx) => {
+      if (it.place) return { ...it.place };
+      const w = span(idx);
+      const pl = { x: cursor + w / 2, y: 0, z: 0, rx: 0, ry: 0, rz: 0 };
+      cursor += w + 15;
+      return pl;
+    });
+    const partsWithPlace = () => r.parts.map((pt) => ({ ...pt, assembled: mul(placeMatrix(places[pt.item]), pt.assembled ?? IDENTITY) }));
+    const redraw = () => asmViewer.show(partsWithPlace(), { layout: layoutSel.value });
+    const saveSoonPlaces = debounce(() => save({ items: p.items.map((x, i) => ({ ...x, place: places[i] })) }), 600);
+    const fields = ['x', 'y', 'z', 'rx', 'ry', 'rz'];
+    placeBox.replaceChildren(el('table', { className: 'place-table' },
+      el('thead', {}, el('tr', {}, el('th', { textContent: 'Item' }), ...fields.map((f) => el('th', { textContent: f.toUpperCase() })))),
+      el('tbody', {}, ...p.items.map((it, idx) => el('tr', {}, el('td', { textContent: it.name }), ...fields.map((f) => el('td', {}, el('input', { type: 'number', step: f.startsWith('r') ? 15 : 1, value: Math.round(places[idx][f] * 100) / 100, 'aria-label': `${it.name} ${f}`,
+        oninput: (e) => { places[idx][f] = Number(e.target.value) || 0; redraw(); saveSoonPlaces(); } }))))))));
+    layoutSel.onchange = redraw;
+    redraw();
+  }
+
   page.replaceChildren(
     el('div', { className: 'page-head' },
       el('a', { href: '#projects', className: 'back', textContent: '< Projects' }),
@@ -483,6 +529,7 @@ export async function renderProject(page, id) {
           try { await api('DELETE', `/api/projects/${p.id}`); await refreshProjects(); location.hash = '#projects'; } catch (err) { toast(err.message, 'error'); }
         } })), estLine),
     el('h3', { textContent: 'Parts' }), items,
+    el('h3', { textContent: 'Print times and assembly' }), el('div', { className: 'row' }, asmBtn), asm,
     el('h3', { textContent: 'Add parts' }), pickQ, pickRes);
 }
 
@@ -574,9 +621,19 @@ function drawDashboard(dash, redraw) {
       el('li', {}, 'Press Save design to keep your settings, or Add to project to collect the parts for a build.'),
       el('li', {}, 'Connect your Sovol SV07 in Settings > Printers to see its status and upload G-code (view only).'),
       el('li', {}, 'Import STL files you already have in Import. Press / anywhere to search everything.'))) : null;
+  const QUICK = [
+    ['stack-bin', 'Bin', 'stacking parts bin'], ['parts-box', 'Box with lid', 'compartments'], ['tube-clamp', 'Tube clamp', 'any tube size'],
+    ['component-mount', 'Mount for a part', 'ESC, RX, battery, board'], ['sbc-case', 'Pi case', 'Pi 5 / 4 / 3'], ['sensor-bracket', 'Sensor bracket', 'TF-Luna, XIAO, modules'],
+    ['spacer', 'Spacer / washer', 'any bolt'], ['gear', 'Gear', 'spur, helical, rack'], ['enclosure', 'Enclosure', 'box + lid'],
+    ['servo-gimbal', 'Pan-tilt gimbal', 'assembly, 3 parts'], ['brushless-gimbal', 'Brushless gimbal', 'assembly, 3 parts'], ['fit-test', 'Fit test', 'inserts, holes'],
+  ].filter(([id]) => generators.some((g) => g.id === id));
+  const quick = el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Make something' }),
+    el('span', { className: 'muted', textContent: 'Opens in Simple mode: a few sizes, then Download. Switch to "All settings" for full control, or combine parts in a project for big builds.' })),
+  el('div', { className: 'quick-make' }, ...QUICK.map(([id, title, sub]) => el('button', { type: 'button', onclick: () => { store.set('formMode', 'simple'); ctx.openGenerator(id); } }, title, el('span', { textContent: sub })))));
   dash.replaceChildren(...[
     chips,
     start,
+    quick,
     el('section', {}, el('div', { className: 'tiles' }, ...tiles,
       tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
       tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
@@ -589,4 +646,28 @@ function drawDashboard(dash, redraw) {
       cardList(projItems, view, 'No projects yet. Open Projects to create one.')),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Recent saved designs' }), el('a', { href: '#library', textContent: 'My Designs' })),
       cardList(designItems, view, designs.length ? '' : 'Press "Save design" in any tab to keep your settings.'))].filter(Boolean));
+}
+
+// ---------------------------------------------------------------- project 3D view helpers
+
+let asmViewer = null;
+/** Free the project page's 3D view (called when the page changes). */
+export function stopProjectView() {
+  asmViewer?.dispose();
+  asmViewer = null;
+}
+const settingsViewer = () => ({ ...(ctx.state.viewerSettings?.() ?? {}), dimensions: true });
+const IDENTITY = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+/** 4x4 column-major: translate(x, y, z) * Rz * Ry * Rx (degrees). */
+function placeMatrix(pl) {
+  const [a, b, c] = [pl.rx, pl.ry, pl.rz].map((d) => (d * Math.PI) / 180);
+  const [cx, cy, cz] = [Math.cos(a), Math.cos(b), Math.cos(c)];
+  const [sx, sy, sz] = [Math.sin(a), Math.sin(b), Math.sin(c)];
+  const R = [[cz * cy, cz * sy * sx - sz * cx, cz * sy * cx + sz * sx], [sz * cy, sz * sy * sx + cz * cx, sz * sy * cx - cz * sx], [-sy, cy * sx, cy * cx]];
+  return [R[0][0], R[1][0], R[2][0], 0, R[0][1], R[1][1], R[2][1], 0, R[0][2], R[1][2], R[2][2], 0, pl.x, pl.y, pl.z, 1];
+}
+function mul(A, B) {
+  const out = new Array(16).fill(0);
+  for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) for (let k = 0; k < 4; k++) out[c * 4 + r] += A[k * 4 + r] * B[c * 4 + k];
+  return out;
 }

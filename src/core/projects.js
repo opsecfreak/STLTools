@@ -49,6 +49,11 @@ export function createProjects({ dataDir, designs, library = null }) {
       note: text(raw.note, 'Note', 300),
       printed: Boolean(raw.printed),
     };
+    // v8: where the item sits in the project's assembly view (mm, degrees)
+    if (raw.place && typeof raw.place === 'object') {
+      const n = (v, lim) => Math.max(-lim, Math.min(lim, Number(v) || 0));
+      item.place = { x: n(raw.place.x, 2000), y: n(raw.place.y, 2000), z: n(raw.place.z, 2000), rx: n(raw.place.rx, 360), ry: n(raw.place.ry, 360), rz: n(raw.place.rz, 360) };
+    }
     if (kind === 'custom') {
       let g;
       try {

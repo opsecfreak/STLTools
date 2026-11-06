@@ -33,6 +33,16 @@ export function initViewTools(viewer, bar) {
   };
   cut.oninput = updateCut;
 
+  const layoutBtn = el('button', { type: 'button', className: 'vt vt-layout', hidden: true, title: 'Show the parts put together, or laid out as printed', onclick: async () => {
+    const next = viewer.layout() === 'assembled' ? 'plate' : 'assembled';
+    store.set('layout', next);
+    await viewer.setLayout(next);
+    syncLayout();
+  } });
+  const syncLayout = () => {
+    layoutBtn.hidden = !viewer.canAssemble();
+    layoutBtn.textContent = viewer.layout() === 'assembled' ? 'Print plate' : 'Assembled';
+  };
   const shadingSel = el('select', { className: 'vt-select', title: 'Display', 'aria-label': 'Display', onchange: () => set({ shading: shadingSel.value }) },
     ...SHADING.map(([v, l]) => el('option', { value: v, textContent: l })));
   const panel = el('div', { className: 'vt-panel', hidden: true });
@@ -58,13 +68,14 @@ export function initViewTools(viewer, bar) {
       btn('Front', 'Front view', () => viewer.setView('front')),
       btn('Right', 'Right view', () => viewer.setView('right')),
       btn('Fit', 'Fit to the model', () => viewer.setView('fit')),
+      layoutBtn,
       shadingSel,
       btn('Cut', 'Layer preview: cut the model at a height', () => { cutBox.hidden = !cutBox.hidden; if (cutBox.hidden) { cut.value = 1000; } updateCut(); }),
       btn('PNG', 'Save a picture of this view', async () => downloadBlob(await viewer.screenshot(), 'stltools-view.png')),
       btn('⚙', '3D view settings', () => { panel.hidden = !panel.hidden; drawPanel(); })),
     cutBox, panel);
   drawPanel();
-  return { reset: () => { cut.value = 1000; updateCut(); } };
+  return { reset: () => { cut.value = 1000; updateCut(); syncLayout(); } };
 }
 
 // ---------------------------------------------------------------- estimate
@@ -85,8 +96,9 @@ async function targets() {
   return out;
 }
 
-export function createEstimateBox(box, viewer) {
-  let stats = [];
+export function createEstimateBox(box, viewer, { onShowPart } = {}) {
+  // rows: [{ name?, stats, url?, filename?, qty? }] (plain stats objects are accepted too)
+  let rows = [];
   let opts = [];
   const pick = el('select', { 'aria-label': 'Print on' });
   const lh = el('input', { type: 'number', min: 0.04, max: 1, step: 0.02, className: 'est-num', title: 'Layer height (mm)' });
@@ -96,26 +108,47 @@ export function createEstimateBox(box, viewer) {
   const saveSoon = debounce((patch) => saveSettings({ print: patch }).catch((e) => toast(e.message, 'error')), 500);
 
   const current = () => opts.find((o) => o.value === pick.value) ?? opts[0];
+  const g = (x) => `${x.toFixed(x < 10 ? 1 : 0)} g`;
 
   function draw() {
     const t = current();
     const cfg = settings()?.print;
     if (!t || !cfg) { out.replaceChildren(el('span', { className: 'muted', textContent: 'No printer profile.' })); return; }
     viewer.setBed(t.profile.bed);
-    if (!stats.length) { out.replaceChildren(el('span', { className: 'muted', textContent: 'Generate or open a part to see a time estimate.' })); return; }
-    const e = estimateParts(stats, t.profile, cfg);
-    const misfit = e.parts.map((p, i) => (p.fit.fits ? null : `Part ${i + 1}: ${p.fit.reason}.`)).filter(Boolean);
-    const rotated = e.parts.some((p) => p.fit.rotated);
+    if (!rows.length) { out.replaceChildren(el('span', { className: 'muted', textContent: 'Generate or open a part to see its print time and filament.' })); return; }
+    const qty = rows.map((r) => r.qty ?? 1);
+    const e = estimateParts(rows.map((r) => r.stats), t.profile, cfg, qty);
+    const pieces = qty.reduce((a, b) => a + b, 0);
+    const misfit = e.parts.filter((p) => !p.fit.fits).length;
+    const table = el('table', { className: 'est-table' },
+      el('thead', {}, el('tr', {}, ...['Part', 'Size (mm)', 'Qty', 'Time', 'Filament', 'Layers', 'Bed', ''].map((h) => el('th', { textContent: h })))),
+      el('tbody', {}, ...rows.map((r, i) => {
+        const p = e.parts[i];
+        const n = qty[i];
+        return el('tr', { className: p.fit.fits ? '' : 'misfit' },
+          el('td', {}, onShowPart && rows.length > 1 ? el('a', { href: '#', textContent: r.name ?? `Part ${i + 1}`, title: 'Show only this part', onclick: (ev) => { ev.preventDefault(); onShowPart(i); } }) : document.createTextNode(r.name ?? `Part ${i + 1}`)),
+          el('td', { textContent: r.stats.size.map((v) => (+v).toFixed(1)).join(' x ') }),
+          el('td', { textContent: String(n) }),
+          el('td', { textContent: formatDuration(p.seconds * n) + (n > 1 ? ` (${formatDuration(p.seconds)} each)` : '') }),
+          el('td', { textContent: `${g(p.grams * n)}, ${((p.filamentMm * n) / 1000).toFixed(2)} m` }),
+          el('td', { textContent: String(p.layers) }),
+          el('td', { className: p.fit.fits ? 'ok' : 'bad', textContent: p.fit.fits ? (p.fit.rotated ? 'fits, turned 90' : 'fits') : 'too big', title: p.fit.reason ?? '' }),
+          el('td', {}, r.url ? el('a', { href: r.url, download: r.filename ?? '', textContent: 'STL' }) : null));
+      })),
+      rows.length > 1 || pieces > 1 ? el('tfoot', {}, el('tr', {},
+        el('td', { textContent: `Total (${pieces} piece${pieces > 1 ? 's' : ''})` }), el('td'), el('td', { textContent: String(pieces) }),
+        el('td', { textContent: `${formatDuration(e.seconds)}` }), el('td', { textContent: `${g(e.grams)}, ${(e.filamentMm / 1000).toFixed(2)} m` }), el('td'), el('td'), el('td'))) : null);
     out.replaceChildren(...[
       el('div', { className: 'est-main' },
         el('strong', { textContent: `About ${formatDuration(e.seconds)}` }),
-        el('span', { textContent: `${e.grams.toFixed(e.grams < 10 ? 1 : 0)} g ${MATERIALS[cfg.material]?.name ?? ''}, ${(e.filamentMm / 1000).toFixed(2)} m` }),
-        e.cost !== null ? el('span', { textContent: `filament cost ${e.cost.toFixed(2)}` }) : null),
-      misfit.length ? el('div', { className: 'est-warn', textContent: `Does not fit ${t.profile.name}: ${misfit.join(' ')}` }) : null,
-      rotated ? el('div', { className: 'muted', textContent: 'Turn the part 90 degrees on the bed to fit.' }) : null,
+        el('span', { textContent: `${g(e.grams)} ${MATERIALS[cfg.material]?.name ?? ''}, ${(e.filamentMm / 1000).toFixed(2)} m` }),
+        e.cost !== null ? el('span', { textContent: `filament cost ${e.cost.toFixed(2)}` }) : null,
+        el('span', { className: 'muted', textContent: `incl. ${formatDuration(e.heatUp)} heat-up` })),
+      misfit ? el('div', { className: 'est-warn', textContent: `${misfit} part${misfit > 1 ? 's do' : ' does'} not fit the ${t.profile.name} bed.` }) : null,
+      table,
       el('details', { className: 'est-detail' }, el('summary', { textContent: 'How this is calculated' }),
-        el('ul', {}, ...e.parts.map((p, i) => el('li', { textContent: `Part ${i + 1}: ${formatDuration(p.seconds)}, ${p.layers} layers, ${p.grams.toFixed(1)} g (walls ${formatDuration(p.breakdown.walls / p.breakdown.efficiency)}, top/bottom ${formatDuration(p.breakdown.topBottom / p.breakdown.efficiency)}, infill ${formatDuration(p.breakdown.infill / p.breakdown.efficiency)})` })),
-          el('li', { textContent: `Heat-up ${formatDuration(e.heatUp)}. ${cfg.walls} walls, ${cfg.shellLayers} top/bottom layers. Calibration x${cfg.timeFactor}.` })),
+        el('ul', {}, ...e.parts.map((p, i) => el('li', { textContent: `${rows[i].name ?? `Part ${i + 1}`}: walls ${formatDuration(p.breakdown.walls / p.breakdown.efficiency)}, top/bottom ${formatDuration(p.breakdown.topBottom / p.breakdown.efficiency)}, infill ${formatDuration(p.breakdown.infill / p.breakdown.efficiency)}, layer moves ${formatDuration(p.breakdown.overhead)}` })),
+          el('li', { textContent: `Heat-up ${formatDuration(e.heatUp)} once per plate. ${cfg.walls} walls, ${cfg.shellLayers} top/bottom layers, ${cfg.infill}% infill. Calibration x${cfg.timeFactor}.` })),
         el('p', { className: 'muted', textContent: `Estimate from the part's geometry and the ${t.profile.name} profile${t.profile.verified ? '' : ' (speeds not verified)'}: expect about +/- 25 %. Your slicer gives the real time. Calibrate in Settings > Print estimates.` }))].filter(Boolean));
   }
 
@@ -147,8 +180,8 @@ export function createEstimateBox(box, viewer) {
     out);
   refreshTargets();
   return {
-    /** stats: [{ size, volumeMm3, areaMm2, flatAreaMm2, bedAreaMm2 }] of the parts on screen */
-    update(next) { stats = (next ?? []).filter(Boolean); draw(); },
+    /** parts on screen: [{ name, stats, url, filename, qty }] or plain stats objects */
+    update(next) { rows = (next ?? []).filter(Boolean).map((r) => (r.stats ? r : { stats: r })); draw(); },
     refresh: refreshTargets,
     profile: () => current()?.profile ?? null,
   };

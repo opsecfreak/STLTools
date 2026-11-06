@@ -10,7 +10,7 @@ out unless noted. JSON over 32 KB is gzipped when the client sends `Accept-Encod
 | Method | Path | Body / query | Returns |
 |---|---|---|---|
 | GET | `/api/version` | | `{ name, version, node, platform, arch, generators, presets, profiles, dataDir, issues[] }` |
-| GET | `/api/generators` | | `[{ id, name, description, sections[], params{} }]` |
+| GET | `/api/generators` | | `[{ id, name, description, sections[], params{}, basic[], assembly }]` (`basic`: settings shown in Simple mode) |
 | GET | `/api/presets` | | `[{ id, name, generator, section, group, description, tags[], params{}, verify[]? }]` |
 | GET | `/shared/estimate.js` | | the estimator ES module (same file the server uses) |
 
@@ -18,7 +18,7 @@ out unless noted. JSON over 32 KB is gzipped when the client sends `Accept-Encod
 
 | Method | Path | Body / query | Returns |
 |---|---|---|---|
-| POST | `/api/generate/:id` | parameter values `{ tubeOD: 16, ... }` | `{ id, job, zip, params, parts: [{ name, url, filename, stats }], warnings[], notes[] }` |
+| POST | `/api/generate/:id` | parameter values `{ tubeOD: 16, ... }` | `{ id, job, zip, params, parts: [{ name, url, filename, stats, assembled?, qty? }], warnings[], notes[] }` (`assembled`: 4x4 column-major matrix from the printed STL to its place in the assembly) |
 | GET | `/api/stl/:job/:part.stl` | | binary STL (last 50 jobs kept in memory) |
 | GET | `/api/zip/:job` | | ZIP of every part of a job |
 
@@ -75,8 +75,8 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET / PUT / DELETE | `/api/designs/:id` | | |
 | GET / POST | `/api/projects` | `{ name, description?, status?, tags?, items?, priority?: high\|medium\|low, components?: [{ id, qty }], filesMissing?: [], source? }` | list / new project |
 | GET / PUT / DELETE | `/api/projects/:id` | full project | |
-| POST | `/api/projects/:id/items` | `{ kind: preset\|design\|custom\|stl, ref?, generator?, params?, name?, qty? }` | project |
-| POST | `/api/projects/:id/build?unprinted=1` | | `{ zip, files, errors[], estimate }` |
+| POST | `/api/projects/:id/items` | `{ kind: preset\|design\|custom\|stl, ref?, generator?, params?, name?, qty?, place?: { x, y, z, rx, ry, rz } }` | project (`place`: position in the project's 3D assembly view, mm and degrees) |
+| POST | `/api/projects/:id/build?unprinted=1` | | `{ zip, files, errors[], estimate, parts: [{ item, uid, name, file, url, filename, stats, qty, assembled?, estimate: { seconds, grams, filamentMm, layers, fits } }] }` |
 | GET | `/api/projects/:id/export?stl=0` | | bundle `{ format: "stltools-project", version: 1, project, designs[], stls[] }` (STLs base64; `stl=0` leaves them out) |
 | POST | `/api/projects/import` | a bundle (max 300 MB) | `{ project, warnings[] }` (201) |
 | GET | `/api/favorites` | | `[{ kind, id }]` |

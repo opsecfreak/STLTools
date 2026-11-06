@@ -110,7 +110,7 @@ function partRow(i, presets, onSaved) {
   }, 700);
   ownSel.onchange = save;
   for (const x of [qty, dims, notes]) x.oninput = save;
-  return el('article', { className: `part-row ${OWN_CLASS[i.ownershipKey] ?? ''}`, dataset: { part: i.id } },
+  return el('article', { className: `mypart-row ${OWN_CLASS[i.ownershipKey] ?? ''}`, dataset: { part: i.id } },
     el('div', { className: 'part-main' },
       el('div', {}, el('code', { textContent: i.id }), ' ', el('strong', { textContent: i.name }), ' ', ownBadge(i.ownershipKey),
         el('span', { className: `flag flag-${i.dimsFlag}`, textContent: FLAG_LABEL[i.dimsFlag] ?? i.dimsFlag })),
