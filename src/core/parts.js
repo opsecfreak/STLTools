@@ -2,7 +2,7 @@
 // boards, motors...), with ownership, quantity and measured dimensions.
 //
 // Stored in <data>/parts.json as { categories: [...], items: [...] }.
-// Starter data ships in seed/<set>/ (seed/mts-v1 is Alex's MTS list) and is
+// Starter data ships in seed/<set>/ (seed/example is a small example list) and is
 // loaded with loadSeed(). Loading again never overwrites a part you edited.
 //
 // Dimension flags (dimsFlag): from the "dims" text, so the UI can show what

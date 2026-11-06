@@ -57,7 +57,7 @@ export async function renderParts(page, focusId = '') {
       ...groups.map(([c, xs]) => el('section', { className: 'parts-cat' },
         el('h3', { textContent: `${c} (${xs.length})` }),
         ...xs.map((i) => partRow(i, presetsFor(i.id), (next) => { Object.assign(i, next); ctx.state.parts = [...d.items]; draw(); })))));
-    if (!d.items.length) list.replaceChildren(el('p', { className: 'muted empty-note', textContent: 'No parts yet. Load the starter data above, import a components.json file, or add a part.' }));
+    if (!d.items.length) list.replaceChildren(el('p', { className: 'muted empty-note', textContent: 'No parts yet. Load the example list above, or import your own components.json (format: seed/example/README.md).' }));
     if (focusId) {
       list.querySelector(`[data-part="${CSS.escape(focusId)}"]`)?.scrollIntoView({ block: 'center' });
       focusId = '';
@@ -69,7 +69,7 @@ export async function renderParts(page, focusId = '') {
   const seedBox = el('div', { className: 'seed-box' }, ...seeds.map((sd) => el('div', { className: 'card seed-card' },
     el('strong', { textContent: sd.title }),
     el('p', { className: 'muted', textContent: sd.loaded ? 'Loaded. Loading again adds new parts and project ideas only; your edits stay.' : 'Parts list with ownership and sizes, print ideas as projects, and existing assemblies.' }),
-    el('button', { type: 'button', className: sd.loaded ? 'secondary' : '', textContent: sd.loaded ? 'Load again' : 'Load starter data', onclick: async (e) => {
+    el('button', { type: 'button', className: sd.loaded ? 'secondary' : '', textContent: sd.loaded ? 'Load again' : 'Load this list', onclick: async (e) => {
       e.target.disabled = true;
       try {
         const r = await api('POST', '/api/parts/seed', { set: sd.set });

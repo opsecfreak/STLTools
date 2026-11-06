@@ -1,9 +1,9 @@
 {
- "group": "My parts",
+ "group": "Hardware parts",
  "section": "robotics",
  "presets": [
   {
-   "id": "mts-fc01-tray",
+   "id": "hw-pixhawk-v5-tray-on-a-damper-plate",
    "name": "Pixhawk V5+ tray on a damper plate (measure)",
    "generator": "component-mount",
    "description": "Vibration-isolated tray: measure the Pixhawk case. Pair with a damper plate.",
@@ -21,8 +21,6 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC01",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "measure": [
     "itemWidth",
@@ -31,7 +29,7 @@
    ]
   },
   {
-   "id": "mts-fc01-damper",
+   "id": "hw-pixhawk-v5-damper-plate-ball-spacing",
    "name": "Pixhawk V5+ damper plate (measure ball spacing)",
    "generator": "damper-plate",
    "description": "Damper ball plate under the Pixhawk tray. Measure your damper ball spacing.",
@@ -42,8 +40,6 @@
    "params": {},
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC01",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "measure": [
     "ballSpacingX",
@@ -51,7 +47,7 @@
    ]
   },
   {
-   "id": "mts-fc02-plate",
+   "id": "hw-pixhawk-2-4-6-mount-tray",
    "name": "Pixhawk 2.4.6 mount tray (measure)",
    "generator": "component-mount",
    "description": "Frame mount tray with straps. Measure the case.",
@@ -67,8 +63,6 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC02",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "measure": [
     "itemWidth",
@@ -77,10 +71,10 @@
    ]
   },
   {
-   "id": "mts-fc03-pad-plate",
+   "id": "hw-dakefpv-f722-stack-pad-30-5-mm-screw-plate",
    "name": "DAKEFPV F722 stack pad, 30.5 mm, screw plate",
    "generator": "component-mount",
-   "description": "30.5 x 30.5 stack on M3 bosses (2.6 mm holes thread M3). Use gummy standoffs on top. Dimensions: 30.5x30.5 hole pattern (30x30 stack).",
+   "description": "30.5 x 30.5 stack on M3 bosses (2.6 mm holes thread M3). Use gummy standoffs on top.",
    "tags": [
     "mts",
     "fc03"
@@ -96,15 +90,13 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC03",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers"
   },
   {
-   "id": "mts-fc03-pad-tube16",
+   "id": "hw-dakefpv-f722-stack-on-a-16-mm-tube",
    "name": "DAKEFPV F722 stack on a 16 mm tube",
    "generator": "component-mount",
-   "description": "Stack mount / pod with gummy standoffs Dimensions: 30.5x30.5 hole pattern (30x30 stack).",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "fc03"
@@ -122,15 +114,13 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC03",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "verify": [
     "tubeOD"
    ]
   },
   {
-   "id": "mts-fc03-grommets",
+   "id": "hw-dakefpv-f722-soft-grommets-m3",
    "name": "DAKEFPV F722 soft grommets, M3",
    "generator": "soft-grommet",
    "description": "Print in TPU. Measure the FC mounting hole and type it as Board hole.",
@@ -143,18 +133,16 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC03",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "measure": [
     "boardHole"
    ]
   },
   {
-   "id": "mts-fc04-board",
+   "id": "hw-simplebgc-2-axis-board-pad-holes",
    "name": "SimpleBGC 2-axis board pad (measure holes)",
    "generator": "component-mount",
-   "description": "Camera adapter plate, balance weights, ZD550 mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "fc04"
@@ -166,8 +154,6 @@
    },
    "section": "quads",
    "group": "Flight controllers and gimbal controllers",
-   "component": "FC04",
-   "ownership": "Owned",
    "category": "Flight controllers and gimbal controllers",
    "measure": [
     "padPatternX",
@@ -175,10 +161,10 @@
    ]
   },
   {
-   "id": "mts-esc01-arm",
+   "id": "hw-littlebee-20a-esc-cover-on-an-arm",
    "name": "LittleBee 20A ESC cover on an arm (measure)",
    "generator": "component-mount",
-   "description": "Arm-mounted ESC covers",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "esc01"
@@ -191,8 +177,6 @@
    },
    "section": "quads",
    "group": "ESCs and power distribution",
-   "component": "ESC01",
-   "ownership": "Owned",
    "category": "ESCs and power distribution",
    "measure": [
     "itemWidth",
@@ -202,10 +186,10 @@
    ]
   },
   {
-   "id": "mts-esc02-arm",
+   "id": "hw-30a-esc-arm-clip-zd550",
    "name": "30A ESC arm clip, ZD550 (measure)",
    "generator": "component-mount",
-   "description": "Arm clips",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "esc02"
@@ -218,8 +202,6 @@
    },
    "section": "quads",
    "group": "ESCs and power distribution",
-   "component": "ESC02",
-   "ownership": "Owned",
    "category": "ESCs and power distribution",
    "measure": [
     "itemWidth",
@@ -229,10 +211,10 @@
    ]
   },
   {
-   "id": "mts-esc03-plate",
+   "id": "hw-40a-esc-clip-f450-plate-arm",
    "name": "40A ESC clip, F450 plate arm (measure)",
    "generator": "component-mount",
-   "description": "Arm clips",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "esc03"
@@ -245,8 +227,6 @@
    },
    "section": "quads",
    "group": "ESCs and power distribution",
-   "component": "ESC03",
-   "ownership": "Owned",
    "category": "ESCs and power distribution",
    "measure": [
     "itemWidth",
@@ -255,7 +235,7 @@
    ]
   },
   {
-   "id": "mts-pdb01-cover",
+   "id": "hw-star-junction-pdb-insulating-cover",
    "name": "Star-junction PDB insulating cover (measure)",
    "generator": "enclosure",
    "description": "Insulating box over the copper star PDB with XT60 openings. Measure the PDB.",
@@ -269,8 +249,6 @@
    },
    "section": "quads",
    "group": "ESCs and power distribution",
-   "component": "PDB01",
-   "ownership": "Planned",
    "category": "ESCs and power distribution",
    "measure": [
     "innerWidth",
@@ -279,7 +257,7 @@
    ]
   },
   {
-   "id": "mts-mot01-guard",
+   "id": "hw-la3508-motor-guard-ring-on-the-zd550-arm",
    "name": "LA3508 motor guard ring on the ZD550 arm (measure)",
    "generator": "motor-mount",
    "description": "Motor mount / guard for the ZD550 arm. Measure the arm tube and motor bolt pattern.",
@@ -292,8 +270,6 @@
    },
    "section": "quads",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT01",
-   "ownership": "Owned",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "tubeSize",
@@ -302,10 +278,10 @@
    ]
   },
   {
-   "id": "mts-mot01-foot",
+   "id": "hw-zd550-landing-foot-leg-tube",
    "name": "ZD550 landing foot (measure leg tube)",
    "generator": "tube-cap",
-   "description": "Motor guards, landing feet",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mot01"
@@ -315,8 +291,6 @@
    },
    "section": "quads",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT01",
-   "ownership": "Owned",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "tubeOD",
@@ -324,7 +298,7 @@
    ]
   },
   {
-   "id": "mts-mot02-spacer",
+   "id": "hw-d2836-inverted-motor-spacer-16-x-19-f450",
    "name": "D2836 inverted-motor spacer, 16 x 19 (F450)",
    "generator": "firewall-mount",
    "description": "Spacer plate with the Flame Wheel 16 x 19 motor pattern (confirm on your arms). For props-down tests.",
@@ -343,8 +317,6 @@
    },
    "section": "quads",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT02",
-   "ownership": "Owned",
    "category": "Motors, props, servos and steppers",
    "verify": [
     "motorPatternA",
@@ -353,7 +325,7 @@
    ]
   },
   {
-   "id": "mts-mot03-soft",
+   "id": "hw-rs2205-motor-soft-mount-pattern",
    "name": "RS2205 motor soft mount (measure pattern)",
    "generator": "fc-adapter",
    "description": "Print in TPU between motor and arm. Measure the motor and arm hole patterns.",
@@ -368,8 +340,6 @@
    },
    "section": "quads",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT03",
-   "ownership": "Owned",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "outerPattern",
@@ -377,10 +347,10 @@
    ]
   },
   {
-   "id": "mts-mot04-clamp",
+   "id": "hw-28byj-48-stepper-can-clamp-28-mm",
    "name": "28BYJ-48 stepper can clamp (28 mm)",
    "generator": "motor-clamp",
-   "description": "Clamps the 28 mm can (common drawing, UNVERIFIED). Dimensions: Can 28 dia x 19 deep; ears 35 c-c, 4.2 holes; shaft 5 dia, 3 flats, 9 above face, 8 off center.",
+   "description": "Clamps the 28 mm can (common drawing, UNVERIFIED).",
    "tags": [
     "mts",
     "mot04"
@@ -393,18 +363,16 @@
    },
    "section": "robotics",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT04",
-   "ownership": "Confirm",
    "category": "Motors, props, servos and steppers",
    "verify": [
     "bodyDiameter"
    ]
   },
   {
-   "id": "mts-mot04-ears",
+   "id": "hw-28byj-48-ear-plate-35-mm-holes",
    "name": "28BYJ-48 ear plate, 35 mm holes",
    "generator": "lidar-mount",
-   "description": "Plate with two M3 tap holes 35 mm apart for the ear flanges (common drawing, UNVERIFIED). Dimensions: Can 28 dia x 19 deep; ears 35 c-c, 4.2 holes; shaft 5 dia, 3 flats, 9 above face, 8 off center.",
+   "description": "Plate with two M3 tap holes 35 mm apart for the ear flanges (common drawing, UNVERIFIED).",
    "tags": [
     "mts",
     "mot04"
@@ -423,18 +391,16 @@
    },
    "section": "robotics",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT04",
-   "ownership": "Confirm",
    "category": "Motors, props, servos and steppers",
    "verify": [
     "holeSpacingX"
    ]
   },
   {
-   "id": "mts-mot05-tray",
+   "id": "hw-mg996r-servo-tray",
    "name": "MG996R servo tray",
    "generator": "servo-mount",
-   "description": "Body 40.7 x 19.7, ear holes 49.5 apart (web research). Measure the ear hole size. Dimensions: Body 40.7x19.7; holes 49.5x10.0; shaft offset 10.0.",
+   "description": "Tray for an MG996R-class servo: body 40.7 x 19.7 mm, ear holes 49.5 mm apart. Measure the ear hole size.",
    "tags": [
     "mts",
     "mot05"
@@ -448,8 +414,6 @@
    },
    "section": "robotics",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT05",
-   "ownership": "Confirm",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "earHole"
@@ -461,10 +425,10 @@
    ]
   },
   {
-   "id": "mts-mot05-bracket",
+   "id": "hw-mg996r-servo-l-bracket",
    "name": "MG996R servo L-bracket",
    "generator": "servo-mount",
-   "description": "Already in PTZ v1-v3 Dimensions: Body 40.7x19.7; holes 49.5x10.0; shaft offset 10.0.",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mot05"
@@ -478,8 +442,6 @@
    },
    "section": "robotics",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT05",
-   "ownership": "Confirm",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "earHole"
@@ -491,10 +453,10 @@
    ]
   },
   {
-   "id": "mts-mot06-tray",
+   "id": "hw-9-g-micro-servo-tray",
    "name": "9 g micro servo tray (measure)",
    "generator": "servo-mount",
-   "description": "Servo bays already in plane STLs",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mot06"
@@ -504,8 +466,6 @@
    },
    "section": "planes",
    "group": "Motors, props, servos and steppers",
-   "component": "MOT06",
-   "ownership": "Planned",
    "category": "Motors, props, servos and steppers",
    "measure": [
     "servoLength",
@@ -514,7 +474,7 @@
    ]
   },
   {
-   "id": "mts-prp01-balancer",
+   "id": "hw-prop-balancer-stand-cradle",
    "name": "Prop balancer stand cradle",
    "generator": "repair-stand",
    "description": "V-notch stand pair for a prop balancer shaft. Print 2.",
@@ -533,15 +493,13 @@
    },
    "section": "quads",
    "group": "Motors, props, servos and steppers",
-   "component": "PRP01",
-   "ownership": "Owned",
    "category": "Motors, props, servos and steppers"
   },
   {
-   "id": "mts-bat01-dual",
-   "name": "Tattu 6S 7000 dual-pack tray (measure: size conflict)",
+   "id": "hw-6s-dual-pack-tray",
+   "name": "6S dual-pack tray, 20 mm straps (measure)",
    "generator": "component-mount",
-   "description": "Pack size conflicts between chats (163x65x55 vs 136x42x68). Measure the pack. Dimensions: CONFLICT: 163x65x55 (sleeve chat, confirmed) vs 136x42x68 (plane chat, assumed). MEASURE.",
+   "description": "Tray for two 6S packs with 20 mm strap slots. Pack sizes vary between batches: measure yours.",
    "tags": [
     "mts",
     "bat01"
@@ -555,8 +513,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT01",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -565,10 +521,10 @@
    ]
   },
   {
-   "id": "mts-bat02-tray",
+   "id": "hw-3s-7200-battery-tray-f450",
    "name": "3S 7200 battery tray, F450 (measure)",
    "generator": "component-mount",
-   "description": "Battery tray",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "bat02"
@@ -582,8 +538,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT02",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -592,10 +546,10 @@
    ]
   },
   {
-   "id": "mts-bat03-tray",
+   "id": "hw-4s-pack-tray",
    "name": "4S pack tray (measure)",
    "generator": "component-mount",
-   "description": "4S pack tray (measure)",
+   "description": "4S pack tray (measure). Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "bat03"
@@ -609,8 +563,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT03",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -619,10 +571,10 @@
    ]
   },
   {
-   "id": "mts-bat04-tray",
+   "id": "hw-2s-3s-small-lipo-tray",
    "name": "2S / 3S small LiPo tray (75 x 35 x 28 assumed)",
    "generator": "component-mount",
-   "description": "Size assumed in PTZ v4/v5 (bay 77 x 37 x 28). Measure the pack you buy. Dimensions: 75x35x28 (assumed, bay 77x37x28).",
+   "description": "Tray for a small 2S / 3S pack, assumed 75 x 35 x 28 mm. Measure the pack you buy.",
    "tags": [
     "mts",
     "bat04"
@@ -637,8 +589,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT04",
-   "ownership": "Planned",
    "category": "Batteries, charging and power conversion",
    "verify": [
     "itemLength",
@@ -647,10 +597,10 @@
    ]
   },
   {
-   "id": "mts-bat05-1s",
+   "id": "hw-18650-holder-1-cell",
    "name": "18650 holder, 1 cell",
    "generator": "holder-block",
-   "description": "1 x 18650 (18 x 65 mm standard cell). Dimensions: 18650 standard.",
+   "description": "1 x 18650 (18 x 65 mm standard cell).",
    "tags": [
     "mts",
     "bat05"
@@ -665,15 +615,13 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT05",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion"
   },
   {
-   "id": "mts-bat05-2s",
+   "id": "hw-18650-holder-2-cells",
    "name": "18650 holder, 2 cells",
    "generator": "holder-block",
-   "description": "2 x 18650 (18 x 65 mm standard cell). Dimensions: 18650 standard.",
+   "description": "2 x 18650 (18 x 65 mm standard cell).",
    "tags": [
     "mts",
     "bat05"
@@ -688,15 +636,13 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT05",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion"
   },
   {
-   "id": "mts-bat05-3s",
+   "id": "hw-18650-holder-3-cells",
    "name": "18650 holder, 3 cells",
    "generator": "holder-block",
-   "description": "3 x 18650 (18 x 65 mm standard cell). Dimensions: 18650 standard.",
+   "description": "3 x 18650 (18 x 65 mm standard cell).",
    "tags": [
     "mts",
     "bat05"
@@ -711,15 +657,13 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT05",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion"
   },
   {
-   "id": "mts-bat05-4s",
+   "id": "hw-18650-holder-4-cells",
    "name": "18650 holder, 4 cells",
    "generator": "holder-block",
-   "description": "4 x 18650 (18 x 65 mm standard cell). Dimensions: 18650 standard.",
+   "description": "4 x 18650 (18 x 65 mm standard cell).",
    "tags": [
     "mts",
     "bat05"
@@ -734,15 +678,13 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT05",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion"
   },
   {
-   "id": "mts-bat06-3s-shell",
+   "id": "hw-3s-18650-pack-shell-box-lid",
    "name": "3S 18650 pack shell (box + lid)",
    "generator": "parts-box",
-   "description": "Shell for 3 harvested 18650s side by side (3 x 18 = 54 mm + walls) with room for the BMS. Measure the pack with BMS and tabs. Dimensions: 18650 standard.",
+   "description": "Shell for 3 harvested 18650s side by side (3 x 18 = 54 mm + walls) with room for the BMS. Measure the pack with BMS and tabs.",
    "tags": [
     "mts",
     "bat06"
@@ -756,8 +698,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "BAT06",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "height"
@@ -768,10 +708,10 @@
    ]
   },
   {
-   "id": "mts-pwr01-bay",
+   "id": "hw-3s-10a-bms-bay",
    "name": "3S 10A BMS bay (measure)",
    "generator": "component-mount",
-   "description": "In pack shell",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr01"
@@ -784,8 +724,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR01",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -794,10 +732,10 @@
    ]
   },
   {
-   "id": "mts-pwr02-slot",
+   "id": "hw-mh-tp4056-module-slot-mount",
    "name": "MH-TP4056 module slot mount (measure)",
    "generator": "component-mount",
-   "description": "Slot mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr02"
@@ -810,8 +748,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR02",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -820,10 +756,10 @@
    ]
   },
   {
-   "id": "mts-pwr03-slot",
+   "id": "hw-j5019-charger-boost-slot-mount",
    "name": "J5019 charger + boost slot mount (measure)",
    "generator": "component-mount",
-   "description": "Slot mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr03"
@@ -836,8 +772,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR03",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -846,10 +780,10 @@
    ]
   },
   {
-   "id": "mts-pwr07-slot",
+   "id": "hw-dc-dc-converter-tray",
    "name": "DC-DC converter tray (measure)",
    "generator": "component-mount",
-   "description": "Already in PTZ v5 base (3 A+ unit)",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr07"
@@ -862,8 +796,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR07",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemWidth",
@@ -872,7 +804,7 @@
    ]
   },
   {
-   "id": "mts-pwr04-box",
+   "id": "hw-pwm-solar-controller-weatherproof-box",
    "name": "PWM solar controller weatherproof box (measure)",
    "generator": "enclosure",
    "description": "Print in PETG / ASA for outdoor use.",
@@ -886,8 +818,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR04",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "innerWidth",
@@ -896,7 +826,7 @@
    ]
   },
   {
-   "id": "mts-pwr05-tilt",
+   "id": "hw-solar-panel-tilt-bracket-on-a-pole",
    "name": "Solar panel tilt bracket on a pole (measure)",
    "generator": "tube-clamp",
    "description": "Pole clamp with a plate for a 10-20 W panel frame. Measure the pole.",
@@ -910,18 +840,16 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR05",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "tubeOD"
    ]
   },
   {
-   "id": "mts-pwr06-frame",
+   "id": "hw-mini-5-v-solar-panel-frame-110-x-60",
    "name": "Mini 5 V solar panel frame, 110 x 60",
    "generator": "component-mount",
-   "description": "Panel 110 x 60 (stated). Measure the panel thickness. Dimensions: 110x60.",
+   "description": "Panel 110 x 60 (stated). Measure the panel thickness.",
    "tags": [
     "mts",
     "pwr06"
@@ -936,18 +864,16 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR06",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemHeight"
    ]
   },
   {
-   "id": "mts-pwr08-ground",
+   "id": "hw-flatpack2-ground-box",
    "name": "Flatpack2 ground box (measure)",
    "generator": "enclosure",
-   "description": "Ground box with breakout and display",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr08"
@@ -958,8 +884,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR08",
-   "ownership": "Owned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "innerWidth",
@@ -968,10 +892,10 @@
    ]
   },
   {
-   "id": "mts-pwr09-breakout",
+   "id": "hw-flatpack2-breakout-board-box",
    "name": "Flatpack2 breakout board box (measure)",
    "generator": "enclosure",
-   "description": "In ground box",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr09"
@@ -982,8 +906,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR09",
-   "ownership": "Planned",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "innerWidth",
@@ -992,10 +914,10 @@
    ]
   },
   {
-   "id": "mts-pwr10-spool",
+   "id": "hw-slip-ring-holder-for-the-tether-spool",
    "name": "Slip ring holder for the tether spool (measure)",
    "generator": "component-mount",
-   "description": "Winch/spool mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "pwr10"
@@ -1006,8 +928,6 @@
    },
    "section": "accessories",
    "group": "Batteries, charging and power conversion",
-   "component": "PWR10",
-   "ownership": "Confirm",
    "category": "Batteries, charging and power conversion",
    "measure": [
     "itemDiameter",
@@ -1015,7 +935,7 @@
    ]
   },
   {
-   "id": "mts-rc01-lanyard",
+   "id": "hw-c8-elrs-transmitter-lanyard-ring",
    "name": "C8 ELRS transmitter lanyard ring (measure)",
    "generator": "tube-clamp",
    "description": "Collar for a lanyard on the TX handle or antenna base. Measure the part it clamps.",
@@ -1028,18 +948,16 @@
    },
    "section": "accessories",
    "group": "RC links and transmitters",
-   "component": "RC01",
-   "ownership": "Owned",
    "category": "RC links and transmitters",
    "measure": [
     "tubeOD"
    ]
   },
   {
-   "id": "mts-rc02-clip",
+   "id": "hw-cr8-nano-receiver-clip",
    "name": "CR8 nano receiver clip (measure)",
    "generator": "sensor-bracket",
-   "description": "Antenna mounts, RX clip",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "rc02"
@@ -1051,8 +969,6 @@
    },
    "section": "accessories",
    "group": "RC links and transmitters",
-   "component": "RC02",
-   "ownership": "Owned",
    "category": "RC links and transmitters",
    "measure": [
     "bodyLength",
@@ -1061,7 +977,7 @@
    ]
   },
   {
-   "id": "mts-rc02-antenna",
+   "id": "hw-cr8-receiver-antenna-mount-zip-tie",
    "name": "CR8 receiver antenna mount (zip-tie)",
    "generator": "antenna-mount",
    "description": "Two-tube antenna holder for the RX T antenna. Hole 3.2 mm for heat-shrink tubes; adjust.",
@@ -1077,18 +993,16 @@
    },
    "section": "accessories",
    "group": "RC links and transmitters",
-   "component": "RC02",
-   "ownership": "Owned",
    "category": "RC links and transmitters",
    "verify": [
     "holeDiameter"
    ]
   },
   {
-   "id": "mts-rc03-bay",
+   "id": "hw-at9s-pro-module-bay-accessory",
    "name": "AT9S Pro module bay accessory (measure)",
    "generator": "enclosure",
-   "description": "Module bay accessories",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "rc03"
@@ -1099,8 +1013,6 @@
    },
    "section": "accessories",
    "group": "RC links and transmitters",
-   "component": "RC03",
-   "ownership": "Owned",
    "category": "RC links and transmitters",
    "measure": [
     "innerWidth",
@@ -1109,7 +1021,7 @@
    ]
   },
   {
-   "id": "mts-rc04-sunshade",
+   "id": "hw-st16-sunshade-clamp",
    "name": "ST16 sunshade clamp (measure)",
    "generator": "tube-clamp",
    "description": "Clamp + plate to hold a sunshade. Measure where it clamps.",
@@ -1122,15 +1034,13 @@
    },
    "section": "accessories",
    "group": "RC links and transmitters",
-   "component": "RC04",
-   "ownership": "Owned",
    "category": "RC links and transmitters",
    "measure": [
     "tubeOD"
    ]
   },
   {
-   "id": "mts-lr01-node",
+   "id": "hw-meshtastic-node-a-box-rak19003",
    "name": "Meshtastic Node A box (RAK19003, measure)",
    "generator": "enclosure",
    "description": "Base node box with SMA bulkhead (6.5 mm hole). Measure the RAK19003 and battery.",
@@ -1144,8 +1054,6 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR01",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "measure": [
     "innerWidth",
@@ -1154,10 +1062,10 @@
    ]
   },
   {
-   "id": "mts-lr02-case",
+   "id": "hw-wismesh-b1-board-cradle-60-8-x-22-9-x-9-85-pcb",
    "name": "WisMesh B1 board cradle (60.8 x 22.9 x 9.85 PCB)",
    "generator": "sensor-bracket",
-   "description": "PCB 60.8 x 22.9 x 9.85 (CNX Software spec), 36 tall with the OLED. Handheld case: see project idea PR06. Dimensions: PCB 60.8x22.9x9.85; 36 tall with OLED.",
+   "description": "PCB 60.8 x 22.9 x 9.85 (CNX Software spec), 36 tall with the OLED. Handheld case:.",
    "tags": [
     "mts",
     "lr02"
@@ -1173,8 +1081,6 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR02",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "verify": [
     "bodyLength",
@@ -1183,10 +1089,10 @@
    ]
   },
   {
-   "id": "mts-lr03-case",
+   "id": "hw-dx-lr02-lora-module-enclosure",
    "name": "DX-LR02 LoRa module enclosure (measure)",
    "generator": "enclosure",
-   "description": "Carrier PCB enclosure",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "lr03"
@@ -1197,8 +1103,6 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR03",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "measure": [
     "innerWidth",
@@ -1207,10 +1111,10 @@
    ]
   },
   {
-   "id": "mts-lr04-node",
+   "id": "hw-ra-01-433-mhz-node-box",
    "name": "Ra-01 433 MHz node box (measure)",
    "generator": "enclosure",
-   "description": "Node box",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "lr04"
@@ -1221,8 +1125,6 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR04",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "measure": [
     "innerWidth",
@@ -1231,10 +1133,10 @@
    ]
   },
   {
-   "id": "mts-lr05-mount",
+   "id": "hw-cuav-pw-link-mount",
    "name": "CUAV PW-Link mount (measure)",
    "generator": "sensor-bracket",
-   "description": "Arm/plate mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "lr05"
@@ -1245,8 +1147,6 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR05",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "measure": [
     "bodyLength",
@@ -1255,7 +1155,7 @@
    ]
   },
   {
-   "id": "mts-lr06-mast",
+   "id": "hw-915-mhz-antenna-mast-clip-sma",
    "name": "915 MHz antenna mast clip, SMA",
    "generator": "antenna-mount",
    "description": "SMA / RP-SMA bulkhead hole 6.5 mm (1/4 in thread).",
@@ -1271,18 +1171,16 @@
    },
    "section": "robotics",
    "group": "LoRa, mesh and telemetry radios",
-   "component": "LR06",
-   "ownership": "Owned",
    "category": "LoRa, mesh and telemetry radios",
    "verify": [
     "holeDiameter"
    ]
   },
   {
-   "id": "mts-vid03-cradle-zip",
+   "id": "hw-19-mm-fpv-camera-cradle-zip-tie-base",
    "name": "19 mm FPV camera cradle, zip-tie base",
    "generator": "camera-mount",
-   "description": "Universal 19 mm camera cradle",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "vid03"
@@ -1294,15 +1192,13 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID03",
-   "ownership": "Owned",
    "category": "Video: cameras, VTX, OSD"
   },
   {
-   "id": "mts-vid01-board",
+   "id": "hw-runcam-split-3-micro-board-pad-29-x-29-holes",
    "name": "RunCam Split 3 Micro board pad (29 x 29, measure holes)",
    "generator": "component-mount",
-   "description": "Board 29 x 29 x 1.6 (web research). Measure the hole pattern. Dimensions: Camera 19 mm; board 29x29x1.6.",
+   "description": "Pad for the RunCam Split 3 Micro board (29 x 29 x 1.6 mm). Measure the hole pattern.",
    "tags": [
     "mts",
     "vid01"
@@ -1315,8 +1211,6 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID01",
-   "ownership": "Owned",
    "category": "Video: cameras, VTX, OSD",
    "measure": [
     "padPatternX",
@@ -1324,10 +1218,10 @@
    ]
   },
   {
-   "id": "mts-vid02-vtx",
+   "id": "hw-black-mamba-vtx-mount-pattern-and-sma",
    "name": "Black Mamba VTX mount (measure pattern and SMA)",
    "generator": "component-mount",
-   "description": "Already in PTZ v5 base Dimensions: MEASURE (hole pattern, SMA height).",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "vid02"
@@ -1339,8 +1233,6 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID02",
-   "ownership": "Owned",
    "category": "Video: cameras, VTX, OSD",
    "measure": [
     "padPatternX",
@@ -1348,10 +1240,10 @@
    ]
   },
   {
-   "id": "mts-vid04-gopro",
+   "id": "hw-gopro-hero-3-payload-mount-3-finger",
    "name": "GoPro Hero 3 payload mount, 3-finger",
    "generator": "action-cam-mount",
-   "description": "Standard GoPro 3-prong mount with an M5 hinge bolt. Dimensions: GoPro standard.",
+   "description": "Standard GoPro 3-prong mount with an M5 hinge bolt.",
    "tags": [
     "mts",
     "vid04"
@@ -1364,12 +1256,10 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID04",
-   "ownership": "Owned",
    "category": "Video: cameras, VTX, OSD"
   },
   {
-   "id": "mts-vid05-payload",
+   "id": "hw-4k-camcorder-payload-plate-1-4-in-tripod-screw",
    "name": "4K camcorder payload plate (1/4 in tripod screw, measure)",
    "generator": "component-mount",
    "description": "Plate with a 1/4-20 tripod screw clearance hole (6.6 mm). Set the pad spacing for your payload rails.",
@@ -1386,15 +1276,13 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID05",
-   "ownership": "Owned",
    "category": "Video: cameras, VTX, OSD",
    "measure": [
     "padPatternX"
    ]
   },
   {
-   "id": "mts-vid07-pod",
+   "id": "hw-pi-csi-camera-downward-pod",
    "name": "Pi CSI camera downward pod (measure)",
    "generator": "sensor-bracket",
    "description": "Camera module looks through the floor window. Ribbon exits the notch (16 mm ribbon).",
@@ -1410,8 +1298,6 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID07",
-   "ownership": "Planned",
    "category": "Video: cameras, VTX, OSD",
    "measure": [
     "bodyLength",
@@ -1421,10 +1307,10 @@
    ]
   },
   {
-   "id": "mts-vid08-case",
+   "id": "hw-openosd-x-enclosure-after-the-pcb-exists",
    "name": "OpenOSD-X enclosure (after the PCB exists)",
    "generator": "enclosure",
-   "description": "Enclosure after PCB exists",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "vid08"
@@ -1435,8 +1321,6 @@
    },
    "section": "quads",
    "group": "Video: cameras, VTX, OSD",
-   "component": "VID08",
-   "ownership": "Planned",
    "category": "Video: cameras, VTX, OSD",
    "measure": [
     "innerWidth",
@@ -1445,10 +1329,10 @@
    ]
   },
   {
-   "id": "mts-sen01-box",
-   "name": "JC02 rangefinder test box (13.4 x 25.7 pocket, unverified)",
+   "id": "hw-jc02-rangefinder-test-box",
+   "name": "JC02 rangefinder test box (unverified pocket)",
    "generator": "sensor-bracket",
-   "description": "Pocket from a listing photo (PTZ v1, UNVERIFIED). Measure the module and its height. Dimensions: Pocket used in PTZ v1: 13.4x25.7 (from listing photo).",
+   "description": "Test box for a JC02 laser rangefinder module. Pocket size UNVERIFIED: measure the module and its height.",
    "tags": [
     "mts",
     "sen01"
@@ -1462,8 +1346,6 @@
    },
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN01",
-   "ownership": "Owned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "bodyDepth"
@@ -1474,10 +1356,10 @@
    ]
   },
   {
-   "id": "mts-sen03-flow",
+   "id": "hw-micoair-mtf-01p-mount",
    "name": "MicoAir MTF-01P mount (measure)",
    "generator": "sensor-bracket",
-   "description": "Mount 4 in forward and 2 in left of frame center (per notes). Lens looks down.",
+   "description": "Mount for a MicoAir MTF-01P optical flow and range sensor, lens down.",
    "tags": [
     "mts",
     "sen03"
@@ -1489,8 +1371,6 @@
    },
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN03",
-   "ownership": "Owned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "bodyLength",
@@ -1499,7 +1379,7 @@
    ]
   },
   {
-   "id": "mts-sen04-plate",
+   "id": "hw-fhl-ld19-lidar-plate-pattern",
    "name": "FHL-LD19 lidar plate (measure pattern)",
    "generator": "lidar-mount",
    "description": "LD19 on standoffs. Measure the LD19 base hole pattern.",
@@ -1510,8 +1390,6 @@
    "params": {},
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN04",
-   "ownership": "Owned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "holeSpacingX",
@@ -1519,7 +1397,7 @@
    ]
   },
   {
-   "id": "mts-sen05-mast",
+   "id": "hw-cuav-neo3-gps-mast-zd550-top-pattern",
    "name": "CUAV Neo3 GPS mast, ZD550 (measure top pattern)",
    "generator": "gps-mast",
    "description": "Folding / fixed mast for the Neo3. Measure the GPS base holes.",
@@ -1534,18 +1412,16 @@
    },
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN05",
-   "ownership": "Owned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "topHoleSpacing"
    ]
   },
   {
-   "id": "mts-sen06-mount",
+   "id": "hw-m9n-gps-payload-mount",
    "name": "M9N GPS payload mount (measure)",
    "generator": "gps-mast",
-   "description": "Payload GPS mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "sen06"
@@ -1556,8 +1432,6 @@
    },
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN06",
-   "ownership": "Owned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "topSize",
@@ -1565,7 +1439,7 @@
    ]
   },
   {
-   "id": "mts-sen08-clip",
+   "id": "hw-mini-4k-gps-logger-clip-measure-keep-light",
    "name": "Mini 4K GPS logger clip (measure, keep light)",
    "generator": "sensor-bracket",
    "description": "Lightweight clip-on pod. Keep total weight under the Mini 4K limit.",
@@ -1581,8 +1455,6 @@
    },
    "section": "robotics",
    "group": "Sensors: lidar, rangefinder, flow, GPS",
-   "component": "SEN08",
-   "ownership": "Planned",
    "category": "Sensors: lidar, rangefinder, flow, GPS",
    "measure": [
     "bodyLength",
@@ -1591,10 +1463,10 @@
    ]
   },
   {
-   "id": "mts-sbc03-case",
+   "id": "hw-pi-3a-airframe-case-measure-65-x-56-board",
    "name": "Pi 3A+ airframe case (measure: 65 x 56 board)",
    "generator": "sbc-case",
-   "description": "Pi 3A+ is a shorter board with the Pi hole pattern. Measure the board length. Dimensions: Pi 3A+ standard.",
+   "description": "Pi 3A+ is a shorter board with the Pi hole pattern. Measure the board length.",
    "tags": [
     "mts",
     "sbc03"
@@ -1609,8 +1481,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "SBC03",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "boardWidth"
@@ -1621,10 +1491,10 @@
    ]
   },
   {
-   "id": "mts-sbc04-pod",
+   "id": "hw-pi-3-4-mapping-pod-case",
    "name": "Pi 3 / 4 mapping pod case",
    "generator": "sbc-case",
-   "description": "Mapping pod Dimensions: Pi 4 standard.",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "sbc04"
@@ -1636,15 +1506,13 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "SBC04",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers"
   },
   {
-   "id": "mts-mcu01-case",
+   "id": "hw-esp32-s3-controller-case-with-rx-bay",
    "name": "ESP32-S3 controller case with RX bay (measure)",
    "generator": "enclosure",
-   "description": "Controller case with RX bay",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu01"
@@ -1655,8 +1523,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU01",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "innerWidth",
@@ -1665,7 +1531,7 @@
    ]
   },
   {
-   "id": "mts-mcu02-clip",
+   "id": "hw-xiao-esp32-s3-clip-screw-plate-usb-antenna-notches",
    "name": "XIAO ESP32-S3 clip, screw plate (USB + antenna notches)",
    "generator": "sensor-bracket",
    "description": "XIAO standard 21 x 17.8 mm board. Notches at both ends for USB-C and the U.FL antenna lead.",
@@ -1686,18 +1552,16 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU02",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "verify": [
     "bodyDepth"
    ]
   },
   {
-   "id": "mts-mcu04-clip",
+   "id": "hw-rp2040-zero-clip",
    "name": "RP2040-Zero clip (measure)",
    "generator": "sensor-bracket",
-   "description": "Already in PTZ v5",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu04"
@@ -1710,8 +1574,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU04",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "bodyLength",
@@ -1720,10 +1582,10 @@
    ]
   },
   {
-   "id": "mts-mcu05-case",
+   "id": "hw-wemos-d1-mini-inline-case",
    "name": "Wemos D1 Mini inline case (measure)",
    "generator": "sensor-bracket",
-   "description": "Inline case",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu05"
@@ -1736,8 +1598,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU05",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "bodyLength",
@@ -1746,10 +1606,10 @@
    ]
   },
   {
-   "id": "mts-mcu06-box",
+   "id": "hw-nano-mcp2515-max3232-bridge-box",
    "name": "Nano + MCP2515 + MAX3232 bridge box (measure)",
    "generator": "enclosure",
-   "description": "In ground box",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu06"
@@ -1760,8 +1620,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU06",
-   "ownership": "Confirm",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "innerWidth",
@@ -1770,10 +1628,10 @@
    ]
   },
   {
-   "id": "mts-mcu07-stand",
-   "name": "Uno R3 + Video Experimenter bench stand (Uno pattern, verify)",
+   "id": "hw-uno-r3-bench-box",
+   "name": "Arduino Uno bench box (verify)",
    "generator": "enclosure",
-   "description": "Open bench box sized for an Uno (68.6 x 53.4 board). Camera cradle: use VID03. Dimensions: Uno standard.",
+   "description": "Open bench box sized for an Arduino Uno (68.6 x 53.4 board).",
    "tags": [
     "mts",
     "mcu07"
@@ -1789,8 +1647,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU07",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "verify": [
     "innerWidth",
@@ -1798,10 +1654,10 @@
    ]
   },
   {
-   "id": "mts-mcu08-case",
+   "id": "hw-mega2560-bench-case-verify",
    "name": "Mega2560 bench case (verify)",
    "generator": "enclosure",
-   "description": "Box for a Mega (101.6 x 53.3 board). Dimensions: Mega standard.",
+   "description": "Box for a Mega (101.6 x 53.3 board).",
    "tags": [
     "mts",
     "mcu08"
@@ -1817,8 +1673,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU08",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "verify": [
     "innerWidth",
@@ -1826,10 +1680,10 @@
    ]
   },
   {
-   "id": "mts-mcu09-jig",
+   "id": "hw-hw-597-usb-ttl-holder-for-the-cgo3-jig",
    "name": "HW-597 USB-TTL holder for the CGO3 jig (measure)",
    "generator": "sensor-bracket",
-   "description": "In jig",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu09"
@@ -1840,8 +1694,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU09",
-   "ownership": "Owned",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "bodyLength",
@@ -1850,10 +1702,10 @@
    ]
   },
   {
-   "id": "mts-mcu10-pad",
+   "id": "hw-uln2003-driver-board-pad-holes",
    "name": "ULN2003 driver board pad (measure holes)",
    "generator": "component-mount",
-   "description": "Already in PTZ v5 base",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "mcu10"
@@ -1866,8 +1718,6 @@
    },
    "section": "robotics",
    "group": "Single-board computers and microcontrollers",
-   "component": "MCU10",
-   "ownership": "Confirm",
    "category": "Single-board computers and microcontrollers",
    "measure": [
     "padPatternX",
@@ -1875,10 +1725,10 @@
    ]
   },
   {
-   "id": "mts-net01-clip",
+   "id": "hw-alfa-awus036acs-air-unit-clip",
    "name": "ALFA AWUS036ACS air unit clip (measure)",
    "generator": "sensor-bracket",
-   "description": "Air unit clip",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "net01"
@@ -1889,8 +1739,6 @@
    },
    "section": "robotics",
    "group": "Wi-Fi, SDR and networking",
-   "component": "NET01",
-   "ownership": "Owned",
    "category": "Wi-Fi, SDR and networking",
    "measure": [
     "bodyLength",
@@ -1900,10 +1748,10 @@
    ]
   },
   {
-   "id": "mts-net02-mount",
+   "id": "hw-alfa-adapter-ground-station-mount",
    "name": "ALFA adapter ground station mount (measure)",
    "generator": "component-mount",
-   "description": "Ground station mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "net02"
@@ -1916,8 +1764,6 @@
    },
    "section": "robotics",
    "group": "Wi-Fi, SDR and networking",
-   "component": "NET02",
-   "ownership": "Owned",
    "category": "Wi-Fi, SDR and networking",
    "measure": [
     "itemWidth",
@@ -1926,10 +1772,10 @@
    ]
   },
   {
-   "id": "mts-net03-holder",
+   "id": "hw-rtl-sdr-v3-holder",
    "name": "RTL-SDR v3 holder (measure)",
    "generator": "component-mount",
-   "description": "Holder, antenna mount",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "net03"
@@ -1942,8 +1788,6 @@
    },
    "section": "robotics",
    "group": "Wi-Fi, SDR and networking",
-   "component": "NET03",
-   "ownership": "Owned",
    "category": "Wi-Fi, SDR and networking",
    "measure": [
     "itemWidth",
@@ -1952,10 +1796,10 @@
    ]
   },
   {
-   "id": "mts-net04-stand",
+   "id": "hw-baofeng-uv-5r-desk-stand",
    "name": "Baofeng UV-5R desk stand (measure)",
    "generator": "repair-stand",
-   "description": "Desk stand",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "net04"
@@ -1967,8 +1811,6 @@
    },
    "section": "robotics",
    "group": "Wi-Fi, SDR and networking",
-   "component": "NET04",
-   "ownership": "Owned",
    "category": "Wi-Fi, SDR and networking",
    "measure": [
     "notchWidth",
@@ -1976,10 +1818,10 @@
    ]
   },
   {
-   "id": "mts-net05-bracket",
+   "id": "hw-poe-switch-wall-bracket",
    "name": "PoE switch wall bracket (measure)",
    "generator": "component-mount",
-   "description": "Wall bracket",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "net05"
@@ -1992,8 +1834,6 @@
    },
    "section": "robotics",
    "group": "Wi-Fi, SDR and networking",
-   "component": "NET05",
-   "ownership": "Owned",
    "category": "Wi-Fi, SDR and networking",
    "measure": [
     "itemWidth",
@@ -2002,10 +1842,10 @@
    ]
   },
   {
-   "id": "mts-mec01-flange",
+   "id": "hw-6801-2rs-flange-block-12-x-21-x-5",
    "name": "6801-2RS flange block (12 x 21 x 5)",
    "generator": "bearing-block",
-   "description": "Already in PTZ v5 Dimensions: 12x21x5.",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "mec01"
@@ -2016,15 +1856,13 @@
    },
    "section": "robotics",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC01",
-   "ownership": "Planned",
    "category": "Mechanical: bearings, inserts, gimbals"
   },
   {
-   "id": "mts-mec01-pillow",
+   "id": "hw-6801-2rs-pillow-block",
    "name": "6801-2RS pillow block",
    "generator": "bearing-block",
-   "description": "Already in PTZ v5 Dimensions: 12x21x5.",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "mec01"
@@ -2035,15 +1873,13 @@
    },
    "section": "robotics",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC01",
-   "ownership": "Planned",
    "category": "Mechanical: bearings, inserts, gimbals"
   },
   {
-   "id": "mts-mec02-flange",
+   "id": "hw-6806-2rs-flange-block-30-x-42-x-7",
    "name": "6806-2RS flange block (30 x 42 x 7)",
    "generator": "bearing-block",
-   "description": "Already in PTZ v5 Dimensions: 30x42x7.",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "mec02"
@@ -2055,15 +1891,13 @@
    },
    "section": "robotics",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC02",
-   "ownership": "Planned",
    "category": "Mechanical: bearings, inserts, gimbals"
   },
   {
-   "id": "mts-mec02-pillow",
+   "id": "hw-6806-2rs-pillow-block",
    "name": "6806-2RS pillow block",
    "generator": "bearing-block",
-   "description": "Already in PTZ v5 Dimensions: 30x42x7.",
+   "description": "Check the sizes against your part before printing.",
    "tags": [
     "mts",
     "mec02"
@@ -2075,15 +1909,13 @@
    },
    "section": "robotics",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC02",
-   "ownership": "Planned",
    "category": "Mechanical: bearings, inserts, gimbals"
   },
   {
-   "id": "mts-mec03-test-m2",
-   "name": "Heat-set insert test M2 (your kit)",
+   "id": "hw-heat-set-insert-test-m2",
+   "name": "Heat-set insert test M2",
    "generator": "fit-test",
-   "description": "Holes around 3.2 mm, 4.5 mm insert (common values, UNVERIFIED). Find the size for your kit. Dimensions: See detail.",
+   "description": "Holes around 3.2 mm, 4.5 mm insert (common values, UNVERIFIED). Find the size for your kit.",
    "tags": [
     "mts",
     "mec03"
@@ -2097,8 +1929,6 @@
    },
    "section": "shop",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC03",
-   "ownership": "Owned",
    "category": "Mechanical: bearings, inserts, gimbals",
    "verify": [
     "nominal",
@@ -2106,10 +1936,10 @@
    ]
   },
   {
-   "id": "mts-mec03-test-m3",
-   "name": "Heat-set insert test M3 (your kit)",
+   "id": "hw-heat-set-insert-test-m3",
+   "name": "Heat-set insert test M3",
    "generator": "fit-test",
-   "description": "Holes around 4.0 mm, 5.5 mm insert (common values, UNVERIFIED). Find the size for your kit. Dimensions: See detail.",
+   "description": "Holes around 4.0 mm, 5.5 mm insert (common values, UNVERIFIED). Find the size for your kit.",
    "tags": [
     "mts",
     "mec03"
@@ -2123,8 +1953,6 @@
    },
    "section": "shop",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC03",
-   "ownership": "Owned",
    "category": "Mechanical: bearings, inserts, gimbals",
    "verify": [
     "nominal",
@@ -2132,10 +1960,10 @@
    ]
   },
   {
-   "id": "mts-mec03-test-m4",
-   "name": "Heat-set insert test M4 (your kit)",
+   "id": "hw-heat-set-insert-test-m4",
+   "name": "Heat-set insert test M4",
    "generator": "fit-test",
-   "description": "Holes around 5.6 mm, 6.5 mm insert (common values, UNVERIFIED). Find the size for your kit. Dimensions: See detail.",
+   "description": "Holes around 5.6 mm, 6.5 mm insert (common values, UNVERIFIED). Find the size for your kit.",
    "tags": [
     "mts",
     "mec03"
@@ -2149,8 +1977,6 @@
    },
    "section": "shop",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC03",
-   "ownership": "Owned",
    "category": "Mechanical: bearings, inserts, gimbals",
    "verify": [
     "nominal",
@@ -2158,7 +1984,7 @@
    ]
   },
   {
-   "id": "mts-mec04-slot",
+   "id": "hw-20-mm-battery-strap-anchor-plate",
    "name": "20 mm battery strap anchor plate",
    "generator": "connector-mount",
    "description": "Plate with a 21 x 3 mm slot for a 20 mm battery strap and two screw holes.",
@@ -2177,15 +2003,13 @@
    },
    "section": "quads",
    "group": "Mechanical: bearings, inserts, gimbals",
-   "component": "MEC04",
-   "ownership": "Confirm",
    "category": "Mechanical: bearings, inserts, gimbals"
   },
   {
-   "id": "mts-air01-tray",
+   "id": "hw-zd550-undercarriage-tray",
    "name": "ZD550 undercarriage tray (measure)",
    "generator": "component-mount",
-   "description": "See the Tattu sleeve + ZD550 tray project. Bottom plate holes vary by kit revision. Dimensions: MEASURE (bottom plate holes vary by revision).",
+   "description": "Bottom plate holes vary by kit revision.",
    "tags": [
     "mts",
     "air01"
@@ -2199,8 +2023,6 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR01",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "itemWidth",
@@ -2209,10 +2031,10 @@
    ]
   },
   {
-   "id": "mts-air01-gps",
+   "id": "hw-zd550-gps-mast-tube-base-pattern",
    "name": "ZD550 GPS mast (tube, measure base pattern)",
    "generator": "gps-mast",
-   "description": "Trays, mounts, GPS mast Dimensions: MEASURE (bottom plate holes vary by revision).",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "air01"
@@ -2224,18 +2046,16 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR01",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "baseHoleSpacing"
    ]
   },
   {
-   "id": "mts-air02-leg",
+   "id": "hw-f450-tall-landing-leg-120-mm-mount-holes",
    "name": "F450 tall landing leg, 120 mm (measure mount holes)",
    "generator": "landing-leg",
-   "description": "Taller legs for props-down tests. Measure the arm bottom holes. Dimensions: Motor pad 16x19 (Flame Wheel standard).",
+   "description": "Taller legs for props-down tests. Measure the arm bottom holes.",
    "tags": [
     "mts",
     "air02"
@@ -2246,18 +2066,16 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR02",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "holeSpacing"
    ]
   },
   {
-   "id": "mts-air04-cradle",
+   "id": "hw-typhoon-h-h480-repair-cradle-body",
    "name": "Typhoon H / H480 repair cradle (measure body)",
    "generator": "repair-stand",
-   "description": "Top plate modules Dimensions: See base STL.",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "air04"
@@ -2270,18 +2088,16 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR04",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "notchWidth"
    ]
   },
   {
-   "id": "mts-air05-cradle",
+   "id": "hw-h520-repair-cradle-body",
    "name": "H520 repair cradle (measure body)",
    "generator": "repair-stand",
-   "description": "Tether battery shell, payload pod Dimensions: MEASURE battery bay.",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "air05"
@@ -2294,18 +2110,16 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR05",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "notchWidth"
    ]
   },
   {
-   "id": "mts-air05-pod",
+   "id": "hw-h520-payload-pod-base-gimbal-mount",
    "name": "H520 payload pod base (measure gimbal mount)",
    "generator": "enclosure",
-   "description": "Pod for Pi + TF-Luna + M9N + downward camera (project idea PR10). Measure the gimbal mount. Dimensions: MEASURE battery bay.",
+   "description": "Pod base for a Pi, TF-Luna, GPS and a downward camera under a Yuneec H520. Measure the gimbal mount.",
    "tags": [
     "mts",
     "air05"
@@ -2317,8 +2131,6 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR05",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "innerWidth",
@@ -2327,10 +2139,10 @@
    ]
   },
   {
-   "id": "mts-air06-clip",
+   "id": "hw-dji-mini-4k-clip-on-pod-measure-keep-light",
    "name": "DJI Mini 4K clip-on pod (measure, keep light)",
    "generator": "sensor-bracket",
-   "description": "GPS logger clip (watch weight)",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "air06"
@@ -2342,8 +2154,6 @@
    },
    "section": "quads",
    "group": "Airframes and drones",
-   "component": "AIR06",
-   "ownership": "Owned",
    "category": "Airframes and drones",
    "measure": [
     "bodyLength",
@@ -2352,7 +2162,7 @@
    ]
   },
   {
-   "id": "mts-cam01-mount",
+   "id": "hw-gw839301m-turret-junction-plate",
    "name": "GW839301M turret junction plate (measure)",
    "generator": "lidar-mount",
    "description": "Round adapter plate with a hole circle. Measure the camera base.",
@@ -2370,8 +2180,6 @@
    },
    "section": "shop",
    "group": "Security cameras and NVR",
-   "component": "CAM01",
-   "ownership": "Owned",
    "category": "Security cameras and NVR",
    "measure": [
     "plateDiameter",
@@ -2379,7 +2187,7 @@
    ]
   },
   {
-   "id": "mts-cam02-mount",
+   "id": "hw-axis-m3004-v-mount-adapter",
    "name": "Axis M3004-V mount adapter (measure)",
    "generator": "lidar-mount",
    "description": "Round adapter plate with a hole circle. Measure the camera base.",
@@ -2397,8 +2205,6 @@
    },
    "section": "shop",
    "group": "Security cameras and NVR",
-   "component": "CAM02",
-   "ownership": "Owned",
    "category": "Security cameras and NVR",
    "measure": [
     "plateDiameter",
@@ -2406,7 +2212,7 @@
    ]
   },
   {
-   "id": "mts-cam04-mount",
+   "id": "hw-ehome-ptz-wall-bracket",
    "name": "eHome PTZ wall bracket (measure)",
    "generator": "lidar-mount",
    "description": "Round adapter plate with a hole circle. Measure the camera base.",
@@ -2424,8 +2230,6 @@
    },
    "section": "shop",
    "group": "Security cameras and NVR",
-   "component": "CAM04",
-   "ownership": "Owned",
    "category": "Security cameras and NVR",
    "measure": [
     "plateDiameter",
@@ -2433,7 +2237,7 @@
    ]
   },
   {
-   "id": "mts-ben02-jig",
+   "id": "hw-cricut-joy-copper-clad-alignment-jig-70-x-50",
    "name": "Cricut Joy copper clad alignment jig, 70 x 50",
    "generator": "component-mount",
    "description": "Holds a 70 x 50 blank square on the mat. Board thickness 1.6 assumed: measure.",
@@ -2454,18 +2258,16 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN02",
-   "ownership": "Owned",
    "category": "Bench, fabrication and stock",
    "verify": [
     "itemHeight"
    ]
   },
   {
-   "id": "mts-ben03-tray",
+   "id": "hw-copper-clad-etch-tray-70-x-50-blanks",
    "name": "Copper clad etch tray, 70 x 50 blanks",
    "generator": "parts-box",
-   "description": "Shallow tray for one 70 x 50 blank. Dimensions: 70x50.",
+   "description": "Shallow tray for one 70 x 50 blank.",
    "tags": [
     "mts",
     "ben03"
@@ -2480,15 +2282,13 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN03",
-   "ownership": "Owned",
    "category": "Bench, fabrication and stock"
   },
   {
-   "id": "mts-ben03-storage",
+   "id": "hw-copper-clad-blank-storage-holder-slots",
    "name": "Copper clad blank storage holder (slots)",
    "generator": "holder-block",
-   "description": "Slots for 70 x 50 blanks standing on edge. Dimensions: 70x50.",
+   "description": "Slots for 70 x 50 blanks standing on edge.",
    "tags": [
     "mts",
     "ben03"
@@ -2503,12 +2303,10 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN03",
-   "ownership": "Owned",
    "category": "Bench, fabrication and stock"
   },
   {
-   "id": "mts-ben04-drawer",
+   "id": "hw-component-kit-drawer-bin-with-label-slot",
    "name": "Component kit drawer bin with label slot",
    "generator": "stack-bin",
    "description": "Organizer bin for resistor / cap / diode kits.",
@@ -2526,12 +2324,10 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN04",
-   "ownership": "Owned",
    "category": "Bench, fabrication and stock"
   },
   {
-   "id": "mts-ben05-radome",
+   "id": "hw-patch-antenna-radome-box-patch",
    "name": "Patch antenna radome box (measure patch)",
    "generator": "enclosure",
    "description": "Thin walls in front of the patch only. Port hole for RP-SMA.",
@@ -2550,8 +2346,6 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN05",
-   "ownership": "Owned",
    "category": "Bench, fabrication and stock",
    "measure": [
     "innerWidth",
@@ -2560,10 +2354,10 @@
    ]
   },
   {
-   "id": "mts-ben06-jig",
+   "id": "hw-yuntyh108-contact-pcb-jig-body",
    "name": "YUNTYH108 contact PCB jig body (measure)",
    "generator": "enclosure",
-   "description": "Jig body",
+   "description": "Measure your part and type the highlighted sizes.",
    "tags": [
     "mts",
     "ben06"
@@ -2574,8 +2368,6 @@
    },
    "section": "shop",
    "group": "Bench, fabrication and stock",
-   "component": "BEN06",
-   "ownership": "Confirm",
    "category": "Bench, fabrication and stock",
    "measure": [
     "innerWidth",

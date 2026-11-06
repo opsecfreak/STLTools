@@ -62,7 +62,7 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET / PUT / DELETE | `/api/parts/:id` | partial part | an edited part is never overwritten by a seed |
 | POST | `/api/parts/import?overwrite=1` | components.json (`{ categories, items: [{ id, dims_mm, dims_source, print_need, ... }] }`) | `{ added, updated, kept, total }` |
 | GET | `/api/parts/seeds` | | `[{ set, title, loaded }]` |
-| POST | `/api/parts/seed` | `{ set: "mts-v1" }` | `{ parts: { added, updated, kept }, projects: { created, skipped } }` (safe to repeat) |
+| POST | `/api/parts/seed` | `{ set: "example" }` | `{ parts: { added, updated, kept }, projects: { created, skipped } }` (safe to repeat) |
 
 `dimsFlag`: `measure`, `conflict`, `unverified`, `standard`, `given`, `none`.
 `ownershipKey`: `Owned`, `Confirm`, `Planned`.

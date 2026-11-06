@@ -25,7 +25,7 @@ Runs on a Windows or Linux desktop (main target), macOS or a Raspberry Pi. Open 
 - **Assemblies**: multi-part designs shown put together or as a print plate (servo pan-tilt and brushless 2-axis gimbals), and project assemblies where you place any parts together in 3D.
 - **Simple or detailed**: Simple mode shows only the main sizes ("Make something" on Home); "All settings" shows every wall, clearance and screw.
 - **Per-part estimates**: time, grams and metres of filament for every part, with totals for a design or a whole project.
-- **My Parts**: your parts (Owned / Confirm / Planned) with sizes and measure flags; filter every preset list to the parts you own. Starter data from the MTS parts list in [seed/mts-v1](seed/mts-v1/README.md).
+- **My Parts**: your parts (Owned / Confirm / Planned) with sizes and measure flags; filter every preset list to the parts you own. Load the example list ([seed/example](seed/example/README.md)) or import your own `components.json`.
 - **Size series**: about 3,000 checked sizes of clamps, spacers, gears, pulleys, bearings, bins and more ([presets/README.md](presets/README.md)).
 - **Print estimates**: time, filament (g and m) and optional cost for the selected printer profile; bed-fit warning. Sovol SV07 profile included; add more with [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
 - **Projects** group the parts for a build (quantity, notes, printed checkbox), download as one ZIP and export / import between computers.

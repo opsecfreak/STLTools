@@ -32,7 +32,7 @@
 //   GET /shared/estimate.js            the estimator, same file the server uses
 //   v7:
 //   GET /api/parts   POST /api/parts (add)   PUT/DELETE /api/parts/:id   POST /api/parts/import (components.json)
-//   GET /api/parts/seeds   POST /api/parts/seed { set: "mts-v1" }  (parts + project ideas + assemblies)
+//   GET /api/parts/seeds   POST /api/parts/seed { set: "example" }  (parts + project ideas + assemblies)
 // Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
@@ -195,8 +195,8 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
 
 // ---------------------------------------------------------------- seed sets (v7)
 
-// Which assembly spec belongs to which print candidate (seed/mts-v1/assemblies/*.md).
-const ASSEMBLY_FOR = [[/PTZ/i, 'PR01'], [/CGO3/i, 'PR02'], [/SV07_twin|plane/i, 'PR03'], [/Tattu|ZD550/i, 'PR04']];
+// A seed's assemblies/<file>.md spec belongs to the print candidate whose `assembly`
+// field names that file; specs without a candidate become their own projects.
 
 /** "SEN01, MOT04 x2, PWR01-PWR06, BAT05/BAT06" -> [{ id, qty }] */
 export function parseComponentRefs(s) {
@@ -226,8 +226,8 @@ async function loadSeed(set) {
   const specs = new Map();
   const loose = [];
   for (const a of assemblies) {
-    const hit = ASSEMBLY_FOR.find(([re]) => re.test(a.file));
-    if (hit) specs.set(hit[1], a);
+    const owner = (candidates.items ?? []).find((c) => c.assembly === a.file);
+    if (owner) specs.set(owner.id, a);
     else loose.push(a);
   }
   // Files named in the spec's "Source files" section. A line that names a .zip lists what is

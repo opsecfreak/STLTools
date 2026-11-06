@@ -1,4 +1,4 @@
-// v7: My Parts (seed mts-v1), ownership, needs-measurement presets, categories,
+// v7: My Parts (seed: example), ownership, needs-measurement presets, categories,
 // no duplicate presets, size series, project ideas and assemblies, gzip.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
@@ -27,7 +27,7 @@ after(async () => {
   await rm(dir, { recursive: true, force: true });
 });
 const j = (method, path, body) => fetch(base + path, { method, body: body ? JSON.stringify(body) : undefined }).then(async (r) => ({ status: r.status, body: r.status === 204 ? null : await r.json().catch(() => null) }));
-const seedFile = async () => JSON.parse(await readFile('seed/mts-v1/components.json', 'utf8'));
+const seedFile = async () => JSON.parse(await readFile('seed/example/components.json', 'utf8'));
 
 test('dimension flags and ownership keys', () => {
   assert.equal(dimsFlag('MEASURE'), 'measure');
@@ -50,58 +50,42 @@ test('component reference parsing', () => {
   assert.deepEqual(parseComponentRefs('N/A'), []);
 });
 
-test('seed mts-v1: 98 parts in 14 categories, 25 projects, repeat load adds nothing', async () => {
-  assert.deepEqual((await j('GET', '/api/parts/seeds')).body, [{ set: 'mts-v1', title: 'MTS starter data (v1)', loaded: false }]);
-  const r = (await j('POST', '/api/parts/seed', { set: 'mts-v1' })).body;
-  assert.equal(r.parts.added, 98);
-  assert.equal(r.projects.created, 25);
-  const parts = (await j('GET', '/api/parts')).body;
-  assert.equal(parts.categories.length, 14, 'category list from the handoff');
-  assert.equal(parts.items.length, 98);
+test('seed example: parts in their categories, project ideas, repeat load adds nothing', async () => {
+  assert.deepEqual((await j('GET', '/api/parts/seeds')).body, [{ set: 'example', title: 'Example parts list', loaded: false }]);
   const raw = await seedFile();
+  const r = (await j('POST', '/api/parts/seed', { set: 'example' })).body;
+  assert.equal(r.parts.added, raw.items.length);
+  assert.equal(r.projects.created, 3);
+  const parts = (await j('GET', '/api/parts')).body;
+  assert.deepEqual(parts.categories, raw.categories, 'category list from the seed');
   for (const c of raw.items) {
     const p = parts.items.find((x) => x.id === c.id);
     assert.equal(p.dims, c.dims_mm, `${c.id}: dims copied as given`);
-    assert.equal(p.dimsSource, c.dims_source, `${c.id}: dims source copied`);
     assert.equal(p.ownership, c.ownership, `${c.id}: ownership copied`);
   }
-  assert.equal(parts.items.find((x) => x.id === 'BAT01').dimsFlag, 'conflict', 'Tattu size conflict stays flagged');
   assert.equal(parts.items.find((x) => x.id === 'SEN01').dimsFlag, 'unverified');
-  const counts = Object.fromEntries(['Owned', 'Confirm', 'Planned'].map((k) => [k, parts.items.filter((x) => x.ownershipKey === k).length]));
-  assert.ok(counts.Owned > 50 && counts.Confirm > 5 && counts.Planned > 5, JSON.stringify(counts));
-
+  assert.equal(parts.items.find((x) => x.id === 'FC02').dimsFlag, 'measure');
+  assert.equal(parts.items.find((x) => x.id === 'MEC01').dimsFlag, 'standard');
   // edit a part, load again: the edit survives, nothing is duplicated
-  await j('PUT', '/api/parts/BAT01', { dims: '163x65x55', dimsSource: 'Measured' });
-  const again = (await j('POST', '/api/parts/seed', { set: 'mts-v1' })).body;
+  await j('PUT', '/api/parts/FC02', { dims: '81.5x50x15.5', dimsSource: 'Measured' });
+  const again = (await j('POST', '/api/parts/seed', { set: 'example' })).body;
   assert.equal(again.parts.added, 0);
   assert.equal(again.parts.kept, 1);
   assert.equal(again.projects.created, 0);
-  const bat = (await j('GET', '/api/parts/BAT01')).body;
-  assert.equal(bat.dims, '163x65x55');
-  assert.equal(bat.dimsFlag, 'given');
-  assert.equal((await j('GET', '/api/projects')).body.length, 25);
+  assert.equal((await j('GET', '/api/parts/FC02')).body.dimsFlag, 'given');
+  assert.equal((await j('GET', '/api/projects')).body.length, 3);
   assert.equal((await j('GET', '/api/parts/seeds')).body[0].loaded, true);
   assert.equal((await j('POST', '/api/parts/seed', { set: '../etc' })).status, 400);
   assert.equal((await j('POST', '/api/parts/seed', { set: 'nope' })).status, 404);
 });
 
-test('seeded projects: ideas with priority and parts; assemblies with spec and missing files', async () => {
+test('seeded projects: ideas with priority and linked parts; assembly specs attach to their candidate', async () => {
   const ps = (await j('GET', '/api/projects')).body;
-  const ptz = ps.find((p) => p.source === 'seed:mts-v1:PR01');
-  assert.match(ptz.name, /PTZ/);
-  assert.equal(ptz.status, 'active');
-  assert.equal(ptz.priority, 'high');
-  assert.deepEqual(ptz.filesMissing, ['ptz_v5.zip', 'ptz_v4.zip', 'ptz_v1.zip']);
-  assert.ok(ptz.components.some((c) => c.id === 'MOT04' && c.qty === 2));
-  assert.match(ptz.description, /Inserts \(v5\)/, 'assembly spec kept as notes');
-  assert.ok(ptz.tags.includes('assembly'));
-  const tattu = ps.find((p) => p.source === 'seed:mts-v1:PR04');
-  assert.equal(tattu.filesMissing.length, 1);
-  const idea = ps.find((p) => p.source === 'seed:mts-v1:PR05');
-  assert.equal(idea.status, 'idea');
-  assert.equal(idea.priority, 'high');
-  assert.ok(idea.tags.includes('print idea'));
-  assert.equal(ps.filter((p) => p.status === 'idea').length + ps.filter((p) => p.status === 'active').length, 25);
+  const pan = ps.find((p) => p.source === 'seed:example:PR02');
+  assert.equal(pan.status, 'idea');
+  assert.equal(pan.priority, 'medium');
+  assert.deepEqual(pan.components, [{ id: 'MOT01', qty: 2 }, { id: 'VID01', qty: 1 }]);
+  assert.ok(pan.tags.includes('print idea'));
 });
 
 test('parts API: add, import components.json, validation, delete', async () => {
@@ -110,10 +94,10 @@ test('parts API: add, import components.json, validation, delete', async () => {
   assert.equal(add.body.ownershipKey, 'Planned');
   assert.equal((await j('POST', '/api/parts', { id: 'bad id', name: 'x' })).status, 400);
   const imp = await j('POST', '/api/parts/import', { categories: ['New category'], items: [{ id: 'NEW01', category: 'New category', name: 'Imported', ownership: 'Owned', dims_mm: '10x10', dims_source: 'Stated' }] });
-  assert.deepEqual(imp.body, { added: 1, updated: 0, kept: 0, total: 100 });
+  assert.deepEqual(imp.body, { added: 1, updated: 0, kept: 0, total: (await seedFile()).items.length + 2 });
   assert.ok((await j('GET', '/api/parts')).body.categories.includes('New category'));
   assert.equal((await j('DELETE', '/api/parts/TST01')).status, 204);
-  assert.deepEqual(fromComponents(await seedFile()).items.length, 98);
+  assert.deepEqual(fromComponents(await seedFile()).items.length, (await seedFile()).items.length);
 });
 
 test('presets: thousands, no duplicate ids, no duplicate parameter sets', () => {
@@ -130,33 +114,19 @@ test('presets: thousands, no duplicate ids, no duplicate parameter sets', () => 
   }
 });
 
-test('part presets: linked to real parts, ownership and category set, measure fields empty', async () => {
-  const raw = await seedFile();
-  const ids = new Set(raw.items.map((c) => c.id));
-  const mts = listPresets().filter((p) => p.component);
-  assert.ok(mts.length >= 100, `${mts.length} part presets`);
-  const covered = new Set(mts.map((p) => p.component));
-  assert.ok(covered.size >= 90, `${covered.size} parts have presets`);
-  for (const p of mts) {
-    assert.ok(ids.has(p.component), `${p.id}: unknown part ${p.component}`);
-    assert.ok(['Owned', 'Confirm', 'Planned'].includes(p.ownership), `${p.id}: ownership`);
-    assert.ok(raw.categories.includes(p.category), `${p.id}: category ${p.category}`);
+test('hardware presets: categories set, measure fields empty, no personal part links in shipped presets', () => {
+  const hw = listPresets().filter((p) => p.id.startsWith('hw-'));
+  assert.ok(hw.length >= 100, `${hw.length} hardware presets`);
+  for (const p of hw) {
+    assert.ok(p.category, `${p.id}: category`);
     for (const k of p.measure ?? []) assert.ok(!(k in p.params), `${p.id}: ${k} must stay empty`);
   }
-  // a part marked MEASURE never gets invented sizes: its holder preset leaves them empty
-  const pix = mts.find((p) => p.id === 'mts-fc01-tray');
-  assert.deepEqual(pix.measure, ['itemWidth', 'itemLength', 'itemHeight']);
-  // sizes given in the list are copied, and flagged when unverified
-  const servo = mts.find((p) => p.id === 'mts-mot05-tray');
+  for (const p of listPresets()) assert.ok(!p.component && !p.ownership, `${p.id}: shipped presets carry no personal part links`);
+  // a part nobody measured never gets invented sizes: its holder leaves them empty
+  assert.deepEqual(hw.find((p) => p.id === 'hw-pixhawk-v5-tray-on-a-damper-plate').measure, ['itemWidth', 'itemLength', 'itemHeight']);
+  const servo = hw.find((p) => p.id === 'hw-mg996r-servo-tray');
   assert.equal(servo.params.servoLength, 40.7);
   assert.ok(servo.verify.includes('earSpacing'));
-  // the ownership filter used by the UI: owned presets exist, planned ones are separate
-  const owned = mts.filter((p) => p.ownership === 'Owned');
-  const planned = mts.filter((p) => p.ownership === 'Planned');
-  assert.ok(owned.length > 50 && planned.length > 5);
-  assert.ok(!owned.some((p) => planned.includes(p)));
-  const bad = await j('GET', '/api/presets');
-  assert.equal(bad.body.length, listPresets().length);
 });
 
 test('size series cover the main generators and mark where they came from', () => {
