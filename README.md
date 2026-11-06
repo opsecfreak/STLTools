@@ -7,11 +7,13 @@
 > Updating this edition: merge `main` into `mts-personal`, set `package.json` to `<new public version>-mts.<n>`, add a CHANGELOG section, then run **Actions > Release > Run workflow** on branch `mts-personal`.
 
 
-**Version 1.0, open source (Apache-2.0).** A parametric STL generator for drones, RC planes, robotics and the workshop. Pick one of **3,661 ready-made designs** from **54 generators**, change any size, see the print time and filament for your printer, and download watertight STL files that are already in print orientation.
+**Version 1.1, open source (Apache-2.0).** A parametric STL generator for drones, RC planes, robotics and the workshop. Pick one of **3,661 ready-made designs** from **54 generators**, change any size, see the print time and filament for your printer, and download watertight STL files that are already in print orientation.
 
 Examples: tube clamps and joints for any tube size, Raspberry Pi cases, sensor and lidar brackets, flight controller mounts, servo and brushless gimbals, gears and pulleys, bearing blocks, battery cell holders, drawer units, stacking bins, hooks and tool racks.
 
-It runs on a Windows or Linux desktop (the main target), macOS or a Raspberry Pi, and opens in your browser or as its own app window. Nothing is uploaded anywhere: STL Tools is a small local server on your own computer.
+It runs on a Windows or Linux desktop (the main target), macOS, a **Raspberry Pi 4 / 5** shop server, from a **USB drive**, or as a **one-time session** that leaves nothing behind, and opens in your browser or as its own app window. Nothing is uploaded anywhere: STL Tools is a small local server on your own computer.
+
+**Docs:** [All guides](docs/README.md) | [Install](docs/INSTALL.md) | [Raspberry Pi](docs/RASPBERRY-PI.md) | [Self-hosting](docs/SELF-HOSTING.md) | [User guide](docs/USER-GUIDE.md) | [Printers and webcam](docs/PRINTERS.md) | [Troubleshooting](docs/TROUBLESHOOTING.md) | [FAQ](docs/FAQ.md)
 
 ![Home: search everything, quick-make buttons, favorites with 3D previews](docs/screenshots/home.png)
 
@@ -21,10 +23,19 @@ It runs on a Windows or Linux desktop (the main target), macOS or a Raspberry Pi
 2. Unpack it and start it: **Start STL Tools.bat** (Windows), **STL Tools.app** (macOS), `./start.sh` (Linux / Pi).
 3. On **Home**, press a **Make something** button (for example *Tube clamp*), set the sizes, press **Download STL**.
 
+Other ways to run it:
+
+| | |
+|---|---|
+| **USB drive** | **Start STL Tools (USB portable).bat** / `./start-portable.sh`: all data stays on the drive. |
+| **One-time session** | **Start STL Tools (one-time session).bat** / `./start.sh --temp --hours 3`: deleted when it stops. |
+| **Raspberry Pi 4 / 5** | `sudo SOURCE_DIR="$PWD/app" USE_PACKAGE_NODE=1 bash app/deploy/install-pi.sh` in the unpacked `linux-arm64` package: a service at boot, open it from any phone or PC. [Guide](docs/RASPBERRY-PI.md) |
+| **Phones and tablets** | `--lan` or Settings > Self-hosting, with an optional access PIN. [Self-hosting](docs/SELF-HOSTING.md) |
+
 With Node.js 18+ already installed, the npm package is the quickest way (no download folder to manage):
 
 ```bash
-npm install -g https://github.com/opsecfreak/STLTools/releases/download/v1.0.1-mts.1/stltools-1.0.1-mts.1.tgz
+npm install -g https://github.com/opsecfreak/STLTools/releases/download/v1.1.0-mts.1/stltools-1.1.0-mts.1.tgz
 ```
 
 ```bash
@@ -46,7 +57,8 @@ stltools app
 | **My Parts** | Your own parts list (Owned / Confirm / Planned) with sizes and "needs measurement" flags; filter presets to what you own. Start from the example list or import your own `components.json` ([format](seed/example/README.md)). |
 | **No guessed sizes** | Sizes nobody measured stay empty and Generate waits until you type them. Datasheet values are highlighted to check. |
 | **STL Files** | Import STL files you already have: view, estimate, tag, add to projects. |
-| **Printers (view only)** | Status, temperatures, progress, files, history and webcam of Klipper / Moonraker printers (Mainsail, Fluidd, Sovol SV07) on your LAN, plus G-code upload that never starts a print ([docs/PRINTERS.md](docs/PRINTERS.md)). |
+| **Printers (optional, view only)** | Status, temperatures, progress, files, history and the **live webcam** (the MJPEG stream Mainsail shows) of Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd) on your LAN, background connection checks, and G-code upload that never starts a print. Estimates can use the printer's own Klipper limits. No printer? Turn the features off. ([docs/PRINTERS.md](docs/PRINTERS.md)) |
+| **Self-hosting** | Desktop, USB portable, one-time and auto-stop sessions, LAN with an access PIN, Raspberry Pi service with an installer that is tested on x64 and ARM64. 3D view falls back to a parts list where WebGL is missing. ([docs/SELF-HOSTING.md](docs/SELF-HOSTING.md)) |
 | **Help where you need it** | Tooltips on every setting with its range, default and name; Settings > Tooltips and help sets delay, size and where help text shows. |
 | **CLI and API** | `stltools gen`, `stltools preset` for scripts; an HTTP API for everything the UI does ([docs/API.md](docs/API.md)). |
 
@@ -67,9 +79,11 @@ Units are millimeters, because slicers read STL as mm.
 | ![Global search from any page](docs/screenshots/search.png) | ![Project with parts, quantities, estimate and export](docs/screenshots/project.png) |
 | **Global search** (`/`) across parts, presets, STLs, projects, settings. | **Projects**: parts lists, one-ZIP download, export. |
 | ![Settings: connect and test a Klipper printer](docs/screenshots/settings-printers.png) | ![Printers page: status, temperatures, files, webcam (view only)](docs/screenshots/printers.png) |
-| **Settings > Printers**: connection test step by step. | **Printers**: view only, never controls a print. |
+| **Settings > Printers**: connection test step by step. | **Printers**: live webcam, printer limits for estimates; view only. |
 | ![Import STL and project files](docs/screenshots/import.png) | ![Dark mode](docs/screenshots/dark-mode.png) |
 | **Import**: STL, project and design files. | **Dark mode**. |
+| ![Settings: self-hosting status, LAN, auto-stop and access PIN](docs/screenshots/settings-hosting.png) | |
+| **Settings > Self-hosting**: run mode, addresses, auto-stop, LAN access PIN. | |
 
 ## License and branches
 
@@ -95,17 +109,24 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 
 ## Documentation
 
+Start at the hub: **[docs/README.md](docs/README.md)** (every guide by goal).
+
 | Doc | Covers |
 |-----|--------|
 | [docs/INSTALL.md](docs/INSTALL.md) | Download and install on Windows, macOS, Linux, Raspberry Pi; upgrade; uninstall |
+| [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) | Raspberry Pi 4 / 4B / 5: SD card, install (package or git), setup, kiosk, update, rollback, backup, Tailscale, uninstall |
+| [docs/SELF-HOSTING.md](docs/SELF-HOSTING.md) | Desktop, USB portable, one-time session, auto-stop, LAN, access PIN, printers on or off, start options |
+| [docs/USER-GUIDE.md](docs/USER-GUIDE.md) | The app from a first part to your own generators: presets, projects, assemblies, My Parts, estimates |
+| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Symptom and fix tables: start-up, browser, generating, printers, Pi |
+| [docs/FAQ.md](docs/FAQ.md) | Short answers |
+| [SECURITY.md](SECURITY.md) | What is protected, what is not, how to report a problem |
 | [docs/TESTING.md](docs/TESTING.md) | First test checklist, test prints, feedback template |
 | [docs/EXTENDING.md](docs/EXTENDING.md) | Adding generators and presets without breaking anything; release steps |
 | [custom/README.md](custom/README.md) | Your own generators and presets |
-| [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) | Pi setup, updates, rollback, backups, Tailscale, troubleshooting |
 | [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
 | [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
 | [src/generators/README.md](src/generators/README.md) | Writing a new generator, kernel functions, printability rules |
-| [docs/PRINTERS.md](docs/PRINTERS.md) | Printers: add and test your SV07, what it can and cannot do (view only), upload, troubleshooting |
+| [docs/PRINTERS.md](docs/PRINTERS.md) | Printers: add and test your SV07, live webcam, estimates from the printer, connection checks, view only, upload, troubleshooting |
 | [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md) | Print time estimates, calibration, adding printer profiles (also by GitHub pull request) |
 | [AGENTS.md](AGENTS.md) | For developers and AI agents: commands, hard rules, code map |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the server, generators, data folder and UI fit together |
@@ -202,7 +223,7 @@ npm start
 
 Open http://127.0.0.1:3000.
 
-Environment variables: `HOST` (default `127.0.0.1`), `PORT` (default `3000`), `STLTOOLS_DATA` (default `./data`). Set `HOST=0.0.0.0` to open it from a phone or another PC on your LAN. There is no login, so do not expose it to the internet. For access away from the shop, use a private VPN such as Tailscale.
+Environment variables: `HOST` (default `127.0.0.1`), `PORT` (default `3000`), `STLTOOLS_DATA` (default `./data`). Set `HOST=0.0.0.0` to open it from a phone or another PC on your LAN, and set an access PIN in Settings > Self-hosting. Do not expose it to the internet. For access away from the shop, use a private VPN such as Tailscale.
 
 ## CLI
 
@@ -230,11 +251,13 @@ Each run writes one STL per part plus `<name>.params.json`. Feed it back with `-
 
 ## Run as a system service (systemd)
 
-On a Raspberry Pi or any Debian-based Linux, the installer does everything (Node.js, service user, `/opt/stltools`, systemd unit) and also updates an existing install:
+On a Raspberry Pi or any Debian-based Linux, the installer does everything (Node.js, service user, `/opt/stltools`, systemd unit), updates an existing install when run again, and removes it with `--uninstall` (keeps your data):
 
 ```bash
 sudo bash deploy/install-pi.sh
 ```
+
+From an unpacked release package or a USB drive (no git): `sudo SOURCE_DIR=<package>/app bash <package>/app/deploy/install-pi.sh`. Test it without touching a real install: `sudo bash scripts/test-pi-install.sh`.
 
 See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md) for the full walkthrough.
 
@@ -251,6 +274,8 @@ Every endpoint with request and response shapes: [docs/API.md](docs/API.md). Mai
 | GET / PUT | `/api/library`, `/api/library/upload` | STL library |
 | GET / POST | `/api/projects/:id/export`, `/api/projects/import` | Move projects between computers |
 | GET (+ upload) | `/api/printers/...`, POST `/api/printers/diagnose` | Printers, view only |
+| GET | `/api/printers/:id/stream`, `/api/printers/:id/machine` | Live webcam (MJPEG), printer limits for estimates |
+| GET / PUT | `/api/hosting`, `/api/hosting/pin` | How it runs, LAN addresses, access PIN |
 
 ## Print notes
 
@@ -304,7 +329,8 @@ Every endpoint with request and response shapes: [docs/API.md](docs/API.md). Mai
 ## Known limits
 
 - Generation runs on the server's main thread. Very large values block other requests until done.
-- No user accounts. Anyone who can reach the port can edit the catalog.
+- No user accounts. Anyone who can reach the port (and knows the access PIN, if set) can edit everything.
+- WebRTC and HLS webcams show as snapshots (only MJPEG is shown as live video).
 - STL only. 3MF (with colors for labels) is on the roadmap.
 - No slicing on the server. Slice in your slicer, then upload the G-code in the Printers tab.
 - Memory grows about 5 MB per 1000 generations (WASM allocator). A service restart clears it.

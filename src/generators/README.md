@@ -1,5 +1,7 @@
 # Generators
 
+> See also: [Presets](../../presets/README.md) | [Your own generators (custom/)](../../custom/README.md) | [Extending safely](../../docs/EXTENDING.md) | [Architecture](../../docs/ARCHITECTURE.md) | [AGENTS.md](../../AGENTS.md) | [All docs](../../docs/README.md)
+
 Each file here makes one kind of part. A generator is a plain object:
 
 ```js

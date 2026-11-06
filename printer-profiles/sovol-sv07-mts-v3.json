@@ -1,0 +1,49 @@
+{
+  "id": "sovol-sv07-mts-v3",
+  "name": "Sovol SV07 (MTS shop, PLA preset v3)",
+  "maker": "Sovol",
+  "firmware": "klipper",
+  "bed": {
+    "x": 220,
+    "y": 220,
+    "z": 250
+  },
+  "nozzle": 0.4,
+  "filamentDiameter": 1.75,
+  "speeds": {
+    "outerWall": 50,
+    "innerWall": 80,
+    "infill": 80,
+    "topBottom": 80,
+    "firstLayer": 25,
+    "travel": 200
+  },
+  "acceleration": 2000,
+  "maxVolumetricFlow": 20,
+  "motionEfficiency": 0.7,
+  "layerOverheadSeconds": 1.8,
+  "heatUpSeconds": 180,
+  "moonraker": {
+    "apiPort": 7125,
+    "webPort": 80,
+    "hostnameHints": [
+      "mkspi",
+      "sv07",
+      "sovol"
+    ]
+  },
+  "webcam": {
+    "stream": "/webcam/?action=stream",
+    "snapshot": "/webcam/?action=snapshot",
+    "verified": true,
+    "note": "crowsnest [cam 1] ustreamer on port 8080, behind Mainsail's nginx as /webcam/ (Mainsail webcam settings and crowsnest.conf of the shop printer)."
+  },
+  "verified": false,
+  "notes": "Speeds, acceleration, flow cap and layers are the shop's proven PLA slicer preset sv07-alex-v3 (job caps 200 mm/s, 2000 accel; 20 mm3/s hotend flow is the real ceiling). Motion efficiency and per-layer overhead are starting values: calibrate with Settings > Print estimates > Time calibration factor after one print. Do not read 500 mm/s marketing speed into this printer.",
+  "sources": [
+    "sv07-alex-v3.ini (2026-11-06): speeds 50/80/80/80/25/200, accel 2000, max_volumetric_speed 20, layer 0.2 / first 0.3, 3 perimeters, 15% gyroid, top 4 / bottom 3",
+    "Live Klipper config 2026-11-06: max_velocity 225, max_accel 4500, square_corner_velocity 3.0",
+    "Sovol SV07: 220 x 220 x 250 mm build volume"
+  ],
+  "priority": 10
+}

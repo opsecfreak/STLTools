@@ -1,5 +1,7 @@
 # Presets
 
+> See also: [Your own presets (custom/)](../custom/README.md) | [Generators](../src/generators/README.md) | [Extending safely](../docs/EXTENDING.md) | [User guide](../docs/USER-GUIDE.md) | [All docs](../docs/README.md)
+
 Ready-made designs. Each preset is a generator plus the values that differ from that generator's defaults. The web UI, the CLI (`stltools presets`, `stltools preset <id>`) and the shop catalog all read these files at startup.
 
 ## Files

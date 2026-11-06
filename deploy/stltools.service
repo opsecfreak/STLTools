@@ -1,11 +1,13 @@
-# systemd unit for the STL Tools web UI.
-# Install:
+# systemd unit for the STL Tools web UI (Raspberry Pi 4 / 5 or any Linux server).
+# deploy/install-pi.sh fills in the paths, user, host and port and installs it.
+# By hand:
 #   sudo cp deploy/stltools.service /etc/systemd/system/
 #   sudo systemctl daemon-reload
 #   sudo systemctl enable --now stltools
 [Unit]
 Description=STL Tools parametric STL generator (web UI)
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=simple
@@ -14,14 +16,17 @@ Group=stltools
 WorkingDirectory=/opt/stltools
 ExecStart=/usr/bin/node /opt/stltools/src/server.js
 Environment=NODE_ENV=production
-# 127.0.0.1 = this machine only. Use 0.0.0.0 to allow other machines on the LAN.
+Environment=STLTOOLS_MODE=service
+# 127.0.0.1 = this machine only. 0.0.0.0 = other devices on the LAN (set an access PIN in Settings > Self-hosting).
 Environment=HOST=127.0.0.1
 Environment=PORT=3000
-# Shop catalog (categories + items). Back this folder up.
+# Your data: settings, designs, projects, catalog, printers, STL library. Back this folder up.
 Environment=STLTOOLS_DATA=/opt/stltools/data
 ReadWritePaths=/opt/stltools/data
 Restart=on-failure
 RestartSec=3
+# Pi 4 with 2 GB: keep Node from taking all memory on very large parts
+Environment=NODE_OPTIONS=--max-old-space-size=1024
 # Hardening
 NoNewPrivileges=true
 ProtectSystem=strict

@@ -1,5 +1,7 @@
 # Contributing
 
+> See also: [AGENTS.md](AGENTS.md) | [Extending safely](docs/EXTENDING.md) | [Security](SECURITY.md) | [All docs](docs/README.md)
+
 Thanks for helping. STL Tools is a small Node.js app with no build step, so
 most contributions are one file plus a test run.
 

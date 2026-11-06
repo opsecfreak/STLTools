@@ -35,9 +35,15 @@
 //   GET /api/parts/seeds   POST /api/parts/seed { set: "example" }  (parts + project ideas + assemblies)
 //   1.0:
 //   GET/POST /api/collections   PUT/DELETE /api/collections/:id   POST /api/collections/:id/toggle { kind, id }
+//   1.1:
+//   GET /api/hosting (mode, addresses, PIN on/off)   PUT /api/hosting/pin { pin, current }   POST /api/hosting/login { pin }
+//   GET /api/estimate-targets (printers with their own Klipper limits + profiles)
+//   GET /api/printers/:id/stream?cam=0 (live MJPEG)   GET /api/printers/:id/machine   POST /api/printers/check
+//   GET /api/printers/:id/health   GET /api/printers/:id/config[?file=printer.cfg]   (read-only, secrets hidden)
 // Full reference with request/response shapes: docs/API.md
 //
-// Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
+// Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data),
+//      STLTOOLS_MODE / STLTOOLS_STOP_AT (set by bin/stltools-app.js: desktop, portable, temp, custom)
 
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -58,7 +64,8 @@ import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
 import { createSettings } from './core/settings.js';
 import { createLibrary, MAX_STL_BYTES } from './core/library.js';
 import { listProfiles, getProfile, profileIssues } from './core/profiles.js';
-import { estimateParts, formatDuration } from './core/estimate.js';
+import { estimateParts, formatDuration, profileFromMachine } from './core/estimate.js';
+import { createHosting, isLoopback, lanUrls, boardModel, loginPage, COOKIE } from './core/hosting.js';
 import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { createCollections } from './core/collections.js';
 import { randomBytes } from 'node:crypto';
@@ -277,12 +284,56 @@ async function loadSeed(set) {
   return { set, parts: partsResult, projects: { created, skipped } };
 }
 
-/** The printer profile estimates use: the default printer's model, else Settings > Print estimates. */
+/** Profile for a saved printer: its model's profile, with the printer's own Klipper limits when known and allowed. */
+function printerProfile(pr, cfg) {
+  const base = getProfile(pr.model) ?? (pr.machine ? getProfile('generic-klipper-fast') ?? getProfile(cfg.print.profile) : null);
+  if (!base) return null;
+  return cfg.printers.useMachine && pr.machine ? profileFromMachine(base, pr.machine, pr.name) : base;
+}
+
+/** The printer profile estimates use: the default printer (with its own limits), else Settings > Print estimates. */
 async function activeProfile(cfg) {
   const list = await printers.list().catch(() => []);
   const def = list.find((p) => p.id === cfg.printers.defaultPrinter) ?? null;
-  return getProfile(def?.model) ?? getProfile(cfg.print.profile) ?? listProfiles()[0] ?? null;
+  return (def && printerProfile(def, cfg)) ?? getProfile(cfg.print.profile) ?? listProfiles()[0] ?? null;
 }
+
+/** What the estimate box can pick: saved printers first (own limits), then every profile. */
+async function estimateTargets() {
+  const cfg = await settings.get();
+  const out = [];
+  for (const pr of await printers.list().catch(() => [])) {
+    const profile = printerProfile(pr, cfg);
+    if (profile) out.push({ value: `printer:${pr.id}`, label: profile.fromMachine ? `${pr.name} (own limits)` : `${pr.name} (${profile.name})`, printerId: pr.id, profile });
+  }
+  for (const p of listProfiles()) out.push({ value: `profile:${p.id}`, label: p.name, profile: p });
+  return out;
+}
+
+const RUN = { mode: process.env.STLTOOLS_MODE || (process.env.INVOCATION_ID ? 'service' : 'server'), stopAt: process.env.STLTOOLS_STOP_AT || null, host: HOST, port: PORT };
+
+async function hostingStatus(req) {
+  const port = req.socket.localPort ?? RUN.port;
+  const lan = !['127.0.0.1', '::1', 'localhost'].includes(RUN.host);
+  return {
+    mode: RUN.mode,
+    service: Boolean(process.env.INVOCATION_ID),
+    host: RUN.host,
+    port,
+    lan,
+    addresses: lan ? lanUrls(port) : [`http://127.0.0.1:${port}`],
+    stopAt: RUN.stopAt,
+    pin: await hosting.hasPin(),
+    you: { local: isLoopback(req.socket.remoteAddress) },
+    board: boardModel(),
+    platform: process.platform,
+    arch: process.arch,
+    node: process.versions.node,
+    dataDir: catalog.dataDir,
+  };
+}
+
+const pinCookie = (token) => `${COOKIE}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=31536000`;
 
 async function projectEstimate(statsList, qty) {
   if (!statsList.length) return null;
@@ -348,6 +399,20 @@ async function route(req, res) {
       dataDir: catalog.dataDir, issues: [...registryIssues(), ...presetIssues(), ...profileIssues()],
     });
   }
+
+  // ---- self-hosting (1.1) ----
+  if (path === '/api/hosting' && req.method === 'GET') return send(res, 200, await hostingStatus(req));
+  if (path === '/api/hosting/login' && req.method === 'POST') {
+    const token = await hosting.login((await readBody(req)).pin, req.socket.remoteAddress);
+    return send(res, 200, { ok: true }, token ? { 'set-cookie': pinCookie(token) } : {});
+  }
+  if (path === '/api/hosting/logout' && req.method === 'POST') return send(res, 200, { ok: true }, { 'set-cookie': `${COOKIE}=; Path=/; Max-Age=0` });
+  if (path === '/api/hosting/pin' && req.method === 'PUT') {
+    const b = await readBody(req);
+    const r = await hosting.setPin(b.pin, b.current);
+    return send(res, 200, { pin: r.pin }, r.token ? { 'set-cookie': pinCookie(r.token) } : {});
+  }
+  if (path === '/api/estimate-targets' && req.method === 'GET') return send(res, 200, await estimateTargets());
 
   // ---- settings, printer profiles, estimates (v6) ----
   if (path === '/api/settings') {
@@ -521,6 +586,7 @@ async function route(req, res) {
     return send(res, 200, await printers.probe(b.url, b.apiKey));
   }
   if (path === '/api/printers/scan' && req.method === 'GET') return send(res, 200, await scanLan());
+  if (path === '/api/printers/check' && req.method === 'POST') return send(res, 200, await printers.checkAll());
   if (path === '/api/printers/diagnose' && req.method === 'POST') {
     const b = await readBody(req);
     let key = b.apiKey;
@@ -545,6 +611,27 @@ async function route(req, res) {
     if (sub === 'files') return send(res, 200, await printers.files(id));
     if (sub === 'history') return send(res, 200, await printers.history(id, Number(url.searchParams.get('limit') ?? 20)));
     if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
+    if (sub === 'machine') return send(res, 200, await printers.machine(id));
+    if (sub === 'health') return send(res, 200, await printers.health(id));
+    if (sub === 'config') {
+      const file = url.searchParams.get('file');
+      return send(res, 200, file ? await printers.configFile(id, file) : await printers.configFiles(id));
+    }
+    if (sub === 'stream') {
+      const st = await printers.stream(id, Number(url.searchParams.get('cam') ?? 0));
+      res.writeHead(200, { 'content-type': st.type, 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });
+      const reader = st.body.getReader();
+      res.on('close', () => { st.close(); reader.cancel().catch(() => {}); });
+      try {
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done || res.destroyed) break;
+          if (!res.write(value)) await new Promise((r) => res.once('drain', r));
+        }
+      } catch { /* camera or browser went away */ }
+      st.close();
+      return res.end();
+    }
     if (sub === 'metadata') return send(res, 200, await printers.metadata(id, url.searchParams.get('filename') ?? ''));
     if (sub === 'thumb' || sub === 'snapshot') {
       const img = sub === 'thumb' ? await printers.thumbnail(id, url.searchParams.get('path')) : await printers.snapshot(id, Number(url.searchParams.get('cam') ?? 0));
@@ -612,9 +699,28 @@ let settings = createSettings({ dataDir: catalog.dataDir });
 let library = createLibrary({ dataDir: catalog.dataDir });
 let parts = createParts({ dataDir: catalog.dataDir, seedDir: SEED_DIR });
 let collections = createCollections({ dataDir: catalog.dataDir });
+let hosting = createHosting({ dataDir: catalog.dataDir });
 projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
-export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
+/** Background read-only connection checks (Settings > Printers > Background connection check). */
+function startPrinterChecks() {
+  let last = 0;
+  const timer = setInterval(async () => {
+    try {
+      const cfg = await settings.get();
+      const every = cfg.printers.checkMinutes * 60e3;
+      if (cfg.printers.enabled === 'off' || !every || Date.now() - last < every) return;
+      last = Date.now();
+      await printers.checkAll();
+    } catch { /* next round */ }
+  }, 15e3);
+  timer.unref();
+  return timer;
+}
+
+export function startServer({ host = HOST, port = PORT, dataDir, pinForLocal = false } = {}) {
+  RUN.host = host;
+  const trustLoopback = !pinForLocal; // pinForLocal: tests only, treat this machine like a LAN device
   if (dataDir) {
     catalog = createCatalog({ dataDir });
     designs = createDesignStore({ dataDir });
@@ -626,9 +732,16 @@ export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
     settings = createSettings({ dataDir });
     parts = createParts({ dataDir, seedDir: SEED_DIR });
     collections = createCollections({ dataDir });
+    hosting = createHosting({ dataDir });
   }
   const server = createServer(async (req, res) => {
     try {
+      if (!(await hosting.allowed(req, { trustLoopback }))) {
+        const p = new URL(req.url, 'http://localhost').pathname;
+        if (p === '/api/hosting/login' && req.method === 'POST') return await route(req, res);
+        if (p.startsWith('/api/')) return send(res, 401, { error: 'This STL Tools server needs its access PIN. Open the main page to enter it.' });
+        return send(res, 200, loginPage(), { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' });
+      }
       await route(req, res);
     } catch (err) {
       if (err instanceof ParamError) return send(res, 400, { error: err.message, errors: err.errors });
@@ -638,7 +751,9 @@ export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
       send(res, status, { error: err.message });
     }
   });
-  return new Promise((resolve) => server.listen(port, host, () => resolve(server)));
+  const checks = startPrinterChecks();
+  server.on('close', () => clearInterval(checks));
+  return new Promise((resolve) => server.listen(port, host, () => { RUN.port = server.address().port; resolve(server); }));
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {

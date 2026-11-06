@@ -120,6 +120,42 @@ export function estimateParts(statsList, profile, opts = {}, qty = null) {
   return { seconds: seconds + heatUp, heatUp, filamentMm, grams, cost: hasCost ? cost : null, parts };
 }
 
+/**
+ * A profile with the connected printer's own Klipper values (read-only query of
+ * toolhead + configfile, see src/core/printers.js machine()). Bed size, nozzle and
+ * filament come from the printer; speeds are capped at its max_velocity; motion
+ * efficiency moves with its max_accel against the profile's acceleration.
+ * Values the printer did not report keep the profile's numbers.
+ *   machine: { bed: {x,y,z}, maxVelocity, maxAccel, nozzle, filamentDiameter, readAt }
+ */
+export function profileFromMachine(base, machine, printerName = 'printer') {
+  if (!machine) return base;
+  const b = base ?? {};
+  const okBed = machine.bed && [machine.bed.x, machine.bed.y, machine.bed.z].every((v) => Number.isFinite(v) && v > 10 && v < 3000);
+  const vmax = num(machine.maxVelocity, 0);
+  const speeds = { ...(b.speeds ?? {}) };
+  if (vmax > 0) for (const k of Object.keys(speeds)) speeds[k] = Math.min(speeds[k], vmax);
+  const amax = num(machine.maxAccel, 0);
+  const baseAcc = num(b.acceleration, 0);
+  let eff = num(b.motionEfficiency, 0.7);
+  if (amax > 0 && baseAcc > 0) eff = Math.min(0.9, Math.max(0.2, eff * Math.min(1.25, Math.max(0.6, Math.sqrt(amax / baseAcc)))));
+  return {
+    ...b,
+    id: `${b.id ?? 'profile'}@printer`,
+    name: `${printerName} (${b.name ?? 'profile'} + values from the printer)`,
+    // Klipper reports axis travel, which is often a few mm past the printable bed
+    // (SV07: 225 travel on a 220 bed). Never let it grow the profile's bed.
+    bed: okBed ? (b.bed ? { x: Math.min(b.bed.x, machine.bed.x), y: Math.min(b.bed.y, machine.bed.y), z: Math.min(b.bed.z, machine.bed.z) } : { x: machine.bed.x, y: machine.bed.y, z: machine.bed.z }) : b.bed,
+    nozzle: num(machine.nozzle, b.nozzle ?? 0.4),
+    lineWidth: machine.nozzle && b.nozzle && machine.nozzle !== b.nozzle ? undefined : b.lineWidth,
+    filamentDiameter: num(machine.filamentDiameter, b.filamentDiameter ?? 1.75),
+    speeds,
+    acceleration: amax || b.acceleration,
+    motionEfficiency: eff,
+    fromMachine: { readAt: machine.readAt ?? null, maxVelocity: vmax || null, maxAccel: amax || null },
+  };
+}
+
 export function formatDuration(sec) {
   if (!Number.isFinite(sec)) return '-';
   const s = Math.max(0, Math.round(sec));

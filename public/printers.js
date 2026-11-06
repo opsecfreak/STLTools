@@ -1,14 +1,22 @@
 // Printers page: Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd) on the LAN.
 // VIEW ONLY: status, temperatures, progress, files, history, webcam, and G-code
 // upload that never starts a print. There are no control buttons anywhere.
-import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete } from './lib.js';
+import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete, printersVisible } from './lib.js';
 
 let timer = null;
 let alive = 0; // render generation; stops polling when the page changes
+let liveImg = null; // the <img> showing a live MJPEG stream; cleared to close the connection
+
+// A 1x1 GIF: pointing the <img> at it aborts the MJPEG load at once (removing src does not always).
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+function stopLive() {
+  if (liveImg) { liveImg.onerror = null; liveImg.onload = null; liveImg.src = BLANK; liveImg = null; }
+}
 
 export function stopPrinters() {
   alive++;
   clearTimeout(timer);
+  stopLive();
 }
 
 const STATE_LABEL = { printing: 'Printing', paused: 'Paused', complete: 'Complete', cancelled: 'Cancelled', error: 'Error', standby: 'Idle', ready: 'Idle', startup: 'Starting', shutdown: 'Shutdown', offline: 'Offline' };
@@ -95,7 +103,7 @@ export async function renderPrinters(page, focusId = null) {
     else if (s.error) statusBox.append(el('p', { className: 'error', textContent: s.error }), el('p', { className: 'muted', textContent: 'Check that the printer is on, on the same network, and that the address opens Mainsail in a browser.' }));
     else {
       const active = s.state === 'printing' || s.state === 'paused';
-      statusBox.append(
+      statusBox.append(...[
         el('div', { className: 'row' }, el('span', { className: `state-pill state-${s.state}`, textContent: STATE_LABEL[s.state] ?? s.state }), el('strong', { textContent: s.filename ?? 'No active print' })),
         active ? el('div', { className: 'progress big' }, el('div', { className: 'bar', style: `width:${(s.progress * 100).toFixed(1)}%` })) : null,
         el('dl', { className: 'facts' },
@@ -110,7 +118,8 @@ export async function renderPrinters(page, focusId = null) {
             ['Klipper', s.klippy],
           ].flatMap(([k, v]) => [el('dt', { textContent: k }), el('dd', { textContent: v })])),
         s.message ? el('p', { className: 'muted', textContent: s.message }) : null,
-        el('a', { href: p.url, target: '_blank', rel: 'noopener', textContent: 'Open Mainsail / Fluidd' }));
+        p.machine ? el('p', { className: 'muted', title: `Read from Klipper ${new Date(p.machine.readAt).toLocaleString()}`, textContent: `Printer limits from Klipper (used for estimates): ${p.machine.bed ? `${p.machine.bed.x} x ${p.machine.bed.y} x ${p.machine.bed.z} mm` : 'bed size not reported'}, max ${p.machine.maxVelocity ?? '?'} mm/s, accel ${p.machine.maxAccel ?? '?'} mm/s2, nozzle ${p.machine.nozzle ?? '?'} mm.` }) : null,
+        el('a', { href: p.url, target: '_blank', rel: 'noopener', textContent: 'Open Mainsail / Fluidd' })].filter(Boolean));
     }
     const cam = el('div', { className: 'card cam-box' });
     const files = el('div', { className: 'card files-box' }, el('h3', { textContent: 'Files on the printer' }), el('p', { className: 'muted', textContent: 'Loading...' }));
@@ -126,18 +135,60 @@ export async function renderPrinters(page, focusId = null) {
       return; // keep files / history / camera in place on status refresh
     }
     detail.dataset.printer = p.id;
-    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), el('div', { className: 'row' }, remove));
-    // webcam
-    api('GET', `/api/printers/${p.id}/webcams`).then((cams) => {
-      if (!cams.length) { cam.replaceChildren(el('h3', { textContent: 'Webcam' }), el('p', { className: 'muted', textContent: 'No webcam configured in Mainsail.' })); return; }
-      const img = el('img', { className: 'cam', alt: 'Webcam snapshot' });
-      const c = cams[0];
-      img.style.transform = `${c.flipH ? 'scaleX(-1) ' : ''}${c.flipV ? 'scaleY(-1) ' : ''}rotate(${c.rotation}deg)`;
-      const refresh = () => { if (gen === alive && detail.dataset.printer === p.id) img.src = `/api/printers/${p.id}/snapshot?cam=0&t=${Date.now()}`; };
-      img.onload = () => setTimeout(refresh, 5000);
-      img.onerror = () => setTimeout(refresh, 10000);
-      cam.replaceChildren(el('h3', { textContent: `Webcam: ${c.name}` }), img, el('p', { className: 'muted', textContent: 'Snapshot every 5 seconds.' }));
-      refresh();
+    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), insightsBox(p), el('div', { className: 'row' }, remove));
+    // webcam: live MJPEG (the stream Mainsail shows) or snapshots, per Settings > Printers
+    stopLive();
+    const camMode = settings()?.printers.webcam ?? 'stream';
+    if (camMode === 'off') cam.replaceChildren(el('h3', { textContent: 'Webcam' }), el('p', { className: 'muted', textContent: 'Webcam is off (Settings > Printers).' }));
+    else api('GET', `/api/printers/${p.id}/webcams`).then((cams) => {
+      if (!cams.length) { cam.replaceChildren(el('h3', { textContent: 'Webcam' }), el('p', { className: 'muted', textContent: 'No webcam found. Set one up in Mainsail (Settings > Webcams); STL Tools shows the same camera.' })); return; }
+      let index = 0;
+      const img = el('img', { className: 'cam', alt: 'Printer webcam' });
+      const note = el('p', { className: 'muted' });
+      const pick = cams.length > 1 ? el('select', { 'aria-label': 'Camera', onchange: () => { index = Number(pick.value); start(); } }, ...cams.map((c) => el('option', { value: c.index, textContent: c.name }))) : null;
+      const here = () => gen === alive && detail.dataset.printer === p.id;
+      const snapEvery = (settings()?.printers.snapshotSeconds ?? 3) * 1000;
+      let snapTimer = null;
+      const snapshots = (why = '') => {
+        stopLive();
+        clearTimeout(snapTimer);
+        const refresh = () => { if (here() && img.isConnected) img.src = `/api/printers/${p.id}/snapshot?cam=${index}&t=${Date.now()}`; };
+        img.onload = () => { snapTimer = setTimeout(refresh, snapEvery); };
+        img.onerror = () => { snapTimer = setTimeout(refresh, Math.max(10000, snapEvery)); };
+        note.textContent = `Snapshot every ${snapEvery / 1000} s.${why ? ` ${why}` : ''}`;
+        refresh();
+      };
+      const start = () => {
+        const c = cams[index];
+        if (c.up === false) {
+          // listed in Mainsail but its service is not running (crowsnest / ustreamer stopped): say so, check again slowly
+          stopLive();
+          clearTimeout(snapTimer);
+          img.removeAttribute('src');
+          img.hidden = true;
+          note.replaceChildren(el('strong', { textContent: 'Camera unavailable. ' }), `"${c.name}" is set up in Mainsail but does not answer (${c.state}). Its service (crowsnest / ustreamer) is probably stopped: restart it on the printer from Mainsail. STL Tools never restarts printer services. Checking again every 30 s.`);
+          snapTimer = setTimeout(async () => {
+            if (!here()) return;
+            const again = await api('GET', `/api/printers/${p.id}/webcams`).catch(() => null);
+            if (again?.[index]) { cams[index] = again[index]; start(); }
+          }, 30000);
+          return;
+        }
+        img.hidden = false;
+        img.style.transform = `${c.flipH ? 'scaleX(-1) ' : ''}${c.flipV ? 'scaleY(-1) ' : ''}rotate(${c.rotation}deg)`;
+        if (camMode === 'stream' && c.stream) {
+          clearTimeout(snapTimer);
+          img.onload = null;
+          img.onerror = () => { if (here()) snapshots('Live video did not load, showing snapshots.'); };
+          stopLive();
+          liveImg = img;
+          img.src = `/api/printers/${p.id}/stream?cam=${index}&t=${Date.now()}`;
+          note.textContent = `Live video${c.fps ? ` (${c.fps} fps)` : ''}${c.guessed ? ', found at the Mainsail default path' : ''}.`;
+        } else if (c.snapshot) snapshots(camMode === 'stream' ? `This camera (${c.service || 'unknown'}) has no MJPEG stream; open Mainsail for its video.` : '');
+        else note.textContent = 'This camera has no snapshot or MJPEG stream. Open Mainsail to watch it.';
+      };
+      cam.replaceChildren(el('div', { className: 'row' }, el('h3', { textContent: 'Webcam' }), pick), img, note, el('a', { href: p.url, target: '_blank', rel: 'noopener', className: 'muted', textContent: 'Open in Mainsail / Fluidd' }));
+      start();
     }).catch((err) => cam.replaceChildren(el('h3', { textContent: 'Webcam' }), el('p', { className: 'error', textContent: err.message })));
     // files
     if (lastFilesFor !== p.id) {
@@ -162,6 +213,57 @@ export async function renderPrinters(page, focusId = null) {
           el('span', { className: 'muted', textContent: `${fmtDuration(j.printDuration)}, ${fmtAgo(j.end ?? j.start)}` }))) : [el('p', { className: 'muted', textContent: 'No history yet.' })]));
       }).catch((err) => history.append(el('p', { className: 'error', textContent: err.message })));
     }
+  }
+
+  /** Read-only look inside the printer: health check of its Klipper setup and its config files. */
+  function insightsBox(p) {
+    const out = el('div', { className: 'insights-out' });
+    const tabs = el('div', { className: 'row' });
+    const show = async (which) => {
+      for (const b of tabs.children) b.classList.toggle('active', b.dataset.k === which);
+      out.replaceChildren(el('p', { className: 'muted', textContent: 'Reading from the printer (read-only)...' }));
+      try {
+        if (which === 'health') {
+          const h = await api('GET', `/api/printers/${p.id}/health`);
+          out.replaceChildren(el('ul', { className: 'health' }, ...h.checks.map((c) => el('li', { className: `lvl-${c.level}` },
+            el('strong', { textContent: `${c.level === 'warn' ? 'WARN' : c.level === 'ok' ? 'OK' : 'INFO'}  ${c.title}: ` }), document.createTextNode(c.detail)))),
+          el('p', { className: 'muted', textContent: 'Values are the effective Klipper settings (configfile.settings, defaults included). Change them in Mainsail; STL Tools never edits printer config.' }));
+        } else {
+          const files = await api('GET', `/api/printers/${p.id}/config`);
+          const pick = el('select', { 'aria-label': 'Config file' }, ...files.map((f) => el('option', { value: f.path, textContent: `${f.path} (${(f.size / 1024).toFixed(1)} KB)` })));
+          const find = el('input', { type: 'search', placeholder: 'Find in file (e.g. pause_on_runout, max_accel, [extruder])' });
+          const pre = el('pre', { className: 'cfg-view' });
+          let text = '';
+          const render = () => {
+            const q = find.value.trim().toLowerCase();
+            const lines = text.split('\n');
+            pre.replaceChildren(...lines.map((l, i) => {
+              const hit = q && l.toLowerCase().includes(q);
+              const sec = /^\s*\[/.test(l);
+              return el('div', { className: `${hit ? 'hit' : ''} ${sec ? 'sec' : ''} ${/^\s*#/.test(l) ? 'cmt' : ''}`.trim() || undefined }, el('span', { className: 'ln', textContent: String(i + 1).padStart(4) }), ` ${l}`);
+            }));
+            pre.querySelector('.hit')?.scrollIntoView({ block: 'center' });
+          };
+          const load = async () => {
+            pre.textContent = 'Loading...';
+            const f = await api('GET', `/api/printers/${p.id}/config?file=${encodeURIComponent(pick.value)}`);
+            text = f.text;
+            render();
+          };
+          pick.onchange = () => load().catch((err) => { pre.textContent = err.message; });
+          find.oninput = render;
+          out.replaceChildren(el('div', { className: 'row' }, pick, find), pre,
+            el('p', { className: 'muted', textContent: 'Read-only copy. Lines that look like keys, tokens or passwords are hidden. Edit config in Mainsail (Machine tab).' }));
+          if (files.length) await load(); else pre.textContent = 'No config files.';
+        }
+      } catch (err) { out.replaceChildren(el('p', { className: 'error', textContent: err.message })); }
+    };
+    tabs.append(
+      el('button', { type: 'button', className: 'secondary small', dataset: { k: 'health' }, textContent: 'Health check', onclick: () => show('health') }),
+      el('button', { type: 'button', className: 'secondary small', dataset: { k: 'config' }, textContent: 'Config files (printer.cfg)', onclick: () => show('config') }),
+      el('a', { className: 'button secondary small', href: p.url, target: '_blank', rel: 'noopener', textContent: 'Open Mainsail' }));
+    return el('div', { className: 'card insights-box' }, el('h3', { textContent: 'Printer details (read-only)' }),
+      el('p', { className: 'muted', textContent: 'Health check reads the live Klipper setup: motion limits, pressure advance, input shaper, bed mesh, filament sensor, MCU firmware, host system and print totals. Config files shows printer.cfg and the rest.' }), tabs, out);
   }
 
   function uploadBox(p, done) {
@@ -211,6 +313,7 @@ export async function renderPrinters(page, focusId = null) {
 
 /** Small status chips for the home page. */
 export async function printerChips() {
+  if (!printersVisible()) return null;
   const printers = await api('GET', '/api/printers').catch(() => []);
   if (!printers.length) return null;
   const wrap = el('div', { className: 'chips' });

@@ -1,9 +1,12 @@
 # HTTP API reference
 
+> See also: [Architecture](ARCHITECTURE.md) | [Printers](PRINTERS.md) | [Self-hosting](SELF-HOSTING.md) | [All docs](README.md)
+
 Base URL: `http://127.0.0.1:3000` (or the LAN address with `--lan`). JSON in and
 out unless noted. JSON over 32 KB is gzipped when the client sends `Accept-Encoding: gzip`. Errors: `{ "error": "message" }` with HTTP 400 (bad input),
-404 (unknown id), 405 (wrong method), 413 (too large), 422 (generation failed),
-502 (printer did not answer). Routes live in `route()` in `src/server.js`.
+401 (access PIN needed), 403 (wrong PIN), 404 (unknown id), 405 (wrong method),
+413 (too large), 415 (webcam not MJPEG), 422 (generation failed), 429 (too many
+tries or streams), 502 (printer did not answer). Routes live in `route()` in `src/server.js`.
 
 ## App
 
@@ -13,6 +16,18 @@ out unless noted. JSON over 32 KB is gzipped when the client sends `Accept-Encod
 | GET | `/api/generators` | | `[{ id, name, description, sections[], params{}, basic[], assembly }]` (`basic`: settings shown in Simple mode) |
 | GET | `/api/presets` | | `[{ id, name, generator, section, group, description, tags[], params{}, verify[]? }]` |
 | GET | `/shared/estimate.js` | | the estimator ES module (same file the server uses) |
+| GET | `/api/estimate-targets` | | `[{ value: "printer:<id>" \| "profile:<id>", label, printerId?, profile }]` (printer entries carry the profile merged with the printer's own limits, `profile.fromMachine`) |
+
+## Self-hosting (1.1)
+
+| Method | Path | Body | Returns |
+|---|---|---|---|
+| GET | `/api/hosting` | | `{ mode: desktop\|portable\|temp\|custom\|service\|server, service, host, port, lan, addresses[], stopAt, pin, you: { local }, board, platform, arch, node, dataDir }` |
+| PUT | `/api/hosting/pin` | `{ pin: "4-32 chars" \| "", current? }` (`current` needed when a PIN is set) | `{ pin: bool }` + `Set-Cookie` for the caller; 403 wrong current PIN |
+| POST | `/api/hosting/login` | `{ pin }` | `{ ok }` + `Set-Cookie: stltools_pin=...; HttpOnly; SameSite=Strict`; 403 wrong, 429 after 5 tries a minute |
+| POST | `/api/hosting/logout` | | clears the cookie |
+
+With a PIN set, requests from other machines without the cookie get 401 (`/api/*`) or the PIN page (everything else). Requests from 127.0.0.1 / ::1 always pass.
 
 ## Generate and download
 
@@ -103,7 +118,7 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 
 | Method | Path | Body / query | Returns |
 |---|---|---|---|
-| GET / POST | `/api/printers` | `{ name, url, apiKey?, model? }` | list (API keys masked as `hasApiKey`) / new printer |
+| GET / POST | `/api/printers` | `{ name, url, apiKey?, model? }` | list (API keys masked as `hasApiKey`; plus `machine`, `lastCheck`) / new printer |
 | PUT / DELETE | `/api/printers/:id` | `{ name?, url?, apiKey?, model? }` (`apiKey: ""` removes it) | |
 | POST | `/api/printers/probe` | `{ url, apiKey? }` | `{ url, klippyState, moonraker, hostname, model }` |
 | POST | `/api/printers/diagnose` | `{ url, apiKey? }` or `{ id, url }` | `{ ok, steps: [{ step, ok, detail, fix? }], url, hostname, model }` |
@@ -112,6 +127,13 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET | `/api/printers/:id/files`, `/history?limit=`, `/webcams` | | |
 | GET | `/api/printers/:id/metadata?filename=` | | slicer metadata |
 | GET | `/api/printers/:id/thumb?path=`, `/snapshot?cam=0` | | images |
+| GET | `/api/printers/:id/webcams` | | `[{ index, name, service, stream, snapshot, flipH, flipV, rotation, fps, guessed }]` (`guessed`: found at the profile / Mainsail default path) |
+| GET | `/api/printers/:id/stream?cam=0` | | live MJPEG (`multipart/x-mixed-replace`), piped from the printer; 415 if the camera is not MJPEG, 429 over 3 streams per printer |
+| GET | `/api/printers/:id/machine` | | reads and saves `{ bed: {x,y,z}, maxVelocity, maxAccel, nozzle, filamentDiameter, kinematics, readAt }` from Klipper (read-only query) |
+| GET | `/api/printers/:id/health` | | `{ checks: [{ level: ok\|info\|warn, title, detail }], facts }` from read-only Klipper / Moonraker queries |
+| GET | `/api/printers/:id/config` | | config files `[{ path, size, modified }]` (printer.cfg first) |
+| GET | `/api/printers/:id/config?file=printer.cfg` | | `{ path, text, bytes }`, secrets hidden; 400 for paths outside the config folder or other file types |
+| POST | `/api/printers/check` | | `{ <id>: { ok, at, klippy? \| error } }`: read-only connection check of every printer now (also in `GET /api/printers` as `lastCheck`) |
 | PUT | `/api/printers/:id/upload?filename=x.gcode&path=folder` | raw G-code | `{ path }`; always `print=false` |
 
 Any other method on a printer sub-route returns 405 "Read-only".

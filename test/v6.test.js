@@ -212,8 +212,8 @@ test('printers: SV07 connection test step by step, model guess, saved model, rea
   const before = mock.requests.length;
   const d = (await j('POST', '/api/printers/diagnose', { url: `127.0.0.1:${mock.port}` })).body;
   assert.equal(d.ok, true, JSON.stringify(d.steps));
-  assert.deepEqual(d.steps.map((s) => s.step), ['Address', 'Moonraker answers', 'Printer info', 'Status query', 'File list', 'Upload folder', 'Webcam']);
-  assert.equal(d.model, 'sovol-sv07', 'hostname sv07-* suggests the SV07 profile');
+  assert.deepEqual(d.steps.map((s) => s.step), ['Address', 'Moonraker answers', 'Printer info', 'Status query', 'File list', 'Upload folder', 'Printer limits (for estimates)', 'Webcam']);
+  assert.match(d.model, /^sovol-sv07/, 'hostname sv07-* suggests an SV07 profile');
   for (const r of mock.requests.slice(before)) assert.equal(r.method, 'GET', `diagnose sent ${r.method} ${r.path}`);
 
   const bad = (await j('POST', '/api/printers/diagnose', { url: '8.8.8.8' })).body;
@@ -230,7 +230,7 @@ test('printers: SV07 connection test step by step, model guess, saved model, rea
   assert.equal(p.apiKey, undefined, 'key never returned');
   const again = (await j('POST', '/api/printers/diagnose', { id: p.id, url: p.url })).body;
   assert.equal(again.ok, true);
-  assert.equal(mock.requests.at(-1).apiKey, 'PLACEHOLDER_KEY', 'saved key used server side');
+  assert.equal(mock.requests.filter((r) => !r.path.startsWith('/webcam')).at(-1).apiKey, 'PLACEHOLDER_KEY', 'saved key used server side');
   assert.equal((await j('PUT', `/api/printers/${p.id}`, { model: 'Bad Model!' })).body.model, '');
   // estimates follow the default printer's model
   await j('PUT', '/api/printers/' + p.id, { model: 'generic-standard' });

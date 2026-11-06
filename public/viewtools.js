@@ -83,17 +83,15 @@ export function initViewTools(viewer, bar) {
 let profilesP = null;
 const profiles = () => (profilesP ??= api('GET', '/api/printer-profiles').catch(() => []));
 
-/** Printers and profiles to estimate for: [{ value, label, profile }] */
+/**
+ * Printers and profiles to estimate for: [{ value, label, profile }]. The server
+ * builds the printer entries with each printer's own Klipper limits (bed, speed,
+ * acceleration, nozzle) when Settings > Printers allows it.
+ */
 async function targets() {
-  const [list, printers] = await Promise.all([profiles(), api('GET', '/api/printers').catch(() => [])]);
-  const byId = new Map(list.map((p) => [p.id, p]));
-  const out = [];
-  for (const pr of printers) {
-    const prof = byId.get(pr.model);
-    if (prof) out.push({ value: `printer:${pr.id}`, label: `${pr.name} (${prof.name})`, profile: prof, printerId: pr.id });
-  }
-  for (const p of list) out.push({ value: `profile:${p.id}`, label: p.name, profile: p });
-  return out;
+  const t = await api('GET', '/api/estimate-targets').catch(() => null);
+  if (t) return t;
+  return (await profiles()).map((p) => ({ value: `profile:${p.id}`, label: p.name, profile: p }));
 }
 
 export function createEstimateBox(box, viewer, { onShowPart } = {}) {
@@ -149,7 +147,7 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
       el('details', { className: 'est-detail' }, el('summary', { textContent: 'How this is calculated' }),
         el('ul', {}, ...e.parts.map((p, i) => el('li', { textContent: `${rows[i].name ?? `Part ${i + 1}`}: walls ${formatDuration(p.breakdown.walls / p.breakdown.efficiency)}, top/bottom ${formatDuration(p.breakdown.topBottom / p.breakdown.efficiency)}, infill ${formatDuration(p.breakdown.infill / p.breakdown.efficiency)}, layer moves ${formatDuration(p.breakdown.overhead)}` })),
           el('li', { textContent: `Heat-up ${formatDuration(e.heatUp)} once per plate. ${cfg.walls} walls, ${cfg.shellLayers} top/bottom layers, ${cfg.infill}% infill. Calibration x${cfg.timeFactor}.` })),
-        el('p', { className: 'muted', textContent: `Estimate from the part's geometry and the ${t.profile.name} profile${t.profile.verified ? '' : ' (speeds not verified)'}: expect about +/- 25 %. Your slicer gives the real time. Calibrate in Settings > Print estimates.` }))].filter(Boolean));
+        el('p', { className: 'muted', textContent: `Estimate from the part's geometry and the ${t.profile.name} profile${t.profile.fromMachine ? `: bed ${t.profile.bed.x} x ${t.profile.bed.y} x ${t.profile.bed.z} mm, max ${t.profile.fromMachine.maxVelocity ?? '?'} mm/s and accel ${t.profile.fromMachine.maxAccel ?? '?'} read from the printer` : ''}${t.profile.verified ? '' : ' (speeds not verified)'}: expect about +/- 25 %. Your slicer gives the real time. Calibrate in Settings > Print estimates.` }))].filter(Boolean));
   }
 
   async function refreshTargets() {

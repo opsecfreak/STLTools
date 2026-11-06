@@ -135,7 +135,7 @@ const readmeFor = (target) => {
       install: 'Linux / Raspberry Pi: ./install/install-linux.sh  (add --service --lan for a shop server)\n  Windows / macOS: no installer for this package. Use the windows-x64 or macos package for shortcuts.',
     },
     win: {
-      start: 'Double-click "Start STL Tools.bat".\nIf Windows shows "Windows protected your PC": click More info > Run anyway\n(the download is not code-signed).',
+      start: 'Double-click "Start STL Tools.bat".\nIf Windows shows "Windows protected your PC": click More info > Run anyway\n(the download is not code-signed).\n\nOn a USB drive: "Start STL Tools (USB portable).bat" keeps all data in\nstltools-data next to it. Shared PC: "Start STL Tools (one-time session).bat"\ndeletes everything when it stops (after 4 hours at the latest).',
       install: 'Double-click "Install STL Tools.bat". It copies the app to\n%LOCALAPPDATA%\\Programs\\STL Tools and adds Desktop and Start menu shortcuts. No admin rights needed.',
     },
     mac: {
@@ -143,8 +143,8 @@ const readmeFor = (target) => {
       install: 'Drag "STL Tools.app" into your Applications folder.',
     },
     linux: {
-      start: './start.sh            (this computer only)\n./start.sh --lan      (reachable from phones / PCs on your network)',
-      install: './install/install-linux.sh                  menu entry + "stltools-app" command\n./install/install-linux.sh --service --lan  run at boot as a shop server (Raspberry Pi)',
+      start: './start.sh                  this computer only\n./start.sh --lan            reachable from phones / PCs on your network\n./start-portable.sh         USB drive: data stays in stltools-data/ next to this folder\n./start.sh --temp --hours 3 one-time session, deleted when it stops',
+      install: './install/install-linux.sh                    menu entry + "stltools-app" command\n./install/install-linux.sh --service --lan    start at boot for your user (desktop Linux)\nsudo SOURCE_DIR="$PWD/app" bash app/deploy/install-pi.sh\n                                              Raspberry Pi 4 / 5 system service (docs/RASPBERRY-PI.md)',
     },
   }[target.kind];
   return readFileSync(join(P, 'README-FIRST.txt'), 'utf8').replaceAll('{{VERSION}}', VERSION).replaceAll('{{TARGET}}', target.id).replaceAll('{{START}}', text.start).replaceAll('{{INSTALL}}', text.install);
@@ -169,11 +169,15 @@ for (const id of wanted) {
     chmodSync(join(contents, 'MacOS', 'STLTools'), 0o755);
     cpSync(join(P, 'macos', 'start.command'), join(root, 'Start STL Tools.command'));
     chmodSync(join(root, 'Start STL Tools.command'), 0o755);
+    cpSync(join(P, 'macos', 'start-portable.command'), join(root, 'Start STL Tools (USB portable).command'));
+    chmodSync(join(root, 'Start STL Tools (USB portable).command'), 0o755);
   } else {
     cpSync(APP, join(root, 'app'), { recursive: true });
     if (target.kind !== 'any') await addNode(target, join(root, 'node'));
     if (target.kind === 'win' || target.kind === 'any') {
       copyCrlf(join(P, 'windows', 'start.bat'), join(root, 'Start STL Tools.bat'));
+      copyCrlf(join(P, 'windows', 'start-portable.bat'), join(root, 'Start STL Tools (USB portable).bat'));
+      copyCrlf(join(P, 'windows', 'start-temp.bat'), join(root, 'Start STL Tools (one-time session).bat'));
     }
     if (target.kind === 'win') {
       copyCrlf(join(P, 'windows', 'install.bat'), join(root, 'Install STL Tools.bat'));
@@ -184,6 +188,8 @@ for (const id of wanted) {
     if (target.kind === 'linux' || target.kind === 'any') {
       cpSync(join(P, 'linux', 'start.sh'), join(root, 'start.sh'));
       chmodSync(join(root, 'start.sh'), 0o755);
+      cpSync(join(P, 'linux', 'start-portable.sh'), join(root, 'start-portable.sh'));
+      chmodSync(join(root, 'start-portable.sh'), 0o755);
       mkdirSync(join(root, 'install'), { recursive: true });
       cpSync(join(P, 'linux', 'install-linux.sh'), join(root, 'install', 'install-linux.sh'));
       chmodSync(join(root, 'install', 'install-linux.sh'), 0o755);

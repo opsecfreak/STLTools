@@ -3,17 +3,44 @@
   "name": "Sovol SV07",
   "maker": "Sovol",
   "firmware": "klipper",
-  "bed": { "x": 220, "y": 220, "z": 250 },
+  "bed": {
+    "x": 220,
+    "y": 220,
+    "z": 250
+  },
   "nozzle": 0.4,
   "filamentDiameter": 1.75,
-  "speeds": { "outerWall": 120, "innerWall": 200, "infill": 250, "topBottom": 150, "firstLayer": 50, "travel": 300 },
+  "speeds": {
+    "outerWall": 120,
+    "innerWall": 200,
+    "infill": 250,
+    "topBottom": 150,
+    "firstLayer": 50,
+    "travel": 300
+  },
   "acceleration": 5000,
   "maxVolumetricFlow": 18,
   "motionEfficiency": 0.62,
   "layerOverheadSeconds": 1.8,
   "heatUpSeconds": 180,
-  "moonraker": { "apiPort": 7125, "webPort": 80, "hostnameHints": ["sv07", "sovol"] },
+  "moonraker": {
+    "apiPort": 7125,
+    "webPort": 80,
+    "hostnameHints": [
+      "sv07",
+      "sovol",
+      "mkspi"
+    ]
+  },
   "verified": false,
   "notes": "Build volume, nozzle and filament size are Sovol's published specs. Speeds, flow and efficiency are starting values for estimates, not Sovol's slicer profile. Calibrate with timeFactor in Settings > Print estimates.",
-  "sources": ["Sovol SV07 product page: 220 x 220 x 250 mm build volume, Klipper firmware, 0.4 mm nozzle, 1.75 mm filament"]
+  "sources": [
+    "Sovol SV07 product page: 220 x 220 x 250 mm build volume, Klipper firmware, 0.4 mm nozzle, 1.75 mm filament"
+  ],
+  "webcam": {
+    "stream": "/webcam/?action=stream",
+    "snapshot": "/webcam/?action=snapshot",
+    "verified": false,
+    "note": "Mainsail default paths for a crowsnest / mjpg-streamer camera on the printer's web port (80). Used only when Moonraker lists no webcam. Not checked on a real SV07 yet."
+  }
 }

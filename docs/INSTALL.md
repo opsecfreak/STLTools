@@ -1,8 +1,8 @@
 # Install STL Tools
 
-STL Tools runs on your own computer (Windows or Linux desktop recommended, macOS, or a Raspberry Pi) and opens in its own app window (Microsoft Edge or Chrome in app mode, if installed) or in your web browser. Start it with `--browser` to always use a normal browser tab. No account, no cloud, no Docker. Each download includes everything it needs, including Node.js.
+> See also: [Self-hosting: USB, one-time, LAN](SELF-HOSTING.md) | [Raspberry Pi 4 / 5](RASPBERRY-PI.md) | [User guide](USER-GUIDE.md) | [Troubleshooting](TROUBLESHOOTING.md) | [All docs](README.md)
 
-The repository is private, so sign in to GitHub in your browser before you download.
+STL Tools runs on your own computer (Windows or Linux desktop recommended, macOS, or a Raspberry Pi; also from a USB drive or as a one-time session, see [SELF-HOSTING.md](SELF-HOSTING.md)) and opens in its own app window (Microsoft Edge or Chrome in app mode, if installed) or in your web browser. Start it with `--browser` to always use a normal browser tab. No account, no cloud, no Docker. Each download includes everything it needs, including Node.js.
 
 Desktop vs Raspberry Pi: a desktop GPU can use 3D view quality **Ultra** (Settings > 3D view). On a Pi or a phone, set quality **Low** and turn off card previews if pages feel slow.
 
@@ -11,7 +11,7 @@ Desktop vs Raspberry Pi: a desktop GPU can use 3D view quality **Ultra** (Settin
 If you have Node.js 18 or newer, install the package and start the app:
 
 ```bash
-npm install -g https://github.com/opsecfreak/STLTools/releases/latest/download/stltools-1.0.1.tgz
+npm install -g https://github.com/opsecfreak/STLTools/releases/latest/download/stltools-1.1.0.tgz
 ```
 
 ```bash
@@ -92,43 +92,40 @@ tar -xzf stltools-*-linux-x64.tar.gz
 
 ## 5. Raspberry Pi (shop server)
 
-The Pi runs STL Tools all the time. Open it from any PC, tablet or phone on the shop network.
+The Pi runs STL Tools all the time as a system service. Open it from any PC, tablet or phone on the shop network. Full guide with SD card setup, kiosk mode, backups and remote access: [RASPBERRY-PI.md](RASPBERRY-PI.md).
 
-1. On your PC, download the Pi file from the release (`linux-arm64` for 64-bit Raspberry Pi OS).
-2. Copy it to the Pi (replace `pi` with your Pi user name).
+1. On the Pi, download the package (`linux-arm64` for 64-bit Raspberry Pi OS, `linux-armv7l` for 32-bit; `uname -m` tells you: `aarch64` or `armv7l`). Replace `<version>`, for example `1.1.0`.
 
 ```bash
-scp stltools-*-linux-arm64.tar.gz pi@stltools.local:~
+curl -fLO https://github.com/opsecfreak/STLTools/releases/download/v<version>/stltools-<version>-linux-arm64.tar.gz
 ```
 
-3. On the Pi, unpack it.
+2. Unpack it.
 
 ```bash
 tar -xzf stltools-*-linux-arm64.tar.gz
 ```
 
-4. Install it as a service that starts at boot and listens on the network.
+3. Install the service (starts at boot, listens on the network, data in `/opt/stltools/data`).
 
 ```bash
-./stltools-*-linux-arm64/install/install-linux.sh --service --lan
+cd stltools-*-linux-arm64 && sudo SOURCE_DIR="$PWD/app" USE_PACKAGE_NODE=1 bash app/deploy/install-pi.sh
 ```
 
-5. If the installer prints a `loginctl enable-linger` note, run that command once with `sudo`.
-6. On any device on the same network, open `http://stltools.local:3000` (or `http://<pi-ip>:3000`).
+4. On any device on the same network, open `http://stltools.local:3000` (or `http://<pi-ip>:3000`).
+5. Set an access PIN: Settings > Self-hosting.
 
-Check and control the service:
+Check the service:
 
 ```bash
-systemctl --user status stltools
+systemctl status stltools
 ```
 
 ```bash
-journalctl --user -u stltools -f
+journalctl -u stltools -f
 ```
 
-Note: not sure if your Pi OS is 64-bit? Run `uname -m`: `aarch64` = 64-bit (linux-arm64), `armv7l` = 32-bit (linux-armv7l).
-
-Note: the older git-based installer (`deploy/install-pi.sh`, needs a GitHub login on the Pi for a private repo) still works. See [RASPBERRY-PI.md](RASPBERRY-PI.md).
+Without root (a per-user service, for example on a desktop Linux PC): `./install/install-linux.sh --service --lan`, then `sudo loginctl enable-linger $USER` once.
 
 ## Upgrade
 
@@ -142,7 +139,9 @@ Your saved designs, shop catalog and custom files are in a separate folder and a
 |---|---|
 | Windows | `%APPDATA%\STLTools` |
 | macOS | `~/Library/Application Support/STLTools` |
-| Linux / Pi | `~/.local/share/stltools` |
+| Linux | `~/.local/share/stltools` |
+| Pi service | `/opt/stltools/data` |
+| USB portable | `stltools-data` next to the package |
 
 ## Uninstall
 
@@ -150,7 +149,8 @@ Your saved designs, shop catalog and custom files are in a separate folder and a
 |---|---|
 | Windows | Run `install\uninstall-windows.ps1` in the installed folder (`%LOCALAPPDATA%\Programs\STL Tools`), or delete that folder and the shortcuts. |
 | macOS | Drag **STL Tools.app** to the Trash. |
-| Linux / Pi | `systemctl --user disable --now stltools` (if you used `--service`), then `rm -rf ~/.local/opt/stltools ~/.local/bin/stltools-app ~/.local/share/applications/stltools.desktop` |
+| Linux | `systemctl --user disable --now stltools` (if you used `--service`), then `rm -rf ~/.local/opt/stltools ~/.local/bin/stltools-app ~/.local/share/applications/stltools.desktop` |
+| Pi service | `sudo bash /opt/stltools/deploy/install-pi.sh --uninstall` (keeps `/opt/stltools/data`) |
 
 Delete the data folder too if you want to remove your designs and catalog.
 
@@ -160,7 +160,10 @@ Start options (add them after the start script or app command):
 
 | Option | What it does |
 |---|---|
-| `--lan` | Listen on the network so phones and tablets can connect. No login, so only on a trusted network. |
+| `--lan` | Listen on the network so phones and tablets can connect. Set an access PIN (Settings > Self-hosting) and use it only on a trusted network. |
+| `--portable` | USB drive: keep all data in `stltools-data/` next to the package (same as the "USB portable" start script). |
+| `--temp` | One-time session: data in a temp folder, deleted when STL Tools stops. |
+| `--hours 3` | Stop by itself after 3 hours. |
 | `--port 3100` | Use another port (default 3000; it moves up automatically if 3000 is busy). |
 | `--no-browser` | Do not open a browser (servers, Pi). |
 | `--data <folder>` | Use another data folder. |

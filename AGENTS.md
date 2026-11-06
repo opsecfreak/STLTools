@@ -1,5 +1,7 @@
 # AGENTS.md: guide for developers and AI coding agents
 
+> See also: [All docs](docs/README.md) | [Architecture](docs/ARCHITECTURE.md) | [API](docs/API.md) | [Contributing](CONTRIBUTING.md) | [Security](SECURITY.md)
+
 Read this first. It says how the project is built, the rules that keep it
 working, and where to change things. Details: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md),
 [docs/API.md](docs/API.md), [docs/EXTENDING.md](docs/EXTENDING.md).
@@ -56,6 +58,12 @@ npm run package      # release packages (needs network to download Node)
 8. **Versioning.** Bump `package.json` version, add a CHANGELOG entry
    (Changed / Fixed / Untested). Pushing a new version to `main` publishes a
    release (`.github/workflows/release.yml`).
+9. **Access stays local-first.** The server listens on 127.0.0.1 unless told
+   otherwise. The LAN PIN is stored only as a hash (`data/hosting.json`);
+   requests from the machine itself never need it. Webcam snapshots and
+   streams are GET only, LAN addresses only, and the upstream connection
+   closes with the browser's. Printer features stay optional (Settings >
+   Printers > Printer features).
 
 ## Map of the code
 
@@ -72,7 +80,8 @@ npm run package      # release packages (needs network to download Node)
 | `src/core/settings.js` | settings schema + store (`settings.json`) |
 | `src/core/library.js` | STL library (imported files) + STL parser |
 | `src/core/projects.js` | projects, favorites, project export / import bundles |
-| `src/core/printers.js` | Moonraker client (view only), LAN scan, connection test |
+| `src/core/printers.js` | Moonraker client (view only), LAN scan, connection test, background checks, machine limits, webcam list + MJPEG stream |
+| `src/core/hosting.js` | LAN access PIN (hash, cookie, rate limit), LAN URLs, Pi board model, login page |
 | `src/core/catalog.js`, `designs.js`, `thumbs.js`, `zip.js`, `jsonstore.js` | shop catalog, saved designs, preview cache, ZIP writer, atomic JSON files |
 | `src/generators/*.js` | one or more generators per file (exported objects with `id` + `generate`) |
 | `presets/*.json` | ready-made parameter sets, grouped by tab |
@@ -81,8 +90,12 @@ npm run package      # release packages (needs network to download Node)
 | `seed/example/` | example My Parts list and project ideas (data, not instructions); a real shop's list is on branch `mts-personal-data` |
 | `src/core/parts.js` | My Parts store, dimension flags, seed reader |
 | `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `parts.js` (My Parts), `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js` |
-| `bin/` | `stltools.js` CLI, `stltools-app.js` desktop launcher |
-| `scripts/package.mjs`, `packaging/` | release packages and installers |
+| `bin/` | `stltools.js` CLI, `stltools-app.js` desktop launcher (desktop / `--portable` / `--temp` / `--hours`) |
+| `scripts/package.mjs`, `packaging/` | release packages and installers (USB portable and one-time start scripts) |
+| `scripts/check-packages.mjs` | checks built packages: binary OS / CPU, CRLF, executable bits, checksums |
+| `scripts/ui-smoke.mjs` | Playwright UI smoke test (pages, 3D, live webcam, printer toggle, no-WebGL) |
+| `scripts/test-pi-install.sh` | end-to-end test of `deploy/install-pi.sh` (needs root) |
+| `deploy/` | Pi / Linux system service installer and unit |
 | `test/` | node:test suites; `helpers/mock-moonraker.js` is a fake SV07 |
 
 ## Common tasks
@@ -125,5 +138,8 @@ npm run package      # release packages (needs network to download Node)
 ## Before you finish
 
 1. `npm test` passes (also on Node 18 if you can).
-2. Open the UI and check the pages you changed for console errors.
-3. Update CHANGELOG.md and the docs you touched.
+2. Open the UI and check the pages you changed for console errors, or run
+   `node scripts/ui-smoke.mjs` (needs Playwright with Chromium).
+3. Installer or service change: `sudo bash scripts/test-pi-install.sh`.
+   Packaging change: `node scripts/package.mjs` then `node scripts/check-packages.mjs`.
+4. Update CHANGELOG.md and the docs you touched (docs/README.md is the index).

@@ -1,5 +1,7 @@
 # Your custom generators and presets
 
+> See also: [User guide: grow the catalog](../docs/USER-GUIDE.md#grow-the-catalog) | [Preset format](../presets/README.md) | [Writing generators](../src/generators/README.md) | [Printer profiles](../docs/PRINTER-PROFILES.md) | [All docs](../docs/README.md)
+
 STL Tools loads extra generators and presets from this folder. Files here are
 yours: app updates never overwrite them (the desktop app keeps this folder in
 your user data folder, not in the app folder).

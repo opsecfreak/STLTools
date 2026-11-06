@@ -8,7 +8,7 @@
 //   #projects #project/<id> #stls #stl/<id> #import #printers #settings[/<section>]
 import { createViewer } from './viewer.js';
 
-import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete, initTooltips } from './lib.js';
+import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete, initTooltips, refreshPrinterVisibility, printersVisible } from './lib.js';
 import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton, stopProjectView } from './home.js';
 import { renderPrinters, stopPrinters } from './printers.js';
 import { initViewTools, createEstimateBox } from './viewtools.js';
@@ -19,6 +19,7 @@ import { initParts, renderParts, refreshParts, ownershipOf, ownBadge } from './p
 import { initBrowse, renderBrowse } from './browse.js';
 
 await loadSettings().catch(() => null);
+await refreshPrinterVisibility();
 initTooltips();
 
 const state = {
@@ -33,6 +34,7 @@ const viewTools = initViewTools(viewer, $('viewTools'));
 const estimate = createEstimateBox($('estimate'), viewer, { onShowPart: (i) => state.shown?.[i] && viewer.show([state.shown[i]]).then(() => viewTools.reset()) });
 onSettings((cfg, patch) => {
   if (patch.viewer) viewer.setOptions(cfg.viewer);
+  if (patch.printers) refreshPrinterVisibility();
   if (patch.tips && state.current) loadGenerator(state.current.id, readForm(state.current), { preset: state.preset, design: state.design });
 });
 
@@ -475,7 +477,7 @@ function showTab(tab, { keepForm = false } = {}) {
     const last = state.presets.find((p) => p.id === store.get(`preset:${tab}`) && p.section === tab);
     const first = last ?? presetsForTab()[0];
     if (first) loadPreset(first);
-    else loadGenerator(generatorsForTab()[0].id);
+    else { loadGenerator(generatorsForTab()[0].id); run({ silent: true }); }
   }
 }
 
@@ -750,7 +752,12 @@ $('fileParams').onchange = onParamsFile;
 $('openStl').onclick = () => $('fileStl').click();
 $('fileStl').onchange = onStlFiles;
 $('toShop').onclick = sendToShop;
-$('generator').onchange = () => loadGenerator($('generator').value);
+$('generator').onchange = () => {
+  // switching generator shows its default part at once (no need to touch a setting first)
+  loadGenerator($('generator').value);
+  store.set(`preset:${state.tab}`, '');
+  run({ silent: true });
+};
 $('allGenerators').onchange = fillGeneratorSelect;
 $('params').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); run(); } };
 $('params').oninput = () => liveRun();
@@ -836,7 +843,7 @@ function headerPrinterChip() {
   const chip = $('printerChip');
   const tick = async () => {
     const id = settings()?.printers.defaultPrinter;
-    if (!id) { chip.hidden = true; return; }
+    if (!id || !printersVisible()) { chip.hidden = true; return; }
     try {
       const printers = await api('GET', '/api/printers');
       const p = printers.find((x) => x.id === id);
