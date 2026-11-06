@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased (main)
+
+Changed: personal editions: EDITION.json marks a build like the MTS personal edition (branch `mts-personal`), shown next to the version in the app; versions with a suffix (`1.0.0-mts.1`) publish as pre-releases so the public Latest release stays; tests skip public-only checks on a personal edition. README and AGENTS.md describe the branches.
+Fixed: n/a.
+Untested: n/a (no app changes).
+
 ## 1.0.0 - 2026-11-06 (first public release)
 
 Changed: open source under Apache-2.0 (LICENSE, NOTICE, CONTRIBUTING). Browse page: everything with facet filters and counts (type, tab, category, generator, tags, size series, measuring, ownership) and Collections, your own named groups of presets, designs, generators, STLs and projects ("+" on any card). Tooltips on every button and setting, with range, default and setting name; Settings > Tooltips and help sets on/off, delay, size, where help text shows, and card details. 6 new generators: battery cell holders (18650 / 21700 / 26650 / 14500 / AA / AAA, pack end plates with strip grooves, storage), SK-style shaft supports, drawer unit (assembly with N drawers), spool holder arm, printed multirotor arm, drill guide; 251 new checked size-series presets (3,661 total, 54 generators). The shipped parts list is now a generic example (seed/example); the hardware holder presets stay, with neutral ids (hw-...). The previous personal parts data lives on branch `mts-personal-data`.

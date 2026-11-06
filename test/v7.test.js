@@ -3,6 +3,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm, readFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
@@ -28,6 +29,11 @@ after(async () => {
 });
 const j = (method, path, body) => fetch(base + path, { method, body: body ? JSON.stringify(body) : undefined }).then(async (r) => ({ status: r.status, body: r.status === 204 ? null : await r.json().catch(() => null) }));
 const seedFile = async () => JSON.parse(await readFile('seed/example/components.json', 'utf8'));
+// The personal edition (branch mts-personal, EDITION.json) ships its own parts list
+// and part-linked presets instead of the public example list and hw-* presets.
+const EDITION = existsSync('EDITION.json') ? JSON.parse(readFileSync('EDITION.json', 'utf8')) : { edition: 'public' };
+const PUBLIC = EDITION.edition === 'public';
+const HAS_EXAMPLE = existsSync('seed/example/components.json');
 
 test('dimension flags and ownership keys', () => {
   assert.equal(dimsFlag('MEASURE'), 'measure');
@@ -50,7 +56,7 @@ test('component reference parsing', () => {
   assert.deepEqual(parseComponentRefs('N/A'), []);
 });
 
-test('seed example: parts in their categories, project ideas, repeat load adds nothing', async () => {
+test('seed example: parts in their categories, project ideas, repeat load adds nothing', { skip: !HAS_EXAMPLE && 'no example list in this edition' }, async () => {
   assert.deepEqual((await j('GET', '/api/parts/seeds')).body, [{ set: 'example', title: 'Example parts list', loaded: false }]);
   const raw = await seedFile();
   const r = (await j('POST', '/api/parts/seed', { set: 'example' })).body;
@@ -79,7 +85,7 @@ test('seed example: parts in their categories, project ideas, repeat load adds n
   assert.equal((await j('POST', '/api/parts/seed', { set: 'nope' })).status, 404);
 });
 
-test('seeded projects: ideas with priority and linked parts; assembly specs attach to their candidate', async () => {
+test('seeded projects: ideas with priority and linked parts; assembly specs attach to their candidate', { skip: !HAS_EXAMPLE && 'no example list in this edition' }, async () => {
   const ps = (await j('GET', '/api/projects')).body;
   const pan = ps.find((p) => p.source === 'seed:example:PR02');
   assert.equal(pan.status, 'idea');
@@ -88,7 +94,7 @@ test('seeded projects: ideas with priority and linked parts; assembly specs atta
   assert.ok(pan.tags.includes('print idea'));
 });
 
-test('parts API: add, import components.json, validation, delete', async () => {
+test('parts API: add, import components.json, validation, delete', { skip: !HAS_EXAMPLE && 'no example list in this edition' }, async () => {
   const add = await j('POST', '/api/parts', { id: 'TST01', name: 'Test part', category: 'Bench, fabrication and stock', ownership: 'Planned', dims: 'MEASURE' });
   assert.equal(add.status, 201);
   assert.equal(add.body.ownershipKey, 'Planned');
@@ -114,7 +120,19 @@ test('presets: thousands, no duplicate ids, no duplicate parameter sets', () => 
   }
 });
 
-test('hardware presets: categories set, measure fields empty, no personal part links in shipped presets', () => {
+test('personal edition: part presets link to real parts in its seed', { skip: PUBLIC && 'public edition' }, async () => {
+  const seed = JSON.parse(await readFile(`seed/${EDITION.seed}/components.json`, 'utf8'));
+  const ids = new Set(seed.items.map((c) => c.id));
+  const linked = listPresets().filter((p) => p.component);
+  assert.ok(linked.length >= 100, `${linked.length} part presets`);
+  for (const p of linked) {
+    assert.ok(ids.has(p.component), `${p.id}: unknown part ${p.component}`);
+    assert.ok(['Owned', 'Confirm', 'Planned'].includes(p.ownership), `${p.id}: ownership`);
+    for (const k of p.measure ?? []) assert.ok(!(k in p.params), `${p.id}: ${k} must stay empty`);
+  }
+});
+
+test('hardware presets: categories set, measure fields empty, no personal part links in shipped presets', { skip: !PUBLIC && 'personal edition' }, () => {
   const hw = listPresets().filter((p) => p.id.startsWith('hw-'));
   assert.ok(hw.length >= 100, `${hw.length} hardware presets`);
   for (const p of hw) {

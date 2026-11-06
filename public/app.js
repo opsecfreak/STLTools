@@ -789,7 +789,7 @@ for (const b of document.querySelectorAll('.subtab[data-sub]')) b.onclick = () =
 
 let version;
 [state.generators, state.presets, version] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets'), api('GET', '/api/version')]);
-$('appVersion').textContent = `v${version.version} / ${version.generators} generators / ${version.presets} presets`;
+$('appVersion').textContent = `v${version.version}${version.edition?.edition && version.edition.edition !== 'public' ? ` (${version.edition.name})` : ''} / ${version.generators} generators / ${version.presets} presets`;
 if (version.issues.length) {
   const badge = el('button', { type: 'button', className: 'issues small', textContent: `${version.issues.length} custom file problem${version.issues.length > 1 ? 's' : ''}`, title: 'Custom generators or presets that were skipped' });
   badge.onclick = () => { list($('warnings'), version.issues.map((i) => `Skipped: ${i}`)); };

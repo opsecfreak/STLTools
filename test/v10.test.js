@@ -4,6 +4,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm, readFile, readdir } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { startServer } from '../src/server.js';
@@ -12,6 +13,7 @@ import { generate, listGenerators } from '../src/core/registry.js';
 import { listPresets } from '../src/core/presets.js';
 import { openEdgeCount, stlEdgeIssues } from '../src/core/export.js';
 
+const EDITION = existsSync('EDITION.json') ? JSON.parse(readFileSync('EDITION.json', 'utf8')) : { edition: 'public' };
 let dir, app, base;
 before(async () => {
   dir = await mkdtemp(join(tmpdir(), 'stltools-v10-'));
@@ -87,7 +89,7 @@ async function filesUnder(d) {
   return out;
 }
 
-test('release hygiene: Apache-2.0, example seed only, no personal or client data in shipped files', async () => {
+test('release hygiene: Apache-2.0, example seed only, no personal or client data in shipped files', { skip: EDITION.edition !== 'public' && 'personal edition carries its owner\'s data on purpose' }, async () => {
   const pkg = JSON.parse(await readFile('package.json', 'utf8'));
   assert.equal(pkg.license, 'Apache-2.0');
   assert.match(await readFile('LICENSE', 'utf8'), /Apache License\s+Version 2\.0, January 2004/);
@@ -99,7 +101,7 @@ test('release hygiene: Apache-2.0, example seed only, no personal or client data
   }
 });
 
-test('example parts list: every linked preset exists', async () => {
+test('example parts list: every linked preset exists', { skip: !existsSync('seed/example') && 'no example list in this edition' }, async () => {
   const ids = new Set(listPresets().map((p) => p.id));
   const seed = JSON.parse(await readFile('seed/example/components.json', 'utf8'));
   for (const it of seed.items) for (const p of it.presets ?? []) assert.ok(ids.has(p), `${it.id}: preset ${p}`);

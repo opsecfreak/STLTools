@@ -58,8 +58,11 @@ Units are millimeters, because slicers read STL as mm.
 
 STL Tools is licensed under the [Apache License 2.0](LICENSE); third-party components are listed in [NOTICE](NOTICE).
 
-- `main`: the public release line (1.0 and later), with a generic example parts list.
-- `mts-personal-data`: a snapshot (v0.8.0) of one repair shop's real parts list, print ideas and assembly specs, kept as an example of a full My Parts setup. It is not part of the release; see [MTS-PERSONAL-DATA.md](https://github.com/opsecfreak/STLTools/blob/mts-personal-data/MTS-PERSONAL-DATA.md) on that branch.
+| Branch | What it is | Releases |
+|---|---|---|
+| `main` | The public release line, with a generic example parts list. | `v1.0.0` and later ([Latest](https://github.com/opsecfreak/STLTools/releases/latest)) |
+| `mts-personal` | **MTS personal edition**: the newest public version plus one repair shop's real parts list (98 parts), print ideas, assembly specs and the part-linked presets. Kept up to date by merging `main` into it. | Pre-releases `v1.0.0-mts.1`, `v1.0.0-mts.2`... |
+| `mts-personal-data` | Snapshot of that shop's data as it was in v0.8.0, before the public release. Read-only history. | none |
 
 Contributions: [CONTRIBUTING.md](CONTRIBUTING.md). Developers and AI agents: [AGENTS.md](AGENTS.md).
 

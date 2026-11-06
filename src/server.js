@@ -66,6 +66,8 @@ import { gzipSync } from 'node:zlib';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PKG = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'));
+// EDITION.json marks a personal edition (branch mts-personal); the public release has none.
+const EDITION = await readFile(join(ROOT, 'EDITION.json'), 'utf8').then(JSON.parse, () => ({ edition: 'public', name: 'Public' }));
 const PUBLIC_DIR = join(ROOT, 'public');
 const THREE_DIR = join(ROOT, 'node_modules', 'three');
 const SEED_DIR = join(ROOT, 'seed');
@@ -340,7 +342,7 @@ async function route(req, res) {
   if (req.method === 'GET' && path === '/api/presets') return send(res, 200, listPresets());
   if (req.method === 'GET' && path === '/api/version') {
     return send(res, 200, {
-      name: 'stltools', version: PKG.version, node: process.versions.node,
+      name: 'stltools', version: PKG.version, edition: EDITION, node: process.versions.node,
       generators: listGenerators().length, presets: listPresets().length, profiles: listProfiles().length,
       platform: process.platform, arch: process.arch,
       dataDir: catalog.dataDir, issues: [...registryIssues(), ...presetIssues(), ...profileIssues()],
