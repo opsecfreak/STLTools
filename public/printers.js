@@ -1,7 +1,7 @@
 // Printers page: Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd) on the LAN.
 // VIEW ONLY: status, temperatures, progress, files, history, webcam, and G-code
 // upload that never starts a print. There are no control buttons anywhere.
-import { el, api, fmtDuration, fmtBytes, fmtAgo, store } from './lib.js';
+import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete } from './lib.js';
 
 let timer = null;
 let alive = 0; // render generation; stops polling when the page changes
@@ -64,8 +64,9 @@ export async function renderPrinters(page, focusId = null) {
 
   page.replaceChildren(
     el('div', { className: 'page-head' }, el('h2', { textContent: 'Printers' }),
-      el('p', { className: 'muted', textContent: 'View only: status, temperatures, progress, files, history and webcam. Uploading G-code never starts a print. Start, pause and cancel stay in Mainsail or on the printer screen.' })),
-    cards, detail, addForm);
+      el('p', { className: 'muted', textContent: 'View only: status, temperatures, progress, files, history and webcam. Uploading G-code never starts a print. Start, pause and cancel stay in Mainsail or on the printer screen.' }),
+      el('div', { className: 'row' }, el('a', { className: 'button secondary', href: '#settings/printers', textContent: 'Add, test or edit printers (Settings)' }))),
+    ...[cards, detail, printers.length ? null : addForm].filter(Boolean));
 
   function drawCards() {
     if (!printers.length) {
@@ -116,7 +117,7 @@ export async function renderPrinters(page, focusId = null) {
     const history = el('div', { className: 'card history-box' }, el('h3', { textContent: 'Print history' }));
     const upload = uploadBox(p, () => { lastFilesFor = null; drawDetail(true); });
     const remove = el('button', { type: 'button', className: 'secondary small', textContent: 'Remove printer', onclick: async () => {
-      if (!confirm(`Remove ${p.name} from STL Tools? Nothing on the printer changes.`)) return;
+      if (!confirmDelete(`Remove ${p.name} from STL Tools? Nothing on the printer changes.`)) return;
       await api('DELETE', `/api/printers/${p.id}`);
       renderPrinters(page);
     } });
@@ -165,7 +166,7 @@ export async function renderPrinters(page, focusId = null) {
 
   function uploadBox(p, done) {
     const input = el('input', { type: 'file', accept: '.gcode,.g,.gco,.bgcode', multiple: true });
-    const folder = el('input', { type: 'text', value: 'stltools', placeholder: 'folder on the printer (optional)', maxLength: 80 });
+    const folder = el('input', { type: 'text', value: settings()?.printers.uploadFolder ?? 'stltools', placeholder: 'folder on the printer (optional)', maxLength: 80 });
     const msg = el('p', { className: 'muted', textContent: 'Upload only. Never starts a print. Slice your STL first (Orca, Prusa, Cura, Sovol slicer).' });
     const send = async (files) => {
       for (const f of files) {
@@ -200,7 +201,8 @@ export async function renderPrinters(page, focusId = null) {
     if (gen !== alive) return;
     drawCards();
     drawDetail();
-    timer = setTimeout(poll, document.hidden ? 15000 : 3000);
+    const every = (settings()?.printers.pollSeconds ?? 3) * 1000;
+    timer = setTimeout(poll, document.hidden ? Math.max(15000, every) : every);
   }
   drawCards();
   drawDetail(true);

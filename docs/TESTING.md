@@ -27,6 +27,18 @@ This is the first real-world test. Work through the list, print a few small part
 3. Press **+** on a card > **New project...** > name it. Open **Projects** > your project. Set a quantity, tick **printed**, press **Download all parts (ZIP)**.
 4. **Printers** > **Add a printer**: enter your SV07 address (the one that opens Mainsail). Check state, temperatures and files match Mainsail. If you have a sliced file, upload it and confirm it shows in Mainsail **without** starting.
 
+## B3. New in v6 (15 minutes)
+
+1. Press **Settings** (top right) > **Printers**. Enter the SV07 address. Press **Test connection**. Every step should say OK. Press **Add printer**.
+2. Check the header chip shows the SV07 state.
+3. **Robotics** > search `pi 5 case`. Check the print estimate under the 3D view says "on SV07". Compare it with OrcaSlicer for the same STL and note both times.
+4. Change a value with **Live preview** on. The part should rebuild after a short pause.
+5. In the 3D view try **Top**, **Edges**, **Cut** and the gear button (Quality: Ultra).
+6. Press `/` and type `tf-luna`. Press Enter.
+7. **Import**: drop an STL you already have. Open it from **STL Files**. Add it to a project.
+8. On a project press **Export project file**, then import that file on **Import** (it makes a copy).
+9. Settings > Appearance: try Dark theme.
+
 ## C. Print these first (small, fast, they test the defaults)
 
 | # | Preset | Tab | What to check |
@@ -60,6 +72,8 @@ Prints (preset, result: good / tight / loose / broke / other, measured numbers i
 3.
 
 Printer tab (address used, what showed, anything wrong):
+Connection test steps (any FAIL? which):
+Estimate vs slicer (part, STL Tools time, slicer time, real time):
 
 Things that did not work or were confusing:
 

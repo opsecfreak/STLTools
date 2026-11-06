@@ -1,5 +1,11 @@
 # Changelog
 
+## v6 (0.6.0) - 2026-11-06
+
+Changed: Settings tab (printers with step-by-step connection test and model, print estimates, 3D view, appearance, paper labels, backup). Print time / filament / cost estimates per printer profile (Sovol SV07 included, more by pull request: docs/PRINTER-PROFILES.md) in the designer, STL Files and projects. 3D view controls: view buttons, shaded / edges / wireframe / x-ray, layer cut, bed outline, axes, size label, orthographic, quality up to Ultra, PNG. Global search in the header. STL Files library and Import page (STL, project and design files); project export / import. Live preview, collapsible groups, "measure before printing" flags, dark / light theme, toasts. 6 new generators (Pi case, sensor bracket, lidar plate, repair cradle, extrusion bracket, motor clamp) and 38 presets (Pi 5 / 4 / 3, XIAO ESP32-C6, TF-Luna, TFmini, lidar, Typhoon H480 / H520, 2020 brackets, N20 / 37 mm motors). Desktop launcher opens its own app window (Edge / Chrome). AGENTS.md, ARCHITECTURE, API docs, screenshots in the README.
+Fixed: project parts from saved designs showed their id instead of the name.
+Untested: a real SV07 on the LAN (tested against a fake Moonraker), estimate accuracy against a slicer, the app window on Windows, all new parts as prints. Typhoon H parts use placeholder sizes until measured.
+
 ## v5 (0.5.0) - 2026-11-06
 
 Changed: Home page (tabs, favorites, projects, recent designs, printer status). Advanced search across presets, saved designs, generators and projects with filters and a query syntax (`tubeOD:16`, `teeth>=30`, `tab:quads`, `-snap`, phrases). Grid and list views with 3D previews rendered once in the browser and cached on the server. Favorites (server-side, every device). Projects: parts with quantity, notes and printed status, one-ZIP build with a parts list. Printers tab for Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd): status, temperatures, progress, layer, time left, files with thumbnails, history, webcam snapshots, LAN scan, G-code upload that never starts a print. View only: no control endpoints exist. URL routing so Back works and pages can be bookmarked.

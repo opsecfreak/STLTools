@@ -9,6 +9,7 @@
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) { --bg: #14161a; --text: #e6e8eb; --muted: #9aa1ab; --border: #444; }
     }
+    :root[data-theme="dark"] { --bg: #14161a; --text: #e6e8eb; --muted: #9aa1ab; --border: #444; }
     * { box-sizing: border-box; }
     body { margin: 0; padding: 16px; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, sans-serif; }
     .controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 16px; }
@@ -47,7 +48,7 @@
     <label>Height <input id="h" type="number" min="6" max="60" step="0.5" value="14"> mm</label>
     <label><input id="useCard" type="checkbox" checked> Use each item's slot size when known</label>
     <button id="print" type="button">Print</button>
-    <span class="muted">Print at 100% scale (no "fit to page"). Cut on the dashed lines. Slot sizes are learned when you press Make on an item.</span>
+    <span class="muted">Print at 100% scale (no "fit to page"). Cut on the dashed lines. Slot sizes are learned when you press Make on an item. Defaults: Settings &gt; Paper labels.</span>
   </div>
   <div id="sheet" class="sheet"></div>
   <script type="module" src="/labels.js"></script>

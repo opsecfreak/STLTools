@@ -36,6 +36,8 @@ function loadDir(dir, strict, presets, seen) {
         const g = getGenerator(p.generator);
         const params = migrateInput(g, p.params ?? {});
         resolveParams(g.params, params);
+        // "verify": parameters the user must measure before printing (shown as a banner in the UI)
+        if (p.verify !== undefined && (!Array.isArray(p.verify) || p.verify.some((k) => !g.params[k]))) throw new Error('verify must list parameter names of its generator');
         const section = p.section ?? data.section ?? (g.sections ?? ['shop'])[0];
         if (!SECTION_IDS.includes(section)) throw new Error(`unknown section "${section}"`);
         seen.add(p.id);

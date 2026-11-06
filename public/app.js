@@ -1,17 +1,52 @@
+// Main UI controller: routing, the designer (parameter form + 3D view),
+// shop catalog, My Designs, and the glue between the page modules:
+//   home.js      Home, search index, cards, projects     search.js  header search
+//   settings.js  Settings page                           files.js   Import, STL Files, one STL
+//   printers.js  Printers page (view only)               viewtools.js  3D view controls + estimate
+//   viewer.js    three.js viewer and thumbnailer         lib.js     shared helpers + settings cache
+// Routes (location.hash): #home #shop #planes #quads #accessories #robotics #library
+//   #projects #project/<id> #stls #stl/<id> #import #printers #settings[/<section>]
 import { createViewer } from './viewer.js';
 
-import { $, el, api, store, SECTIONS, SECTION_NAMES } from './lib.js';
+import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete } from './lib.js';
 import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton } from './home.js';
 import { renderPrinters, stopPrinters } from './printers.js';
+import { initViewTools, createEstimateBox } from './viewtools.js';
+import { initGlobalSearch } from './search.js';
+import { initSettings, renderSettings } from './settings.js';
+import { initFiles, renderImport, renderStls, renderStlPane } from './files.js';
+
+await loadSettings().catch(() => null);
 
 const state = {
   tab: 'shop', shopSub: 'design',
-  generators: [], presets: [], categories: [], items: [], designs: [],
+  generators: [], presets: [], categories: [], items: [], designs: [], library: [],
   current: null, preset: null, design: null,
   lastResult: null, pendingOverrides: null, editing: null,
 };
 
-const viewer = createViewer($('viewer'));
+const viewer = createViewer($('viewer'), settings()?.viewer ?? {});
+const viewTools = initViewTools(viewer, $('viewTools'));
+const estimate = createEstimateBox($('estimate'), viewer);
+onSettings((cfg, patch) => { if (patch.viewer) viewer.setOptions(cfg.viewer); });
+
+/** Geometry stats for a local STL (same fields as the server's meshStats). */
+function geometryStats(g) {
+  const p = g.attributes.position.array;
+  g.computeBoundingBox();
+  const bb = g.boundingBox;
+  let vol6 = 0, area = 0, flat = 0, bottom = 0;
+  for (let i = 0; i < p.length; i += 9) {
+    const [ax, ay, az, bx, by, bz, cx, cy, cz] = p.subarray(i, i + 9);
+    vol6 += ax * (by * cz - bz * cy) - ay * (bx * cz - bz * cx) + az * (bx * cy - by * cx);
+    const ux = bx - ax, uy = by - ay, uz = bz - az, vx = cx - ax, vy = cy - ay, vz = cz - az;
+    const nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+    const len = Math.hypot(nx, ny, nz);
+    area += len / 2;
+    if (len > 0 && Math.abs(nz / len) > 0.7) { flat += len / 2; if (nz < 0 && Math.max(az, bz, cz) < bb.min.z + 0.01) bottom += len / 2; }
+  }
+  return { size: [bb.max.x - bb.min.x, bb.max.y - bb.min.y, bb.max.z - bb.min.z], volumeMm3: Math.abs(vol6 / 6), areaMm2: area, flatAreaMm2: flat, bedAreaMm2: bottom };
+}
 
 // ---------- output ----------
 function setStatus(text, isError = false) {
@@ -32,6 +67,10 @@ function renderResult(result) {
   list($('notes'), result.notes);
   $('zipAll').hidden = !result.zip;
   if (result.zip) $('zipAll').href = result.zip;
+  $('dlStl').hidden = result.parts.length !== 1;
+  if (result.parts.length === 1) { $('dlStl').href = result.parts[0].url; $('dlStl').download = result.parts[0].filename; }
+  estimate.update(result.parts.map((p) => p.stats));
+  viewTools.reset();
 }
 
 let runToken = 0;
@@ -58,14 +97,22 @@ async function runAndShow(promise, label) {
 const fieldId = (key) => `p-${key}`;
 const defaultsOf = (gen) => Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
 
-function buildForm(gen, values) {
+function buildForm(gen, values, verify = []) {
   const form = $('params');
   form.replaceChildren();
   const groups = new Map();
+  const collapse = settings()?.ui.collapseGroups;
+  const openGroups = store.get(`groups:${gen.id}`) ?? null;
   for (const [key, def] of Object.entries(gen.params)) {
     const g = def.group ?? 'Parameters';
     if (!groups.has(g)) {
-      const fs = el('fieldset', {}, el('legend', { textContent: g }));
+      const isOpen = openGroups ? openGroups.includes(g) : !collapse || groups.size === 0;
+      const fs = el('details', { className: 'pgroup-box', open: isOpen }, el('summary', { textContent: g }));
+      fs.dataset.group = g;
+      fs.ontoggle = () => {
+        if (collapse && fs.open) for (const o of form.querySelectorAll('details.pgroup-box')) if (o !== fs) o.open = false;
+        store.set(`groups:${gen.id}`, [...form.querySelectorAll('details.pgroup-box')].filter((d) => d.open).map((d) => d.dataset.group));
+      };
       groups.set(g, fs);
       form.append(fs);
     }
@@ -98,8 +145,22 @@ function buildForm(gen, values) {
     input.id = fieldId(key);
     input.name = key;
     if (def.help) wrap.append(el('div', { className: 'help', textContent: def.help }));
+    if (verify.includes(key)) {
+      wrap.classList.add('verify');
+      groups.get(g).open = true;
+    }
     groups.get(g).append(wrap);
   }
+  const banner = $('verifyBanner');
+  banner.hidden = !verify.length;
+  if (verify.length) banner.textContent = `Measure before printing: ${verify.map((k) => gen.params[k]?.label ?? k).join(', ')}. The values below are from datasheets or placeholders. Highlighted fields.`;
+}
+
+// Live preview: rebuild after a pause in typing (Settings > Appearance).
+let liveTimer = null;
+function liveRun() {
+  clearTimeout(liveTimer);
+  liveTimer = setTimeout(() => { if (settings()?.ui.autoGenerate && !$('pane-design').hidden) run(); }, settings()?.ui.autoGenerateDelay ?? 700);
 }
 
 function readForm(gen) {
@@ -133,7 +194,7 @@ function loadGenerator(id, values = null, source = {}) {
   $('generator').value = state.current.id;
   const what = state.design ? `Saved design "${state.design.name}"` : state.preset ? state.preset.name : state.current.name;
   $('description').textContent = `${what}: ${state.preset?.description || state.current.description}`;
-  buildForm(state.current, values ?? defaultsOf(state.current));
+  buildForm(state.current, values ?? defaultsOf(state.current), state.preset?.generator === state.current.id ? state.preset.verify ?? [] : []);
   highlightPreset();
   const fav = state.design ? ['design', state.design.id] : state.preset ? ['preset', state.preset.id] : ['generator', state.current.id];
   $('designStar').replaceChildren(starButton(...fav));
@@ -208,10 +269,11 @@ function showPane(name) {
   $('pane-design').hidden = name !== 'design';
   $('pane-catalog').hidden = name !== 'catalog';
   $('pane-library').hidden = name !== 'library';
+  $('pane-stl').hidden = name !== 'stl';
 }
 
 // ---------- routing: #home #shop ... #projects #project/<id> #printers #library ----------
-const PAGES = ['home', 'projects', 'printers'];
+const PAGES = ['home', 'projects', 'printers', 'settings', 'import', 'stls'];
 
 function markTab(tab) {
   for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === tab);
@@ -220,6 +282,7 @@ function markTab(tab) {
 async function showPage(name, arg) {
   stopPrinters();
   markTab(name === 'project' ? 'projects' : name);
+  window.scrollTo(0, 0);
   document.querySelector('main').classList.add('full');
   const page = $('page');
   page.hidden = false;
@@ -229,6 +292,9 @@ async function showPage(name, arg) {
     else if (name === 'projects') await renderProjects(page);
     else if (name === 'project') await renderProject(page, arg);
     else if (name === 'printers') await renderPrinters(page);
+    else if (name === 'settings') await renderSettings(page, arg);
+    else if (name === 'import') renderImport(page);
+    else if (name === 'stls') { await refreshLibrary(); renderStls(page); }
   } catch (err) {
     page.replaceChildren(el('p', { className: 'error', textContent: err.message }));
   }
@@ -244,10 +310,46 @@ function route(hash = location.hash.slice(1), opts = {}) {
   const [name, arg] = hash.split('/');
   store.set('tab', name || 'home');
   if (!name || name === 'home') return showPage('home');
-  if (PAGES.includes(name)) return showPage(name);
+  if (PAGES.includes(name)) return showPage(name, arg ? decodeURIComponent(arg) : undefined);
   if (name === 'project' && arg) return showPage('project', decodeURIComponent(arg));
+  if (name === 'stl' && arg) return showStl(decodeURIComponent(arg));
   if ([...SECTIONS, 'library'].includes(name)) return showTab(name, opts);
   return showPage('home');
+}
+
+/** One library STL: info pane on the left, the STL in the 3D view, estimate below. */
+async function showStl(id) {
+  stopPrinters();
+  document.querySelector('main').classList.remove('full');
+  $('page').hidden = true;
+  markTab('stls');
+  showPane('stl');
+  try {
+    const e = await api('GET', `/api/library/${id}`);
+    renderStlPane($('pane-stl'), e, {
+      onChange: (next) => { const i = state.library.findIndex((x) => x.id === next.id); if (i >= 0) state.library[i] = { ...state.library[i], ...next }; },
+      onDelete: async () => { await refreshLibrary(); go('stls'); toast('Deleted', 'ok'); },
+    });
+    setStatus(`Loading ${e.name}...`);
+    await viewer.show([{ url: `/api/library/${e.id}.stl` }]);
+    $('parts').replaceChildren(el('li', {}, el('span', { className: 'name', textContent: e.name }), el('span', { className: 'stats', textContent: `${e.stats.size.join(' x ')} mm, ${(e.stats.volumeMm3 / 1000).toFixed(1)} cm3` }), el('a', { href: `/api/library/${e.id}.stl`, download: e.filename, textContent: 'STL' })));
+    list($('warnings'), []);
+    list($('notes'), e.notes ? [e.notes] : []);
+    $('zipAll').hidden = true;
+    $('dlStl').hidden = false;
+    $('dlStl').href = `/api/library/${e.id}.stl`;
+    $('dlStl').download = e.filename;
+    estimate.update([e.stats]);
+    viewTools.reset();
+    setStatus(e.name);
+  } catch (err) {
+    $('pane-stl').replaceChildren(el('p', { className: 'error', textContent: err.message }), el('a', { href: '#stls', textContent: 'Back to STL Files' }));
+  }
+}
+
+async function refreshLibrary() {
+  state.library = await api('GET', '/api/library');
+  return state.library;
 }
 
 function showTab(tab, { keepForm = false } = {}) {
@@ -329,8 +431,11 @@ async function onStlFiles(e) {
     await viewer.show(parts);
     $('parts').replaceChildren(...parts.map((p) => el('li', {}, el('span', { className: 'name', textContent: p.name }), el('span', { className: 'stats', textContent: 'local file (view only)' }))));
     list($('warnings'), []);
-    list($('notes'), ['Viewing local STL files. They are not uploaded.']);
+    list($('notes'), ['Viewing local STL files. They are not uploaded. Use Import to keep them in STL Files.']);
     $('zipAll').hidden = true;
+    $('dlStl').hidden = true;
+    estimate.update(parts.map((p) => geometryStats(p.geometry)));
+    viewTools.reset();
     setStatus(`Viewing ${files.length} file(s)`);
   } catch (err) {
     setStatus(`Could not read STL: ${err.message}`, true);
@@ -383,18 +488,19 @@ async function saveDesign() {
       : await api('POST', '/api/designs', body);
     state.design = saved;
     setStatus(`Saved "${saved.name}" to My Designs.`);
+    toast(`Saved "${saved.name}" to My Designs`, 'ok');
   } catch (err) { setStatus(err.message, true); }
 }
 
 async function renameDesign(d) {
   const name = prompt('New name:', d.name);
   if (!name || name === d.name) return;
-  try { await api('PUT', `/api/designs/${d.id}`, { name }); await refreshDesigns(); } catch (err) { alert(err.message); }
+  try { await api('PUT', `/api/designs/${d.id}`, { name }); await refreshDesigns(); } catch (err) { toast(err.message, 'error'); }
 }
 
 async function deleteDesign(d) {
-  if (!confirm(`Delete saved design "${d.name}"? This cannot be undone.`)) return;
-  try { await api('DELETE', `/api/designs/${d.id}`); await refreshDesigns(); } catch (err) { alert(err.message); }
+  if (!confirmDelete(`Delete saved design "${d.name}"? This cannot be undone.`)) return;
+  try { await api('DELETE', `/api/designs/${d.id}`); await refreshDesigns(); } catch (err) { toast(err.message, 'error'); }
 }
 
 // ---------- shop catalog ----------
@@ -482,8 +588,8 @@ function editItem(item) {
 }
 
 async function deleteItem(item) {
-  if (!confirm(`Delete ${item.code} ${item.name}? This cannot be undone.`)) return;
-  try { await api('DELETE', `/api/catalog/${item.code}`); await refreshShop(); } catch (err) { alert(err.message); }
+  if (!confirmDelete(`Delete ${item.code} ${item.name}? This cannot be undone.`)) return;
+  try { await api('DELETE', `/api/catalog/${item.code}`); await refreshShop(); } catch (err) { toast(err.message, 'error'); }
 }
 
 async function saveItem(e) {
@@ -496,7 +602,7 @@ async function saveItem(e) {
     resetItemForm();
     await refreshShop();
     await runAndShow(api('POST', `/api/catalog/${item.code}/generate`), item.code);
-  } catch (err) { alert(err.message); }
+  } catch (err) { toast(err.message, 'error'); }
 }
 
 function sendToShop() {
@@ -528,7 +634,7 @@ function catRow(c = { code: '', name: '', color: '#6e7781' }) {
 async function saveCategories(e) {
   e.preventDefault();
   const rows = [...$('catRows').children].map((r) => ({ code: r.querySelector('.code').value, name: r.querySelector('.cname').value, color: r.querySelector('.color').value })).filter((c) => c.code.trim());
-  try { await api('PUT', '/api/categories', rows); $('catForm').hidden = true; await refreshShop(); } catch (err) { alert(err.message); }
+  try { await api('PUT', '/api/categories', rows); $('catForm').hidden = true; await refreshShop(); } catch (err) { toast(err.message, 'error'); }
 }
 
 // ---------- wire up ----------
@@ -545,6 +651,16 @@ $('toShop').onclick = sendToShop;
 $('generator').onchange = () => loadGenerator($('generator').value);
 $('allGenerators').onchange = fillGeneratorSelect;
 $('params').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); run(); } };
+$('params').oninput = () => liveRun();
+$('params').onchange = () => liveRun();
+$('liveToggle').checked = settings()?.ui.autoGenerate ?? true;
+$('liveToggle').onchange = () => saveSettings({ ui: { autoGenerate: $('liveToggle').checked } }).catch((e) => toast(e.message, 'error'));
+$('expandAll').onclick = () => { for (const d of document.querySelectorAll('#params details')) d.open = true; };
+$('collapseAll').onclick = () => { for (const d of document.querySelectorAll('#params details')) d.open = false; };
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && !$('pane-design').hidden && !document.querySelector('main').classList.contains('full')) { e.preventDefault(); run(); }
+});
+for (const b of document.querySelectorAll('.more-items button')) b.addEventListener('click', () => { b.closest('details').open = false; });
 $('presetSearch').oninput = renderPresets;
 $('presetGroup').onchange = renderPresets;
 $('librarySearch').oninput = renderDesigns;
@@ -575,7 +691,14 @@ if (version.issues.length) {
   $('appVersion').after(badge);
 }
 resetItemForm();
-await refreshDesigns().catch(() => {});
+await Promise.all([refreshDesigns().catch(() => {}), refreshLibrary().catch(() => {}), api('GET', '/api/catalog').then((i) => { state.items = i; }).catch(() => {})]);
+initFiles({ state, refreshLibrary, refreshDesigns });
+initSettings({
+  openCategories: async () => { state.shopSub = 'catalog'; go('shop', { keepForm: true }); switchShopSub('catalog'); await refreshShop(); $('editCategories').click(); },
+  refreshEstimate: () => estimate.refresh(),
+});
+initGlobalSearch();
+headerPrinterChip();
 await initHome({
   state,
   openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); },
@@ -589,6 +712,30 @@ await initHome({
   },
   goTab: (t) => go(t),
   refreshDesigns,
+  refreshLibrary,
+  openStl: (id) => go(`stl/${id}`),
+  openShopItem: async (item) => { state.shopSub = 'catalog'; go('shop', { keepForm: true }); switchShopSub('catalog'); await refreshShop(); editItem(state.items.find((i) => i.code === item.code) ?? item); },
   toast: (msg) => setStatus(msg),
 });
-route(location.hash.slice(1) || 'home');
+route(location.hash.slice(1) || settings()?.ui.startPage || 'home');
+
+/** Small status chip for the default printer in the header (view only). */
+function headerPrinterChip() {
+  const chip = $('printerChip');
+  const tick = async () => {
+    const id = settings()?.printers.defaultPrinter;
+    if (!id) { chip.hidden = true; return; }
+    try {
+      const printers = await api('GET', '/api/printers');
+      const p = printers.find((x) => x.id === id);
+      if (!p) { chip.hidden = true; return; }
+      const st = await api('GET', `/api/printers/${id}/status`).catch(() => null);
+      chip.hidden = false;
+      chip.className = `chip header-chip state-${st ? st.state : 'offline'}`;
+      chip.textContent = st ? `${p.name}: ${st.state === 'printing' ? `printing ${(st.progress * 100).toFixed(0)}%` : st.state === 'standby' ? 'idle' : st.state}` : `${p.name}: offline`;
+    } catch { chip.hidden = true; }
+  };
+  tick();
+  setInterval(() => { if (!document.hidden) tick(); }, 30000);
+  onSettings((c, patch) => { if (patch.printers) tick(); });
+}

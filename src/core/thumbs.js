@@ -7,7 +7,7 @@
 // app version starts a fresh folder, so shapes changed by an update re-render.
 
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, access, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getGenerator, migrateInput } from './registry.js';
 import { resolveParams } from './params.js';
@@ -48,6 +48,12 @@ export function createThumbStore({ dataDir, version }) {
       await mkdir(dir, { recursive: true });
       await writeFile(file(key), png);
       return { key, url: `/api/thumbs/${key}.png` };
+    },
+    /** True when a PNG for this key exists (library STLs use jobKey('library', id)). */
+    exists: (key) => (/^[a-f0-9]{16}$/.test(key) ? exists(key) : Promise.resolve(false)),
+    /** Delete every cached preview for this app version (they re-render on demand). */
+    async clear() {
+      await rm(dir, { recursive: true, force: true });
     },
     async get(key) {
       if (!/^[a-f0-9]{16}$/.test(key)) return null;

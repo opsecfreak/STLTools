@@ -35,6 +35,7 @@ export function startMockMoonraker({ port = 0, state = 'printing' } = {}) {
       } });
     }
     if (p === '/server/files/list') return json(files);
+    if (p === '/server/files/roots') return json([{ name: 'config', path: '/home/sovol/printer_data/config', permissions: 'rw' }, { name: 'gcodes', path: '/home/sovol/printer_data/gcodes', permissions: 'rw' }]);
     if (p === '/server/files/metadata') {
       const f = files.find((x) => x.path === url.searchParams.get('filename'));
       if (!f) return json(null, 404);

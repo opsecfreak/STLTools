@@ -1,0 +1,18 @@
+{
+  "id": "generic-standard",
+  "name": "Generic standard printer (220 x 220, Marlin speeds)",
+  "maker": "Generic",
+  "firmware": "marlin",
+  "bed": { "x": 220, "y": 220, "z": 250 },
+  "nozzle": 0.4,
+  "filamentDiameter": 1.75,
+  "speeds": { "outerWall": 40, "innerWall": 60, "infill": 80, "topBottom": 50, "firstLayer": 25, "travel": 150 },
+  "acceleration": 1000,
+  "maxVolumetricFlow": 10,
+  "motionEfficiency": 0.8,
+  "layerOverheadSeconds": 2,
+  "heatUpSeconds": 240,
+  "verified": false,
+  "notes": "A slow, safe default for bed-slinger printers on stock firmware.",
+  "sources": []
+}

@@ -21,6 +21,16 @@
 //   GET/POST /api/printers, PUT/DELETE /api/printers/:id, POST /api/printers/probe, GET /api/printers/scan
 //   GET /api/printers/:id/{status,files,history,webcams}   GET /api/printers/:id/metadata?filename=
 //   GET /api/printers/:id/thumb?path=   GET /api/printers/:id/snapshot?cam=0   PUT /api/printers/:id/upload?filename=
+//   POST /api/printers/diagnose { url, apiKey }   step-by-step connection test (read-only)
+//   v6:
+//   GET/PUT /api/settings   GET /api/settings/schema   POST /api/settings/reset { section }
+//   GET /api/printer-profiles          POST /api/estimate { stats: [...], profile, opts, qty }
+//   GET /api/library  PUT /api/library/upload?filename=&name=&folder=&tags=  (raw STL body)
+//   GET/PUT/DELETE /api/library/:id    GET /api/library/:id.stl
+//   GET /api/projects/:id/export       POST /api/projects/import (bundle JSON)
+//   GET /api/backup                    DELETE /api/thumbs (clear preview cache)
+//   GET /shared/estimate.js            the estimator, same file the server uses
+// Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
 
@@ -40,6 +50,10 @@ import { createZip } from './core/zip.js';
 import { createProjects, createFavorites } from './core/projects.js';
 import { createThumbStore, jobKey } from './core/thumbs.js';
 import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
+import { createSettings } from './core/settings.js';
+import { createLibrary, MAX_STL_BYTES } from './core/library.js';
+import { listProfiles, getProfile, profileIssues } from './core/profiles.js';
+import { estimateParts, formatDuration } from './core/estimate.js';
 import { randomBytes } from 'node:crypto';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -50,6 +64,7 @@ const HOST = process.env.HOST ?? '127.0.0.1';
 const PORT = Number(process.env.PORT ?? 3000);
 const MAX_BODY = 64 * 1024;
 const MAX_JOBS = 50;
+const MAX_IMPORT = 300 * 1024 * 1024; // project bundles carry base64 STLs
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -57,6 +72,9 @@ const MIME = {
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.ico': 'image/x-icon',
+  '.md': 'text/markdown; charset=utf-8',
 };
 
 // Finished jobs, oldest evicted first. key -> { id, parts: Map(name -> Buffer) }
@@ -79,12 +97,12 @@ function send(res, status, body, headers = {}) {
   res.end(data);
 }
 
-async function readBody(req) {
+async function readBody(req, max = MAX_BODY) {
   let size = 0;
   const chunks = [];
   for await (const chunk of req) {
     size += chunk.length;
-    if (size > MAX_BODY) throw Object.assign(new Error('Request body too large'), { status: 413 });
+    if (size > max) throw Object.assign(new Error('Request body too large'), { status: 413 });
     chunks.push(chunk);
   }
   const text = Buffer.concat(chunks).toString('utf8');
@@ -114,24 +132,54 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
   const files = new Map();
   const lines = [`Project: ${project.name}`, project.description ? `\n${project.description}\n` : '', 'Parts (number, name, quantity to print):'];
   const errors = [];
+  const allStats = [];
+  const allQty = [];
   let n = 0;
   for (const item of project.items) {
     n++;
     if (onlyUnprinted && item.printed) continue;
     const base = `${String(n).padStart(2, '0')}-${slug(item.name)}${item.qty > 1 ? `-x${item.qty}` : ''}`;
     try {
-      const { generator, params } = await projects.resolveItem(item);
-      const r = await generate(generator, params);
-      for (const pt of r.parts) files.set(`${base}-${pt.name}`, toStl(pt.mesh, { name: `${base}-${pt.name}` }));
+      const resolved = await projects.resolveItem(item);
+      if (resolved.stl) {
+        files.set(base, resolved.stl);
+        allStats.push(resolved.entry.stats);
+        allQty.push(item.qty);
+      } else {
+        const r = await generate(resolved.generator, resolved.params);
+        for (const pt of r.parts) {
+          files.set(`${base}-${pt.name}`, toStl(pt.mesh, { name: `${base}-${pt.name}` }));
+          allStats.push(meshStats(pt.mesh));
+          allQty.push(item.qty);
+        }
+      }
       lines.push(`${n}. ${item.name}  x${item.qty}${item.printed ? '  (printed)' : ''}${item.note ? `  - ${item.note}` : ''}`);
     } catch (err) {
       errors.push(`${item.name}: ${err.message}`);
       lines.push(`${n}. ${item.name}  NOT BUILT: ${err.message}`);
     }
   }
+  const est = await projectEstimate(allStats, allQty);
+  if (est) lines.push('', `Estimate on ${est.profile} (${est.settings}): about ${formatDuration(est.seconds)} printing, ${est.grams.toFixed(0)} g filament (${(est.filamentMm / 1000).toFixed(1)} m). Your slicer gives the real time.`);
   const key = randomBytes(8).toString('hex');
   remember(key, { prefix: slug(project.name), files, extra: [{ name: 'README.txt', data: Buffer.from(lines.join('\n') + '\n') }] });
-  return { zip: `/api/zip/${key}`, files: files.size, errors };
+  return { zip: `/api/zip/${key}`, files: files.size, errors, estimate: est };
+}
+
+/** The printer profile estimates use: the default printer's model, else Settings > Print estimates. */
+async function activeProfile(cfg) {
+  const list = await printers.list().catch(() => []);
+  const def = list.find((p) => p.id === cfg.printers.defaultPrinter) ?? null;
+  return getProfile(def?.model) ?? getProfile(cfg.print.profile) ?? listProfiles()[0] ?? null;
+}
+
+async function projectEstimate(statsList, qty) {
+  if (!statsList.length) return null;
+  const cfg = await settings.get();
+  const profile = await activeProfile(cfg);
+  if (!profile) return null;
+  const e = estimateParts(statsList, profile, cfg.print, qty);
+  return { ...e, parts: undefined, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
 }
 
 /** Serve a file from baseDir without allowing ../ escapes. */
@@ -181,9 +229,60 @@ async function route(req, res) {
   if (req.method === 'GET' && path === '/api/version') {
     return send(res, 200, {
       name: 'stltools', version: PKG.version, node: process.versions.node,
-      generators: listGenerators().length, presets: listPresets().length,
-      dataDir: catalog.dataDir, issues: [...registryIssues(), ...presetIssues()],
+      generators: listGenerators().length, presets: listPresets().length, profiles: listProfiles().length,
+      platform: process.platform, arch: process.arch,
+      dataDir: catalog.dataDir, issues: [...registryIssues(), ...presetIssues(), ...profileIssues()],
     });
+  }
+
+  // ---- settings, printer profiles, estimates (v6) ----
+  if (path === '/api/settings') {
+    if (req.method === 'GET') return send(res, 200, await settings.get());
+    if (req.method === 'PUT') return send(res, 200, await settings.update(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  if (path === '/api/settings/schema' && req.method === 'GET') return send(res, 200, settings.schema());
+  if (path === '/api/settings/reset' && req.method === 'POST') return send(res, 200, await settings.reset((await readBody(req)).section));
+  if (path === '/api/printer-profiles' && req.method === 'GET') return send(res, 200, listProfiles());
+  if (path === '/api/estimate' && req.method === 'POST') {
+    const b = await readBody(req);
+    const cfg = await settings.get();
+    const profile = b.profile ? getProfile(b.profile) : await activeProfile(cfg);
+    if (!profile) return send(res, 404, { error: `Unknown printer profile "${b.profile}"` });
+    if (!Array.isArray(b.stats) || !b.stats.length) return send(res, 400, { error: 'stats must be a list of part stats (from a generate result)' });
+    return send(res, 200, { profile: profile.id, ...estimateParts(b.stats.slice(0, 500), profile, { ...cfg.print, ...(b.opts ?? {}) }, b.qty) });
+  }
+  if (path === '/api/backup' && req.method === 'GET') {
+    const [cfg, ds, ps, items, cats, favs, prs, lib] = await Promise.all([settings.get(), designs.list(), projects.list(), catalog.items(), catalog.categories(), favorites.list(), printers.list(), library.list()]);
+    return send(res, 200, { format: 'stltools-backup', version: 1, app: PKG.version, exportedAt: new Date().toISOString(), note: 'API keys and STL files are not included. Copy the data folder for a full backup.', settings: cfg, designs: ds, projects: ps, catalog: items, categories: cats, favorites: favs, printers: prs, library: lib }, { 'content-disposition': 'attachment; filename="stltools-backup.json"' });
+  }
+  if (path === '/api/thumbs' && req.method === 'DELETE') { await thumbs.clear(); return send(res, 204, ''); }
+
+  // ---- STL library ----
+  if (path === '/api/library' && req.method === 'GET') {
+    const list = await library.list();
+    return send(res, 200, await Promise.all(list.map(async (e) => {
+      const thumbKey = jobKey('library', e.id);
+      return { ...e, thumbKey, thumb: (await thumbs.exists(thumbKey)) ? `/api/thumbs/${thumbKey}.png` : null };
+    })));
+  }
+  if (path === '/api/library/upload') {
+    if (req.method !== 'PUT') return send(res, 405, 'Use PUT with the STL file as the body');
+    const data = await readRaw(req, MAX_STL_BYTES + 1);
+    const q = url.searchParams;
+    return send(res, 201, await library.add(data, { filename: q.get('filename'), name: q.get('name'), folder: q.get('folder'), tags: q.get('tags') ?? '' }));
+  }
+  m = path.match(/^\/api\/library\/(stl-[a-f0-9]{8})(\.stl)?$/);
+  if (m) {
+    if (m[2]) {
+      if (req.method !== 'GET') return send(res, 405, 'Use GET');
+      const e = await library.get(m[1]);
+      return send(res, 200, await library.file(m[1]), { 'content-type': 'model/stl', 'content-disposition': `attachment; filename="${e.filename.replace(/"/g, '')}"` });
+    }
+    if (req.method === 'GET') return send(res, 200, await library.get(m[1]));
+    if (req.method === 'PUT') return send(res, 200, await library.update(m[1], await readBody(req)));
+    if (req.method === 'DELETE') { await library.remove(m[1]); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
   }
 
   if (path === '/api/categories') {
@@ -224,14 +323,23 @@ async function route(req, res) {
   }
 
   // ---- projects ----
+  if (path === '/api/projects/import') {
+    if (req.method !== 'POST') return send(res, 405, 'Use POST');
+    return send(res, 201, await projects.importBundle(await readBody(req, MAX_IMPORT)));
+  }
   if (path === '/api/projects') {
     if (req.method === 'GET') return send(res, 200, await projects.list());
     if (req.method === 'POST') return send(res, 201, await projects.add(await readBody(req)));
     return send(res, 405, 'Method not allowed');
   }
-  m = path.match(/^\/api\/projects\/([a-z0-9-]{3,60})(\/items|\/build)?$/);
+  m = path.match(/^\/api\/projects\/([a-z0-9-]{3,60})(\/items|\/build|\/export)?$/);
   if (m) {
     const [, id, sub] = m;
+    if (sub === '/export') {
+      if (req.method !== 'GET') return send(res, 405, 'Use GET');
+      const bundle = await projects.exportBundle(id, { appVersion: PKG.version, includeStl: url.searchParams.get('stl') !== '0' });
+      return send(res, 200, bundle, { 'content-disposition': `attachment; filename="${slug(bundle.project.name)}.stltools-project.json"` });
+    }
     if (sub === '/items') {
       if (req.method !== 'POST') return send(res, 405, 'Use POST');
       return send(res, 200, await projects.addItem(id, await readBody(req)));
@@ -261,6 +369,12 @@ async function route(req, res) {
     return send(res, 200, await printers.probe(b.url, b.apiKey));
   }
   if (path === '/api/printers/scan' && req.method === 'GET') return send(res, 200, await scanLan());
+  if (path === '/api/printers/diagnose' && req.method === 'POST') {
+    const b = await readBody(req);
+    let key = b.apiKey;
+    if (!key && b.id) key = await printers.apiKeyOf(b.id); // re-test a saved printer without sending its key to the browser
+    return send(res, 200, await printers.diagnose(b.url, key));
+  }
   m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})(?:\/([a-z]+))?$/);
   if (m) {
     const [, id, sub] = m;
@@ -331,6 +445,8 @@ async function route(req, res) {
   if (req.method !== 'GET') return send(res, 405, 'Method not allowed');
   // three.js modules for the browser preview, served from node_modules
   if (path.startsWith('/vendor/three/')) return serveStatic(res, THREE_DIR, path.slice('/vendor/three/'.length));
+  // browser-safe core modules shared with the UI (no Node imports inside)
+  if (path === '/shared/estimate.js') return serveStatic(res, join(ROOT, 'src', 'core'), 'estimate.js');
   return serveStatic(res, PUBLIC_DIR, path === '/' ? 'index.html' : path.slice(1));
 }
 
@@ -340,15 +456,20 @@ let projects = createProjects({ dataDir: catalog.dataDir, designs });
 let favorites = createFavorites({ dataDir: catalog.dataDir });
 let thumbs = createThumbStore({ dataDir: catalog.dataDir, version: PKG.version });
 let printers = createPrinters({ dataDir: catalog.dataDir });
+let settings = createSettings({ dataDir: catalog.dataDir });
+let library = createLibrary({ dataDir: catalog.dataDir });
+projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
   if (dataDir) {
     catalog = createCatalog({ dataDir });
     designs = createDesignStore({ dataDir });
-    projects = createProjects({ dataDir, designs });
+    library = createLibrary({ dataDir });
+    projects = createProjects({ dataDir, designs, library });
     favorites = createFavorites({ dataDir });
     thumbs = createThumbStore({ dataDir, version: PKG.version });
     printers = createPrinters({ dataDir });
+    settings = createSettings({ dataDir });
   }
   const server = createServer(async (req, res) => {
     try {

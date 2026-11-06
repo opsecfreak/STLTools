@@ -10,10 +10,13 @@
 //    If the port is used by something else, it tries the next ports.
 // 3. Starts the server and opens http://127.0.0.1:<port>.
 //
+// 4. Opens it in its own app window (Edge or Chrome / Chromium in app mode)
+//    when one is installed, else in the default browser. --browser forces a tab.
+//
 // Options: --port 3000   --lan (listen on all interfaces, for phones/tablets)
-//          --no-browser  --data <folder>
+//          --no-browser  --browser  --data <folder>
 
-import { mkdirSync, existsSync, copyFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, existsSync, copyFileSync, writeFileSync, accessSync, constants as fsConstants } from 'node:fs';
 import { homedir, networkInterfaces } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -74,8 +77,34 @@ function portFree(port) {
   });
 }
 
+/** A Chromium-based browser that can open a plain app window (no tabs, no address bar). */
+function appBrowser() {
+  const env = process.env;
+  const candidates = process.platform === 'win32'
+    ? [
+      join(env['ProgramFiles(x86)'] ?? 'C:\\Program Files (x86)', 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+      join(env.ProgramFiles ?? 'C:\\Program Files', 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+      join(env.ProgramFiles ?? 'C:\\Program Files', 'Google', 'Chrome', 'Application', 'chrome.exe'),
+      join(env.LOCALAPPDATA ?? '', 'Google', 'Chrome', 'Application', 'chrome.exe'),
+    ]
+    : process.platform === 'darwin'
+      ? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge', '/Applications/Chromium.app/Contents/MacOS/Chromium']
+      : (env.PATH ?? '').split(':').flatMap((d) => ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser', 'microsoft-edge'].map((b) => join(d, b)));
+  for (const c of candidates) {
+    try { accessSync(c, fsConstants.X_OK); return c; } catch { /* next */ }
+  }
+  return null;
+}
+
 function openBrowser(url) {
   if (flag('no-browser')) return;
+  const app = flag('browser') ? null : appBrowser();
+  if (app) {
+    try {
+      spawn(app, [`--app=${url}`, '--window-size=1440,900'], { stdio: 'ignore', detached: true }).unref();
+      return;
+    } catch { /* fall back to the default browser */ }
+  }
   const cmd = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]]
     : process.platform === 'darwin' ? ['open', [url]]
       : ['xdg-open', [url]];
