@@ -1,0 +1,609 @@
+{
+ "group": "Fit tests",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "fit-insert-m2-0p05",
+   "name": "Heat-set insert test M2 (3.2 mm, steps 0.05)",
+   "generator": "fit-test",
+   "description": "Insert holes around 3.2 mm, 4.5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 3.2,
+    "depth": 5.5,
+    "step": 0.05,
+    "count": 7,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m2p5-0p1",
+   "name": "Heat-set insert test M2.5 (3.6 mm, steps 0.1)",
+   "generator": "fit-test",
+   "description": "Insert holes around 3.6 mm, 5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2.5",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 3.6,
+    "depth": 6,
+    "step": 0.1,
+    "count": 5,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m2p5-0p05",
+   "name": "Heat-set insert test M2.5 (3.6 mm, steps 0.05)",
+   "generator": "fit-test",
+   "description": "Insert holes around 3.6 mm, 5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2.5",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 3.6,
+    "depth": 6,
+    "step": 0.05,
+    "count": 7,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m3-0p05",
+   "name": "Heat-set insert test M3 (4 mm, steps 0.05)",
+   "generator": "fit-test",
+   "description": "Insert holes around 4 mm, 5.5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M3",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 4,
+    "depth": 6.5,
+    "step": 0.05,
+    "count": 7,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m4-0p05",
+   "name": "Heat-set insert test M4 (5.6 mm, steps 0.05)",
+   "generator": "fit-test",
+   "description": "Insert holes around 5.6 mm, 6.5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M4",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 5.6,
+    "depth": 7.5,
+    "step": 0.05,
+    "count": 7,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m5-0p1",
+   "name": "Heat-set insert test M5 (6.4 mm, steps 0.1)",
+   "generator": "fit-test",
+   "description": "Insert holes around 6.4 mm, 7.5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M5",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 6.4,
+    "depth": 8.5,
+    "step": 0.1,
+    "count": 5,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-insert-m5-0p05",
+   "name": "Heat-set insert test M5 (6.4 mm, steps 0.05)",
+   "generator": "fit-test",
+   "description": "Insert holes around 6.4 mm, 7.5 mm deep. Common value, UNVERIFIED for your kit: this coupon finds the right size.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M5",
+    "insert"
+   ],
+   "params": {
+    "mode": "insert",
+    "nominal": 6.4,
+    "depth": 8.5,
+    "step": 0.05,
+    "count": 7,
+    "wall": 2
+   },
+   "series": "fit-tests",
+   "verify": [
+    "nominal",
+    "depth"
+   ]
+  },
+  {
+   "id": "fit-hole-m2-clear",
+   "name": "M2 clearance hole test",
+   "generator": "fit-test",
+   "description": "M2 clearance hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2",
+    "clear"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 2.4,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m2-tap",
+   "name": "M2 tap (thread into plastic) hole test",
+   "generator": "fit-test",
+   "description": "M2 tap (thread into plastic) hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2",
+    "tap"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 1.7,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m2p5-clear",
+   "name": "M2.5 clearance hole test",
+   "generator": "fit-test",
+   "description": "M2.5 clearance hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2.5",
+    "clear"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 2.9,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m2p5-tap",
+   "name": "M2.5 tap (thread into plastic) hole test",
+   "generator": "fit-test",
+   "description": "M2.5 tap (thread into plastic) hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M2.5",
+    "tap"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 2.1,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m3-clear",
+   "name": "M3 clearance hole test",
+   "generator": "fit-test",
+   "description": "M3 clearance hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M3",
+    "clear"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 3.4,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m3-tap",
+   "name": "M3 tap (thread into plastic) hole test",
+   "generator": "fit-test",
+   "description": "M3 tap (thread into plastic) hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M3",
+    "tap"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 2.6,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m4-clear",
+   "name": "M4 clearance hole test",
+   "generator": "fit-test",
+   "description": "M4 clearance hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M4",
+    "clear"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 4.5,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m4-tap",
+   "name": "M4 tap (thread into plastic) hole test",
+   "generator": "fit-test",
+   "description": "M4 tap (thread into plastic) hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M4",
+    "tap"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 3.7,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m5-clear",
+   "name": "M5 clearance hole test",
+   "generator": "fit-test",
+   "description": "M5 clearance hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M5",
+    "clear"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 5.5,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-hole-m5-tap",
+   "name": "M5 tap (thread into plastic) hole test",
+   "generator": "fit-test",
+   "description": "M5 tap (thread into plastic) hole test.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "M5",
+    "tap"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 4.3,
+    "step": 0.1,
+    "count": 5,
+    "depth": 5
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-5",
+   "name": "Tube / shaft bore test 5 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 5 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 5.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-6",
+   "name": "Tube / shaft bore test 6 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 6 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 6.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-8",
+   "name": "Tube / shaft bore test 8 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 8 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 8.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-10",
+   "name": "Tube / shaft bore test 10 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 10 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 10.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-12",
+   "name": "Tube / shaft bore test 12 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 12 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 12.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-16",
+   "name": "Tube / shaft bore test 16 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 16 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 16.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-tube-20",
+   "name": "Tube / shaft bore test 20 mm",
+   "generator": "fit-test",
+   "description": "Tube / shaft bore test 20 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "tube",
+    "bore"
+   ],
+   "params": {
+    "mode": "hole",
+    "nominal": 20.2,
+    "step": 0.1,
+    "count": 5,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-peg-3",
+   "name": "Peg press-fit test 3 mm",
+   "generator": "fit-test",
+   "description": "Peg press-fit test 3 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "peg",
+    "press fit"
+   ],
+   "params": {
+    "mode": "peg",
+    "nominal": 3,
+    "step": 0.05,
+    "count": 7,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-peg-5",
+   "name": "Peg press-fit test 5 mm",
+   "generator": "fit-test",
+   "description": "Peg press-fit test 5 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "peg",
+    "press fit"
+   ],
+   "params": {
+    "mode": "peg",
+    "nominal": 5,
+    "step": 0.05,
+    "count": 7,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  },
+  {
+   "id": "fit-peg-8",
+   "name": "Peg press-fit test 8 mm",
+   "generator": "fit-test",
+   "description": "Peg press-fit test 8 mm.",
+   "tags": [
+    "calibration",
+    "fit",
+    "test",
+    "peg",
+    "press fit"
+   ],
+   "params": {
+    "mode": "peg",
+    "nominal": 8,
+    "step": 0.05,
+    "count": 7,
+    "depth": 6
+   },
+   "series": "fit-tests"
+  }
+ ]
+}

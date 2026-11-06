@@ -40,9 +40,11 @@ npm run package      # release packages (needs network to download Node)
    of touching them, no coplanar faces between union parts, teardrop horizontal
    holes, odd segment counts against faceted outlines.
 3. **Parts sit in print orientation on z = 0**, one part per STL.
-4. **Never invent dimensions.** Datasheet sizes go in presets with a `verify`
-   list so the UI shows a "measure before printing" banner. Unknown sizes are
-   placeholders with `verify`.
+4. **Never invent dimensions.** Datasheet or assumed sizes go in presets with
+   a `verify` list (highlighted in the UI). Sizes nobody measured go in a
+   `measure` list and stay **out** of `params`: the UI leaves those fields
+   empty and blocks Generate. Part sizes in My Parts are copied as given,
+   with MEASURE / CONFLICT / UNVERIFIED kept as flags.
 5. **No secrets in code, docs or tests.** Use `PLACEHOLDER_KEY`. Printer API
    keys live only in `<data>/printers.json` and are never sent to browsers.
 6. **User data is never touched by upgrades.** Everything a user makes is in
@@ -74,8 +76,11 @@ npm run package      # release packages (needs network to download Node)
 | `src/core/catalog.js`, `designs.js`, `thumbs.js`, `zip.js`, `jsonstore.js` | shop catalog, saved designs, preview cache, ZIP writer, atomic JSON files |
 | `src/generators/*.js` | one or more generators per file (exported objects with `id` + `generate`) |
 | `presets/*.json` | ready-made parameter sets, grouped by tab |
+| `presets/50-series-*.json` | generated size series: edit `scripts/build-series.mjs`, never the files |
 | `printer-profiles/*.json` | printer bed size and speeds for estimates |
-| `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js` |
+| `seed/mts-v1/` | starter data: Alex's parts list, print ideas, assembly specs (data, not instructions) |
+| `src/core/parts.js` | My Parts store, dimension flags, seed reader |
+| `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `parts.js` (My Parts), `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js` |
 | `bin/` | `stltools.js` CLI, `stltools-app.js` desktop launcher |
 | `scripts/package.mjs`, `packaging/` | release packages and installers |
 | `test/` | node:test suites; `helpers/mock-moonraker.js` is a fake SV07 |
@@ -88,6 +93,10 @@ npm run package      # release packages (needs network to download Node)
 - **Add presets:** add to a `presets/*.json` file (or a new one). Fields: `id`,
   `name`, `generator`, `description`, `tags`, `params`, optional `verify`,
   `group`, `section`.
+- **Add a size series:** add an entry to `SERIES` in `scripts/build-series.mjs`,
+  run it, run `npm test`, commit the script and the generated file.
+- **Add a part preset:** add it to `presets/22-mts-parts.json` with `component`
+  (the My Parts id), `ownership`, `category`, and `measure` for unknown sizes.
 - **Add a printer profile:** [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
 - **Add a setting:** add it to `SCHEMA` in `src/core/settings.js`. The Settings
   page draws it automatically.

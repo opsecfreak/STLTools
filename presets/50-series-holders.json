@@ -1,0 +1,1347 @@
+{
+ "group": "Holder sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "holder-bits-2x1",
+   "name": "Hex bit 1/4 in holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-3x1",
+   "name": "Hex bit 1/4 in holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-4x1",
+   "name": "Hex bit 1/4 in holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-2x2",
+   "name": "Hex bit 1/4 in holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-3x2",
+   "name": "Hex bit 1/4 in holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-4x2",
+   "name": "Hex bit 1/4 in holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-4x3",
+   "name": "Hex bit 1/4 in holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-8x4",
+   "name": "Hex bit 1/4 in holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-bits-10x5",
+   "name": "Hex bit 1/4 in holder, 50 (10 x 5)",
+   "generator": "holder-block",
+   "description": "Hex bit 1/4 in holder, 50 (10 x 5).",
+   "tags": [
+    "holder",
+    "storage",
+    "bits"
+   ],
+   "params": {
+    "shape": "hex",
+    "itemSize": 6.35,
+    "itemSize2": 0,
+    "columns": 10,
+    "rows": 5,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-2x1",
+   "name": "18650 cell holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-3x1",
+   "name": "18650 cell holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-4x1",
+   "name": "18650 cell holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-2x2",
+   "name": "18650 cell holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-3x2",
+   "name": "18650 cell holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-4x2",
+   "name": "18650 cell holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-4x3",
+   "name": "18650 cell holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-6x4",
+   "name": "18650 cell holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-18650-8x4",
+   "name": "18650 cell holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "18650 cell holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "18650"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 18.6,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-2x1",
+   "name": "21700 cell holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-3x1",
+   "name": "21700 cell holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-4x1",
+   "name": "21700 cell holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-2x2",
+   "name": "21700 cell holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-3x2",
+   "name": "21700 cell holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-4x2",
+   "name": "21700 cell holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-4x3",
+   "name": "21700 cell holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-6x4",
+   "name": "21700 cell holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-21700-8x4",
+   "name": "21700 cell holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "21700 cell holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "21700"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 21.6,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-2x1",
+   "name": "AA / 14500 cell holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-3x1",
+   "name": "AA / 14500 cell holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-4x1",
+   "name": "AA / 14500 cell holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-2x2",
+   "name": "AA / 14500 cell holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-3x2",
+   "name": "AA / 14500 cell holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-4x2",
+   "name": "AA / 14500 cell holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-4x3",
+   "name": "AA / 14500 cell holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-6x4",
+   "name": "AA / 14500 cell holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-8x4",
+   "name": "AA / 14500 cell holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aa-10x5",
+   "name": "AA / 14500 cell holder, 50 (10 x 5)",
+   "generator": "holder-block",
+   "description": "AA / 14500 cell holder, 50 (10 x 5).",
+   "tags": [
+    "holder",
+    "storage",
+    "aa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 14.8,
+    "itemSize2": 0,
+    "columns": 10,
+    "rows": 5,
+    "pocketDepth": 25
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-2x1",
+   "name": "AAA cell holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-3x1",
+   "name": "AAA cell holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-4x1",
+   "name": "AAA cell holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-2x2",
+   "name": "AAA cell holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-3x2",
+   "name": "AAA cell holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-4x2",
+   "name": "AAA cell holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-4x3",
+   "name": "AAA cell holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-6x4",
+   "name": "AAA cell holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-8x4",
+   "name": "AAA cell holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-aaa-10x5",
+   "name": "AAA cell holder, 50 (10 x 5)",
+   "generator": "holder-block",
+   "description": "AAA cell holder, 50 (10 x 5).",
+   "tags": [
+    "holder",
+    "storage",
+    "aaa"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 10.8,
+    "itemSize2": 0,
+    "columns": 10,
+    "rows": 5,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-2x1",
+   "name": "Drill / hex key 3 mm holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-3x1",
+   "name": "Drill / hex key 3 mm holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-4x1",
+   "name": "Drill / hex key 3 mm holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-2x2",
+   "name": "Drill / hex key 3 mm holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-3x2",
+   "name": "Drill / hex key 3 mm holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-4x2",
+   "name": "Drill / hex key 3 mm holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-4x3",
+   "name": "Drill / hex key 3 mm holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-6x4",
+   "name": "Drill / hex key 3 mm holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-8x4",
+   "name": "Drill / hex key 3 mm holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-drill-10x5",
+   "name": "Drill / hex key 3 mm holder, 50 (10 x 5)",
+   "generator": "holder-block",
+   "description": "Drill / hex key 3 mm holder, 50 (10 x 5).",
+   "tags": [
+    "holder",
+    "storage",
+    "drill"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 3.4,
+    "itemSize2": 0,
+    "columns": 10,
+    "rows": 5,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-2x1",
+   "name": "Marker / pen holder, 2 (2 x 1)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 2 (2 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-3x1",
+   "name": "Marker / pen holder, 3 (3 x 1)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 3 (3 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-4x1",
+   "name": "Marker / pen holder, 4 (4 x 1)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 4 (4 x 1).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 1,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-2x2",
+   "name": "Marker / pen holder, 4 (2 x 2)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 4 (2 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 2,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-3x2",
+   "name": "Marker / pen holder, 6 (3 x 2)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 6 (3 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 3,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-4x2",
+   "name": "Marker / pen holder, 8 (4 x 2)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 8 (4 x 2).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 2,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-4x3",
+   "name": "Marker / pen holder, 12 (4 x 3)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 12 (4 x 3).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 4,
+    "rows": 3,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-6x4",
+   "name": "Marker / pen holder, 24 (6 x 4)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 24 (6 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 6,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-8x4",
+   "name": "Marker / pen holder, 32 (8 x 4)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 32 (8 x 4).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 8,
+    "rows": 4,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  },
+  {
+   "id": "holder-pen-10x5",
+   "name": "Marker / pen holder, 50 (10 x 5)",
+   "generator": "holder-block",
+   "description": "Marker / pen holder, 50 (10 x 5).",
+   "tags": [
+    "holder",
+    "storage",
+    "pen"
+   ],
+   "params": {
+    "shape": "round",
+    "itemSize": 12.4,
+    "itemSize2": 0,
+    "columns": 10,
+    "rows": 5,
+    "pocketDepth": 12
+   },
+   "series": "holders"
+  }
+ ]
+}

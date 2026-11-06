@@ -1,0 +1,463 @@
+{
+ "group": "Stepper mount sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "stepper-nema11-plate-4",
+   "name": "NEMA 11 plate, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 plate, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "plate"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "plate",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema11-plate-6",
+   "name": "NEMA 11 plate, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 plate, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "plate"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "plate",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema11-plate-8",
+   "name": "NEMA 11 plate, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 plate, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "plate"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "plate",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema11-bracket-4",
+   "name": "NEMA 11 bracket, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 bracket, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "bracket",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema11-bracket-6",
+   "name": "NEMA 11 bracket, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 bracket, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "bracket",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema11-bracket-8",
+   "name": "NEMA 11 bracket, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 11 bracket, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema11",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema11",
+    "style": "bracket",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-plate-4",
+   "name": "NEMA 14 plate, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 plate, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "plate"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "plate",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-plate-6",
+   "name": "NEMA 14 plate, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 plate, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "plate"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "plate",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-plate-8",
+   "name": "NEMA 14 plate, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 plate, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "plate"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "plate",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-bracket-4",
+   "name": "NEMA 14 bracket, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 bracket, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "bracket",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-bracket-6",
+   "name": "NEMA 14 bracket, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 bracket, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "bracket",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema14-bracket-8",
+   "name": "NEMA 14 bracket, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 14 bracket, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema14",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema14",
+    "style": "bracket",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-plate-4",
+   "name": "NEMA 17 plate, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 plate, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "plate"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "plate",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-plate-6",
+   "name": "NEMA 17 plate, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 plate, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "plate"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "plate",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-plate-8",
+   "name": "NEMA 17 plate, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 plate, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "plate"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "plate",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-bracket-4",
+   "name": "NEMA 17 bracket, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 bracket, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "bracket",
+    "thickness": 4,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-bracket-6",
+   "name": "NEMA 17 bracket, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 bracket, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "bracket",
+    "thickness": 6,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema17-bracket-8",
+   "name": "NEMA 17 bracket, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 17 bracket, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema17",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema17",
+    "style": "bracket",
+    "thickness": 8,
+    "baseBolt": "M3"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-plate-4",
+   "name": "NEMA 23 plate, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 plate, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "plate"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "plate",
+    "thickness": 4,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-plate-6",
+   "name": "NEMA 23 plate, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 plate, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "plate"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "plate",
+    "thickness": 6,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-plate-8",
+   "name": "NEMA 23 plate, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 plate, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "plate"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "plate",
+    "thickness": 8,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-bracket-4",
+   "name": "NEMA 23 bracket, 4 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 bracket, 4 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "bracket",
+    "thickness": 4,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-bracket-6",
+   "name": "NEMA 23 bracket, 6 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 bracket, 6 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "bracket",
+    "thickness": 6,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  },
+  {
+   "id": "stepper-nema23-bracket-8",
+   "name": "NEMA 23 bracket, 8 mm",
+   "generator": "stepper-mount",
+   "description": "NEMA 23 bracket, 8 mm.",
+   "tags": [
+    "stepper",
+    "nema",
+    "nema23",
+    "bracket"
+   ],
+   "params": {
+    "size": "nema23",
+    "style": "bracket",
+    "thickness": 8,
+    "baseBolt": "M5"
+   },
+   "series": "stepper-mounts"
+  }
+ ]
+}

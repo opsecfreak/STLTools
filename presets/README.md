@@ -25,6 +25,10 @@ Ready-made designs. Each preset is a generator plus the values that differ from 
 | `17-quad-arm-mounts.json` | Quadcopters | ESC, receiver, VTX, FC, GPS, battery, light and wire mounts on arms |
 | `18-component-mounts.json` | Accessories | General component trays, cradles, cups, cable clips, support posts |
 | `19-robot-mounts.json` | Robotics | Pi / camera / board pads, sensor cups, cell cradles, cable guides |
+| `20-my-modules.json` | Robotics, Quadcopters | Pi 5 / 4 / 3 cases, XIAO clips, TF-Luna / TFmini / lidar, Typhoon H480 / H520 |
+| `21-robot-hardware.json` | Robotics | 2020 / 3030 / 4040 brackets, motor clamps, repair cradles |
+| `22-mts-parts.json` | By part category | One or more presets per part in My Parts (seed/mts-v1), with `component`, `ownership`, `category`, `measure` |
+| `50-series-*.json` | All tabs | Size series (about 3,000): clamps per tube size, spacers per bolt and length, gears, pulleys, bins... **Generated** by `scripts/build-series.mjs`: edit the script, not the files |
 
 Your own presets go in `custom/presets/` (see [custom/README.md](../custom/README.md)).
 
@@ -58,6 +62,29 @@ Files load in name order. The number prefix sets the group order in the UI.
 | `description` | One or two sentences. Say what fits. Mark sizes that need checking. |
 | `tags` | Search words. |
 | `params` | Only values that differ from the generator defaults. Run `node bin/stltools.js info <generator>` for names and limits. |
+| `verify` (optional) | Parameter names whose values come from a datasheet or an assumption. The UI highlights them: "check before printing". |
+| `measure` (optional) | Number parameters nobody has measured. Leave them **out** of `params`. The UI shows the fields empty and blocks Generate until they are typed; the CLI needs them as flags. Never put a guessed size here instead. |
+| `component` (optional) | The My Parts id this preset is for (e.g. `SEN02`). The ownership filter uses the part's current ownership. |
+| `ownership` (optional) | `Owned`, `Confirm` or `Planned`: fallback when My Parts is not loaded. |
+| `category` (optional) | Part category (one of the 14 in seed/mts-v1). |
+| `series` (generated) | Which size series the preset came from. |
+
+## Size series
+
+`scripts/build-series.mjs` builds `presets/50-series-*.json`. Each series is a
+generator plus lists of sizes. Every candidate is generated and kept only if
+it is watertight, has no warnings (known advisory notes excepted), fits the
+SV07 bed, and is not the same as a hand-written preset.
+
+```bash
+node scripts/build-series.mjs
+```
+
+```bash
+npm test
+```
+
+`STLTOOLS_FULL_PRESET_TEST=1 npm test` generates every series preset again (a few minutes); the normal run samples three per series.
 
 ## Add a preset
 

@@ -1,0 +1,2777 @@
+{
+ "group": "Pulley sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "gt2-16t-3-6",
+   "name": "GT2 pulley 16 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "16T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 16,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-16t-3-9",
+   "name": "GT2 pulley 16 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "16T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 16,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-16t-4-6",
+   "name": "GT2 pulley 16 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "16T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 16,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-16t-4-9",
+   "name": "GT2 pulley 16 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "16T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 16,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-3-6",
+   "name": "GT2 pulley 20 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-3-9",
+   "name": "GT2 pulley 20 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-4-6",
+   "name": "GT2 pulley 20 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-4-9",
+   "name": "GT2 pulley 20 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-5-6",
+   "name": "GT2 pulley 20 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-20t-5-9",
+   "name": "GT2 pulley 20 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "20T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 20,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-3-6",
+   "name": "GT2 pulley 24 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-3-9",
+   "name": "GT2 pulley 24 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-4-6",
+   "name": "GT2 pulley 24 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-4-9",
+   "name": "GT2 pulley 24 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-5-6",
+   "name": "GT2 pulley 24 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-5-9",
+   "name": "GT2 pulley 24 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-6-6",
+   "name": "GT2 pulley 24 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-24t-6-9",
+   "name": "GT2 pulley 24 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "24T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 24,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-3-6",
+   "name": "GT2 pulley 30 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-3-9",
+   "name": "GT2 pulley 30 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-4-6",
+   "name": "GT2 pulley 30 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-4-9",
+   "name": "GT2 pulley 30 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-5-6",
+   "name": "GT2 pulley 30 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-5-9",
+   "name": "GT2 pulley 30 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-6-6",
+   "name": "GT2 pulley 30 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-6-9",
+   "name": "GT2 pulley 30 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-6p35-6",
+   "name": "GT2 pulley 30 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-30t-6p35-9",
+   "name": "GT2 pulley 30 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "30T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 30,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-3-6",
+   "name": "GT2 pulley 32 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-3-9",
+   "name": "GT2 pulley 32 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-4-6",
+   "name": "GT2 pulley 32 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-4-9",
+   "name": "GT2 pulley 32 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-5-6",
+   "name": "GT2 pulley 32 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-5-9",
+   "name": "GT2 pulley 32 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-6-6",
+   "name": "GT2 pulley 32 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-6-9",
+   "name": "GT2 pulley 32 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-6p35-6",
+   "name": "GT2 pulley 32 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-6p35-9",
+   "name": "GT2 pulley 32 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-8-6",
+   "name": "GT2 pulley 32 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-32t-8-9",
+   "name": "GT2 pulley 32 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "32T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 32,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-3-6",
+   "name": "GT2 pulley 36 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-3-9",
+   "name": "GT2 pulley 36 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-4-6",
+   "name": "GT2 pulley 36 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-4-9",
+   "name": "GT2 pulley 36 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-5-6",
+   "name": "GT2 pulley 36 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-5-9",
+   "name": "GT2 pulley 36 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-6-6",
+   "name": "GT2 pulley 36 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-6-9",
+   "name": "GT2 pulley 36 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-6p35-6",
+   "name": "GT2 pulley 36 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-6p35-9",
+   "name": "GT2 pulley 36 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-8-6",
+   "name": "GT2 pulley 36 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-36t-8-9",
+   "name": "GT2 pulley 36 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "36T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 36,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-3-6",
+   "name": "GT2 pulley 40 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-3-9",
+   "name": "GT2 pulley 40 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-4-6",
+   "name": "GT2 pulley 40 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-4-9",
+   "name": "GT2 pulley 40 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-5-6",
+   "name": "GT2 pulley 40 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-5-9",
+   "name": "GT2 pulley 40 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-6-6",
+   "name": "GT2 pulley 40 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-6-9",
+   "name": "GT2 pulley 40 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-6p35-6",
+   "name": "GT2 pulley 40 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-6p35-9",
+   "name": "GT2 pulley 40 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-8-6",
+   "name": "GT2 pulley 40 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-40t-8-9",
+   "name": "GT2 pulley 40 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "40T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 40,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-3-6",
+   "name": "GT2 pulley 48 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-3-9",
+   "name": "GT2 pulley 48 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-4-6",
+   "name": "GT2 pulley 48 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-4-9",
+   "name": "GT2 pulley 48 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-5-6",
+   "name": "GT2 pulley 48 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-5-9",
+   "name": "GT2 pulley 48 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-6-6",
+   "name": "GT2 pulley 48 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-6-9",
+   "name": "GT2 pulley 48 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-6p35-6",
+   "name": "GT2 pulley 48 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-6p35-9",
+   "name": "GT2 pulley 48 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-8-6",
+   "name": "GT2 pulley 48 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-48t-8-9",
+   "name": "GT2 pulley 48 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "48T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 48,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-3-6",
+   "name": "GT2 pulley 60 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-3-9",
+   "name": "GT2 pulley 60 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-4-6",
+   "name": "GT2 pulley 60 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-4-9",
+   "name": "GT2 pulley 60 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-5-6",
+   "name": "GT2 pulley 60 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-5-9",
+   "name": "GT2 pulley 60 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-6-6",
+   "name": "GT2 pulley 60 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-6-9",
+   "name": "GT2 pulley 60 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-6p35-6",
+   "name": "GT2 pulley 60 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-6p35-9",
+   "name": "GT2 pulley 60 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-8-6",
+   "name": "GT2 pulley 60 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-60t-8-9",
+   "name": "GT2 pulley 60 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "60T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 60,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-3-6",
+   "name": "GT2 pulley 72 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-3-9",
+   "name": "GT2 pulley 72 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-4-6",
+   "name": "GT2 pulley 72 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-4-9",
+   "name": "GT2 pulley 72 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-5-6",
+   "name": "GT2 pulley 72 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-5-9",
+   "name": "GT2 pulley 72 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-6-6",
+   "name": "GT2 pulley 72 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-6-9",
+   "name": "GT2 pulley 72 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-6p35-6",
+   "name": "GT2 pulley 72 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-6p35-9",
+   "name": "GT2 pulley 72 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-8-6",
+   "name": "GT2 pulley 72 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-72t-8-9",
+   "name": "GT2 pulley 72 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "72T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 72,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-3-6",
+   "name": "GT2 pulley 80 teeth, 3 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 3,
+    "beltWidth": 6,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-3-9",
+   "name": "GT2 pulley 80 teeth, 3 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "3mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 3,
+    "beltWidth": 9,
+    "hubDiameter": 12
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-4-6",
+   "name": "GT2 pulley 80 teeth, 4 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 4,
+    "beltWidth": 6,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-4-9",
+   "name": "GT2 pulley 80 teeth, 4 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "4mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 4,
+    "beltWidth": 9,
+    "hubDiameter": 14
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-5-6",
+   "name": "GT2 pulley 80 teeth, 5 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 5,
+    "beltWidth": 6,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-5-9",
+   "name": "GT2 pulley 80 teeth, 5 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "5mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 5,
+    "beltWidth": 9,
+    "hubDiameter": 16
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-6-6",
+   "name": "GT2 pulley 80 teeth, 6 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 6,
+    "beltWidth": 6,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-6-9",
+   "name": "GT2 pulley 80 teeth, 6 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "6mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 6,
+    "beltWidth": 9,
+    "hubDiameter": 18
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-6p35-6",
+   "name": "GT2 pulley 80 teeth, 6.35 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 6.35,
+    "beltWidth": 6,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-6p35-9",
+   "name": "GT2 pulley 80 teeth, 6.35 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "6.35mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 6.35,
+    "beltWidth": 9,
+    "hubDiameter": 19
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-8-6",
+   "name": "GT2 pulley 80 teeth, 8 mm bore, 6 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 8,
+    "beltWidth": 6,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "gt2-80t-8-9",
+   "name": "GT2 pulley 80 teeth, 8 mm bore, 9 mm belt",
+   "generator": "pulley",
+   "description": "Printed GT2-style pulley (profile approximation). Test belt fit; tune toothFit. GT2 tooth shape is approximate. Test-fit a belt before printing many.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "80T",
+    "8mm bore"
+   ],
+   "params": {
+    "type": "gt2",
+    "teeth": 80,
+    "bore": 8,
+    "beltWidth": 9,
+    "hubDiameter": 22
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-10-3",
+   "name": "Smooth idler 10 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 10 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 10,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-10-4",
+   "name": "Smooth idler 10 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 10 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 10,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-10-5",
+   "name": "Smooth idler 10 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 10 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 10,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-12-3",
+   "name": "Smooth idler 12 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 12 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 12,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-12-4",
+   "name": "Smooth idler 12 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 12 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 12,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-12-5",
+   "name": "Smooth idler 12 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 12 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 12,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-16-3",
+   "name": "Smooth idler 16 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 16 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 16,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-16-4",
+   "name": "Smooth idler 16 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 16 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 16,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-16-5",
+   "name": "Smooth idler 16 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 16 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 16,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-16-8",
+   "name": "Smooth idler 16 mm, 8 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 16 mm, 8 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 16,
+    "bore": 8,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-20-3",
+   "name": "Smooth idler 20 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 20 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 20,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-20-4",
+   "name": "Smooth idler 20 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 20 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 20,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-20-5",
+   "name": "Smooth idler 20 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 20 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 20,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-20-8",
+   "name": "Smooth idler 20 mm, 8 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 20 mm, 8 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 20,
+    "bore": 8,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-25-3",
+   "name": "Smooth idler 25 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 25 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 25,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-25-4",
+   "name": "Smooth idler 25 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 25 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 25,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-25-5",
+   "name": "Smooth idler 25 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 25 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 25,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-25-8",
+   "name": "Smooth idler 25 mm, 8 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 25 mm, 8 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 25,
+    "bore": 8,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-30-3",
+   "name": "Smooth idler 30 mm, 3 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 30 mm, 3 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 30,
+    "bore": 3,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-30-4",
+   "name": "Smooth idler 30 mm, 4 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 30 mm, 4 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 30,
+    "bore": 4,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-30-5",
+   "name": "Smooth idler 30 mm, 5 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 30 mm, 5 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 30,
+    "bore": 5,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  },
+  {
+   "id": "idler-30-8",
+   "name": "Smooth idler 30 mm, 8 mm bore",
+   "generator": "pulley",
+   "description": "Smooth idler 30 mm, 8 mm bore.",
+   "tags": [
+    "pulley",
+    "gt2",
+    "belt",
+    "idler"
+   ],
+   "params": {
+    "type": "smooth",
+    "smoothDiameter": 30,
+    "bore": 8,
+    "setScrew": 0
+   },
+   "series": "pulleys"
+  }
+ ]
+}

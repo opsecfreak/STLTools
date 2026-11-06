@@ -1,0 +1,1014 @@
+{
+ "group": "Divided box sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "box-80x60x25-1x1",
+   "name": "Parts box 80 x 60 x 25, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-1x1",
+   "name": "Parts box 80 x 60 x 40, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x25-2x1",
+   "name": "Parts box 80 x 60 x 25, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-2x1",
+   "name": "Parts box 80 x 60 x 40, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x25-2x2",
+   "name": "Parts box 80 x 60 x 25, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-2x2",
+   "name": "Parts box 80 x 60 x 40, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x25-3x2",
+   "name": "Parts box 80 x 60 x 25, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-3x2",
+   "name": "Parts box 80 x 60 x 40, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x25-4x2",
+   "name": "Parts box 80 x 60 x 25, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-4x2",
+   "name": "Parts box 80 x 60 x 40, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x25-4x3",
+   "name": "Parts box 80 x 60 x 25, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 25, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-80x60x40-4x3",
+   "name": "Parts box 80 x 60 x 40, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 80 x 60 x 40, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 80,
+    "depth": 60,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-1x1",
+   "name": "Parts box 120 x 80 x 25, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-1x1",
+   "name": "Parts box 120 x 80 x 40, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-2x1",
+   "name": "Parts box 120 x 80 x 25, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-2x1",
+   "name": "Parts box 120 x 80 x 40, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-2x2",
+   "name": "Parts box 120 x 80 x 25, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-2x2",
+   "name": "Parts box 120 x 80 x 40, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-3x2",
+   "name": "Parts box 120 x 80 x 25, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-4x2",
+   "name": "Parts box 120 x 80 x 25, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-4x2",
+   "name": "Parts box 120 x 80 x 40, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-4x3",
+   "name": "Parts box 120 x 80 x 25, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-4x3",
+   "name": "Parts box 120 x 80 x 40, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x25-6x3",
+   "name": "Parts box 120 x 80 x 25, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 25, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 25,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-120x80x40-6x3",
+   "name": "Parts box 120 x 80 x 40, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 120 x 80 x 40, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 120,
+    "depth": 80,
+    "height": 40,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-1x1",
+   "name": "Parts box 160 x 100 x 25, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-1x1",
+   "name": "Parts box 160 x 100 x 40, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-2x1",
+   "name": "Parts box 160 x 100 x 25, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-2x1",
+   "name": "Parts box 160 x 100 x 40, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-2x2",
+   "name": "Parts box 160 x 100 x 25, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-2x2",
+   "name": "Parts box 160 x 100 x 40, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-3x2",
+   "name": "Parts box 160 x 100 x 25, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-3x2",
+   "name": "Parts box 160 x 100 x 40, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-4x2",
+   "name": "Parts box 160 x 100 x 25, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-4x2",
+   "name": "Parts box 160 x 100 x 40, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-4x3",
+   "name": "Parts box 160 x 100 x 25, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-4x3",
+   "name": "Parts box 160 x 100 x 40, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x25-6x3",
+   "name": "Parts box 160 x 100 x 25, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 25, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 25,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-160x100x40-6x3",
+   "name": "Parts box 160 x 100 x 40, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 160 x 100 x 40, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 160,
+    "depth": 100,
+    "height": 40,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-1x1",
+   "name": "Parts box 200 x 120 x 25, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-1x1",
+   "name": "Parts box 200 x 120 x 40, 1 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 1 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "1 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 1,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-2x1",
+   "name": "Parts box 200 x 120 x 25, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-2x1",
+   "name": "Parts box 200 x 120 x 40, 2 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 2 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "2 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 1
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-2x2",
+   "name": "Parts box 200 x 120 x 25, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-2x2",
+   "name": "Parts box 200 x 120 x 40, 4 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 4 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "4 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 2,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-3x2",
+   "name": "Parts box 200 x 120 x 25, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-3x2",
+   "name": "Parts box 200 x 120 x 40, 6 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 6 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "6 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 3,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-4x2",
+   "name": "Parts box 200 x 120 x 25, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-4x2",
+   "name": "Parts box 200 x 120 x 40, 8 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 8 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "8 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 2
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-4x3",
+   "name": "Parts box 200 x 120 x 25, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-4x3",
+   "name": "Parts box 200 x 120 x 40, 12 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 12 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "12 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 4,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x25-6x3",
+   "name": "Parts box 200 x 120 x 25, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 25, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 25,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  },
+  {
+   "id": "box-200x120x40-6x3",
+   "name": "Parts box 200 x 120 x 40, 18 compartments",
+   "generator": "parts-box",
+   "description": "Parts box 200 x 120 x 40, 18 compartments.",
+   "tags": [
+    "box",
+    "organizer",
+    "18 compartments"
+   ],
+   "params": {
+    "width": 200,
+    "depth": 120,
+    "height": 40,
+    "compartmentsX": 6,
+    "compartmentsY": 3
+   },
+   "series": "boxes"
+  }
+ ]
+}

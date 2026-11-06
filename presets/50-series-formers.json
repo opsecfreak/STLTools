@@ -1,0 +1,1435 @@
+{
+ "group": "Former sizes",
+ "section": "planes",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "former-rect-40x40",
+   "name": "Fuselage former rect, 40 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 40 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 40,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-40x60",
+   "name": "Fuselage former rect, 40 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 40 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 40,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-40x80",
+   "name": "Fuselage former rect, 40 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 40 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 40,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-40x100",
+   "name": "Fuselage former rect, 40 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 40 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 40,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-50x40",
+   "name": "Fuselage former rect, 50 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 50 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 50,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-50x60",
+   "name": "Fuselage former rect, 50 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 50 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 50,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-50x80",
+   "name": "Fuselage former rect, 50 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 50 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 50,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-50x100",
+   "name": "Fuselage former rect, 50 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 50 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 50,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-60x40",
+   "name": "Fuselage former rect, 60 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 60 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 60,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-60x60",
+   "name": "Fuselage former rect, 60 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 60 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 60,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-60x80",
+   "name": "Fuselage former rect, 60 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 60 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 60,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-60x100",
+   "name": "Fuselage former rect, 60 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 60 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 60,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-70x40",
+   "name": "Fuselage former rect, 70 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 70 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 70,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-70x60",
+   "name": "Fuselage former rect, 70 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 70 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 70,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-70x80",
+   "name": "Fuselage former rect, 70 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 70 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 70,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-70x100",
+   "name": "Fuselage former rect, 70 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 70 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 70,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-80x40",
+   "name": "Fuselage former rect, 80 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 80 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 80,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-80x60",
+   "name": "Fuselage former rect, 80 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 80 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 80,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-80x80",
+   "name": "Fuselage former rect, 80 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 80 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 80,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-80x100",
+   "name": "Fuselage former rect, 80 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 80 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 80,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-100x40",
+   "name": "Fuselage former rect, 100 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 100 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 100,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-100x60",
+   "name": "Fuselage former rect, 100 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 100 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 100,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-100x80",
+   "name": "Fuselage former rect, 100 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 100 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 100,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-100x100",
+   "name": "Fuselage former rect, 100 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 100 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 100,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-120x40",
+   "name": "Fuselage former rect, 120 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 120 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 120,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-120x60",
+   "name": "Fuselage former rect, 120 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 120 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 120,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-120x80",
+   "name": "Fuselage former rect, 120 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 120 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 120,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rect-120x100",
+   "name": "Fuselage former rect, 120 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rect, 120 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rect"
+   ],
+   "params": {
+    "shape": "rect",
+    "width": 120,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-40x40",
+   "name": "Fuselage former rounded, 40 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 40 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 40,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-40x60",
+   "name": "Fuselage former rounded, 40 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 40 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 40,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-40x80",
+   "name": "Fuselage former rounded, 40 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 40 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 40,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-40x100",
+   "name": "Fuselage former rounded, 40 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 40 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 40,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-50x40",
+   "name": "Fuselage former rounded, 50 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 50 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 50,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-50x60",
+   "name": "Fuselage former rounded, 50 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 50 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 50,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-50x80",
+   "name": "Fuselage former rounded, 50 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 50 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 50,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-50x100",
+   "name": "Fuselage former rounded, 50 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 50 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 50,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-60x40",
+   "name": "Fuselage former rounded, 60 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 60 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 60,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-60x60",
+   "name": "Fuselage former rounded, 60 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 60 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 60,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-60x80",
+   "name": "Fuselage former rounded, 60 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 60 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 60,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-60x100",
+   "name": "Fuselage former rounded, 60 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 60 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 60,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-70x40",
+   "name": "Fuselage former rounded, 70 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 70 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 70,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-70x60",
+   "name": "Fuselage former rounded, 70 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 70 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 70,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-70x80",
+   "name": "Fuselage former rounded, 70 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 70 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 70,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-70x100",
+   "name": "Fuselage former rounded, 70 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 70 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 70,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-80x40",
+   "name": "Fuselage former rounded, 80 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 80 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 80,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-80x60",
+   "name": "Fuselage former rounded, 80 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 80 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 80,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-80x80",
+   "name": "Fuselage former rounded, 80 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 80 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 80,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-80x100",
+   "name": "Fuselage former rounded, 80 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 80 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 80,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-100x40",
+   "name": "Fuselage former rounded, 100 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 100 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 100,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-100x60",
+   "name": "Fuselage former rounded, 100 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 100 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 100,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-100x80",
+   "name": "Fuselage former rounded, 100 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 100 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 100,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-100x100",
+   "name": "Fuselage former rounded, 100 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 100 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 100,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-120x40",
+   "name": "Fuselage former rounded, 120 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 120 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 120,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-120x60",
+   "name": "Fuselage former rounded, 120 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 120 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 120,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-120x80",
+   "name": "Fuselage former rounded, 120 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 120 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 120,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-rounded-120x100",
+   "name": "Fuselage former rounded, 120 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former rounded, 120 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "rounded"
+   ],
+   "params": {
+    "shape": "rounded",
+    "width": 120,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-40x40",
+   "name": "Fuselage former oval, 40 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 40 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 40,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-40x60",
+   "name": "Fuselage former oval, 40 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 40 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 40,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-40x80",
+   "name": "Fuselage former oval, 40 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 40 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 40,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-40x100",
+   "name": "Fuselage former oval, 40 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 40 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 40,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-50x40",
+   "name": "Fuselage former oval, 50 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 50 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 50,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-50x60",
+   "name": "Fuselage former oval, 50 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 50 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 50,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-50x80",
+   "name": "Fuselage former oval, 50 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 50 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 50,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-50x100",
+   "name": "Fuselage former oval, 50 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 50 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 50,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-60x40",
+   "name": "Fuselage former oval, 60 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 60 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 60,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-60x60",
+   "name": "Fuselage former oval, 60 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 60 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 60,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-60x80",
+   "name": "Fuselage former oval, 60 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 60 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 60,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-60x100",
+   "name": "Fuselage former oval, 60 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 60 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 60,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-70x40",
+   "name": "Fuselage former oval, 70 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 70 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 70,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-70x60",
+   "name": "Fuselage former oval, 70 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 70 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 70,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-70x80",
+   "name": "Fuselage former oval, 70 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 70 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 70,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-70x100",
+   "name": "Fuselage former oval, 70 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 70 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 70,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-80x40",
+   "name": "Fuselage former oval, 80 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 80 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 80,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-80x60",
+   "name": "Fuselage former oval, 80 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 80 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 80,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-80x80",
+   "name": "Fuselage former oval, 80 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 80 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 80,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-80x100",
+   "name": "Fuselage former oval, 80 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 80 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 80,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-100x40",
+   "name": "Fuselage former oval, 100 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 100 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 100,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-100x60",
+   "name": "Fuselage former oval, 100 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 100 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 100,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-100x80",
+   "name": "Fuselage former oval, 100 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 100 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 100,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-100x100",
+   "name": "Fuselage former oval, 100 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 100 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 100,
+    "height": 100
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-120x40",
+   "name": "Fuselage former oval, 120 x 40 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 120 x 40 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 120,
+    "height": 40
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-120x60",
+   "name": "Fuselage former oval, 120 x 60 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 120 x 60 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 120,
+    "height": 60
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-120x80",
+   "name": "Fuselage former oval, 120 x 80 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 120 x 80 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 120,
+    "height": 80
+   },
+   "series": "formers"
+  },
+  {
+   "id": "former-oval-120x100",
+   "name": "Fuselage former oval, 120 x 100 mm",
+   "generator": "fuselage-former",
+   "description": "Fuselage former oval, 120 x 100 mm.",
+   "tags": [
+    "former",
+    "fuselage",
+    "oval"
+   ],
+   "params": {
+    "shape": "oval",
+    "width": 120,
+    "height": 100
+   },
+   "series": "formers"
+  }
+ ]
+}

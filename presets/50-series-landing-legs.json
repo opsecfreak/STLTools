@@ -1,0 +1,483 @@
+{
+ "group": "Landing leg sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "leg-plate-40",
+   "name": "Landing leg 40 mm, bolt-on plate",
+   "generator": "landing-leg",
+   "description": "Landing leg 40 mm, bolt-on plate.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "plate"
+   ],
+   "params": {
+    "legLength": 40,
+    "mount": "plate",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-40-8",
+   "name": "Landing leg 40 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 40 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 40,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-40-10",
+   "name": "Landing leg 40 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 40 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 40,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-40-12",
+   "name": "Landing leg 40 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 40 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 40,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-40-16",
+   "name": "Landing leg 40 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 40 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 40,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-60-8",
+   "name": "Landing leg 60 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 60 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 60,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-60-10",
+   "name": "Landing leg 60 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 60 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 60,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-60-12",
+   "name": "Landing leg 60 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 60 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 60,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-60-16",
+   "name": "Landing leg 60 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 60 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 60,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-plate-80",
+   "name": "Landing leg 80 mm, bolt-on plate",
+   "generator": "landing-leg",
+   "description": "Landing leg 80 mm, bolt-on plate.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "plate"
+   ],
+   "params": {
+    "legLength": 80,
+    "mount": "plate",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-80-8",
+   "name": "Landing leg 80 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 80 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 80,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-80-10",
+   "name": "Landing leg 80 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 80 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 80,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-80-12",
+   "name": "Landing leg 80 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 80 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 80,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-80-16",
+   "name": "Landing leg 80 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 80 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 80,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-plate-100",
+   "name": "Landing leg 100 mm, bolt-on plate",
+   "generator": "landing-leg",
+   "description": "Landing leg 100 mm, bolt-on plate.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "plate"
+   ],
+   "params": {
+    "legLength": 100,
+    "mount": "plate",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-100-8",
+   "name": "Landing leg 100 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 100 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 100,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-100-10",
+   "name": "Landing leg 100 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 100 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 100,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-100-12",
+   "name": "Landing leg 100 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 100 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 100,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-100-16",
+   "name": "Landing leg 100 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 100 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 100,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-120-8",
+   "name": "Landing leg 120 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 120 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 120,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-120-10",
+   "name": "Landing leg 120 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 120 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 120,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-120-12",
+   "name": "Landing leg 120 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 120 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 120,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-120-16",
+   "name": "Landing leg 120 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 120 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 120,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-plate-150",
+   "name": "Landing leg 150 mm, bolt-on plate",
+   "generator": "landing-leg",
+   "description": "Landing leg 150 mm, bolt-on plate.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "plate"
+   ],
+   "params": {
+    "legLength": 150,
+    "mount": "plate",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-150-8",
+   "name": "Landing leg 150 mm, 8 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 150 mm, 8 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 150,
+    "mount": "socket",
+    "tubeOD": 8
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-150-10",
+   "name": "Landing leg 150 mm, 10 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 150 mm, 10 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 150,
+    "mount": "socket",
+    "tubeOD": 10
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-150-12",
+   "name": "Landing leg 150 mm, 12 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 150 mm, 12 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 150,
+    "mount": "socket",
+    "tubeOD": 12
+   },
+   "series": "landing-legs"
+  },
+  {
+   "id": "leg-socket-150-16",
+   "name": "Landing leg 150 mm, 16 mm tube socket",
+   "generator": "landing-leg",
+   "description": "Landing leg 150 mm, 16 mm tube socket.",
+   "tags": [
+    "landing gear",
+    "leg",
+    "socket"
+   ],
+   "params": {
+    "legLength": 150,
+    "mount": "socket",
+    "tubeOD": 16
+   },
+   "series": "landing-legs"
+  }
+ ]
+}

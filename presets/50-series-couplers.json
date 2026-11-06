@@ -1,0 +1,1097 @@
+{
+ "group": "Coupler sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "coupler-2-2",
+   "name": "Shaft coupler 2 to 2 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 2 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 2,
+    "outerDiameter": 14,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-3",
+   "name": "Shaft coupler 2 to 3 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 3 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "3mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 3,
+    "outerDiameter": 14,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-3p175",
+   "name": "Shaft coupler 2 to 3.175 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 3.175 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "3.175mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 3.175,
+    "outerDiameter": 15,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-4",
+   "name": "Shaft coupler 2 to 4 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 4 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "4mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 4,
+    "outerDiameter": 16,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-5",
+   "name": "Shaft coupler 2 to 5 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 5 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "5mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 5,
+    "outerDiameter": 18,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-6",
+   "name": "Shaft coupler 2 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-6p35",
+   "name": "Shaft coupler 2 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-8",
+   "name": "Shaft coupler 2 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 20,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-10",
+   "name": "Shaft coupler 2 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 20,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-2-12",
+   "name": "Shaft coupler 2 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 2 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "2mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 2,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 23,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-3",
+   "name": "Shaft coupler 3 to 3 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 3 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 3,
+    "outerDiameter": 14,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-3p175",
+   "name": "Shaft coupler 3 to 3.175 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 3.175 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "3.175mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 3.175,
+    "outerDiameter": 15,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-4",
+   "name": "Shaft coupler 3 to 4 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 4 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "4mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 4,
+    "outerDiameter": 16,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-5",
+   "name": "Shaft coupler 3 to 5 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 5 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "5mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 5,
+    "outerDiameter": 18,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-6",
+   "name": "Shaft coupler 3 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-6p35",
+   "name": "Shaft coupler 3 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-8",
+   "name": "Shaft coupler 3 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 20,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-10",
+   "name": "Shaft coupler 3 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 21,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3-12",
+   "name": "Shaft coupler 3 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 3,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 24,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-3p175",
+   "name": "Shaft coupler 3.175 to 3.175 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 3.175 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 3.175,
+    "outerDiameter": 15,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-4",
+   "name": "Shaft coupler 3.175 to 4 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 4 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "4mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 4,
+    "outerDiameter": 16,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-5",
+   "name": "Shaft coupler 3.175 to 5 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 5 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "5mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 5,
+    "outerDiameter": 18,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-6",
+   "name": "Shaft coupler 3.175 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-6p35",
+   "name": "Shaft coupler 3.175 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-8",
+   "name": "Shaft coupler 3.175 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 20,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-10",
+   "name": "Shaft coupler 3.175 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 22,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-3p175-12",
+   "name": "Shaft coupler 3.175 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 3.175 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "3.175mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 3.175,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 25,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-4",
+   "name": "Shaft coupler 4 to 4 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 4 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 4,
+    "outerDiameter": 16,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-5",
+   "name": "Shaft coupler 4 to 5 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 5 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "5mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 5,
+    "outerDiameter": 18,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-6",
+   "name": "Shaft coupler 4 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-6p35",
+   "name": "Shaft coupler 4 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-8",
+   "name": "Shaft coupler 4 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 20,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-10",
+   "name": "Shaft coupler 4 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 23,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-4-12",
+   "name": "Shaft coupler 4 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 4 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "4mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 4,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 26,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-5-s",
+   "name": "Shaft coupler 5 to 5 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 5 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 5,
+    "outerDiameter": 18,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-6",
+   "name": "Shaft coupler 5 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-6p35",
+   "name": "Shaft coupler 5 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-8-s",
+   "name": "Shaft coupler 5 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 21,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-10",
+   "name": "Shaft coupler 5 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 24,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-5-12",
+   "name": "Shaft coupler 5 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 5 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "5mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 5,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 28,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6-6",
+   "name": "Shaft coupler 6 to 6 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6 to 6 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6mm"
+   ],
+   "params": {
+    "boreA": 6,
+    "boreB": 6,
+    "outerDiameter": 20,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6-6p35",
+   "name": "Shaft coupler 6 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6mm",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 6,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 20,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6-8",
+   "name": "Shaft coupler 6 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 6,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 23,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6-10",
+   "name": "Shaft coupler 6 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 6,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 26,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6-12",
+   "name": "Shaft coupler 6 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 6,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 29,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6p35-6p35",
+   "name": "Shaft coupler 6.35 to 6.35 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6.35 to 6.35 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6.35mm"
+   ],
+   "params": {
+    "boreA": 6.35,
+    "boreB": 6.35,
+    "outerDiameter": 21,
+    "length": 21,
+    "setScrew": "M3"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6p35-8",
+   "name": "Shaft coupler 6.35 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6.35 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6.35mm",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 6.35,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 23,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6p35-10",
+   "name": "Shaft coupler 6.35 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6.35 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6.35mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 6.35,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 27,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-6p35-12",
+   "name": "Shaft coupler 6.35 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 6.35 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "6.35mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 6.35,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 30,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-8-8-s",
+   "name": "Shaft coupler 8 to 8 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 8 to 8 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "8mm"
+   ],
+   "params": {
+    "boreA": 8,
+    "boreB": 8,
+    "outerDiameter": 24,
+    "length": 26,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-8-10",
+   "name": "Shaft coupler 8 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 8 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "8mm",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 8,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 29,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-8-12",
+   "name": "Shaft coupler 8 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 8 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "8mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 8,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 32,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-10-10",
+   "name": "Shaft coupler 10 to 10 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 10 to 10 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "10mm"
+   ],
+   "params": {
+    "boreA": 10,
+    "boreB": 10,
+    "outerDiameter": 28,
+    "length": 32,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-10-12",
+   "name": "Shaft coupler 10 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 10 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "10mm",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 10,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 36,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  },
+  {
+   "id": "coupler-12-12",
+   "name": "Shaft coupler 12 to 12 mm",
+   "generator": "shaft-coupler",
+   "description": "Shaft coupler 12 to 12 mm.",
+   "tags": [
+    "coupler",
+    "shaft",
+    "12mm"
+   ],
+   "params": {
+    "boreA": 12,
+    "boreB": 12,
+    "outerDiameter": 32,
+    "length": 39,
+    "setScrew": "M4"
+   },
+   "series": "couplers"
+  }
+ ]
+}

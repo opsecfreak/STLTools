@@ -39,6 +39,15 @@ This is the first real-world test. Work through the list, print a few small part
 8. On a project press **Export project file**, then import that file on **Import** (it makes a copy).
 9. Settings > Appearance: try Dark theme.
 
+## B4. New in v7 (10 minutes)
+
+1. Open **My Parts** > **Load starter data**. Check that 98 parts show, with your ownership.
+2. Change one part's ownership or size. Press **Load again**: your change stays.
+3. In **Quadcopters** pick `Pixhawk V5+ tray`. The size fields are empty and red. Press **Generate**: it asks for the sizes. Type your measured sizes and generate.
+4. In any tab set the filter to **My parts (owned)**.
+5. Open **Projects** > "PTZ rangefinder / camera pan-tilt". Check the parts list and the files to attach.
+6. Print **Heat-set insert test M3** (Shop > Fit tests) and note which hole seats your insert.
+
 ## C. Print these first (small, fast, they test the defaults)
 
 | # | Preset | Tab | What to check |
@@ -74,6 +83,8 @@ Prints (preset, result: good / tight / loose / broke / other, measured numbers i
 Printer tab (address used, what showed, anything wrong):
 Connection test steps (any FAIL? which):
 Estimate vs slicer (part, STL Tools time, slicer time, real time):
+Insert test results (M2 / M3 / M4: hole size that worked):
+Measured sizes for parts marked MEASURE (part id: size):
 
 Things that did not work or were confusing:
 

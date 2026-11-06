@@ -30,6 +30,9 @@
 //   GET /api/projects/:id/export       POST /api/projects/import (bundle JSON)
 //   GET /api/backup                    DELETE /api/thumbs (clear preview cache)
 //   GET /shared/estimate.js            the estimator, same file the server uses
+//   v7:
+//   GET /api/parts   POST /api/parts (add)   PUT/DELETE /api/parts/:id   POST /api/parts/import (components.json)
+//   GET /api/parts/seeds   POST /api/parts/seed { set: "mts-v1" }  (parts + project ideas + assemblies)
 // Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
@@ -54,12 +57,15 @@ import { createSettings } from './core/settings.js';
 import { createLibrary, MAX_STL_BYTES } from './core/library.js';
 import { listProfiles, getProfile, profileIssues } from './core/profiles.js';
 import { estimateParts, formatDuration } from './core/estimate.js';
+import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { randomBytes } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PKG = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'));
 const PUBLIC_DIR = join(ROOT, 'public');
 const THREE_DIR = join(ROOT, 'node_modules', 'three');
+const SEED_DIR = join(ROOT, 'seed');
 const HOST = process.env.HOST ?? '127.0.0.1';
 const PORT = Number(process.env.PORT ?? 3000);
 const MAX_BODY = 64 * 1024;
@@ -88,10 +94,18 @@ function remember(key, job) {
 
 function send(res, status, body, headers = {}) {
   const isBuf = Buffer.isBuffer(body);
-  const data = isBuf || typeof body === 'string' ? body : JSON.stringify(body);
+  let data = isBuf || typeof body === 'string' ? body : JSON.stringify(body);
+  const extra = {};
+  // Large JSON (the preset list is over 1 MB) goes gzipped when the browser accepts it.
+  if (!isBuf && data.length > 32 * 1024 && /\bgzip\b/.test(res.req?.headers['accept-encoding'] ?? '')) {
+    data = gzipSync(data);
+    extra['content-encoding'] = 'gzip';
+    extra.vary = 'accept-encoding';
+  }
   res.writeHead(status, {
     'content-type': isBuf ? 'application/octet-stream' : typeof body === 'string' ? 'text/plain; charset=utf-8' : 'application/json; charset=utf-8',
     'x-content-type-options': 'nosniff',
+    ...extra,
     ...headers,
   });
   res.end(data);
@@ -164,6 +178,85 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
   const key = randomBytes(8).toString('hex');
   remember(key, { prefix: slug(project.name), files, extra: [{ name: 'README.txt', data: Buffer.from(lines.join('\n') + '\n') }] });
   return { zip: `/api/zip/${key}`, files: files.size, errors, estimate: est };
+}
+
+// ---------------------------------------------------------------- seed sets (v7)
+
+// Which assembly spec belongs to which print candidate (seed/mts-v1/assemblies/*.md).
+const ASSEMBLY_FOR = [[/PTZ/i, 'PR01'], [/CGO3/i, 'PR02'], [/SV07_twin|plane/i, 'PR03'], [/Tattu|ZD550/i, 'PR04']];
+
+/** "SEN01, MOT04 x2, PWR01-PWR06, BAT05/BAT06" -> [{ id, qty }] */
+export function parseComponentRefs(s) {
+  const out = [];
+  for (const raw of String(s ?? '').split(',')) {
+    const t = raw.trim();
+    const qty = Number((t.match(/x\s*(\d+)/i) ?? [])[1] ?? 1);
+    const range = t.match(/^([A-Z]{2,4})(\d{2})\s*-\s*\1?(\d{2})/);
+    if (range) {
+      for (let n = Number(range[2]); n <= Number(range[3]); n++) out.push({ id: `${range[1]}${String(n).padStart(2, '0')}`, qty });
+      continue;
+    }
+    for (const id of t.match(/[A-Z]{2,4}\d{2,3}/g) ?? []) out.push({ id, qty });
+  }
+  return out;
+}
+
+/**
+ * Load a seed set: parts into My Parts, print candidates as projects
+ * (status idea / active, priority, linked parts), assembly specs as the notes
+ * of their project with the source files listed as missing. Safe to repeat.
+ */
+async function loadSeed(set) {
+  const { components, candidates, assemblies } = await readSeed(SEED_DIR, set);
+  const partsResult = await parts.merge(fromComponents(components));
+  const existing = new Set((await projects.list()).map((p) => p.source).filter(Boolean));
+  const specs = new Map();
+  const loose = [];
+  for (const a of assemblies) {
+    const hit = ASSEMBLY_FOR.find(([re]) => re.test(a.file));
+    if (hit) specs.set(hit[1], a);
+    else loose.push(a);
+  }
+  // Files named in the spec's "Source files" section. A line that names a .zip lists what is
+  // inside it, so only the zip counts there. No file names: keep the sentence as the item.
+  const missingFiles = (md) => {
+    const sec = md.split(/^## /m).find((x) => /^Source files/i.test(x)) ?? '';
+    const out = [];
+    const anyNames = /`[^`]+\.(?:zip|stl|json|py|md|step|csv|pdf)`/i.test(sec);
+    for (const line of sec.split('\n').slice(1)) {
+      const names = [...line.matchAll(/`([^`]+\.(?:zip|stl|json|py|md|step|csv|pdf))`/gi)].map((x) => x[1]);
+      const zips = names.filter((n) => /\.zip$/i.test(n));
+      out.push(...(zips.length ? zips : names));
+      if (!anyNames && /STEP|STL|zip/i.test(line) && line.trim().length > 10) out.push(line.replace(/^[-*\s]+/, '').trim().slice(0, 200));
+    }
+    return [...new Set(out)];
+  };
+  let created = 0, skipped = 0;
+  for (const c of candidates.items ?? []) {
+    const source = `seed:${set}:${c.id}`;
+    if (existing.has(source)) { skipped++; continue; }
+    const spec = specs.get(c.id);
+    const info = [`What to print: ${c.what_to_print}`, c.notes ? `Notes: ${c.notes}` : '', `Status in the handoff: ${c.status}. Parts: ${c.components}.`].filter(Boolean).join('\n');
+    await projects.add({
+      name: spec ? (spec.text.match(/^# (.+)$/m) ?? [])[1] ?? c.title : c.title,
+      description: spec ? `${spec.text.trim()}\n\n---\n${info}` : info,
+      status: /^Exists/i.test(c.status) ? 'active' : 'idea',
+      priority: (String(c.priority).toLowerCase().match(/high|medium|low/) ?? [''])[0],
+      tags: ['mts', ...(spec ? ['assembly'] : ['print idea'])],
+      components: parseComponentRefs(c.components),
+      filesMissing: spec ? missingFiles(spec.text) : [],
+      source,
+    });
+    created++;
+  }
+  for (const a of loose) {
+    const source = `seed:${set}:assembly:${a.file}`;
+    if (existing.has(source)) { skipped++; continue; }
+    await projects.add({ name: (a.text.match(/^# (.+)$/m) ?? [])[1] ?? a.file, description: a.text.trim(), status: 'active', tags: ['mts', 'assembly'], filesMissing: missingFiles(a.text), source });
+    created++;
+  }
+  await parts.markSeed(set);
+  return { set, parts: partsResult, projects: { created, skipped } };
 }
 
 /** The printer profile estimates use: the default printer's model, else Settings > Print estimates. */
@@ -253,10 +346,30 @@ async function route(req, res) {
     return send(res, 200, { profile: profile.id, ...estimateParts(b.stats.slice(0, 500), profile, { ...cfg.print, ...(b.opts ?? {}) }, b.qty) });
   }
   if (path === '/api/backup' && req.method === 'GET') {
-    const [cfg, ds, ps, items, cats, favs, prs, lib] = await Promise.all([settings.get(), designs.list(), projects.list(), catalog.items(), catalog.categories(), favorites.list(), printers.list(), library.list()]);
-    return send(res, 200, { format: 'stltools-backup', version: 1, app: PKG.version, exportedAt: new Date().toISOString(), note: 'API keys and STL files are not included. Copy the data folder for a full backup.', settings: cfg, designs: ds, projects: ps, catalog: items, categories: cats, favorites: favs, printers: prs, library: lib }, { 'content-disposition': 'attachment; filename="stltools-backup.json"' });
+    const [cfg, ds, ps, items, cats, favs, prs, lib, pts] = await Promise.all([settings.get(), designs.list(), projects.list(), catalog.items(), catalog.categories(), favorites.list(), printers.list(), library.list(), parts.list()]);
+    return send(res, 200, { format: 'stltools-backup', version: 1, app: PKG.version, exportedAt: new Date().toISOString(), note: 'API keys and STL files are not included. Copy the data folder for a full backup.', settings: cfg, designs: ds, projects: ps, catalog: items, categories: cats, favorites: favs, printers: prs, library: lib, parts: pts }, { 'content-disposition': 'attachment; filename="stltools-backup.json"' });
   }
   if (path === '/api/thumbs' && req.method === 'DELETE') { await thumbs.clear(); return send(res, 204, ''); }
+
+  // ---- My Parts (v7) ----
+  if (path === '/api/parts') {
+    if (req.method === 'GET') return send(res, 200, await parts.list());
+    if (req.method === 'POST') return send(res, 201, await parts.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  if (path === '/api/parts/import' && req.method === 'POST') {
+    const body = await readBody(req, 2 * 1024 * 1024);
+    return send(res, 200, await parts.merge(fromComponents(body), { overwrite: url.searchParams.get('overwrite') === '1' }));
+  }
+  if (path === '/api/parts/seeds' && req.method === 'GET') return send(res, 200, await parts.seeds());
+  if (path === '/api/parts/seed' && req.method === 'POST') return send(res, 200, await loadSeed(String((await readBody(req)).set ?? '')));
+  m = path.match(/^\/api\/parts\/([A-Z]{2,4}\d{2,3})$/);
+  if (m) {
+    if (req.method === 'GET') return send(res, 200, await parts.get(m[1]));
+    if (req.method === 'PUT') return send(res, 200, await parts.update(m[1], await readBody(req)));
+    if (req.method === 'DELETE') { await parts.remove(m[1]); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
 
   // ---- STL library ----
   if (path === '/api/library' && req.method === 'GET') {
@@ -458,6 +571,7 @@ let thumbs = createThumbStore({ dataDir: catalog.dataDir, version: PKG.version }
 let printers = createPrinters({ dataDir: catalog.dataDir });
 let settings = createSettings({ dataDir: catalog.dataDir });
 let library = createLibrary({ dataDir: catalog.dataDir });
+let parts = createParts({ dataDir: catalog.dataDir, seedDir: SEED_DIR });
 projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
@@ -470,6 +584,7 @@ export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
     thumbs = createThumbStore({ dataDir, version: PKG.version });
     printers = createPrinters({ dataDir });
     settings = createSettings({ dataDir });
+    parts = createParts({ dataDir, seedDir: SEED_DIR });
   }
   const server = createServer(async (req, res) => {
     try {

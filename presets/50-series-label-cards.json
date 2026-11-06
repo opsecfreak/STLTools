@@ -1,0 +1,415 @@
+{
+ "group": "Label card sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "label-30x10",
+   "name": "Label card 30 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 30 x 10 mm.",
+   "tags": [
+    "label",
+    "30x10"
+   ],
+   "params": {
+    "width": 30,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-30x12",
+   "name": "Label card 30 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 30 x 12 mm.",
+   "tags": [
+    "label",
+    "30x12"
+   ],
+   "params": {
+    "width": 30,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-30x14",
+   "name": "Label card 30 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 30 x 14 mm.",
+   "tags": [
+    "label",
+    "30x14"
+   ],
+   "params": {
+    "width": 30,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-30x18",
+   "name": "Label card 30 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 30 x 18 mm.",
+   "tags": [
+    "label",
+    "30x18"
+   ],
+   "params": {
+    "width": 30,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-40x10",
+   "name": "Label card 40 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 40 x 10 mm.",
+   "tags": [
+    "label",
+    "40x10"
+   ],
+   "params": {
+    "width": 40,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-40x12",
+   "name": "Label card 40 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 40 x 12 mm.",
+   "tags": [
+    "label",
+    "40x12"
+   ],
+   "params": {
+    "width": 40,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-40x14",
+   "name": "Label card 40 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 40 x 14 mm.",
+   "tags": [
+    "label",
+    "40x14"
+   ],
+   "params": {
+    "width": 40,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-40x18",
+   "name": "Label card 40 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 40 x 18 mm.",
+   "tags": [
+    "label",
+    "40x18"
+   ],
+   "params": {
+    "width": 40,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-53x10",
+   "name": "Label card 53 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 53 x 10 mm.",
+   "tags": [
+    "label",
+    "53x10"
+   ],
+   "params": {
+    "width": 53,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-53x12",
+   "name": "Label card 53 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 53 x 12 mm.",
+   "tags": [
+    "label",
+    "53x12"
+   ],
+   "params": {
+    "width": 53,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-53x14",
+   "name": "Label card 53 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 53 x 14 mm.",
+   "tags": [
+    "label",
+    "53x14"
+   ],
+   "params": {
+    "width": 53,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-53x18",
+   "name": "Label card 53 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 53 x 18 mm.",
+   "tags": [
+    "label",
+    "53x18"
+   ],
+   "params": {
+    "width": 53,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-60x10",
+   "name": "Label card 60 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 60 x 10 mm.",
+   "tags": [
+    "label",
+    "60x10"
+   ],
+   "params": {
+    "width": 60,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-60x12",
+   "name": "Label card 60 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 60 x 12 mm.",
+   "tags": [
+    "label",
+    "60x12"
+   ],
+   "params": {
+    "width": 60,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-60x14",
+   "name": "Label card 60 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 60 x 14 mm.",
+   "tags": [
+    "label",
+    "60x14"
+   ],
+   "params": {
+    "width": 60,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-60x18",
+   "name": "Label card 60 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 60 x 18 mm.",
+   "tags": [
+    "label",
+    "60x18"
+   ],
+   "params": {
+    "width": 60,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-72x10",
+   "name": "Label card 72 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 72 x 10 mm.",
+   "tags": [
+    "label",
+    "72x10"
+   ],
+   "params": {
+    "width": 72,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-72x12",
+   "name": "Label card 72 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 72 x 12 mm.",
+   "tags": [
+    "label",
+    "72x12"
+   ],
+   "params": {
+    "width": 72,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-72x14",
+   "name": "Label card 72 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 72 x 14 mm.",
+   "tags": [
+    "label",
+    "72x14"
+   ],
+   "params": {
+    "width": 72,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-72x18",
+   "name": "Label card 72 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 72 x 18 mm.",
+   "tags": [
+    "label",
+    "72x18"
+   ],
+   "params": {
+    "width": 72,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-90x10",
+   "name": "Label card 90 x 10 mm",
+   "generator": "label-card",
+   "description": "Label card 90 x 10 mm.",
+   "tags": [
+    "label",
+    "90x10"
+   ],
+   "params": {
+    "width": 90,
+    "height": 10,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-90x12",
+   "name": "Label card 90 x 12 mm",
+   "generator": "label-card",
+   "description": "Label card 90 x 12 mm.",
+   "tags": [
+    "label",
+    "90x12"
+   ],
+   "params": {
+    "width": 90,
+    "height": 12,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-90x14",
+   "name": "Label card 90 x 14 mm",
+   "generator": "label-card",
+   "description": "Label card 90 x 14 mm.",
+   "tags": [
+    "label",
+    "90x14"
+   ],
+   "params": {
+    "width": 90,
+    "height": 14,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  },
+  {
+   "id": "label-90x18",
+   "name": "Label card 90 x 18 mm",
+   "generator": "label-card",
+   "description": "Label card 90 x 18 mm.",
+   "tags": [
+    "label",
+    "90x18"
+   ],
+   "params": {
+    "width": 90,
+    "height": 18,
+    "text": "LABEL",
+    "line2": ""
+   },
+   "series": "label-cards"
+  }
+ ]
+}

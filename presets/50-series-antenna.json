@@ -1,0 +1,235 @@
+{
+ "group": "Camera and antenna mount sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "antenna-1-15-zip",
+   "name": "SMA antenna mount, one antenna, 15 degrees, zip-tie base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, one antenna, 15 degrees, zip-tie base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 1,
+    "tilt": 15,
+    "baseMount": "zip"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-1-15-screws",
+   "name": "SMA antenna mount, one antenna, 15 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, one antenna, 15 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 1,
+    "tilt": 15,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-1-30-screws",
+   "name": "SMA antenna mount, one antenna, 30 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, one antenna, 30 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 1,
+    "tilt": 30,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-1-45-zip",
+   "name": "SMA antenna mount, one antenna, 45 degrees, zip-tie base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, one antenna, 45 degrees, zip-tie base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 1,
+    "tilt": 45,
+    "baseMount": "zip"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-1-45-screws",
+   "name": "SMA antenna mount, one antenna, 45 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, one antenna, 45 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 1,
+    "tilt": 45,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-0-zip",
+   "name": "SMA antenna mount, two antennas, 0 degrees, zip-tie base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 0 degrees, zip-tie base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 0,
+    "baseMount": "zip"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-0-screws",
+   "name": "SMA antenna mount, two antennas, 0 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 0 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 0,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-15-zip",
+   "name": "SMA antenna mount, two antennas, 15 degrees, zip-tie base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 15 degrees, zip-tie base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 15,
+    "baseMount": "zip"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-15-screws",
+   "name": "SMA antenna mount, two antennas, 15 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 15 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 15,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-30-screws",
+   "name": "SMA antenna mount, two antennas, 30 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 30 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 30,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-45-zip",
+   "name": "SMA antenna mount, two antennas, 45 degrees, zip-tie base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 45 degrees, zip-tie base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 45,
+    "baseMount": "zip"
+   },
+   "series": "antenna"
+  },
+  {
+   "id": "antenna-2-45-screws",
+   "name": "SMA antenna mount, two antennas, 45 degrees, screw base",
+   "generator": "antenna-mount",
+   "description": "SMA antenna mount, two antennas, 45 degrees, screw base.",
+   "tags": [
+    "antenna",
+    "sma",
+    "rp-sma",
+    "lora",
+    "vtx"
+   ],
+   "params": {
+    "count": 2,
+    "tilt": 45,
+    "baseMount": "screws"
+   },
+   "series": "antenna"
+  }
+ ]
+}

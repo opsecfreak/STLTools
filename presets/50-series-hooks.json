@@ -1,0 +1,2653 @@
+{
+ "group": "Hook sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "hook-j-10-25-pegboard",
+   "name": "J hook 25 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 25 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-25-screw",
+   "name": "J hook 25 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "J hook 25 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-25-adhesive",
+   "name": "J hook 25 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 25 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-50-pegboard",
+   "name": "J hook 50 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 50 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-50-screw",
+   "name": "J hook 50 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "J hook 50 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-50-adhesive",
+   "name": "J hook 50 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 50 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-75-pegboard",
+   "name": "J hook 75 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 75 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-75-screw",
+   "name": "J hook 75 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "J hook 75 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-75-adhesive",
+   "name": "J hook 75 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 75 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-100-pegboard",
+   "name": "J hook 100 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 100 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-100-screw",
+   "name": "J hook 100 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "J hook 100 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-100-adhesive",
+   "name": "J hook 100 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 100 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-125-pegboard",
+   "name": "J hook 125 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 125 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-125-screw",
+   "name": "J hook 125 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "J hook 125 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-10-125-adhesive",
+   "name": "J hook 125 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 125 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 10,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-25-pegboard",
+   "name": "J hook 25 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 25 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-25-screw",
+   "name": "J hook 25 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "J hook 25 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-25-adhesive",
+   "name": "J hook 25 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 25 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-50-pegboard",
+   "name": "J hook 50 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 50 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-50-screw",
+   "name": "J hook 50 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "J hook 50 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-50-adhesive",
+   "name": "J hook 50 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 50 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-75-pegboard",
+   "name": "J hook 75 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 75 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-75-screw",
+   "name": "J hook 75 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "J hook 75 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-75-adhesive",
+   "name": "J hook 75 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 75 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-100-pegboard",
+   "name": "J hook 100 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 100 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-100-screw",
+   "name": "J hook 100 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "J hook 100 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-100-adhesive",
+   "name": "J hook 100 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 100 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-125-pegboard",
+   "name": "J hook 125 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 125 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-125-screw",
+   "name": "J hook 125 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "J hook 125 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-15-125-adhesive",
+   "name": "J hook 125 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 125 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 15,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-25-pegboard",
+   "name": "J hook 25 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 25 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-25-screw",
+   "name": "J hook 25 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "J hook 25 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-25-adhesive",
+   "name": "J hook 25 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 25 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-50-pegboard",
+   "name": "J hook 50 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 50 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-50-screw",
+   "name": "J hook 50 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "J hook 50 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-50-adhesive",
+   "name": "J hook 50 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 50 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-75-pegboard",
+   "name": "J hook 75 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 75 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-75-screw",
+   "name": "J hook 75 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "J hook 75 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-75-adhesive",
+   "name": "J hook 75 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 75 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-100-pegboard",
+   "name": "J hook 100 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 100 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-100-screw",
+   "name": "J hook 100 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "J hook 100 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-100-adhesive",
+   "name": "J hook 100 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 100 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-125-pegboard",
+   "name": "J hook 125 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "J hook 125 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-125-screw",
+   "name": "J hook 125 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "J hook 125 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-j-25-125-adhesive",
+   "name": "J hook 125 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "J hook 125 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "j"
+   ],
+   "params": {
+    "style": "j",
+    "width": 25,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-25-pegboard",
+   "name": "Straight hook 25 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-25-screw",
+   "name": "Straight hook 25 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-25-adhesive",
+   "name": "Straight hook 25 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-50-pegboard",
+   "name": "Straight hook 50 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-50-screw",
+   "name": "Straight hook 50 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-50-adhesive",
+   "name": "Straight hook 50 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-75-pegboard",
+   "name": "Straight hook 75 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-75-screw",
+   "name": "Straight hook 75 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-75-adhesive",
+   "name": "Straight hook 75 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-100-pegboard",
+   "name": "Straight hook 100 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-100-screw",
+   "name": "Straight hook 100 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-100-adhesive",
+   "name": "Straight hook 100 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-125-pegboard",
+   "name": "Straight hook 125 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-125-screw",
+   "name": "Straight hook 125 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-10-125-adhesive",
+   "name": "Straight hook 125 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 10,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-25-pegboard",
+   "name": "Straight hook 25 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-25-screw",
+   "name": "Straight hook 25 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-25-adhesive",
+   "name": "Straight hook 25 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-50-pegboard",
+   "name": "Straight hook 50 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-50-screw",
+   "name": "Straight hook 50 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-50-adhesive",
+   "name": "Straight hook 50 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-75-pegboard",
+   "name": "Straight hook 75 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-75-screw",
+   "name": "Straight hook 75 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-75-adhesive",
+   "name": "Straight hook 75 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-100-pegboard",
+   "name": "Straight hook 100 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-100-screw",
+   "name": "Straight hook 100 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-100-adhesive",
+   "name": "Straight hook 100 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-125-pegboard",
+   "name": "Straight hook 125 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-125-screw",
+   "name": "Straight hook 125 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-15-125-adhesive",
+   "name": "Straight hook 125 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 15,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-25-pegboard",
+   "name": "Straight hook 25 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-25-screw",
+   "name": "Straight hook 25 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-25-adhesive",
+   "name": "Straight hook 25 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 25 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-50-pegboard",
+   "name": "Straight hook 50 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-50-screw",
+   "name": "Straight hook 50 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-50-adhesive",
+   "name": "Straight hook 50 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 50 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-75-pegboard",
+   "name": "Straight hook 75 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-75-screw",
+   "name": "Straight hook 75 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-75-adhesive",
+   "name": "Straight hook 75 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 75 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-100-pegboard",
+   "name": "Straight hook 100 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-100-screw",
+   "name": "Straight hook 100 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-100-adhesive",
+   "name": "Straight hook 100 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 100 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-125-pegboard",
+   "name": "Straight hook 125 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-125-screw",
+   "name": "Straight hook 125 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-straight-25-125-adhesive",
+   "name": "Straight hook 125 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Straight hook 125 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "straight"
+   ],
+   "params": {
+    "style": "straight",
+    "width": 25,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-25-pegboard",
+   "name": "Double hook 25 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-25-screw",
+   "name": "Double hook 25 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-25-adhesive",
+   "name": "Double hook 25 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-50-pegboard",
+   "name": "Double hook 50 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-50-screw",
+   "name": "Double hook 50 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-50-adhesive",
+   "name": "Double hook 50 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-75-pegboard",
+   "name": "Double hook 75 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-75-screw",
+   "name": "Double hook 75 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-75-adhesive",
+   "name": "Double hook 75 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-100-pegboard",
+   "name": "Double hook 100 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-100-screw",
+   "name": "Double hook 100 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-100-adhesive",
+   "name": "Double hook 100 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-125-pegboard",
+   "name": "Double hook 125 mm, 10 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 10 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-125-screw",
+   "name": "Double hook 125 mm, 10 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 10 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-10-125-adhesive",
+   "name": "Double hook 125 mm, 10 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 10 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 10,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-25-pegboard",
+   "name": "Double hook 25 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-25-screw",
+   "name": "Double hook 25 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-25-adhesive",
+   "name": "Double hook 25 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-50-pegboard",
+   "name": "Double hook 50 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-50-screw",
+   "name": "Double hook 50 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-50-adhesive",
+   "name": "Double hook 50 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-75-pegboard",
+   "name": "Double hook 75 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-75-screw",
+   "name": "Double hook 75 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-75-adhesive",
+   "name": "Double hook 75 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-100-pegboard",
+   "name": "Double hook 100 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-100-screw",
+   "name": "Double hook 100 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-100-adhesive",
+   "name": "Double hook 100 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-125-pegboard",
+   "name": "Double hook 125 mm, 15 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 15 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-125-screw",
+   "name": "Double hook 125 mm, 15 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 15 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-15-125-adhesive",
+   "name": "Double hook 125 mm, 15 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 15 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 15,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-25-pegboard",
+   "name": "Double hook 25 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 25,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-25-screw",
+   "name": "Double hook 25 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 25,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-25-adhesive",
+   "name": "Double hook 25 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 25 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 25,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-50-pegboard",
+   "name": "Double hook 50 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 50,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-50-screw",
+   "name": "Double hook 50 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 50,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-50-adhesive",
+   "name": "Double hook 50 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 50 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 50,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-75-pegboard",
+   "name": "Double hook 75 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 75,
+    "mount": "pegboard"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-75-screw",
+   "name": "Double hook 75 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 75,
+    "mount": "screw"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-75-adhesive",
+   "name": "Double hook 75 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 75 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 75,
+    "mount": "adhesive"
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-100-pegboard",
+   "name": "Double hook 100 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 100,
+    "mount": "pegboard",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-100-screw",
+   "name": "Double hook 100 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 100,
+    "mount": "screw",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-100-adhesive",
+   "name": "Double hook 100 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 100 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 100,
+    "mount": "adhesive",
+    "armThickness": 9
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-125-pegboard",
+   "name": "Double hook 125 mm, 25 wide, pegboard",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 25 wide, pegboard.",
+   "tags": [
+    "hook",
+    "wall",
+    "pegboard",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 125,
+    "mount": "pegboard",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-125-screw",
+   "name": "Double hook 125 mm, 25 wide, screw",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 25 wide, screw.",
+   "tags": [
+    "hook",
+    "wall",
+    "screw",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 125,
+    "mount": "screw",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  },
+  {
+   "id": "hook-double-25-125-adhesive",
+   "name": "Double hook 125 mm, 25 wide, adhesive",
+   "generator": "hook",
+   "description": "Double hook 125 mm, 25 wide, adhesive.",
+   "tags": [
+    "hook",
+    "wall",
+    "adhesive",
+    "double"
+   ],
+   "params": {
+    "style": "double",
+    "width": 25,
+    "armLength": 125,
+    "mount": "adhesive",
+    "armThickness": 11,
+    "gusset": 12
+   },
+   "series": "hooks"
+  }
+ ]
+}

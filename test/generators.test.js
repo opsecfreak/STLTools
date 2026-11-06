@@ -119,9 +119,16 @@ test('stl: binary and ascii output are well formed', async () => {
   assert.equal(ascii.match(/facet normal/g).length, tris);
 });
 
-test('every preset generates printable parts', async () => {
-  const presets = listPresets();
-  assert.ok(presets.length >= 60, `expected a big preset library, got ${presets.length}`);
+test('every preset generates printable parts (size series: sampled)', async () => {
+  const all = listPresets();
+  assert.ok(all.length >= 60, `expected a big preset library, got ${all.length}`);
+  // Hand-written presets: all of them. Size series (presets/50-series-*.json) were each
+  // generated and checked by scripts/build-series.mjs; here the first, middle and last of
+  // each series run again. STLTOOLS_FULL_PRESET_TEST=1 runs every one (a few minutes).
+  const bySeries = new Map();
+  for (const p of all.filter((x) => x.series)) bySeries.set(p.series, [...(bySeries.get(p.series) ?? []), p]);
+  const sampled = [...bySeries.values()].flatMap((xs) => [...new Set([xs[0], xs[Math.floor(xs.length / 2)], xs[xs.length - 1]])]);
+  const presets = process.env.STLTOOLS_FULL_PRESET_TEST ? all : [...all.filter((x) => !x.series), ...sampled];
   for (const p of presets) {
     const r = await generate(p.generator, p.params);
     for (const part of r.parts) assertPrintable(part);

@@ -320,7 +320,7 @@ export const lidarMount = {
     plateLength: { type: 'number', default: 90, min: 20, max: 250, step: 0.5, unit: 'mm', label: 'Plate length X (rectangle)', group: 'Plate' },
     plateWidth: { type: 'number', default: 70, min: 20, max: 250, step: 0.5, unit: 'mm', label: 'Plate width Y (rectangle)', group: 'Plate' },
     thickness: { type: 'number', default: 3, min: 1.6, max: 10, step: 0.1, unit: 'mm', label: 'Plate thickness', group: 'Plate' },
-    pattern: { type: 'select', default: 'rect', group: 'Lidar holes', label: 'Lidar hole pattern', options: [{ value: 'rect', label: 'Rectangle (X x Y)' }, { value: 'circle', label: 'Circle (N holes)' }] },
+    pattern: { type: 'select', default: 'rect', group: 'Lidar holes', label: 'Lidar hole pattern', options: [{ value: 'rect', label: 'Rectangle (X x Y)' }, { value: 'circle', label: 'Circle (N holes)' }, { value: 'line', label: 'Two holes (X spacing)' }] },
     holeSpacingX: { type: 'number', default: 50, min: 4, max: 240, step: 0.05, unit: 'mm', label: 'Hole spacing X', group: 'Lidar holes', help: 'Measure center to center on your lidar.' },
     holeSpacingY: { type: 'number', default: 50, min: 4, max: 240, step: 0.05, unit: 'mm', label: 'Hole spacing Y', group: 'Lidar holes' },
     holeCircle: { type: 'number', default: 60, min: 4, max: 240, step: 0.05, unit: 'mm', label: 'Hole circle diameter', group: 'Lidar holes' },
@@ -346,7 +346,7 @@ export const lidarMount = {
     const plate = round ? k.cylZ(R, 0, 0, 0, T, 96) : k.roundedBlock(p.plateLength, p.plateWidth, 5, 0, T, 8);
     const add = [plate];
     const cuts = [];
-    const holes = p.pattern === 'circle' ? circlePattern(p.holeCircle, p.holeCount, 45) : squarePattern(p.holeSpacingX, p.holeSpacingY);
+    const holes = p.pattern === 'circle' ? circlePattern(p.holeCircle, p.holeCount, 45) : p.pattern === 'line' ? [[-p.holeSpacingX / 2, 0], [p.holeSpacingX / 2, 0]] : squarePattern(p.holeSpacingX, p.holeSpacingY);
     const sr = p.standoffDiameter / 2;
     for (const [x, y] of holes) {
       const inside = round ? Math.hypot(x, y) + sr <= R + 0.01 : Math.abs(x) + sr <= halfX && Math.abs(y) + sr <= halfY;
@@ -394,7 +394,7 @@ export const lidarMount = {
       }
     }
     const part = k.difference(k.union(add), cuts);
-    notes.push(`${holes.length} lidar holes (${p.pattern === 'circle' ? `${p.holeCount} on ${p.holeCircle} mm circle` : `${p.holeSpacingX} x ${p.holeSpacingY} mm`}), standoffs ${p.standoff} mm. Set the pattern from your lidar's drawing.`);
+    notes.push(`${holes.length} lidar holes (${p.pattern === 'circle' ? `${p.holeCount} on ${p.holeCircle} mm circle` : p.pattern === 'line' ? `${p.holeSpacingX} mm apart` : `${p.holeSpacingX} x ${p.holeSpacingY} mm`}), standoffs ${p.standoff} mm. Set the pattern from your lidar's drawing.`);
     return { parts: [{ name: 'lidar-plate', manifold: k.placeOnBed(part) }], warnings: [...new Set(warnings)], notes };
   },
 };

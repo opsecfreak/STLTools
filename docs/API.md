@@ -1,7 +1,7 @@
 # HTTP API reference
 
 Base URL: `http://127.0.0.1:3000` (or the LAN address with `--lan`). JSON in and
-out unless noted. Errors: `{ "error": "message" }` with HTTP 400 (bad input),
+out unless noted. JSON over 32 KB is gzipped when the client sends `Accept-Encoding: gzip`. Errors: `{ "error": "message" }` with HTTP 400 (bad input),
 404 (unknown id), 405 (wrong method), 413 (too large), 422 (generation failed),
 502 (printer did not answer). Routes live in `route()` in `src/server.js`.
 
@@ -53,13 +53,27 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | DELETE | `/api/library/:id` | | 204 |
 | GET | `/api/library/:id.stl` | | the STL file |
 
+## My Parts (v7)
+
+| Method | Path | Body | Returns |
+|---|---|---|---|
+| GET | `/api/parts` | | `{ categories[], items: [{ id, category, name, detail, qty, ownership, ownershipKey, projects, dims, dimsSource, dimsFlag, printNeed, notes, edited }], seeds[] }` |
+| POST | `/api/parts` | `{ id: "ABC01", name, category, ownership, dims, ... }` | new part (201) |
+| GET / PUT / DELETE | `/api/parts/:id` | partial part | an edited part is never overwritten by a seed |
+| POST | `/api/parts/import?overwrite=1` | components.json (`{ categories, items: [{ id, dims_mm, dims_source, print_need, ... }] }`) | `{ added, updated, kept, total }` |
+| GET | `/api/parts/seeds` | | `[{ set, title, loaded }]` |
+| POST | `/api/parts/seed` | `{ set: "mts-v1" }` | `{ parts: { added, updated, kept }, projects: { created, skipped } }` (safe to repeat) |
+
+`dimsFlag`: `measure`, `conflict`, `unverified`, `standard`, `given`, `none`.
+`ownershipKey`: `Owned`, `Confirm`, `Planned`.
+
 ## Designs, projects, favorites
 
 | Method | Path | Body | Returns |
 |---|---|---|---|
 | GET / POST | `/api/designs` | `{ name, generator, params, section?, notes? }` | list / new design |
 | GET / PUT / DELETE | `/api/designs/:id` | | |
-| GET / POST | `/api/projects` | `{ name, description?, status?, tags?, items? }` | list / new project |
+| GET / POST | `/api/projects` | `{ name, description?, status?, tags?, items?, priority?: high\|medium\|low, components?: [{ id, qty }], filesMissing?: [], source? }` | list / new project |
 | GET / PUT / DELETE | `/api/projects/:id` | full project | |
 | POST | `/api/projects/:id/items` | `{ kind: preset\|design\|custom\|stl, ref?, generator?, params?, name?, qty? }` | project |
 | POST | `/api/projects/:id/build?unprinted=1` | | `{ zip, files, errors[], estimate }` |

@@ -268,17 +268,28 @@ export const stepperMount = {
   },
 };
 
+// ISO standard bearing sizes (bore x OD x width, mm). LM*UU are linear bearings.
 const BEARINGS = {
   '608': { od: 22, id: 8, w: 7 }, '625': { od: 16, id: 5, w: 5 }, '623': { od: 10, id: 3, w: 4 },
   '688': { od: 16, id: 8, w: 5 }, '6000': { od: 26, id: 10, w: 8 }, '6001': { od: 28, id: 12, w: 8 },
-  'LM8UU': { od: 15, id: 8, w: 24 }, custom: null,
+  'LM8UU': { od: 15, id: 8, w: 24 },
+  // v7: thin-section 68xx (PTZ uses 6801 and 6806), more 6xx / 60xx / 62xx, miniature, linear
+  '6801': { od: 21, id: 12, w: 5 }, '6806': { od: 42, id: 30, w: 7 }, '6800': { od: 19, id: 10, w: 5 },
+  '6802': { od: 24, id: 15, w: 5 }, '6803': { od: 26, id: 17, w: 5 }, '6804': { od: 32, id: 20, w: 7 }, '6805': { od: 37, id: 25, w: 7 },
+  '6700': { od: 15, id: 10, w: 4 }, '6900': { od: 22, id: 10, w: 6 },
+  '6002': { od: 32, id: 15, w: 9 }, '6003': { od: 35, id: 17, w: 10 },
+  '6200': { od: 30, id: 10, w: 9 }, '6201': { od: 32, id: 12, w: 10 }, '6202': { od: 35, id: 15, w: 11 },
+  '624': { od: 13, id: 4, w: 5 }, '626': { od: 19, id: 6, w: 6 }, '627': { od: 22, id: 7, w: 7 }, '629': { od: 26, id: 9, w: 8 },
+  '693': { od: 8, id: 3, w: 4 }, '695': { od: 13, id: 5, w: 4 }, 'MR105': { od: 10, id: 5, w: 4 }, 'MR85': { od: 8, id: 5, w: 2.5 },
+  'LM6UU': { od: 12, id: 6, w: 19 }, 'LM10UU': { od: 19, id: 10, w: 29 }, 'LM12UU': { od: 21, id: 12, w: 30 },
+  custom: null,
 };
 
 export const bearingBlock = {
   id: 'bearing-block',
   name: 'Bearing Block',
   sections: ['robotics'],
-  description: 'Flange or pillow block for ball bearings (608, 625, 623, 688, 6000, 6001), LM8UU linear bearings, or a custom size.',
+  description: 'Flange or pillow block for ball bearings (608, 6xx, 60xx, 62xx, thin 68xx like 6801 / 6806, miniature MR), LM6 / 8 / 10 / 12UU linear bearings, or a custom size.',
   params: {
     bearing: { type: 'select', default: '608', group: 'Bearing', label: 'Bearing', options: Object.keys(BEARINGS).map((v) => ({ value: v, label: v })) },
     customOD: { type: 'number', default: 22, min: 3, max: 120, step: 0.05, unit: 'mm', label: 'Custom OD', group: 'Bearing' },

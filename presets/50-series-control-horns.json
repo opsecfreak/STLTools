@@ -1,0 +1,687 @@
+{
+ "group": "Control horn sizes",
+ "section": "planes",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "horn-10-2-1p1",
+   "name": "Control horn 10 mm, 2 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 10 mm, 2 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "10mm"
+   ],
+   "params": {
+    "hornHeight": 10,
+    "holes": 2,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-10-2-1p6",
+   "name": "Control horn 10 mm, 2 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 10 mm, 2 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "10mm"
+   ],
+   "params": {
+    "hornHeight": 10,
+    "holes": 2,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-2-1p1",
+   "name": "Control horn 14 mm, 2 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 2 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 2,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-2-1p6",
+   "name": "Control horn 14 mm, 2 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 2 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 2,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-2-2p1",
+   "name": "Control horn 14 mm, 2 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 2 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 2,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-3-1p1",
+   "name": "Control horn 14 mm, 3 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 3 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 3,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-3-1p6",
+   "name": "Control horn 14 mm, 3 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 3 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 3,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-14-4-1p1",
+   "name": "Control horn 14 mm, 4 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 14 mm, 4 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "14mm"
+   ],
+   "params": {
+    "hornHeight": 14,
+    "holes": 4,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-2-1p1",
+   "name": "Control horn 18 mm, 2 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 2 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 2,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-2-1p6",
+   "name": "Control horn 18 mm, 2 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 2 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 2,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-2-2p1",
+   "name": "Control horn 18 mm, 2 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 2 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 2,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-3-1p1",
+   "name": "Control horn 18 mm, 3 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 3 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 3,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-3-1p6",
+   "name": "Control horn 18 mm, 3 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 3 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 3,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-3-2p1",
+   "name": "Control horn 18 mm, 3 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 3 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 3,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-4-1p1",
+   "name": "Control horn 18 mm, 4 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 4 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 4,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-4-1p6",
+   "name": "Control horn 18 mm, 4 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 4 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 4,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-18-5-1p1",
+   "name": "Control horn 18 mm, 5 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 18 mm, 5 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "18mm"
+   ],
+   "params": {
+    "hornHeight": 18,
+    "holes": 5,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-2-1p1",
+   "name": "Control horn 22 mm, 2 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 2 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 2,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-2-1p6",
+   "name": "Control horn 22 mm, 2 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 2 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 2,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-2-2p1",
+   "name": "Control horn 22 mm, 2 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 2 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 2,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-3-1p1",
+   "name": "Control horn 22 mm, 3 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 3 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 3,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-3-1p6",
+   "name": "Control horn 22 mm, 3 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 3 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 3,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-3-2p1",
+   "name": "Control horn 22 mm, 3 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 3 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 3,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-4-1p1",
+   "name": "Control horn 22 mm, 4 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 4 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 4,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-4-1p6",
+   "name": "Control horn 22 mm, 4 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 4 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 4,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-4-2p1",
+   "name": "Control horn 22 mm, 4 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 4 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 4,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-5-1p1",
+   "name": "Control horn 22 mm, 5 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 5 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 5,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-22-5-1p6",
+   "name": "Control horn 22 mm, 5 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 22 mm, 5 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "22mm"
+   ],
+   "params": {
+    "hornHeight": 22,
+    "holes": 5,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-2-1p1",
+   "name": "Control horn 28 mm, 2 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 2 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 2,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-2-1p6",
+   "name": "Control horn 28 mm, 2 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 2 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 2,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-2-2p1",
+   "name": "Control horn 28 mm, 2 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 2 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 2,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-3-1p1",
+   "name": "Control horn 28 mm, 3 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 3 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 3,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-3-1p6",
+   "name": "Control horn 28 mm, 3 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 3 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 3,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-3-2p1",
+   "name": "Control horn 28 mm, 3 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 3 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 3,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-4-1p1",
+   "name": "Control horn 28 mm, 4 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 4 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 4,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-4-1p6",
+   "name": "Control horn 28 mm, 4 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 4 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 4,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-4-2p1",
+   "name": "Control horn 28 mm, 4 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 4 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 4,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-5-1p1",
+   "name": "Control horn 28 mm, 5 holes, 1.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 5 holes, 1.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 5,
+    "holeDiameter": 1.1,
+    "holeSpacing": 2.5
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-5-1p6",
+   "name": "Control horn 28 mm, 5 holes, 1.6 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 5 holes, 1.6 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 5,
+    "holeDiameter": 1.6,
+    "holeSpacing": 3.2
+   },
+   "series": "control-horns"
+  },
+  {
+   "id": "horn-28-5-2p1",
+   "name": "Control horn 28 mm, 5 holes, 2.1 mm",
+   "generator": "control-horn",
+   "description": "Control horn 28 mm, 5 holes, 2.1 mm.",
+   "tags": [
+    "control horn",
+    "28mm"
+   ],
+   "params": {
+    "hornHeight": 28,
+    "holes": 5,
+    "holeDiameter": 2.1,
+    "holeSpacing": 4.2
+   },
+   "series": "control-horns"
+  }
+ ]
+}

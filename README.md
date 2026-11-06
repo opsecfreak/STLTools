@@ -1,6 +1,6 @@
 # STL Tools
 
-Parametric STL generator for a drone / RC / robotics shop. Pick one of 323 ready-made designs (Raspberry Pi 5 / 4 cases, TF-Luna and lidar brackets, XIAO ESP32 clips, Typhoon H480 / H520 bench parts, tube clamps, bins, gears...), change any size, see the print time on your Sovol SV07, get a watertight STL.
+Parametric STL generator for a drone / RC / robotics shop. Pick one of 3,404 ready-made designs (Raspberry Pi 5 / 4 cases, TF-Luna and lidar brackets, XIAO ESP32 clips, Typhoon H480 / H520 bench parts, tube clamps, bins, gears...), change any size, see the print time on your Sovol SV07, get a watertight STL.
 
 Runs on a Windows or Linux desktop (main target), macOS or a Raspberry Pi. Open it in a browser, or as its own app window on the desktop.
 
@@ -16,8 +16,12 @@ Runs on a Windows or Linux desktop (main target), macOS or a Raspberry Pi. Open 
 | **Settings > Printers**: add the SV07, test the connection step by step. | **Printers**: status, files, history, webcam, G-code upload. View only. |
 | ![Import STL and project files](docs/screenshots/import.png) | ![Dark mode, Typhoon repair cradle](docs/screenshots/dark-mode.png) |
 | **Import**: STL files, project files, design files. | **Dark mode** and the 3D view settings. |
+| ![My Parts: ownership, sizes to measure, matching presets](docs/screenshots/my-parts.png) | ![A part with no measured size: fields stay empty until measured](docs/screenshots/needs-measurement.png) |
+| **My Parts**: your parts list with ownership, sizes and the presets for each part. | **Needs measurement**: no invented sizes; type yours to generate. |
 
 - **Web UI**: Home with search, favorites and grid / list views; tabs for Shop, Planes, Quadcopters, Accessories, Robotics, Projects, My Designs, STL Files, Import, Printers and Settings. Live 3D preview with view buttons, display modes (shaded, edges, wireframe, x-ray), layer cut, printer bed outline and screenshots.
+- **My Parts**: your parts (Owned / Confirm / Planned) with sizes and measure flags; filter every preset list to the parts you own. Starter data from the MTS parts list in [seed/mts-v1](seed/mts-v1/README.md).
+- **Size series**: about 3,000 checked sizes of clamps, spacers, gears, pulleys, bearings, bins and more ([presets/README.md](presets/README.md)).
 - **Print estimates**: time, filament (g and m) and optional cost for the selected printer profile; bed-fit warning. Sovol SV07 profile included; add more with [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
 - **Projects** group the parts for a build (quantity, notes, printed checkbox), download as one ZIP and export / import between computers.
 - **STL Files**: import STL files you already have; view, estimate, tag, add to projects.
@@ -58,15 +62,15 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 
 ## What it makes
 
-45 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
+46 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
 
 | Tab | Generators | Presets |
 |-----|-----------|---------|
-| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card` | 80 |
-| Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 22 |
-| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, `repair-stand` (bench cradles), plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires; Yuneec Typhoon H480 / H520 bench and gear-leg parts (measure first) | 36 |
-| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 109 |
-| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, `sbc-case` (Raspberry Pi 5 / 4 / 3 or any board: port windows, fan or vents, ears), `sensor-bracket` (TF-Luna, TFmini, XIAO boards: snap lips, tilt wedge, plate / tube saddle / tape), `lidar-mount` (puck lidar plates), `extrusion-bracket` (2020 / 3030 / 4040), `motor-clamp` (N20, 130, 25 / 37 mm gear motors), plus board / sensor / battery mounts | 76 |
+| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card`, `fit-test` (heat-set insert, hole and press-fit test coupons) | 770 |
+| Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 247 |
+| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, `repair-stand` (bench cradles), plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires; Yuneec Typhoon H480 / H520 bench and gear-leg parts (measure first) | 459 |
+| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 860 |
+| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, `sbc-case` (Raspberry Pi 5 / 4 / 3 or any board: port windows, fan or vents, ears), `sensor-bracket` (TF-Luna, TFmini, XIAO boards: snap lips, tilt wedge, plate / tube saddle / tape), `lidar-mount` (puck lidar plates), `extrusion-bracket` (2020 / 3030 / 4040), `motor-clamp` (N20, 130, 25 / 37 mm gear motors), plus board / sensor / battery mounts | 1068 |
 
 Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 

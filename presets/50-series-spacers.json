@@ -1,0 +1,3577 @@
+{
+ "group": "Spacer sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "washer-round-m2-1",
+   "name": "Washer round, M2, 1 mm",
+   "generator": "spacer",
+   "description": "Round washer for M2 screws (2.4 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m2-1p5",
+   "name": "Washer round, M2, 1.5 mm",
+   "generator": "spacer",
+   "description": "Round washer for M2 screws (2.4 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-2",
+   "name": "Spacer round, M2, 2 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-3",
+   "name": "Spacer round, M2, 3 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-4",
+   "name": "Spacer round, M2, 4 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-5",
+   "name": "Spacer round, M2, 5 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-6",
+   "name": "Spacer round, M2, 6 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-8",
+   "name": "Spacer round, M2, 8 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-10",
+   "name": "Spacer round, M2, 10 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-12",
+   "name": "Spacer round, M2, 12 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-15",
+   "name": "Spacer round, M2, 15 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-18",
+   "name": "Spacer round, M2, 18 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-20",
+   "name": "Spacer round, M2, 20 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-25",
+   "name": "Spacer round, M2, 25 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-30",
+   "name": "Spacer round, M2, 30 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-35",
+   "name": "Spacer round, M2, 35 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2-40",
+   "name": "Spacer round, M2, 40 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2 screws (2.4 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m2p5-1",
+   "name": "Washer round, M2.5, 1 mm",
+   "generator": "spacer",
+   "description": "Round washer for M2.5 screws (2.9 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m2p5-1p5",
+   "name": "Washer round, M2.5, 1.5 mm",
+   "generator": "spacer",
+   "description": "Round washer for M2.5 screws (2.9 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-2",
+   "name": "Spacer round, M2.5, 2 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-3",
+   "name": "Spacer round, M2.5, 3 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-4",
+   "name": "Spacer round, M2.5, 4 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-5",
+   "name": "Spacer round, M2.5, 5 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-6",
+   "name": "Spacer round, M2.5, 6 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-8",
+   "name": "Spacer round, M2.5, 8 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-10",
+   "name": "Spacer round, M2.5, 10 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-12",
+   "name": "Spacer round, M2.5, 12 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-15",
+   "name": "Spacer round, M2.5, 15 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-18",
+   "name": "Spacer round, M2.5, 18 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-20",
+   "name": "Spacer round, M2.5, 20 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-25",
+   "name": "Spacer round, M2.5, 25 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-30",
+   "name": "Spacer round, M2.5, 30 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-35",
+   "name": "Spacer round, M2.5, 35 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m2p5-40",
+   "name": "Spacer round, M2.5, 40 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M2.5 screws (2.9 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m3-1",
+   "name": "Washer round, M3, 1 mm",
+   "generator": "spacer",
+   "description": "Round washer for M3 screws (3.4 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m3-1p5",
+   "name": "Washer round, M3, 1.5 mm",
+   "generator": "spacer",
+   "description": "Round washer for M3 screws (3.4 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-2",
+   "name": "Spacer round, M3, 2 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-3",
+   "name": "Spacer round, M3, 3 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-4",
+   "name": "Spacer round, M3, 4 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-5",
+   "name": "Spacer round, M3, 5 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-6",
+   "name": "Spacer round, M3, 6 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-8",
+   "name": "Spacer round, M3, 8 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-10",
+   "name": "Spacer round, M3, 10 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-12",
+   "name": "Spacer round, M3, 12 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-15",
+   "name": "Spacer round, M3, 15 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-18",
+   "name": "Spacer round, M3, 18 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-20",
+   "name": "Spacer round, M3, 20 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-25",
+   "name": "Spacer round, M3, 25 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-30",
+   "name": "Spacer round, M3, 30 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-35",
+   "name": "Spacer round, M3, 35 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m3-40",
+   "name": "Spacer round, M3, 40 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M3 screws (3.4 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m4-1",
+   "name": "Washer round, M4, 1 mm",
+   "generator": "spacer",
+   "description": "Round washer for M4 screws (4.5 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m4-1p5",
+   "name": "Washer round, M4, 1.5 mm",
+   "generator": "spacer",
+   "description": "Round washer for M4 screws (4.5 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-2",
+   "name": "Spacer round, M4, 2 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-3",
+   "name": "Spacer round, M4, 3 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-4",
+   "name": "Spacer round, M4, 4 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-5",
+   "name": "Spacer round, M4, 5 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-6",
+   "name": "Spacer round, M4, 6 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-8",
+   "name": "Spacer round, M4, 8 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-10",
+   "name": "Spacer round, M4, 10 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-12",
+   "name": "Spacer round, M4, 12 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-15",
+   "name": "Spacer round, M4, 15 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-18",
+   "name": "Spacer round, M4, 18 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-20",
+   "name": "Spacer round, M4, 20 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-25",
+   "name": "Spacer round, M4, 25 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-30",
+   "name": "Spacer round, M4, 30 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-35",
+   "name": "Spacer round, M4, 35 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m4-40",
+   "name": "Spacer round, M4, 40 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M4 screws (4.5 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m5-1",
+   "name": "Washer round, M5, 1 mm",
+   "generator": "spacer",
+   "description": "Round washer for M5 screws (5.5 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-round-m5-1p5",
+   "name": "Washer round, M5, 1.5 mm",
+   "generator": "spacer",
+   "description": "Round washer for M5 screws (5.5 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-2",
+   "name": "Spacer round, M5, 2 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-3",
+   "name": "Spacer round, M5, 3 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-4",
+   "name": "Spacer round, M5, 4 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-5",
+   "name": "Spacer round, M5, 5 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-6",
+   "name": "Spacer round, M5, 6 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-8",
+   "name": "Spacer round, M5, 8 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-10",
+   "name": "Spacer round, M5, 10 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-12",
+   "name": "Spacer round, M5, 12 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-15",
+   "name": "Spacer round, M5, 15 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-18",
+   "name": "Spacer round, M5, 18 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-20",
+   "name": "Spacer round, M5, 20 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-25",
+   "name": "Spacer round, M5, 25 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-30",
+   "name": "Spacer round, M5, 30 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-35",
+   "name": "Spacer round, M5, 35 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-round-m5-40",
+   "name": "Spacer round, M5, 40 mm",
+   "generator": "spacer",
+   "description": "Round spacer for M5 screws (5.5 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "round"
+   ],
+   "params": {
+    "shape": "round",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m2-1",
+   "name": "Washer hex, M2, 1 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M2 screws (2.4 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m2-1p5",
+   "name": "Washer hex, M2, 1.5 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M2 screws (2.4 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-2",
+   "name": "Spacer hex, M2, 2 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-3",
+   "name": "Spacer hex, M2, 3 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-4",
+   "name": "Spacer hex, M2, 4 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-5",
+   "name": "Spacer hex, M2, 5 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-6",
+   "name": "Spacer hex, M2, 6 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-8",
+   "name": "Spacer hex, M2, 8 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-10",
+   "name": "Spacer hex, M2, 10 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-12",
+   "name": "Spacer hex, M2, 12 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-15",
+   "name": "Spacer hex, M2, 15 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-18",
+   "name": "Spacer hex, M2, 18 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-20",
+   "name": "Spacer hex, M2, 20 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-25",
+   "name": "Spacer hex, M2, 25 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-30",
+   "name": "Spacer hex, M2, 30 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-35",
+   "name": "Spacer hex, M2, 35 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2-40",
+   "name": "Spacer hex, M2, 40 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2 screws (2.4 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.4,
+    "outerDiameter": 5,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m2p5-1",
+   "name": "Washer hex, M2.5, 1 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M2.5 screws (2.9 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m2p5-1p5",
+   "name": "Washer hex, M2.5, 1.5 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M2.5 screws (2.9 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-2",
+   "name": "Spacer hex, M2.5, 2 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-3",
+   "name": "Spacer hex, M2.5, 3 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-4",
+   "name": "Spacer hex, M2.5, 4 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-5",
+   "name": "Spacer hex, M2.5, 5 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-6",
+   "name": "Spacer hex, M2.5, 6 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-8",
+   "name": "Spacer hex, M2.5, 8 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-10",
+   "name": "Spacer hex, M2.5, 10 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-12",
+   "name": "Spacer hex, M2.5, 12 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-15",
+   "name": "Spacer hex, M2.5, 15 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-18",
+   "name": "Spacer hex, M2.5, 18 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-20",
+   "name": "Spacer hex, M2.5, 20 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-25",
+   "name": "Spacer hex, M2.5, 25 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-30",
+   "name": "Spacer hex, M2.5, 30 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-35",
+   "name": "Spacer hex, M2.5, 35 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m2p5-40",
+   "name": "Spacer hex, M2.5, 40 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M2.5 screws (2.9 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M2.5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 2.9,
+    "outerDiameter": 6,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m3-1",
+   "name": "Washer hex, M3, 1 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M3 screws (3.4 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m3-1p5",
+   "name": "Washer hex, M3, 1.5 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M3 screws (3.4 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-2",
+   "name": "Spacer hex, M3, 2 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-3",
+   "name": "Spacer hex, M3, 3 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-4",
+   "name": "Spacer hex, M3, 4 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-5",
+   "name": "Spacer hex, M3, 5 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-6",
+   "name": "Spacer hex, M3, 6 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-8",
+   "name": "Spacer hex, M3, 8 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-10",
+   "name": "Spacer hex, M3, 10 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-12",
+   "name": "Spacer hex, M3, 12 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-15",
+   "name": "Spacer hex, M3, 15 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-18",
+   "name": "Spacer hex, M3, 18 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-20",
+   "name": "Spacer hex, M3, 20 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-25",
+   "name": "Spacer hex, M3, 25 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-30",
+   "name": "Spacer hex, M3, 30 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-35",
+   "name": "Spacer hex, M3, 35 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m3-40",
+   "name": "Spacer hex, M3, 40 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M3 screws (3.4 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M3",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 3.4,
+    "outerDiameter": 7,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m4-1",
+   "name": "Washer hex, M4, 1 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M4 screws (4.5 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m4-1p5",
+   "name": "Washer hex, M4, 1.5 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M4 screws (4.5 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-2",
+   "name": "Spacer hex, M4, 2 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-3",
+   "name": "Spacer hex, M4, 3 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-4",
+   "name": "Spacer hex, M4, 4 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-5",
+   "name": "Spacer hex, M4, 5 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-6",
+   "name": "Spacer hex, M4, 6 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-8",
+   "name": "Spacer hex, M4, 8 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-10",
+   "name": "Spacer hex, M4, 10 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-12",
+   "name": "Spacer hex, M4, 12 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-15",
+   "name": "Spacer hex, M4, 15 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-18",
+   "name": "Spacer hex, M4, 18 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-20",
+   "name": "Spacer hex, M4, 20 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-25",
+   "name": "Spacer hex, M4, 25 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-30",
+   "name": "Spacer hex, M4, 30 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-35",
+   "name": "Spacer hex, M4, 35 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m4-40",
+   "name": "Spacer hex, M4, 40 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M4 screws (4.5 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M4",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 4.5,
+    "outerDiameter": 9.2,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m5-1",
+   "name": "Washer hex, M5, 1 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M5 screws (5.5 mm hole), 1 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 1,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "washer-hex-m5-1p5",
+   "name": "Washer hex, M5, 1.5 mm",
+   "generator": "spacer",
+   "description": "Hex washer for M5 screws (5.5 mm hole), 1.5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 1.5,
+    "count": 8
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-2",
+   "name": "Spacer hex, M5, 2 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 2 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 2,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-3",
+   "name": "Spacer hex, M5, 3 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 3 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 3,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-4",
+   "name": "Spacer hex, M5, 4 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 4 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 4,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-5",
+   "name": "Spacer hex, M5, 5 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 5 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 5,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-6",
+   "name": "Spacer hex, M5, 6 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 6 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 6,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-8",
+   "name": "Spacer hex, M5, 8 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 8 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 8,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-10",
+   "name": "Spacer hex, M5, 10 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 10 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 10,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-12",
+   "name": "Spacer hex, M5, 12 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 12 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 12,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-15",
+   "name": "Spacer hex, M5, 15 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 15 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 15,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-18",
+   "name": "Spacer hex, M5, 18 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 18 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 18,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-20",
+   "name": "Spacer hex, M5, 20 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 20 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 20,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-25",
+   "name": "Spacer hex, M5, 25 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 25 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 25,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-30",
+   "name": "Spacer hex, M5, 30 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 30 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 30,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-35",
+   "name": "Spacer hex, M5, 35 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 35 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 35,
+    "count": 4
+   },
+   "series": "spacers"
+  },
+  {
+   "id": "spacer-hex-m5-40",
+   "name": "Spacer hex, M5, 40 mm",
+   "generator": "spacer",
+   "description": "Hex spacer for M5 screws (5.5 mm hole), 40 mm long.",
+   "tags": [
+    "spacer",
+    "standoff",
+    "hardware",
+    "M5",
+    "hex"
+   ],
+   "params": {
+    "shape": "hex",
+    "innerDiameter": 5.5,
+    "outerDiameter": 11.2,
+    "length": 40,
+    "count": 4
+   },
+   "series": "spacers"
+  }
+ ]
+}

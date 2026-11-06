@@ -1,0 +1,2347 @@
+{
+ "group": "Tool rack sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "rack-round-4-4-pegboard",
+   "name": "Tool rack, 4 round holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 60
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-4-screw",
+   "name": "Tool rack, 4 round holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 60
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-6-pegboard",
+   "name": "Tool rack, 6 round holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-6-screw",
+   "name": "Tool rack, 6 round holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-8-pegboard",
+   "name": "Tool rack, 8 round holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-8-screw",
+   "name": "Tool rack, 8 round holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-10-pegboard",
+   "name": "Tool rack, 10 round holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-4-10-screw",
+   "name": "Tool rack, 10 round holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-4-pegboard",
+   "name": "Tool rack, 4 round holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 66
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-4-screw",
+   "name": "Tool rack, 4 round holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 66
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-6-pegboard",
+   "name": "Tool rack, 6 round holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-6-screw",
+   "name": "Tool rack, 6 round holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-8-pegboard",
+   "name": "Tool rack, 8 round holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-8-screw",
+   "name": "Tool rack, 8 round holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-10-pegboard",
+   "name": "Tool rack, 10 round holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 150
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-6-10-screw",
+   "name": "Tool rack, 10 round holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 150
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-4-pegboard",
+   "name": "Tool rack, 4 round holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 78
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-4-screw",
+   "name": "Tool rack, 4 round holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 78
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-6-pegboard",
+   "name": "Tool rack, 6 round holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 112
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-6-screw",
+   "name": "Tool rack, 6 round holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 112
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-8-pegboard",
+   "name": "Tool rack, 8 round holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 146
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-8-screw",
+   "name": "Tool rack, 8 round holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 146
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-10-pegboard",
+   "name": "Tool rack, 10 round holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 180
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-9-10-screw",
+   "name": "Tool rack, 10 round holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 180
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-4-pegboard",
+   "name": "Tool rack, 4 round holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 90
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-4-screw",
+   "name": "Tool rack, 4 round holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 90
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-6-pegboard",
+   "name": "Tool rack, 6 round holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-6-screw",
+   "name": "Tool rack, 6 round holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-8-pegboard",
+   "name": "Tool rack, 8 round holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-8-screw",
+   "name": "Tool rack, 8 round holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-10-pegboard",
+   "name": "Tool rack, 10 round holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-12-10-screw",
+   "name": "Tool rack, 10 round holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-4-pegboard",
+   "name": "Tool rack, 4 round holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-4-screw",
+   "name": "Tool rack, 4 round holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 round holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-6-pegboard",
+   "name": "Tool rack, 6 round holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-6-screw",
+   "name": "Tool rack, 6 round holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 round holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-8-pegboard",
+   "name": "Tool rack, 8 round holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-8-screw",
+   "name": "Tool rack, 8 round holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 round holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-10-pegboard",
+   "name": "Tool rack, 10 round holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-round-16-10-screw",
+   "name": "Tool rack, 10 round holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 round holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "round",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "round",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-4-pegboard",
+   "name": "Tool rack, 4 hex holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 60
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-4-screw",
+   "name": "Tool rack, 4 hex holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 60
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-6-pegboard",
+   "name": "Tool rack, 6 hex holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-6-screw",
+   "name": "Tool rack, 6 hex holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-8-pegboard",
+   "name": "Tool rack, 8 hex holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-8-screw",
+   "name": "Tool rack, 8 hex holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-10-pegboard",
+   "name": "Tool rack, 10 hex holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-4-10-screw",
+   "name": "Tool rack, 10 hex holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-4-pegboard",
+   "name": "Tool rack, 4 hex holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 66
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-4-screw",
+   "name": "Tool rack, 4 hex holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 66
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-6-pegboard",
+   "name": "Tool rack, 6 hex holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-6-screw",
+   "name": "Tool rack, 6 hex holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-8-pegboard",
+   "name": "Tool rack, 8 hex holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-8-screw",
+   "name": "Tool rack, 8 hex holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-10-pegboard",
+   "name": "Tool rack, 10 hex holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 150
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-6-10-screw",
+   "name": "Tool rack, 10 hex holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 150
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-4-pegboard",
+   "name": "Tool rack, 4 hex holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 78
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-4-screw",
+   "name": "Tool rack, 4 hex holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 78
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-6-pegboard",
+   "name": "Tool rack, 6 hex holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 112
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-6-screw",
+   "name": "Tool rack, 6 hex holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 112
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-8-pegboard",
+   "name": "Tool rack, 8 hex holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 146
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-8-screw",
+   "name": "Tool rack, 8 hex holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 146
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-10-pegboard",
+   "name": "Tool rack, 10 hex holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 180
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-9-10-screw",
+   "name": "Tool rack, 10 hex holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 180
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-4-pegboard",
+   "name": "Tool rack, 4 hex holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 90
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-4-screw",
+   "name": "Tool rack, 4 hex holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 90
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-6-pegboard",
+   "name": "Tool rack, 6 hex holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-6-screw",
+   "name": "Tool rack, 6 hex holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 130
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-8-pegboard",
+   "name": "Tool rack, 8 hex holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-8-screw",
+   "name": "Tool rack, 8 hex holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-10-pegboard",
+   "name": "Tool rack, 10 hex holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-12-10-screw",
+   "name": "Tool rack, 10 hex holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-4-pegboard",
+   "name": "Tool rack, 4 hex holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-4-screw",
+   "name": "Tool rack, 4 hex holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 hex holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-6-pegboard",
+   "name": "Tool rack, 6 hex holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-6-screw",
+   "name": "Tool rack, 6 hex holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 hex holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-8-pegboard",
+   "name": "Tool rack, 8 hex holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-8-screw",
+   "name": "Tool rack, 8 hex holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 hex holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-10-pegboard",
+   "name": "Tool rack, 10 hex holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-hex-16-10-screw",
+   "name": "Tool rack, 10 hex holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 hex holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "hex",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "hex",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-4-pegboard",
+   "name": "Tool rack, 4 slot holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 74
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-4-screw",
+   "name": "Tool rack, 4 slot holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 74
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-6-pegboard",
+   "name": "Tool rack, 6 slot holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-6-screw",
+   "name": "Tool rack, 6 slot holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-8-pegboard",
+   "name": "Tool rack, 8 slot holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 138
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-8-screw",
+   "name": "Tool rack, 8 slot holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 138
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-10-pegboard",
+   "name": "Tool rack, 10 slot holes 4 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 4 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-4-10-screw",
+   "name": "Tool rack, 10 slot holes 4 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 4 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 4,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 170
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-4-pegboard",
+   "name": "Tool rack, 4 slot holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-4-screw",
+   "name": "Tool rack, 4 slot holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 82
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-6-pegboard",
+   "name": "Tool rack, 6 slot holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 118
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-6-screw",
+   "name": "Tool rack, 6 slot holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 118
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-8-pegboard",
+   "name": "Tool rack, 8 slot holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-8-screw",
+   "name": "Tool rack, 8 slot holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-10-pegboard",
+   "name": "Tool rack, 10 slot holes 6 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 6 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 190
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-6-10-screw",
+   "name": "Tool rack, 10 slot holes 6 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 6 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 6,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 190
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-4-pegboard",
+   "name": "Tool rack, 4 slot holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-4-screw",
+   "name": "Tool rack, 4 slot holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 94
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-6-pegboard",
+   "name": "Tool rack, 6 slot holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 136
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-6-screw",
+   "name": "Tool rack, 6 slot holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 136
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-8-pegboard",
+   "name": "Tool rack, 8 slot holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 178
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-8-screw",
+   "name": "Tool rack, 8 slot holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 178
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-10-pegboard",
+   "name": "Tool rack, 10 slot holes 9 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 9 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-9-10-screw",
+   "name": "Tool rack, 10 slot holes 9 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 9 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 9,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-4-pegboard",
+   "name": "Tool rack, 4 slot holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-4-screw",
+   "name": "Tool rack, 4 slot holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 106
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-6-pegboard",
+   "name": "Tool rack, 6 slot holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-6-screw",
+   "name": "Tool rack, 6 slot holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 154
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-8-pegboard",
+   "name": "Tool rack, 8 slot holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-8-screw",
+   "name": "Tool rack, 8 slot holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-10-pegboard",
+   "name": "Tool rack, 10 slot holes 12 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 12 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-12-10-screw",
+   "name": "Tool rack, 10 slot holes 12 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 12 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 12,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-4-pegboard",
+   "name": "Tool rack, 4 slot holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "pegboard",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-4-screw",
+   "name": "Tool rack, 4 slot holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 4 slot holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 4,
+    "mount": "screw",
+    "width": 122
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-6-pegboard",
+   "name": "Tool rack, 6 slot holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "pegboard",
+    "width": 178
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-6-screw",
+   "name": "Tool rack, 6 slot holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 6 slot holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 6,
+    "mount": "screw",
+    "width": 178
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-8-pegboard",
+   "name": "Tool rack, 8 slot holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-8-screw",
+   "name": "Tool rack, 8 slot holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 8 slot holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 8,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-10-pegboard",
+   "name": "Tool rack, 10 slot holes 16 mm, pegboard",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 16 mm, pegboard.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "pegboard",
+    "width": 200
+   },
+   "series": "tool-racks"
+  },
+  {
+   "id": "rack-slot-16-10-screw",
+   "name": "Tool rack, 10 slot holes 16 mm, screw",
+   "generator": "tool-rack",
+   "description": "Tool rack, 10 slot holes 16 mm, screw.",
+   "tags": [
+    "tool rack",
+    "pegboard",
+    "slot",
+    "screw"
+   ],
+   "params": {
+    "holeShape": "slot",
+    "holeSize": 16,
+    "holeCount": 10,
+    "mount": "screw",
+    "width": 200
+   },
+   "series": "tool-racks"
+  }
+ ]
+}

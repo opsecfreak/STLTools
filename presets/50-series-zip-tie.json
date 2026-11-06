@@ -1,0 +1,463 @@
+{
+ "group": "Zip-tie anchor sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "ziptie-2p5-screw",
+   "name": "Zip-tie anchor 2.5 mm tie, screw",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, screw.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "screw",
+    "cross": false,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-2p5-screw-cross",
+   "name": "Zip-tie anchor 2.5 mm tie, screw, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, screw, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "screw",
+    "cross": true,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-2p5-two",
+   "name": "Zip-tie anchor 2.5 mm tie, two screws",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, two screws.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "two",
+    "cross": false,
+    "size": 20,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-2p5-two-cross",
+   "name": "Zip-tie anchor 2.5 mm tie, two screws, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, two screws, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "two",
+    "cross": true,
+    "size": 20,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-2p5-flat",
+   "name": "Zip-tie anchor 2.5 mm tie, flat",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, flat.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "flat",
+    "cross": false,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-2p5-flat-cross",
+   "name": "Zip-tie anchor 2.5 mm tie, flat, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 2.5 mm tie, flat, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "2.5mm"
+   ],
+   "params": {
+    "tieWidth": 2.5,
+    "mount": "flat",
+    "cross": true,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-screw",
+   "name": "Zip-tie anchor 3.6 mm tie, screw",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, screw.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "screw",
+    "cross": false,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-screw-cross",
+   "name": "Zip-tie anchor 3.6 mm tie, screw, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, screw, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "screw",
+    "cross": true,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-two",
+   "name": "Zip-tie anchor 3.6 mm tie, two screws",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, two screws.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "two",
+    "cross": false,
+    "size": 20,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-two-cross",
+   "name": "Zip-tie anchor 3.6 mm tie, two screws, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, two screws, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "two",
+    "cross": true,
+    "size": 20,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-flat",
+   "name": "Zip-tie anchor 3.6 mm tie, flat",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, flat.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "flat",
+    "cross": false,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-3p6-flat-cross",
+   "name": "Zip-tie anchor 3.6 mm tie, flat, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 3.6 mm tie, flat, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "3.6mm"
+   ],
+   "params": {
+    "tieWidth": 3.6,
+    "mount": "flat",
+    "cross": true,
+    "size": 12,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-screw",
+   "name": "Zip-tie anchor 4.8 mm tie, screw",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, screw.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "screw",
+    "cross": false,
+    "size": 14,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-screw-cross",
+   "name": "Zip-tie anchor 4.8 mm tie, screw, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, screw, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "screw",
+    "cross": true,
+    "size": 14,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-two",
+   "name": "Zip-tie anchor 4.8 mm tie, two screws",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, two screws.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "two",
+    "cross": false,
+    "size": 19,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-two-cross",
+   "name": "Zip-tie anchor 4.8 mm tie, two screws, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, two screws, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "two",
+    "cross": true,
+    "size": 19,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-flat",
+   "name": "Zip-tie anchor 4.8 mm tie, flat",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, flat.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "flat",
+    "cross": false,
+    "size": 14,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-4p8-flat-cross",
+   "name": "Zip-tie anchor 4.8 mm tie, flat, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 4.8 mm tie, flat, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "4.8mm"
+   ],
+   "params": {
+    "tieWidth": 4.8,
+    "mount": "flat",
+    "cross": true,
+    "size": 14,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-screw",
+   "name": "Zip-tie anchor 7.6 mm tie, screw",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, screw.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "screw",
+    "cross": false,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-screw-cross",
+   "name": "Zip-tie anchor 7.6 mm tie, screw, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, screw, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "screw",
+    "cross": true,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-two",
+   "name": "Zip-tie anchor 7.6 mm tie, two screws",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, two screws.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "two",
+    "cross": false,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-two-cross",
+   "name": "Zip-tie anchor 7.6 mm tie, two screws, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, two screws, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "two",
+    "cross": true,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-flat",
+   "name": "Zip-tie anchor 7.6 mm tie, flat",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, flat.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "flat",
+    "cross": false,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  },
+  {
+   "id": "ziptie-7p6-flat-cross",
+   "name": "Zip-tie anchor 7.6 mm tie, flat, cross",
+   "generator": "zip-tie-mount",
+   "description": "Zip-tie anchor 7.6 mm tie, flat, cross.",
+   "tags": [
+    "zip tie",
+    "cable",
+    "7.6mm"
+   ],
+   "params": {
+    "tieWidth": 7.6,
+    "mount": "flat",
+    "cross": true,
+    "size": 23,
+    "count": 4
+   },
+   "series": "zip-tie"
+  }
+ ]
+}

@@ -1,0 +1,4567 @@
+{
+ "group": "Joint sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "joint-straight-6",
+   "name": "Straight joiner, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-6-screw",
+   "name": "Straight joiner, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-8",
+   "name": "Straight joiner, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-8-screw",
+   "name": "Straight joiner, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-10-s",
+   "name": "Straight joiner, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-10-screw",
+   "name": "Straight joiner, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-12",
+   "name": "Straight joiner, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-12-screw",
+   "name": "Straight joiner, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-14",
+   "name": "Straight joiner, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-14-screw",
+   "name": "Straight joiner, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-15",
+   "name": "Straight joiner, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-15-screw",
+   "name": "Straight joiner, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-16-s",
+   "name": "Straight joiner, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-16-screw",
+   "name": "Straight joiner, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-18",
+   "name": "Straight joiner, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-18-screw",
+   "name": "Straight joiner, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-19",
+   "name": "Straight joiner, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-19-screw",
+   "name": "Straight joiner, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-20",
+   "name": "Straight joiner, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-20-screw",
+   "name": "Straight joiner, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-22",
+   "name": "Straight joiner, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-22-screw",
+   "name": "Straight joiner, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-25",
+   "name": "Straight joiner, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-straight-25-screw",
+   "name": "Straight joiner, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Straight joiner for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "straight"
+   ],
+   "params": {
+    "type": "straight",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-6",
+   "name": "Elbow, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-6-screw",
+   "name": "Elbow, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-8",
+   "name": "Elbow, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-8-screw",
+   "name": "Elbow, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-10-s",
+   "name": "Elbow, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-10-screw",
+   "name": "Elbow, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-12",
+   "name": "Elbow, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-12-screw",
+   "name": "Elbow, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-14",
+   "name": "Elbow, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-14-screw",
+   "name": "Elbow, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-15",
+   "name": "Elbow, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-15-screw",
+   "name": "Elbow, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-16-s",
+   "name": "Elbow, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-16-screw",
+   "name": "Elbow, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-18",
+   "name": "Elbow, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-18-screw",
+   "name": "Elbow, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-19",
+   "name": "Elbow, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-19-screw",
+   "name": "Elbow, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-20",
+   "name": "Elbow, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-20-screw",
+   "name": "Elbow, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-22",
+   "name": "Elbow, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-22-screw",
+   "name": "Elbow, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-25",
+   "name": "Elbow, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Elbow for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-elbow-25-screw",
+   "name": "Elbow, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Elbow for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "elbow"
+   ],
+   "params": {
+    "type": "elbow",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-6",
+   "name": "Tee, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-6-screw",
+   "name": "Tee, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-8",
+   "name": "Tee, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-8-screw",
+   "name": "Tee, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-10-s",
+   "name": "Tee, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-10-screw",
+   "name": "Tee, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-12",
+   "name": "Tee, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-12-screw",
+   "name": "Tee, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-14",
+   "name": "Tee, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-14-screw",
+   "name": "Tee, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-15",
+   "name": "Tee, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-15-screw",
+   "name": "Tee, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-16-s",
+   "name": "Tee, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-16-screw",
+   "name": "Tee, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-18",
+   "name": "Tee, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-18-screw",
+   "name": "Tee, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-19",
+   "name": "Tee, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-19-screw",
+   "name": "Tee, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-20",
+   "name": "Tee, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-20-screw",
+   "name": "Tee, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-22",
+   "name": "Tee, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-22-screw",
+   "name": "Tee, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-25",
+   "name": "Tee, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-25-screw",
+   "name": "Tee, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee"
+   ],
+   "params": {
+    "type": "tee",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-6",
+   "name": "Cross, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-6-screw",
+   "name": "Cross, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-8",
+   "name": "Cross, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-8-screw",
+   "name": "Cross, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-10-s",
+   "name": "Cross, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-10-screw",
+   "name": "Cross, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-12",
+   "name": "Cross, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-12-screw",
+   "name": "Cross, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-14",
+   "name": "Cross, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-14-screw",
+   "name": "Cross, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-15",
+   "name": "Cross, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-15-screw",
+   "name": "Cross, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-16-s",
+   "name": "Cross, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-16-screw",
+   "name": "Cross, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-18",
+   "name": "Cross, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-18-screw",
+   "name": "Cross, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-19",
+   "name": "Cross, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-19-screw",
+   "name": "Cross, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-20",
+   "name": "Cross, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-20-screw",
+   "name": "Cross, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-22",
+   "name": "Cross, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-22-screw",
+   "name": "Cross, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-25",
+   "name": "Cross, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-25-screw",
+   "name": "Cross, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-6",
+   "name": "Y joint, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-6-screw",
+   "name": "Y joint, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-8",
+   "name": "Y joint, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-8-screw",
+   "name": "Y joint, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-10",
+   "name": "Y joint, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-10-screw",
+   "name": "Y joint, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-12",
+   "name": "Y joint, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-12-screw",
+   "name": "Y joint, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-14",
+   "name": "Y joint, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-14-screw",
+   "name": "Y joint, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-15",
+   "name": "Y joint, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-15-screw",
+   "name": "Y joint, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-16",
+   "name": "Y joint, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-16-screw",
+   "name": "Y joint, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-18",
+   "name": "Y joint, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-18-screw",
+   "name": "Y joint, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-19",
+   "name": "Y joint, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-19-screw",
+   "name": "Y joint, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-20",
+   "name": "Y joint, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-20-screw",
+   "name": "Y joint, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-22",
+   "name": "Y joint, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-22-screw",
+   "name": "Y joint, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-25",
+   "name": "Y joint, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Y joint for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-y-25-screw",
+   "name": "Y joint, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Y joint for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "y"
+   ],
+   "params": {
+    "type": "y",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-6",
+   "name": "Radial hub, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-6-screw",
+   "name": "Radial hub, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-8",
+   "name": "Radial hub, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-8-screw",
+   "name": "Radial hub, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-10",
+   "name": "Radial hub, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-10-screw",
+   "name": "Radial hub, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-12",
+   "name": "Radial hub, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-12-screw",
+   "name": "Radial hub, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-14",
+   "name": "Radial hub, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-14-screw",
+   "name": "Radial hub, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-15",
+   "name": "Radial hub, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-15-screw",
+   "name": "Radial hub, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-16",
+   "name": "Radial hub, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-16-screw",
+   "name": "Radial hub, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-18",
+   "name": "Radial hub, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-18-screw",
+   "name": "Radial hub, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-19",
+   "name": "Radial hub, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-19-screw",
+   "name": "Radial hub, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-20",
+   "name": "Radial hub, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-20-screw",
+   "name": "Radial hub, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-22",
+   "name": "Radial hub, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-22-screw",
+   "name": "Radial hub, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-25",
+   "name": "Radial hub, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Radial hub for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-radial-25-screw",
+   "name": "Radial hub, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Radial hub for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "radial"
+   ],
+   "params": {
+    "type": "radial",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-6",
+   "name": "3-way corner, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-6-screw",
+   "name": "3-way corner, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-8",
+   "name": "3-way corner, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-8-screw",
+   "name": "3-way corner, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-10-s",
+   "name": "3-way corner, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-10-screw",
+   "name": "3-way corner, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-12",
+   "name": "3-way corner, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-12-screw",
+   "name": "3-way corner, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-14",
+   "name": "3-way corner, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-14-screw",
+   "name": "3-way corner, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-15",
+   "name": "3-way corner, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-15-screw",
+   "name": "3-way corner, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-16-s",
+   "name": "3-way corner, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-16-screw",
+   "name": "3-way corner, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-18",
+   "name": "3-way corner, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-18-screw",
+   "name": "3-way corner, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-19",
+   "name": "3-way corner, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-19-screw",
+   "name": "3-way corner, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-20",
+   "name": "3-way corner, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-20-screw",
+   "name": "3-way corner, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-22",
+   "name": "3-way corner, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-22-screw",
+   "name": "3-way corner, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-25",
+   "name": "3-way corner, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "3-way corner for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-25-screw",
+   "name": "3-way corner, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "3-way corner for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner"
+   ],
+   "params": {
+    "type": "corner",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-6",
+   "name": "Tee with riser, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-6-screw",
+   "name": "Tee with riser, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-8",
+   "name": "Tee with riser, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-8-screw",
+   "name": "Tee with riser, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-10-s",
+   "name": "Tee with riser, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-10-screw",
+   "name": "Tee with riser, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-12",
+   "name": "Tee with riser, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-12-screw",
+   "name": "Tee with riser, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-14",
+   "name": "Tee with riser, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-14-screw",
+   "name": "Tee with riser, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-15",
+   "name": "Tee with riser, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-15-screw",
+   "name": "Tee with riser, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-16-s",
+   "name": "Tee with riser, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-16-screw",
+   "name": "Tee with riser, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-18",
+   "name": "Tee with riser, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-18-screw",
+   "name": "Tee with riser, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-19",
+   "name": "Tee with riser, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-19-screw",
+   "name": "Tee with riser, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-20",
+   "name": "Tee with riser, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-20-screw",
+   "name": "Tee with riser, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-22",
+   "name": "Tee with riser, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-22-screw",
+   "name": "Tee with riser, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-25",
+   "name": "Tee with riser, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-tee-up-25-screw",
+   "name": "Tee with riser, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Tee with riser for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "tee-up"
+   ],
+   "params": {
+    "type": "tee-up",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-6",
+   "name": "4-way corner, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-6-screw",
+   "name": "4-way corner, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-8",
+   "name": "4-way corner, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-8-screw",
+   "name": "4-way corner, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-10-s",
+   "name": "4-way corner, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-10-screw",
+   "name": "4-way corner, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-12",
+   "name": "4-way corner, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-12-screw",
+   "name": "4-way corner, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-14",
+   "name": "4-way corner, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-14-screw",
+   "name": "4-way corner, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-15",
+   "name": "4-way corner, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-15-screw",
+   "name": "4-way corner, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-16-s",
+   "name": "4-way corner, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-16-screw",
+   "name": "4-way corner, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-18",
+   "name": "4-way corner, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-18-screw",
+   "name": "4-way corner, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-19",
+   "name": "4-way corner, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-19-screw",
+   "name": "4-way corner, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-20",
+   "name": "4-way corner, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-20-screw",
+   "name": "4-way corner, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-22",
+   "name": "4-way corner, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-22-screw",
+   "name": "4-way corner, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-25",
+   "name": "4-way corner, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "4-way corner for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-corner-4-25-screw",
+   "name": "4-way corner, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "4-way corner for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "corner-4"
+   ],
+   "params": {
+    "type": "corner-4",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-6",
+   "name": "Cross with riser, 6 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 6 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-6-screw",
+   "name": "Cross with riser, 6 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 6 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 6,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-8",
+   "name": "Cross with riser, 8 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 8 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-8-screw",
+   "name": "Cross with riser, 8 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 8 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 8,
+    "socketDepth": 12,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-10-s",
+   "name": "Cross with riser, 10 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 10 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-10-screw",
+   "name": "Cross with riser, 10 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 10 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 10,
+    "socketDepth": 14,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-12",
+   "name": "Cross with riser, 12 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 12 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-12-screw",
+   "name": "Cross with riser, 12 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 12 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 12,
+    "socketDepth": 17,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-14",
+   "name": "Cross with riser, 14 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 14 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-14-screw",
+   "name": "Cross with riser, 14 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 14 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 14,
+    "socketDepth": 20,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-15",
+   "name": "Cross with riser, 15 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 15 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-15-screw",
+   "name": "Cross with riser, 15 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 15 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 15,
+    "socketDepth": 21,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-16-s",
+   "name": "Cross with riser, 16 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 16 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-16-screw",
+   "name": "Cross with riser, 16 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 16 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 16,
+    "socketDepth": 22,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-18",
+   "name": "Cross with riser, 18 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 18 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-18-screw",
+   "name": "Cross with riser, 18 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 18 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 18,
+    "socketDepth": 25,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-19",
+   "name": "Cross with riser, 19 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 19 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-19-screw",
+   "name": "Cross with riser, 19 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 19 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 19,
+    "socketDepth": 27,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-20",
+   "name": "Cross with riser, 20 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 20 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-20-screw",
+   "name": "Cross with riser, 20 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 20 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 20,
+    "socketDepth": 28,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-22",
+   "name": "Cross with riser, 22 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 22 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-22-screw",
+   "name": "Cross with riser, 22 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 22 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 22,
+    "socketDepth": 31,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-25",
+   "name": "Cross with riser, 25 mm tube",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 25 mm OD tubes. Glue in.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": false
+   },
+   "series": "tube-joints"
+  },
+  {
+   "id": "joint-cross-up-25-screw",
+   "name": "Cross with riser, 25 mm tube, set screws",
+   "generator": "tube-joint",
+   "description": "Cross with riser for 25 mm OD tubes. M3 set screw in each socket.",
+   "tags": [
+    "joint",
+    "tube",
+    "frame",
+    "cross-up"
+   ],
+   "params": {
+    "type": "cross-up",
+    "tubeOD": 25,
+    "socketDepth": 35,
+    "setScrew": true
+   },
+   "series": "tube-joints"
+  }
+ ]
+}

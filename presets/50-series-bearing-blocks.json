@@ -1,0 +1,1105 @@
+{
+ "group": "Bearing block sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "bearing-flange-608",
+   "name": "Flange block, 608",
+   "generator": "bearing-block",
+   "description": "Flange block for a 608 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "608",
+    "flange"
+   ],
+   "params": {
+    "bearing": "608",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-608",
+   "name": "Pillow block, 608",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 608 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "608",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "608",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-623",
+   "name": "Flange block, 623",
+   "generator": "bearing-block",
+   "description": "Flange block for a 623 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "623",
+    "flange"
+   ],
+   "params": {
+    "bearing": "623",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-623",
+   "name": "Pillow block, 623",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 623 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "623",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "623",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-625",
+   "name": "Pillow block, 625",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 625 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "625",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "625",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-688",
+   "name": "Flange block, 688",
+   "generator": "bearing-block",
+   "description": "Flange block for a 688 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "688",
+    "flange"
+   ],
+   "params": {
+    "bearing": "688",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-688",
+   "name": "Pillow block, 688",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 688 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "688",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "688",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6000",
+   "name": "Flange block, 6000",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6000 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6000",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6000",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6000",
+   "name": "Pillow block, 6000",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6000 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6000",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6000",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6001",
+   "name": "Flange block, 6001",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6001 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6001",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6001",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6001",
+   "name": "Pillow block, 6001",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6001 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6001",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6001",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6801",
+   "name": "Flange block, 6801",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6801 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6801",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6801",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6801",
+   "name": "Pillow block, 6801",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6801 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6801",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6801",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6800",
+   "name": "Flange block, 6800",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6800 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6800",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6800",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6800",
+   "name": "Pillow block, 6800",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6800 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6800",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6800",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6802",
+   "name": "Flange block, 6802",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6802 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6802",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6802",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6802",
+   "name": "Pillow block, 6802",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6802 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6802",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6802",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6803",
+   "name": "Flange block, 6803",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6803 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6803",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6803",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6803",
+   "name": "Pillow block, 6803",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6803 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6803",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6803",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6804",
+   "name": "Flange block, 6804",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6804 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6804",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6804",
+    "style": "flange",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6804",
+   "name": "Pillow block, 6804",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6804 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6804",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6804",
+    "style": "pillow",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6805",
+   "name": "Flange block, 6805",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6805 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6805",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6805",
+    "style": "flange",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6805",
+   "name": "Pillow block, 6805",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6805 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6805",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6805",
+    "style": "pillow",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6700",
+   "name": "Flange block, 6700",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6700 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6700",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6700",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6700",
+   "name": "Pillow block, 6700",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6700 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6700",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6700",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6900",
+   "name": "Flange block, 6900",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6900 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6900",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6900",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6900",
+   "name": "Pillow block, 6900",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6900 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6900",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6900",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6002",
+   "name": "Flange block, 6002",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6002 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6002",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6002",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6002",
+   "name": "Pillow block, 6002",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6002 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6002",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6002",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6003",
+   "name": "Flange block, 6003",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6003 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6003",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6003",
+    "style": "flange",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6003",
+   "name": "Pillow block, 6003",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6003 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6003",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6003",
+    "style": "pillow",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6200",
+   "name": "Flange block, 6200",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6200 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6200",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6200",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6200",
+   "name": "Pillow block, 6200",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6200 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6200",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6200",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6201",
+   "name": "Flange block, 6201",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6201 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6201",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6201",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6201",
+   "name": "Pillow block, 6201",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6201 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6201",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6201",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-6202",
+   "name": "Flange block, 6202",
+   "generator": "bearing-block",
+   "description": "Flange block for a 6202 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6202",
+    "flange"
+   ],
+   "params": {
+    "bearing": "6202",
+    "style": "flange",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-6202",
+   "name": "Pillow block, 6202",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 6202 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "6202",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "6202",
+    "style": "pillow",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-624",
+   "name": "Flange block, 624",
+   "generator": "bearing-block",
+   "description": "Flange block for a 624 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "624",
+    "flange"
+   ],
+   "params": {
+    "bearing": "624",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-624",
+   "name": "Pillow block, 624",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 624 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "624",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "624",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-626",
+   "name": "Flange block, 626",
+   "generator": "bearing-block",
+   "description": "Flange block for a 626 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "626",
+    "flange"
+   ],
+   "params": {
+    "bearing": "626",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-626",
+   "name": "Pillow block, 626",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 626 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "626",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "626",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-627",
+   "name": "Flange block, 627",
+   "generator": "bearing-block",
+   "description": "Flange block for a 627 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "627",
+    "flange"
+   ],
+   "params": {
+    "bearing": "627",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-627",
+   "name": "Pillow block, 627",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 627 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "627",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "627",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-629",
+   "name": "Flange block, 629",
+   "generator": "bearing-block",
+   "description": "Flange block for a 629 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "629",
+    "flange"
+   ],
+   "params": {
+    "bearing": "629",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-629",
+   "name": "Pillow block, 629",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 629 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "629",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "629",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-693",
+   "name": "Flange block, 693",
+   "generator": "bearing-block",
+   "description": "Flange block for a 693 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "693",
+    "flange"
+   ],
+   "params": {
+    "bearing": "693",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-693",
+   "name": "Pillow block, 693",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 693 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "693",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "693",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-695",
+   "name": "Flange block, 695",
+   "generator": "bearing-block",
+   "description": "Flange block for a 695 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "695",
+    "flange"
+   ],
+   "params": {
+    "bearing": "695",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-695",
+   "name": "Pillow block, 695",
+   "generator": "bearing-block",
+   "description": "Pillow block for a 695 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "695",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "695",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-mr105",
+   "name": "Flange block, MR105",
+   "generator": "bearing-block",
+   "description": "Flange block for a MR105 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "MR105",
+    "flange"
+   ],
+   "params": {
+    "bearing": "MR105",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-mr105",
+   "name": "Pillow block, MR105",
+   "generator": "bearing-block",
+   "description": "Pillow block for a MR105 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "MR105",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "MR105",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-mr85",
+   "name": "Flange block, MR85",
+   "generator": "bearing-block",
+   "description": "Flange block for a MR85 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "MR85",
+    "flange"
+   ],
+   "params": {
+    "bearing": "MR85",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-mr85",
+   "name": "Pillow block, MR85",
+   "generator": "bearing-block",
+   "description": "Pillow block for a MR85 bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "MR85",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "MR85",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-lm6uu",
+   "name": "Flange block, LM6UU",
+   "generator": "bearing-block",
+   "description": "Flange block for a LM6UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM6UU",
+    "flange"
+   ],
+   "params": {
+    "bearing": "LM6UU",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-lm6uu",
+   "name": "Pillow block, LM6UU",
+   "generator": "bearing-block",
+   "description": "Pillow block for a LM6UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM6UU",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "LM6UU",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-lm8uu",
+   "name": "Flange block, LM8UU",
+   "generator": "bearing-block",
+   "description": "Flange block for a LM8UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM8UU",
+    "flange"
+   ],
+   "params": {
+    "bearing": "LM8UU",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-lm8uu",
+   "name": "Pillow block, LM8UU",
+   "generator": "bearing-block",
+   "description": "Pillow block for a LM8UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM8UU",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "LM8UU",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-lm10uu",
+   "name": "Flange block, LM10UU",
+   "generator": "bearing-block",
+   "description": "Flange block for a LM10UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM10UU",
+    "flange"
+   ],
+   "params": {
+    "bearing": "LM10UU",
+    "style": "flange",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-lm10uu",
+   "name": "Pillow block, LM10UU",
+   "generator": "bearing-block",
+   "description": "Pillow block for a LM10UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM10UU",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "LM10UU",
+    "style": "pillow",
+    "bolt": "M3"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-flange-lm12uu",
+   "name": "Flange block, LM12UU",
+   "generator": "bearing-block",
+   "description": "Flange block for a LM12UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM12UU",
+    "flange"
+   ],
+   "params": {
+    "bearing": "LM12UU",
+    "style": "flange",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  },
+  {
+   "id": "bearing-pillow-lm12uu",
+   "name": "Pillow block, LM12UU",
+   "generator": "bearing-block",
+   "description": "Pillow block for a LM12UU bearing (ISO size). Pocket is a slight press fit.",
+   "tags": [
+    "bearing",
+    "robotics",
+    "LM12UU",
+    "pillow"
+   ],
+   "params": {
+    "bearing": "LM12UU",
+    "style": "pillow",
+    "bolt": "M4"
+   },
+   "series": "bearing-blocks"
+  }
+ ]
+}

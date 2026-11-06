@@ -1,0 +1,349 @@
+{
+ "group": "Extrusion bracket sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "ext-2020-corner-3",
+   "name": "2020 corner bracket, 3 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "2020 corner bracket, 3 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "2020",
+    "corner"
+   ],
+   "params": {
+    "profile": "2020",
+    "type": "corner",
+    "holesPerLeg": 3,
+    "thickness": 4
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-2020-straight-1",
+   "name": "2020 straight bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "2020 straight bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "2020",
+    "straight"
+   ],
+   "params": {
+    "profile": "2020",
+    "type": "straight",
+    "holesPerLeg": 1,
+    "thickness": 4
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-2020-straight-3",
+   "name": "2020 straight bracket, 3 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "2020 straight bracket, 3 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "2020",
+    "straight"
+   ],
+   "params": {
+    "profile": "2020",
+    "type": "straight",
+    "holesPerLeg": 3,
+    "thickness": 4
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-2020-tee-1",
+   "name": "2020 tee bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "2020 tee bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "2020",
+    "tee"
+   ],
+   "params": {
+    "profile": "2020",
+    "type": "tee",
+    "holesPerLeg": 1,
+    "thickness": 4
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-2020-tee-3",
+   "name": "2020 tee bracket, 3 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "2020 tee bracket, 3 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "2020",
+    "tee"
+   ],
+   "params": {
+    "profile": "2020",
+    "type": "tee",
+    "holesPerLeg": 3,
+    "thickness": 4
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-corner-1",
+   "name": "3030 corner bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 corner bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "corner"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "corner",
+    "holesPerLeg": 1,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-corner-2",
+   "name": "3030 corner bracket, 2 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 corner bracket, 2 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "corner"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "corner",
+    "holesPerLeg": 2,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-corner-3",
+   "name": "3030 corner bracket, 3 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 corner bracket, 3 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "corner"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "corner",
+    "holesPerLeg": 3,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-straight-1",
+   "name": "3030 straight bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 straight bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "straight"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "straight",
+    "holesPerLeg": 1,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-straight-2",
+   "name": "3030 straight bracket, 2 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 straight bracket, 2 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "straight"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "straight",
+    "holesPerLeg": 2,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-straight-3",
+   "name": "3030 straight bracket, 3 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 straight bracket, 3 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "straight"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "straight",
+    "holesPerLeg": 3,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-tee-1",
+   "name": "3030 tee bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 tee bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "tee"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "tee",
+    "holesPerLeg": 1,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-3030-tee-2",
+   "name": "3030 tee bracket, 2 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "3030 tee bracket, 2 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "3030",
+    "tee"
+   ],
+   "params": {
+    "profile": "3030",
+    "type": "tee",
+    "holesPerLeg": 2,
+    "thickness": 5
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-4040-corner-1",
+   "name": "4040 corner bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "4040 corner bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "4040",
+    "corner"
+   ],
+   "params": {
+    "profile": "4040",
+    "type": "corner",
+    "holesPerLeg": 1,
+    "thickness": 6
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-4040-straight-1",
+   "name": "4040 straight bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "4040 straight bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "4040",
+    "straight"
+   ],
+   "params": {
+    "profile": "4040",
+    "type": "straight",
+    "holesPerLeg": 1,
+    "thickness": 6
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-4040-straight-2",
+   "name": "4040 straight bracket, 2 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "4040 straight bracket, 2 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "4040",
+    "straight"
+   ],
+   "params": {
+    "profile": "4040",
+    "type": "straight",
+    "holesPerLeg": 2,
+    "thickness": 6
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-4040-tee-1",
+   "name": "4040 tee bracket, 1 hole per leg",
+   "generator": "extrusion-bracket",
+   "description": "4040 tee bracket, 1 hole per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "4040",
+    "tee"
+   ],
+   "params": {
+    "profile": "4040",
+    "type": "tee",
+    "holesPerLeg": 1,
+    "thickness": 6
+   },
+   "series": "extrusion"
+  },
+  {
+   "id": "ext-4040-tee-2",
+   "name": "4040 tee bracket, 2 holes per leg",
+   "generator": "extrusion-bracket",
+   "description": "4040 tee bracket, 2 holes per leg.",
+   "tags": [
+    "extrusion",
+    "t-slot",
+    "4040",
+    "tee"
+   ],
+   "params": {
+    "profile": "4040",
+    "type": "tee",
+    "holesPerLeg": 2,
+    "thickness": 6
+   },
+   "series": "extrusion"
+  }
+ ]
+}

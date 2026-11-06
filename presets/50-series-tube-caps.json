@@ -1,0 +1,1027 @@
+{
+ "group": "Cap and plug sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "cap-3",
+   "name": "End cap, 3 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 3 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 3,
+    "tubeID": 1
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-4",
+   "name": "End cap, 4 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 4 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 4,
+    "tubeID": 2
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-5",
+   "name": "End cap, 5 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 5 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 5,
+    "tubeID": 3
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-6",
+   "name": "End cap, 6 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 6 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 6,
+    "tubeID": 4
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-8",
+   "name": "End cap, 8 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 8 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 8,
+    "tubeID": 6
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-12",
+   "name": "End cap, 12 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 12 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 12,
+    "tubeID": 10
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-14",
+   "name": "End cap, 14 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 14 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 14,
+    "tubeID": 12
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-15",
+   "name": "End cap, 15 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 15 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 15,
+    "tubeID": 13
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-16",
+   "name": "End cap, 16 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 16 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 16,
+    "tubeID": 14
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-18",
+   "name": "End cap, 18 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 18 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 18,
+    "tubeID": 16
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-19",
+   "name": "End cap, 19 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 19 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 19,
+    "tubeID": 17
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-20",
+   "name": "End cap, 20 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 20 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 20,
+    "tubeID": 18
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-22",
+   "name": "End cap, 22 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 22 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 22,
+    "tubeID": 20
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-25",
+   "name": "End cap, 25 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 25 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 25,
+    "tubeID": 23
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-28",
+   "name": "End cap, 28 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 28 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 28,
+    "tubeID": 26
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-30",
+   "name": "End cap, 30 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 30 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 30,
+    "tubeID": 28
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-32",
+   "name": "End cap, 32 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 32 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 32,
+    "tubeID": 30
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-35",
+   "name": "End cap, 35 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 35 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 35,
+    "tubeID": 33
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-38",
+   "name": "End cap, 38 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 38 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 38,
+    "tubeID": 36
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "cap-40",
+   "name": "End cap, 40 mm tube",
+   "generator": "tube-cap",
+   "description": "End cap, 40 mm tube.",
+   "tags": [
+    "cap",
+    "tube"
+   ],
+   "params": {
+    "type": "cap",
+    "tubeOD": 40,
+    "tubeID": 38
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-3",
+   "name": "Angled foot, 3 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 3 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 3,
+    "tubeID": 1
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-4",
+   "name": "Angled foot, 4 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 4 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 4,
+    "tubeID": 2
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-5",
+   "name": "Angled foot, 5 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 5 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 5,
+    "tubeID": 3
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-6",
+   "name": "Angled foot, 6 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 6 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 6,
+    "tubeID": 4
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-8",
+   "name": "Angled foot, 8 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 8 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 8,
+    "tubeID": 6
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-12",
+   "name": "Angled foot, 12 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 12 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 12,
+    "tubeID": 10
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-14",
+   "name": "Angled foot, 14 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 14 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 14,
+    "tubeID": 12
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-15",
+   "name": "Angled foot, 15 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 15 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 15,
+    "tubeID": 13
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-16",
+   "name": "Angled foot, 16 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 16 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 16,
+    "tubeID": 14
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-18",
+   "name": "Angled foot, 18 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 18 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 18,
+    "tubeID": 16
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-19",
+   "name": "Angled foot, 19 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 19 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 19,
+    "tubeID": 17
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-20",
+   "name": "Angled foot, 20 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 20 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 20,
+    "tubeID": 18
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-22",
+   "name": "Angled foot, 22 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 22 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 22,
+    "tubeID": 20
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-25",
+   "name": "Angled foot, 25 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 25 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 25,
+    "tubeID": 23
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-28",
+   "name": "Angled foot, 28 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 28 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 28,
+    "tubeID": 26
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-30",
+   "name": "Angled foot, 30 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 30 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 30,
+    "tubeID": 28
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-32",
+   "name": "Angled foot, 32 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 32 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 32,
+    "tubeID": 30
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-35",
+   "name": "Angled foot, 35 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 35 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 35,
+    "tubeID": 33
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-38",
+   "name": "Angled foot, 38 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 38 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 38,
+    "tubeID": 36
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "foot-40",
+   "name": "Angled foot, 40 mm tube",
+   "generator": "tube-cap",
+   "description": "Angled foot, 40 mm tube.",
+   "tags": [
+    "cap",
+    "tube",
+    "foot",
+    "landing gear"
+   ],
+   "params": {
+    "type": "foot",
+    "tubeOD": 40,
+    "tubeID": 38
+   },
+   "series": "tube-caps"
+  },
+  {
+   "id": "plug-6x4",
+   "name": "Plug, 6 x 4 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 6,
+    "tubeID": 4
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-8x6",
+   "name": "Plug, 8 x 6 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 8,
+    "tubeID": 6
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-12x10",
+   "name": "Plug, 12 x 10 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 12,
+    "tubeID": 10
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-14x12",
+   "name": "Plug, 14 x 12 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 14,
+    "tubeID": 12
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-15x13",
+   "name": "Plug, 15 x 13 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 15,
+    "tubeID": 13
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-16x14",
+   "name": "Plug, 16 x 14 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 16,
+    "tubeID": 14
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-18x16",
+   "name": "Plug, 18 x 16 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 18,
+    "tubeID": 16
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-19x17",
+   "name": "Plug, 19 x 17 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 19,
+    "tubeID": 17
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-20x18",
+   "name": "Plug, 20 x 18 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 20,
+    "tubeID": 18
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-22x20",
+   "name": "Plug, 22 x 20 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 22,
+    "tubeID": 20
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-25x23",
+   "name": "Plug, 25 x 23 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 25,
+    "tubeID": 23
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-28x26",
+   "name": "Plug, 28 x 26 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 28,
+    "tubeID": 26
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-30x28",
+   "name": "Plug, 30 x 28 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 30,
+    "tubeID": 28
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-32x30",
+   "name": "Plug, 32 x 30 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 32,
+    "tubeID": 30
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-35x33",
+   "name": "Plug, 35 x 33 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 35,
+    "tubeID": 33
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-38x36",
+   "name": "Plug, 38 x 36 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 38,
+    "tubeID": 36
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  },
+  {
+   "id": "plug-40x38",
+   "name": "Plug, 40 x 38 mm tube",
+   "generator": "tube-cap",
+   "description": "Plug for a tube with 1 mm wall. Measure your tube ID.",
+   "tags": [
+    "cap",
+    "tube",
+    "plug"
+   ],
+   "params": {
+    "type": "plug",
+    "tubeOD": 40,
+    "tubeID": 38
+   },
+   "series": "tube-caps",
+   "verify": [
+    "tubeID"
+   ]
+  }
+ ]
+}

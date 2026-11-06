@@ -1,0 +1,4627 @@
+{
+ "group": "Gear sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "gear-m0p5-10",
+   "name": "Spur gear module 0.5, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 5 mm. No bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 10,
+    "bore": 0,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-12",
+   "name": "Spur gear module 0.5, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 6 mm. 2 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 12,
+    "bore": 2,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-14",
+   "name": "Spur gear module 0.5, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 7 mm. 2 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 14,
+    "bore": 2,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-15",
+   "name": "Spur gear module 0.5, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 7.5 mm. 2 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 15,
+    "bore": 2,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-16",
+   "name": "Spur gear module 0.5, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 8 mm. 3 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 16,
+    "bore": 3,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-18",
+   "name": "Spur gear module 0.5, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 9 mm. 3 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 18,
+    "bore": 3,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-20",
+   "name": "Spur gear module 0.5, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 10 mm. 3 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 20,
+    "bore": 3,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-24",
+   "name": "Spur gear module 0.5, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 24,
+    "bore": 4,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-25",
+   "name": "Spur gear module 0.5, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12.5 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 25,
+    "bore": 5,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-30",
+   "name": "Spur gear module 0.5, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 15 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 30,
+    "bore": 6,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-32",
+   "name": "Spur gear module 0.5, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 16 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 32,
+    "bore": 6,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-36",
+   "name": "Spur gear module 0.5, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 18 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 36,
+    "bore": 6,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-40",
+   "name": "Spur gear module 0.5, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 20 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-45",
+   "name": "Spur gear module 0.5, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 22.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-48",
+   "name": "Spur gear module 0.5, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 24 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-50",
+   "name": "Spur gear module 0.5, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-60",
+   "name": "Spur gear module 0.5, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-72",
+   "name": "Spur gear module 0.5, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p5-80",
+   "name": "Spur gear module 0.5, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.5,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 4
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-10",
+   "name": "Spur gear module 0.8, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 8 mm. 2 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 10,
+    "bore": 2,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-12",
+   "name": "Spur gear module 0.8, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 9.6 mm. 3 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 12,
+    "bore": 3,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-14",
+   "name": "Spur gear module 0.8, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 11.2 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 14,
+    "bore": 4,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-15",
+   "name": "Spur gear module 0.8, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 15,
+    "bore": 4,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-16",
+   "name": "Spur gear module 0.8, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12.8 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 16,
+    "bore": 4,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-18",
+   "name": "Spur gear module 0.8, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 14.4 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 18,
+    "bore": 5,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-20",
+   "name": "Spur gear module 0.8, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 16 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 20,
+    "bore": 6,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-24",
+   "name": "Spur gear module 0.8, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 19.2 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 24,
+    "bore": 6,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-25",
+   "name": "Spur gear module 0.8, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 20 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-30",
+   "name": "Spur gear module 0.8, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 24 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-32",
+   "name": "Spur gear module 0.8, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 25.6 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-36",
+   "name": "Spur gear module 0.8, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 28.8 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-40",
+   "name": "Spur gear module 0.8, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 32 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-45",
+   "name": "Spur gear module 0.8, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-48",
+   "name": "Spur gear module 0.8, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 38.4 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-50",
+   "name": "Spur gear module 0.8, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-60",
+   "name": "Spur gear module 0.8, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 48 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-72",
+   "name": "Spur gear module 0.8, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 57.6 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m0p8-80",
+   "name": "Spur gear module 0.8, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 64 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m0.8",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 0.8,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-10",
+   "name": "Spur gear module 1, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 10 mm. 3 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 10,
+    "bore": 3,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-12",
+   "name": "Spur gear module 1, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 12,
+    "bore": 4,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-14",
+   "name": "Spur gear module 1, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 14 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 14,
+    "bore": 5,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-15",
+   "name": "Spur gear module 1, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 15 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 15,
+    "bore": 5,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-16",
+   "name": "Spur gear module 1, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 16 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 16,
+    "bore": 6,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-18",
+   "name": "Spur gear module 1, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 18 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 18,
+    "bore": 6,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-20-s",
+   "name": "Spur gear module 1, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 20 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 20,
+    "bore": 6,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-24",
+   "name": "Spur gear module 1, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 24 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-25",
+   "name": "Spur gear module 1, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-30",
+   "name": "Spur gear module 1, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-32",
+   "name": "Spur gear module 1, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 32 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-36",
+   "name": "Spur gear module 1, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-40-s",
+   "name": "Spur gear module 1, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-45",
+   "name": "Spur gear module 1, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 45 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-48",
+   "name": "Spur gear module 1, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 48 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-50",
+   "name": "Spur gear module 1, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 50 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-60",
+   "name": "Spur gear module 1, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-72",
+   "name": "Spur gear module 1, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 72 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1-80",
+   "name": "Spur gear module 1, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 80 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-10",
+   "name": "Spur gear module 1.25, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 12.5 mm. 4 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 10,
+    "bore": 4,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-12",
+   "name": "Spur gear module 1.25, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 15 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 12,
+    "bore": 5,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-14",
+   "name": "Spur gear module 1.25, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 17.5 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 14,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-15",
+   "name": "Spur gear module 1.25, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 18.75 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 15,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-16",
+   "name": "Spur gear module 1.25, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 20 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 16,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-18",
+   "name": "Spur gear module 1.25, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 22.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 18,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-20",
+   "name": "Spur gear module 1.25, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-24",
+   "name": "Spur gear module 1.25, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-25",
+   "name": "Spur gear module 1.25, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 31.25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-30",
+   "name": "Spur gear module 1.25, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 37.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-32",
+   "name": "Spur gear module 1.25, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-36",
+   "name": "Spur gear module 1.25, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 45 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-40",
+   "name": "Spur gear module 1.25, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 50 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-45",
+   "name": "Spur gear module 1.25, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 56.25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-48",
+   "name": "Spur gear module 1.25, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-50",
+   "name": "Spur gear module 1.25, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 62.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-60",
+   "name": "Spur gear module 1.25, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 75 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-72",
+   "name": "Spur gear module 1.25, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 90 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p25-80",
+   "name": "Spur gear module 1.25, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 100 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.25",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.25,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-10",
+   "name": "Spur gear module 1.5, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 15 mm. 5 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 10,
+    "bore": 5,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-12",
+   "name": "Spur gear module 1.5, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 18 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 12,
+    "bore": 6,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-14",
+   "name": "Spur gear module 1.5, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 21 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 14,
+    "bore": 6,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-15",
+   "name": "Spur gear module 1.5, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 22.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 15,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-16",
+   "name": "Spur gear module 1.5, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 24 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-18",
+   "name": "Spur gear module 1.5, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 27 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 18,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-20",
+   "name": "Spur gear module 1.5, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-24",
+   "name": "Spur gear module 1.5, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-25",
+   "name": "Spur gear module 1.5, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 37.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-30",
+   "name": "Spur gear module 1.5, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 45 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-32",
+   "name": "Spur gear module 1.5, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 48 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-36",
+   "name": "Spur gear module 1.5, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 54 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-40",
+   "name": "Spur gear module 1.5, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-45",
+   "name": "Spur gear module 1.5, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 67.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-48",
+   "name": "Spur gear module 1.5, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 72 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-50",
+   "name": "Spur gear module 1.5, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 75 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-60",
+   "name": "Spur gear module 1.5, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 90 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-72",
+   "name": "Spur gear module 1.5, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 108 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m1p5-80",
+   "name": "Spur gear module 1.5, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 120 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m1.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 1.5,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 9
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-10",
+   "name": "Spur gear module 2, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 20 mm. 6 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 10,
+    "bore": 6,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-12",
+   "name": "Spur gear module 2, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 24 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 12,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-14",
+   "name": "Spur gear module 2, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 28 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 14,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-15",
+   "name": "Spur gear module 2, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 15,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-16",
+   "name": "Spur gear module 2, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 32 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-18",
+   "name": "Spur gear module 2, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 18,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-20",
+   "name": "Spur gear module 2, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-24",
+   "name": "Spur gear module 2, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 48 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-25",
+   "name": "Spur gear module 2, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 50 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-30",
+   "name": "Spur gear module 2, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-32",
+   "name": "Spur gear module 2, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 64 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-36",
+   "name": "Spur gear module 2, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 72 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-40",
+   "name": "Spur gear module 2, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 80 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-45",
+   "name": "Spur gear module 2, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 90 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-48",
+   "name": "Spur gear module 2, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 96 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-50",
+   "name": "Spur gear module 2, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 100 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-60",
+   "name": "Spur gear module 2, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 120 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-72",
+   "name": "Spur gear module 2, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 144 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2-80",
+   "name": "Spur gear module 2, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 160 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-10",
+   "name": "Spur gear module 2.5, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 25 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 10,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-12",
+   "name": "Spur gear module 2.5, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 12,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-14",
+   "name": "Spur gear module 2.5, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 35 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 14,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-15",
+   "name": "Spur gear module 2.5, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 37.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 15,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-16",
+   "name": "Spur gear module 2.5, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 40 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-18",
+   "name": "Spur gear module 2.5, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 45 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 18,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-20",
+   "name": "Spur gear module 2.5, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 50 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-24",
+   "name": "Spur gear module 2.5, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-25",
+   "name": "Spur gear module 2.5, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 62.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-30",
+   "name": "Spur gear module 2.5, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 75 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-32",
+   "name": "Spur gear module 2.5, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 80 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-36",
+   "name": "Spur gear module 2.5, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 90 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-40",
+   "name": "Spur gear module 2.5, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 100 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-45",
+   "name": "Spur gear module 2.5, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 112.5 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-48",
+   "name": "Spur gear module 2.5, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 120 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-50",
+   "name": "Spur gear module 2.5, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 125 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-60",
+   "name": "Spur gear module 2.5, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 150 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-72",
+   "name": "Spur gear module 2.5, 72 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 180 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 72,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m2p5-80",
+   "name": "Spur gear module 2.5, 80 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 200 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m2.5",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 2.5,
+    "teeth": 80,
+    "bore": 8,
+    "thickness": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-10",
+   "name": "Spur gear module 3, 10 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 30 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 10 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 10,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-12",
+   "name": "Spur gear module 3, 12 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 36 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 12,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-14",
+   "name": "Spur gear module 3, 14 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 42 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 14 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 14,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-15",
+   "name": "Spur gear module 3, 15 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 45 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 15 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 15,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-16",
+   "name": "Spur gear module 3, 16 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 48 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-18",
+   "name": "Spur gear module 3, 18 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 54 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 18,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-20",
+   "name": "Spur gear module 3, 20 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 60 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-24",
+   "name": "Spur gear module 3, 24 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 72 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-25",
+   "name": "Spur gear module 3, 25 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 75 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 25,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-30",
+   "name": "Spur gear module 3, 30 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 90 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-32",
+   "name": "Spur gear module 3, 32 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 96 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 32,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-36",
+   "name": "Spur gear module 3, 36 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 108 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-40",
+   "name": "Spur gear module 3, 40 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 120 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-45",
+   "name": "Spur gear module 3, 45 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 135 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 45,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-48",
+   "name": "Spur gear module 3, 48 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 144 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-50",
+   "name": "Spur gear module 3, 50 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 150 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 50,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-m3-60",
+   "name": "Spur gear module 3, 60 teeth",
+   "generator": "gear",
+   "description": "Pitch diameter 180 mm. 8 mm bore. Gears of the same module mesh at (z1 + z2) x module / 2.",
+   "tags": [
+    "gear",
+    "robotics",
+    "m3",
+    "spur"
+   ],
+   "params": {
+    "type": "spur",
+    "module": 3,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 18
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-12",
+   "name": "Helical gear module 1, 12 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 12,
+    "bore": 4,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-16",
+   "name": "Helical gear module 1, 16 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 16,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-20",
+   "name": "Helical gear module 1, 20 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 20,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-24",
+   "name": "Helical gear module 1, 24 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-30",
+   "name": "Helical gear module 1, 30 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-36",
+   "name": "Helical gear module 1, 36 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-40",
+   "name": "Helical gear module 1, 40 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-48",
+   "name": "Helical gear module 1, 48 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1-60",
+   "name": "Helical gear module 1, 60 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-12",
+   "name": "Helical gear module 1.5, 12 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 12,
+    "bore": 6,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-16",
+   "name": "Helical gear module 1.5, 16 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-20",
+   "name": "Helical gear module 1.5, 20 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-24",
+   "name": "Helical gear module 1.5, 24 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-30",
+   "name": "Helical gear module 1.5, 30 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-36",
+   "name": "Helical gear module 1.5, 36 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-40",
+   "name": "Helical gear module 1.5, 40 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-48",
+   "name": "Helical gear module 1.5, 48 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m1p5-60",
+   "name": "Helical gear module 1.5, 60 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 1.5, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m1.5"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 1.5,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-12",
+   "name": "Helical gear module 2, 12 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 12,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-16",
+   "name": "Helical gear module 2, 16 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-20",
+   "name": "Helical gear module 2, 20 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-24",
+   "name": "Helical gear module 2, 24 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-30",
+   "name": "Helical gear module 2, 30 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-36",
+   "name": "Helical gear module 2, 36 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-40",
+   "name": "Helical gear module 2, 40 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-48",
+   "name": "Helical gear module 2, 48 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-helical-m2-60",
+   "name": "Helical gear module 2, 60 teeth",
+   "generator": "gear",
+   "description": "Helical gear module 2, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "helical",
+    "m2"
+   ],
+   "params": {
+    "type": "helical",
+    "module": 2,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-12",
+   "name": "Herringbone gear module 1, 12 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 12,
+    "bore": 4,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-16",
+   "name": "Herringbone gear module 1, 16 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 16,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-20",
+   "name": "Herringbone gear module 1, 20 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 20,
+    "bore": 6,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-24",
+   "name": "Herringbone gear module 1, 24 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-30",
+   "name": "Herringbone gear module 1, 30 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-36",
+   "name": "Herringbone gear module 1, 36 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-40",
+   "name": "Herringbone gear module 1, 40 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-48",
+   "name": "Herringbone gear module 1, 48 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1-60",
+   "name": "Herringbone gear module 1, 60 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-12",
+   "name": "Herringbone gear module 1.5, 12 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 12,
+    "bore": 6,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-16",
+   "name": "Herringbone gear module 1.5, 16 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-20",
+   "name": "Herringbone gear module 1.5, 20 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-24",
+   "name": "Herringbone gear module 1.5, 24 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-30",
+   "name": "Herringbone gear module 1.5, 30 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-36",
+   "name": "Herringbone gear module 1.5, 36 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-40",
+   "name": "Herringbone gear module 1.5, 40 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-48",
+   "name": "Herringbone gear module 1.5, 48 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m1p5-60",
+   "name": "Herringbone gear module 1.5, 60 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 1.5, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m1.5"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 1.5,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 12
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-12",
+   "name": "Herringbone gear module 2, 12 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 12 teeth. 12 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 12,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-16",
+   "name": "Herringbone gear module 2, 16 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 16 teeth. 16 teeth at 20 deg undercut a real gear; this model has no undercut, so check mesh with the mating gear.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 16,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-20",
+   "name": "Herringbone gear module 2, 20 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 20,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-24",
+   "name": "Herringbone gear module 2, 24 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 24 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 24,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-30",
+   "name": "Herringbone gear module 2, 30 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 30,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-36",
+   "name": "Herringbone gear module 2, 36 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 36 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 36,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-40",
+   "name": "Herringbone gear module 2, 40 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 40,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-48",
+   "name": "Herringbone gear module 2, 48 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 48 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 48,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "gear-herringbone-m2-60",
+   "name": "Herringbone gear module 2, 60 teeth",
+   "generator": "gear",
+   "description": "Herringbone gear module 2, 60 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "herringbone",
+    "m2"
+   ],
+   "params": {
+    "type": "herringbone",
+    "module": 2,
+    "teeth": 60,
+    "bore": 8,
+    "thickness": 16
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p5-10",
+   "name": "Gear rack module 0.5, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.5, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.5,
+    "teeth": 10,
+    "thickness": 4,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p5-20",
+   "name": "Gear rack module 0.5, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.5, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.5,
+    "teeth": 20,
+    "thickness": 4,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p5-30",
+   "name": "Gear rack module 0.5, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.5, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.5,
+    "teeth": 30,
+    "thickness": 4,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p5-40",
+   "name": "Gear rack module 0.5, 40 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.5, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.5,
+    "teeth": 40,
+    "thickness": 4,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p8-10",
+   "name": "Gear rack module 0.8, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.8, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.8"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.8,
+    "teeth": 10,
+    "thickness": 5,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p8-20",
+   "name": "Gear rack module 0.8, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.8, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.8"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.8,
+    "teeth": 20,
+    "thickness": 5,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p8-30",
+   "name": "Gear rack module 0.8, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.8, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.8"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.8,
+    "teeth": 30,
+    "thickness": 5,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m0p8-40",
+   "name": "Gear rack module 0.8, 40 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 0.8, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m0.8"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 0.8,
+    "teeth": 40,
+    "thickness": 5,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1-10",
+   "name": "Gear rack module 1, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1,
+    "teeth": 10,
+    "thickness": 6,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1-20",
+   "name": "Gear rack module 1, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1,
+    "teeth": 20,
+    "thickness": 6,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1-30",
+   "name": "Gear rack module 1, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1,
+    "teeth": 30,
+    "thickness": 6,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1-40",
+   "name": "Gear rack module 1, 40 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1,
+    "teeth": 40,
+    "thickness": 6,
+    "rackHeight": 5
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p25-10",
+   "name": "Gear rack module 1.25, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.25, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.25"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.25,
+    "teeth": 10,
+    "thickness": 8,
+    "rackHeight": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p25-20",
+   "name": "Gear rack module 1.25, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.25, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.25"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.25,
+    "teeth": 20,
+    "thickness": 8,
+    "rackHeight": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p25-30",
+   "name": "Gear rack module 1.25, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.25, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.25"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.25,
+    "teeth": 30,
+    "thickness": 8,
+    "rackHeight": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p25-40",
+   "name": "Gear rack module 1.25, 40 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.25, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.25"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.25,
+    "teeth": 40,
+    "thickness": 8,
+    "rackHeight": 6
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p5-10",
+   "name": "Gear rack module 1.5, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.5, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.5,
+    "teeth": 10,
+    "thickness": 9,
+    "rackHeight": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p5-20",
+   "name": "Gear rack module 1.5, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.5, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.5,
+    "teeth": 20,
+    "thickness": 9,
+    "rackHeight": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p5-30",
+   "name": "Gear rack module 1.5, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.5, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.5,
+    "teeth": 30,
+    "thickness": 9,
+    "rackHeight": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m1p5-40",
+   "name": "Gear rack module 1.5, 40 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 1.5, 40 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m1.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 1.5,
+    "teeth": 40,
+    "thickness": 9,
+    "rackHeight": 8
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m2-10",
+   "name": "Gear rack module 2, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 2, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m2"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 2,
+    "teeth": 10,
+    "thickness": 12,
+    "rackHeight": 10
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m2-20",
+   "name": "Gear rack module 2, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 2, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m2"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 2,
+    "teeth": 20,
+    "thickness": 12,
+    "rackHeight": 10
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m2-30",
+   "name": "Gear rack module 2, 30 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 2, 30 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m2"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 2,
+    "teeth": 30,
+    "thickness": 12,
+    "rackHeight": 10
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m2p5-10",
+   "name": "Gear rack module 2.5, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 2.5, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m2.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 2.5,
+    "teeth": 10,
+    "thickness": 15,
+    "rackHeight": 13
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m2p5-20",
+   "name": "Gear rack module 2.5, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 2.5, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m2.5"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 2.5,
+    "teeth": 20,
+    "thickness": 15,
+    "rackHeight": 13
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m3-10",
+   "name": "Gear rack module 3, 10 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 3, 10 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m3"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 3,
+    "teeth": 10,
+    "thickness": 18,
+    "rackHeight": 15
+   },
+   "series": "gears"
+  },
+  {
+   "id": "rack-m3-20",
+   "name": "Gear rack module 3, 20 teeth",
+   "generator": "gear",
+   "description": "Gear rack module 3, 20 teeth.",
+   "tags": [
+    "gear",
+    "robotics",
+    "rack",
+    "m3"
+   ],
+   "params": {
+    "type": "rack",
+    "module": 3,
+    "teeth": 20,
+    "thickness": 18,
+    "rackHeight": 15
+   },
+   "series": "gears"
+  }
+ ]
+}

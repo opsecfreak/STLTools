@@ -1,0 +1,154 @@
+{
+ "group": "FC adapter sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "fc-adapter-30p5-25p5-45",
+   "name": "FC adapter 30.5 to 25.5 mm, turned 45 degrees",
+   "generator": "fc-adapter",
+   "description": "FC adapter 30.5 to 25.5 mm, turned 45 degrees.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "30.5",
+    "25.5"
+   ],
+   "params": {
+    "outerPattern": 30.5,
+    "innerPattern": 25.5,
+    "innerRotate": 45,
+    "outerHole": 3.4,
+    "innerHole": 2.6
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-25p5-20-45",
+   "name": "FC adapter 25.5 to 20 mm, turned 45 degrees",
+   "generator": "fc-adapter",
+   "description": "FC adapter 25.5 to 20 mm, turned 45 degrees.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "25.5",
+    "20"
+   ],
+   "params": {
+    "outerPattern": 25.5,
+    "innerPattern": 20,
+    "innerRotate": 45,
+    "outerHole": 3.4,
+    "innerHole": 1.7
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-20-16-45",
+   "name": "FC adapter 20 to 16 mm, turned 45 degrees",
+   "generator": "fc-adapter",
+   "description": "FC adapter 20 to 16 mm, turned 45 degrees.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "20",
+    "16"
+   ],
+   "params": {
+    "outerPattern": 20,
+    "innerPattern": 16,
+    "innerRotate": 45,
+    "outerHole": 2.4,
+    "innerHole": 1.7
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-30p5-16-0",
+   "name": "FC adapter 30.5 to 16 mm",
+   "generator": "fc-adapter",
+   "description": "FC adapter 30.5 to 16 mm.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "30.5",
+    "16"
+   ],
+   "params": {
+    "outerPattern": 30.5,
+    "innerPattern": 16,
+    "innerRotate": 0,
+    "outerHole": 3.4,
+    "innerHole": 1.7
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-30p5-16-45",
+   "name": "FC adapter 30.5 to 16 mm, turned 45 degrees",
+   "generator": "fc-adapter",
+   "description": "FC adapter 30.5 to 16 mm, turned 45 degrees.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "30.5",
+    "16"
+   ],
+   "params": {
+    "outerPattern": 30.5,
+    "innerPattern": 16,
+    "innerRotate": 45,
+    "outerHole": 3.4,
+    "innerHole": 1.7
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-45-30p5-0",
+   "name": "FC adapter 45 to 30.5 mm",
+   "generator": "fc-adapter",
+   "description": "FC adapter 45 to 30.5 mm.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "45",
+    "30.5"
+   ],
+   "params": {
+    "outerPattern": 45,
+    "innerPattern": 30.5,
+    "innerRotate": 0,
+    "outerHole": 3.4,
+    "innerHole": 2.6
+   },
+   "series": "fc-plates"
+  },
+  {
+   "id": "fc-adapter-45-30p5-45",
+   "name": "FC adapter 45 to 30.5 mm, turned 45 degrees",
+   "generator": "fc-adapter",
+   "description": "FC adapter 45 to 30.5 mm, turned 45 degrees.",
+   "tags": [
+    "fc",
+    "stack",
+    "adapter",
+    "45",
+    "30.5"
+   ],
+   "params": {
+    "outerPattern": 45,
+    "innerPattern": 30.5,
+    "innerRotate": 45,
+    "outerHole": 3.4,
+    "innerHole": 2.6
+   },
+   "series": "fc-plates"
+  }
+ ]
+}

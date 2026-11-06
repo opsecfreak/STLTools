@@ -1,0 +1,995 @@
+{
+ "group": "Wheel sizes",
+ "section": "planes",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "wheel-25-2p2-solid",
+   "name": "Wheel 25 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 25 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "25mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 25,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 8,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-25-2p2-spoked",
+   "name": "Wheel 25 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 25 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "25mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 25,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 8,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-30-2p2-solid",
+   "name": "Wheel 30 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 30 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "30mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 30,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 9,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-30-2p2-spoked",
+   "name": "Wheel 30 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 30 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "30mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 30,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 9,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-30-3p2-solid",
+   "name": "Wheel 30 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 30 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "30mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 30,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 9,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-30-3p2-spoked",
+   "name": "Wheel 30 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 30 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "30mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 30,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 9,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-2p2-solid",
+   "name": "Wheel 40 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 12,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-2p2-spoked",
+   "name": "Wheel 40 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 12,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-3p2-solid",
+   "name": "Wheel 40 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 12,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-3p2-spoked",
+   "name": "Wheel 40 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 12,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-4p2-solid",
+   "name": "Wheel 40 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 12,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-40-4p2-spoked",
+   "name": "Wheel 40 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 40 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "40mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 40,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 12,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-2p2-solid",
+   "name": "Wheel 50 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 15,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-2p2-spoked",
+   "name": "Wheel 50 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 15,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-3p2-solid",
+   "name": "Wheel 50 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 15,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-3p2-spoked",
+   "name": "Wheel 50 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 15,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-4p2-solid",
+   "name": "Wheel 50 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 15,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-4p2-spoked",
+   "name": "Wheel 50 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 15,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-5p2-solid",
+   "name": "Wheel 50 mm, 5.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 5.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 5.2,
+    "style": "solid",
+    "width": 15,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-50-5p2-spoked",
+   "name": "Wheel 50 mm, 5.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 50 mm, 5.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "50mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 50,
+    "axleHole": 5.2,
+    "style": "spoked",
+    "width": 15,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-2p2-solid",
+   "name": "Wheel 60 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 18,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-2p2-spoked",
+   "name": "Wheel 60 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 18,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-3p2-solid",
+   "name": "Wheel 60 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 18,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-3p2-spoked",
+   "name": "Wheel 60 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 18,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-4p2-solid",
+   "name": "Wheel 60 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 18,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-4p2-spoked",
+   "name": "Wheel 60 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 18,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-5p2-solid",
+   "name": "Wheel 60 mm, 5.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 5.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 5.2,
+    "style": "solid",
+    "width": 18,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-60-5p2-spoked",
+   "name": "Wheel 60 mm, 5.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 60 mm, 5.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "60mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 60,
+    "axleHole": 5.2,
+    "style": "spoked",
+    "width": 18,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-2p2-solid",
+   "name": "Wheel 70 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 21,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-2p2-spoked",
+   "name": "Wheel 70 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 21,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-3p2-solid",
+   "name": "Wheel 70 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 21,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-3p2-spoked",
+   "name": "Wheel 70 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 21,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-4p2-solid",
+   "name": "Wheel 70 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 21,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-4p2-spoked",
+   "name": "Wheel 70 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 21,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-5p2-solid",
+   "name": "Wheel 70 mm, 5.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 5.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 5.2,
+    "style": "solid",
+    "width": 21,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-70-5p2-spoked",
+   "name": "Wheel 70 mm, 5.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 70 mm, 5.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "70mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 70,
+    "axleHole": 5.2,
+    "style": "spoked",
+    "width": 21,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-2p2-solid",
+   "name": "Wheel 80 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 24,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-2p2-spoked",
+   "name": "Wheel 80 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 24,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-3p2-solid",
+   "name": "Wheel 80 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 24,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-3p2-spoked",
+   "name": "Wheel 80 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 24,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-4p2-solid",
+   "name": "Wheel 80 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 24,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-4p2-spoked",
+   "name": "Wheel 80 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 24,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-5p2-solid",
+   "name": "Wheel 80 mm, 5.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 5.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 5.2,
+    "style": "solid",
+    "width": 24,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-80-5p2-spoked",
+   "name": "Wheel 80 mm, 5.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 80 mm, 5.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "80mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 80,
+    "axleHole": 5.2,
+    "style": "spoked",
+    "width": 24,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-2p2-solid",
+   "name": "Wheel 100 mm, 2.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 2.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 2.2,
+    "style": "solid",
+    "width": 30,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-2p2-spoked",
+   "name": "Wheel 100 mm, 2.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 2.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 2.2,
+    "style": "spoked",
+    "width": 30,
+    "hubDiameter": 8
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-3p2-solid",
+   "name": "Wheel 100 mm, 3.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 3.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 3.2,
+    "style": "solid",
+    "width": 30,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-3p2-spoked",
+   "name": "Wheel 100 mm, 3.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 3.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 3.2,
+    "style": "spoked",
+    "width": 30,
+    "hubDiameter": 10
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-4p2-solid",
+   "name": "Wheel 100 mm, 4.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 4.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 4.2,
+    "style": "solid",
+    "width": 30,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-4p2-spoked",
+   "name": "Wheel 100 mm, 4.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 4.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 4.2,
+    "style": "spoked",
+    "width": 30,
+    "hubDiameter": 13
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-5p2-solid",
+   "name": "Wheel 100 mm, 5.2 mm axle, solid",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 5.2 mm axle, solid.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "solid"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 5.2,
+    "style": "solid",
+    "width": 30,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  },
+  {
+   "id": "wheel-100-5p2-spoked",
+   "name": "Wheel 100 mm, 5.2 mm axle, spoked",
+   "generator": "rc-wheel",
+   "description": "Wheel 100 mm, 5.2 mm axle, spoked.",
+   "tags": [
+    "wheel",
+    "100mm",
+    "spoked"
+   ],
+   "params": {
+    "diameter": 100,
+    "axleHole": 5.2,
+    "style": "spoked",
+    "width": 30,
+    "hubDiameter": 16
+   },
+   "series": "wheels"
+  }
+ ]
+}
