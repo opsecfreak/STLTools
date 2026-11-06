@@ -143,7 +143,9 @@ export function profileFromMachine(base, machine, printerName = 'printer') {
     ...b,
     id: `${b.id ?? 'profile'}@printer`,
     name: `${printerName} (${b.name ?? 'profile'} + values from the printer)`,
-    bed: okBed ? { x: machine.bed.x, y: machine.bed.y, z: machine.bed.z } : b.bed,
+    // Klipper reports axis travel, which is often a few mm past the printable bed
+    // (SV07: 225 travel on a 220 bed). Never let it grow the profile's bed.
+    bed: okBed ? (b.bed ? { x: Math.min(b.bed.x, machine.bed.x), y: Math.min(b.bed.y, machine.bed.y), z: Math.min(b.bed.z, machine.bed.z) } : { x: machine.bed.x, y: machine.bed.y, z: machine.bed.z }) : b.bed,
     nozzle: num(machine.nozzle, b.nozzle ?? 0.4),
     lineWidth: machine.nozzle && b.nozzle && machine.nozzle !== b.nozzle ? undefined : b.lineWidth,
     filamentDiameter: num(machine.filamentDiameter, b.filamentDiameter ?? 1.75),

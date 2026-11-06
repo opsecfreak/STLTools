@@ -130,6 +130,9 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET | `/api/printers/:id/webcams` | | `[{ index, name, service, stream, snapshot, flipH, flipV, rotation, fps, guessed }]` (`guessed`: found at the profile / Mainsail default path) |
 | GET | `/api/printers/:id/stream?cam=0` | | live MJPEG (`multipart/x-mixed-replace`), piped from the printer; 415 if the camera is not MJPEG, 429 over 3 streams per printer |
 | GET | `/api/printers/:id/machine` | | reads and saves `{ bed: {x,y,z}, maxVelocity, maxAccel, nozzle, filamentDiameter, kinematics, readAt }` from Klipper (read-only query) |
+| GET | `/api/printers/:id/health` | | `{ checks: [{ level: ok\|info\|warn, title, detail }], facts }` from read-only Klipper / Moonraker queries |
+| GET | `/api/printers/:id/config` | | config files `[{ path, size, modified }]` (printer.cfg first) |
+| GET | `/api/printers/:id/config?file=printer.cfg` | | `{ path, text, bytes }`, secrets hidden; 400 for paths outside the config folder or other file types |
 | POST | `/api/printers/check` | | `{ <id>: { ok, at, klippy? \| error } }`: read-only connection check of every printer now (also in `GET /api/printers` as `lastCheck`) |
 | PUT | `/api/printers/:id/upload?filename=x.gcode&path=folder` | raw G-code | `{ path }`; always `print=false` |
 

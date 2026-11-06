@@ -230,7 +230,7 @@ test('printers: SV07 connection test step by step, model guess, saved model, rea
   assert.equal(p.apiKey, undefined, 'key never returned');
   const again = (await j('POST', '/api/printers/diagnose', { id: p.id, url: p.url })).body;
   assert.equal(again.ok, true);
-  assert.equal(mock.requests.at(-1).apiKey, 'PLACEHOLDER_KEY', 'saved key used server side');
+  assert.equal(mock.requests.filter((r) => !r.path.startsWith('/webcam')).at(-1).apiKey, 'PLACEHOLDER_KEY', 'saved key used server side');
   assert.equal((await j('PUT', `/api/printers/${p.id}`, { model: 'Bad Model!' })).body.model, '');
   // estimates follow the default printer's model
   await j('PUT', '/api/printers/' + p.id, { model: 'generic-standard' });

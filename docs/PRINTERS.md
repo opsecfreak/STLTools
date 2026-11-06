@@ -78,8 +78,13 @@ The Printers page shows the printer's camera. Settings > Printers > **Webcam**: 
 How STL Tools finds the camera (the same one Mainsail shows):
 
 1. `GET /server/webcams/list` on Moonraker. Mainsail and Fluidd save their webcam settings there (Mainsail: Settings > Webcams), including the stream and snapshot URLs, the service type, flip and rotation.
-2. If that list is empty, the printer profile's webcam paths. For the Sovol SV07 profile these are the Mainsail defaults `/webcam/?action=stream` and `/webcam/?action=snapshot` on the printer's web port (80), served by crowsnest / mjpg-streamer. STL Tools tries the snapshot first and only shows the camera if it answers. Marked "found at the Mainsail default path". These paths are not checked on a real SV07 yet (unverified).
-3. Generic Klipper printers get the same Mainsail defaults.
+2. If that list is empty: Mainsail's own settings in Moonraker's database (`GET /server/database/item?namespace=mainsail&key=webcams`, the same `webcams` block a Mainsail backup file contains: `urlStream`, `urlSnapshot`, `service`, `targetFps`, `flipX`, `flipY`, `rotate`).
+3. If that is empty too, the printer profile's webcam paths. For the Sovol SV07 profile these are the Mainsail defaults `/webcam/?action=stream` and `/webcam/?action=snapshot` on the printer's web port (80), served by crowsnest / mjpg-streamer. STL Tools tries the snapshot first and only shows the camera if it answers. Marked "found at the Mainsail default path". These paths are not checked on a real SV07 yet (unverified).
+4. Generic Klipper printers get the same Mainsail defaults.
+
+**Camera down.** A camera can be listed and still not run (crowsnest or ustreamer stopped: nginx answers HTTP 502 on `/webcam/`, or port 8080 refuses). STL Tools checks one snapshot: the connection test shows **WARN Webcam: listed but NOT answering**, and the Printers page shows **Camera unavailable** with the reason and checks again every 30 s. Restart crowsnest on the printer (Mainsail > Machine, or `sudo systemctl restart crowsnest`); STL Tools never restarts printer services. Even when it runs, a camera frame is not proof of first-layer quality.
+
+crowsnest ports: `[cam 1]` port 8080 = `/webcam/`, 8081 = `/webcam2/`, 8082 = `/webcam3/`, 8083 = `/webcam4/` behind Mainsail's nginx on port 80.
 
 | Camera service in Mainsail | What STL Tools shows |
 |---|---|
@@ -89,6 +94,21 @@ How STL Tools finds the camera (the same one Mainsail shows):
 How the video gets to your browser: the browser asks STL Tools (`GET /api/printers/<id>/stream`), STL Tools opens the camera's stream URL on the printer and passes the MJPEG frames through. So a phone that can reach STL Tools sees the camera even if it cannot reach the printer directly, and the PIN protects the camera too. The connection to the camera closes when you leave the Printers page or close the tab; at most 3 streams per printer are open at a time. Only cameras on local addresses are allowed.
 
 If video does not start, the page falls back to snapshots by itself. A Pi serving several viewers uses less CPU with *Snapshots*.
+
+## Printer details: health check and config files
+
+Printers page > **Printer details (read-only)**:
+
+- **Health check**: the effective Klipper settings (`configfile.settings`, which include Klipper's defaults), read with GET requests only: motion limits (max_velocity, max_accel, max_accel_to_decel, square_corner_velocity), extruder (nozzle, pressure_advance, rotation_distance), probe z_offset, input shaper, saved bed mesh profiles and flatness, every filament sensor (enabled, filament detected, **pause_on_runout** flagged WARN when false), MCU firmware vs host Klipper version, pending SAVE_CONFIG, Klipper config warnings, host OS / CPU / memory / services, print totals.
+- **Config files**: `printer.cfg` first, then the other files in Moonraker's config folder (`moonraker.conf`, `crowsnest.conf`, macros), with line numbers, section highlighting and find. Lines that look like keys, tokens or passwords, and user:password@ / token@ in URLs, are hidden on the server before the text reaches the browser.
+
+STL Tools does not edit config, run G-code or restart services. Change config in Mainsail.
+
+## Connecting: what the test does with your address
+
+- Empty address: the test says so and points to **Scan my network**. Scan results have **Use and test**, which fills the address and runs the test at once.
+- `http://<ip>` (port 80) is Mainsail's web server; it forwards the Moonraker API. If it does not, the test tries `<ip>:7125` (Moonraker's own port) by itself and keeps the address that works.
+- The printer's name comes from Mainsail (Settings > General > Printer name) when it is set; the model is guessed from the Klipper host name (`mkspi`, the SV07's MKS Pi host board, or a name with `sv07` / `sovol`).
 
 ## Upload G-code
 

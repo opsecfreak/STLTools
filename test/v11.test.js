@@ -4,7 +4,7 @@
 // fallback, and the desktop launcher's temp / portable / auto-stop modes.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, mkdir, cp, symlink, writeFile } from 'node:fs/promises';
+import { mkdtemp, rm, mkdir, cp, symlink, writeFile, realpath } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -14,6 +14,7 @@ import { initKernel } from '../src/core/kernel.js';
 import { profileFromMachine, estimateParts } from '../src/core/estimate.js';
 import { getProfile } from '../src/core/profiles.js';
 import { startMockMoonraker, MOCK_MACHINE } from './helpers/mock-moonraker.js';
+import { guessModel, redactSecrets } from '../src/core/printers.js';
 
 let dir, app, base, mock, mockNoCam;
 before(async () => {
@@ -62,7 +63,7 @@ test('machine limits: read-only query, saved on the printer, estimates use them'
   const p = (await j('POST', '/api/printers', { name: 'SV07', url: `127.0.0.1:${mock.port}`, model: 'sovol-sv07' })).body;
   const before = mock.requests.length;
   const m = (await j('GET', `/api/printers/${p.id}/machine`)).body;
-  assert.deepEqual(m.bed, { x: 222, y: 222, z: 250 }, 'travel from axis_minimum (negative clipped to 0) to axis_maximum');
+  assert.deepEqual(m.bed, { x: 225, y: 225, z: 253 }, 'travel from axis_minimum (negative clipped to 0) to axis_maximum');
   assert.equal(m.maxVelocity, MOCK_MACHINE.max_velocity);
   assert.equal(m.maxAccel, MOCK_MACHINE.max_accel);
   assert.equal(m.nozzle, 0.4);
@@ -74,14 +75,14 @@ test('machine limits: read-only query, saved on the printer, estimates use them'
   const targets = (await j('GET', '/api/estimate-targets')).body;
   const t = targets.find((x) => x.value === `printer:${p.id}`);
   assert.match(t.label, /own limits/);
-  assert.deepEqual(t.profile.bed, { x: 222, y: 222, z: 250 });
+  assert.deepEqual(t.profile.bed, { x: 220, y: 220, z: 250 }, 'travel (225) never grows the profile bed (220)');
   assert.ok(t.profile.fromMachine.readAt);
   assert.ok(targets.some((x) => x.value === 'profile:sovol-sv07'), 'profiles still listed');
   // the server estimate (project ZIP README, /api/estimate) uses the same profile
-  const stats = { size: [221, 221, 10], volumeMm3: 20000, areaMm2: 9000, flatAreaMm2: 6000, bedAreaMm2: 3000 };
+  const stats = { size: [219, 219, 10], volumeMm3: 20000, areaMm2: 9000, flatAreaMm2: 6000, bedAreaMm2: 3000 };
   const est = (await j('POST', '/api/estimate', { stats: [stats] })).body;
   assert.equal(est.profile, 'sovol-sv07@printer');
-  assert.equal(est.parts[0].fit.fits, true, '221 mm fits the 222 mm travel');
+  assert.equal(est.parts[0].fit.fits, true, '219 mm fits the 220 mm bed');
 
   await j('PUT', '/api/settings', { printers: { useMachine: false } });
   assert.equal((await j('POST', '/api/estimate', { stats: [stats] })).body.profile, 'sovol-sv07', 'turned off: profile values');
@@ -157,6 +158,60 @@ test('webcam: Moonraker lists none -> Mainsail default path (SV07 profile) is tr
   await j('DELETE', `/api/printers/${p.id}`);
 });
 
+test('real SV07 setup: mkspi host, Mainsail-only webcam list, camera service down, printer name', async () => {
+  assert.equal(guessModel('mkspi'), 'sovol-sv07', 'stock SV07 host board name');
+  const real = await startMockMoonraker({ hostname: 'mkspi', webcams: 'mainsail', webcamUp: false });
+  try {
+    const d = (await j('POST', '/api/printers/diagnose', { url: `127.0.0.1:${real.port}` })).body;
+    assert.equal(d.model, 'sovol-sv07');
+    assert.equal(d.name, 'Shop printer', 'name from Mainsail settings');
+    const cam = d.steps.find((x) => x.step === 'Webcam');
+    assert.equal(cam.warn, true, 'listed but not answering is a warning, not a failure');
+    assert.match(cam.detail, /Mainsail's webcam settings/);
+    assert.match(cam.detail, /NOT answering: HTTP 502/);
+    assert.match(cam.fix, /restart crowsnest/i);
+    assert.equal(d.ok, true, 'a down camera does not fail the connection test');
+    const p = (await j('POST', '/api/printers', { name: 'Shop', url: `127.0.0.1:${real.port}`, model: d.model })).body;
+    const cams = (await j('GET', `/api/printers/${p.id}/webcams`)).body;
+    assert.deepEqual(cams.map((c) => [c.name, c.source, c.up, c.flipV, c.fps]), [['Webcam', 'mainsail', false, true, 15]]);
+    assert.match(cams[0].state, /502/);
+    for (const r of real.requests) assert.equal(r.method, 'GET');
+    await j('DELETE', `/api/printers/${p.id}`);
+  } finally { real.server.close(); }
+});
+
+test('connection test with no address explains what to do', async () => {
+  const d = (await j('POST', '/api/printers/diagnose', { url: '' })).body;
+  assert.equal(d.ok, false);
+  assert.match(d.steps[0].detail, /No address entered/);
+  assert.match(d.steps[0].fix, /Scan my network/);
+});
+
+test('config viewer and health check: read-only, secrets hidden', async () => {
+  const p = (await j('GET', '/api/printers')).body.find((x) => x.name === 'SV07');
+  const before = mock.requests.length;
+  const files = (await j('GET', `/api/printers/${p.id}/config`)).body;
+  assert.deepEqual(files.map((f) => f.path), ['printer.cfg', 'moonraker.conf'], 'printer.cfg first, hidden files skipped');
+  const cfg = (await j('GET', `/api/printers/${p.id}/config?file=printer.cfg`)).body;
+  assert.match(cfg.text, /max_velocity: 225/);
+  const mc = (await j('GET', `/api/printers/${p.id}/config?file=moonraker.conf`)).body;
+  assert.ok(!mc.text.includes('PLACEHOLDER_KEY') && !mc.text.includes('PLACEHOLDER_TOKEN'), mc.text);
+  assert.match(mc.text, /api_key: <hidden by STL Tools>/);
+  assert.equal((await j('GET', `/api/printers/${p.id}/config?file=../../etc/passwd`)).status, 400);
+  assert.equal((await j('GET', `/api/printers/${p.id}/config?file=x.gcode`)).status, 400);
+  const h = (await j('GET', `/api/printers/${p.id}/health`)).body;
+  const by = (t) => h.checks.find((c) => c.title.startsWith(t));
+  assert.match(by('Motion limits').detail, /max_velocity 225.*square_corner_velocity 3/);
+  assert.match(by('Extruder').detail, /pressure_advance 0.04/);
+  assert.equal(by('Filament sensor').level, 'warn', 'pause_on_runout false is flagged');
+  assert.match(by('Input shaper').detail, /ei @ 44.2 Hz/);
+  assert.match(by('MCU').detail, /v0.11.0-41.*v0.11.0-122/);
+  assert.match(by('Print totals').detail, /166 jobs/);
+  for (const r of mock.requests.slice(before)) assert.equal(r.method, 'GET', `${r.method} ${r.path}`);
+  assert.equal((await j('POST', `/api/printers/${p.id}/config`)).status, 405, 'config is read-only');
+  assert.equal(redactSecrets('url: https://user:pass@host/x'), 'url: https://<hidden>@host/x');
+});
+
 test('LAN access PIN: other devices need it, this machine never, wrong PINs limited, removable', async () => {
   // second server on the same data folder that treats every client as a LAN device
   const lan = await startServer({ host: '127.0.0.1', port: 0, dataDir: dir, pinForLocal: true });
@@ -212,9 +267,10 @@ const dataLine = (out) => (out.match(/Your data:\s+(.+)/) ?? [])[1]?.trim();
 test('launcher --temp --hours: one-time session in a temp folder, stops itself, folder removed', { timeout: 60000 }, async () => {
   const port = freePort();
   const l = launch(['bin/stltools-app.js', '--temp', '--no-browser', '--port', String(port), '--hours', '0.0015']);
+  try {
   await l.ready;
   const data = dataLine(l.out());
-  assert.ok(data.startsWith(tmpdir()), data);
+  assert.ok(data.startsWith(tmpdir()) || data.startsWith(await realpath(tmpdir())), data);
   assert.match(l.out(), /Temporary/);
   assert.match(l.out(), /Auto-stop/);
   const h = await (await fetch(`http://127.0.0.1:${port}/api/hosting`)).json();
@@ -222,10 +278,15 @@ test('launcher --temp --hours: one-time session in a temp folder, stops itself, 
   assert.ok(h.stopAt);
   assert.equal(await l.exited, 0, 'stopped by itself');
   assert.ok(!existsSync(data), 'temp data deleted');
+  } finally {
+    l.child.kill('SIGTERM'); // never leave a launcher running if an assertion failed
+  }
 });
 
 test('launcher portable: portable.txt next to app/ keeps data on the drive', { timeout: 60000 }, async () => {
-  const usb = await mkdtemp(join(tmpdir(), 'stltools-usb-'));
+  // realpath: on macOS /var is a link to /private/var and the launcher reports real paths
+  const usb = await realpath(await mkdtemp(join(tmpdir(), 'stltools-usb-')));
+  let l = null;
   try {
     const appDir = join(usb, 'app');
     await mkdir(appDir);
@@ -233,7 +294,7 @@ test('launcher portable: portable.txt next to app/ keeps data on the drive', { t
     await symlink(resolve('node_modules'), join(appDir, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
     await writeFile(join(usb, 'portable.txt'), 'STL Tools keeps its data next to this file.\n');
     const port = freePort();
-    const l = launch([join(appDir, 'bin', 'stltools-app.js'), '--no-browser', '--port', String(port)], { cwd: usb });
+    l = launch([join(appDir, 'bin', 'stltools-app.js'), '--no-browser', '--port', String(port)], { cwd: usb });
     await l.ready;
     assert.equal(dataLine(l.out()), join(usb, 'stltools-data', 'data'));
     assert.match(l.out(), /Portable/);
@@ -244,6 +305,7 @@ test('launcher portable: portable.txt next to app/ keeps data on the drive', { t
     await l.exited;
     assert.ok(existsSync(join(usb, 'stltools-data', 'custom', 'package.json')), 'data stays on the drive after stop');
   } finally {
+    l?.child.kill('SIGTERM');
     await rm(usb, { recursive: true, force: true });
   }
 });

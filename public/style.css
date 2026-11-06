@@ -400,6 +400,7 @@ header { flex-direction: column; align-items: stretch; gap: 8px; padding: 8px 16
 .diag li { margin: 3px 0; }
 .diag li.ok strong { color: var(--ok); }
 .diag li.fail strong { color: var(--fail); }
+.diag li.warn strong { color: #b7791f; }
 code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; background: var(--bg); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
 @media (max-width: 760px) {
   .settings-layout { grid-template-columns: 1fr; }
@@ -520,3 +521,16 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; backgrou
 .viewer-fallback p { max-width: 46rem; margin: 0 0 0.75rem; }
 .viewer-fallback ul { margin: 0; padding-left: 1.2rem; }
 body[data-printers="off"] [data-needs-printers] { display: none !important; }
+/* printer details: health check and config viewer */
+.insights-box { margin-top: 12px; }
+.insights-box .row button.active { outline: 2px solid var(--accent); }
+.health { list-style: none; padding: 0; margin: 8px 0; font-size: 13px; }
+.health li { padding: 4px 0; border-bottom: 1px solid var(--border); }
+.health li.lvl-ok strong { color: var(--ok); }
+.health li.lvl-warn strong { color: #b7791f; }
+.health li.lvl-info strong { color: var(--muted); }
+.cfg-view { max-height: 480px; overflow: auto; font-size: 12px; line-height: 1.45; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 0; margin: 8px 0; white-space: pre; }
+.cfg-view .ln { color: var(--muted); user-select: none; }
+.cfg-view .sec { color: var(--accent); font-weight: 600; }
+.cfg-view .cmt { color: var(--muted); }
+.cfg-view .hit { background: rgba(255, 200, 0, 0.25); }

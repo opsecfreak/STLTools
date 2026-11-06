@@ -77,6 +77,13 @@ try {
   check(await page.locator('#viewer canvas').count() === 1, '3D view canvas present (WebGL)');
   check(/About \d/.test(await page.locator('#estimate').innerText()), 'print estimate shown');
   check(/own limits/.test(await page.locator('#estimate select[aria-label="Print on"]').innerText()), 'estimate can use the printer\'s own limits');
+  // switching generator shows the new part without touching a setting
+  const before = await page.locator('#dlStl').getAttribute('href');
+  const other = await page.locator('#generator option').nth(1).getAttribute('value');
+  await page.locator('#generator').selectOption(other);
+  await page.waitForFunction(() => /^Landing|part/.test(document.querySelector('#status')?.textContent ?? '') && !/^Generating/.test(document.querySelector('#status').textContent), null, { timeout: 30000 }).catch(() => {});
+  const status = await page.locator('#status').innerText();
+  check(/part/.test(status) && !/^Generating/.test(status) && ((await page.locator('#dlStl').getAttribute('href')) !== before || await page.locator('#zipAll').isVisible()), `changing the generator regenerates the 3D view (${other}: ${status})`);
 
   // 3. live webcam
   await page.evaluate(() => { location.hash = 'printers'; });
@@ -86,6 +93,12 @@ try {
   check(/\/stream\?cam=0/.test(src ?? ''), `Printers page uses the live stream (${src})`);
   check(await page.locator('.cam-box img.cam').evaluate((img) => img.naturalWidth > 0), 'live video frame decoded');
   check(mock.streams.open >= 1, 'camera stream opened on the printer');
+  await page.locator('.insights-box button', { hasText: 'Health check' }).click();
+  await page.waitForSelector('.health li', { timeout: 10000 });
+  check(/pressure_advance/.test(await page.locator('.health').innerText()), 'printer health check shows the Klipper setup');
+  await page.locator('.insights-box button', { hasText: 'Config files' }).click();
+  await page.waitForSelector('.cfg-view .sec', { timeout: 10000 });
+  check(/max_velocity/.test(await page.locator('.cfg-view').innerText()), 'printer.cfg viewer shows the file');
   await page.evaluate(() => { location.hash = 'home'; });
   for (let i = 0; i < 30 && mock.streams.closed < mock.streams.open; i++) await page.waitForTimeout(200);
   check(mock.streams.closed === mock.streams.open, `stream closed when leaving the Printers page (${mock.streams.closed}/${mock.streams.open})`);

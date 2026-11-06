@@ -109,9 +109,9 @@ function schemaForm(section, def, profiles) {
 // ---------------------------------------------------------------- printers
 
 function stepList(result) {
-  return el('ol', { className: 'diag' }, ...result.steps.map((s) => el('li', { className: s.ok ? 'ok' : 'fail' },
-    el('strong', { textContent: `${s.ok ? 'OK' : 'FAIL'}  ${s.step}: ` }), document.createTextNode(s.detail),
-    !s.ok && s.fix ? el('div', { className: 'muted', textContent: `Fix: ${s.fix}` }) : null)));
+  return el('ol', { className: 'diag' }, ...result.steps.map((s) => el('li', { className: s.warn ? 'warn' : s.ok ? 'ok' : 'fail' },
+    el('strong', { textContent: `${s.warn ? 'WARN' : s.ok ? 'OK' : 'FAIL'}  ${s.step}: ` }), document.createTextNode(s.detail),
+    (!s.ok || s.warn) && s.fix ? el('div', { className: 'muted', textContent: `Fix: ${s.fix}` }) : null)));
 }
 
 async function printerManager(sec, profiles) {
@@ -179,7 +179,8 @@ async function printerManager(sec, profiles) {
       const r = await api('POST', '/api/printers/diagnose', { url: addr.value, apiKey: key.value || undefined });
       out.replaceChildren(stepList(r));
       if (r.model && !model.value) model.value = r.model;
-      if (r.hostname && !name.value) name.value = r.hostname;
+      if (!name.value && (r.name || r.hostname)) name.value = r.name || r.hostname;
+      if (r.url && r.url !== addr.value) addr.value = r.url; // e.g. moved to port 7125
       return r;
     };
     const add = el('form', { className: 'add-printer', onsubmit: async (e) => {
@@ -187,7 +188,7 @@ async function printerManager(sec, profiles) {
       try {
         const r = await test();
         if (!r.steps.find((s) => s.step === 'Moonraker answers')?.ok) { toast('Not added: Moonraker did not answer. See the steps.', 'error'); return; }
-        const p = await api('POST', '/api/printers', { name: name.value || r.hostname || '', url: r.url, apiKey: key.value || undefined, model: model.value });
+        const p = await api('POST', '/api/printers', { name: name.value || r.name || r.hostname || '', url: r.url, apiKey: key.value || undefined, model: model.value });
         if (!settings().printers.defaultPrinter) await saveSettings({ printers: { defaultPrinter: p.id } });
         await api('GET', `/api/printers/${p.id}/machine`).catch(() => null);
         await refreshPrinterVisibility();
@@ -200,7 +201,7 @@ async function printerManager(sec, profiles) {
     el('ol', { className: 'muted steps' },
       el('li', { textContent: 'On the SV07 screen open Settings > Network (or check your router) and note the IP address.' }),
       el('li', { textContent: 'Check that http://<that address> opens Mainsail in a browser on this computer.' }),
-      el('li', { textContent: 'Enter the address below, keep the model "Sovol SV07", press Test connection, then Add printer.' })),
+      el('li', { textContent: 'Enter the address below (or press Scan my network, then "Use and test"), keep the model "Sovol SV07", check the test steps, then press Add printer.' })),
     el('div', { className: 'row' }, name, addr, model), key,
     el('div', { className: 'row' },
       el('button', { type: 'submit', textContent: 'Add printer' }),
@@ -212,7 +213,7 @@ async function printerManager(sec, profiles) {
           const r = await api('GET', '/api/printers/scan');
           scanOut.replaceChildren(el('p', { className: 'muted', textContent: `Scanned ${r.networks.join(', ') || 'no local network found'}: ${r.printers.length} printer(s).` }),
             ...r.printers.map((f) => el('div', { className: 'pick-row' }, el('span', { textContent: `${f.hostname ?? 'Klipper printer'} at ${f.url} (${f.klippyState})` }),
-              el('button', { type: 'button', className: 'small', textContent: 'Use', onclick: () => { addr.value = f.url; name.value = f.hostname ?? ''; } }))));
+              el('button', { type: 'button', className: 'small', textContent: 'Use and test', onclick: () => { addr.value = f.url; name.value = ''; test().catch((err) => out.replaceChildren(el('p', { className: 'error', textContent: err.message }))); } }))));
         } catch (err) { scanOut.replaceChildren(el('p', { className: 'error', textContent: err.message })); } finally { e.target.disabled = false; }
       } })),
     out, scanOut);

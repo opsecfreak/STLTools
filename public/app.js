@@ -477,7 +477,7 @@ function showTab(tab, { keepForm = false } = {}) {
     const last = state.presets.find((p) => p.id === store.get(`preset:${tab}`) && p.section === tab);
     const first = last ?? presetsForTab()[0];
     if (first) loadPreset(first);
-    else loadGenerator(generatorsForTab()[0].id);
+    else { loadGenerator(generatorsForTab()[0].id); run({ silent: true }); }
   }
 }
 
@@ -752,7 +752,12 @@ $('fileParams').onchange = onParamsFile;
 $('openStl').onclick = () => $('fileStl').click();
 $('fileStl').onchange = onStlFiles;
 $('toShop').onclick = sendToShop;
-$('generator').onchange = () => loadGenerator($('generator').value);
+$('generator').onchange = () => {
+  // switching generator shows its default part at once (no need to touch a setting first)
+  loadGenerator($('generator').value);
+  store.set(`preset:${state.tab}`, '');
+  run({ silent: true });
+};
 $('allGenerators').onchange = fillGeneratorSelect;
 $('params').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); run(); } };
 $('params').oninput = () => liveRun();

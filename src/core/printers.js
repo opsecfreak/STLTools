@@ -93,14 +93,31 @@ const DEFAULT_CAM = { stream: '/webcam/?action=stream', snapshot: '/webcam/?acti
 // Moonraker webcam services whose stream_url is plain MJPEG (can be shown in an <img>).
 const MJPEG_SERVICES = new Set(['mjpegstreamer', 'uv4l-mjpeg', '']);
 const MAX_STREAMS_PER_PRINTER = 3;
+const CONFIG_EXT = /\.(cfg|conf|txt|ini|json)$/i;
+
+/** Hide values of config lines that look like secrets before config text reaches a browser. */
+export function redactSecrets(text) {
+  return String(text)
+    .replace(/^(\s*[\w.-]*(?:api[_-]?key|token|password|passwd|secret|private[_-]?key|webhook|bot_?token|access[_-]?key)[\w.-]*\s*[:=]\s*)(\S.*)$/gim, '$1<hidden by STL Tools>')
+    .replace(/(\w+:\/\/)[^/\s@]+@/g, '$1<hidden>@'); // user:password@ and token@ (Apprise notifier URLs)
+}
 
 const cleanModel = (m) => (m && /^[a-z0-9][a-z0-9-]{1,40}$/.test(String(m)) ? String(m) : '');
 
 /** Best guess of the printer profile from the Klipper host name (sovol, sv07...). Empty if unknown. */
 export function guessModel(hostname) {
   const h = String(hostname ?? '').toLowerCase();
-  if (/sv0?7/.test(h)) return 'sovol-sv07';
+  // Stock SV07 images name the host "mkspi" (MKS Pi host board) or after the printer.
+  if (/sv0?7|mkspi|sovol/.test(h)) return 'sovol-sv07';
   return '';
+}
+
+/** Mainsail keeps its own settings (printer name, webcams) in Moonraker's database: read-only GET. */
+async function mainsailItem(p, key) {
+  try {
+    const r = await mr(p, `/server/database/item?namespace=mainsail&key=${encodeURIComponent(key)}`, { timeout: 4000 });
+    return r?.value ?? null;
+  } catch { return null; }
 }
 
 export function createPrinters({ dataDir }) {
@@ -170,6 +187,10 @@ export function createPrinters({ dataDir }) {
     async diagnose(url, apiKey) {
       const steps = [];
       let p;
+      if (!String(url ?? '').trim()) {
+        steps.push({ step: 'Address', ok: false, detail: 'No address entered yet.', fix: 'Type the printer address (the one you open Mainsail with, e.g. 192.168.1.121), or press "Scan my network" and then "Use" on the printer it finds.' });
+        return { ok: false, steps };
+      }
       try {
         p = { name: 'printer', url: normalizeUrl(url), apiKey };
         steps.push({ step: 'Address', ok: true, detail: `${p.url} is a local network address.` });
@@ -180,7 +201,8 @@ export function createPrinters({ dataDir }) {
       const run = async (step, fn, fix) => {
         try {
           const detail = await fn();
-          steps.push({ step, ok: true, detail });
+          if (detail && typeof detail === 'object') steps.push({ step, ok: true, ...detail, fix: detail.warn ? fix : undefined });
+          else steps.push({ step, ok: true, detail });
           return true;
         } catch (err) {
           steps.push({ step, ok: false, detail: err.message, fix });
@@ -188,11 +210,24 @@ export function createPrinters({ dataDir }) {
         }
       };
       let info = null;
-      const reached = await run('Moonraker answers', async () => {
+      const reachFix = 'Open the same address in a browser. If Mainsail opens there but this fails, try port 7125 (e.g. 192.168.1.50:7125). If it says "refused", add this computer to trusted_clients in moonraker.conf or enter an API key.';
+      let reached = await run('Moonraker answers', async () => {
         info = await mr(p, '/server/info');
         return `Moonraker ${info.moonraker_version ?? '?'}, Klipper state "${info.klippy_state}".`;
-      }, 'Open the same address in a browser. If Mainsail opens there but this fails, try port 7125 (e.g. 192.168.1.50:7125). If it says "refused", add this computer to trusted_clients in moonraker.conf or enter an API key.');
+      }, reachFix);
+      if (!reached && !new URL(p.url).port) {
+        // Mainsail's web server did not forward the API: try Moonraker's own port once.
+        const alt = { ...p, url: `${p.url}:7125` };
+        try {
+          info = await mr(alt, '/server/info');
+          steps.pop();
+          p = alt;
+          steps.push({ step: 'Moonraker answers', ok: true, detail: `Moonraker ${info.moonraker_version ?? '?'} on port 7125 (the address without a port did not forward the API). STL Tools will use ${alt.url}.` });
+          reached = true;
+        } catch { /* keep the first failure */ }
+      }
       if (!reached) return { ok: false, steps };
+      const mainsailName = await mainsailItem(p, 'general');
       let hostname = null;
       await run('Printer info', async () => {
         const pi = await mr(p, '/printer/info');
@@ -231,9 +266,12 @@ export function createPrinters({ dataDir }) {
         if (!cams.length) return 'No webcam found (optional).';
         const c = cams[0];
         const kind = c.stream_url && MJPEG_SERVICES.has(c.service ?? '') ? 'live video + snapshots' : c.snapshot_url ? 'snapshots' : 'not viewable here';
-        return `${cams.length} webcam(s): ${cams.map((x) => x.name).join(', ')}. ${kind}${c.guessed ? ' (found at the Mainsail default path)' : ''}.`;
-      }, 'Optional. Configure the camera in Mainsail (Settings > Webcams).');
-      return { ok: steps.every((s) => s.ok), steps, url: p.url, hostname, model };
+        const where = c.source === 'mainsail' ? ' (from Mainsail\'s webcam settings)' : c.guessed ? ' (found at the Mainsail default path)' : '';
+        const st = await api.cameraState(p, c);
+        const text = `${cams.length} webcam(s): ${cams.map((x) => x.name).join(', ')}, ${c.service || 'unknown service'}, ${c.stream_url || c.snapshot_url}${where}. ${st.up ? `Answers: ${kind}.` : `Listed but NOT answering: ${st.detail}.`}`;
+        return st.up ? text : { detail: text, warn: true };
+      }, 'Optional. The camera is set up in Mainsail but its service is not running. On the printer, restart crowsnest (Mainsail > Machine > crowsnest > Restart, or sudo systemctl restart crowsnest). STL Tools never restarts printer services.');
+      return { ok: steps.every((s) => s.ok), steps, url: p.url, hostname, model, name: mainsailName?.printername ?? null };
     },
 
     /** Test an address before saving it. */
@@ -242,7 +280,8 @@ export function createPrinters({ dataDir }) {
       const info = await mr(p, '/server/info');
       let host = null;
       try { host = (await mr(p, '/printer/info')).hostname; } catch { /* klippy may be down */ }
-      return { url: p.url, klippyState: info.klippy_state, moonraker: info.moonraker_version, hostname: host, model: guessModel(host) };
+      const general = await mainsailItem(p, 'general');
+      return { url: p.url, klippyState: info.klippy_state, moonraker: info.moonraker_version, hostname: host, model: guessModel(host), name: general?.printername ?? null };
     },
 
     /** Live status, normalized for the UI. */
@@ -362,9 +401,16 @@ export function createPrinters({ dataDir }) {
     async cameras(p) {
       const r = await mr(p, '/server/webcams/list').catch(() => ({ webcams: [] }));
       const listed = (r.webcams ?? []).filter((c) => c.enabled !== false && (c.snapshot_url || c.stream_url));
-      if (listed.length) return listed.map((c) => ({ ...c, guessed: false }));
+      if (listed.length) return listed.map((c) => ({ ...c, guessed: false, source: 'moonraker' }));
+      // Older Moonraker / Mainsail 2.x: Mainsail's own webcam list (Settings > Webcams), as in its backup file:
+      // { "<uuid>": { name, service, urlStream, urlSnapshot, rotate, flipX, flipY, targetFps } }
+      const ms = await mainsailItem(p, 'webcams');
+      const fromMainsail = Object.values(ms && typeof ms === 'object' ? ms : {})
+        .filter((c) => c && (c.urlStream || c.urlSnapshot) && c.enabled !== false)
+        .map((c) => ({ name: c.name ?? 'Webcam', service: c.service ?? '', stream_url: c.urlStream ?? '', snapshot_url: c.urlSnapshot ?? '', rotation: c.rotate ?? 0, flip_horizontal: Boolean(c.flipX), flip_vertical: Boolean(c.flipY), target_fps: c.targetFps ?? null, guessed: false, source: 'mainsail' }));
+      if (fromMainsail.length) return fromMainsail;
       const prof = getProfile(p.model)?.webcam ?? DEFAULT_CAM;
-      const cam = { name: 'webcam', service: 'mjpegstreamer', stream_url: prof.stream ?? DEFAULT_CAM.stream, snapshot_url: prof.snapshot ?? DEFAULT_CAM.snapshot, guessed: true };
+      const cam = { name: 'webcam', service: 'mjpegstreamer', stream_url: prof.stream ?? DEFAULT_CAM.stream, snapshot_url: prof.snapshot ?? DEFAULT_CAM.snapshot, guessed: true, source: 'default' };
       try {
         const res = await fetch(snapshotUrl(p, cam), { signal: AbortSignal.timeout(3000) });
         await res.body?.cancel();
@@ -373,9 +419,27 @@ export function createPrinters({ dataDir }) {
       return [];
     },
 
+    /** Does the camera answer right now? { up, detail } (one snapshot, 4 s). A listed camera can be down (crowsnest stopped). */
+    async cameraState(p, cam) {
+      const url = cam?.snapshot_url ? snapshotUrl(p, cam) : null;
+      if (!url) return { up: false, detail: 'no snapshot URL' };
+      try {
+        const res = await fetch(url, { signal: AbortSignal.timeout(4000) });
+        await res.body?.cancel();
+        if (res.ok && /^image\//.test(res.headers.get('content-type') ?? '')) return { up: true, detail: 'answers' };
+        return { up: false, detail: `HTTP ${res.status} from ${new URL(url).pathname}${res.status === 502 || res.status === 503 ? ' (the web server is up, the camera service behind it is not)' : ''}` };
+      } catch (err) {
+        return { up: false, detail: err.name === 'TimeoutError' ? 'no answer in 4 s' : err.cause?.code ?? err.message };
+      }
+    },
+
     async webcams(id) {
       const p = await find(id);
-      return (await api.cameras(p)).map((c, i) => ({
+      const cams = await api.cameras(p);
+      const states = await Promise.all(cams.map((c) => api.cameraState(p, c)));
+      return cams.map((c, i) => ({
+        up: states[i].up,
+        state: states[i].detail,
         index: i,
         name: c.name,
         service: c.service ?? '',
@@ -386,6 +450,7 @@ export function createPrinters({ dataDir }) {
         rotation: c.rotation ?? 0,
         fps: c.target_fps ?? null,
         guessed: c.guessed,
+        source: c.source,
       }));
     },
 
@@ -473,6 +538,97 @@ export function createPrinters({ dataDir }) {
       const list = await file.get();
       await file.set(list.map((x) => (x.id === id ? { ...x, machine: m } : x)));
       return m;
+    },
+
+    /** Config files on the printer (read-only list of Moonraker's "config" root). */
+    async configFiles(id) {
+      const p = await find(id);
+      const list = await mr(p, '/server/files/list?root=config');
+      return list.map((f) => ({ path: f.path ?? f.filename, size: f.size, modified: f.modified }))
+        .filter((f) => f.path && CONFIG_EXT.test(f.path) && !f.path.split('/').some((x) => x.startsWith('.')))
+        .sort((a, b) => (a.path === 'printer.cfg' ? -1 : b.path === 'printer.cfg' ? 1 : a.path.localeCompare(b.path)));
+    },
+
+    /**
+     * Text of one config file (printer.cfg, moonraker.conf, crowsnest.conf, macros...).
+     * Read-only GET. Lines that look like secrets (api keys, tokens, passwords) are
+     * hidden before the text leaves the server.
+     */
+    async configFile(id, path) {
+      const p = await find(id);
+      const clean = String(path ?? '');
+      if (!CONFIG_EXT.test(clean) || clean.includes('..') || clean.startsWith('/')) throw new CatalogError('Not a config file path');
+      const res = await mr(p, `/server/files/config/${clean.split('/').map(encodeURIComponent).join('/')}`, { raw: true });
+      const buf = Buffer.from(await res.arrayBuffer());
+      if (buf.length > 2 * 1024 * 1024) throw new CatalogError('Config file is larger than 2 MB');
+      return { path: clean, text: redactSecrets(buf.toString('utf8')), bytes: buf.length };
+    },
+
+    /**
+     * Health check of the printer's Klipper setup, from read-only queries:
+     * effective config (configfile.settings, includes Klipper defaults), MCU and host
+     * versions, filament sensor, bed mesh, input shaper, pending SAVE_CONFIG,
+     * Klipper's own config warnings, host system and print totals.
+     *   -> { checks: [{ level: ok|info|warn, title, detail }], facts: {...} }
+     */
+    async health(id) {
+      const p = await find(id);
+      const objects = (await mr(p, '/printer/objects/list').catch(() => ({ objects: [] }))).objects ?? [];
+      const want = ['configfile', 'toolhead', 'bed_mesh', 'print_stats', ...objects.filter((o) => /^mcu( |$)|^filament_(switch|motion)_sensor /.test(o))];
+      const q = await mr(p, `/printer/objects/query?${want.map(encodeURIComponent).join('&')}`);
+      const st = q.status ?? {};
+      const cfg = st.configfile?.settings ?? {};
+      const [pinfo, sys, totals] = await Promise.all([
+        mr(p, '/printer/info').catch(() => null),
+        mr(p, '/machine/system_info').catch(() => null),
+        mr(p, '/server/history/totals').catch(() => null),
+      ]);
+      const checks = [];
+      const add = (level, title, detail) => checks.push({ level, title, detail });
+      const pr = cfg.printer ?? {};
+      add('info', 'Motion limits', `max_velocity ${pr.max_velocity ?? '?'} mm/s, max_accel ${pr.max_accel ?? '?'}, max_accel_to_decel ${pr.max_accel_to_decel ?? '?'}, square_corner_velocity ${pr.square_corner_velocity ?? '?'}, kinematics ${pr.kinematics ?? '?'}.`);
+      const ex = cfg.extruder ?? {};
+      add('info', 'Extruder', `nozzle ${ex.nozzle_diameter ?? '?'} mm, filament ${ex.filament_diameter ?? '?'} mm, pressure_advance ${ex.pressure_advance ?? '?'} (smooth ${ex.pressure_advance_smooth_time ?? '?'}), rotation_distance ${ex.rotation_distance ?? '?'}, max_extrude_cross_section ${ex.max_extrude_cross_section ?? 'default'}.`);
+      const probe = cfg.probe ?? cfg.bltouch ?? cfg.smart_effector ?? null;
+      if (probe) add('info', 'Probe', `z_offset ${probe.z_offset ?? '?'}.`);
+      const sh = cfg.input_shaper;
+      add(sh ? 'ok' : 'info', 'Input shaper', sh ? `X ${sh.shaper_type_x ?? sh.shaper_type ?? '?'} @ ${sh.shaper_freq_x ?? '?'} Hz, Y ${sh.shaper_type_y ?? sh.shaper_type ?? '?'} @ ${sh.shaper_freq_y ?? '?'} Hz.` : 'No [input_shaper] section: ringing is not compensated.');
+      const mesh = st.bed_mesh;
+      if (mesh) {
+        const names = Object.keys(mesh.profiles ?? {});
+        add(names.length ? 'ok' : 'warn', 'Bed mesh', `${names.length} saved profile(s): ${names.join(', ') || 'none'}. Loaded now: ${mesh.profile_name || 'none (normal at idle if START_PRINT loads one)'}.`);
+        const prof = mesh.profiles?.default?.points;
+        if (Array.isArray(prof) && prof.length) {
+          const flat = prof.flat();
+          const range = Math.max(...flat) - Math.min(...flat);
+          add(range > 0.3 ? 'warn' : 'ok', 'Bed flatness (default mesh)', `range ${range.toFixed(3)} mm (${Math.min(...flat).toFixed(3)} to ${Math.max(...flat).toFixed(3)}).${range > 0.3 ? ' Over 0.3 mm: check the bed and re-probe.' : ''}`);
+        }
+      }
+      for (const [name, sensor] of Object.entries(st).filter(([k]) => /^filament_(switch|motion)_sensor /.test(k))) {
+        const c = cfg[name] ?? {};
+        const pause = c.pause_on_runout;
+        add(pause === false ? 'warn' : 'ok', `Filament sensor "${name.split(' ').slice(1).join(' ')}"`, `${sensor.enabled === false ? 'DISABLED' : 'enabled'}, filament ${sensor.filament_detected ? 'detected' : 'NOT detected'}, pause_on_runout ${pause === undefined ? 'not reported' : pause} (effective value, Klipper default is true).${pause === false ? ' A runout or snapped filament will not pause the print.' : ''}`);
+      }
+      const mcus = Object.entries(st).filter(([k]) => /^mcu( |$)/.test(k));
+      const host = pinfo?.software_version ?? null;
+      for (const [name, m] of mcus) {
+        const v = m.mcu_version ?? '?';
+        const skew = host && v !== '?' && v.split('-')[0] === host.split('-')[0] && v !== host;
+        add(skew ? 'info' : 'ok', `MCU "${name}"`, `firmware ${v}, host Klipper ${host ?? '?'}${skew ? ' (same release, different build: works, flash the MCU at your next firmware update)' : ''}.`);
+      }
+      if (st.configfile?.save_config_pending) add('warn', 'Unsaved calibration', 'SAVE_CONFIG is pending (a calibration result is not saved yet). Save or discard it in Mainsail.');
+      for (const w of st.configfile?.warnings ?? []) add('warn', 'Klipper config warning', `${w.message ?? JSON.stringify(w)}`);
+      if (sys?.system_info) {
+        const si = sys.system_info;
+        add('info', 'Host computer', `${si.distribution?.name ?? '?'} ${si.distribution?.version ?? ''}, ${si.cpu_info?.processor ?? si.cpu_info?.cpu_desc ?? 'CPU ?'}, ${si.cpu_info?.cpu_count ?? '?'} cores, ${si.cpu_info?.total_memory ? `${Math.round(si.cpu_info.total_memory / 1024)} MB` : 'memory ?'}, Python ${si.python?.version_string?.split(' ')[0] ?? '?'}.`);
+        const services = si.available_services ?? [];
+        if (services.length) add(services.includes('crowsnest') || services.some((x) => /webcam|ustreamer|mjpg/.test(x)) ? 'info' : 'info', 'Host services', services.join(', '));
+      }
+      if (totals?.job_totals) {
+        const t = totals.job_totals;
+        add('info', 'Print totals', `${t.total_jobs ?? '?'} jobs, ${((t.total_print_time ?? 0) / 3600).toFixed(1)} h printing, ${((t.total_filament_used ?? 0) / 1000).toFixed(1)} m filament, longest ${((t.longest_print ?? 0) / 3600).toFixed(1)} h.`);
+      }
+      return { checks, facts: { klipper: host, objects: objects.length, state: pinfo?.state ?? null } };
     },
 
     /** Read-only "are you there?" for one printer; remembered for the UI. */

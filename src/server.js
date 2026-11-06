@@ -39,6 +39,7 @@
 //   GET /api/hosting (mode, addresses, PIN on/off)   PUT /api/hosting/pin { pin, current }   POST /api/hosting/login { pin }
 //   GET /api/estimate-targets (printers with their own Klipper limits + profiles)
 //   GET /api/printers/:id/stream?cam=0 (live MJPEG)   GET /api/printers/:id/machine   POST /api/printers/check
+//   GET /api/printers/:id/health   GET /api/printers/:id/config[?file=printer.cfg]   (read-only, secrets hidden)
 // Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data),
@@ -611,6 +612,11 @@ async function route(req, res) {
     if (sub === 'history') return send(res, 200, await printers.history(id, Number(url.searchParams.get('limit') ?? 20)));
     if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
     if (sub === 'machine') return send(res, 200, await printers.machine(id));
+    if (sub === 'health') return send(res, 200, await printers.health(id));
+    if (sub === 'config') {
+      const file = url.searchParams.get('file');
+      return send(res, 200, file ? await printers.configFile(id, file) : await printers.configFiles(id));
+    }
     if (sub === 'stream') {
       const st = await printers.stream(id, Number(url.searchParams.get('cam') ?? 0));
       res.writeHead(200, { 'content-type': st.type, 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });
