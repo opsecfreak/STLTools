@@ -2,7 +2,9 @@
 
 Parametric STL generator for a drone / RC / robotics shop. Pick one of 285 ready-made designs, change any size, get a watertight STL, slice and print.
 
-- **Web UI** with tabs for Shop, Planes, Quadcopters, Accessories, Robotics and My Designs. Live 3D preview, per-part STL or one ZIP, open any STL file from your computer to view it.
+- **Web UI**: Home page with advanced search, favorites and grid / list views; tabs for Shop, Planes, Quadcopters, Accessories, Robotics, Projects, My Designs and Printers. Live 3D preview, per-part STL or one ZIP, open any STL file from your computer to view it.
+- **Projects** group the parts for a build (quantity, notes, printed checkbox) and download as one ZIP.
+- **Printers**: view your Klipper / Mainsail printers (Sovol SV07 and others) on the LAN: status, temperatures, progress, files, history, webcam, G-code upload. View only: it cannot start, stop or change a print. See [docs/PRINTERS.md](docs/PRINTERS.md).
 - **Saved designs** and a **shop catalog** stored on the server (the Pi), so every device sees the same data.
 - **CLI** for scripting and batch jobs. **Library** for other Node projects.
 
@@ -30,7 +32,7 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 | [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
 | [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
 | [src/generators/README.md](src/generators/README.md) | Writing a new generator, kernel functions, printability rules |
-| [docs/PRINTERS.md](docs/PRINTERS.md) | Plan for slicing on the Pi and sending to a Klipper printer (not built yet) |
+| [docs/PRINTERS.md](docs/PRINTERS.md) | Printers tab: add your SV07, what it can and cannot do (view only), upload, troubleshooting |
 | [CHANGELOG.md](CHANGELOG.md) | Versions |
 
 ## What it makes
@@ -48,6 +50,22 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 
 All parts print without supports. Each part comes out in its print orientation.
+
+## Home, search, favorites, projects
+
+- **Home** shows tabs, your favorites, projects, recent designs and printer status. Type in the search box to search everything.
+- **Advanced search** (click "Advanced search"): filter by kind (presets, saved designs, generators, projects), tab, generator, favorites only; sort by match, name, tab or recent. Query syntax:
+
+| Type | Finds |
+|---|---|
+| `esc 16` | Everything containing both words |
+| `"tube clamp"` / `-snap` | Exact phrase / exclude a word |
+| `tab:quads` `kind:preset` `gen:tube-clamp` `group:hooks` `tag:esc` `fav:yes` `status:active` | Filters |
+| `tubeOD:16` `teeth>=30` `length<20` `bolt:M3` | Any setting, with `:` `=` `>` `<` `>=` `<=` |
+
+- **Grid / List**: every result list has both. Grid cards show a 3D preview. Previews render once in your browser and are cached on the server for every device.
+- **Favorites**: the star on any card, in the designer next to the description, or on a project. Stored on the server.
+- **Projects**: press **+** on a card or **Add to project** in a designer. Unchanged presets and saved designs are linked (later edits flow through); changed settings are stored as a snapshot. On the project page set quantities, notes and printed checkboxes, and download every part (or only unprinted parts) as one ZIP with a parts list.
 
 ## Presets, saved designs and files
 
@@ -75,7 +93,7 @@ Label styles on bins and holders:
 - **Raised text**: change filament at the first text layer for two colors.
 - **Recessed text**: fill with paint marker.
 
-Catalog data (`catalog.json`, `categories.json`) and saved designs (`designs.json`) are JSON files in `data/` (`STLTOOLS_DATA` to change). Back that folder up.
+Catalog data (`catalog.json`, `categories.json`), saved designs (`designs.json`), projects, favorites, printers and the preview cache are in `data/` (`STLTOOLS_DATA` to change). Back that folder up.
 
 ## Run from source (developers)
 
@@ -146,6 +164,11 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 | Method | Path | Purpose |
 |--------|------|---------|
 | GET | `/api/version` | Version, counts, data folder, custom file problems |
+| GET / POST, GET / PUT / DELETE | `/api/projects`, `/api/projects/:id` | Projects |
+| POST | `/api/projects/:id/items`, `/api/projects/:id/build` | Add a part / build a ZIP of every part |
+| GET, POST | `/api/favorites`, `/api/favorites/toggle` | Favorites |
+| POST, PUT, GET | `/api/thumbs/lookup`, `/api/thumbs/:key` | Preview cache |
+| GET (+ PUT upload) | `/api/printers/...` | Printers, view only (see docs/PRINTERS.md) |
 | GET | `/api/generators` | Generators with parameter schemas |
 | GET | `/api/presets` | Preset library |
 | POST | `/api/generate/:id` | JSON params in, parts with stats and download URLs out |
@@ -212,7 +235,7 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 - Generation runs on the server's main thread. Very large values block other requests until done.
 - No user accounts. Anyone who can reach the port can edit the catalog.
 - STL only. 3MF (with colors for labels) is on the roadmap.
-- No slicing or printer connection yet. Download the STL and slice it in your normal slicer.
+- No slicing on the server. Slice in your slicer, then upload the G-code in the Printers tab.
 - Memory grows about 5 MB per 1000 generations (WASM allocator). A service restart clears it.
 
 ## Roadmap ideas

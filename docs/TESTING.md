@@ -20,6 +20,13 @@ This is the first real-world test. Work through the list, print a few small part
 8. Press **Open STL file** and open any STL from your computer.
 9. Optional: start with `--lan` and open it from your phone.
 
+## B2. New in v5 (10 minutes)
+
+1. **Home**: type `tubeOD:16` in the search box. Switch between **Grid** and **List**. Previews fill in as you scroll (first time only).
+2. Star two cards. Check they appear under **Favorites** on Home.
+3. Press **+** on a card > **New project...** > name it. Open **Projects** > your project. Set a quantity, tick **printed**, press **Download all parts (ZIP)**.
+4. **Printers** > **Add a printer**: enter your SV07 address (the one that opens Mainsail). Check state, temperatures and files match Mainsail. If you have a sliced file, upload it and confirm it shows in Mainsail **without** starting.
+
 ## C. Print these first (small, fast, they test the defaults)
 
 | # | Preset | Tab | What to check |
@@ -51,6 +58,8 @@ Prints (preset, result: good / tight / loose / broke / other, measured numbers i
 1.
 2.
 3.
+
+Printer tab (address used, what showed, anything wrong):
 
 Things that did not work or were confusing:
 

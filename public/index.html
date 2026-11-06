@@ -18,15 +18,20 @@
   <header>
     <h1>STL Tools</h1>
     <nav class="tabs" role="tablist" aria-label="Sections">
+      <button type="button" role="tab" data-tab="home" class="tab">Home</button>
       <button type="button" role="tab" data-tab="shop" class="tab">Shop</button>
       <button type="button" role="tab" data-tab="planes" class="tab">Planes</button>
       <button type="button" role="tab" data-tab="quads" class="tab">Quadcopters</button>
       <button type="button" role="tab" data-tab="accessories" class="tab">Accessories</button>
       <button type="button" role="tab" data-tab="robotics" class="tab">Robotics</button>
+      <button type="button" role="tab" data-tab="projects" class="tab">Projects</button>
       <button type="button" role="tab" data-tab="library" class="tab">My Designs</button>
+      <button type="button" role="tab" data-tab="printers" class="tab">Printers</button>
     </nav>
   </header>
   <main>
+    <!-- Full-width pages: Home, Projects, a project, Printers -->
+    <section id="page" class="page" hidden></section>
     <aside>
       <!-- Designer: used by Shop / Planes / Quadcopters / Accessories / Robotics -->
       <section id="pane-design" class="pane">
@@ -45,7 +50,7 @@
           <label class="picker">Generator <select id="generator"></select></label>
           <label class="check-inline"><input type="checkbox" id="allGenerators"> show all</label>
         </div>
-        <p id="description" class="muted"></p>
+        <div class="desc-row"><span id="designStar"></span><p id="description" class="muted"></p></div>
         <form id="params"></form>
         <div class="actions">
           <button id="run" type="button">Generate</button>
@@ -53,6 +58,7 @@
           <button id="saveDesign" type="button" class="secondary" title="Save to My Designs on this server">Save design</button>
           <button id="saveParams" type="button" class="secondary" title="Download a .params.json file">Export</button>
           <button id="openParams" type="button" class="secondary" title="Load a .params.json file">Import</button>
+          <button id="toProject" type="button" class="secondary">Add to project</button>
           <button id="toShop" type="button" class="secondary">Add to shop</button>
         </div>
       </section>

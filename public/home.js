@@ -1,6 +1,7 @@
 // Home page, advanced search, grid/list cards, favorites and projects.
 import { $, el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES } from './lib.js';
 import { thumbImg } from './thumbs.js';
+import { printerChips } from './printers.js';
 
 let ctx = null; // set by initHome: { state, openPreset, openDesign, openGenerator, goTab, refreshDesigns }
 let favs = new Set();
@@ -455,7 +456,10 @@ function drawDashboard(dash, redraw) {
   const favItems = search('', { favoritesOnly: true, sort: 'tab' });
   const projItems = search('', { kinds: ['project'], sort: 'recent' }).slice(0, 6);
   const designItems = search('', { kinds: ['design'], sort: 'recent' }).slice(0, 8);
+  const chips = el('div');
+  printerChips().then((c) => { if (c) chips.replaceChildren(c); }).catch(() => {});
   dash.replaceChildren(
+    chips,
     el('section', {}, el('div', { className: 'tiles' }, ...tiles,
       el('button', { type: 'button', className: 'tile tile-printers', onclick: () => { location.hash = '#printers'; } }, el('strong', { textContent: 'Printers' }), el('span', { textContent: 'Status, files, upload (view only)' })))),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),

@@ -1,6 +1,6 @@
 {
   "name": "stltools",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Parametric STL generator for a drone, RC and robotics shop: bins, labels, tube clamps and joints, quad and plane parts, gears and mounts. Web UI + CLI.",
   "type": "module",
   "main": "src/index.js",
