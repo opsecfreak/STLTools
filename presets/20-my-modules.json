@@ -1,0 +1,615 @@
+{
+  "group": "Modules",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "pi5-case-vents",
+      "name": "Raspberry Pi 5 case, vents",
+      "generator": "sbc-case",
+      "description": "Base + press-fit lid. Wide port windows, microSD slot, GPIO slot, vent slots. Board size from the Raspberry Pi 5 drawing.",
+      "tags": [
+        "pi",
+        "pi5",
+        "case"
+      ],
+      "params": {
+        "board": "pi5",
+        "cooling": "vents"
+      },
+      "group": "Raspberry Pi",
+      "verify": [
+        "frontTo",
+        "sideHeight"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "pi5-case-fan30",
+      "name": "Raspberry Pi 5 case, 30 mm fan",
+      "generator": "sbc-case",
+      "description": "Lid with a 30 mm fan (24 mm screws) over the SoC. Use without the Active Cooler or raise headroom.",
+      "tags": [
+        "pi",
+        "pi5",
+        "case",
+        "fan"
+      ],
+      "params": {
+        "board": "pi5",
+        "cooling": "fan30",
+        "headroom": 24
+      },
+      "group": "Raspberry Pi",
+      "verify": [
+        "headroom"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "pi5-case-ears",
+      "name": "Raspberry Pi 5 case, screw ears",
+      "generator": "sbc-case",
+      "description": "Case with two M3 screw ears to mount it on a robot, a wall or a frame plate.",
+      "tags": [
+        "pi",
+        "pi5",
+        "case",
+        "mount"
+      ],
+      "params": {
+        "board": "pi5",
+        "ears": true
+      },
+      "group": "Raspberry Pi",
+      "section": "robotics"
+    },
+    {
+      "id": "pi5-case-tall-hat",
+      "name": "Raspberry Pi 5 case, tall (HAT / cooler)",
+      "generator": "sbc-case",
+      "description": "35 mm headroom for a HAT, NVMe board or tall cooler. Ribbon slot on the left edge.",
+      "tags": [
+        "pi",
+        "pi5",
+        "case",
+        "hat"
+      ],
+      "params": {
+        "board": "pi5",
+        "headroom": 35,
+        "leftSlot": true,
+        "cooling": "fan40"
+      },
+      "group": "Raspberry Pi",
+      "verify": [
+        "headroom"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "pi4-case-vents",
+      "name": "Raspberry Pi 4 case, vents",
+      "generator": "sbc-case",
+      "description": "Base + press-fit lid for the Pi 4 B. Port window covers USB-C, 2 x micro HDMI and audio.",
+      "tags": [
+        "pi",
+        "pi4",
+        "case"
+      ],
+      "params": {
+        "board": "pi4",
+        "cooling": "vents"
+      },
+      "group": "Raspberry Pi",
+      "verify": [
+        "frontTo"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "pi4-case-fan30",
+      "name": "Raspberry Pi 4 case, 30 mm fan",
+      "generator": "sbc-case",
+      "description": "Pi 4 B case with a 30 mm fan on the lid.",
+      "tags": [
+        "pi",
+        "pi4",
+        "case",
+        "fan"
+      ],
+      "params": {
+        "board": "pi4",
+        "cooling": "fan30"
+      },
+      "group": "Raspberry Pi",
+      "section": "robotics"
+    },
+    {
+      "id": "pi3-case-vents",
+      "name": "Raspberry Pi 3 case, vents",
+      "generator": "sbc-case",
+      "description": "Pi 3 B / B+ case (same footprint and holes as the Pi 4).",
+      "tags": [
+        "pi",
+        "pi3",
+        "case"
+      ],
+      "params": {
+        "board": "pi3"
+      },
+      "group": "Raspberry Pi",
+      "section": "robotics"
+    },
+    {
+      "id": "pi5-pad-plate",
+      "name": "Pi 5 board pad, screw plate",
+      "generator": "component-mount",
+      "description": "58 x 49 mm bosses, M2.5 thread, screw plate. Same pattern as Pi 4 / 3.",
+      "tags": [
+        "pi",
+        "pi5",
+        "pad"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 58,
+        "padPatternY": 49,
+        "padHole": 2.2,
+        "bossDiameter": 5,
+        "bossHeight": 5,
+        "base": "plate",
+        "straps": 0
+      },
+      "group": "Raspberry Pi",
+      "section": "robotics"
+    },
+    {
+      "id": "pi5-pad-on-tube-16",
+      "name": "Pi 5 board on a 16 mm tube",
+      "generator": "component-mount",
+      "description": "Pi 5 pad on a two-piece bolt-on clamp for a 16 mm tube.",
+      "tags": [
+        "pi",
+        "pi5",
+        "pad",
+        "tube"
+      ],
+      "params": {
+        "holder": "pad",
+        "padPatternX": 58,
+        "padPatternY": 49,
+        "padHole": 2.2,
+        "bossDiameter": 5,
+        "bossHeight": 5,
+        "base": "clamp-kit",
+        "clampType": "two-piece",
+        "tubeOD": 16,
+        "straps": 0
+      },
+      "group": "Raspberry Pi",
+      "verify": [
+        "tubeOD"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "xiao-c6-clip-plate",
+      "name": "XIAO ESP32-C6 clip, screw plate",
+      "generator": "sensor-bracket",
+      "description": "Snap-in cradle for Seeed Studio XIAO boards (21 x 17.8 mm). USB-C end open. Measure the height with your headers / antenna.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "esp32-c6",
+        "seeed"
+      ],
+      "params": {
+        "bodyLength": 21,
+        "bodyWidth": 17.8,
+        "bodyDepth": 4.5,
+        "cableNotch": "one",
+        "notchWidth": 13,
+        "wallShare": 100,
+        "lip": 0.4,
+        "base": "plate",
+        "bolt": "M2"
+      },
+      "group": "Microcontrollers",
+      "verify": [
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "xiao-c6-clip-tape",
+      "name": "XIAO ESP32-C6 clip, tape",
+      "generator": "sensor-bracket",
+      "description": "XIAO cradle with a flat base for double-sided tape.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "esp32-c6",
+        "seeed"
+      ],
+      "params": {
+        "bodyLength": 21,
+        "bodyWidth": 17.8,
+        "bodyDepth": 4.5,
+        "cableNotch": "one",
+        "notchWidth": 13,
+        "wallShare": 100,
+        "lip": 0.4,
+        "base": "tape"
+      },
+      "group": "Microcontrollers",
+      "verify": [
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "xiao-c6-clip-tube-10",
+      "name": "XIAO ESP32-C6 clip on a 10 mm tube",
+      "generator": "sensor-bracket",
+      "description": "XIAO cradle on a zip-tie saddle for a 10 mm tube or boom.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "esp32-c6",
+        "seeed",
+        "tube"
+      ],
+      "params": {
+        "bodyLength": 21,
+        "bodyWidth": 17.8,
+        "bodyDepth": 4.5,
+        "cableNotch": "one",
+        "notchWidth": 13,
+        "wallShare": 100,
+        "lip": 0.4,
+        "base": "saddle",
+        "tubeOD": 10
+      },
+      "group": "Microcontrollers",
+      "verify": [
+        "bodyDepth",
+        "tubeOD"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfluna-plate",
+      "name": "TF-Luna bracket, screw plate",
+      "generator": "sensor-bracket",
+      "description": "Benewake TF-Luna (35 x 21.25 x 13.5 mm datasheet size). Lenses face out of the open side. Cable notch on one end.",
+      "tags": [
+        "lidar",
+        "tfluna",
+        "tf-luna",
+        "benewake",
+        "rangefinder"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 21.25,
+        "bodyDepth": 13.5,
+        "base": "plate"
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfluna-tilt-30",
+      "name": "TF-Luna bracket, 30 degree tilt",
+      "generator": "sensor-bracket",
+      "description": "TF-Luna tilted 30 degrees for terrain following or obstacle sensing.",
+      "tags": [
+        "lidar",
+        "tfluna",
+        "tf-luna",
+        "benewake"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 21.25,
+        "bodyDepth": 13.5,
+        "base": "plate",
+        "tilt": 30
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfluna-tube-16",
+      "name": "TF-Luna on a 16 mm tube",
+      "generator": "sensor-bracket",
+      "description": "TF-Luna on a zip-tie saddle for a 16 mm tube (arm, landing gear, boom).",
+      "tags": [
+        "lidar",
+        "tfluna",
+        "tf-luna",
+        "tube"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 21.25,
+        "bodyDepth": 13.5,
+        "base": "saddle",
+        "tubeOD": 16
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth",
+        "tubeOD"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfluna-tape",
+      "name": "TF-Luna bracket, tape",
+      "generator": "sensor-bracket",
+      "description": "TF-Luna with a flat base for tape, e.g. under a frame plate pointing down.",
+      "tags": [
+        "lidar",
+        "tfluna",
+        "tf-luna"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 21.25,
+        "bodyDepth": 13.5,
+        "base": "tape"
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfmini-s-plate",
+      "name": "TFmini-S bracket, screw plate",
+      "generator": "sensor-bracket",
+      "description": "Benewake TFmini-S (42 x 15 x 16 mm datasheet size). Check which face has the lenses.",
+      "tags": [
+        "lidar",
+        "tfmini",
+        "benewake"
+      ],
+      "params": {
+        "bodyLength": 42,
+        "bodyWidth": 15,
+        "bodyDepth": 16,
+        "base": "plate"
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "tfmini-plus-plate",
+      "name": "TFmini Plus bracket, screw plate",
+      "generator": "sensor-bracket",
+      "description": "Benewake TFmini Plus (35 x 18.5 x 21 mm datasheet size).",
+      "tags": [
+        "lidar",
+        "tfmini",
+        "benewake"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 18.5,
+        "bodyDepth": 21,
+        "base": "plate"
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "lidar-puck-plate",
+      "name": "Puck lidar plate (set your pattern)",
+      "generator": "lidar-mount",
+      "description": "Round plate, 8 mm standoffs, 30.5 mm stack mount. Set the hole pattern from your lidar's drawing before printing.",
+      "tags": [
+        "lidar",
+        "puck",
+        "2d-lidar"
+      ],
+      "params": {},
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "holeSpacingX",
+        "holeSpacingY",
+        "lidarHole"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "lidar-puck-tube",
+      "name": "Puck lidar plate on a tube",
+      "generator": "lidar-mount",
+      "description": "Rectangular plate with a zip-tie saddle for a tube mast or boom.",
+      "tags": [
+        "lidar",
+        "puck",
+        "tube"
+      ],
+      "params": {
+        "shape": "rect",
+        "mount": "saddle",
+        "tubeOD": 16
+      },
+      "group": "Lidar and rangefinders",
+      "verify": [
+        "holeSpacingX",
+        "holeSpacingY",
+        "tubeOD"
+      ],
+      "section": "robotics"
+    },
+    {
+      "id": "typhoon-h-repair-cradle",
+      "name": "Typhoon H480 / H520 repair cradle",
+      "generator": "repair-stand",
+      "description": "Bench cradle for the body during repair. MEASURE the body width where it rests and set the notch width. Print 2.",
+      "tags": [
+        "yuneec",
+        "typhoon",
+        "h480",
+        "h520",
+        "repair",
+        "stand"
+      ],
+      "params": {
+        "notchWidth": 110,
+        "notchDepth": 45,
+        "clearHeight": 90,
+        "sideWidth": 18,
+        "rodHole": 8.3,
+        "shape": "flat"
+      },
+      "verify": [
+        "notchWidth",
+        "notchDepth",
+        "clearHeight"
+      ],
+      "section": "quads",
+      "group": "Yuneec Typhoon H"
+    },
+    {
+      "id": "typhoon-h-gear-clamp",
+      "name": "Typhoon H480 / H520 landing-gear accessory clamp",
+      "generator": "tube-clamp",
+      "description": "Clamp + plate for accessories on a landing-gear leg. MEASURE the leg and set Tube OD before printing.",
+      "tags": [
+        "yuneec",
+        "typhoon",
+        "h480",
+        "h520",
+        "landing gear",
+        "clamp"
+      ],
+      "params": {
+        "type": "two-piece",
+        "tubeOD": 12,
+        "length": 16,
+        "mountHoleSpacing": 44,
+        "plateWidth": 54
+      },
+      "verify": [
+        "tubeOD"
+      ],
+      "section": "quads",
+      "group": "Yuneec Typhoon H"
+    },
+    {
+      "id": "typhoon-h-gear-tfluna",
+      "name": "Typhoon H480 / H520 TF-Luna on a gear leg",
+      "generator": "sensor-bracket",
+      "description": "TF-Luna on a zip-tie saddle for the landing gear. MEASURE the leg diameter.",
+      "tags": [
+        "yuneec",
+        "typhoon",
+        "h480",
+        "h520",
+        "lidar",
+        "tfluna"
+      ],
+      "params": {
+        "bodyLength": 35,
+        "bodyWidth": 21.25,
+        "bodyDepth": 13.5,
+        "base": "saddle",
+        "tubeOD": 12
+      },
+      "verify": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyDepth",
+        "tubeOD"
+      ],
+      "section": "quads",
+      "group": "Yuneec Typhoon H"
+    },
+    {
+      "id": "typhoon-h-gear-xiao",
+      "name": "Typhoon H480 / H520 XIAO board on a gear leg",
+      "generator": "sensor-bracket",
+      "description": "XIAO ESP32-C6 (telemetry, lights, logger) on the landing gear. MEASURE the leg diameter.",
+      "tags": [
+        "yuneec",
+        "typhoon",
+        "h480",
+        "h520",
+        "xiao",
+        "esp32"
+      ],
+      "params": {
+        "bodyLength": 21,
+        "bodyWidth": 17.8,
+        "bodyDepth": 4.5,
+        "cableNotch": "one",
+        "notchWidth": 13,
+        "wallShare": 100,
+        "lip": 0.4,
+        "base": "saddle",
+        "tubeOD": 12
+      },
+      "verify": [
+        "tubeOD",
+        "bodyDepth"
+      ],
+      "section": "quads",
+      "group": "Yuneec Typhoon H"
+    },
+    {
+      "id": "typhoon-h-gimbal-cradle",
+      "name": "Typhoon gimbal / camera bench cradle",
+      "generator": "repair-stand",
+      "description": "Small cradle for a gimbal camera on the bench. MEASURE the camera ball width.",
+      "tags": [
+        "yuneec",
+        "typhoon",
+        "cgo3",
+        "gimbal",
+        "repair"
+      ],
+      "params": {
+        "notchWidth": 60,
+        "notchDepth": 32,
+        "shape": "u",
+        "clearHeight": 30,
+        "sideWidth": 12,
+        "rodHole": 0
+      },
+      "verify": [
+        "notchWidth"
+      ],
+      "section": "quads",
+      "group": "Yuneec Typhoon H"
+    }
+  ]
+}

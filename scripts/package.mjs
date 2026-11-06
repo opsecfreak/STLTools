@@ -47,8 +47,9 @@ rmSync(BUILD, { recursive: true, force: true });
 mkdirSync(BUILD, { recursive: true });
 for (const f of existsSync(DIST) ? readdirSync(DIST) : []) if (/\.(zip|tar\.gz)$|^SHA256SUMS|^RELEASE_NOTES/.test(f)) rmSync(join(DIST, f));
 const APP = join(BUILD, 'app');
-for (const item of ['bin', 'src', 'public', 'presets', 'custom', 'deploy', 'docs', 'package.json', 'package-lock.json', 'README.md', 'CHANGELOG.md']) {
-  cpSync(join(ROOT, item), join(APP, item), { recursive: true });
+for (const item of ['bin', 'src', 'public', 'presets', 'printer-profiles', 'custom', 'deploy', 'docs', 'package.json', 'package-lock.json', 'README.md', 'CHANGELOG.md', 'AGENTS.md']) {
+  // README screenshots stay on GitHub; the packages do not need them
+  cpSync(join(ROOT, item), join(APP, item), { recursive: true, filter: (src) => !src.includes(`${join('docs', 'screenshots')}`) });
 }
 run('npm', ['ci', '--omit=dev', '--ignore-scripts', '--no-audit', '--no-fund'], { cwd: APP });
 

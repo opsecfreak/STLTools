@@ -85,3 +85,80 @@ export function chooseDialog(title, choices, { message = '', input = null } = {}
     field?.focus();
   });
 }
+
+// ---------------------------------------------------------------- v6 helpers
+
+/** Short message at the bottom of the screen. kind: 'ok' | 'error' | 'info'. */
+export function toast(message, kind = 'info', ms = 3500) {
+  let box = document.getElementById('toasts');
+  if (!box) {
+    box = el('div', { id: 'toasts', className: 'toasts', 'aria-live': 'polite' });
+    document.body.append(box);
+  }
+  const t = el('div', { className: `toast toast-${kind}`, textContent: message, role: kind === 'error' ? 'alert' : 'status' });
+  t.onclick = () => t.remove();
+  box.append(t);
+  setTimeout(() => t.remove(), kind === 'error' ? ms * 2 : ms);
+}
+
+// Server-side settings (data/settings.json), cached here. See src/core/settings.js for the schema.
+let settingsCache = null;
+const settingsListeners = new Set();
+
+export async function loadSettings() {
+  settingsCache = await api('GET', '/api/settings');
+  applyTheme(settingsCache.ui.theme);
+  return settingsCache;
+}
+
+/** Current settings (call loadSettings() once at start-up). */
+export const settings = () => settingsCache;
+
+/** Save a partial change, e.g. saveSettings({ viewer: { edges: true } }). Notifies listeners. */
+export async function saveSettings(patch) {
+  settingsCache = await api('PUT', '/api/settings', patch);
+  applyTheme(settingsCache.ui.theme);
+  for (const fn of settingsListeners) fn(settingsCache, patch);
+  return settingsCache;
+}
+
+/** Run fn(settings, patch) after every saveSettings(). Returns an unsubscribe function. */
+export function onSettings(fn) {
+  settingsListeners.add(fn);
+  return () => settingsListeners.delete(fn);
+}
+
+export function applyTheme(theme) {
+  const root = document.documentElement;
+  if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
+  else delete root.dataset.theme;
+  window.dispatchEvent(new Event('themechange'));
+}
+
+export function isDark() {
+  const t = document.documentElement.dataset.theme;
+  if (t) return t === 'dark';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+/** Card view mode: what the user last picked on this device, else the Settings default. */
+export const viewMode = () => store.get('view') ?? settingsCache?.ui.view ?? 'grid';
+
+/** Ask before deleting, unless turned off in Settings. */
+export const confirmDelete = (msg) => (settingsCache?.ui.confirmDelete === false ? true : confirm(msg));
+
+export function downloadBlob(blob, filename) {
+  const a = el('a', { href: URL.createObjectURL(blob), download: filename });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+/** Upload a File as the raw request body (STL library, G-code). Returns parsed JSON. */
+export async function putFile(url, file) {
+  const res = await fetch(url, { method: 'PUT', body: file });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}

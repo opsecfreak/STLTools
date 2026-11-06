@@ -2,10 +2,17 @@
 const $ = (id) => document.getElementById(id);
 const codes = new URLSearchParams(location.search).get('codes')?.split(',').filter(Boolean) ?? null;
 
-const [categories, items] = await Promise.all([
+const [categories, items, cfg] = await Promise.all([
   fetch('/api/categories').then((r) => r.json()),
   fetch('/api/catalog').then((r) => r.json()),
+  fetch('/api/settings').then((r) => r.json()).catch(() => null),
 ]);
+// Defaults from Settings > Paper labels (src/core/settings.js SCHEMA.labels)
+const L = { width: 72, height: 14, useCardSize: true, showCode: true, showLocation: true, colorBar: true, textScale: 100, cutLines: true, ...(cfg?.labels ?? {}) };
+$('w').value = L.width;
+$('h').value = L.height;
+$('useCard').checked = L.useCardSize;
+if (cfg?.ui?.theme === 'light' || cfg?.ui?.theme === 'dark') document.documentElement.dataset.theme = cfg.ui.theme;
 const color = (code) => categories.find((c) => c.code === code)?.color ?? '#888';
 const chosen = items.filter((i) => !codes || codes.includes(i.code)).sort((a, b) => a.code.localeCompare(b.code));
 
@@ -37,14 +44,17 @@ function render() {
     const bar = document.createElement('div');
     bar.className = 'bar';
     bar.style.background = color(item.category);
+    if (!L.colorBar) bar.style.display = 'none';
+    if (!L.cutLines) label.style.borderColor = 'transparent';
     const l1 = document.createElement('div');
     l1.className = 'l1';
     l1.textContent = item.name;
-    l1.style.fontSize = `${h * 0.42}mm`;
+    l1.style.fontSize = `${h * 0.42 * (L.textScale / 100)}mm`;
     const l2 = document.createElement('div');
     l2.className = 'l2';
-    l2.textContent = item.location ? `${item.code} / ${item.location}` : item.code;
-    l2.style.fontSize = `${h * 0.24}mm`;
+    l2.textContent = [L.showCode ? item.code : '', L.showLocation ? item.location : ''].filter(Boolean).join(' / ');
+    l2.style.fontSize = `${h * 0.24 * (L.textScale / 100)}mm`;
+    if (!l2.textContent) l2.style.display = 'none';
     label.append(bar, l1, l2);
     $('sheet').append(label);
     const inner = label.clientWidth - 6 * (96 / 25.4);

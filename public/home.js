@@ -1,9 +1,16 @@
 // Home page, advanced search, grid/list cards, favorites and projects.
-import { $, el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES } from './lib.js';
-import { thumbImg } from './thumbs.js';
+//
+// The search index (buildIndex) covers every kind of thing in the app:
+//   preset, design (My Designs), generator, project, stl (STL Files library),
+//   item (shop catalog), page (Settings sections, Import, Printers...).
+// search(query, opts) is used by Home, the header's global search
+// (public/search.js) and the project part picker. Query syntax: see parseQuery.
+import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete } from './lib.js';
+import { thumbImg, thumbStl } from './thumbs.js';
+import { formatDuration } from '/shared/estimate.js';
 import { printerChips } from './printers.js';
 
-let ctx = null; // set by initHome: { state, openPreset, openDesign, openGenerator, goTab, refreshDesigns }
+let ctx = null; // set by initHome: { state, openPreset, openDesign, openGenerator, openStl, openShopItem, goTab, refreshDesigns, refreshLibrary, toast }
 let favs = new Set();
 let projects = [];
 
@@ -44,12 +51,28 @@ export function starButton(kind, id) {
   setStar(b, isFav(kind, id));
   b.onclick = async (e) => {
     e.stopPropagation();
-    try { await toggleFav(kind, id); } catch (err) { alert(err.message); }
+    try { await toggleFav(kind, id); } catch (err) { toast(err.message, 'error'); }
   };
   return b;
 }
 
 // ---------------------------------------------------------------- search index
+
+/** Places in the app that global search can jump to. */
+export const PAGES = [
+  ['settings', 'Settings', 'Theme, live preview, 3D view, labels, printers, estimates, backup', ['options', 'preferences', 'config']],
+  ['settings/printers', 'Settings: Printers', 'Connect, test and save Klipper / Moonraker printers (Sovol SV07)', ['sv07', 'sovol', 'moonraker', 'mainsail', 'connect', 'api key']],
+  ['settings/print', 'Settings: Print estimates', 'Printer profile, layer height, walls, infill, material, calibration', ['time', 'filament', 'estimate', 'calibrate']],
+  ['settings/viewer', 'Settings: 3D view', 'Quality, shadows, edges, wireframe, bed outline, axes', ['render', 'quality', 'graphics']],
+  ['settings/labels', 'Settings: Paper labels', 'Label size, code, location, color bar, text size', ['label', 'print labels']],
+  ['settings/ui', 'Settings: Appearance', 'Theme, start page, live preview, card previews', ['dark mode', 'theme']],
+  ['settings/data', 'Settings: Data and backup', 'Backup, data folder, preview cache', ['backup', 'export']],
+  ['import', 'Import', 'Import STL files, project files and design files', ['upload', 'open']],
+  ['stls', 'STL Files', 'Your imported STL library', ['library', 'models']],
+  ['printers', 'Printers', 'Printer status, files, webcam, upload G-code (view only)', ['status', 'webcam', 'gcode']],
+  ['projects', 'Projects', 'Builds with parts lists and one-ZIP download', ['build']],
+  ['library', 'My Designs', 'Saved designs', ['saved']],
+];
 
 const defaultsOf = (gen) => Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
 
@@ -85,6 +108,21 @@ function buildIndex() {
       kind: 'project', id: pr.id, title: pr.name, sub: `Project / ${pr.status} / ${pr.items.length} part${pr.items.length === 1 ? '' : 's'}`, description: pr.description,
       section: null, sections: [], generator: null, group: 'Projects', tags: pr.tags, params: {}, updated: pr.updatedAt, ref: pr, status: pr.status,
     });
+  }
+  for (const e of ctx.state.library ?? []) {
+    items.push({
+      kind: 'stl', id: e.id, title: e.name, sub: `STL file${e.folder ? ` / ${e.folder}` : ''} / ${e.stats.size.map((v) => v.toFixed(0)).join(' x ')} mm`, description: e.notes,
+      section: null, sections: [], generator: null, group: e.folder || 'STL Files', tags: e.tags, params: { x: e.stats.size[0], y: e.stats.size[1], z: e.stats.size[2] }, updated: e.updatedAt, ref: e,
+    });
+  }
+  for (const i of ctx.state.items ?? []) {
+    items.push({
+      kind: 'item', id: i.code, title: `${i.code} ${i.name}`, sub: `Shop item${i.location ? ` at ${i.location}` : ''}`, description: i.notes,
+      section: 'shop', sections: ['shop'], generator: null, group: 'Shop catalog', tags: [i.category.toLowerCase()], params: {}, updated: i.updatedAt, ref: i,
+    });
+  }
+  for (const [hash, title, description, tags] of PAGES) {
+    items.push({ kind: 'page', id: hash, title, sub: 'Page', description, section: null, sections: [], generator: null, group: 'Pages', tags, params: {}, ref: { hash } });
   }
   for (const it of items) {
     it.text = [it.title, it.sub, it.description, it.group, it.generator, it.generatorName, it.id, ...it.tags, ...it.sections.map((s) => SECTION_NAMES[s])].join(' ').toLowerCase();
@@ -178,11 +216,14 @@ export function search(q, opts = {}) {
 
 // ---------------------------------------------------------------- cards
 
-function openItem(it) {
+export function openItem(it) {
   if (it.kind === 'preset') ctx.openPreset(it.ref);
   else if (it.kind === 'design') ctx.openDesign(it.ref);
   else if (it.kind === 'generator') ctx.openGenerator(it.ref.id);
   else if (it.kind === 'project') location.hash = `#project/${it.id}`;
+  else if (it.kind === 'stl') location.hash = `#stl/${it.id}`;
+  else if (it.kind === 'item') ctx.openShopItem(it.ref);
+  else if (it.kind === 'page') location.hash = `#${it.ref.hash}`;
 }
 
 function projectProgress(pr) {
@@ -192,15 +233,22 @@ function projectProgress(pr) {
 }
 
 function itemThumb(it) {
+  if (it.kind === 'stl') return thumbStl(it.ref);
+  if (it.kind === 'page' || it.kind === 'item') return el('div', { className: `thumb empty kind-${it.kind}`, textContent: it.kind === 'page' ? 'Go to page' : it.ref.code });
   if (it.kind === 'project') {
     const first = it.ref.items[0];
     const sel = first ? resolveItemForThumb(first) : null;
+    if (sel?.stl) return thumbStl(sel.stl);
     return sel ? thumbImg(sel.generator, sel.params, it.title) : el('div', { className: 'thumb empty', textContent: 'Empty project' });
   }
   return thumbImg(it.generator, it.params, it.title);
 }
 
 function resolveItemForThumb(item) {
+  if (item.kind === 'stl') {
+    const e = (ctx.state.library ?? []).find((x) => x.id === item.ref);
+    return e ? { stl: e } : null;
+  }
   if (item.kind === 'custom') return { generator: item.generator, params: item.params };
   if (item.kind === 'preset') {
     const p = ctx.state.presets.find((x) => x.id === item.ref);
@@ -210,11 +258,11 @@ function resolveItemForThumb(item) {
   return d ? { generator: d.generator, params: d.params } : null;
 }
 
-const KIND_LABEL = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project' };
+const KIND_LABEL = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project', stl: 'STL', item: 'Shop item', page: 'Page' };
 
 export function card(it, view = 'grid') {
-  const actions = el('div', { className: 'card-actions' }, starButton(it.kind, it.id));
-  if (it.kind !== 'project') {
+  const actions = el('div', { className: 'card-actions' }, ['page', 'item'].includes(it.kind) ? null : starButton(it.kind, it.id));
+  if (!['project', 'page', 'item'].includes(it.kind)) {
     actions.append(el('button', { type: 'button', className: 'icon', textContent: '+', title: 'Add to a project', 'aria-label': 'Add to a project', onclick: (e) => { e.stopPropagation(); addToProject(selectionFromItem(it)); } }));
   }
   const body = el('div', { className: 'card-body' },
@@ -236,7 +284,7 @@ export function cardList(items, view, empty = 'Nothing here yet.') {
 }
 
 function viewToggle(onChange) {
-  const view = store.get('view') ?? 'grid';
+  const view = viewMode();
   const mk = (v, label) => el('button', { type: 'button', className: `subtab ${view === v ? 'active' : ''}`, textContent: label, onclick: () => { store.set('view', v); onChange(); } });
   return el('div', { className: 'subtabs view-toggle', 'aria-label': 'View' }, mk('grid', 'Grid'), mk('list', 'List'));
 }
@@ -244,6 +292,7 @@ function viewToggle(onChange) {
 // ---------------------------------------------------------------- projects
 
 function selectionFromItem(it) {
+  if (it.kind === 'stl') return { kind: 'stl', ref: it.id, name: it.title };
   if (it.kind === 'preset') return { kind: 'preset', ref: it.id, name: it.title };
   if (it.kind === 'design') return { kind: 'design', ref: it.id, name: it.title };
   return { kind: 'custom', generator: it.generator, params: it.params, name: it.title };
@@ -266,7 +315,7 @@ export async function addToProject(sel) {
     await refreshProjects();
     ctx.toast?.(`Added to "${p.name}".`);
   } catch (err) {
-    alert(err.message);
+    toast(err.message, 'error');
   }
 }
 
@@ -276,7 +325,7 @@ export async function renderProjects(page) {
   const filter = el('select', {}, el('option', { value: '', textContent: 'All statuses' }), ...['idea', 'active', 'printing', 'done'].map((s) => el('option', { value: s, textContent: s })));
   const grid = el('div');
   const draw = () => {
-    const view = store.get('view') ?? 'grid';
+    const view = viewMode();
     const items = search('', { kinds: ['project'], sort: 'recent' }).filter((it) => !filter.value || it.status === filter.value);
     grid.replaceChildren(cardList(items, view, 'No projects yet. Create one above, or press + on any part.'));
   };
@@ -287,7 +336,7 @@ export async function renderProjects(page) {
     el('form', { className: 'row', onsubmit: async (e) => {
       e.preventDefault();
       if (!name.value.trim()) return;
-      try { const p = await api('POST', '/api/projects', { name: name.value }); location.hash = `#project/${p.id}`; } catch (err) { alert(err.message); }
+      try { const p = await api('POST', '/api/projects', { name: name.value }); location.hash = `#project/${p.id}`; } catch (err) { toast(err.message, 'error'); }
     } }, name, el('button', { type: 'submit', textContent: 'Create project' }), filter, viewToggle(draw)),
     grid);
   filter.onchange = draw;
@@ -303,7 +352,7 @@ export async function renderProject(page, id) {
     return;
   }
   const save = async (patch) => {
-    try { p = await api('PUT', `/api/projects/${p.id}`, { ...p, ...patch }); await refreshProjects(); drawStats(); } catch (err) { alert(err.message); }
+    try { p = await api('PUT', `/api/projects/${p.id}`, { ...p, ...patch }); await refreshProjects(); drawStats(); } catch (err) { toast(err.message, 'error'); }
   };
   const saveSoon = debounce(save, 500);
 
@@ -327,9 +376,10 @@ export async function renderProject(page, id) {
     try {
       const r = await api('POST', `/api/projects/${p.id}/build${unprinted ? '?unprinted=1' : ''}`);
       if (r.errors.length) alert(`Some parts could not be built:\n${r.errors.join('\n')}`);
+      showEstimate(r.estimate);
       if (r.files) el('a', { href: r.zip, download: `${p.name}.zip` }).click();
-      else alert('Nothing to build.');
-    } catch (err) { alert(err.message); } finally { b.disabled = false; b.textContent = old; }
+      else toast('Nothing to build.');
+    } catch (err) { toast(err.message, 'error'); } finally { b.disabled = false; b.textContent = old; }
   } });
 
   const items = el('div', { className: 'card-grid' });
@@ -341,7 +391,7 @@ export async function renderProject(page, id) {
       const note = el('input', { type: 'text', value: it.note, placeholder: 'note (material, color...)', maxLength: 300, oninput: () => { it.note = note.value; saveSoon({ items: p.items }); } });
       const move = (d) => { const j = idx + d; if (j < 0 || j >= p.items.length) return; [p.items[idx], p.items[j]] = [p.items[j], p.items[idx]]; save({ items: p.items }).then(drawItems); };
       return el('article', { className: `card-item project-part ${it.printed ? 'printed' : ''}` },
-        el('div', { className: 'card-thumb' }, sel ? thumbImg(sel.generator, sel.params, it.name) : el('div', { className: 'thumb empty', textContent: 'Missing' }), el('span', { className: 'badge', textContent: it.kind === 'custom' ? 'Custom' : KIND_LABEL[it.kind] })),
+        el('div', { className: 'card-thumb' }, sel?.stl ? thumbStl(sel.stl) : sel ? thumbImg(sel.generator, sel.params, it.name) : el('div', { className: 'thumb empty', textContent: 'Missing' }), el('span', { className: 'badge', textContent: it.kind === 'custom' ? 'Custom' : KIND_LABEL[it.kind] })),
         el('div', { className: 'card-body' },
           el('div', { className: 'card-title', textContent: it.name }),
           el('div', { className: 'part-row' }, el('label', {}, 'Qty ', qty), el('label', {}, printed, ' printed')),
@@ -362,31 +412,43 @@ export async function renderProject(page, id) {
   pickQ.oninput = debounce(() => {
     const q = pickQ.value.trim();
     if (!q) { pickRes.replaceChildren(); return; }
-    const res = search(q, { kinds: ['preset', 'design', 'generator'] }).slice(0, 12);
+    const res = search(q, { kinds: ['preset', 'design', 'generator', 'stl'] }).slice(0, 12);
     pickRes.replaceChildren(...res.map((r) => el('div', { className: 'pick-row' },
       el('span', {}, el('strong', { textContent: r.title }), el('span', { className: 'muted', textContent: `  ${r.sub}` })),
       el('button', { type: 'button', className: 'small', textContent: 'Add', onclick: async () => {
-        try { p = await api('POST', `/api/projects/${p.id}/items`, { ...selectionFromItem(r), qty: 1 }); drawItems(); drawStats(); await refreshProjects(); } catch (err) { alert(err.message); }
+        try { p = await api('POST', `/api/projects/${p.id}/items`, { ...selectionFromItem(r), qty: 1 }); drawItems(); drawStats(); await refreshProjects(); } catch (err) { toast(err.message, 'error'); }
       } }))));
     if (!res.length) pickRes.replaceChildren(el('p', { className: 'muted', textContent: 'No matches.' }));
   }, 150);
 
+  const estLine = el('p', { className: 'est-line' });
+  const showEstimate = (e) => {
+    estLine.textContent = e ? `Estimate on ${e.profile}: about ${formatDuration(e.seconds)} printing, ${e.grams.toFixed(0)} g filament (${(e.filamentMm / 1000).toFixed(1)} m)${e.cost !== null ? `, cost ${e.cost.toFixed(2)}` : ''}. ${e.settings}. Your slicer gives the real time.` : '';
+  };
+  const estBtn = el('button', { type: 'button', className: 'secondary', textContent: 'Estimate print time', onclick: async (e) => {
+    e.target.disabled = true;
+    estLine.textContent = 'Building every part to estimate...';
+    try { showEstimate((await api('POST', `/api/projects/${p.id}/build?unprinted=1`)).estimate); } catch (err) { estLine.textContent = err.message; } finally { e.target.disabled = false; }
+  } });
+  const exportBtn = el('a', { className: 'button secondary', href: `/api/projects/${p.id}/export`, download: '', textContent: 'Export project file', title: 'One file with the parts list, saved designs and imported STLs. Import it on another computer.' });
   page.replaceChildren(
     el('div', { className: 'page-head' },
       el('a', { href: '#projects', className: 'back', textContent: '< Projects' }),
       el('div', { className: 'row' }, nameIn, starButton('project', p.id), status),
       tags, desc, stats,
-      el('div', { className: 'row' }, zipBtn('Download all parts (ZIP)', false), zipBtn('Only unprinted (ZIP)', true),
+      el('div', { className: 'row' }, zipBtn('Download all parts (ZIP)', false), zipBtn('Only unprinted (ZIP)', true), estBtn, exportBtn,
         el('button', { type: 'button', className: 'secondary', textContent: 'Delete project', onclick: async () => {
-          if (!confirm(`Delete project "${p.name}"? Parts and saved designs are not deleted.`)) return;
-          try { await api('DELETE', `/api/projects/${p.id}`); await refreshProjects(); location.hash = '#projects'; } catch (err) { alert(err.message); }
-        } }))),
+          if (!confirmDelete(`Delete project "${p.name}"? Parts and saved designs are not deleted.`)) return;
+          try { await api('DELETE', `/api/projects/${p.id}`); await refreshProjects(); location.hash = '#projects'; } catch (err) { toast(err.message, 'error'); }
+        } })), estLine),
     el('h3', { textContent: 'Parts' }), items,
     el('h3', { textContent: 'Add parts' }), pickQ, pickRes);
 }
 
 function openProjectItem(it) {
-  if (it.kind === 'preset') {
+  if (it.kind === 'stl') {
+    location.hash = `#stl/${it.ref}`;
+  } else if (it.kind === 'preset') {
     const p = ctx.state.presets.find((x) => x.id === it.ref);
     if (p) ctx.openPreset(p);
   } else if (it.kind === 'design') {
@@ -403,10 +465,11 @@ function openProjectItem(it) {
 const SEARCH_HELP = 'Words must all match. "exact phrase", -exclude. Filters: tab:quads kind:preset gen:tube-clamp group:hooks tag:esc fav:yes status:active. Any setting: tubeOD:16 teeth>=30 length<20 bolt:M3';
 
 export async function renderHome(page) {
-  await Promise.all([refreshFavorites(), refreshProjects(), ctx.refreshDesigns().catch(() => null)]);
+  await Promise.all([refreshFavorites(), refreshProjects(), ctx.refreshDesigns().catch(() => null), ctx.refreshLibrary?.().catch(() => null)]);
   const saved = store.get('homeSearch') ?? {};
   const q = el('input', { type: 'search', className: 'big-search', placeholder: `Search ${ctx.state.presets.length} presets, ${ctx.state.generators.length} generators, your designs and projects`, value: saved.q ?? '', 'aria-label': 'Search' });
-  const kinds = ['preset', 'design', 'generator', 'project'].map((k) => el('input', { type: 'checkbox', value: k, checked: !(saved.kinds && !saved.kinds.includes(k)) }));
+  const KINDS = ['preset', 'design', 'generator', 'project', 'stl', 'item', 'page'];
+  const kinds = KINDS.map((k) => el('input', { type: 'checkbox', value: k, checked: !(saved.kinds && !saved.kinds.includes(k)) }));
   const tab = el('select', {}, el('option', { value: '', textContent: 'All tabs' }), ...SECTIONS.map((s) => el('option', { value: s, textContent: SECTION_NAMES[s], selected: saved.section === s })));
   const gen = el('select', {}, el('option', { value: '', textContent: 'All generators' }), ...ctx.state.generators.map((g) => el('option', { value: g.id, textContent: g.name, selected: saved.generator === g.id })));
   const favOnly = el('input', { type: 'checkbox', checked: Boolean(saved.favoritesOnly) });
@@ -414,18 +477,18 @@ export async function renderHome(page) {
   const adv = el('details', { className: 'advanced', open: Boolean(saved.open) },
     el('summary', { textContent: 'Advanced search' }),
     el('div', { className: 'adv-grid' },
-      el('div', { className: 'adv-kinds' }, ...kinds.map((k) => el('label', { className: 'check-inline' }, k, ` ${({ preset: 'Presets', design: 'Saved designs', generator: 'Generators', project: 'Projects' })[k.value]}`))),
+      el('div', { className: 'adv-kinds' }, ...kinds.map((k) => el('label', { className: 'check-inline' }, k, ` ${({ preset: 'Presets', design: 'Saved designs', generator: 'Generators', project: 'Projects', stl: 'STL files', item: 'Shop items', page: 'Pages' })[k.value]}`))),
       el('label', {}, 'Tab ', tab), el('label', {}, 'Generator ', gen), el('label', { className: 'check-inline' }, favOnly, ' Favorites only'), el('label', {}, 'Sort ', sort)),
     el('p', { className: 'muted', textContent: SEARCH_HELP }));
   const results = el('div', { className: 'home-results' });
   const dash = el('div', { className: 'home-dash' });
 
   const state = () => ({ q: q.value, kinds: kinds.filter((k) => k.checked).map((k) => k.value), section: tab.value, generator: gen.value, favoritesOnly: favOnly.checked, sort: sort.value, open: adv.open });
-  const active = (s) => s.q.trim() || s.section || s.generator || s.favoritesOnly || s.kinds.length < 4;
+  const active = (s) => s.q.trim() || s.section || s.generator || s.favoritesOnly || s.kinds.length < KINDS.length;
   const draw = () => {
     const s = state();
     store.set('homeSearch', s);
-    const view = store.get('view') ?? 'grid';
+    const view = viewMode();
     if (active(s)) {
       const res = search(s.q, { kinds: s.kinds, section: s.section || null, generator: s.generator || null, favoritesOnly: s.favoritesOnly, sort: s.sort });
       dash.hidden = true;
@@ -449,7 +512,7 @@ export async function renderHome(page) {
 
 function drawDashboard(dash, redraw) {
   const { presets, generators, designs } = ctx.state;
-  const view = store.get('view') ?? 'grid';
+  const view = viewMode();
   const tiles = SECTIONS.map((s) => el('button', { type: 'button', className: `tile tile-${s}`, onclick: () => ctx.goTab(s) },
     el('strong', { textContent: SECTION_NAMES[s] }),
     el('span', { textContent: `${presets.filter((p) => p.section === s).length} presets / ${generators.filter((g) => g.sections.includes(s)).length} generators` })));
@@ -458,14 +521,29 @@ function drawDashboard(dash, redraw) {
   const designItems = search('', { kinds: ['design'], sort: 'recent' }).slice(0, 8);
   const chips = el('div');
   printerChips().then((c) => { if (c) chips.replaceChildren(c); }).catch(() => {});
-  dash.replaceChildren(
+  const lib = ctx.state.library ?? [];
+  const tile = (hash, title, text, cls) => el('button', { type: 'button', className: `tile ${cls}`, onclick: () => { location.hash = `#${hash}`; } }, el('strong', { textContent: title }), el('span', { textContent: text }));
+  const fresh = !designs.length && !projects.length && !lib.length;
+  const start = fresh ? el('section', { className: 'card getting-started' },
+    el('h3', { textContent: 'Getting started' }),
+    el('ol', {},
+      el('li', {}, 'Pick a tab (Shop, Quadcopters, Robotics...) and click a preset. The part shows in 3D with a print time for your printer.'),
+      el('li', {}, 'Change any value. With Live preview on, the part rebuilds as you type. Press Download STL.'),
+      el('li', {}, 'Press Save design to keep your settings, or Add to project to collect the parts for a build.'),
+      el('li', {}, 'Connect your Sovol SV07 in Settings > Printers to see its status and upload G-code (view only).'),
+      el('li', {}, 'Import STL files you already have in Import. Press / anywhere to search everything.'))) : null;
+  dash.replaceChildren(...[
     chips,
+    start,
     el('section', {}, el('div', { className: 'tiles' }, ...tiles,
-      el('button', { type: 'button', className: 'tile tile-printers', onclick: () => { location.hash = '#printers'; } }, el('strong', { textContent: 'Printers' }), el('span', { textContent: 'Status, files, upload (view only)' })))),
+      tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
+      tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
+      tile('printers', 'Printers', 'Status, files, upload (view only)', 'tile-printers'),
+      tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings'))),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),
       cardList(favItems, view, 'Star presets, designs, generators or projects to pin them here.')),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Projects' }), el('a', { href: '#projects', textContent: 'All projects' })),
       cardList(projItems, view, 'No projects yet. Open Projects to create one.')),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Recent saved designs' }), el('a', { href: '#library', textContent: 'My Designs' })),
-      cardList(designItems, view, designs.length ? '' : 'Press "Save design" in any tab to keep your settings.')));
+      cardList(designItems, view, designs.length ? '' : 'Press "Save design" in any tab to keep your settings.'))].filter(Boolean));
 }

@@ -20,11 +20,25 @@ Every printer request goes through a fixed list of read-only Moonraker endpoints
 
 1. Find the printer's IP address: printer touchscreen > Settings > Network (or Wi-Fi), or your router's device list.
 2. Check it in a browser: `http://<printer-ip>` should open Mainsail (or Fluidd).
-3. In STL Tools open **Printers** > **Add a printer**.
-4. Enter a name (for example `SV07`) and the address (for example `192.168.1.50`).
-5. Press **Add printer**. STL Tools checks the printer first and shows the Moonraker and Klipper state.
+3. In STL Tools open **Settings** > **Printers** (or press the gear at the top right).
+4. Enter a name (for example `SV07`) and the address (for example `192.168.1.50`). Keep Model = **Sovol SV07**.
+5. Press **Test connection**. Each check shows OK or FAIL with the fix:
+
+   | Step | What it reads | If it fails |
+   |---|---|---|
+   | Address | nothing (checks it is a LAN address) | use the IP from the printer screen |
+   | Moonraker answers | `GET /server/info` | try `<ip>:7125`; "refused" means trusted_clients or an API key |
+   | Printer info | `GET /printer/info` | Klipper stopped: fix it in Mainsail |
+   | Status query | `GET /printer/objects/query` | Klipper not ready |
+   | File list | `GET /server/files/list` | Moonraker file manager missing |
+   | Upload folder | `GET /server/files/roots` | gcodes folder not writable |
+   | Webcam | `GET /server/webcams/list` | optional |
+
+6. Press **Add printer**. The first printer becomes the default: its status shows in the header and its profile is used for print time estimates.
 
 Or press **Scan my network**. It looks for Moonraker on the server's own local network (ports 80 and 7125, read-only `/server/info` requests), then press **Use** on a result.
+
+Saved printers can be edited, re-tested or removed in Settings > Printers. The API key field is write-only: a saved key is never shown again.
 
 Note: STL Tools runs on your PC or Pi, and that machine talks to the printer. Both must be on the same network (or the same Tailscale network). Only local addresses are accepted.
 
@@ -47,9 +61,17 @@ STL files are refused on purpose: the printer can only print G-code. Slicing on 
 | No webcam | The webcam must be configured in Mainsail. Snapshots use the printer's web server (port 80, or the port you entered). |
 | Thumbnails missing | Turn on thumbnails in your slicer's printer profile (G-code thumbnails, for example 300x300 PNG). |
 
+## SV07 network notes
+
+- The SV07 runs Klipper with Moonraker and Mainsail on its own host board. Mainsail's web server on port 80 forwards the Moonraker API, so the plain IP works. Moonraker itself listens on port 7125.
+- Stock Klipper images usually trust the private network ranges in `moonraker.conf` (`[authorization]` `trusted_clients`), so no API key is needed. If the test says "refused", add the STL Tools computer's network there or create an API key in Mainsail.
+- STL Tools waits 6 seconds for an answer: the SV07 host board can be slow while it prints.
+- Use the IP address if `sv07.local` style names do not resolve on your computer.
+- Untested on a real SV07 so far. The tests use a fake Moonraker that answers like one (`test/helpers/mock-moonraker.js`).
+
 ## What is stored
 
-`<data folder>/printers.json`: name, address and the optional API key. Remove a printer in the Printers tab; nothing on the printer changes.
+`<data folder>/printers.json`: name, address, model (printer profile) and the optional API key. Remove a printer in the Printers tab; nothing on the printer changes.
 
 ## Not built yet
 

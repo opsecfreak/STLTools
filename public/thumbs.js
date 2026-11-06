@@ -3,7 +3,7 @@
 // 2. Otherwise generate the part, render it in this browser, upload the PNG
 //    so every device gets it next time. One render at a time, only for cards
 //    that are on screen.
-import { api, el } from './lib.js';
+import { api, el, settings } from './lib.js';
 import { createThumbnailer } from './viewer.js';
 
 let thumbnailer = null;
@@ -23,6 +23,7 @@ const observer = new IntersectionObserver((entries) => {
 
 /** An <img> placeholder that fills itself when it scrolls into view. */
 export function thumbImg(generator, params, alt = '') {
+  if (settings()?.ui.thumbnails === false) return el('div', { className: 'thumb empty', textContent: alt.slice(0, 40) });
   const img = el('img', { className: 'thumb loading', alt, loading: 'lazy', width: 320, height: 240 });
   img.dataset.generator = generator;
   img._params = params ?? {};
@@ -72,6 +73,7 @@ async function pump() {
   while (renderQueue.length) {
     const item = renderQueue.shift();
     try {
+      if (item.custom) { item.resolve(await item.custom()); continue; }
       thumbnailer ??= createThumbnailer();
       const result = await api('POST', `/api/generate/${item.generator}`, item.params);
       const blob = await thumbnailer.render(result.parts);
@@ -82,4 +84,33 @@ async function pump() {
     }
   }
   rendering = false;
+}
+
+// ---------------------------------------------------------------- library STLs
+
+/** Preview for an imported STL: cached PNG if the server has one, else rendered here once and uploaded. */
+export function thumbStl(entry) {
+  if (settings()?.ui.thumbnails === false) return el('div', { className: 'thumb empty', textContent: entry.name.slice(0, 40) });
+  const img = el('img', { className: 'thumb loading', alt: entry.name, loading: 'lazy', width: 320, height: 240 });
+  if (entry.thumb) {
+    img.src = entry.thumb;
+    img.classList.remove('loading');
+    return img;
+  }
+  const io = new IntersectionObserver((es) => {
+    if (!es.some((e) => e.isIntersecting)) return;
+    io.disconnect();
+    renderQueue.push({
+      custom: async () => {
+        thumbnailer ??= createThumbnailer();
+        const blob = await thumbnailer.render([{ url: `/api/library/${entry.id}.stl` }]);
+        const res = await fetch(`/api/thumbs/${entry.thumbKey}`, { method: 'PUT', body: blob });
+        return res.ok ? (await res.json()).url : URL.createObjectURL(blob);
+      },
+      resolve: (url) => show(img, url),
+    });
+    pump();
+  }, { rootMargin: '200px' });
+  io.observe(img);
+  return img;
 }

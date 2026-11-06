@@ -1,0 +1,18 @@
+{
+  "id": "generic-klipper-fast",
+  "name": "Generic fast Klipper printer (250 x 250)",
+  "maker": "Generic",
+  "firmware": "klipper",
+  "bed": { "x": 250, "y": 250, "z": 250 },
+  "nozzle": 0.4,
+  "filamentDiameter": 1.75,
+  "speeds": { "outerWall": 150, "innerWall": 250, "infill": 300, "topBottom": 180, "firstLayer": 50, "travel": 400 },
+  "acceleration": 10000,
+  "maxVolumetricFlow": 22,
+  "motionEfficiency": 0.6,
+  "layerOverheadSeconds": 1.5,
+  "heatUpSeconds": 150,
+  "verified": false,
+  "notes": "A starting point for any fast Klipper printer. Copy it, set your bed size and speeds, and give it your printer's name.",
+  "sources": []
+}

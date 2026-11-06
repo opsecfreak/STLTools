@@ -1,8 +1,10 @@
 # Install STL Tools
 
-STL Tools runs on your own computer (or a Raspberry Pi) and opens in a web browser. No account, no cloud, no Docker. Each download includes everything it needs, including Node.js.
+STL Tools runs on your own computer (Windows or Linux desktop recommended, macOS, or a Raspberry Pi) and opens in its own app window (Microsoft Edge or Chrome in app mode, if installed) or in your web browser. Start it with `--browser` to always use a normal browser tab. No account, no cloud, no Docker. Each download includes everything it needs, including Node.js.
 
 The repository is private, so sign in to GitHub in your browser before you download.
+
+Desktop vs Raspberry Pi: a desktop GPU can use 3D view quality **Ultra** (Settings > 3D view). On a Pi or a phone, set quality **Low** and turn off card previews if pages feel slow.
 
 ## 1. Download
 

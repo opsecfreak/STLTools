@@ -1,0 +1,155 @@
+// Controls inside the 3D view and the print estimate under it.
+//
+// initViewTools(viewer, toolbarEl)   view buttons (Iso / Top / Front / Right / Fit),
+//                                    display mode, layer cut slider, screenshot, and a
+//                                    settings panel with every 3D view setting. Changes
+//                                    apply at once and are saved to Settings > 3D view.
+// createEstimateBox(el, viewer)      "Print on" printer / profile picker, layer height,
+//                                    infill, material, and the time / filament estimate
+//                                    for what the viewer shows. Uses /shared/estimate.js
+//                                    (the same code the server uses for project ZIPs).
+import { el, api, settings, saveSettings, debounce, toast, downloadBlob, store } from './lib.js';
+import { estimateParts, formatDuration, MATERIALS } from '/shared/estimate.js';
+
+const SHADING = [['shaded', 'Shaded'], ['edges', 'Edges'], ['wireframe', 'Wire'], ['xray', 'X-ray']];
+const QUALITY = [['ultra', 'Ultra'], ['high', 'High'], ['medium', 'Medium'], ['low', 'Low (Pi)']];
+
+export function initViewTools(viewer, bar) {
+  const save = debounce((patch) => saveSettings({ viewer: patch }).catch((e) => toast(e.message, 'error')), 400);
+  const set = (patch) => { viewer.setOptions(patch); save(patch); drawPanel(); };
+  const btn = (label, title, fn) => el('button', { type: 'button', className: 'vt', textContent: label, title, onclick: fn });
+
+  // layer cut slider
+  const cut = el('input', { type: 'range', min: 0, max: 1000, value: 1000, className: 'vt-cut', 'aria-label': 'Cut height' });
+  const cutLabel = el('span', { className: 'vt-cut-label' });
+  const cutBox = el('div', { className: 'vt-cutbox', hidden: true }, cut, cutLabel);
+  const updateCut = () => {
+    const h = viewer.bounds()?.size[2] ?? 0;
+    const z = (h * Number(cut.value)) / 1000;
+    const lh = settings()?.print.layerHeight ?? 0.2;
+    if (Number(cut.value) >= 1000) { viewer.setClip(null); cutLabel.textContent = `Full height ${h.toFixed(1)} mm`; return; }
+    viewer.setClip(z);
+    cutLabel.textContent = `z ${z.toFixed(2)} mm, layer ${Math.max(1, Math.round(z / lh))} of ${Math.ceil(h / lh)}`;
+  };
+  cut.oninput = updateCut;
+
+  const shadingSel = el('select', { className: 'vt-select', title: 'Display', 'aria-label': 'Display', onchange: () => set({ shading: shadingSel.value }) },
+    ...SHADING.map(([v, l]) => el('option', { value: v, textContent: l })));
+  const panel = el('div', { className: 'vt-panel', hidden: true });
+
+  function drawPanel() {
+    const o = viewer.options();
+    shadingSel.value = o.shading;
+    const check = (key, label) => el('label', { className: 'check-inline' }, el('input', { type: 'checkbox', checked: Boolean(o[key]), onchange: (e) => set({ [key]: e.target.checked }) }), ` ${label}`);
+    panel.replaceChildren(
+      el('div', { className: 'vt-panel-head' }, el('strong', { textContent: '3D view settings' }), el('button', { type: 'button', className: 'vt', textContent: 'x', title: 'Close', onclick: () => { panel.hidden = true; } })),
+      el('label', {}, 'Quality ', el('select', { onchange: (e) => set({ quality: e.target.value }) }, ...QUALITY.map(([v, l]) => el('option', { value: v, textContent: l, selected: o.quality === v })))),
+      el('label', {}, 'Display ', el('select', { onchange: (e) => set({ shading: e.target.value }) }, ...SHADING.map(([v, l]) => el('option', { value: v, textContent: l, selected: o.shading === v })))),
+      el('label', {}, 'Color ', el('input', { type: 'color', value: o.color, oninput: (e) => { viewer.setOptions({ color: e.target.value }); save({ color: e.target.value }); } })),
+      check('shadows', 'Shadows'), check('grid', 'Grid'), check('bed', 'Printer bed'), check('axes', 'Axes'),
+      check('dimensions', 'Size label'), check('ortho', 'Orthographic'), check('autoRotate', 'Turn slowly'),
+      el('p', { className: 'muted', textContent: 'Saved for every device in Settings > 3D view. Ultra uses full screen resolution and soft shadows: best on a desktop GPU.' }));
+  }
+
+  bar.replaceChildren(
+    el('div', { className: 'vt-row' },
+      btn('Iso', 'Isometric view', () => viewer.setView('iso')),
+      btn('Top', 'Top view', () => viewer.setView('top')),
+      btn('Front', 'Front view', () => viewer.setView('front')),
+      btn('Right', 'Right view', () => viewer.setView('right')),
+      btn('Fit', 'Fit to the model', () => viewer.setView('fit')),
+      shadingSel,
+      btn('Cut', 'Layer preview: cut the model at a height', () => { cutBox.hidden = !cutBox.hidden; if (cutBox.hidden) { cut.value = 1000; } updateCut(); }),
+      btn('PNG', 'Save a picture of this view', async () => downloadBlob(await viewer.screenshot(), 'stltools-view.png')),
+      btn('⚙', '3D view settings', () => { panel.hidden = !panel.hidden; drawPanel(); })),
+    cutBox, panel);
+  drawPanel();
+  return { reset: () => { cut.value = 1000; updateCut(); } };
+}
+
+// ---------------------------------------------------------------- estimate
+
+let profilesP = null;
+const profiles = () => (profilesP ??= api('GET', '/api/printer-profiles').catch(() => []));
+
+/** Printers and profiles to estimate for: [{ value, label, profile }] */
+async function targets() {
+  const [list, printers] = await Promise.all([profiles(), api('GET', '/api/printers').catch(() => [])]);
+  const byId = new Map(list.map((p) => [p.id, p]));
+  const out = [];
+  for (const pr of printers) {
+    const prof = byId.get(pr.model);
+    if (prof) out.push({ value: `printer:${pr.id}`, label: `${pr.name} (${prof.name})`, profile: prof, printerId: pr.id });
+  }
+  for (const p of list) out.push({ value: `profile:${p.id}`, label: p.name, profile: p });
+  return out;
+}
+
+export function createEstimateBox(box, viewer) {
+  let stats = [];
+  let opts = [];
+  const pick = el('select', { 'aria-label': 'Print on' });
+  const lh = el('input', { type: 'number', min: 0.04, max: 1, step: 0.02, className: 'est-num', title: 'Layer height (mm)' });
+  const infill = el('input', { type: 'number', min: 0, max: 100, step: 5, className: 'est-num', title: 'Infill (%)' });
+  const mat = el('select', { title: 'Material' }, ...Object.entries(MATERIALS).map(([k, m]) => el('option', { value: k, textContent: m.name })));
+  const out = el('div', { className: 'est-out' });
+  const saveSoon = debounce((patch) => saveSettings({ print: patch }).catch((e) => toast(e.message, 'error')), 500);
+
+  const current = () => opts.find((o) => o.value === pick.value) ?? opts[0];
+
+  function draw() {
+    const t = current();
+    const cfg = settings()?.print;
+    if (!t || !cfg) { out.replaceChildren(el('span', { className: 'muted', textContent: 'No printer profile.' })); return; }
+    viewer.setBed(t.profile.bed);
+    if (!stats.length) { out.replaceChildren(el('span', { className: 'muted', textContent: 'Generate or open a part to see a time estimate.' })); return; }
+    const e = estimateParts(stats, t.profile, cfg);
+    const misfit = e.parts.map((p, i) => (p.fit.fits ? null : `Part ${i + 1}: ${p.fit.reason}.`)).filter(Boolean);
+    const rotated = e.parts.some((p) => p.fit.rotated);
+    out.replaceChildren(...[
+      el('div', { className: 'est-main' },
+        el('strong', { textContent: `About ${formatDuration(e.seconds)}` }),
+        el('span', { textContent: `${e.grams.toFixed(e.grams < 10 ? 1 : 0)} g ${MATERIALS[cfg.material]?.name ?? ''}, ${(e.filamentMm / 1000).toFixed(2)} m` }),
+        e.cost !== null ? el('span', { textContent: `filament cost ${e.cost.toFixed(2)}` }) : null),
+      misfit.length ? el('div', { className: 'est-warn', textContent: `Does not fit ${t.profile.name}: ${misfit.join(' ')}` }) : null,
+      rotated ? el('div', { className: 'muted', textContent: 'Turn the part 90 degrees on the bed to fit.' }) : null,
+      el('details', { className: 'est-detail' }, el('summary', { textContent: 'How this is calculated' }),
+        el('ul', {}, ...e.parts.map((p, i) => el('li', { textContent: `Part ${i + 1}: ${formatDuration(p.seconds)}, ${p.layers} layers, ${p.grams.toFixed(1)} g (walls ${formatDuration(p.breakdown.walls / p.breakdown.efficiency)}, top/bottom ${formatDuration(p.breakdown.topBottom / p.breakdown.efficiency)}, infill ${formatDuration(p.breakdown.infill / p.breakdown.efficiency)})` })),
+          el('li', { textContent: `Heat-up ${formatDuration(e.heatUp)}. ${cfg.walls} walls, ${cfg.shellLayers} top/bottom layers. Calibration x${cfg.timeFactor}.` })),
+        el('p', { className: 'muted', textContent: `Estimate from the part's geometry and the ${t.profile.name} profile${t.profile.verified ? '' : ' (speeds not verified)'}: expect about +/- 25 %. Your slicer gives the real time. Calibrate in Settings > Print estimates.` }))].filter(Boolean));
+  }
+
+  async function refreshTargets() {
+    opts = await targets();
+    const s = settings();
+    const saved = store.get('estimateTarget');
+    const def = s?.printers.defaultPrinter ? `printer:${s.printers.defaultPrinter}` : `profile:${s?.print.profile}`;
+    pick.replaceChildren(...opts.map((o) => el('option', { value: o.value, textContent: o.label })));
+    pick.value = opts.some((o) => o.value === saved) ? saved : opts.some((o) => o.value === def) ? def : opts[0]?.value ?? '';
+    const cfg = s?.print;
+    if (cfg) { lh.value = cfg.layerHeight; infill.value = cfg.infill; mat.value = cfg.material; }
+    draw();
+  }
+
+  pick.onchange = () => { store.set('estimateTarget', pick.value); draw(); };
+  const change = (key, v) => { settings().print[key] = v; draw(); saveSoon({ [key]: v }); };
+  lh.oninput = () => { const v = Number(lh.value); if (v >= 0.04 && v <= 1) change('layerHeight', v); };
+  infill.oninput = () => { const v = Number(infill.value); if (v >= 0 && v <= 100) change('infill', v); };
+  mat.onchange = () => change('material', mat.value);
+
+  box.replaceChildren(
+    el('div', { className: 'est-head' },
+      el('strong', { textContent: 'Print estimate' }),
+      el('label', {}, 'on ', pick),
+      el('label', {}, 'layer ', lh, ' mm'),
+      el('label', {}, 'infill ', infill, ' %'),
+      mat),
+    out);
+  refreshTargets();
+  return {
+    /** stats: [{ size, volumeMm3, areaMm2, flatAreaMm2, bedAreaMm2 }] of the parts on screen */
+    update(next) { stats = (next ?? []).filter(Boolean); draw(); },
+    refresh: refreshTargets,
+    profile: () => current()?.profile ?? null,
+  };
+}

@@ -16,16 +16,29 @@
 </head>
 <body>
   <header>
-    <h1>STL Tools</h1>
+    <div class="header-top">
+      <a href="#home" class="brand" title="Home"><h1>STL Tools</h1></a>
+      <div class="global-search" role="search">
+        <input id="globalSearch" type="search" placeholder="Search everything: parts, presets, STLs, projects, settings  ( / )" aria-label="Search everything" autocomplete="off">
+        <div id="globalResults" class="global-results" hidden></div>
+      </div>
+      <a href="#printers" id="printerChip" class="chip header-chip" hidden></a>
+      <button type="button" class="tab icon-tab" data-tab="settings" title="Settings" aria-label="Settings">⚙ Settings</button>
+    </div>
     <nav class="tabs" role="tablist" aria-label="Sections">
       <button type="button" role="tab" data-tab="home" class="tab">Home</button>
+      <span class="tab-sep" aria-hidden="true"></span>
       <button type="button" role="tab" data-tab="shop" class="tab">Shop</button>
       <button type="button" role="tab" data-tab="planes" class="tab">Planes</button>
       <button type="button" role="tab" data-tab="quads" class="tab">Quadcopters</button>
       <button type="button" role="tab" data-tab="accessories" class="tab">Accessories</button>
       <button type="button" role="tab" data-tab="robotics" class="tab">Robotics</button>
+      <span class="tab-sep" aria-hidden="true"></span>
       <button type="button" role="tab" data-tab="projects" class="tab">Projects</button>
       <button type="button" role="tab" data-tab="library" class="tab">My Designs</button>
+      <button type="button" role="tab" data-tab="stls" class="tab">STL Files</button>
+      <button type="button" role="tab" data-tab="import" class="tab">Import</button>
+      <span class="tab-sep" aria-hidden="true"></span>
       <button type="button" role="tab" data-tab="printers" class="tab">Printers</button>
     </nav>
   </header>
@@ -51,15 +64,26 @@
           <label class="check-inline"><input type="checkbox" id="allGenerators"> show all</label>
         </div>
         <div class="desc-row"><span id="designStar"></span><p id="description" class="muted"></p></div>
+        <div id="verifyBanner" class="verify-banner" hidden></div>
+        <div class="form-tools">
+          <label class="check-inline" title="Rebuild the part when a value changes (Settings > Appearance)"><input type="checkbox" id="liveToggle"> Live preview</label>
+          <button type="button" id="expandAll" class="secondary small">Expand all</button>
+          <button type="button" id="collapseAll" class="secondary small">Collapse all</button>
+        </div>
         <form id="params"></form>
         <div class="actions">
-          <button id="run" type="button">Generate</button>
-          <button id="reset" type="button" class="secondary">Defaults</button>
+          <button id="run" type="button" title="Ctrl+Enter">Generate</button>
           <button id="saveDesign" type="button" class="secondary" title="Save to My Designs on this server">Save design</button>
-          <button id="saveParams" type="button" class="secondary" title="Download a .params.json file">Export</button>
-          <button id="openParams" type="button" class="secondary" title="Load a .params.json file">Import</button>
           <button id="toProject" type="button" class="secondary">Add to project</button>
-          <button id="toShop" type="button" class="secondary">Add to shop</button>
+          <details class="more-menu">
+            <summary class="button secondary">More</summary>
+            <div class="more-items">
+              <button id="reset" type="button" class="secondary">Reset to defaults</button>
+              <button id="saveParams" type="button" class="secondary" title="Download a .params.json file">Export settings file</button>
+              <button id="openParams" type="button" class="secondary" title="Load a .params.json file">Import settings file</button>
+              <button id="toShop" type="button" class="secondary">Add to shop catalog</button>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -103,6 +127,9 @@
         </form>
       </section>
 
+      <!-- One STL from the library (#stl/<id>) -->
+      <section id="pane-stl" class="pane" hidden></section>
+
       <!-- My Designs -->
       <section id="pane-library" class="pane" hidden>
         <p class="muted">Designs saved on this server. Load one to change it, Make to generate it, Export to keep a file copy.</p>
@@ -116,13 +143,15 @@
     </aside>
     <section class="viewer-wrap">
       <div class="viewer-bar">
-        <button id="openStl" type="button" class="secondary small" title="View an STL file from your computer">Open STL file</button>
+        <button id="openStl" type="button" class="secondary small" title="View an STL file from your computer (not uploaded)">Open STL file</button>
+        <a id="dlStl" class="button small" hidden>Download STL</a>
         <a id="zipAll" class="button small" hidden>Download all (ZIP)</a>
         <span id="status" role="status">Pick a preset or set parameters and press Generate.</span>
         <span id="appVersion" class="version"></span>
       </div>
-      <div id="viewer"></div>
+      <div id="viewer"><div id="viewTools" class="view-tools"></div></div>
       <div id="output">
+        <div id="estimate" class="estimate"></div>
         <ul id="parts"></ul>
         <ul id="warnings"></ul>
         <ul id="notes"></ul>

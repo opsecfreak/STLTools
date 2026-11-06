@@ -19,7 +19,9 @@ import { networkInterfaces } from 'node:os';
 import { createJsonFile } from './jsonstore.js';
 import { CatalogError } from './catalog.js';
 
-const TIMEOUT = 4000;
+// Printer host boards (the SV07 runs Klipper on a small ARM board) can be slow
+// while printing, so allow a few seconds before calling it offline.
+const TIMEOUT = 6000;
 const GCODE_EXT = /\.(gcode|g|gco|bgcode)$/i;
 export const MAX_UPLOAD_BYTES = 256 * 1024 * 1024;
 
@@ -83,6 +85,15 @@ function snapshotUrl(printer, cam) {
   return `${base.protocol}//${host}${u.startsWith('/') ? '' : '/'}${u}`;
 }
 
+const cleanModel = (m) => (m && /^[a-z0-9][a-z0-9-]{1,40}$/.test(String(m)) ? String(m) : '');
+
+/** Best guess of the printer profile from the Klipper host name (sovol, sv07...). Empty if unknown. */
+export function guessModel(hostname) {
+  const h = String(hostname ?? '').toLowerCase();
+  if (/sv0?7/.test(h)) return 'sovol-sv07';
+  return '';
+}
+
 export function createPrinters({ dataDir }) {
   const file = createJsonFile(join(dataDir, 'printers.json'), []);
   const metaCache = new Map(); // `${id}|${filename}|${modified}` -> metadata
@@ -98,7 +109,7 @@ export function createPrinters({ dataDir }) {
       return (await file.get()).map(publicView);
     },
 
-    async add({ name, url, apiKey }) {
+    async add({ name, url, apiKey, model }) {
       const list = await file.get();
       const clean = normalizeUrl(url);
       if (list.some((p) => p.url === clean)) throw new CatalogError(`${clean} is already added`);
@@ -107,13 +118,14 @@ export function createPrinters({ dataDir }) {
         name: String(name ?? '').trim().slice(0, 60) || new URL(clean).hostname,
         url: clean,
         apiKey: apiKey ? String(apiKey).trim().slice(0, 200) : '',
+        model: cleanModel(model),
         addedAt: new Date().toISOString(),
       };
       await file.set([...list, p]);
       return publicView(p);
     },
 
-    async update(id, { name, url, apiKey }) {
+    async update(id, { name, url, apiKey, model }) {
       const list = await file.get();
       const cur = await find(id);
       const next = {
@@ -121,9 +133,15 @@ export function createPrinters({ dataDir }) {
         name: name !== undefined ? String(name).trim().slice(0, 60) || cur.name : cur.name,
         url: url !== undefined ? normalizeUrl(url) : cur.url,
         apiKey: apiKey === undefined ? cur.apiKey : String(apiKey).trim().slice(0, 200),
+        model: model === undefined ? cur.model ?? '' : cleanModel(model),
       };
       await file.set(list.map((p) => (p.id === id ? next : p)));
       return publicView(next);
+    },
+
+    /** Saved API key, server side only (used by diagnose for a saved printer). */
+    async apiKeyOf(id) {
+      return (await find(id)).apiKey || undefined;
     },
 
     async remove(id) {
@@ -132,13 +150,75 @@ export function createPrinters({ dataDir }) {
       await file.set(list.filter((p) => p.id !== id));
     },
 
+    /**
+     * Step-by-step connection test for the Settings page. Runs only the same
+     * read-only requests the Printers page uses and reports each one, so a
+     * failure says exactly what to fix. Never throws for printer errors.
+     */
+    async diagnose(url, apiKey) {
+      const steps = [];
+      let p;
+      try {
+        p = { name: 'printer', url: normalizeUrl(url), apiKey };
+        steps.push({ step: 'Address', ok: true, detail: `${p.url} is a local network address.` });
+      } catch (err) {
+        steps.push({ step: 'Address', ok: false, detail: err.message, fix: 'Use the IP address shown on the printer screen (Settings > Network), e.g. 192.168.1.50.' });
+        return { ok: false, steps };
+      }
+      const run = async (step, fn, fix) => {
+        try {
+          const detail = await fn();
+          steps.push({ step, ok: true, detail });
+          return true;
+        } catch (err) {
+          steps.push({ step, ok: false, detail: err.message, fix });
+          return false;
+        }
+      };
+      let info = null;
+      const reached = await run('Moonraker answers', async () => {
+        info = await mr(p, '/server/info');
+        return `Moonraker ${info.moonraker_version ?? '?'}, Klipper state "${info.klippy_state}".`;
+      }, 'Open the same address in a browser. If Mainsail opens there but this fails, try port 7125 (e.g. 192.168.1.50:7125). If it says "refused", add this computer to trusted_clients in moonraker.conf or enter an API key.');
+      if (!reached) return { ok: false, steps };
+      let hostname = null;
+      await run('Printer info', async () => {
+        const pi = await mr(p, '/printer/info');
+        hostname = pi.hostname ?? null;
+        return `Host "${pi.hostname ?? '?'}", Klipper ${pi.software_version ?? '?'}, state "${pi.state}".`;
+      }, 'Klipper may be stopped or in an error state. Check Mainsail; STL Tools never restarts it.');
+      await run('Status query', async () => {
+        const q = await mr(p, '/printer/objects/query?print_stats&extruder=temperature&heater_bed=temperature');
+        const st = q.status ?? {};
+        return `State "${st.print_stats?.state ?? '?'}", nozzle ${st.extruder?.temperature?.toFixed?.(0) ?? '?'} C, bed ${st.heater_bed?.temperature?.toFixed?.(0) ?? '?'} C.`;
+      }, 'Klipper is not ready. Fix it in Mainsail (FIRMWARE_RESTART there, not here).');
+      await run('File list', async () => {
+        const files = await mr(p, '/server/files/list?root=gcodes');
+        return `${files.length} G-code file(s) on the printer.`;
+      }, 'Moonraker file manager is not available.');
+      await run('Upload folder', async () => {
+        const roots = await mr(p, '/server/files/roots');
+        const g = (Array.isArray(roots) ? roots : []).find((r) => r.name === 'gcodes');
+        if (!g) throw new Error('No "gcodes" root on this printer.');
+        if (g.permissions && !String(g.permissions).includes('w')) throw new Error('The gcodes folder is read-only.');
+        return 'gcodes folder is writable (uploads always use print=false).';
+      }, 'Uploads need a writable gcodes folder in Moonraker.');
+      await run('Webcam', async () => {
+        const r = await mr(p, '/server/webcams/list');
+        const cams = (r.webcams ?? []).filter((c) => c.enabled !== false);
+        return cams.length ? `${cams.length} webcam(s): ${cams.map((c) => c.name).join(', ')}.` : 'No webcam configured (optional).';
+      }, 'Optional. Configure the camera in Mainsail.');
+      const model = guessModel(hostname, info);
+      return { ok: steps.every((s) => s.ok), steps, url: p.url, hostname, model };
+    },
+
     /** Test an address before saving it. */
     async probe(url, apiKey) {
       const p = { name: 'printer', url: normalizeUrl(url), apiKey };
       const info = await mr(p, '/server/info');
       let host = null;
       try { host = (await mr(p, '/printer/info')).hostname; } catch { /* klippy may be down */ }
-      return { url: p.url, klippyState: info.klippy_state, moonraker: info.moonraker_version, hostname: host };
+      return { url: p.url, klippyState: info.klippy_state, moonraker: info.moonraker_version, hostname: host, model: guessModel(host) };
     },
 
     /** Live status, normalized for the UI. */

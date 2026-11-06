@@ -1,0 +1,232 @@
+{
+  "group": "Robot Hardware",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "ext-2020-corner",
+      "name": "2020 corner bracket",
+      "generator": "extrusion-bracket",
+      "description": "90 degree corner, 2 x M5 per leg, side gussets, slot keys.",
+      "tags": [
+        "2020",
+        "extrusion",
+        "t-slot",
+        "bracket"
+      ],
+      "params": {}
+    },
+    {
+      "id": "ext-2020-corner-1",
+      "name": "2020 corner bracket, small",
+      "generator": "extrusion-bracket",
+      "description": "1 hole per leg.",
+      "tags": [
+        "2020",
+        "extrusion",
+        "bracket"
+      ],
+      "params": {
+        "holesPerLeg": 1
+      }
+    },
+    {
+      "id": "ext-2020-straight",
+      "name": "2020 straight joining plate",
+      "generator": "extrusion-bracket",
+      "description": "Joins two lengths end to end, 2 holes each side.",
+      "tags": [
+        "2020",
+        "extrusion",
+        "plate"
+      ],
+      "params": {
+        "type": "straight"
+      }
+    },
+    {
+      "id": "ext-2020-tee",
+      "name": "2020 T plate",
+      "generator": "extrusion-bracket",
+      "description": "T joint plate.",
+      "tags": [
+        "2020",
+        "extrusion",
+        "plate"
+      ],
+      "params": {
+        "type": "tee"
+      }
+    },
+    {
+      "id": "ext-2020-cap",
+      "name": "2020 end cap",
+      "generator": "extrusion-bracket",
+      "description": "Press-in end cap. Fit not tested: adjust slot width.",
+      "tags": [
+        "2020",
+        "extrusion",
+        "cap"
+      ],
+      "params": {
+        "type": "cap"
+      },
+      "verify": [
+        "slotWidth"
+      ]
+    },
+    {
+      "id": "ext-3030-corner",
+      "name": "3030 corner bracket",
+      "generator": "extrusion-bracket",
+      "description": "3030 profile, M6.",
+      "tags": [
+        "3030",
+        "extrusion",
+        "bracket"
+      ],
+      "params": {
+        "profile": "3030"
+      }
+    },
+    {
+      "id": "ext-4040-corner",
+      "name": "4040 corner bracket",
+      "generator": "extrusion-bracket",
+      "description": "4040 profile, M8.",
+      "tags": [
+        "4040",
+        "extrusion",
+        "bracket"
+      ],
+      "params": {
+        "profile": "4040",
+        "thickness": 6
+      }
+    },
+    {
+      "id": "motor-n20-clamp",
+      "name": "N20 gear motor clamp",
+      "generator": "motor-clamp",
+      "description": "12 x 10 mm N20 body (flats up and down), M2 cap screws, M3 ears.",
+      "tags": [
+        "motor",
+        "n20",
+        "gearmotor"
+      ],
+      "params": {
+        "bodyDiameter": 12,
+        "flatHeight": 10,
+        "clampLength": 10
+      },
+      "verify": [
+        "bodyDiameter",
+        "flatHeight"
+      ]
+    },
+    {
+      "id": "motor-130-clamp",
+      "name": "130 size DC motor clamp",
+      "generator": "motor-clamp",
+      "description": "130 motor body, about 20 mm with 15 mm flats. Measure yours.",
+      "tags": [
+        "motor",
+        "130",
+        "dc motor"
+      ],
+      "params": {
+        "bodyDiameter": 20.2,
+        "flatHeight": 15.2,
+        "clampLength": 14,
+        "capBolt": "M3"
+      },
+      "verify": [
+        "bodyDiameter",
+        "flatHeight"
+      ]
+    },
+    {
+      "id": "motor-25-clamp",
+      "name": "25 mm gear motor clamp",
+      "generator": "motor-clamp",
+      "description": "Round 25 mm gear motor body.",
+      "tags": [
+        "motor",
+        "25mm",
+        "gearmotor"
+      ],
+      "params": {
+        "bodyDiameter": 25,
+        "flatHeight": 0,
+        "clampLength": 14,
+        "capBolt": "M3"
+      },
+      "verify": [
+        "bodyDiameter"
+      ]
+    },
+    {
+      "id": "motor-37-clamp",
+      "name": "37 mm gear motor clamp",
+      "generator": "motor-clamp",
+      "description": "Round 37 mm gear motor body.",
+      "tags": [
+        "motor",
+        "37mm",
+        "gearmotor"
+      ],
+      "params": {
+        "bodyDiameter": 37,
+        "flatHeight": 0,
+        "clampLength": 18,
+        "capBolt": "M3",
+        "wall": 3
+      },
+      "verify": [
+        "bodyDiameter"
+      ]
+    },
+    {
+      "id": "repair-cradle-5in",
+      "name": "Bench cradle, 5 in quad",
+      "generator": "repair-stand",
+      "description": "Cradle for a 5 in frame on the bench. Print 2.",
+      "tags": [
+        "repair",
+        "stand",
+        "quad",
+        "5in"
+      ],
+      "params": {
+        "notchWidth": 45,
+        "notchDepth": 25,
+        "shape": "flat",
+        "clearHeight": 45,
+        "rodHole": 0
+      },
+      "section": "quads",
+      "verify": [
+        "notchWidth"
+      ]
+    },
+    {
+      "id": "repair-cradle-tube-v",
+      "name": "V cradle for tubes and arms",
+      "generator": "repair-stand",
+      "description": "V notch holds tubes, arms and booms while glue sets.",
+      "tags": [
+        "repair",
+        "stand",
+        "tube"
+      ],
+      "params": {
+        "notchWidth": 40,
+        "notchDepth": 20,
+        "shape": "v",
+        "clearHeight": 25,
+        "sideWidth": 10,
+        "rodHole": 0
+      },
+      "section": "shop"
+    }
+  ]
+}

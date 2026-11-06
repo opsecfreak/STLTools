@@ -1,5 +1,11 @@
 // Projects and favorites.
 //
+// Item kinds: preset (ref = preset id), design (ref = saved design id),
+// custom (own generator + params snapshot), stl (ref = STL library id).
+// exportBundle() / importBundle() move a project between computers: the
+// bundle carries the saved designs and library STLs it uses, so it is
+// complete on its own (format "stltools-project", version 1).
+//
 // A project groups the parts for one build ("7 in long-range quad", "shop wall"):
 // each item points at a preset or saved design, or holds its own generator +
 // parameter snapshot, with a quantity, a note and a printed checkbox.
@@ -16,8 +22,9 @@ import { resolveParams } from './params.js';
 import { CatalogError } from './catalog.js';
 
 const STATUSES = ['idea', 'active', 'printing', 'done'];
-const KINDS = ['preset', 'design', 'custom'];
-const FAV_KINDS = ['preset', 'design', 'generator', 'project'];
+const KINDS = ['preset', 'design', 'custom', 'stl'];
+export const BUNDLE_FORMAT = 'stltools-project';
+const FAV_KINDS = ['preset', 'design', 'generator', 'project', 'stl'];
 
 const text = (v, field, max) => {
   const s = String(v ?? '').trim();
@@ -26,7 +33,7 @@ const text = (v, field, max) => {
 };
 const newId = (name) => `${(name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'project')}-${randomBytes(3).toString('hex')}`;
 
-export function createProjects({ dataDir, designs }) {
+export function createProjects({ dataDir, designs, library = null }) {
   const file = createJsonFile(join(dataDir, 'projects.json'), []);
 
   function cleanItem(raw) {
@@ -53,6 +60,8 @@ export function createProjects({ dataDir, designs }) {
       if (!item.name) item.name = g.name;
     } else if (!item.ref) {
       throw new CatalogError(`A ${kind} item needs ref (the ${kind} id)`);
+    } else if (kind === 'stl') {
+      if (!/^stl-[a-f0-9]{8}$/.test(item.ref)) throw new CatalogError(`"${item.ref}" is not an STL library id`);
     } else if (kind === 'preset') {
       try {
         const p = getPreset(item.ref);
@@ -72,6 +81,16 @@ export function createProjects({ dataDir, designs }) {
     const tags = (Array.isArray(raw.tags ?? prev.tags) ? raw.tags ?? prev.tags : []).map((t) => text(t, 'Tag', 30).toLowerCase()).filter(Boolean).slice(0, 20);
     const items = (Array.isArray(raw.items ?? prev.items) ? raw.items ?? prev.items : []).slice(0, 500).map(cleanItem);
     return { name, description: text(raw.description ?? prev.description, 'Description', 2000), status, tags, items };
+  }
+
+  /** Fill in a missing part name from the saved design or library STL it points at. */
+  async function withName(raw) {
+    if (!raw || String(raw.name ?? '').trim()) return raw;
+    try {
+      if (raw.kind === 'design') return { ...raw, name: (await designs.get(raw.ref)).name };
+      if (raw.kind === 'stl' && library) return { ...raw, name: (await library.get(raw.ref)).name };
+    } catch { /* unknown ref: cleanItem reports it */ }
+    return raw;
   }
 
   const api = {
@@ -99,6 +118,7 @@ export function createProjects({ dataDir, designs }) {
     },
     async addItem(id, rawItem) {
       const cur = await api.get(id);
+      rawItem = await withName(rawItem);
       return api.update(id, { items: [...cur.items, rawItem] });
     },
     async remove(id) {
@@ -113,8 +133,72 @@ export function createProjects({ dataDir, designs }) {
         const p = getPreset(item.ref);
         return { generator: p.generator, params: p.params };
       }
+      if (item.kind === 'stl') {
+        if (!library) throw new CatalogError('STL library is not available');
+        return { stl: await library.file(item.ref), entry: await library.get(item.ref) };
+      }
       const d = await designs.get(item.ref);
       return { generator: d.generator, params: d.params };
+    },
+
+    /** Everything needed to rebuild this project on another computer. */
+    async exportBundle(id, { appVersion = '', includeStl = true } = {}) {
+      const p = await api.get(id);
+      const out = {
+        format: BUNDLE_FORMAT, version: 1, app: appVersion, exportedAt: new Date().toISOString(),
+        project: { name: p.name, description: p.description, status: p.status, tags: p.tags, items: p.items },
+        designs: [], stls: [],
+      };
+      for (const it of p.items) {
+        if (it.kind === 'design' && !out.designs.some((d) => d.id === it.ref)) {
+          try { const d = await designs.get(it.ref); out.designs.push({ id: d.id, name: d.name, generator: d.generator, section: d.section, params: d.params, notes: d.notes }); } catch { /* deleted design: item stays, import reports it */ }
+        }
+        if (it.kind === 'stl' && includeStl && library && !out.stls.some((x) => x.id === it.ref)) {
+          try {
+            const e = await library.get(it.ref);
+            out.stls.push({ id: e.id, name: e.name, filename: e.filename, folder: e.folder, tags: e.tags, notes: e.notes, data: (await library.file(it.ref)).toString('base64') });
+          } catch { /* missing file */ }
+        }
+      }
+      return out;
+    },
+
+    /**
+     * Create a new project from a bundle (or a plain project object). Saved designs
+     * and STLs in the bundle are added as new entries; items are re-pointed at them.
+     * Returns { project, warnings }.
+     */
+    async importBundle(bundle) {
+      if (!bundle || typeof bundle !== 'object') throw new CatalogError('Not a project file');
+      if (bundle.format && bundle.format !== BUNDLE_FORMAT) throw new CatalogError(`Unknown file format "${bundle.format}"`);
+      if (bundle.version && bundle.version > 1) throw new CatalogError('This project file is from a newer STL Tools. Update the app first.');
+      const src = bundle.project ?? bundle;
+      if (!Array.isArray(src.items)) throw new CatalogError('Project file has no items list');
+      const warnings = [];
+      const designMap = new Map();
+      for (const d of bundle.designs ?? []) {
+        try { designMap.set(d.id, (await designs.add({ name: d.name, generator: d.generator, section: d.section, params: d.params, notes: d.notes })).id); } catch (err) { warnings.push(`Design "${d.name}": ${err.message}`); }
+      }
+      const stlMap = new Map();
+      for (const x of bundle.stls ?? []) {
+        if (!library) break;
+        try { stlMap.set(x.id, (await library.add(Buffer.from(String(x.data ?? ''), 'base64'), x)).id); } catch (err) { warnings.push(`STL "${x.name}": ${err.message}`); }
+      }
+      const items = [];
+      for (const raw of src.items.slice(0, 500)) {
+        const it = { ...raw };
+        if (it.kind === 'design') {
+          if (designMap.has(it.ref)) it.ref = designMap.get(it.ref);
+          else if (!(await designs.get(it.ref).then(() => true, () => false))) { warnings.push(`Part "${it.name}": its saved design is not in the file. Skipped.`); continue; }
+        }
+        if (it.kind === 'stl') {
+          if (stlMap.has(it.ref)) it.ref = stlMap.get(it.ref);
+          else if (!library || !(await library.get(it.ref).then(() => true, () => false))) { warnings.push(`Part "${it.name}": its STL is not in the file. Skipped.`); continue; }
+        }
+        try { items.push(cleanItem(await withName(it))); } catch (err) { warnings.push(`Part "${it.name ?? '?'}": ${err.message}. Skipped.`); }
+      }
+      const project = await api.add({ name: src.name || 'Imported project', description: src.description, status: src.status, tags: src.tags, items });
+      return { project, warnings };
     },
   };
   return api;

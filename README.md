@@ -1,11 +1,28 @@
 # STL Tools
 
-Parametric STL generator for a drone / RC / robotics shop. Pick one of 285 ready-made designs, change any size, get a watertight STL, slice and print.
+Parametric STL generator for a drone / RC / robotics shop. Pick one of 323 ready-made designs (Raspberry Pi 5 / 4 cases, TF-Luna and lidar brackets, XIAO ESP32 clips, Typhoon H480 / H520 bench parts, tube clamps, bins, gears...), change any size, see the print time on your Sovol SV07, get a watertight STL.
 
-- **Web UI**: Home page with advanced search, favorites and grid / list views; tabs for Shop, Planes, Quadcopters, Accessories, Robotics, Projects, My Designs and Printers. Live 3D preview, per-part STL or one ZIP, open any STL file from your computer to view it.
-- **Projects** group the parts for a build (quantity, notes, printed checkbox) and download as one ZIP.
-- **Printers**: view your Klipper / Mainsail printers (Sovol SV07 and others) on the LAN: status, temperatures, progress, files, history, webcam, G-code upload. View only: it cannot start, stop or change a print. See [docs/PRINTERS.md](docs/PRINTERS.md).
-- **Saved designs** and a **shop catalog** stored on the server (the Pi), so every device sees the same data.
+Runs on a Windows or Linux desktop (main target), macOS or a Raspberry Pi. Open it in a browser, or as its own app window on the desktop.
+
+![Home: search everything, favorites with 3D previews, printer status](docs/screenshots/home.png)
+
+| | |
+|---|---|
+| ![Designer: Pi 5 case, live 3D view, SV07 print estimate](docs/screenshots/designer-pi5-case.png) | ![TF-Luna bracket with "measure before printing" fields and the 3D view settings](docs/screenshots/designer-tfluna-verify.png) |
+| **Designer**: every size is a field, the part rebuilds as you type, the estimate shows time and filament for the SV07. | **Measure flags**: datasheet sizes are highlighted until you check them. The 3D view has its own settings panel. |
+| ![Global search from any page](docs/screenshots/search.png) | ![Project with parts, quantities, estimate and export](docs/screenshots/project.png) |
+| **Global search** in the header (press `/`): parts, presets, STLs, projects, settings. | **Projects**: parts lists, one-ZIP download, print time for the whole build, export to another computer. |
+| ![Settings: connect and test the SV07](docs/screenshots/settings-printers.png) | ![Printers page: status, temperatures, files, webcam (view only)](docs/screenshots/printers.png) |
+| **Settings > Printers**: add the SV07, test the connection step by step. | **Printers**: status, files, history, webcam, G-code upload. View only. |
+| ![Import STL and project files](docs/screenshots/import.png) | ![Dark mode, Typhoon repair cradle](docs/screenshots/dark-mode.png) |
+| **Import**: STL files, project files, design files. | **Dark mode** and the 3D view settings. |
+
+- **Web UI**: Home with search, favorites and grid / list views; tabs for Shop, Planes, Quadcopters, Accessories, Robotics, Projects, My Designs, STL Files, Import, Printers and Settings. Live 3D preview with view buttons, display modes (shaded, edges, wireframe, x-ray), layer cut, printer bed outline and screenshots.
+- **Print estimates**: time, filament (g and m) and optional cost for the selected printer profile; bed-fit warning. Sovol SV07 profile included; add more with [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
+- **Projects** group the parts for a build (quantity, notes, printed checkbox), download as one ZIP and export / import between computers.
+- **STL Files**: import STL files you already have; view, estimate, tag, add to projects.
+- **Printers**: view your Klipper / Mainsail printers (Sovol SV07 and others) on the LAN. View only: it cannot start, stop or change a print. See [docs/PRINTERS.md](docs/PRINTERS.md).
+- **Settings** stored on the server, so every device sees the same ones.
 - **CLI** for scripting and batch jobs. **Library** for other Node projects.
 
 Units are millimeters, because slicers read STL as mm.
@@ -32,20 +49,24 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 | [deploy/README.md](deploy/README.md) | Where to run it, installer and service files, settings |
 | [presets/README.md](presets/README.md) | Preset file format, adding your own designs |
 | [src/generators/README.md](src/generators/README.md) | Writing a new generator, kernel functions, printability rules |
-| [docs/PRINTERS.md](docs/PRINTERS.md) | Printers tab: add your SV07, what it can and cannot do (view only), upload, troubleshooting |
+| [docs/PRINTERS.md](docs/PRINTERS.md) | Printers: add and test your SV07, what it can and cannot do (view only), upload, troubleshooting |
+| [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md) | Print time estimates, calibration, adding printer profiles (also by GitHub pull request) |
+| [AGENTS.md](AGENTS.md) | For developers and AI agents: commands, hard rules, code map |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the server, generators, data folder and UI fit together |
+| [docs/API.md](docs/API.md) | Every HTTP endpoint with request and response shapes |
 | [CHANGELOG.md](CHANGELOG.md) | Versions |
 
 ## What it makes
 
-39 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
+45 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
 
 | Tab | Generators | Presets |
 |-----|-----------|---------|
-| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card` | 79 |
+| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card` | 80 |
 | Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 22 |
-| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires | 30 |
-| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 107 |
-| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, plus board / sensor / battery mounts | 45 |
+| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, `repair-stand` (bench cradles), plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires; Yuneec Typhoon H480 / H520 bench and gear-leg parts (measure first) | 36 |
+| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 109 |
+| Robotics | `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, `sbc-case` (Raspberry Pi 5 / 4 / 3 or any board: port windows, fan or vents, ears), `sensor-bracket` (TF-Luna, TFmini, XIAO boards: snap lips, tilt wedge, plate / tube saddle / tape), `lidar-mount` (puck lidar plates), `extrusion-bracket` (2020 / 3030 / 4040), `motor-clamp` (N20, 130, 25 / 37 mm gear motors), plus board / sensor / battery mounts | 76 |
 
 Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 
@@ -161,25 +182,17 @@ See [deploy/README.md](deploy/README.md) for settings and [docs/RASPBERRY-PI.md]
 
 ## API
 
+Every endpoint with request and response shapes: [docs/API.md](docs/API.md). Main ones:
+
 | Method | Path | Purpose |
 |--------|------|---------|
-| GET | `/api/version` | Version, counts, data folder, custom file problems |
-| GET / POST, GET / PUT / DELETE | `/api/projects`, `/api/projects/:id` | Projects |
-| POST | `/api/projects/:id/items`, `/api/projects/:id/build` | Add a part / build a ZIP of every part |
-| GET, POST | `/api/favorites`, `/api/favorites/toggle` | Favorites |
-| POST, PUT, GET | `/api/thumbs/lookup`, `/api/thumbs/:key` | Preview cache |
-| GET (+ PUT upload) | `/api/printers/...` | Printers, view only (see docs/PRINTERS.md) |
-| GET | `/api/generators` | Generators with parameter schemas |
-| GET | `/api/presets` | Preset library |
+| GET | `/api/generators`, `/api/presets`, `/api/version` | What is available |
 | POST | `/api/generate/:id` | JSON params in, parts with stats and download URLs out |
-| GET | `/api/stl/:job/:part.stl` | Binary STL (last 50 jobs kept in memory) |
-| GET / PUT | `/api/categories` | Read / replace shop categories |
-| GET / POST | `/api/catalog` | List / add shop items |
-| GET / PUT / DELETE | `/api/catalog/:code` | Read / edit / delete an item |
-| POST | `/api/catalog/:code/generate` | Item STL(s) with label text, plus a label card |
-| GET / POST | `/api/designs` | List / save designs |
-| GET / PUT / DELETE | `/api/designs/:id` | Read / update / delete a saved design |
-| GET | `/api/zip/:job` | All parts of a job as one ZIP |
+| POST | `/api/estimate` | Print time and filament for part stats and a printer profile |
+| GET / PUT | `/api/settings` | Settings (partial updates) |
+| GET / PUT | `/api/library`, `/api/library/upload` | STL library |
+| GET / POST | `/api/projects/:id/export`, `/api/projects/import` | Move projects between computers |
+| GET (+ upload) | `/api/printers/...`, POST `/api/printers/diagnose` | Printers, view only |
 
 ## Print notes
 

@@ -60,17 +60,33 @@ export function meshStats(mesh) {
     }
   }
   let vol6 = 0;
+  let area = 0;
+  let flat = 0;
+  let bottom = 0;
   for (let t = 0; t < idx.length; t += 3) {
     const a = idx[t] * 3, b = idx[t + 1] * 3, c = idx[t + 2] * 3;
     vol6 += p[a] * (p[b + 1] * p[c + 2] - p[b + 2] * p[c + 1])
       - p[a + 1] * (p[b] * p[c + 2] - p[b + 2] * p[c])
       + p[a + 2] * (p[b] * p[c + 1] - p[b + 1] * p[c]);
+    // triangle normal (not normalized): area = |n| / 2
+    const ux = p[b] - p[a], uy = p[b + 1] - p[a + 1], uz = p[b + 2] - p[a + 2];
+    const vx = p[c] - p[a], vy = p[c + 1] - p[a + 1], vz = p[c + 2] - p[a + 2];
+    const nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+    const len = Math.hypot(nx, ny, nz);
+    area += len / 2;
+    if (len > 0 && Math.abs(nz / len) > 0.7) {
+      flat += len / 2;
+      if (nz < 0 && Math.max(p[a + 2], p[b + 2], p[c + 2]) < min[2] + 0.01) bottom += len / 2;
+    }
   }
   return {
     size: [0, 1, 2].map((k) => round(max[k] - min[k])),
     min: min.map((v) => round(v)),
     max: max.map((v) => round(v)),
     volumeMm3: round(vol6 / 6, 1),
+    areaMm2: round(area, 1),
+    flatAreaMm2: round(flat, 1),
+    bedAreaMm2: round(bottom, 1),
     triangles: idx.length / 3,
   };
 }
