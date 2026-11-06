@@ -112,6 +112,16 @@ npm run package      # release packages (needs network to download Node)
   render function in its own module, and a `PAGES` entry in `home.js` so global
   search can find it.
 
+## Editions and branches
+
+- `main` is the public edition. Shipped files must not contain personal or
+  client data (`test/v10.test.js` checks this).
+- `mts-personal` is a personal edition: `main` plus `EDITION.json`, its own
+  `seed/<set>/` parts list and part-linked presets. Update it by merging
+  `main` into it; its version is `<public version>-mts.<n>` and it is
+  released by starting the Release workflow on that branch (pre-release).
+- Tests read `EDITION.json` and skip public-only checks on a personal edition.
+
 ## Before you finish
 
 1. `npm test` passes (also on Node 18 if you can).
