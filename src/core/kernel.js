@@ -127,6 +127,36 @@ export function createScope() {
       return t(m.translate([0, 0, -min[2]]));
     },
 
+    /**
+     * Print pose for one part of an assembly. Build the part where it sits in
+     * the assembly, then call pose(part, [rx, ry, rz]) (degrees, applied X then Y
+     * then Z like Manifold.rotate) to turn it into its print orientation.
+     * Returns { manifold, assembled }: the part centered on the bed, and the
+     * 4x4 column-major matrix that puts the printed STL back in its assembled
+     * place (used by the 3D view's "Assembled" layout).
+     */
+    pose(m, rotDeg = [0, 0, 0]) {
+      const r = rotDeg.map((d) => (d * Math.PI) / 180);
+      const rot = t(m.rotate(rotDeg));
+      const { min, max } = rot.boundingBox();
+      const tv = [-(min[0] + max[0]) / 2, -(min[1] + max[1]) / 2, -min[2]];
+      const placed = t(rot.translate(tv));
+      // R = Rz * Ry * Rx (Manifold applies X, then Y, then Z)
+      const [cx, cy, cz] = r.map(Math.cos);
+      const [sx, sy, sz] = r.map(Math.sin);
+      const R = [
+        [cz * cy, cz * sy * sx - sz * cx, cz * sy * cx + sz * sx],
+        [sz * cy, sz * sy * sx + cz * cx, sz * sy * cx - cz * sx],
+        [-sy, cy * sx, cy * cx],
+      ];
+      // assembled = R^T (printed - tv): column-major, rotation part is R^T
+      const Rt = (i, j) => R[j][i];
+      const tr = [0, 1, 2].map((i) => -(Rt(i, 0) * tv[0] + Rt(i, 1) * tv[1] + Rt(i, 2) * tv[2]));
+      const assembled = [Rt(0, 0), Rt(1, 0), Rt(2, 0), 0, Rt(0, 1), Rt(1, 1), Rt(2, 1), 0, Rt(0, 2), Rt(1, 2), Rt(2, 2), 0, tr[0], tr[1], tr[2], 1]
+        .map((v) => Math.round(v * 1e6) / 1e6);
+      return { manifold: placed, assembled };
+    },
+
     /** Center on X/Y and drop onto the bed (min Z = 0). */
     placeOnBed(m) {
       const { min, max } = m.boundingBox();

@@ -1,0 +1,167 @@
+{
+  "group": "Assemblies",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "gimbal-servo-9g-fpv",
+      "name": "Pan-tilt gimbal, 9 g servos, FPV camera",
+      "generator": "servo-gimbal",
+      "description": "Two 9 g class servos, 19 mm FPV camera on side screws. Servo sizes are typical 9 g values: measure yours.",
+      "tags": [
+        "gimbal",
+        "pan tilt",
+        "servo",
+        "assembly",
+        "fpv"
+      ],
+      "params": {},
+      "verify": [
+        "servoLength",
+        "servoWidth",
+        "servoHeight",
+        "earZ",
+        "earSpacing",
+        "shaftFromEnd",
+        "hornClear"
+      ]
+    },
+    {
+      "id": "gimbal-servo-9g-plate",
+      "name": "Pan-tilt gimbal, 9 g servos, tripod plate",
+      "generator": "servo-gimbal",
+      "description": "9 g servos with a 1/4 in tripod-screw plate for a small camera or sensor.",
+      "tags": [
+        "gimbal",
+        "pan tilt",
+        "servo",
+        "assembly"
+      ],
+      "params": {
+        "camera": "plate"
+      },
+      "verify": [
+        "servoLength",
+        "servoWidth",
+        "servoHeight",
+        "earZ",
+        "earSpacing"
+      ]
+    },
+    {
+      "id": "gimbal-servo-9g-nano",
+      "name": "Pan-tilt gimbal, 9 g servos, 14 mm nano camera",
+      "generator": "servo-gimbal",
+      "description": "Nano FPV camera (14 mm) on 9 g servos.",
+      "tags": [
+        "gimbal",
+        "pan tilt",
+        "servo",
+        "assembly",
+        "nano"
+      ],
+      "params": {
+        "cameraWidth": 14,
+        "shelfWidth": 24,
+        "shelfDepth": 22
+      },
+      "verify": [
+        "servoLength",
+        "servoWidth",
+        "servoHeight",
+        "earZ",
+        "earSpacing"
+      ]
+    },
+    {
+      "id": "gimbal-servo-mg996r",
+      "name": "Pan-tilt gimbal, MG996R servos",
+      "generator": "servo-gimbal",
+      "description": "Standard-size metal gear servos. Body 40.7 x 19.7, ear holes 49.5 apart, shaft 10 from the end (from your parts list). Measure the body height, ear height and horn face height.",
+      "tags": [
+        "gimbal",
+        "pan tilt",
+        "servo",
+        "assembly",
+        "mg996r",
+        "ptz"
+      ],
+      "params": {
+        "servoLength": 40.7,
+        "servoWidth": 19.7,
+        "earSpacing": 49.5,
+        "earHole": 3,
+        "shaftFromEnd": 10,
+        "hornCircle": 20,
+        "shelfWidth": 50,
+        "shelfDepth": 40,
+        "camera": "plate",
+        "thickness": 4,
+        "wall": 3
+      },
+      "measure": [
+        "servoHeight",
+        "earZ",
+        "hornClear"
+      ],
+      "verify": [
+        "servoLength",
+        "servoWidth",
+        "earSpacing",
+        "shaftFromEnd"
+      ],
+      "component": "MOT05",
+      "ownership": "Confirm",
+      "category": "Motors, props, servos and steppers"
+    },
+    {
+      "id": "gimbal-brushless-gopro",
+      "name": "Brushless 2-axis gimbal frame, GoPro Hero 3 (SimpleBGC)",
+      "generator": "brushless-gimbal",
+      "description": "Roll + tilt frame for your SimpleBGC 2-axis controller and a GoPro-size camera. Measure the motors (diameter, height, hole circle) and the camera before printing.",
+      "tags": [
+        "gimbal",
+        "brushless",
+        "simplebgc",
+        "assembly",
+        "gopro"
+      ],
+      "params": {},
+      "measure": [
+        "motorDiameter",
+        "motorHeight",
+        "rollPCD",
+        "tiltPCD",
+        "cameraWidth",
+        "cameraHeight",
+        "cameraDepth"
+      ],
+      "component": "FC04",
+      "ownership": "Owned",
+      "category": "Flight controllers and gimbal controllers"
+    },
+    {
+      "id": "gimbal-brushless-small",
+      "name": "Brushless 2-axis gimbal frame, small camera",
+      "generator": "brushless-gimbal",
+      "description": "Compact roll + tilt frame for a small camera (FPV or board camera). Set the motor and camera sizes.",
+      "tags": [
+        "gimbal",
+        "brushless",
+        "assembly"
+      ],
+      "params": {
+        "cameraWidth": 40,
+        "cameraHeight": 30,
+        "cameraDepth": 25,
+        "motorDiameter": 22,
+        "ballSpacingX": 40,
+        "ballSpacingY": 35
+      },
+      "measure": [
+        "rollPCD",
+        "tiltPCD",
+        "motorHeight"
+      ]
+    }
+  ]
+}

@@ -442,9 +442,9 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; backgrou
 .preset-list li.active .flag { color: inherit; border-color: currentColor; }
 .parts-list { display: flex; flex-direction: column; gap: 6px; }
 .parts-cat h3 { margin: 16px 0 6px; }
-.part-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 320px); gap: 8px 16px; background: var(--panel); border: 1px solid var(--border); border-left: 5px solid var(--border); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; }
-.part-row.own-owned { border-left-color: #1a7f37; } .part-row.own-confirm { border-left-color: #bf8700; } .part-row.own-planned { border-left-color: #6e7781; }
-.part-row code { font-weight: 700; }
+.mypart-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 320px); gap: 8px 16px; background: var(--panel); border: 1px solid var(--border); border-left: 5px solid var(--border); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; }
+.mypart-row.own-owned { border-left-color: #1a7f37; } .mypart-row.own-confirm { border-left-color: #bf8700; } .mypart-row.own-planned { border-left-color: #6e7781; }
+.mypart-row code { font-weight: 700; }
 .part-edit { align-items: center; margin: 4px 0; }
 .part-edit select { width: auto; }
 .part-edit label { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
@@ -459,4 +459,32 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; backgrou
 .files-missing { background: var(--warn-bg); color: var(--warn-text); padding: 8px 10px; border-radius: 6px; font-size: 13px; }
 .files-missing ul { margin: 4px 0; padding-left: 20px; }
 .tile-parts { border-left-color: #1a7f37; }
-@media (max-width: 760px) { .part-row { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .mypart-row { grid-template-columns: 1fr; } }
+
+/* ---------- v8: per-part estimate table, assembled layout, simple mode, quick make ---------- */
+.est-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 6px 0; }
+.est-table th, .est-table td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.est-table th { color: var(--muted); font-weight: 600; }
+.est-table td:first-child { white-space: normal; }
+.est-table tfoot td { font-weight: 700; border-bottom: 0; }
+.est-table td.ok { color: var(--ok); } .est-table td.bad { color: var(--fail); font-weight: 700; }
+.est-table tr.misfit td { background: color-mix(in srgb, var(--fail) 8%, transparent); }
+.est-table a { color: var(--accent); }
+.vt-layout { border: 1px solid var(--accent) !important; color: var(--accent) !important; }
+.vt-layout[hidden] { display: none; }
+@media (max-width: 760px) { .est-table { display: block; overflow-x: auto; } }
+.mode-toggle { margin: 0; }
+.field[hidden], .pgroup-box[hidden] { display: none; }
+.more-settings { width: 100%; margin: 4px 0 10px; }
+.quick-make { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.quick-make button { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-weight: 600; }
+.quick-make button span { font-weight: 400; font-size: 11px; color: var(--muted); }
+.quick-make button:hover { border-color: var(--accent); }
+.asm-box { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); gap: 12px; margin: 10px 0; }
+.asm-view { position: relative; min-height: 420px; background: var(--viewer); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+.asm-view canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.asm-side { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.place-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.place-table td, .place-table th { padding: 2px 4px; border-bottom: 1px solid var(--border); text-align: left; }
+.place-table input { width: 58px; padding: 3px 4px; }
+@media (max-width: 900px) { .asm-box { grid-template-columns: 1fr; } }

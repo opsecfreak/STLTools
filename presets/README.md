@@ -28,6 +28,7 @@ Ready-made designs. Each preset is a generator plus the values that differ from 
 | `20-my-modules.json` | Robotics, Quadcopters | Pi 5 / 4 / 3 cases, XIAO clips, TF-Luna / TFmini / lidar, Typhoon H480 / H520 |
 | `21-robot-hardware.json` | Robotics | 2020 / 3030 / 4040 brackets, motor clamps, repair cradles |
 | `22-mts-parts.json` | By part category | One or more presets per part in My Parts (seed/mts-v1), with `component`, `ownership`, `category`, `measure` |
+| `23-assemblies.json` | Robotics | Gimbal assemblies: servo pan-tilt (9 g, MG996R), brushless 2-axis frames (SimpleBGC) |
 | `50-series-*.json` | All tabs | Size series (about 3,000): clamps per tube size, spacers per bolt and length, gears, pulleys, bins... **Generated** by `scripts/build-series.mjs`: edit the script, not the files |
 
 Your own presets go in `custom/presets/` (see [custom/README.md](../custom/README.md)).

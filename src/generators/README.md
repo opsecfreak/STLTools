@@ -81,3 +81,31 @@ Helpers: `teardrop(r)`, `regularPolygon(r, n)` in `kernel.js`; bolt sizes (`BOLT
 6. Build a hole and its countersink (or any two cutters on one axis) as one convex hull, not two touching solids.
 7. Report problems in `warnings` and print tips in `notes`. Do not throw for fixable inputs.
 8. Add presets. `npm test` generates every preset and every select option of every generator and checks each mesh.
+
+## Assemblies (v8)
+
+A generator can return several parts that fit together (see `gimbals.js`).
+Build each part **where it sits in the finished assembly**, then turn it to
+its print orientation with `k.pose(part, [rx, ry, rz])`:
+
+```js
+const a = k.pose(base, [0, 0, 0]);         // already flat
+const c = k.pose(cameraArm, [90, 0, 0]);   // lay the arm flat on the bed
+return { parts: [
+  { name: 'base', manifold: a.manifold, assembled: a.assembled },
+  { name: 'camera-arm', manifold: c.manifold, assembled: c.assembled },
+] };
+```
+
+`pose()` centers the turned part on the bed and returns the 4x4 matrix
+(`assembled`) that puts the printed STL back in place. The 3D view's
+"Assembled" button uses it; downloads stay in print orientation. Mark the
+generator `assembly: true` so the UI lists it with the assemblies. Optional
+per part: `qty` (print this many).
+
+## Simple mode
+
+`basic: ['key', ...]` on a generator lists the settings the UI shows in
+Simple mode (the rest stay at their values under "All settings"). Built-in
+generators have their lists in `BASIC` in `src/core/registry.js`; without one
+the UI shows the first parameter group.

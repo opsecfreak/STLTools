@@ -148,6 +148,7 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
   const errors = [];
   const allStats = [];
   const allQty = [];
+  const partList = []; // one entry per STL: for the project's parts table and 3D assembly view
   let n = 0;
   for (const item of project.items) {
     n++;
@@ -159,12 +160,16 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
         files.set(base, resolved.stl);
         allStats.push(resolved.entry.stats);
         allQty.push(item.qty);
+        partList.push({ item: n - 1, uid: item.uid, name: item.name, file: base, stats: resolved.entry.stats, qty: item.qty });
       } else {
         const r = await generate(resolved.generator, resolved.params);
         for (const pt of r.parts) {
-          files.set(`${base}-${pt.name}`, toStl(pt.mesh, { name: `${base}-${pt.name}` }));
-          allStats.push(meshStats(pt.mesh));
-          allQty.push(item.qty);
+          const file = `${base}-${pt.name}`;
+          const stats = meshStats(pt.mesh);
+          files.set(file, toStl(pt.mesh, { name: file }));
+          allStats.push(stats);
+          allQty.push(item.qty * (pt.qty ?? 1));
+          partList.push({ item: n - 1, uid: item.uid, name: r.parts.length > 1 ? `${item.name}: ${pt.name}` : item.name, file, stats, qty: item.qty * (pt.qty ?? 1), ...(pt.assembled ? { assembled: pt.assembled } : {}) });
         }
       }
       lines.push(`${n}. ${item.name}  x${item.qty}${item.printed ? '  (printed)' : ''}${item.note ? `  - ${item.note}` : ''}`);
@@ -174,10 +179,18 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
     }
   }
   const est = await projectEstimate(allStats, allQty);
-  if (est) lines.push('', `Estimate on ${est.profile} (${est.settings}): about ${formatDuration(est.seconds)} printing, ${est.grams.toFixed(0)} g filament (${(est.filamentMm / 1000).toFixed(1)} m). Your slicer gives the real time.`);
+  if (est) {
+    lines.push('', `Estimate on ${est.profile} (${est.settings}): about ${formatDuration(est.seconds)} printing, ${est.grams.toFixed(0)} g filament (${(est.filamentMm / 1000).toFixed(1)} m). Your slicer gives the real time.`, '', 'Per STL file (each, then x quantity):');
+    partList.forEach((pt, i) => {
+      const e = est.perPart[i];
+      pt.estimate = e;
+      lines.push(`  ${pt.file}.stl  x${pt.qty}: ${formatDuration(e.seconds)}, ${e.grams.toFixed(1)} g each; ${pt.stats.size.map((v) => v.toFixed(1)).join(' x ')} mm${e.fits ? '' : '  DOES NOT FIT THE BED'}`);
+    });
+  }
   const key = randomBytes(8).toString('hex');
   remember(key, { prefix: slug(project.name), files, extra: [{ name: 'README.txt', data: Buffer.from(lines.join('\n') + '\n') }] });
-  return { zip: `/api/zip/${key}`, files: files.size, errors, estimate: est };
+  const parts = partList.map((pt) => ({ ...pt, url: `/api/stl/${key}/${encodeURIComponent(pt.file)}.stl`, filename: `${slug(project.name)}-${pt.file}.stl` }));
+  return { zip: `/api/zip/${key}`, files: files.size, errors, estimate: est, parts };
 }
 
 // ---------------------------------------------------------------- seed sets (v7)
@@ -272,7 +285,8 @@ async function projectEstimate(statsList, qty) {
   const profile = await activeProfile(cfg);
   if (!profile) return null;
   const e = estimateParts(statsList, profile, cfg.print, qty);
-  return { ...e, parts: undefined, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
+  const perPart = e.parts.map((p) => ({ seconds: p.seconds, grams: p.grams, filamentMm: p.filamentMm, layers: p.layers, fits: p.fit.fits }));
+  return { ...e, parts: undefined, perPart, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
 }
 
 /** Serve a file from baseDir without allowing ../ escapes. */
@@ -293,13 +307,15 @@ function publish(id, result, extra = {}) {
   const key = jobKey(id, result.params, extra.item?.code ?? '', extra.item?.updatedAt ?? '');
   const files = new Map();
   const prefix = extra.item ? extra.item.code : id;
-  const parts = result.parts.map(({ name, mesh }) => {
+  const parts = result.parts.map(({ name, mesh, assembled, qty }) => {
     files.set(name, toStl(mesh, { name: `${prefix}-${name}` }));
     return {
       name,
       url: `/api/stl/${key}/${encodeURIComponent(name)}.stl`,
       filename: `${prefix}-${name}.stl`,
       stats: meshStats(mesh),
+      ...(assembled ? { assembled } : {}),
+      ...(qty ? { qty } : {}),
     };
   });
   remember(key, { prefix, files });

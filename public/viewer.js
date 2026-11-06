@@ -99,11 +99,14 @@ export function createViewer(container, initial = {}) {
 
   function applyShading() {
     material.color.set(opts.color);
-    material.wireframe = opts.shading === 'wireframe';
     const xray = opts.shading === 'xray';
-    material.transparent = xray;
-    material.opacity = xray ? 0.35 : 1;
-    material.depthWrite = !xray;
+    const mats = new Set([material, ...meshes.map((m) => m.material)]);
+    for (const mat of mats) {
+      mat.wireframe = opts.shading === 'wireframe';
+      mat.transparent = xray;
+      mat.opacity = xray ? 0.35 : 1;
+      mat.depthWrite = !xray;
+    }
     edgeMaterial.color.setHex(theme().edge);
     for (const m of meshes) {
       if (opts.shading === 'edges' && !m.userData.edges) {
@@ -156,11 +159,11 @@ export function createViewer(container, initial = {}) {
     const s = box.getSize(new THREE.Vector3());
     // each part is printed on its own: only a single part larger than the bed is a problem
     const tooBig = bed ? meshes.filter((m) => {
-      const p = new THREE.Box3().setFromObject(m).getSize(new THREE.Vector3());
+      const p = m.geometry.boundingBox.getSize(new THREE.Vector3()); // printed orientation
       return p.z > bed.z || !((p.x <= bed.x && p.y <= bed.y) || (p.y <= bed.x && p.x <= bed.y));
     }).length : 0;
     dims.hidden = false;
-    dims.textContent = `${meshes.length > 1 ? 'All parts: ' : ''}X ${s.x.toFixed(1)}  Y ${s.y.toFixed(1)}  Z ${s.z.toFixed(1)} mm${tooBig ? `  (${meshes.length > 1 ? `${tooBig} part${tooBig > 1 ? 's' : ''}` : 'part'} larger than the bed)` : ''}`;
+    dims.textContent = `${meshes.length > 1 ? (layout === 'assembled' && canAssemble(lastParts) ? 'Assembled: ' : 'All parts: ') : ''}X ${s.x.toFixed(1)}  Y ${s.y.toFixed(1)}  Z ${s.z.toFixed(1)} mm${tooBig ? `  (${meshes.length > 1 ? `${tooBig} part${tooBig > 1 ? 's' : ''}` : 'part'} larger than the bed)` : ''}`;
     dims.classList.toggle('too-big', tooBig > 0);
   }
 
@@ -174,7 +177,6 @@ export function createViewer(container, initial = {}) {
     Object.assign(ortho, { left: -half * aspect, right: half * aspect, top: half, bottom: -half });
     ortho.updateProjectionMatrix();
   }
-  new ResizeObserver(resize).observe(container);
 
   function useCamera() {
     const next = opts.ortho ? ortho : persp;
@@ -217,31 +219,55 @@ export function createViewer(container, initial = {}) {
   };
 
   let showToken = 0;
-  async function show(parts) {
+  // Layout: 'plate' lays parts side by side as printed; 'assembled' puts each part
+  // that has an `assembled` matrix (from the generator) in its place, one color per part.
+  let layout = 'plate';
+  let lastParts = [];
+  const PALETTE = [0x3d8bfd, 0xf28c28, 0x2da44e, 0xbf3989, 0x8957e5, 0xd29922, 0x1b9aaa, 0xcf222e];
+  const canAssemble = (parts) => parts.length > 1 && parts.every((p) => Array.isArray(p.assembled) && p.assembled.length === 16);
+
+  async function show(parts, { layout: lay } = {}) {
     // Only the newest call draws: an older, slower call stops when a newer one starts.
     const token = ++showToken;
+    if (lay) layout = lay;
+    lastParts = parts;
+    const assembled = layout === 'assembled' && canAssemble(parts);
     const next = [];
     let offsetX = 0;
-    for (const part of parts) {
+    for (const [i, part] of parts.entries()) {
       const geometry = part.geometry ?? (await load(part.url));
       if (token !== showToken) return;
       geometry.computeBoundingBox();
       if (!geometry.attributes.normal) geometry.computeVertexNormals();
       const bb = geometry.boundingBox;
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.set(offsetX - bb.min.x, -(bb.min.y + bb.max.y) / 2, -bb.min.z);
+      const mat = assembled ? material.clone() : material;
+      if (assembled) mat.color.setHex(PALETTE[i % PALETTE.length]);
+      const mesh = new THREE.Mesh(geometry, mat);
+      if (assembled) {
+        mesh.matrixAutoUpdate = false;
+        mesh.matrix.fromArray(part.assembled);
+      } else {
+        mesh.position.set(offsetX - bb.min.x, -(bb.min.y + bb.max.y) / 2, -bb.min.z);
+        offsetX += bb.max.x - bb.min.x + 10;
+      }
+      mesh.userData.name = part.name;
       mesh.castShadow = renderer.shadowMap.enabled;
-      offsetX += bb.max.x - bb.min.x + 10;
       next.push(mesh);
     }
     group.clear();
-    for (const m of meshes) m.userData.edges?.geometry.dispose();
+    for (const m of meshes) {
+      m.userData.edges?.geometry.dispose();
+      if (m.material !== material) m.material.dispose();
+    }
     meshes = next;
     for (const m of meshes) group.add(m);
-    // center the layout on the bed origin
+    // center the layout on the bed origin, standing on the bed
+    group.position.set(0, 0, 0);
+    group.updateMatrixWorld(true);
     const all = new THREE.Box3().setFromObject(group);
     const c = all.getCenter(new THREE.Vector3());
-    group.position.set(group.position.x - c.x, group.position.y - c.y, 0);
+    group.position.set(-c.x, -c.y, meshes.length ? -all.min.z : 0);
+    group.updateMatrixWorld(true);
     box = meshes.length ? new THREE.Box3().setFromObject(group) : null; // empty view: no size label
     applyShading();
     drawHelpers();
@@ -276,14 +302,22 @@ export function createViewer(container, initial = {}) {
   applyQuality();
   setOptions({});
   setView('iso');
+  let alive = true;
   (function loop() {
+    if (!alive) return;
     requestAnimationFrame(loop);
     controls.update();
     renderer.render(scene, camera);
   })();
+  const ro = new ResizeObserver(resize);
+  ro.observe(container);
 
   return {
     show,
+    /** 'plate' or 'assembled' (only for parts with assembled matrices). Redraws the last parts. */
+    setLayout: (l) => { layout = l; return show(lastParts); },
+    layout: () => layout,
+    canAssemble: () => canAssemble(lastParts),
     setOptions,
     setBed,
     setView,
@@ -292,6 +326,16 @@ export function createViewer(container, initial = {}) {
     bounds: () => (box ? { size: box.getSize(new THREE.Vector3()).toArray() } : null),
     screenshot: () => new Promise((resolve) => { renderer.render(scene, camera); renderer.domElement.toBlob(resolve, 'image/png'); }),
     options: () => ({ ...opts }),
+    /** Stop drawing and free the WebGL context (for 3D views inside pages). */
+    dispose() {
+      alive = false;
+      ro.disconnect();
+      controls.dispose();
+      renderer.dispose();
+      renderer.forceContextLoss?.();
+      renderer.domElement.remove();
+      dims.remove();
+    },
   };
 }
 

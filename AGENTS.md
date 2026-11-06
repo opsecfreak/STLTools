@@ -93,6 +93,11 @@ npm run package      # release packages (needs network to download Node)
 - **Add presets:** add to a `presets/*.json` file (or a new one). Fields: `id`,
   `name`, `generator`, `description`, `tags`, `params`, optional `verify`,
   `group`, `section`.
+- **Add an assembly:** build each part in place, `k.pose()` it for printing,
+  return `assembled` with each part, set `assembly: true` (see
+  `src/generators/gimbals.js` and src/generators/README.md).
+- **Simple mode:** add the main settings of a generator to `BASIC` in
+  `src/core/registry.js` (or a `basic` list on the generator).
 - **Add a size series:** add an entry to `SERIES` in `scripts/build-series.mjs`,
   run it, run `npm test`, commit the script and the generated file.
 - **Add a part preset:** add it to `presets/22-mts-parts.json` with `component`

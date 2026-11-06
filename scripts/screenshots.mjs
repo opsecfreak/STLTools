@@ -93,6 +93,17 @@ await shot('needs-measurement', 'quads', 2500, async () => {
   await page.locator('#presetList li').first().click();
   await page.waitForTimeout(2000);
 });
+await shot('assembly-gimbal', 'home', 1500, async () => {
+  await page.locator('.quick-make button', { hasText: 'Pan-tilt gimbal' }).click();
+  await page.waitForTimeout(5000);
+});
+const gp = await post('/api/projects', { name: 'Pan-tilt gimbal + standoffs', items: [{ kind: 'preset', ref: 'gimbal-servo-9g-fpv' }, { kind: 'custom', generator: 'spacer', params: { length: 12 }, name: 'Standoff 12 mm', qty: 4, place: { x: 60, y: 0, z: 0, rx: 0, ry: 0, rz: 0 } }] });
+await shot('project-assembly', `project/${gp.id}`, 2500, async () => {
+  await page.locator('button', { hasText: 'Show parts, print times and 3D assembly' }).click();
+  await page.waitForTimeout(6000);
+  await page.locator('.asm-box').scrollIntoViewIfNeeded();
+  await page.evaluate(() => window.scrollBy(0, -60));
+});
 await page.emulateMedia({ colorScheme: 'dark' });
 await shot('dark-mode', 'quads', 2000, async () => {
   await page.fill('#presetSearch', 'typhoon');

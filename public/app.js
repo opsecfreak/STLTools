@@ -9,7 +9,7 @@
 import { createViewer } from './viewer.js';
 
 import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete } from './lib.js';
-import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton } from './home.js';
+import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton, stopProjectView } from './home.js';
 import { renderPrinters, stopPrinters } from './printers.js';
 import { initViewTools, createEstimateBox } from './viewtools.js';
 import { initGlobalSearch } from './search.js';
@@ -28,7 +28,7 @@ const state = {
 
 const viewer = createViewer($('viewer'), settings()?.viewer ?? {});
 const viewTools = initViewTools(viewer, $('viewTools'));
-const estimate = createEstimateBox($('estimate'), viewer);
+const estimate = createEstimateBox($('estimate'), viewer, { onShowPart: (i) => state.shown?.[i] && viewer.show([state.shown[i]]).then(() => viewTools.reset()) });
 onSettings((cfg, patch) => { if (patch.viewer) viewer.setOptions(cfg.viewer); });
 
 /** Geometry stats for a local STL (same fields as the server's meshStats). */
@@ -58,20 +58,17 @@ const list = (node, items) => node.replaceChildren(...items.map((t) => el('li', 
 
 function renderResult(result) {
   state.lastResult = result;
-  const rows = result.parts.map((part) => el('li', {},
-    el('span', { className: 'name', textContent: part.name, title: 'Show only this part', onclick: () => viewer.show([part]) }),
-    el('span', { className: 'stats', textContent: `${part.stats.size.join(' x ')} mm, ${(part.stats.volumeMm3 / 1000).toFixed(1)} cm3` }),
-    el('a', { href: part.url, download: part.filename, textContent: 'STL' })));
-  if (result.parts.length > 1) rows.push(el('li', {}, el('span', { className: 'name', textContent: 'show all', onclick: () => viewer.show(result.parts) })));
-  $('parts').replaceChildren(...rows);
+  // per-part sizes, time, filament and STL links are in the estimate table; this row switches views
+  $('parts').replaceChildren(...(result.parts.length > 1 ? [el('li', {},
+    el('span', { className: 'name', textContent: 'Show all parts', onclick: () => viewer.show(result.parts) }),
+    el('span', { className: 'stats', textContent: `${result.parts.length} parts. Click a part name in the table to show it alone.` }))] : []));
   list($('warnings'), result.warnings);
   list($('notes'), result.notes);
   $('zipAll').hidden = !result.zip;
   if (result.zip) $('zipAll').href = result.zip;
   $('dlStl').hidden = result.parts.length !== 1;
   if (result.parts.length === 1) { $('dlStl').href = result.parts[0].url; $('dlStl').download = result.parts[0].filename; }
-  estimate.update(result.parts.map((p) => p.stats));
-  viewTools.reset();
+  estimate.update(result.parts);
 }
 
 let runToken = 0;
@@ -83,7 +80,9 @@ async function runAndShow(promise, label) {
     const result = await promise;
     if (token !== runToken) return null;
     renderResult(result);
-    await viewer.show(result.parts);
+    state.shown = result.parts;
+    await viewer.show(result.parts, { layout: store.get('layout') ?? 'assembled' });
+    viewTools.reset();
     setStatus(`${label}: ${result.parts.length} part${result.parts.length > 1 ? 's' : ''}`);
     return result;
   } catch (err) {
@@ -153,6 +152,7 @@ function buildForm(gen, values, verify = [], measure = []) {
     }
     groups.get(g).append(wrap);
   }
+  applyFormMode(gen, values, verify, measure);
   const banner = $('verifyBanner');
   const lbl = (k) => gen.params[k]?.label ?? k;
   banner.hidden = !verify.length && !measure.length;
@@ -161,6 +161,41 @@ function buildForm(gen, values, verify = [], measure = []) {
     measure.length ? `Needs measurement: ${measure.map(lbl).join(', ')}. Nobody has measured these yet, so the fields are empty. Measure your part and type the values to generate.` : '',
     verify.length ? `Check before printing: ${verify.map(lbl).join(', ')} (datasheet or assumed values, highlighted).` : '',
   ].filter(Boolean).join(' ');
+}
+
+// Simple mode: only the main settings (generator `basic` list, else the first group),
+// plus anything the loaded preset changes and every field to measure or check.
+// Hidden fields keep their values, so the part is the same in both modes.
+const formMode = () => store.get('formMode') ?? 'simple';
+function applyFormMode(gen, values, verify = [], measure = []) {
+  const mode = formMode();
+  for (const b of document.querySelectorAll('.mode-toggle .subtab')) b.classList.toggle('active', b.dataset.mode === mode);
+  const keys = Object.keys(gen.params);
+  const firstGroup = gen.params[keys[0]]?.group ?? 'Parameters';
+  const changed = state.preset?.generator === gen.id ? Object.keys(state.preset.params ?? {}) : [];
+  const basic = new Set([...(gen.basic?.length ? gen.basic : keys.filter((k) => (gen.params[k].group ?? 'Parameters') === firstGroup)), ...changed, ...verify, ...measure]);
+  let hidden = 0;
+  for (const key of keys) {
+    const wrap = $(fieldId(key))?.closest('.field');
+    if (!wrap) continue;
+    const hide = mode === 'simple' && !basic.has(key);
+    wrap.hidden = hide;
+    if (hide) hidden++;
+  }
+  for (const box of document.querySelectorAll('#params details.pgroup-box')) {
+    const any = [...box.querySelectorAll('.field')].some((f) => !f.hidden);
+    box.hidden = !any;
+    if (mode === 'simple' && any) box.open = true;
+  }
+  $('params').querySelector('.more-settings')?.remove();
+  if (hidden) {
+    $('params').append(el('button', { type: 'button', className: 'secondary small more-settings', textContent: `${hidden} more setting${hidden > 1 ? 's' : ''} (walls, clearances, screws...): show all`, onclick: () => setFormMode('all') }));
+  }
+}
+
+function setFormMode(mode) {
+  store.set('formMode', mode);
+  if (state.current) applyFormMode(state.current, null, state.preset?.verify ?? [], state.preset?.measure ?? []);
 }
 
 /** Empty "measure" fields in the form (presets with sizes nobody has measured yet). */
@@ -326,6 +361,7 @@ function markTab(tab) {
 
 async function showPage(name, arg) {
   stopPrinters();
+  stopProjectView();
   markTab(name === 'project' ? 'projects' : name);
   window.scrollTo(0, 0);
   document.querySelector('main').classList.add('full');
@@ -385,7 +421,7 @@ async function showStl(id) {
     $('dlStl').hidden = false;
     $('dlStl').href = `/api/library/${e.id}.stl`;
     $('dlStl').download = e.filename;
-    estimate.update([e.stats]);
+    estimate.update([{ name: e.name, stats: e.stats, url: `/api/library/${e.id}.stl`, filename: e.filename }]);
     viewTools.reset();
     setStatus(e.name);
   } catch (err) {
@@ -400,6 +436,7 @@ async function refreshLibrary() {
 
 function showTab(tab, { keepForm = false } = {}) {
   stopPrinters();
+  stopProjectView();
   document.querySelector('main').classList.remove('full');
   $('page').hidden = true;
   state.tab = tab;
@@ -426,7 +463,7 @@ function showTab(tab, { keepForm = false } = {}) {
 
 function switchShopSub(sub) {
   state.shopSub = sub;
-  for (const b of document.querySelectorAll('.subtab')) b.classList.toggle('active', b.dataset.sub === sub);
+  for (const b of document.querySelectorAll('.subtab[data-sub]')) b.classList.toggle('active', b.dataset.sub === sub);
   showPane(sub === 'catalog' ? 'catalog' : 'design');
   if (sub === 'catalog') refreshShop().catch((err) => setStatus(err.message, true));
 }
@@ -480,7 +517,8 @@ async function onStlFiles(e) {
     list($('notes'), ['Viewing local STL files. They are not uploaded. Use Import to keep them in STL Files.']);
     $('zipAll').hidden = true;
     $('dlStl').hidden = true;
-    estimate.update(parts.map((p) => geometryStats(p.geometry)));
+    state.shown = parts;
+    estimate.update(parts.map((p) => ({ name: p.name, stats: geometryStats(p.geometry) })));
     viewTools.reset();
     setStatus(`Viewing ${files.length} file(s)`);
   } catch (err) {
@@ -700,6 +738,7 @@ $('params').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); ru
 $('params').oninput = () => liveRun();
 $('params').onchange = () => liveRun();
 $('liveToggle').checked = settings()?.ui.autoGenerate ?? true;
+for (const b of document.querySelectorAll('.mode-toggle .subtab')) b.onclick = () => setFormMode(b.dataset.mode);
 $('liveToggle').onchange = () => saveSettings({ ui: { autoGenerate: $('liveToggle').checked } }).catch((e) => toast(e.message, 'error'));
 $('expandAll').onclick = () => { for (const d of document.querySelectorAll('#params details')) d.open = true; };
 $('collapseAll').onclick = () => { for (const d of document.querySelectorAll('#params details')) d.open = false; };
@@ -728,7 +767,7 @@ for (const b of document.querySelectorAll('.tab')) b.onclick = () => go(b.datase
 window.addEventListener('popstate', () => route());
 window.addEventListener('hashchange', () => route());
 $('toProject').onclick = () => addToProject(currentSelection());
-for (const b of document.querySelectorAll('.subtab')) b.onclick = () => switchShopSub(b.dataset.sub);
+for (const b of document.querySelectorAll('.subtab[data-sub]')) b.onclick = () => switchShopSub(b.dataset.sub);
 
 let version;
 [state.generators, state.presets, version] = await Promise.all([api('GET', '/api/generators'), api('GET', '/api/presets'), api('GET', '/api/version')]);
@@ -749,6 +788,7 @@ initSettings({
 });
 initGlobalSearch();
 headerPrinterChip();
+state.viewerSettings = () => settings()?.viewer ?? {};
 await initHome({
   state,
   openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); },
