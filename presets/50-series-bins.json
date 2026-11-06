@@ -1,0 +1,5614 @@
+{
+ "group": "Bin sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "bin-50x75x30",
+   "name": "Stacking bin 50 x 75 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 75 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x75"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 75,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x75x50",
+   "name": "Stacking bin 50 x 75 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 75 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x75"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 75,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x75x70",
+   "name": "Stacking bin 50 x 75 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 75 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x75"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 75,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x75x100",
+   "name": "Stacking bin 50 x 75 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 75 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x75"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 75,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x30",
+   "name": "Stacking bin 50 x 100 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x30-1x2",
+   "name": "Stacking bin 50 x 100 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x50",
+   "name": "Stacking bin 50 x 100 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x50-1x2",
+   "name": "Stacking bin 50 x 100 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x70",
+   "name": "Stacking bin 50 x 100 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x70-1x2",
+   "name": "Stacking bin 50 x 100 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x100",
+   "name": "Stacking bin 50 x 100 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x100x100-1x2",
+   "name": "Stacking bin 50 x 100 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x100"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x30",
+   "name": "Stacking bin 50 x 125 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x30-1x2",
+   "name": "Stacking bin 50 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x50",
+   "name": "Stacking bin 50 x 125 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x50-1x2",
+   "name": "Stacking bin 50 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x70",
+   "name": "Stacking bin 50 x 125 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x70-1x2",
+   "name": "Stacking bin 50 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x100",
+   "name": "Stacking bin 50 x 125 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x125x100-1x2",
+   "name": "Stacking bin 50 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x125"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x30",
+   "name": "Stacking bin 50 x 150 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x30-1x2",
+   "name": "Stacking bin 50 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x50",
+   "name": "Stacking bin 50 x 150 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x50-1x2",
+   "name": "Stacking bin 50 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x70",
+   "name": "Stacking bin 50 x 150 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x70-1x2",
+   "name": "Stacking bin 50 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x100",
+   "name": "Stacking bin 50 x 150 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x150x100-1x2",
+   "name": "Stacking bin 50 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x150"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x30",
+   "name": "Stacking bin 50 x 200 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x30-1x2",
+   "name": "Stacking bin 50 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x50",
+   "name": "Stacking bin 50 x 200 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x50-1x2",
+   "name": "Stacking bin 50 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x70",
+   "name": "Stacking bin 50 x 200 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x70-1x2",
+   "name": "Stacking bin 50 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x100",
+   "name": "Stacking bin 50 x 200 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-50x200x100-1x2",
+   "name": "Stacking bin 50 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 50 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "50x200"
+   ],
+   "params": {
+    "width": 50,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x30",
+   "name": "Stacking bin 75 x 75 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x30-2x1",
+   "name": "Stacking bin 75 x 75 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x50",
+   "name": "Stacking bin 75 x 75 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x50-2x1",
+   "name": "Stacking bin 75 x 75 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x70",
+   "name": "Stacking bin 75 x 75 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x70-2x1",
+   "name": "Stacking bin 75 x 75 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x100",
+   "name": "Stacking bin 75 x 75 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x75x100-2x1",
+   "name": "Stacking bin 75 x 75 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 75 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x75"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 75,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x30",
+   "name": "Stacking bin 75 x 100 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x30-2x1",
+   "name": "Stacking bin 75 x 100 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x30-1x2",
+   "name": "Stacking bin 75 x 100 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x30-2x2",
+   "name": "Stacking bin 75 x 100 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x50",
+   "name": "Stacking bin 75 x 100 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x50-2x1",
+   "name": "Stacking bin 75 x 100 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x50-1x2",
+   "name": "Stacking bin 75 x 100 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x50-2x2",
+   "name": "Stacking bin 75 x 100 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x70",
+   "name": "Stacking bin 75 x 100 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x70-2x1",
+   "name": "Stacking bin 75 x 100 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x70-1x2",
+   "name": "Stacking bin 75 x 100 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x70-2x2",
+   "name": "Stacking bin 75 x 100 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x100",
+   "name": "Stacking bin 75 x 100 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x100-2x1",
+   "name": "Stacking bin 75 x 100 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x100-1x2",
+   "name": "Stacking bin 75 x 100 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x100x100-2x2",
+   "name": "Stacking bin 75 x 100 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x100"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x30",
+   "name": "Stacking bin 75 x 125 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x30-2x1",
+   "name": "Stacking bin 75 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x30-1x2",
+   "name": "Stacking bin 75 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x30-2x2",
+   "name": "Stacking bin 75 x 125 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x50",
+   "name": "Stacking bin 75 x 125 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x50-2x1",
+   "name": "Stacking bin 75 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x50-1x2",
+   "name": "Stacking bin 75 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x50-2x2",
+   "name": "Stacking bin 75 x 125 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x70",
+   "name": "Stacking bin 75 x 125 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x70-2x1",
+   "name": "Stacking bin 75 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x70-1x2",
+   "name": "Stacking bin 75 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x70-2x2",
+   "name": "Stacking bin 75 x 125 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x100",
+   "name": "Stacking bin 75 x 125 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x100-2x1",
+   "name": "Stacking bin 75 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x100-1x2",
+   "name": "Stacking bin 75 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x125x100-2x2",
+   "name": "Stacking bin 75 x 125 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x125"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x30",
+   "name": "Stacking bin 75 x 150 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x30-2x1",
+   "name": "Stacking bin 75 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x30-1x2",
+   "name": "Stacking bin 75 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x30-2x2",
+   "name": "Stacking bin 75 x 150 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x50",
+   "name": "Stacking bin 75 x 150 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x50-2x1",
+   "name": "Stacking bin 75 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x50-1x2",
+   "name": "Stacking bin 75 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x50-2x2",
+   "name": "Stacking bin 75 x 150 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x70",
+   "name": "Stacking bin 75 x 150 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x70-2x1",
+   "name": "Stacking bin 75 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x70-1x2",
+   "name": "Stacking bin 75 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x70-2x2",
+   "name": "Stacking bin 75 x 150 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x100",
+   "name": "Stacking bin 75 x 150 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x100-2x1",
+   "name": "Stacking bin 75 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x100-1x2",
+   "name": "Stacking bin 75 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x150x100-2x2",
+   "name": "Stacking bin 75 x 150 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x150"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x30",
+   "name": "Stacking bin 75 x 200 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x30-2x1",
+   "name": "Stacking bin 75 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x30-1x2",
+   "name": "Stacking bin 75 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x30-2x2",
+   "name": "Stacking bin 75 x 200 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x50",
+   "name": "Stacking bin 75 x 200 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x50-2x1",
+   "name": "Stacking bin 75 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x50-1x2",
+   "name": "Stacking bin 75 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x50-2x2",
+   "name": "Stacking bin 75 x 200 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x70",
+   "name": "Stacking bin 75 x 200 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x70-2x1",
+   "name": "Stacking bin 75 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x70-1x2",
+   "name": "Stacking bin 75 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x70-2x2",
+   "name": "Stacking bin 75 x 200 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x100",
+   "name": "Stacking bin 75 x 200 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x100-2x1",
+   "name": "Stacking bin 75 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x100-1x2",
+   "name": "Stacking bin 75 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-75x200x100-2x2",
+   "name": "Stacking bin 75 x 200 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 75 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "75x200"
+   ],
+   "params": {
+    "width": 75,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x30",
+   "name": "Stacking bin 100 x 100 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x30-2x1",
+   "name": "Stacking bin 100 x 100 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x30-1x2",
+   "name": "Stacking bin 100 x 100 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x30-2x2",
+   "name": "Stacking bin 100 x 100 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x50",
+   "name": "Stacking bin 100 x 100 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x50-2x1",
+   "name": "Stacking bin 100 x 100 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x50-1x2",
+   "name": "Stacking bin 100 x 100 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x50-2x2",
+   "name": "Stacking bin 100 x 100 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x70",
+   "name": "Stacking bin 100 x 100 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x70-2x1",
+   "name": "Stacking bin 100 x 100 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x70-1x2",
+   "name": "Stacking bin 100 x 100 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x70-2x2",
+   "name": "Stacking bin 100 x 100 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x100",
+   "name": "Stacking bin 100 x 100 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x100-2x1",
+   "name": "Stacking bin 100 x 100 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x100-1x2",
+   "name": "Stacking bin 100 x 100 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x100x100-2x2",
+   "name": "Stacking bin 100 x 100 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 100 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x100"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 100,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x30",
+   "name": "Stacking bin 100 x 125 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x30-2x1",
+   "name": "Stacking bin 100 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x30-1x2",
+   "name": "Stacking bin 100 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x30-2x2",
+   "name": "Stacking bin 100 x 125 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x50",
+   "name": "Stacking bin 100 x 125 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x50-2x1",
+   "name": "Stacking bin 100 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x50-1x2",
+   "name": "Stacking bin 100 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x50-2x2",
+   "name": "Stacking bin 100 x 125 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x70",
+   "name": "Stacking bin 100 x 125 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x70-2x1",
+   "name": "Stacking bin 100 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x70-1x2",
+   "name": "Stacking bin 100 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x70-2x2",
+   "name": "Stacking bin 100 x 125 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x100",
+   "name": "Stacking bin 100 x 125 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x100-2x1",
+   "name": "Stacking bin 100 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x100-1x2",
+   "name": "Stacking bin 100 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x125x100-2x2",
+   "name": "Stacking bin 100 x 125 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x125"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x30",
+   "name": "Stacking bin 100 x 150 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x30-2x1",
+   "name": "Stacking bin 100 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x30-1x2",
+   "name": "Stacking bin 100 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x30-2x2",
+   "name": "Stacking bin 100 x 150 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x50",
+   "name": "Stacking bin 100 x 150 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x50-2x1",
+   "name": "Stacking bin 100 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x50-1x2",
+   "name": "Stacking bin 100 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x50-2x2",
+   "name": "Stacking bin 100 x 150 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x70",
+   "name": "Stacking bin 100 x 150 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x70-2x1",
+   "name": "Stacking bin 100 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x70-1x2",
+   "name": "Stacking bin 100 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x70-2x2",
+   "name": "Stacking bin 100 x 150 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x100",
+   "name": "Stacking bin 100 x 150 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x100-2x1",
+   "name": "Stacking bin 100 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x100-1x2",
+   "name": "Stacking bin 100 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x150x100-2x2",
+   "name": "Stacking bin 100 x 150 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x150"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x30",
+   "name": "Stacking bin 100 x 200 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x30-2x1",
+   "name": "Stacking bin 100 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x30-1x2",
+   "name": "Stacking bin 100 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x30-2x2",
+   "name": "Stacking bin 100 x 200 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x50",
+   "name": "Stacking bin 100 x 200 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x50-2x1",
+   "name": "Stacking bin 100 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x50-1x2",
+   "name": "Stacking bin 100 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x50-2x2",
+   "name": "Stacking bin 100 x 200 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x70",
+   "name": "Stacking bin 100 x 200 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x70-2x1",
+   "name": "Stacking bin 100 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x70-1x2",
+   "name": "Stacking bin 100 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x70-2x2",
+   "name": "Stacking bin 100 x 200 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x100",
+   "name": "Stacking bin 100 x 200 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x100-2x1",
+   "name": "Stacking bin 100 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x100-1x2",
+   "name": "Stacking bin 100 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-100x200x100-2x2",
+   "name": "Stacking bin 100 x 200 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 100 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "100x200"
+   ],
+   "params": {
+    "width": 100,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x30",
+   "name": "Stacking bin 125 x 125 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x30-2x1",
+   "name": "Stacking bin 125 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x30-1x2",
+   "name": "Stacking bin 125 x 125 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x30-2x2",
+   "name": "Stacking bin 125 x 125 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x50",
+   "name": "Stacking bin 125 x 125 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x50-2x1",
+   "name": "Stacking bin 125 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x50-1x2",
+   "name": "Stacking bin 125 x 125 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x50-2x2",
+   "name": "Stacking bin 125 x 125 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x70",
+   "name": "Stacking bin 125 x 125 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x70-2x1",
+   "name": "Stacking bin 125 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x70-1x2",
+   "name": "Stacking bin 125 x 125 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x70-2x2",
+   "name": "Stacking bin 125 x 125 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x100",
+   "name": "Stacking bin 125 x 125 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x100-2x1",
+   "name": "Stacking bin 125 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x100-1x2",
+   "name": "Stacking bin 125 x 125 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x125x100-2x2",
+   "name": "Stacking bin 125 x 125 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 125 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x125"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 125,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x30",
+   "name": "Stacking bin 125 x 150 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x30-2x1",
+   "name": "Stacking bin 125 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x30-1x2",
+   "name": "Stacking bin 125 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x30-2x2",
+   "name": "Stacking bin 125 x 150 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x50",
+   "name": "Stacking bin 125 x 150 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x50-2x1",
+   "name": "Stacking bin 125 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x50-1x2",
+   "name": "Stacking bin 125 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x50-2x2",
+   "name": "Stacking bin 125 x 150 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x70",
+   "name": "Stacking bin 125 x 150 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x70-2x1",
+   "name": "Stacking bin 125 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x70-1x2",
+   "name": "Stacking bin 125 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x70-2x2",
+   "name": "Stacking bin 125 x 150 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x100",
+   "name": "Stacking bin 125 x 150 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x100-2x1",
+   "name": "Stacking bin 125 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x100-1x2",
+   "name": "Stacking bin 125 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x150x100-2x2",
+   "name": "Stacking bin 125 x 150 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x150"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x30",
+   "name": "Stacking bin 125 x 200 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x30-2x1",
+   "name": "Stacking bin 125 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x30-1x2",
+   "name": "Stacking bin 125 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x30-2x2",
+   "name": "Stacking bin 125 x 200 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x50",
+   "name": "Stacking bin 125 x 200 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x50-2x1",
+   "name": "Stacking bin 125 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x50-1x2",
+   "name": "Stacking bin 125 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x50-2x2",
+   "name": "Stacking bin 125 x 200 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x70",
+   "name": "Stacking bin 125 x 200 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x70-2x1",
+   "name": "Stacking bin 125 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x70-1x2",
+   "name": "Stacking bin 125 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x70-2x2",
+   "name": "Stacking bin 125 x 200 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x100",
+   "name": "Stacking bin 125 x 200 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x100-2x1",
+   "name": "Stacking bin 125 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x100-1x2",
+   "name": "Stacking bin 125 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-125x200x100-2x2",
+   "name": "Stacking bin 125 x 200 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 125 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "125x200"
+   ],
+   "params": {
+    "width": 125,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x30",
+   "name": "Stacking bin 150 x 150 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x30-2x1",
+   "name": "Stacking bin 150 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x30-1x2",
+   "name": "Stacking bin 150 x 150 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x30-2x2",
+   "name": "Stacking bin 150 x 150 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x50",
+   "name": "Stacking bin 150 x 150 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x50-2x1",
+   "name": "Stacking bin 150 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x50-1x2",
+   "name": "Stacking bin 150 x 150 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x50-2x2",
+   "name": "Stacking bin 150 x 150 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x70",
+   "name": "Stacking bin 150 x 150 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x70-2x1",
+   "name": "Stacking bin 150 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x70-1x2",
+   "name": "Stacking bin 150 x 150 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x70-2x2",
+   "name": "Stacking bin 150 x 150 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x100",
+   "name": "Stacking bin 150 x 150 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x100-2x1",
+   "name": "Stacking bin 150 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x100-1x2",
+   "name": "Stacking bin 150 x 150 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x150x100-2x2",
+   "name": "Stacking bin 150 x 150 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 150 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x150"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 150,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x30",
+   "name": "Stacking bin 150 x 200 x 30 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x30-2x1",
+   "name": "Stacking bin 150 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x30-1x2",
+   "name": "Stacking bin 150 x 200 x 30 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x30-2x2",
+   "name": "Stacking bin 150 x 200 x 30 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 30 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 30,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 14,
+    "labelType": "none"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x50",
+   "name": "Stacking bin 150 x 200 x 50 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x50-2x1",
+   "name": "Stacking bin 150 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x50-1x2",
+   "name": "Stacking bin 150 x 200 x 50 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x50-2x2",
+   "name": "Stacking bin 150 x 200 x 50 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 50 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 50,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 23,
+    "labelType": "slot",
+    "labelHeight": 10
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x70",
+   "name": "Stacking bin 150 x 200 x 70 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x70-2x1",
+   "name": "Stacking bin 150 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x70-1x2",
+   "name": "Stacking bin 150 x 200 x 70 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x70-2x2",
+   "name": "Stacking bin 150 x 200 x 70 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 70 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 70,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 32,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x100",
+   "name": "Stacking bin 150 x 200 x 100 mm",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x100-2x1",
+   "name": "Stacking bin 150 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 1,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x100-1x2",
+   "name": "Stacking bin 150 x 200 x 100 mm, 2 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 1,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  },
+  {
+   "id": "bin-150x200x100-2x2",
+   "name": "Stacking bin 150 x 200 x 100 mm, 4 compartments",
+   "generator": "stack-bin",
+   "description": "Stackable bin with an open front. 150 wide, 200 deep, 100 tall.",
+   "tags": [
+    "bin",
+    "stacking",
+    "storage",
+    "150x200"
+   ],
+   "params": {
+    "width": 150,
+    "depth": 200,
+    "height": 100,
+    "compartmentsX": 2,
+    "compartmentsY": 2,
+    "frontWallHeight": 45,
+    "labelType": "slot"
+   },
+   "series": "bins"
+  }
+ ]
+}

@@ -154,10 +154,14 @@ export function createViewer(container, initial = {}) {
   function drawDims() {
     if (!opts.dimensions || !box) { dims.hidden = true; return; }
     const s = box.getSize(new THREE.Vector3());
-    const fit = bed ? (s.x <= bed.x && s.y <= bed.y) || (s.y <= bed.x && s.x <= bed.y) : true;
+    // each part is printed on its own: only a single part larger than the bed is a problem
+    const tooBig = bed ? meshes.filter((m) => {
+      const p = new THREE.Box3().setFromObject(m).getSize(new THREE.Vector3());
+      return p.z > bed.z || !((p.x <= bed.x && p.y <= bed.y) || (p.y <= bed.x && p.x <= bed.y));
+    }).length : 0;
     dims.hidden = false;
-    dims.textContent = `X ${s.x.toFixed(1)}  Y ${s.y.toFixed(1)}  Z ${s.z.toFixed(1)} mm${bed && (!fit || s.z > bed.z) ? '  (larger than the bed)' : ''}`;
-    dims.classList.toggle('too-big', Boolean(bed && (!fit || s.z > bed.z)));
+    dims.textContent = `${meshes.length > 1 ? 'All parts: ' : ''}X ${s.x.toFixed(1)}  Y ${s.y.toFixed(1)}  Z ${s.z.toFixed(1)} mm${tooBig ? `  (${meshes.length > 1 ? `${tooBig} part${tooBig > 1 ? 's' : ''}` : 'part'} larger than the bed)` : ''}`;
+    dims.classList.toggle('too-big', tooBig > 0);
   }
 
   function resize() {
@@ -238,7 +242,7 @@ export function createViewer(container, initial = {}) {
     const all = new THREE.Box3().setFromObject(group);
     const c = all.getCenter(new THREE.Vector3());
     group.position.set(group.position.x - c.x, group.position.y - c.y, 0);
-    box = new THREE.Box3().setFromObject(group);
+    box = meshes.length ? new THREE.Box3().setFromObject(group) : null; // empty view: no size label
     applyShading();
     drawHelpers();
     drawDims();

@@ -1,0 +1,1318 @@
+{
+ "group": "Frame sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "frame-3arm-100-9x9",
+   "name": "Tri frame 100 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 100,
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-100-12x12",
+   "name": "Tri frame 100 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 100,
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-100-16x16",
+   "name": "Tri frame 100 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 100,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-100-16x19",
+   "name": "Tri frame 100 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 100,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-120-9x9",
+   "name": "Tri frame 120 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-120-12x12",
+   "name": "Tri frame 120 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-120-16x16",
+   "name": "Tri frame 120 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-120-16x19",
+   "name": "Tri frame 120 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 3 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-150-9x9",
+   "name": "Tri frame 150 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 3 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 150,
+    "propInches": 4,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-150-12x12",
+   "name": "Tri frame 150 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 3 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 150,
+    "propInches": 4,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-150-16x16",
+   "name": "Tri frame 150 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 3 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 150,
+    "propInches": 4,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-150-16x19",
+   "name": "Tri frame 150 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 3 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 150,
+    "propInches": 4,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-180-9x9",
+   "name": "Tri frame 180 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 3 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 180,
+    "propInches": 5,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-180-12x12",
+   "name": "Tri frame 180 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 3 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 180,
+    "propInches": 5,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-180-16x16",
+   "name": "Tri frame 180 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 3 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 180,
+    "propInches": 5,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-180-16x19",
+   "name": "Tri frame 180 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 3 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 180,
+    "propInches": 5,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-220-9x9",
+   "name": "Tri frame 220 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 3 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 220,
+    "propInches": 6,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-220-12x12",
+   "name": "Tri frame 220 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 3 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 220,
+    "propInches": 6,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-220-16x16",
+   "name": "Tri frame 220 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 3 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 220,
+    "propInches": 6,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-3arm-220-16x19",
+   "name": "Tri frame 220 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 3 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "3 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 3,
+    "wheelbase": 220,
+    "propInches": 6,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-100-9x9",
+   "name": "Quad frame 100 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 4 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 100,
+    "propInches": 2,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-100-12x12",
+   "name": "Quad frame 100 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 4 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 100,
+    "propInches": 2,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-100-16x16",
+   "name": "Quad frame 100 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 4 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 100,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-100-16x19",
+   "name": "Quad frame 100 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "100 mm motor-to-motor, 4 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "100mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 100,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-120-9x9",
+   "name": "Quad frame 120 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-120-12x12",
+   "name": "Quad frame 120 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-120-16x16",
+   "name": "Quad frame 120 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-120-16x19",
+   "name": "Quad frame 120 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 120,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-150-9x9",
+   "name": "Quad frame 150 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 150,
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-150-12x12",
+   "name": "Quad frame 150 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 150,
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-150-16x16",
+   "name": "Quad frame 150 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 150,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-150-16x19",
+   "name": "Quad frame 150 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 4 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 150,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-180-9x9",
+   "name": "Quad frame 180 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 4 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 180,
+    "propInches": 4,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-180-12x12",
+   "name": "Quad frame 180 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 4 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 180,
+    "propInches": 4,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-180-16x16",
+   "name": "Quad frame 180 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 4 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 180,
+    "propInches": 4,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-180-16x19",
+   "name": "Quad frame 180 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 4 arms, props up to about 4 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 180,
+    "propInches": 4,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-220-9x9",
+   "name": "Quad frame 220 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 4 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 220,
+    "propInches": 5,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-220-12x12",
+   "name": "Quad frame 220 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 4 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 220,
+    "propInches": 5,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-220-16x16",
+   "name": "Quad frame 220 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 4 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 220,
+    "propInches": 5,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-220-16x19",
+   "name": "Quad frame 220 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "220 mm motor-to-motor, 4 arms, props up to about 5 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "220mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 220,
+    "propInches": 5,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-250-9x9",
+   "name": "Quad frame 250 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "250 mm motor-to-motor, 4 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "250mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 250,
+    "propInches": 6,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-250-12x12",
+   "name": "Quad frame 250 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "250 mm motor-to-motor, 4 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "250mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 250,
+    "propInches": 6,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-250-16x16",
+   "name": "Quad frame 250 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "250 mm motor-to-motor, 4 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "250mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 250,
+    "propInches": 6,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-250-16x19",
+   "name": "Quad frame 250 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "250 mm motor-to-motor, 4 arms, props up to about 6 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "250mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 250,
+    "propInches": 6,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-4arm-280-9x9",
+   "name": "Quad frame 280 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "280 mm motor-to-motor, 4 arms, props up to about 7 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "4 arms",
+    "280mm"
+   ],
+   "params": {
+    "arms": 4,
+    "wheelbase": 280,
+    "propInches": 7,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-120-9x9",
+   "name": "Hex frame 120 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 120,
+    "propInches": 2,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-120-12x12",
+   "name": "Hex frame 120 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 120,
+    "propInches": 2,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-120-16x16",
+   "name": "Hex frame 120 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 120,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-120-16x19",
+   "name": "Hex frame 120 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "120 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "120mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 120,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-150-9x9",
+   "name": "Hex frame 150 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 150,
+    "propInches": 2,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-150-12x12",
+   "name": "Hex frame 150 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 150,
+    "propInches": 2,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-150-16x16",
+   "name": "Hex frame 150 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 150,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-150-16x19",
+   "name": "Hex frame 150 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "150 mm motor-to-motor, 6 arms, props up to about 2 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "150mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 150,
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-180-9x9",
+   "name": "Hex frame 180 mm, 9 x 9 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 6 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 180,
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "motorPad": 21,
+    "motorCenterHole": 4
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-180-12x12",
+   "name": "Hex frame 180 mm, 12 x 12 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 6 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 180,
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "motorPad": 25,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-180-16x16",
+   "name": "Hex frame 180 mm, 16 x 16 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 6 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 180,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "motorPad": 31,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  },
+  {
+   "id": "frame-6arm-180-16x19",
+   "name": "Hex frame 180 mm, 16 x 19 motors",
+   "generator": "multirotor-frame",
+   "description": "180 mm motor-to-motor, 6 arms, props up to about 3 in. Printed frames suit light builds; check stiffness.",
+   "tags": [
+    "frame",
+    "multirotor",
+    "6 arms",
+    "180mm"
+   ],
+   "params": {
+    "arms": 6,
+    "wheelbase": 180,
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "motorPad": 33,
+    "motorCenterHole": 7
+   },
+   "series": "frames"
+  }
+ ]
+}

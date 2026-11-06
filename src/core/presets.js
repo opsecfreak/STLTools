@@ -38,6 +38,14 @@ function loadDir(dir, strict, presets, seen) {
         resolveParams(g.params, params);
         // "verify": parameters the user must measure before printing (shown as a banner in the UI)
         if (p.verify !== undefined && (!Array.isArray(p.verify) || p.verify.some((k) => !g.params[k]))) throw new Error('verify must list parameter names of its generator');
+        // "measure": sizes nobody has measured yet. The preset leaves them out and the UI keeps
+        // the fields empty and blocks Generate until you type them (never invented values).
+        if (p.measure !== undefined) {
+          if (!Array.isArray(p.measure) || p.measure.some((k) => !g.params[k] || !['number', 'integer'].includes(g.params[k].type))) throw new Error('measure must list number parameters of its generator');
+          if (p.measure.some((k) => k in (p.params ?? {}))) throw new Error('measure fields must not have values in params');
+        }
+        // "component" links the preset to a part in My Parts (seed/mts-v1); "ownership" is the fallback
+        if (p.ownership !== undefined && !['Owned', 'Confirm', 'Planned'].includes(p.ownership)) throw new Error('ownership must be Owned, Confirm or Planned');
         const section = p.section ?? data.section ?? (g.sections ?? ['shop'])[0];
         if (!SECTION_IDS.includes(section)) throw new Error(`unknown section "${section}"`);
         seen.add(p.id);

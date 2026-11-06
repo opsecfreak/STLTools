@@ -8,6 +8,7 @@
 import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete } from './lib.js';
 import { thumbImg, thumbStl } from './thumbs.js';
 import { formatDuration } from '/shared/estimate.js';
+import { ownershipOf, ownBadge } from './parts.js';
 import { printerChips } from './printers.js';
 
 let ctx = null; // set by initHome: { state, openPreset, openDesign, openGenerator, openStl, openShopItem, goTab, refreshDesigns, refreshLibrary, toast }
@@ -61,6 +62,7 @@ export function starButton(kind, id) {
 /** Places in the app that global search can jump to. */
 export const PAGES = [
   ['settings', 'Settings', 'Theme, live preview, 3D view, labels, printers, estimates, backup', ['options', 'preferences', 'config']],
+  ['parts', 'My Parts', 'Parts you own or plan to get: ownership, sizes to measure, matching presets', ['inventory', 'components', 'owned']],
   ['settings/printers', 'Settings: Printers', 'Connect, test and save Klipper / Moonraker printers (Sovol SV07)', ['sv07', 'sovol', 'moonraker', 'mainsail', 'connect', 'api key']],
   ['settings/print', 'Settings: Print estimates', 'Printer profile, layer height, walls, infill, material, calibration', ['time', 'filament', 'estimate', 'calibrate']],
   ['settings/viewer', 'Settings: 3D view', 'Quality, shadows, edges, wireframe, bed outline, axes', ['render', 'quality', 'graphics']],
@@ -76,7 +78,20 @@ export const PAGES = [
 
 const defaultsOf = (gen) => Object.fromEntries(Object.entries(gen.params).map(([k, d]) => [k, d.default]));
 
+// The index is rebuilt only when one of its source lists is replaced (refresh
+// functions assign new arrays), so typing in a search box stays fast with
+// thousands of presets.
+let indexCache = null;
+let indexSources = [];
 function buildIndex() {
+  const sources = [ctx.state.generators, ctx.state.presets, ctx.state.designs, ctx.state.library, ctx.state.items, ctx.state.parts, projects];
+  if (indexCache && sources.every((x, i) => x === indexSources[i])) return indexCache;
+  indexSources = sources;
+  indexCache = buildIndexNow();
+  return indexCache;
+}
+
+function buildIndexNow() {
   const { generators, presets, designs } = ctx.state;
   const genById = new Map(generators.map((g) => [g.id, g]));
   const items = [];
@@ -84,8 +99,9 @@ function buildIndex() {
     const g = genById.get(p.generator);
     items.push({
       kind: 'preset', id: p.id, title: p.name, sub: `${SECTION_NAMES[p.section]} / ${p.group}`, description: p.description,
-      section: p.section, sections: [p.section], generator: p.generator, generatorName: g?.name ?? p.generator, group: p.group, tags: p.tags ?? [],
+      section: p.section, sections: [p.section], generator: p.generator, generatorName: g?.name ?? p.generator, group: p.group, tags: [...(p.tags ?? []), ...(p.component ? [p.component.toLowerCase()] : [])],
       params: { ...(g ? defaultsOf(g) : {}), ...p.params }, ref: p,
+      ownership: ownershipOf(p), measure: p.measure ?? [], component: p.component ?? null, category: p.category ?? p.group, series: p.series ?? null,
     });
   }
   for (const d of designs) {
@@ -107,6 +123,13 @@ function buildIndex() {
     items.push({
       kind: 'project', id: pr.id, title: pr.name, sub: `Project / ${pr.status} / ${pr.items.length} part${pr.items.length === 1 ? '' : 's'}`, description: pr.description,
       section: null, sections: [], generator: null, group: 'Projects', tags: pr.tags, params: {}, updated: pr.updatedAt, ref: pr, status: pr.status,
+    });
+  }
+  for (const pt of ctx.state.parts ?? []) {
+    items.push({
+      kind: 'part', id: pt.id, title: `${pt.id} ${pt.name}`, sub: `My part / ${pt.category} / ${pt.ownershipKey}`, description: [pt.detail, pt.printNeed && `Print: ${pt.printNeed}`].filter(Boolean).join('. '),
+      section: null, sections: [], generator: null, group: pt.category, tags: [pt.ownershipKey.toLowerCase(), pt.dimsFlag], params: {}, ref: pt,
+      ownership: pt.ownershipKey, measure: ['measure', 'conflict'].includes(pt.dimsFlag) ? ['size'] : [], component: pt.id, category: pt.category,
     });
   }
   for (const e of ctx.state.library ?? []) {
@@ -175,6 +198,11 @@ function filterMatch(it, f) {
   else if (k === 'tag') ok = it.tags.some((t) => t.toLowerCase().startsWith(f.value));
   else if (k === 'status') ok = (it.status ?? '') === f.value;
   else if (k === 'fav' || k === 'favorite' || k === 'starred') ok = isFav(it.kind, it.id) === !['no', 'false', '0'].includes(f.value);
+  else if (k === 'own' || k === 'ownership' || k === 'mine') ok = f.value === 'any' || f.value === 'yes' ? Boolean(it.ownership) : (it.ownership ?? '').toLowerCase().startsWith(f.value);
+  else if (k === 'measure' || k === 'measured') ok = (it.measure?.length > 0) === !['no', 'false', '0', 'done'].includes(f.value) !== (k === 'measured');
+  else if (k === 'cat' || k === 'category') ok = (it.category ?? it.group ?? '').toLowerCase().includes(f.value);
+  else if (k === 'part' || k === 'component') ok = (it.component ?? '').toLowerCase() === f.value;
+  else if (k === 'series') ok = (it.series ?? '').includes(f.value);
   else {
     const key = Object.keys(it.params).find((p) => p.toLowerCase() === k);
     ok = key ? compare(it.params[key], f.op, f.value) : false;
@@ -191,6 +219,7 @@ export function search(q, opts = {}) {
     if (opts.section && !it.sections.includes(opts.section)) continue;
     if (opts.generator && it.generator !== opts.generator) continue;
     if (opts.favoritesOnly && !isFav(it.kind, it.id)) continue;
+    if (opts.ownedOnly && it.ownership !== 'Owned') continue;
     if (!pq.words.every((w) => it.text.includes(w))) continue;
     if (pq.not.some((w) => it.text.includes(w))) continue;
     if (!pq.filters.every((f) => filterMatch(it, f))) continue;
@@ -224,6 +253,7 @@ export function openItem(it) {
   else if (it.kind === 'stl') location.hash = `#stl/${it.id}`;
   else if (it.kind === 'item') ctx.openShopItem(it.ref);
   else if (it.kind === 'page') location.hash = `#${it.ref.hash}`;
+  else if (it.kind === 'part') location.hash = `#parts/${it.id}`;
 }
 
 function projectProgress(pr) {
@@ -234,6 +264,8 @@ function projectProgress(pr) {
 
 function itemThumb(it) {
   if (it.kind === 'stl') return thumbStl(it.ref);
+  if (it.kind === 'part') return el('div', { className: 'thumb empty kind-part', textContent: it.id });
+  if (it.kind === 'preset' && it.measure?.length) return el('div', { className: 'thumb empty kind-measure', textContent: 'Needs measurement' });
   if (it.kind === 'page' || it.kind === 'item') return el('div', { className: `thumb empty kind-${it.kind}`, textContent: it.kind === 'page' ? 'Go to page' : it.ref.code });
   if (it.kind === 'project') {
     const first = it.ref.items[0];
@@ -258,16 +290,17 @@ function resolveItemForThumb(item) {
   return d ? { generator: d.generator, params: d.params } : null;
 }
 
-const KIND_LABEL = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project', stl: 'STL', item: 'Shop item', page: 'Page' };
+const KIND_LABEL = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project', stl: 'STL', item: 'Shop item', page: 'Page', part: 'My part' };
 
 export function card(it, view = 'grid') {
-  const actions = el('div', { className: 'card-actions' }, ['page', 'item'].includes(it.kind) ? null : starButton(it.kind, it.id));
-  if (!['project', 'page', 'item'].includes(it.kind)) {
+  const actions = el('div', { className: 'card-actions' }, ['page', 'item', 'part'].includes(it.kind) ? null : starButton(it.kind, it.id));
+  if (!['project', 'page', 'item', 'part'].includes(it.kind)) {
     actions.append(el('button', { type: 'button', className: 'icon', textContent: '+', title: 'Add to a project', 'aria-label': 'Add to a project', onclick: (e) => { e.stopPropagation(); addToProject(selectionFromItem(it)); } }));
   }
   const body = el('div', { className: 'card-body' },
     el('div', { className: 'card-title', textContent: it.title }),
     el('div', { className: 'card-sub', textContent: it.sub }),
+    it.ownership || it.measure?.length ? el('div', { className: 'card-flags' }, ownBadge(it.ownership), it.measure?.length ? el('span', { className: 'flag flag-measure', textContent: 'Needs measurement' }) : null) : null,
     it.kind === 'project' ? projectProgress(it.ref) : null,
     view === 'list' && it.description ? el('div', { className: 'card-desc', textContent: it.description }) : null);
   const c = el('article', { className: `card-item kind-${it.kind} ${view}`, tabIndex: 0, title: it.description || it.title },
@@ -358,8 +391,16 @@ export async function renderProject(page, id) {
 
   const nameIn = el('input', { type: 'text', value: p.name, maxLength: 80, className: 'title-input', 'aria-label': 'Project name', oninput: () => saveSoon({ name: nameIn.value }) });
   const status = el('select', { onchange: () => save({ status: status.value }) }, ...['idea', 'active', 'printing', 'done'].map((s) => el('option', { value: s, textContent: s, selected: p.status === s })));
+  const priority = el('select', { 'aria-label': 'Priority', onchange: () => save({ priority: priority.value }) }, ...[['', 'No priority'], ['high', 'High priority'], ['medium', 'Medium priority'], ['low', 'Low priority']].map(([v, l]) => el('option', { value: v, textContent: l, selected: (p.priority ?? '') === v })));
+  const partName = (id) => (ctx.state.parts ?? []).find((x) => x.id === id);
+  const comps = (p.components ?? []).length ? el('div', { className: 'chips' }, el('span', { className: 'muted', textContent: 'Parts: ' }), ...p.components.map((c) => {
+    const pt = partName(c.id);
+    return el('a', { href: `#parts/${c.id}`, className: `chip ${pt ? `own-${pt.ownershipKey.toLowerCase()}` : ''}`, textContent: `${c.id}${pt ? ` ${pt.name}` : ''}${c.qty > 1 ? ` x${c.qty}` : ''}`, title: pt ? `${pt.ownershipKey}: ${pt.detail}` : 'Load My Parts to see this part' });
+  })) : null;
+  const missing = (p.filesMissing ?? []).length ? el('div', { className: 'files-missing' }, el('strong', { textContent: 'Files to attach (not in STL Tools yet): ' }), el('ul', {}, ...p.filesMissing.map((f) => el('li', { textContent: f }))),
+    el('span', { className: 'muted' }, 'Import the STL files on ', el('a', { href: '#import', textContent: 'Import' }), ', then add them to this project.')) : null;
   const tags = el('input', { type: 'text', value: p.tags.join(', '), placeholder: 'tags, comma separated', oninput: () => saveSoon({ tags: tags.value.split(',').map((t) => t.trim()).filter(Boolean) }) });
-  const desc = el('textarea', { rows: 2, value: p.description, placeholder: 'Notes: frame size, motors, what this build is for...', oninput: () => saveSoon({ description: desc.value }) });
+  const desc = el('textarea', { rows: Math.min(18, Math.max(2, (p.description.match(/\n/g) ?? []).length + 1)), value: p.description, placeholder: 'Notes: frame size, motors, what this build is for...', oninput: () => saveSoon({ description: desc.value }) });
   const stats = el('div', { className: 'muted' });
   const drawStats = () => {
     const qty = p.items.reduce((n, i) => n + i.qty, 0);
@@ -434,8 +475,8 @@ export async function renderProject(page, id) {
   page.replaceChildren(
     el('div', { className: 'page-head' },
       el('a', { href: '#projects', className: 'back', textContent: '< Projects' }),
-      el('div', { className: 'row' }, nameIn, starButton('project', p.id), status),
-      tags, desc, stats,
+      el('div', { className: 'row' }, nameIn, starButton('project', p.id), status, priority),
+      tags, comps, missing, desc, stats,
       el('div', { className: 'row' }, zipBtn('Download all parts (ZIP)', false), zipBtn('Only unprinted (ZIP)', true), estBtn, exportBtn,
         el('button', { type: 'button', className: 'secondary', textContent: 'Delete project', onclick: async () => {
           if (!confirmDelete(`Delete project "${p.name}"? Parts and saved designs are not deleted.`)) return;
@@ -462,40 +503,41 @@ function openProjectItem(it) {
 
 // ---------------------------------------------------------------- home + search
 
-const SEARCH_HELP = 'Words must all match. "exact phrase", -exclude. Filters: tab:quads kind:preset gen:tube-clamp group:hooks tag:esc fav:yes status:active. Any setting: tubeOD:16 teeth>=30 length<20 bolt:M3';
+const SEARCH_HELP = 'Words must all match. "exact phrase", -exclude. Filters: tab:quads kind:preset gen:tube-clamp group:hooks tag:esc fav:yes status:active own:owned own:planned measure:yes cat:sensors part:SEN02 series:gears. Any setting: tubeOD:16 teeth>=30 length<20 bolt:M3';
 
 export async function renderHome(page) {
   await Promise.all([refreshFavorites(), refreshProjects(), ctx.refreshDesigns().catch(() => null), ctx.refreshLibrary?.().catch(() => null)]);
   const saved = store.get('homeSearch') ?? {};
   const q = el('input', { type: 'search', className: 'big-search', placeholder: `Search ${ctx.state.presets.length} presets, ${ctx.state.generators.length} generators, your designs and projects`, value: saved.q ?? '', 'aria-label': 'Search' });
-  const KINDS = ['preset', 'design', 'generator', 'project', 'stl', 'item', 'page'];
+  const KINDS = ['preset', 'design', 'generator', 'project', 'stl', 'item', 'page', 'part'];
   const kinds = KINDS.map((k) => el('input', { type: 'checkbox', value: k, checked: !(saved.kinds && !saved.kinds.includes(k)) }));
   const tab = el('select', {}, el('option', { value: '', textContent: 'All tabs' }), ...SECTIONS.map((s) => el('option', { value: s, textContent: SECTION_NAMES[s], selected: saved.section === s })));
   const gen = el('select', {}, el('option', { value: '', textContent: 'All generators' }), ...ctx.state.generators.map((g) => el('option', { value: g.id, textContent: g.name, selected: saved.generator === g.id })));
   const favOnly = el('input', { type: 'checkbox', checked: Boolean(saved.favoritesOnly) });
+  const ownedOnly = el('input', { type: 'checkbox', checked: Boolean(saved.ownedOnly) });
   const sort = el('select', {}, ...[['relevance', 'Best match'], ['name', 'Name'], ['tab', 'Tab'], ['recent', 'Recently changed']].map(([v, l]) => el('option', { value: v, textContent: l, selected: saved.sort === v })));
   const adv = el('details', { className: 'advanced', open: Boolean(saved.open) },
     el('summary', { textContent: 'Advanced search' }),
     el('div', { className: 'adv-grid' },
-      el('div', { className: 'adv-kinds' }, ...kinds.map((k) => el('label', { className: 'check-inline' }, k, ` ${({ preset: 'Presets', design: 'Saved designs', generator: 'Generators', project: 'Projects', stl: 'STL files', item: 'Shop items', page: 'Pages' })[k.value]}`))),
-      el('label', {}, 'Tab ', tab), el('label', {}, 'Generator ', gen), el('label', { className: 'check-inline' }, favOnly, ' Favorites only'), el('label', {}, 'Sort ', sort)),
+      el('div', { className: 'adv-kinds' }, ...kinds.map((k) => el('label', { className: 'check-inline' }, k, ` ${({ preset: 'Presets', design: 'Saved designs', generator: 'Generators', project: 'Projects', stl: 'STL files', item: 'Shop items', page: 'Pages', part: 'My parts' })[k.value]}`))),
+      el('label', {}, 'Tab ', tab), el('label', {}, 'Generator ', gen), el('label', { className: 'check-inline' }, favOnly, ' Favorites only'), el('label', { className: 'check-inline', title: 'Presets for parts marked Owned in My Parts' }, ownedOnly, ' My parts only (owned)'), el('label', {}, 'Sort ', sort)),
     el('p', { className: 'muted', textContent: SEARCH_HELP }));
   const results = el('div', { className: 'home-results' });
   const dash = el('div', { className: 'home-dash' });
 
-  const state = () => ({ q: q.value, kinds: kinds.filter((k) => k.checked).map((k) => k.value), section: tab.value, generator: gen.value, favoritesOnly: favOnly.checked, sort: sort.value, open: adv.open });
-  const active = (s) => s.q.trim() || s.section || s.generator || s.favoritesOnly || s.kinds.length < KINDS.length;
+  const state = () => ({ q: q.value, kinds: kinds.filter((k) => k.checked).map((k) => k.value), section: tab.value, generator: gen.value, favoritesOnly: favOnly.checked, ownedOnly: ownedOnly.checked, sort: sort.value, open: adv.open });
+  const active = (s) => s.q.trim() || s.section || s.generator || s.favoritesOnly || s.ownedOnly || s.kinds.length < KINDS.length;
   const draw = () => {
     const s = state();
     store.set('homeSearch', s);
     const view = viewMode();
     if (active(s)) {
-      const res = search(s.q, { kinds: s.kinds, section: s.section || null, generator: s.generator || null, favoritesOnly: s.favoritesOnly, sort: s.sort });
+      const res = search(s.q, { kinds: s.kinds, section: s.section || null, generator: s.generator || null, favoritesOnly: s.favoritesOnly, ownedOnly: s.ownedOnly, sort: s.sort });
       dash.hidden = true;
       results.hidden = false;
       results.replaceChildren(
         el('div', { className: 'row results-head' }, el('strong', { textContent: `${res.length} result${res.length === 1 ? '' : 's'}` }), viewToggle(draw),
-          el('button', { type: 'button', className: 'secondary small', textContent: 'Clear', onclick: () => { q.value = ''; tab.value = ''; gen.value = ''; favOnly.checked = false; kinds.forEach((k) => { k.checked = true; }); draw(); } })),
+          el('button', { type: 'button', className: 'secondary small', textContent: 'Clear', onclick: () => { q.value = ''; tab.value = ''; gen.value = ''; favOnly.checked = false; ownedOnly.checked = false; kinds.forEach((k) => { k.checked = true; }); draw(); } })),
         cardList(res.slice(0, 300), view, 'No matches. Try fewer words, or check the filters.'));
     } else {
       results.hidden = true;
@@ -504,7 +546,7 @@ export async function renderHome(page) {
     }
   };
   q.oninput = debounce(draw, 150);
-  for (const c of [...kinds, tab, gen, favOnly, sort]) c.onchange = draw;
+  for (const c of [...kinds, tab, gen, favOnly, ownedOnly, sort]) c.onchange = draw;
   adv.ontoggle = () => store.set('homeSearch', state());
   page.replaceChildren(el('div', { className: 'home-search' }, q, adv), results, dash);
   draw();
@@ -539,6 +581,7 @@ function drawDashboard(dash, redraw) {
       tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
       tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
       tile('printers', 'Printers', 'Status, files, upload (view only)', 'tile-printers'),
+      tile('parts', 'My Parts', `${(ctx.state.parts ?? []).length} parts, ${(ctx.state.parts ?? []).filter((x) => x.ownershipKey === 'Owned').length} owned`, 'tile-parts'),
       tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings'))),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),
       cardList(favItems, view, 'Star presets, designs, generators or projects to pin them here.')),

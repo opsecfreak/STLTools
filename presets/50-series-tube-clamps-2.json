@@ -1,0 +1,1843 @@
+{
+ "group": "Clamp sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "clamp-parallel-6x6",
+   "name": "Parallel clamp, 6 + 6 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 6 mm and 6 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 6,
+    "tubeOD2": 6,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-6x10",
+   "name": "Parallel clamp, 6 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 6 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 6,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-6x12",
+   "name": "Parallel clamp, 6 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 6 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 6,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-6x16",
+   "name": "Parallel clamp, 6 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 6 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 6,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-6x20",
+   "name": "Parallel clamp, 6 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 6 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 6,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-8x8",
+   "name": "Parallel clamp, 8 + 8 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 8 mm and 8 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 8,
+    "tubeOD2": 8,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-8x10",
+   "name": "Parallel clamp, 8 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 8 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 8,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-8x12",
+   "name": "Parallel clamp, 8 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 8 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 8,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-8x16",
+   "name": "Parallel clamp, 8 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 8 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 8,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-8x20",
+   "name": "Parallel clamp, 8 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 8 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 8,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-10x10",
+   "name": "Parallel clamp, 10 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 10 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 10,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-10x12",
+   "name": "Parallel clamp, 10 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 10 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 10,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-10x16",
+   "name": "Parallel clamp, 10 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 10 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 10,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-10x20",
+   "name": "Parallel clamp, 10 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 10 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 10,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-12x12",
+   "name": "Parallel clamp, 12 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 12 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 12,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-12x10",
+   "name": "Parallel clamp, 12 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 12 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 12,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-12x16",
+   "name": "Parallel clamp, 12 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 12 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 12,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-12x20",
+   "name": "Parallel clamp, 12 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 12 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 12,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-14x14",
+   "name": "Parallel clamp, 14 + 14 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 14 mm and 14 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 14,
+    "tubeOD2": 14,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-14x10",
+   "name": "Parallel clamp, 14 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 14 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 14,
+    "tubeOD2": 10,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-14x12",
+   "name": "Parallel clamp, 14 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 14 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 14,
+    "tubeOD2": 12,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-14x16",
+   "name": "Parallel clamp, 14 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 14 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 14,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-14x20",
+   "name": "Parallel clamp, 14 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 14 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 14,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-15x15",
+   "name": "Parallel clamp, 15 + 15 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 15 mm and 15 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 15,
+    "tubeOD2": 15,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-15x10",
+   "name": "Parallel clamp, 15 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 15 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 15,
+    "tubeOD2": 10,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-15x12",
+   "name": "Parallel clamp, 15 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 15 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 15,
+    "tubeOD2": 12,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-15x16",
+   "name": "Parallel clamp, 15 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 15 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 15,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-15x20",
+   "name": "Parallel clamp, 15 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 15 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 15,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-16x16",
+   "name": "Parallel clamp, 16 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 16 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 16,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-16x10",
+   "name": "Parallel clamp, 16 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 16 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 16,
+    "tubeOD2": 10,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-16x12",
+   "name": "Parallel clamp, 16 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 16 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 16,
+    "tubeOD2": 12,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-16x20",
+   "name": "Parallel clamp, 16 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 16 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 16,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-18x18",
+   "name": "Parallel clamp, 18 + 18 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 18 mm and 18 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 18,
+    "tubeOD2": 18,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-18x10",
+   "name": "Parallel clamp, 18 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 18 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 18,
+    "tubeOD2": 10,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-18x12",
+   "name": "Parallel clamp, 18 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 18 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 18,
+    "tubeOD2": 12,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-18x16",
+   "name": "Parallel clamp, 18 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 18 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 18,
+    "tubeOD2": 16,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-18x20",
+   "name": "Parallel clamp, 18 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 18 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 18,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-20x20",
+   "name": "Parallel clamp, 20 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 20 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 20,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-20x10",
+   "name": "Parallel clamp, 20 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 20 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 20,
+    "tubeOD2": 10,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-20x12",
+   "name": "Parallel clamp, 20 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 20 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 20,
+    "tubeOD2": 12,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-20x16",
+   "name": "Parallel clamp, 20 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 20 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 20,
+    "tubeOD2": 16,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-22x22",
+   "name": "Parallel clamp, 22 + 22 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 22 mm and 22 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 22,
+    "tubeOD2": 22,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-22x10",
+   "name": "Parallel clamp, 22 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 22 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 22,
+    "tubeOD2": 10,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-22x12",
+   "name": "Parallel clamp, 22 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 22 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 22,
+    "tubeOD2": 12,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-22x16",
+   "name": "Parallel clamp, 22 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 22 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 22,
+    "tubeOD2": 16,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-22x20",
+   "name": "Parallel clamp, 22 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 22 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 22,
+    "tubeOD2": 20,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-25x25",
+   "name": "Parallel clamp, 25 + 25 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 25 mm and 25 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 25,
+    "tubeOD2": 25,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-25x10",
+   "name": "Parallel clamp, 25 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 25 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 25,
+    "tubeOD2": 10,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-25x12",
+   "name": "Parallel clamp, 25 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 25 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 25,
+    "tubeOD2": 12,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-25x16",
+   "name": "Parallel clamp, 25 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 25 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 25,
+    "tubeOD2": 16,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-parallel-25x20",
+   "name": "Parallel clamp, 25 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Holds two tubes side by side: 25 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "parallel"
+   ],
+   "params": {
+    "type": "parallel",
+    "tubeOD": 25,
+    "tubeOD2": 20,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-6x6",
+   "name": "Cross clamp, 6 + 6 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 6 mm and 6 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "tubeOD2": 6,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-6x10",
+   "name": "Cross clamp, 6 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 6 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-6x12",
+   "name": "Cross clamp, 6 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 6 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-6x16",
+   "name": "Cross clamp, 6 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 6 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-6x20",
+   "name": "Cross clamp, 6 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 6 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 6,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-8x8",
+   "name": "Cross clamp, 8 + 8 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 8 mm and 8 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "tubeOD2": 8,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-8x10",
+   "name": "Cross clamp, 8 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 8 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-8x12",
+   "name": "Cross clamp, 8 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 8 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-8x16",
+   "name": "Cross clamp, 8 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 8 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-8x20",
+   "name": "Cross clamp, 8 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 8 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 8,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-10x10",
+   "name": "Cross clamp, 10 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 10 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-10x12",
+   "name": "Cross clamp, 10 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 10 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-10x16",
+   "name": "Cross clamp, 10 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 10 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-10x20",
+   "name": "Cross clamp, 10 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 10 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 10,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-12x12",
+   "name": "Cross clamp, 12 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 12 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "tubeOD2": 12,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-12x10",
+   "name": "Cross clamp, 12 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 12 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "tubeOD2": 10,
+    "length": 12
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-12x16",
+   "name": "Cross clamp, 12 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 12 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-12x20",
+   "name": "Cross clamp, 12 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 12 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 12,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-14x14",
+   "name": "Cross clamp, 14 + 14 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 14 mm and 14 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "tubeOD2": 14,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-14x10",
+   "name": "Cross clamp, 14 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 14 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "tubeOD2": 10,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-14x12",
+   "name": "Cross clamp, 14 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 14 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "tubeOD2": 12,
+    "length": 14
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-14x16",
+   "name": "Cross clamp, 14 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 14 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-14x20",
+   "name": "Cross clamp, 14 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 14 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 14,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-15x15",
+   "name": "Cross clamp, 15 + 15 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 15 mm and 15 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "tubeOD2": 15,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-15x10",
+   "name": "Cross clamp, 15 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 15 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "tubeOD2": 10,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-15x12",
+   "name": "Cross clamp, 15 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 15 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "tubeOD2": 12,
+    "length": 15
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-15x16",
+   "name": "Cross clamp, 15 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 15 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-15x20",
+   "name": "Cross clamp, 15 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 15 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 15,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-16x16",
+   "name": "Cross clamp, 16 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 16 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "tubeOD2": 16,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-16x10",
+   "name": "Cross clamp, 16 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 16 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "tubeOD2": 10,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-16x12",
+   "name": "Cross clamp, 16 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 16 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "tubeOD2": 12,
+    "length": 16
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-16x20",
+   "name": "Cross clamp, 16 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 16 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 16,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-18x18",
+   "name": "Cross clamp, 18 + 18 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 18 mm and 18 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "tubeOD2": 18,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-18x10",
+   "name": "Cross clamp, 18 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 18 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "tubeOD2": 10,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-18x12",
+   "name": "Cross clamp, 18 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 18 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "tubeOD2": 12,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-18x16",
+   "name": "Cross clamp, 18 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 18 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "tubeOD2": 16,
+    "length": 18
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-18x20",
+   "name": "Cross clamp, 18 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 18 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 18,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-20x20",
+   "name": "Cross clamp, 20 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 20 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "tubeOD2": 20,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-20x10",
+   "name": "Cross clamp, 20 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 20 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "tubeOD2": 10,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-20x12",
+   "name": "Cross clamp, 20 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 20 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "tubeOD2": 12,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-20x16",
+   "name": "Cross clamp, 20 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 20 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 20,
+    "tubeOD2": 16,
+    "length": 20
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-22x22",
+   "name": "Cross clamp, 22 + 22 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 22 mm and 22 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "tubeOD2": 22,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-22x10",
+   "name": "Cross clamp, 22 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 22 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "tubeOD2": 10,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-22x12",
+   "name": "Cross clamp, 22 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 22 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "tubeOD2": 12,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-22x16",
+   "name": "Cross clamp, 22 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 22 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "tubeOD2": 16,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-22x20",
+   "name": "Cross clamp, 22 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 22 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 22,
+    "tubeOD2": 20,
+    "length": 22
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-25x25",
+   "name": "Cross clamp, 25 + 25 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 25 mm and 25 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "tubeOD2": 25,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-25x10",
+   "name": "Cross clamp, 25 + 10 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 25 mm and 10 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "tubeOD2": 10,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-25x12",
+   "name": "Cross clamp, 25 + 12 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 25 mm and 12 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "tubeOD2": 12,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-25x16",
+   "name": "Cross clamp, 25 + 16 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 25 mm and 16 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "tubeOD2": 16,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  },
+  {
+   "id": "clamp-cross-25x20",
+   "name": "Cross clamp, 25 + 20 mm tubes",
+   "generator": "tube-clamp",
+   "description": "Joins two tubes at 90 degrees: 25 mm and 20 mm.",
+   "tags": [
+    "clamp",
+    "tube",
+    "cross"
+   ],
+   "params": {
+    "type": "cross",
+    "tubeOD": 25,
+    "tubeOD2": 20,
+    "length": 25
+   },
+   "series": "tube-clamps-2"
+  }
+ ]
+}

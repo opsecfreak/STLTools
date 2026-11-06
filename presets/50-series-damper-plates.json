@@ -1,0 +1,107 @@
+{
+ "group": "Damper plate sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "damper-50x40-30p5",
+   "name": "Damper plate, balls 50 x 40, 30.5 mm board",
+   "generator": "damper-plate",
+   "description": "Damper plate, balls 50 x 40, 30.5 mm board.",
+   "tags": [
+    "damper",
+    "gimbal",
+    "vibration"
+   ],
+   "params": {
+    "ballSpacingX": 50,
+    "ballSpacingY": 40,
+    "topHoleSpacing": 30.5
+   },
+   "series": "damper-plates",
+   "verify": [
+    "ballHole"
+   ]
+  },
+  {
+   "id": "damper-60x45-20",
+   "name": "Damper plate, balls 60 x 45, 20 mm board",
+   "generator": "damper-plate",
+   "description": "Damper plate, balls 60 x 45, 20 mm board.",
+   "tags": [
+    "damper",
+    "gimbal",
+    "vibration"
+   ],
+   "params": {
+    "ballSpacingX": 60,
+    "ballSpacingY": 45,
+    "topHoleSpacing": 20
+   },
+   "series": "damper-plates",
+   "verify": [
+    "ballHole"
+   ]
+  },
+  {
+   "id": "damper-60x45-30p5",
+   "name": "Damper plate, balls 60 x 45, 30.5 mm board",
+   "generator": "damper-plate",
+   "description": "Damper plate, balls 60 x 45, 30.5 mm board.",
+   "tags": [
+    "damper",
+    "gimbal",
+    "vibration"
+   ],
+   "params": {
+    "ballSpacingX": 60,
+    "ballSpacingY": 45,
+    "topHoleSpacing": 30.5
+   },
+   "series": "damper-plates",
+   "verify": [
+    "ballHole"
+   ]
+  },
+  {
+   "id": "damper-70x50-20",
+   "name": "Damper plate, balls 70 x 50, 20 mm board",
+   "generator": "damper-plate",
+   "description": "Damper plate, balls 70 x 50, 20 mm board.",
+   "tags": [
+    "damper",
+    "gimbal",
+    "vibration"
+   ],
+   "params": {
+    "ballSpacingX": 70,
+    "ballSpacingY": 50,
+    "topHoleSpacing": 20
+   },
+   "series": "damper-plates",
+   "verify": [
+    "ballHole"
+   ]
+  },
+  {
+   "id": "damper-70x50-30p5",
+   "name": "Damper plate, balls 70 x 50, 30.5 mm board",
+   "generator": "damper-plate",
+   "description": "Damper plate, balls 70 x 50, 30.5 mm board.",
+   "tags": [
+    "damper",
+    "gimbal",
+    "vibration"
+   ],
+   "params": {
+    "ballSpacingX": 70,
+    "ballSpacingY": 50,
+    "topHoleSpacing": 30.5
+   },
+   "series": "damper-plates",
+   "verify": [
+    "ballHole"
+   ]
+  }
+ ]
+}

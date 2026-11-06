@@ -1,0 +1,463 @@
+{
+ "group": "GPS mast sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "gps-mast-tube-30-30p5",
+   "name": "GPS mast 30 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 30 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 30,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-30-20",
+   "name": "GPS mast 30 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 30 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 30,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-50-30p5",
+   "name": "GPS mast 50 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 50 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 50,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-50-20",
+   "name": "GPS mast 50 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 50 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 50,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-75-30p5",
+   "name": "GPS mast 75 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 75 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 75,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-75-20",
+   "name": "GPS mast 75 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 75 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 75,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-100-30p5",
+   "name": "GPS mast 100 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 100 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 100,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-100-20",
+   "name": "GPS mast 100 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 100 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 100,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-125-30p5",
+   "name": "GPS mast 125 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 125 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 125,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-125-20",
+   "name": "GPS mast 125 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 125 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 125,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-150-30p5",
+   "name": "GPS mast 150 mm, tube mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 150 mm, tube mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 150,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-tube-150-20",
+   "name": "GPS mast 150 mm, tube mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 150 mm, tube mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "tube"
+   ],
+   "params": {
+    "mast": "tube",
+    "mastHeight": 150,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-30-30p5",
+   "name": "GPS mast 30 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 30 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 30,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-30-20",
+   "name": "GPS mast 30 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 30 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 30,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-50-30p5",
+   "name": "GPS mast 50 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 50 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 50,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-50-20",
+   "name": "GPS mast 50 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 50 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 50,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-75-30p5",
+   "name": "GPS mast 75 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 75 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 75,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-75-20",
+   "name": "GPS mast 75 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 75 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 75,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-100-30p5",
+   "name": "GPS mast 100 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 100 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 100,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-100-20",
+   "name": "GPS mast 100 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 100 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 100,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-125-30p5",
+   "name": "GPS mast 125 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 125 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 125,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-125-20",
+   "name": "GPS mast 125 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 125 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 125,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-150-30p5",
+   "name": "GPS mast 150 mm, printed mast, 30.5 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 150 mm, printed mast, 30.5 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 150,
+    "baseHoleSpacing": 30.5,
+    "baseBolt": "M3",
+    "baseSize": 38.5
+   },
+   "series": "gps-masts"
+  },
+  {
+   "id": "gps-mast-printed-150-20",
+   "name": "GPS mast 150 mm, printed mast, 20 mm base",
+   "generator": "gps-mast",
+   "description": "GPS mast 150 mm, printed mast, 20 mm base.",
+   "tags": [
+    "gps",
+    "mast",
+    "printed"
+   ],
+   "params": {
+    "mast": "printed",
+    "mastHeight": 150,
+    "baseHoleSpacing": 20,
+    "baseBolt": "M2",
+    "baseSize": 28
+   },
+   "series": "gps-masts"
+  }
+ ]
+}

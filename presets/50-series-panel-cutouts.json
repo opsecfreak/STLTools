@@ -1,0 +1,383 @@
+{
+ "group": "Panel cutout sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "cutout-rect-8x4",
+   "name": "Panel plate, 8 x 4 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 8,
+    "cutoutHeight": 4,
+    "plateWidth": 28,
+    "plateHeight": 14,
+    "holeSpacing": 20
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-9x3p5",
+   "name": "Panel plate, 9 x 3.5 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 9,
+    "cutoutHeight": 3.5,
+    "plateWidth": 29,
+    "plateHeight": 14,
+    "holeSpacing": 21
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-10x5",
+   "name": "Panel plate, 10 x 5 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 10,
+    "cutoutHeight": 5,
+    "plateWidth": 30,
+    "plateHeight": 15,
+    "holeSpacing": 22
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-12x6",
+   "name": "Panel plate, 12 x 6 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 12,
+    "cutoutHeight": 6,
+    "plateWidth": 32,
+    "plateHeight": 16,
+    "holeSpacing": 24
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-14x7",
+   "name": "Panel plate, 14 x 7 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 14,
+    "cutoutHeight": 7,
+    "plateWidth": 34,
+    "plateHeight": 17,
+    "holeSpacing": 26
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-16x8p5",
+   "name": "Panel plate, 16 x 8.5 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 16,
+    "cutoutHeight": 8.5,
+    "plateWidth": 36,
+    "plateHeight": 18.5,
+    "holeSpacing": 28
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-20x10",
+   "name": "Panel plate, 20 x 10 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 20,
+    "cutoutHeight": 10,
+    "plateWidth": 40,
+    "plateHeight": 20,
+    "holeSpacing": 32
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-25x12",
+   "name": "Panel plate, 25 x 12 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 25,
+    "cutoutHeight": 12,
+    "plateWidth": 45,
+    "plateHeight": 22,
+    "holeSpacing": 37
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-rect-30x15",
+   "name": "Panel plate, 30 x 15 mm rectangular cutout",
+   "generator": "connector-mount",
+   "description": "Generic rectangular cutout plate (USB, XT-style power, switches). Measure your connector.",
+   "tags": [
+    "panel",
+    "connector",
+    "rect"
+   ],
+   "params": {
+    "cutoutShape": "rect",
+    "cutoutWidth": 30,
+    "cutoutHeight": 15,
+    "plateWidth": 50,
+    "plateHeight": 25,
+    "holeSpacing": 42
+   },
+   "series": "panel-cutouts",
+   "verify": [
+    "cutoutWidth",
+    "cutoutHeight"
+   ]
+  },
+  {
+   "id": "cutout-round-5",
+   "name": "Panel plate, 5 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 5,
+    "cutoutHeight": 5,
+    "plateWidth": 25,
+    "plateHeight": 15,
+    "holeSpacing": 17
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-6p5",
+   "name": "Panel plate, 6.5 mm round hole",
+   "generator": "connector-mount",
+   "description": "SMA / RP-SMA bulkhead (1/4 in thread).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 6.5,
+    "cutoutHeight": 6.5,
+    "plateWidth": 26.5,
+    "plateHeight": 16.5,
+    "holeSpacing": 18.5
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-8",
+   "name": "Panel plate, 8 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 8,
+    "cutoutHeight": 8,
+    "plateWidth": 28,
+    "plateHeight": 18,
+    "holeSpacing": 20
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-10",
+   "name": "Panel plate, 10 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 10,
+    "cutoutHeight": 10,
+    "plateWidth": 30,
+    "plateHeight": 20,
+    "holeSpacing": 22
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-12",
+   "name": "Panel plate, 12 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 12,
+    "cutoutHeight": 12,
+    "plateWidth": 32,
+    "plateHeight": 22,
+    "holeSpacing": 24
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-16",
+   "name": "Panel plate, 16 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 16,
+    "cutoutHeight": 16,
+    "plateWidth": 36,
+    "plateHeight": 26,
+    "holeSpacing": 28
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-19",
+   "name": "Panel plate, 19 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 19,
+    "cutoutHeight": 19,
+    "plateWidth": 39,
+    "plateHeight": 29,
+    "holeSpacing": 31
+   },
+   "series": "panel-cutouts"
+  },
+  {
+   "id": "cutout-round-22",
+   "name": "Panel plate, 22 mm round hole",
+   "generator": "connector-mount",
+   "description": "Generic round hole (switches, glands, LEDs).",
+   "tags": [
+    "panel",
+    "connector",
+    "round"
+   ],
+   "params": {
+    "cutoutShape": "round",
+    "cutoutWidth": 22,
+    "cutoutHeight": 22,
+    "plateWidth": 42,
+    "plateHeight": 32,
+    "holeSpacing": 34
+   },
+   "series": "panel-cutouts"
+  }
+ ]
+}

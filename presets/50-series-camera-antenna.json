@@ -1,0 +1,357 @@
+{
+ "group": "Camera and antenna mount sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "gopro-0-none",
+   "name": "Action cam (GoPro) mount, 0 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 0 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 0,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-10-zip",
+   "name": "Action cam (GoPro) mount, 10 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 10 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 10,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-10-screws",
+   "name": "Action cam (GoPro) mount, 10 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 10 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 10,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-10-none",
+   "name": "Action cam (GoPro) mount, 10 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 10 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 10,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-15-zip",
+   "name": "Action cam (GoPro) mount, 15 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 15 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 15,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-15-screws",
+   "name": "Action cam (GoPro) mount, 15 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 15 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 15,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-15-none",
+   "name": "Action cam (GoPro) mount, 15 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 15 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 15,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-20-screws",
+   "name": "Action cam (GoPro) mount, 20 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 20 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 20,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-20-none",
+   "name": "Action cam (GoPro) mount, 20 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 20 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 20,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-25-zip",
+   "name": "Action cam (GoPro) mount, 25 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 25 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 25,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-25-screws",
+   "name": "Action cam (GoPro) mount, 25 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 25 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 25,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-25-none",
+   "name": "Action cam (GoPro) mount, 25 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 25 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 25,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-30-zip",
+   "name": "Action cam (GoPro) mount, 30 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 30 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 30,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-30-screws",
+   "name": "Action cam (GoPro) mount, 30 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 30 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 30,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-30-none",
+   "name": "Action cam (GoPro) mount, 30 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 30 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 30,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-35-zip",
+   "name": "Action cam (GoPro) mount, 35 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 35 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 35,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-35-screws",
+   "name": "Action cam (GoPro) mount, 35 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 35 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 35,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-35-none",
+   "name": "Action cam (GoPro) mount, 35 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 35 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 35,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-40-zip",
+   "name": "Action cam (GoPro) mount, 40 degree tilt, zip-tie base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 40 degree tilt, zip-tie base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 40,
+    "baseMount": "zip"
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-40-screws",
+   "name": "Action cam (GoPro) mount, 40 degree tilt, screw base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 40 degree tilt, screw base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 40,
+    "baseMount": "screws",
+    "baseLength": 40,
+    "baseHoleSpacing": 30
+   },
+   "series": "camera-antenna"
+  },
+  {
+   "id": "gopro-40-none",
+   "name": "Action cam (GoPro) mount, 40 degree tilt, plain base",
+   "generator": "action-cam-mount",
+   "description": "Action cam (GoPro) mount, 40 degree tilt, plain base.",
+   "tags": [
+    "mount",
+    "gopro",
+    "action cam"
+   ],
+   "params": {
+    "tilt": 40,
+    "baseMount": "none"
+   },
+   "series": "camera-antenna"
+  }
+ ]
+}

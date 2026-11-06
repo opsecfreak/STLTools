@@ -1,0 +1,4087 @@
+{
+ "group": "Knob sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "knob-15-3-ribs",
+   "name": "Knob 15 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-3-ribs-round",
+   "name": "Knob 15 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-3-lobes",
+   "name": "Knob 15 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-3-lobes-round",
+   "name": "Knob 15 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-3-smooth",
+   "name": "Knob 15 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-3-smooth-round",
+   "name": "Knob 15 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-ribs",
+   "name": "Knob 15 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-ribs-round",
+   "name": "Knob 15 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-lobes",
+   "name": "Knob 15 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-lobes-round",
+   "name": "Knob 15 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-smooth",
+   "name": "Knob 15 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-4-smooth-round",
+   "name": "Knob 15 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-ribs",
+   "name": "Knob 15 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-ribs-round",
+   "name": "Knob 15 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-lobes",
+   "name": "Knob 15 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-lobes-round",
+   "name": "Knob 15 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-smooth",
+   "name": "Knob 15 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-5-smooth-round",
+   "name": "Knob 15 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-ribs",
+   "name": "Knob 15 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-ribs-round",
+   "name": "Knob 15 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-lobes",
+   "name": "Knob 15 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-lobes-round",
+   "name": "Knob 15 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-smooth",
+   "name": "Knob 15 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-15-6-smooth-round",
+   "name": "Knob 15 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 15 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 15,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 10,
+    "shaftDepth": 8
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-ribs",
+   "name": "Knob 20 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-ribs-round",
+   "name": "Knob 20 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-lobes",
+   "name": "Knob 20 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-lobes-round",
+   "name": "Knob 20 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-smooth",
+   "name": "Knob 20 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-3-smooth-round",
+   "name": "Knob 20 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-ribs",
+   "name": "Knob 20 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-ribs-round",
+   "name": "Knob 20 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-lobes",
+   "name": "Knob 20 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-lobes-round",
+   "name": "Knob 20 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-smooth",
+   "name": "Knob 20 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-4-smooth-round",
+   "name": "Knob 20 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-ribs",
+   "name": "Knob 20 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-ribs-round",
+   "name": "Knob 20 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-lobes",
+   "name": "Knob 20 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-lobes-round",
+   "name": "Knob 20 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-smooth",
+   "name": "Knob 20 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-5-smooth-round",
+   "name": "Knob 20 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-ribs",
+   "name": "Knob 20 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-ribs-round",
+   "name": "Knob 20 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-lobes",
+   "name": "Knob 20 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-lobes-round",
+   "name": "Knob 20 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-smooth",
+   "name": "Knob 20 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6-smooth-round",
+   "name": "Knob 20 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-ribs",
+   "name": "Knob 20 mm, 6.35 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-ribs-round",
+   "name": "Knob 20 mm, 6.35 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-lobes",
+   "name": "Knob 20 mm, 6.35 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-lobes-round",
+   "name": "Knob 20 mm, 6.35 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-smooth",
+   "name": "Knob 20 mm, 6.35 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-6p35-smooth-round",
+   "name": "Knob 20 mm, 6.35 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 6.35 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-ribs",
+   "name": "Knob 20 mm, 8 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-ribs-round",
+   "name": "Knob 20 mm, 8 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-lobes",
+   "name": "Knob 20 mm, 8 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-lobes-round",
+   "name": "Knob 20 mm, 8 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-smooth",
+   "name": "Knob 20 mm, 8 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-20-8-smooth-round",
+   "name": "Knob 20 mm, 8 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 20 mm, 8 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 20,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 12,
+    "shaftDepth": 9
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-ribs",
+   "name": "Knob 25 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-ribs-round",
+   "name": "Knob 25 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-lobes",
+   "name": "Knob 25 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-lobes-round",
+   "name": "Knob 25 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-smooth",
+   "name": "Knob 25 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-3-smooth-round",
+   "name": "Knob 25 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-ribs",
+   "name": "Knob 25 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-ribs-round",
+   "name": "Knob 25 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-lobes",
+   "name": "Knob 25 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-lobes-round",
+   "name": "Knob 25 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-smooth",
+   "name": "Knob 25 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-4-smooth-round",
+   "name": "Knob 25 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-ribs",
+   "name": "Knob 25 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-ribs-round",
+   "name": "Knob 25 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-lobes",
+   "name": "Knob 25 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-lobes-round",
+   "name": "Knob 25 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-smooth",
+   "name": "Knob 25 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-5-smooth-round",
+   "name": "Knob 25 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-ribs",
+   "name": "Knob 25 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-ribs-round",
+   "name": "Knob 25 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-lobes",
+   "name": "Knob 25 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-lobes-round",
+   "name": "Knob 25 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-smooth",
+   "name": "Knob 25 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6-smooth-round",
+   "name": "Knob 25 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-ribs",
+   "name": "Knob 25 mm, 6.35 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-ribs-round",
+   "name": "Knob 25 mm, 6.35 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-lobes",
+   "name": "Knob 25 mm, 6.35 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-lobes-round",
+   "name": "Knob 25 mm, 6.35 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-smooth",
+   "name": "Knob 25 mm, 6.35 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-6p35-smooth-round",
+   "name": "Knob 25 mm, 6.35 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 6.35 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-ribs",
+   "name": "Knob 25 mm, 8 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-ribs-round",
+   "name": "Knob 25 mm, 8 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-lobes",
+   "name": "Knob 25 mm, 8 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-lobes-round",
+   "name": "Knob 25 mm, 8 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-smooth",
+   "name": "Knob 25 mm, 8 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-25-8-smooth-round",
+   "name": "Knob 25 mm, 8 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 25 mm, 8 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 25,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 15,
+    "shaftDepth": 11
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-ribs",
+   "name": "Knob 30 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-ribs-round",
+   "name": "Knob 30 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-lobes",
+   "name": "Knob 30 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-lobes-round",
+   "name": "Knob 30 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-smooth",
+   "name": "Knob 30 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-3-smooth-round",
+   "name": "Knob 30 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-ribs",
+   "name": "Knob 30 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-ribs-round",
+   "name": "Knob 30 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-lobes",
+   "name": "Knob 30 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-lobes-round",
+   "name": "Knob 30 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-smooth",
+   "name": "Knob 30 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-4-smooth-round",
+   "name": "Knob 30 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-ribs",
+   "name": "Knob 30 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-ribs-round",
+   "name": "Knob 30 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-lobes",
+   "name": "Knob 30 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-lobes-round",
+   "name": "Knob 30 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-smooth",
+   "name": "Knob 30 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-5-smooth-round",
+   "name": "Knob 30 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-ribs",
+   "name": "Knob 30 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-ribs-round",
+   "name": "Knob 30 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-lobes",
+   "name": "Knob 30 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-lobes-round",
+   "name": "Knob 30 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-smooth",
+   "name": "Knob 30 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6-smooth-round",
+   "name": "Knob 30 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-ribs",
+   "name": "Knob 30 mm, 6.35 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-ribs-round",
+   "name": "Knob 30 mm, 6.35 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-lobes",
+   "name": "Knob 30 mm, 6.35 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-lobes-round",
+   "name": "Knob 30 mm, 6.35 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-smooth",
+   "name": "Knob 30 mm, 6.35 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-6p35-smooth-round",
+   "name": "Knob 30 mm, 6.35 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 6.35 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-ribs",
+   "name": "Knob 30 mm, 8 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-ribs-round",
+   "name": "Knob 30 mm, 8 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-lobes",
+   "name": "Knob 30 mm, 8 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-lobes-round",
+   "name": "Knob 30 mm, 8 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-smooth",
+   "name": "Knob 30 mm, 8 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-30-8-smooth-round",
+   "name": "Knob 30 mm, 8 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 30 mm, 8 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 30,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 18,
+    "shaftDepth": 14
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-ribs",
+   "name": "Knob 40 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-ribs-round",
+   "name": "Knob 40 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-lobes",
+   "name": "Knob 40 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-lobes-round",
+   "name": "Knob 40 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-smooth",
+   "name": "Knob 40 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-3-smooth-round",
+   "name": "Knob 40 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-ribs",
+   "name": "Knob 40 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-ribs-round",
+   "name": "Knob 40 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-lobes",
+   "name": "Knob 40 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-lobes-round",
+   "name": "Knob 40 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-smooth",
+   "name": "Knob 40 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-4-smooth-round",
+   "name": "Knob 40 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-ribs",
+   "name": "Knob 40 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-ribs-round",
+   "name": "Knob 40 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-lobes",
+   "name": "Knob 40 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-lobes-round",
+   "name": "Knob 40 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-smooth",
+   "name": "Knob 40 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-5-smooth-round",
+   "name": "Knob 40 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-ribs",
+   "name": "Knob 40 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-ribs-round",
+   "name": "Knob 40 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-lobes",
+   "name": "Knob 40 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-lobes-round",
+   "name": "Knob 40 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-smooth",
+   "name": "Knob 40 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6-smooth-round",
+   "name": "Knob 40 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-ribs",
+   "name": "Knob 40 mm, 6.35 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-ribs-round",
+   "name": "Knob 40 mm, 6.35 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-lobes",
+   "name": "Knob 40 mm, 6.35 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-lobes-round",
+   "name": "Knob 40 mm, 6.35 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-smooth",
+   "name": "Knob 40 mm, 6.35 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-6p35-smooth-round",
+   "name": "Knob 40 mm, 6.35 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 6.35 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-ribs",
+   "name": "Knob 40 mm, 8 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-ribs-round",
+   "name": "Knob 40 mm, 8 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-lobes",
+   "name": "Knob 40 mm, 8 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-lobes-round",
+   "name": "Knob 40 mm, 8 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-smooth",
+   "name": "Knob 40 mm, 8 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-40-8-smooth-round",
+   "name": "Knob 40 mm, 8 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 40 mm, 8 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 40,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 24,
+    "shaftDepth": 18
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-ribs",
+   "name": "Knob 50 mm, 3 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-ribs-round",
+   "name": "Knob 50 mm, 3 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-lobes",
+   "name": "Knob 50 mm, 3 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-lobes-round",
+   "name": "Knob 50 mm, 3 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-smooth",
+   "name": "Knob 50 mm, 3 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-3-smooth-round",
+   "name": "Knob 50 mm, 3 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 3 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 3,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 0.75,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-ribs",
+   "name": "Knob 50 mm, 4 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-ribs-round",
+   "name": "Knob 50 mm, 4 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-lobes",
+   "name": "Knob 50 mm, 4 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-lobes-round",
+   "name": "Knob 50 mm, 4 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-smooth",
+   "name": "Knob 50 mm, 4 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-4-smooth-round",
+   "name": "Knob 50 mm, 4 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 4 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 4,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-ribs",
+   "name": "Knob 50 mm, 5 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-ribs-round",
+   "name": "Knob 50 mm, 5 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-lobes",
+   "name": "Knob 50 mm, 5 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-lobes-round",
+   "name": "Knob 50 mm, 5 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-smooth",
+   "name": "Knob 50 mm, 5 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-5-smooth-round",
+   "name": "Knob 50 mm, 5 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 5 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 5,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.25,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-ribs",
+   "name": "Knob 50 mm, 6 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-ribs-round",
+   "name": "Knob 50 mm, 6 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-lobes",
+   "name": "Knob 50 mm, 6 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-lobes-round",
+   "name": "Knob 50 mm, 6 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-smooth",
+   "name": "Knob 50 mm, 6 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6-smooth-round",
+   "name": "Knob 50 mm, 6 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.5,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-ribs",
+   "name": "Knob 50 mm, 6.35 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-ribs-round",
+   "name": "Knob 50 mm, 6.35 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-lobes",
+   "name": "Knob 50 mm, 6.35 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-lobes-round",
+   "name": "Knob 50 mm, 6.35 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-smooth",
+   "name": "Knob 50 mm, 6.35 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-6p35-smooth-round",
+   "name": "Knob 50 mm, 6.35 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 6.35 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 6.35,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 1.59,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-ribs",
+   "name": "Knob 50 mm, 8 mm D-shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm D-shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-ribs-round",
+   "name": "Knob 50 mm, 8 mm round shaft, ribs",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm round shaft, ribs.",
+   "tags": [
+    "knob",
+    "ribs"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "ribs",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-lobes",
+   "name": "Knob 50 mm, 8 mm D-shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm D-shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-lobes-round",
+   "name": "Knob 50 mm, 8 mm round shaft, lobes",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm round shaft, lobes.",
+   "tags": [
+    "knob",
+    "lobes"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "lobes",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-smooth",
+   "name": "Knob 50 mm, 8 mm D-shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm D-shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "d",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  },
+  {
+   "id": "knob-50-8-smooth-round",
+   "name": "Knob 50 mm, 8 mm round shaft, smooth",
+   "generator": "knob",
+   "description": "Knob 50 mm, 8 mm round shaft, smooth.",
+   "tags": [
+    "knob",
+    "smooth"
+   ],
+   "params": {
+    "diameter": 50,
+    "shaftDiameter": 8,
+    "grip": "smooth",
+    "shaft": "round",
+    "dFlat": 2,
+    "height": 30,
+    "shaftDepth": 23
+   },
+   "series": "knobs"
+  }
+ ]
+}

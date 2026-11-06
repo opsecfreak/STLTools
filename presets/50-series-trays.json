@@ -1,0 +1,1735 @@
+{
+ "group": "Tray sizes on a tube",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "tray-12x25-saddle-10",
+   "name": "Tray 12 x 25 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-10",
+   "name": "Tray 12 x 25 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-saddle-12",
+   "name": "Tray 12 x 25 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-12",
+   "name": "Tray 12 x 25 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-saddle-16",
+   "name": "Tray 12 x 25 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-16",
+   "name": "Tray 12 x 25 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-saddle-20",
+   "name": "Tray 12 x 25 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 22,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "mount"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-20",
+   "name": "Tray 12 x 25 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-saddle-22",
+   "name": "Tray 12 x 25 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 24,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "mount"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-22",
+   "name": "Tray 12 x 25 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-saddle-25",
+   "name": "Tray 12 x 25 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 27,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "mount"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-12x25-clamp-kit-25",
+   "name": "Tray 12 x 25 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 12 x 25 x 6 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 12,
+    "itemLength": 25,
+    "itemHeight": 6,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-10",
+   "name": "Tray 16 x 32 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-10",
+   "name": "Tray 16 x 32 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-12",
+   "name": "Tray 16 x 32 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-12",
+   "name": "Tray 16 x 32 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-16",
+   "name": "Tray 16 x 32 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-16",
+   "name": "Tray 16 x 32 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-20",
+   "name": "Tray 16 x 32 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-20",
+   "name": "Tray 16 x 32 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-22",
+   "name": "Tray 16 x 32 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-22",
+   "name": "Tray 16 x 32 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-saddle-25",
+   "name": "Tray 16 x 32 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 27,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "mount"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-16x32-clamp-kit-25",
+   "name": "Tray 16 x 32 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 16 x 32 x 8 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 16,
+    "itemLength": 32,
+    "itemHeight": 8,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-10",
+   "name": "Tray 20 x 45 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-10",
+   "name": "Tray 20 x 45 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-12",
+   "name": "Tray 20 x 45 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-12",
+   "name": "Tray 20 x 45 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-16",
+   "name": "Tray 20 x 45 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-16",
+   "name": "Tray 20 x 45 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-20",
+   "name": "Tray 20 x 45 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-20",
+   "name": "Tray 20 x 45 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-22",
+   "name": "Tray 20 x 45 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-22",
+   "name": "Tray 20 x 45 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-saddle-25",
+   "name": "Tray 20 x 45 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-20x45-clamp-kit-25",
+   "name": "Tray 20 x 45 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 20 x 45 x 10 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 20,
+    "itemLength": 45,
+    "itemHeight": 10,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-10",
+   "name": "Tray 25 x 55 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-10",
+   "name": "Tray 25 x 55 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-12",
+   "name": "Tray 25 x 55 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-12",
+   "name": "Tray 25 x 55 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-16",
+   "name": "Tray 25 x 55 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-16",
+   "name": "Tray 25 x 55 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-20",
+   "name": "Tray 25 x 55 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-20",
+   "name": "Tray 25 x 55 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-22",
+   "name": "Tray 25 x 55 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-22",
+   "name": "Tray 25 x 55 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-saddle-25",
+   "name": "Tray 25 x 55 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-25x55-clamp-kit-25",
+   "name": "Tray 25 x 55 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 25 x 55 x 12 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 25,
+    "itemLength": 55,
+    "itemHeight": 12,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-10",
+   "name": "Tray 30 x 60 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-10",
+   "name": "Tray 30 x 60 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-12",
+   "name": "Tray 30 x 60 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-12",
+   "name": "Tray 30 x 60 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-16",
+   "name": "Tray 30 x 60 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-16",
+   "name": "Tray 30 x 60 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-20",
+   "name": "Tray 30 x 60 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-20",
+   "name": "Tray 30 x 60 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-22",
+   "name": "Tray 30 x 60 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-22",
+   "name": "Tray 30 x 60 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-saddle-25",
+   "name": "Tray 30 x 60 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-30x60-clamp-kit-25",
+   "name": "Tray 30 x 60 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 30 x 60 x 14 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 30,
+    "itemLength": 60,
+    "itemHeight": 14,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-10",
+   "name": "Tray 35 x 70 mm on a 10 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 10,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-10",
+   "name": "Tray 35 x 70 mm on a 10 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "10mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 10,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-12",
+   "name": "Tray 35 x 70 mm on a 12 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 12,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-12",
+   "name": "Tray 35 x 70 mm on a 12 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "12mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 12,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-16",
+   "name": "Tray 35 x 70 mm on a 16 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 16,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-16",
+   "name": "Tray 35 x 70 mm on a 16 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "16mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 16,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-20",
+   "name": "Tray 35 x 70 mm on a 20 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 20,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-20",
+   "name": "Tray 35 x 70 mm on a 20 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "20mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 20,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-22",
+   "name": "Tray 35 x 70 mm on a 22 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 22,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-22",
+   "name": "Tray 35 x 70 mm on a 22 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "22mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 22,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-saddle-25",
+   "name": "Tray 35 x 70 mm on a 25 mm tube, zip-tie saddle",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "saddle"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 25,
+    "base": "saddle",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  },
+  {
+   "id": "tray-35x70-clamp-kit-25",
+   "name": "Tray 35 x 70 mm on a 25 mm tube, bolt-on clamp",
+   "generator": "component-mount",
+   "description": "For an ESC, receiver, BEC or VTX about 35 x 70 x 20 mm. Measure your part.",
+   "tags": [
+    "tray",
+    "esc",
+    "receiver",
+    "tube",
+    "25mm",
+    "clamp-kit"
+   ],
+   "params": {
+    "holder": "tray",
+    "itemWidth": 35,
+    "itemLength": 70,
+    "itemHeight": 20,
+    "tubeOD": 25,
+    "base": "clamp-kit",
+    "clampType": "two-piece"
+   },
+   "series": "trays"
+  }
+ ]
+}

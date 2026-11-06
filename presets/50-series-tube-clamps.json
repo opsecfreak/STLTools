@@ -1,0 +1,2469 @@
+{
+ "group": "Clamp sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "clamp-split-3",
+   "name": "Split clamp, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "3mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-4",
+   "name": "Split clamp, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "4mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-5",
+   "name": "Split clamp, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "5mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-6",
+   "name": "Split clamp, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "6mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-8",
+   "name": "Split clamp, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "8mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-10-s",
+   "name": "Split clamp, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "10mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-12",
+   "name": "Split clamp, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "12mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-14",
+   "name": "Split clamp, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "14mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-15",
+   "name": "Split clamp, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "15mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-16-s",
+   "name": "Split clamp, 16 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 16 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "16mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 16,
+    "length": 18,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-18",
+   "name": "Split clamp, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "18mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-19",
+   "name": "Split clamp, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "19mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-20",
+   "name": "Split clamp, 20 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 20 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "20mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 20,
+    "length": 22,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-22-s",
+   "name": "Split clamp, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "22mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-25",
+   "name": "Split clamp, 25 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 25 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "25mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 25,
+    "length": 28,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-28",
+   "name": "Split clamp, 28 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 28 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "28mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 28,
+    "length": 31,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-30",
+   "name": "Split clamp, 30 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 30 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "30mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 30,
+    "length": 33,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-32",
+   "name": "Split clamp, 32 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 32 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "32mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 32,
+    "length": 35,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-35",
+   "name": "Split clamp, 35 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 35 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "35mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 35,
+    "length": 39,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-38",
+   "name": "Split clamp, 38 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 38 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "38mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 38,
+    "length": 42,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-split-40",
+   "name": "Split clamp, 40 mm tube",
+   "generator": "tube-clamp",
+   "description": "Split clamp for a 40 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "split",
+    "40mm"
+   ],
+   "params": {
+    "type": "split",
+    "tubeOD": 40,
+    "length": 44,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-3",
+   "name": "Clamp + plate, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "3mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 23,
+    "plateWidth": 33
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-4",
+   "name": "Clamp + plate, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "4mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 24,
+    "plateWidth": 34
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-5",
+   "name": "Clamp + plate, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "5mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 25,
+    "plateWidth": 35
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-6",
+   "name": "Clamp + plate, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "6mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 26,
+    "plateWidth": 36
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-8-s",
+   "name": "Clamp + plate, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "8mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3",
+    "mountHoleSpacing": 28,
+    "plateWidth": 38
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-10-s",
+   "name": "Clamp + plate, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "10mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3",
+    "mountHoleSpacing": 30,
+    "plateWidth": 40
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-12-s",
+   "name": "Clamp + plate, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "12mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3",
+    "mountHoleSpacing": 32,
+    "plateWidth": 42
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-14",
+   "name": "Clamp + plate, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "14mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3",
+    "mountHoleSpacing": 34,
+    "plateWidth": 44
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-15",
+   "name": "Clamp + plate, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "15mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3",
+    "mountHoleSpacing": 35,
+    "plateWidth": 45
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-16-s",
+   "name": "Clamp + plate, 16 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 16 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "16mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 16,
+    "length": 18,
+    "bolt": "M3",
+    "mountHoleSpacing": 36,
+    "plateWidth": 46
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-18",
+   "name": "Clamp + plate, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "18mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3",
+    "mountHoleSpacing": 38,
+    "plateWidth": 48
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-19",
+   "name": "Clamp + plate, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "19mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3",
+    "mountHoleSpacing": 39,
+    "plateWidth": 49
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-20-s",
+   "name": "Clamp + plate, 20 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 20 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "20mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 20,
+    "length": 22,
+    "bolt": "M3",
+    "mountHoleSpacing": 40,
+    "plateWidth": 50
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-22",
+   "name": "Clamp + plate, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "22mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3",
+    "mountHoleSpacing": 42,
+    "plateWidth": 52
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-25-s",
+   "name": "Clamp + plate, 25 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 25 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "25mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 25,
+    "length": 28,
+    "bolt": "M3",
+    "mountHoleSpacing": 45,
+    "plateWidth": 55
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-28",
+   "name": "Clamp + plate, 28 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 28 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "28mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 28,
+    "length": 31,
+    "bolt": "M3",
+    "mountHoleSpacing": 48,
+    "plateWidth": 58
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-30",
+   "name": "Clamp + plate, 30 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 30 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "30mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 30,
+    "length": 33,
+    "bolt": "M4",
+    "mountHoleSpacing": 50,
+    "plateWidth": 60
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-32",
+   "name": "Clamp + plate, 32 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 32 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "32mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 32,
+    "length": 35,
+    "bolt": "M4",
+    "mountHoleSpacing": 52,
+    "plateWidth": 62
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-35",
+   "name": "Clamp + plate, 35 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 35 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "35mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 35,
+    "length": 39,
+    "bolt": "M4",
+    "mountHoleSpacing": 55,
+    "plateWidth": 65
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-38",
+   "name": "Clamp + plate, 38 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 38 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "38mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 38,
+    "length": 42,
+    "bolt": "M4",
+    "mountHoleSpacing": 58,
+    "plateWidth": 68
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-mount-40",
+   "name": "Clamp + plate, 40 mm tube",
+   "generator": "tube-clamp",
+   "description": "Clamp + plate for a 40 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "mount",
+    "40mm"
+   ],
+   "params": {
+    "type": "mount",
+    "tubeOD": 40,
+    "length": 44,
+    "bolt": "M4",
+    "mountHoleSpacing": 60,
+    "plateWidth": 70
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-3",
+   "name": "Saddle clamp, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "3mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 23,
+    "plateWidth": 33
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-4",
+   "name": "Saddle clamp, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "4mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 24,
+    "plateWidth": 34
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-5",
+   "name": "Saddle clamp, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "5mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 25,
+    "plateWidth": 35
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-6",
+   "name": "Saddle clamp, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "6mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 26,
+    "plateWidth": 36
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-8",
+   "name": "Saddle clamp, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "8mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3",
+    "mountHoleSpacing": 28,
+    "plateWidth": 38
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-10-s",
+   "name": "Saddle clamp, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "10mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3",
+    "mountHoleSpacing": 30,
+    "plateWidth": 40
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-12",
+   "name": "Saddle clamp, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "12mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3",
+    "mountHoleSpacing": 32,
+    "plateWidth": 42
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-14",
+   "name": "Saddle clamp, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "14mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3",
+    "mountHoleSpacing": 34,
+    "plateWidth": 44
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-15",
+   "name": "Saddle clamp, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "15mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3",
+    "mountHoleSpacing": 35,
+    "plateWidth": 45
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-16-s",
+   "name": "Saddle clamp, 16 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 16 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "16mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 16,
+    "length": 18,
+    "bolt": "M3",
+    "mountHoleSpacing": 36,
+    "plateWidth": 46
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-18",
+   "name": "Saddle clamp, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "18mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3",
+    "mountHoleSpacing": 38,
+    "plateWidth": 48
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-19",
+   "name": "Saddle clamp, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "19mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3",
+    "mountHoleSpacing": 39,
+    "plateWidth": 49
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-20",
+   "name": "Saddle clamp, 20 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 20 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "20mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 20,
+    "length": 22,
+    "bolt": "M3",
+    "mountHoleSpacing": 40,
+    "plateWidth": 50
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-22",
+   "name": "Saddle clamp, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "22mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3",
+    "mountHoleSpacing": 42,
+    "plateWidth": 52
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-25-s",
+   "name": "Saddle clamp, 25 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 25 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "25mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 25,
+    "length": 28,
+    "bolt": "M3",
+    "mountHoleSpacing": 45,
+    "plateWidth": 55
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-28",
+   "name": "Saddle clamp, 28 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 28 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "28mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 28,
+    "length": 31,
+    "bolt": "M3",
+    "mountHoleSpacing": 48,
+    "plateWidth": 58
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-30",
+   "name": "Saddle clamp, 30 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 30 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "30mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 30,
+    "length": 33,
+    "bolt": "M4",
+    "mountHoleSpacing": 50,
+    "plateWidth": 60
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-32",
+   "name": "Saddle clamp, 32 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 32 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "32mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 32,
+    "length": 35,
+    "bolt": "M4",
+    "mountHoleSpacing": 52,
+    "plateWidth": 62
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-35",
+   "name": "Saddle clamp, 35 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 35 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "35mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 35,
+    "length": 39,
+    "bolt": "M4",
+    "mountHoleSpacing": 55,
+    "plateWidth": 65
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-38",
+   "name": "Saddle clamp, 38 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 38 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "38mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 38,
+    "length": 42,
+    "bolt": "M4",
+    "mountHoleSpacing": 58,
+    "plateWidth": 68
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-saddle-40",
+   "name": "Saddle clamp, 40 mm tube",
+   "generator": "tube-clamp",
+   "description": "Saddle clamp for a 40 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "saddle",
+    "40mm"
+   ],
+   "params": {
+    "type": "saddle",
+    "tubeOD": 40,
+    "length": 44,
+    "bolt": "M4",
+    "mountHoleSpacing": 60,
+    "plateWidth": 70
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-3",
+   "name": "Snap-on clip, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "3mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-4",
+   "name": "Snap-on clip, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "4mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-5",
+   "name": "Snap-on clip, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "5mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-6",
+   "name": "Snap-on clip, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "6mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-8-s",
+   "name": "Snap-on clip, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "8mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-10-s",
+   "name": "Snap-on clip, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "10mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-12-s",
+   "name": "Snap-on clip, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "12mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-14",
+   "name": "Snap-on clip, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "14mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-15",
+   "name": "Snap-on clip, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "15mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-16-s",
+   "name": "Snap-on clip, 16 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 16 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "16mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 16,
+    "length": 18,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-18",
+   "name": "Snap-on clip, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "18mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-19",
+   "name": "Snap-on clip, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "19mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-20-s",
+   "name": "Snap-on clip, 20 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 20 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "20mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 20,
+    "length": 22,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-snap-22",
+   "name": "Snap-on clip, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Snap-on clip for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "snap",
+    "22mm"
+   ],
+   "params": {
+    "type": "snap",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-3",
+   "name": "Two-piece clamp, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "3mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 29,
+    "plateWidth": 39
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-4",
+   "name": "Two-piece clamp, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "4mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 30,
+    "plateWidth": 40
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-5",
+   "name": "Two-piece clamp, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "5mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 31,
+    "plateWidth": 41
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-6",
+   "name": "Two-piece clamp, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "6mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2",
+    "mountHoleSpacing": 32,
+    "plateWidth": 42
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-8",
+   "name": "Two-piece clamp, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "8mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3",
+    "mountHoleSpacing": 40,
+    "plateWidth": 50
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-10",
+   "name": "Two-piece clamp, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "10mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3",
+    "mountHoleSpacing": 42,
+    "plateWidth": 52
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-12",
+   "name": "Two-piece clamp, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "12mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3",
+    "mountHoleSpacing": 44,
+    "plateWidth": 54
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-14",
+   "name": "Two-piece clamp, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "14mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3",
+    "mountHoleSpacing": 46,
+    "plateWidth": 56
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-15",
+   "name": "Two-piece clamp, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "15mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3",
+    "mountHoleSpacing": 47,
+    "plateWidth": 57
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-18",
+   "name": "Two-piece clamp, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "18mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3",
+    "mountHoleSpacing": 50,
+    "plateWidth": 60
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-19",
+   "name": "Two-piece clamp, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "19mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3",
+    "mountHoleSpacing": 51,
+    "plateWidth": 61
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-22",
+   "name": "Two-piece clamp, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "22mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3",
+    "mountHoleSpacing": 54,
+    "plateWidth": 64
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-25",
+   "name": "Two-piece clamp, 25 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 25 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "25mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 25,
+    "length": 28,
+    "bolt": "M3",
+    "mountHoleSpacing": 57,
+    "plateWidth": 67
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-28",
+   "name": "Two-piece clamp, 28 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 28 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "28mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 28,
+    "length": 31,
+    "bolt": "M3",
+    "mountHoleSpacing": 60,
+    "plateWidth": 70
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-30",
+   "name": "Two-piece clamp, 30 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 30 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "30mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 30,
+    "length": 33,
+    "bolt": "M4",
+    "mountHoleSpacing": 62,
+    "plateWidth": 72
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-32",
+   "name": "Two-piece clamp, 32 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 32 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "32mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 32,
+    "length": 35,
+    "bolt": "M4",
+    "mountHoleSpacing": 64,
+    "plateWidth": 74
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-35",
+   "name": "Two-piece clamp, 35 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 35 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "35mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 35,
+    "length": 39,
+    "bolt": "M4",
+    "mountHoleSpacing": 67,
+    "plateWidth": 77
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-38",
+   "name": "Two-piece clamp, 38 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 38 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "38mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 38,
+    "length": 42,
+    "bolt": "M4",
+    "mountHoleSpacing": 70,
+    "plateWidth": 80
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-two-piece-40",
+   "name": "Two-piece clamp, 40 mm tube",
+   "generator": "tube-clamp",
+   "description": "Two-piece clamp for a 40 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "two-piece",
+    "40mm"
+   ],
+   "params": {
+    "type": "two-piece",
+    "tubeOD": 40,
+    "length": 44,
+    "bolt": "M4",
+    "mountHoleSpacing": 72,
+    "plateWidth": 82
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-3",
+   "name": "Collar, 3 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 3 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "3mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 3,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-4",
+   "name": "Collar, 4 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 4 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "4mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 4,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-5",
+   "name": "Collar, 5 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 5 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "5mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 5,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-6",
+   "name": "Collar, 6 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 6 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "6mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 6,
+    "length": 10,
+    "bolt": "M2"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-8",
+   "name": "Collar, 8 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 8 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "8mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 8,
+    "length": 10,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-10",
+   "name": "Collar, 10 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 10 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "10mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 10,
+    "length": 11,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-12",
+   "name": "Collar, 12 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 12 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "12mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 12,
+    "length": 13,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-14",
+   "name": "Collar, 14 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 14 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "14mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 14,
+    "length": 15,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-15",
+   "name": "Collar, 15 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 15 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "15mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 15,
+    "length": 17,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-16",
+   "name": "Collar, 16 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 16 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "16mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 16,
+    "length": 18,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-18",
+   "name": "Collar, 18 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 18 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "18mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 18,
+    "length": 20,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-19",
+   "name": "Collar, 19 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 19 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "19mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 19,
+    "length": 21,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-20",
+   "name": "Collar, 20 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 20 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "20mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 20,
+    "length": 22,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-22",
+   "name": "Collar, 22 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 22 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "22mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 22,
+    "length": 24,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-25",
+   "name": "Collar, 25 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 25 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "25mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 25,
+    "length": 28,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-28",
+   "name": "Collar, 28 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 28 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "28mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 28,
+    "length": 31,
+    "bolt": "M3"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-30",
+   "name": "Collar, 30 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 30 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "30mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 30,
+    "length": 33,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-32",
+   "name": "Collar, 32 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 32 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "32mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 32,
+    "length": 35,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-35",
+   "name": "Collar, 35 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 35 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "35mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 35,
+    "length": 39,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-38",
+   "name": "Collar, 38 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 38 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "38mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 38,
+    "length": 42,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  },
+  {
+   "id": "clamp-collar-40",
+   "name": "Collar, 40 mm tube",
+   "generator": "tube-clamp",
+   "description": "Collar for a 40 mm OD tube (carbon, aluminium, PVC). Tune clearance for your tube.",
+   "tags": [
+    "clamp",
+    "tube",
+    "carbon",
+    "collar",
+    "40mm"
+   ],
+   "params": {
+    "type": "collar",
+    "tubeOD": 40,
+    "length": 44,
+    "bolt": "M4"
+   },
+   "series": "tube-clamps"
+  }
+ ]
+}

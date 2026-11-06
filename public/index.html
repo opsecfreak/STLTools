@@ -35,6 +35,7 @@
       <button type="button" role="tab" data-tab="robotics" class="tab">Robotics</button>
       <span class="tab-sep" aria-hidden="true"></span>
       <button type="button" role="tab" data-tab="projects" class="tab">Projects</button>
+      <button type="button" role="tab" data-tab="parts" class="tab">My Parts</button>
       <button type="button" role="tab" data-tab="library" class="tab">My Designs</button>
       <button type="button" role="tab" data-tab="stls" class="tab">STL Files</button>
       <button type="button" role="tab" data-tab="import" class="tab">Import</button>
@@ -56,6 +57,15 @@
           <div class="row">
             <input id="presetSearch" type="search" placeholder="Search presets" aria-label="Search presets">
             <select id="presetGroup" aria-label="Preset group"><option value="">All groups</option></select>
+            <select id="presetOwn" aria-label="Ownership filter" title="Filter by My Parts ownership">
+              <option value="">All presets</option>
+              <option value="Owned">My parts (owned)</option>
+              <option value="Confirm">Confirm</option>
+              <option value="Planned">Planned</option>
+              <option value="mine">Any of my parts</option>
+              <option value="measure">Needs measurement</option>
+              <option value="sized">Ready to print (no measuring)</option>
+            </select>
           </div>
           <ul id="presetList" class="preset-list"></ul>
         </div>

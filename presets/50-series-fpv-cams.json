@@ -1,0 +1,295 @@
+{
+ "group": "Camera and antenna mount sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "fpvcam-14-screws-12",
+   "name": "FPV camera mount 14 mm (nano), screws base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), screws base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "screws",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-14-screws-16",
+   "name": "FPV camera mount 14 mm (nano), screws base, 16 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), screws base, 16 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "screws",
+    "depth": 16,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-14-screws-20",
+   "name": "FPV camera mount 14 mm (nano), screws base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), screws base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "screws",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-14-zip-12",
+   "name": "FPV camera mount 14 mm (nano), zip base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), zip base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "zip",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-14-zip-16",
+   "name": "FPV camera mount 14 mm (nano), zip base, 16 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), zip base, 16 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "zip",
+    "depth": 16,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-14-zip-20",
+   "name": "FPV camera mount 14 mm (nano), zip base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 14 mm (nano), zip base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "14mm"
+   ],
+   "params": {
+    "cameraWidth": 14,
+    "baseMount": "zip",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-19-screws-12",
+   "name": "FPV camera mount 19 mm (micro), screws base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 19 mm (micro), screws base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "19mm"
+   ],
+   "params": {
+    "cameraWidth": 19,
+    "baseMount": "screws",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-19-screws-20",
+   "name": "FPV camera mount 19 mm (micro), screws base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 19 mm (micro), screws base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "19mm"
+   ],
+   "params": {
+    "cameraWidth": 19,
+    "baseMount": "screws",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-19-zip-12",
+   "name": "FPV camera mount 19 mm (micro), zip base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 19 mm (micro), zip base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "19mm"
+   ],
+   "params": {
+    "cameraWidth": 19,
+    "baseMount": "zip",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-19-zip-20",
+   "name": "FPV camera mount 19 mm (micro), zip base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 19 mm (micro), zip base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "19mm"
+   ],
+   "params": {
+    "cameraWidth": 19,
+    "baseMount": "zip",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-screws-12",
+   "name": "FPV camera mount 21 mm (mini), screws base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), screws base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "screws",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-screws-16",
+   "name": "FPV camera mount 21 mm (mini), screws base, 16 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), screws base, 16 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "screws",
+    "depth": 16,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-screws-20",
+   "name": "FPV camera mount 21 mm (mini), screws base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), screws base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "screws",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-zip-12",
+   "name": "FPV camera mount 21 mm (mini), zip base, 12 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), zip base, 12 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "zip",
+    "depth": 12,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-zip-16",
+   "name": "FPV camera mount 21 mm (mini), zip base, 16 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), zip base, 16 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "zip",
+    "depth": 16,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  },
+  {
+   "id": "fpvcam-21-zip-20",
+   "name": "FPV camera mount 21 mm (mini), zip base, 20 deep",
+   "generator": "camera-mount",
+   "description": "FPV camera mount 21 mm (mini), zip base, 20 deep.",
+   "tags": [
+    "fpv",
+    "camera",
+    "21mm"
+   ],
+   "params": {
+    "cameraWidth": 21,
+    "baseMount": "zip",
+    "depth": 20,
+    "sideScrew": "M2"
+   },
+   "series": "fpv-cams"
+  }
+ ]
+}

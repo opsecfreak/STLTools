@@ -1,0 +1,463 @@
+{
+ "group": "Prop guard sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "propguard-2in-9x9",
+   "name": "Prop guard 2 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2in"
+   ],
+   "params": {
+    "propInches": 2,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-2in-12x12",
+   "name": "Prop guard 2 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2in"
+   ],
+   "params": {
+    "propInches": 2,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-2in-16x19",
+   "name": "Prop guard 2 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2in"
+   ],
+   "params": {
+    "propInches": 2,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-2p5in-9x9",
+   "name": "Prop guard 2.5 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2.5 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2.5in"
+   ],
+   "params": {
+    "propInches": 2.5,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-2p5in-12x12",
+   "name": "Prop guard 2.5 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2.5 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2.5in"
+   ],
+   "params": {
+    "propInches": 2.5,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-2p5in-16x19",
+   "name": "Prop guard 2.5 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 2.5 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "2.5in"
+   ],
+   "params": {
+    "propInches": 2.5,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3in-9x9",
+   "name": "Prop guard 3 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3in"
+   ],
+   "params": {
+    "propInches": 3,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3in-12x12",
+   "name": "Prop guard 3 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3in"
+   ],
+   "params": {
+    "propInches": 3,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3in-16x19",
+   "name": "Prop guard 3 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3in"
+   ],
+   "params": {
+    "propInches": 3,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3p5in-9x9",
+   "name": "Prop guard 3.5 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3.5 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3.5in"
+   ],
+   "params": {
+    "propInches": 3.5,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3p5in-12x12",
+   "name": "Prop guard 3.5 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3.5 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3.5in"
+   ],
+   "params": {
+    "propInches": 3.5,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-3p5in-16x19",
+   "name": "Prop guard 3.5 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 3.5 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "3.5in"
+   ],
+   "params": {
+    "propInches": 3.5,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-4in-9x9",
+   "name": "Prop guard 4 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 4 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "4in"
+   ],
+   "params": {
+    "propInches": 4,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-4in-12x12",
+   "name": "Prop guard 4 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 4 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "4in"
+   ],
+   "params": {
+    "propInches": 4,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-4in-16x19",
+   "name": "Prop guard 4 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 4 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "4in"
+   ],
+   "params": {
+    "propInches": 4,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-5in-9x9",
+   "name": "Prop guard 5 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 5 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "5in"
+   ],
+   "params": {
+    "propInches": 5,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-5in-12x12",
+   "name": "Prop guard 5 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 5 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "5in"
+   ],
+   "params": {
+    "propInches": 5,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-5in-16x19",
+   "name": "Prop guard 5 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 5 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "5in"
+   ],
+   "params": {
+    "propInches": 5,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-6in-9x9",
+   "name": "Prop guard 6 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 6 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "6in"
+   ],
+   "params": {
+    "propInches": 6,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-6in-12x12",
+   "name": "Prop guard 6 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 6 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "6in"
+   ],
+   "params": {
+    "propInches": 6,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-6in-16x19",
+   "name": "Prop guard 6 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 6 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "6in"
+   ],
+   "params": {
+    "propInches": 6,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-7in-9x9",
+   "name": "Prop guard 7 in, 9 x 9 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 7 in, 9 x 9 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "7in"
+   ],
+   "params": {
+    "propInches": 7,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorHole": 2.2,
+    "hubDiameter": 21
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-7in-12x12",
+   "name": "Prop guard 7 in, 12 x 12 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 7 in, 12 x 12 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "7in"
+   ],
+   "params": {
+    "propInches": 7,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorHole": 2.2,
+    "hubDiameter": 25
+   },
+   "series": "prop-guards"
+  },
+  {
+   "id": "propguard-7in-16x19",
+   "name": "Prop guard 7 in, 16 x 19 motor",
+   "generator": "prop-guard",
+   "description": "Prop guard 7 in, 16 x 19 motor.",
+   "tags": [
+    "prop guard",
+    "whoop",
+    "7in"
+   ],
+   "params": {
+    "propInches": 7,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorHole": 3.2,
+    "hubDiameter": 33
+   },
+   "series": "prop-guards"
+  }
+ ]
+}

@@ -125,6 +125,14 @@ async function main() {
   if (cmd === 'preset') {
     const preset = getPreset(id);
     console.log(`${preset.name}: ${preset.description}`);
+    // presets with sizes nobody has measured: refuse until every one is given as a flag
+    const missing = (preset.measure ?? []).filter((k) => opts.params[k] === undefined);
+    if (missing.length) {
+      console.error(`Needs measurement: give ${missing.map((k) => `--${k} <mm>`).join(' ')} (measure your part).`);
+      process.exitCode = 2;
+      return;
+    }
+    if (preset.verify?.length) console.log(`Check before printing: ${preset.verify.join(', ')} (datasheet or assumed values).`);
     return cmdGen(preset.generator, { ...opts, name: opts.name ?? preset.id }, preset.params);
   }
   throw new Error(`Unknown command "${cmd}".\n\n${USAGE}`);

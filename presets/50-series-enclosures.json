@@ -1,0 +1,1141 @@
+{
+ "group": "Enclosure sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "enclosure-50x40x20",
+   "name": "Electronics enclosure 50 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "50x40"
+   ],
+   "params": {
+    "innerWidth": 50,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 3
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-50x40x30",
+   "name": "Electronics enclosure 50 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "50x40"
+   ],
+   "params": {
+    "innerWidth": 50,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 3
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-50x40x45",
+   "name": "Electronics enclosure 50 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "50x40"
+   ],
+   "params": {
+    "innerWidth": 50,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 3
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x40x20",
+   "name": "Electronics enclosure 70 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x40"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x40x30",
+   "name": "Electronics enclosure 70 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x40"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x40x45",
+   "name": "Electronics enclosure 70 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x40"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x60x20",
+   "name": "Electronics enclosure 70 x 60 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x60"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 60,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x60x30",
+   "name": "Electronics enclosure 70 x 60 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x60"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 60,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-70x60x45",
+   "name": "Electronics enclosure 70 x 60 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "70x60"
+   ],
+   "params": {
+    "innerWidth": 70,
+    "innerDepth": 60,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 5
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x40x20",
+   "name": "Electronics enclosure 90 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x40"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x40x30",
+   "name": "Electronics enclosure 90 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x40"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x40x45",
+   "name": "Electronics enclosure 90 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x40"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x60x20",
+   "name": "Electronics enclosure 90 x 60 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x60"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 60,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x60x30",
+   "name": "Electronics enclosure 90 x 60 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x60"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 60,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x60x45",
+   "name": "Electronics enclosure 90 x 60 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x60"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 60,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x80x20",
+   "name": "Electronics enclosure 90 x 80 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x80"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 80,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x80x30",
+   "name": "Electronics enclosure 90 x 80 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x80"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 80,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-90x80x45",
+   "name": "Electronics enclosure 90 x 80 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "90x80"
+   ],
+   "params": {
+    "innerWidth": 90,
+    "innerDepth": 80,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 6
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x40x20",
+   "name": "Electronics enclosure 110 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x40"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x40x30",
+   "name": "Electronics enclosure 110 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x40"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x40x45",
+   "name": "Electronics enclosure 110 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x40"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x60x20",
+   "name": "Electronics enclosure 110 x 60 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x60"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 60,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x60x30",
+   "name": "Electronics enclosure 110 x 60 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x60"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 60,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x60x45",
+   "name": "Electronics enclosure 110 x 60 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x60"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 60,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x80x20",
+   "name": "Electronics enclosure 110 x 80 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x80"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 80,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x80x30",
+   "name": "Electronics enclosure 110 x 80 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x80"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 80,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x80x45",
+   "name": "Electronics enclosure 110 x 80 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x80"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 80,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x100x20",
+   "name": "Electronics enclosure 110 x 100 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x100"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 100,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x100x30",
+   "name": "Electronics enclosure 110 x 100 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x100"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 100,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-110x100x45",
+   "name": "Electronics enclosure 110 x 100 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "110x100"
+   ],
+   "params": {
+    "innerWidth": 110,
+    "innerDepth": 100,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 7
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x40x20",
+   "name": "Electronics enclosure 130 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x40"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x40x30",
+   "name": "Electronics enclosure 130 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x40"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x40x45",
+   "name": "Electronics enclosure 130 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x40"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x60x20",
+   "name": "Electronics enclosure 130 x 60 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x60"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 60,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x60x30",
+   "name": "Electronics enclosure 130 x 60 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x60"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 60,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x60x45",
+   "name": "Electronics enclosure 130 x 60 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x60"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 60,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x80x20",
+   "name": "Electronics enclosure 130 x 80 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x80"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 80,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x80x30",
+   "name": "Electronics enclosure 130 x 80 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x80"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 80,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x80x45",
+   "name": "Electronics enclosure 130 x 80 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x80"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 80,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x100x20",
+   "name": "Electronics enclosure 130 x 100 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x100"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 100,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x100x30",
+   "name": "Electronics enclosure 130 x 100 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x100"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 100,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-130x100x45",
+   "name": "Electronics enclosure 130 x 100 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "130x100"
+   ],
+   "params": {
+    "innerWidth": 130,
+    "innerDepth": 100,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 9
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x40x20",
+   "name": "Electronics enclosure 150 x 40 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x40"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 40,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x40x30",
+   "name": "Electronics enclosure 150 x 40 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x40"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 40,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x40x45",
+   "name": "Electronics enclosure 150 x 40 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x40"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 40,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x60x20",
+   "name": "Electronics enclosure 150 x 60 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x60"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 60,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x60x30",
+   "name": "Electronics enclosure 150 x 60 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x60"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 60,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x60x45",
+   "name": "Electronics enclosure 150 x 60 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x60"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 60,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x80x20",
+   "name": "Electronics enclosure 150 x 80 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x80"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 80,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x80x30",
+   "name": "Electronics enclosure 150 x 80 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x80"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 80,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x80x45",
+   "name": "Electronics enclosure 150 x 80 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x80"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 80,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x100x20",
+   "name": "Electronics enclosure 150 x 100 x 20 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x100"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 100,
+    "innerHeight": 20,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x100x30",
+   "name": "Electronics enclosure 150 x 100 x 30 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x100"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 100,
+    "innerHeight": 30,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  },
+  {
+   "id": "enclosure-150x100x45",
+   "name": "Electronics enclosure 150 x 100 x 45 mm inside",
+   "generator": "enclosure",
+   "description": "Box + screw lid, no board standoffs. Add standoffs and a port cutout in the settings.",
+   "tags": [
+    "enclosure",
+    "box",
+    "electronics",
+    "150x100"
+   ],
+   "params": {
+    "innerWidth": 150,
+    "innerDepth": 100,
+    "innerHeight": 45,
+    "standoffX": 0,
+    "portWall": "none",
+    "vents": 10
+   },
+   "series": "enclosures"
+  }
+ ]
+}

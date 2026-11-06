@@ -1,0 +1,3227 @@
+{
+ "group": "Link bar sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "link-2h-8",
+   "name": "Link bar 2 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-8-hex",
+   "name": "Link bar 2 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-8-slot",
+   "name": "Link bar 2 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-10",
+   "name": "Link bar 2 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-10-hex",
+   "name": "Link bar 2 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-10-slot",
+   "name": "Link bar 2 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-12p7",
+   "name": "Link bar 2 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-12p7-slot",
+   "name": "Link bar 2 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-15",
+   "name": "Link bar 2 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-15-hex",
+   "name": "Link bar 2 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-15-slot",
+   "name": "Link bar 2 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-20",
+   "name": "Link bar 2 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-20-hex",
+   "name": "Link bar 2 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-2h-20-slot",
+   "name": "Link bar 2 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 2 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "2 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 2,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-8",
+   "name": "Link bar 3 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-8-hex",
+   "name": "Link bar 3 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-8-slot",
+   "name": "Link bar 3 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-10",
+   "name": "Link bar 3 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-10-hex",
+   "name": "Link bar 3 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-10-slot",
+   "name": "Link bar 3 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-12p7",
+   "name": "Link bar 3 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-12p7-slot",
+   "name": "Link bar 3 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-15",
+   "name": "Link bar 3 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-15-hex",
+   "name": "Link bar 3 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-15-slot",
+   "name": "Link bar 3 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-20",
+   "name": "Link bar 3 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-20-hex",
+   "name": "Link bar 3 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-3h-20-slot",
+   "name": "Link bar 3 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 3 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "3 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 3,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-8",
+   "name": "Link bar 4 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-8-hex",
+   "name": "Link bar 4 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-8-slot",
+   "name": "Link bar 4 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-10",
+   "name": "Link bar 4 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-10-hex",
+   "name": "Link bar 4 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-10-slot",
+   "name": "Link bar 4 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-12p7",
+   "name": "Link bar 4 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-12p7-hex",
+   "name": "Link bar 4 holes, 12.7 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 12.7 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 12.7,
+    "holeShape": "hex",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-12p7-slot",
+   "name": "Link bar 4 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-15",
+   "name": "Link bar 4 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-15-hex",
+   "name": "Link bar 4 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-15-slot",
+   "name": "Link bar 4 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-20",
+   "name": "Link bar 4 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-20-hex",
+   "name": "Link bar 4 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-4h-20-slot",
+   "name": "Link bar 4 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 4 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "4 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 4,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-8",
+   "name": "Link bar 5 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-8-hex",
+   "name": "Link bar 5 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-8-slot",
+   "name": "Link bar 5 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-10",
+   "name": "Link bar 5 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-10-hex",
+   "name": "Link bar 5 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-10-slot",
+   "name": "Link bar 5 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-12p7",
+   "name": "Link bar 5 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-12p7-slot",
+   "name": "Link bar 5 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-15",
+   "name": "Link bar 5 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-15-hex",
+   "name": "Link bar 5 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-15-slot",
+   "name": "Link bar 5 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-20",
+   "name": "Link bar 5 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-20-hex",
+   "name": "Link bar 5 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-5h-20-slot",
+   "name": "Link bar 5 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 5 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "5 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 5,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-8",
+   "name": "Link bar 6 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-8-hex",
+   "name": "Link bar 6 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-8-slot",
+   "name": "Link bar 6 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-10",
+   "name": "Link bar 6 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-10-hex",
+   "name": "Link bar 6 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-10-slot",
+   "name": "Link bar 6 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-12p7",
+   "name": "Link bar 6 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-12p7-hex",
+   "name": "Link bar 6 holes, 12.7 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 12.7 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 12.7,
+    "holeShape": "hex",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-12p7-slot",
+   "name": "Link bar 6 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-15",
+   "name": "Link bar 6 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-15-hex",
+   "name": "Link bar 6 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-15-slot",
+   "name": "Link bar 6 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-20",
+   "name": "Link bar 6 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-20-hex",
+   "name": "Link bar 6 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-6h-20-slot",
+   "name": "Link bar 6 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 6 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "6 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 6,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-8",
+   "name": "Link bar 7 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-8-hex",
+   "name": "Link bar 7 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-8-slot",
+   "name": "Link bar 7 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-10-hex",
+   "name": "Link bar 7 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-10-slot",
+   "name": "Link bar 7 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-12p7",
+   "name": "Link bar 7 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-12p7-slot",
+   "name": "Link bar 7 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-15",
+   "name": "Link bar 7 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-15-hex",
+   "name": "Link bar 7 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-15-slot",
+   "name": "Link bar 7 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-20",
+   "name": "Link bar 7 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-20-hex",
+   "name": "Link bar 7 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-7h-20-slot",
+   "name": "Link bar 7 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 7 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "7 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 7,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-8",
+   "name": "Link bar 8 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-8-hex",
+   "name": "Link bar 8 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-8-slot",
+   "name": "Link bar 8 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-10",
+   "name": "Link bar 8 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-10-hex",
+   "name": "Link bar 8 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-10-slot",
+   "name": "Link bar 8 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-12p7",
+   "name": "Link bar 8 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-12p7-slot",
+   "name": "Link bar 8 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-15",
+   "name": "Link bar 8 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-15-hex",
+   "name": "Link bar 8 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-15-slot",
+   "name": "Link bar 8 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-20",
+   "name": "Link bar 8 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-20-hex",
+   "name": "Link bar 8 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-8h-20-slot",
+   "name": "Link bar 8 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 8 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "8 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 8,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-8",
+   "name": "Link bar 9 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-8-hex",
+   "name": "Link bar 9 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-8-slot",
+   "name": "Link bar 9 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-10",
+   "name": "Link bar 9 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-10-hex",
+   "name": "Link bar 9 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-10-slot",
+   "name": "Link bar 9 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-12p7",
+   "name": "Link bar 9 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-12p7-hex",
+   "name": "Link bar 9 holes, 12.7 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 12.7 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 12.7,
+    "holeShape": "hex",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-12p7-slot",
+   "name": "Link bar 9 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-15",
+   "name": "Link bar 9 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-15-hex",
+   "name": "Link bar 9 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-15-slot",
+   "name": "Link bar 9 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-20",
+   "name": "Link bar 9 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-20-hex",
+   "name": "Link bar 9 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-9h-20-slot",
+   "name": "Link bar 9 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 9 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "9 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 9,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-8",
+   "name": "Link bar 10 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-8-hex",
+   "name": "Link bar 10 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-8-slot",
+   "name": "Link bar 10 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-10",
+   "name": "Link bar 10 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-10-hex",
+   "name": "Link bar 10 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-10-slot",
+   "name": "Link bar 10 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-12p7",
+   "name": "Link bar 10 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-12p7-slot",
+   "name": "Link bar 10 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-15",
+   "name": "Link bar 10 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-15-hex",
+   "name": "Link bar 10 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-15-slot",
+   "name": "Link bar 10 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-20",
+   "name": "Link bar 10 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-20-hex",
+   "name": "Link bar 10 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-10h-20-slot",
+   "name": "Link bar 10 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 10 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "10 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 10,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-8",
+   "name": "Link bar 11 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-8-hex",
+   "name": "Link bar 11 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-8-slot",
+   "name": "Link bar 11 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-10",
+   "name": "Link bar 11 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-10-hex",
+   "name": "Link bar 11 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-10-slot",
+   "name": "Link bar 11 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-12p7",
+   "name": "Link bar 11 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-12p7-hex",
+   "name": "Link bar 11 holes, 12.7 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 12.7 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 12.7,
+    "holeShape": "hex",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-12p7-slot",
+   "name": "Link bar 11 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-15",
+   "name": "Link bar 11 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-15-hex",
+   "name": "Link bar 11 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-15-slot",
+   "name": "Link bar 11 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-20",
+   "name": "Link bar 11 holes, 20 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 20 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 20,
+    "holeShape": "round",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-20-hex",
+   "name": "Link bar 11 holes, 20 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 20 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 20,
+    "holeShape": "hex",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-11h-20-slot",
+   "name": "Link bar 11 holes, 20 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 11 holes, 20 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "11 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 11,
+    "pitch": 20,
+    "holeShape": "slot",
+    "width": 18
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-8",
+   "name": "Link bar 13 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-8-hex",
+   "name": "Link bar 13 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-8-slot",
+   "name": "Link bar 13 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-10",
+   "name": "Link bar 13 holes, 10 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 10 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 10,
+    "holeShape": "round",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-10-hex",
+   "name": "Link bar 13 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-10-slot",
+   "name": "Link bar 13 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-12p7",
+   "name": "Link bar 13 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-12p7-slot",
+   "name": "Link bar 13 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-15",
+   "name": "Link bar 13 holes, 15 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 15 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 15,
+    "holeShape": "round",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-15-hex",
+   "name": "Link bar 13 holes, 15 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 15 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 15,
+    "holeShape": "hex",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-13h-15-slot",
+   "name": "Link bar 13 holes, 15 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 13 holes, 15 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "13 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 13,
+    "pitch": 15,
+    "holeShape": "slot",
+    "width": 14
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-8",
+   "name": "Link bar 15 holes, 8 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 8 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 8,
+    "holeShape": "round",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-8-hex",
+   "name": "Link bar 15 holes, 8 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 8 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 8,
+    "holeShape": "hex",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-8-slot",
+   "name": "Link bar 15 holes, 8 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 8 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 8,
+    "holeShape": "slot",
+    "width": 8
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-10-hex",
+   "name": "Link bar 15 holes, 10 mm pitch, hex holes",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 10 mm pitch, hex holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "hex"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 10,
+    "holeShape": "hex",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-10-slot",
+   "name": "Link bar 15 holes, 10 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 10 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 10,
+    "holeShape": "slot",
+    "width": 9
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-12p7",
+   "name": "Link bar 15 holes, 12.7 mm pitch",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 12.7 mm pitch.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "round"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 12.7,
+    "holeShape": "round",
+    "width": 11
+   },
+   "series": "link-bars"
+  },
+  {
+   "id": "link-15h-12p7-slot",
+   "name": "Link bar 15 holes, 12.7 mm pitch, slot holes",
+   "generator": "link-bar",
+   "description": "Link bar 15 holes, 12.7 mm pitch, slot holes.",
+   "tags": [
+    "link",
+    "beam",
+    "robot",
+    "15 holes",
+    "slot"
+   ],
+   "params": {
+    "holes": 15,
+    "pitch": 12.7,
+    "holeShape": "slot",
+    "width": 11
+   },
+   "series": "link-bars"
+  }
+ ]
+}

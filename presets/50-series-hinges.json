@@ -1,0 +1,871 @@
+{
+ "group": "Hinge sizes",
+ "section": "planes",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "hinge-20-3-1p1",
+   "name": "Pin hinge 20 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-4-1p1",
+   "name": "Pin hinge 20 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-4-1p8",
+   "name": "Pin hinge 20 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-5-1p1",
+   "name": "Pin hinge 20 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-5-1p8",
+   "name": "Pin hinge 20 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-6-1p1",
+   "name": "Pin hinge 20 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-20-6-1p8",
+   "name": "Pin hinge 20 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 20 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "20mm"
+   ],
+   "params": {
+    "length": 20,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-3-1p1",
+   "name": "Pin hinge 30 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-4-1p1",
+   "name": "Pin hinge 30 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-5-1p1",
+   "name": "Pin hinge 30 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-5-1p8",
+   "name": "Pin hinge 30 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-6-1p1",
+   "name": "Pin hinge 30 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-30-6-1p8",
+   "name": "Pin hinge 30 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 30 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "30mm"
+   ],
+   "params": {
+    "length": 30,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-3-1p1",
+   "name": "Pin hinge 40 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-4-1p1",
+   "name": "Pin hinge 40 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-4-1p8",
+   "name": "Pin hinge 40 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-5-1p1",
+   "name": "Pin hinge 40 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-5-1p8",
+   "name": "Pin hinge 40 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-6-1p1",
+   "name": "Pin hinge 40 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-40-6-1p8",
+   "name": "Pin hinge 40 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 40 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "40mm"
+   ],
+   "params": {
+    "length": 40,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-3-1p1",
+   "name": "Pin hinge 50 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-4-1p1",
+   "name": "Pin hinge 50 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-4-1p8",
+   "name": "Pin hinge 50 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-5-1p1",
+   "name": "Pin hinge 50 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-5-1p8",
+   "name": "Pin hinge 50 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-6-1p1",
+   "name": "Pin hinge 50 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-50-6-1p8",
+   "name": "Pin hinge 50 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 50 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 5,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-3-1p1",
+   "name": "Pin hinge 60 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-4-1p1",
+   "name": "Pin hinge 60 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-4-1p8",
+   "name": "Pin hinge 60 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-5-1p1",
+   "name": "Pin hinge 60 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-5-1p8",
+   "name": "Pin hinge 60 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-6-1p1",
+   "name": "Pin hinge 60 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-60-6-1p8",
+   "name": "Pin hinge 60 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 60 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "60mm"
+   ],
+   "params": {
+    "length": 60,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-3-1p1",
+   "name": "Pin hinge 80 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-4-1p1",
+   "name": "Pin hinge 80 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-4-1p8",
+   "name": "Pin hinge 80 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-5-1p1",
+   "name": "Pin hinge 80 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-5-1p8",
+   "name": "Pin hinge 80 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-6-1p1",
+   "name": "Pin hinge 80 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-80-6-1p8",
+   "name": "Pin hinge 80 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 80 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "80mm"
+   ],
+   "params": {
+    "length": 80,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-3-1p1",
+   "name": "Pin hinge 100 mm, 3 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 3 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 3,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 8
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-4-1p1",
+   "name": "Pin hinge 100 mm, 4 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 4 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 4,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-4-1p8",
+   "name": "Pin hinge 100 mm, 4 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 4 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 4,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 10
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-5-1p1",
+   "name": "Pin hinge 100 mm, 5 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 5 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 5,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-5-1p8",
+   "name": "Pin hinge 100 mm, 5 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 5 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 5,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 12.5
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-6-1p1",
+   "name": "Pin hinge 100 mm, 6 mm knuckle, 1 mm wire pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 6 mm knuckle, 1 mm wire pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 6,
+    "pinHole": 1.1,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  },
+  {
+   "id": "hinge-100-6-1p8",
+   "name": "Pin hinge 100 mm, 6 mm knuckle, filament pin",
+   "generator": "pin-hinge",
+   "description": "Pin hinge 100 mm, 6 mm knuckle, filament pin.",
+   "tags": [
+    "hinge",
+    "100mm"
+   ],
+   "params": {
+    "length": 100,
+    "knuckleDiameter": 6,
+    "pinHole": 1.8,
+    "knuckles": 7,
+    "leafWidth": 15
+   },
+   "series": "hinges"
+  }
+ ]
+}

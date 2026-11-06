@@ -22,6 +22,7 @@ import { resolveParams } from './params.js';
 import { CatalogError } from './catalog.js';
 
 const STATUSES = ['idea', 'active', 'printing', 'done'];
+export const PRIORITIES = ['', 'high', 'medium', 'low'];
 const KINDS = ['preset', 'design', 'custom', 'stl'];
 export const BUNDLE_FORMAT = 'stltools-project';
 const FAV_KINDS = ['preset', 'design', 'generator', 'project', 'stl'];
@@ -80,7 +81,13 @@ export function createProjects({ dataDir, designs, library = null }) {
     const status = STATUSES.includes(raw.status ?? prev.status) ? raw.status ?? prev.status : 'active';
     const tags = (Array.isArray(raw.tags ?? prev.tags) ? raw.tags ?? prev.tags : []).map((t) => text(t, 'Tag', 30).toLowerCase()).filter(Boolean).slice(0, 20);
     const items = (Array.isArray(raw.items ?? prev.items) ? raw.items ?? prev.items : []).slice(0, 500).map(cleanItem);
-    return { name, description: text(raw.description ?? prev.description, 'Description', 2000), status, tags, items };
+    // v7: priority, linked parts (My Parts ids with quantity), where it came from, files still to attach
+    const priority = PRIORITIES.includes(raw.priority ?? prev.priority) ? raw.priority ?? prev.priority : '';
+    const components = (Array.isArray(raw.components ?? prev.components) ? raw.components ?? prev.components : [])
+      .filter((c) => c && /^[A-Z]{2,4}\d{2,3}$/.test(c.id)).slice(0, 100).map((c) => ({ id: c.id, qty: Math.max(1, Math.min(999, Math.round(Number(c.qty ?? 1)) || 1)) }));
+    const filesMissing = (Array.isArray(raw.filesMissing ?? prev.filesMissing) ? raw.filesMissing ?? prev.filesMissing : []).map((x) => text(x, 'File name', 200)).filter(Boolean).slice(0, 100);
+    const source = text(raw.source ?? prev.source, 'Source', 120);
+    return { name, description: text(raw.description ?? prev.description, 'Description', 20000), status, tags, items, priority, components, filesMissing, source };
   }
 
   /** Fill in a missing part name from the saved design or library STL it points at. */

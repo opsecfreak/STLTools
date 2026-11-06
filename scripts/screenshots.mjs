@@ -35,7 +35,8 @@ const base = `http://127.0.0.1:${srv.address().port}`;
 const mock = await startMockMoonraker({});
 const post = (path, body, method = 'POST') => fetch(base + path, { method, body: JSON.stringify(body) }).then((r) => r.json());
 
-// demo data
+// demo data (My Parts from the MTS starter set)
+await post('/api/parts/seed', { set: 'mts-v1' });
 const printer = await post('/api/printers', { name: 'SV07', url: `127.0.0.1:${mock.port}`, model: 'sovol-sv07' });
 await post('/api/settings', { printers: { defaultPrinter: printer.id } }, 'PUT');
 const d1 = await post('/api/designs', { name: 'ESC tray 16 mm arm, long', generator: 'component-mount', params: { itemLength: 60 }, section: 'quads' });
@@ -86,6 +87,12 @@ await shot('settings-printers', 'settings/printers', 2000, async () => {
   await page.waitForTimeout(1500);
 });
 await shot('printers', 'printers', 5000);
+await shot('my-parts', 'parts', 4000);
+await shot('needs-measurement', 'quads', 2500, async () => {
+  await page.fill('#presetSearch', 'pixhawk v5');
+  await page.locator('#presetList li').first().click();
+  await page.waitForTimeout(2000);
+});
 await page.emulateMedia({ colorScheme: 'dark' });
 await shot('dark-mode', 'quads', 2000, async () => {
   await page.fill('#presetSearch', 'typhoon');

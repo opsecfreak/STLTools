@@ -8,7 +8,7 @@
 import { $, el, store, debounce } from './lib.js';
 import { search, openItem } from './home.js';
 
-const KIND = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project', stl: 'STL', item: 'Shop item', page: 'Page' };
+const KIND = { preset: 'Preset', design: 'Saved', generator: 'Generator', project: 'Project', stl: 'STL', item: 'Shop item', page: 'Page', part: 'My part' };
 
 export function initGlobalSearch() {
   const input = $('globalSearch');

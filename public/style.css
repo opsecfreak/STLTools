@@ -420,3 +420,43 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; backgrou
 .getting-started ol { margin: 4px 0; padding-left: 20px; line-height: 1.7; }
 .tile-stls { border-left-color: #0a7ea4; } .tile-import { border-left-color: #1a7f37; } .tile-settings { border-left-color: #6e7781; }
 .thumb.kind-page, .thumb.kind-item { font-weight: 600; }
+
+/* ---------- v7: My Parts, ownership, needs measurement ---------- */
+.own-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 8px; margin-right: 4px; vertical-align: middle; background: var(--border); color: var(--text); }
+.own-badge.own-owned, .chip.own-owned { background: #1a7f37; color: #fff; border-color: transparent; }
+.own-badge.own-confirm, .chip.own-confirm { background: #bf8700; color: #fff; border-color: transparent; }
+.own-badge.own-planned, .chip.own-planned { background: #6e7781; color: #fff; border-color: transparent; }
+.flag { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 8px; margin-left: 6px; vertical-align: middle; border: 1px solid var(--border); color: var(--muted); }
+.flag-measure, .flag-conflict { border-color: var(--fail); color: var(--fail); }
+.flag-unverified { border-color: #bf8700; color: #bf8700; }
+.flag-standard, .flag-given { border-color: var(--ok); color: var(--ok); }
+.card-flags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.card-flags .flag { margin-left: 0; }
+.thumb.kind-measure { color: var(--fail); font-weight: 600; }
+.thumb.kind-part { font-weight: 700; font-size: 16px; }
+.field.measure { background: color-mix(in srgb, var(--fail) 12%, transparent); border-radius: 4px; padding: 4px 6px; margin-left: -6px; margin-right: -6px; }
+.field.measure label { color: var(--fail); }
+.field.measure input:placeholder-shown { border-color: var(--fail); }
+.verify-banner.needs-measure { background: color-mix(in srgb, var(--fail) 14%, var(--panel)); color: var(--text); border-left: 4px solid var(--fail); }
+.preset-list .pgroup { display: flex; align-items: center; gap: 2px; }
+.preset-list li.active .flag { color: inherit; border-color: currentColor; }
+.parts-list { display: flex; flex-direction: column; gap: 6px; }
+.parts-cat h3 { margin: 16px 0 6px; }
+.part-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 320px); gap: 8px 16px; background: var(--panel); border: 1px solid var(--border); border-left: 5px solid var(--border); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; }
+.part-row.own-owned { border-left-color: #1a7f37; } .part-row.own-confirm { border-left-color: #bf8700; } .part-row.own-planned { border-left-color: #6e7781; }
+.part-row code { font-weight: 700; }
+.part-edit { align-items: center; margin: 4px 0; }
+.part-edit select { width: auto; }
+.part-edit label { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
+.part-edit label.grow { flex: 1 1 260px; }
+.part-edit .part-qty { width: 90px; }
+.part-edit > input { flex: 1 1 160px; width: auto; }
+.part-presets { display: flex; flex-wrap: wrap; gap: 4px; align-content: flex-start; }
+.part-presets button { text-align: left; font-weight: 400; }
+.part-presets button.needs-measure { border-color: var(--fail); }
+.seed-box { display: flex; flex-wrap: wrap; gap: 10px; }
+.seed-card { background: var(--panel); margin: 0 0 8px; max-width: 520px; }
+.files-missing { background: var(--warn-bg); color: var(--warn-text); padding: 8px 10px; border-radius: 6px; font-size: 13px; }
+.files-missing ul { margin: 4px 0; padding-left: 20px; }
+.tile-parts { border-left-color: #1a7f37; }
+@media (max-width: 760px) { .part-row { grid-template-columns: 1fr; } }

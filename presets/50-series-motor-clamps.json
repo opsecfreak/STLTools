@@ -1,0 +1,315 @@
+{
+ "group": "Motor clamp sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "motor-clamp-6",
+   "name": "Round motor clamp 6 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 6 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "6mm"
+   ],
+   "params": {
+    "bodyDiameter": 6,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M2",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-8",
+   "name": "Round motor clamp 8 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 8 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "8mm"
+   ],
+   "params": {
+    "bodyDiameter": 8,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M2",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-10",
+   "name": "Round motor clamp 10 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 10 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "10mm"
+   ],
+   "params": {
+    "bodyDiameter": 10,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M2",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-12",
+   "name": "Round motor clamp 12 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 12 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "12mm"
+   ],
+   "params": {
+    "bodyDiameter": 12,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M2",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-15",
+   "name": "Round motor clamp 15 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 15 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "15mm"
+   ],
+   "params": {
+    "bodyDiameter": 15,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-16",
+   "name": "Round motor clamp 16 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 16 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "16mm"
+   ],
+   "params": {
+    "bodyDiameter": 16,
+    "flatHeight": 0,
+    "clampLength": 8,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-20",
+   "name": "Round motor clamp 20 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 20 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "20mm"
+   ],
+   "params": {
+    "bodyDiameter": 20,
+    "flatHeight": 0,
+    "clampLength": 10,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-24",
+   "name": "Round motor clamp 24 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 24 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "24mm"
+   ],
+   "params": {
+    "bodyDiameter": 24,
+    "flatHeight": 0,
+    "clampLength": 12,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-25",
+   "name": "Round motor clamp 25 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 25 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "25mm"
+   ],
+   "params": {
+    "bodyDiameter": 25,
+    "flatHeight": 0,
+    "clampLength": 13,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-28",
+   "name": "Round motor clamp 28 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 28 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "28mm"
+   ],
+   "params": {
+    "bodyDiameter": 28,
+    "flatHeight": 0,
+    "clampLength": 14,
+    "capBolt": "M3",
+    "wall": 2.5
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-32",
+   "name": "Round motor clamp 32 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 32 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "32mm"
+   ],
+   "params": {
+    "bodyDiameter": 32,
+    "flatHeight": 0,
+    "clampLength": 16,
+    "capBolt": "M3",
+    "wall": 3
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-35",
+   "name": "Round motor clamp 35 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 35 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "35mm"
+   ],
+   "params": {
+    "bodyDiameter": 35,
+    "flatHeight": 0,
+    "clampLength": 18,
+    "capBolt": "M3",
+    "wall": 3
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-37",
+   "name": "Round motor clamp 37 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 37 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "37mm"
+   ],
+   "params": {
+    "bodyDiameter": 37,
+    "flatHeight": 0,
+    "clampLength": 19,
+    "capBolt": "M3",
+    "wall": 3
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  },
+  {
+   "id": "motor-clamp-42",
+   "name": "Round motor clamp 42 mm",
+   "generator": "motor-clamp",
+   "description": "Round motor clamp 42 mm.",
+   "tags": [
+    "motor",
+    "clamp",
+    "42mm"
+   ],
+   "params": {
+    "bodyDiameter": 42,
+    "flatHeight": 0,
+    "clampLength": 21,
+    "capBolt": "M3",
+    "wall": 3
+   },
+   "series": "motor-clamps",
+   "verify": [
+    "bodyDiameter"
+   ]
+  }
+ ]
+}

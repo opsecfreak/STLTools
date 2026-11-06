@@ -1,0 +1,2905 @@
+{
+ "group": "Arm motor mount sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "motor-mount-round-10-9x9",
+   "name": "Motor mount 9 x 9 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-12x12",
+   "name": "Motor mount 12 x 12 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-16x16",
+   "name": "Motor mount 16 x 16 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-16x19",
+   "name": "Motor mount 16 x 19 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-19x19",
+   "name": "Motor mount 19 x 19 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-25x25",
+   "name": "Motor mount 25 x 25 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-10-30x30",
+   "name": "Motor mount 30 x 30 on 10 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 10,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-9x9",
+   "name": "Motor mount 9 x 9 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-12x12",
+   "name": "Motor mount 12 x 12 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-16x16",
+   "name": "Motor mount 16 x 16 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-16x19",
+   "name": "Motor mount 16 x 19 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-19x19",
+   "name": "Motor mount 19 x 19 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-25x25",
+   "name": "Motor mount 25 x 25 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-12-30x30",
+   "name": "Motor mount 30 x 30 on 12 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 12,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-9x9",
+   "name": "Motor mount 9 x 9 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-12x12",
+   "name": "Motor mount 12 x 12 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-16x16",
+   "name": "Motor mount 16 x 16 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-16x19",
+   "name": "Motor mount 16 x 19 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-19x19",
+   "name": "Motor mount 19 x 19 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-25x25",
+   "name": "Motor mount 25 x 25 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-14-30x30",
+   "name": "Motor mount 30 x 30 on 14 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 14,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-9x9",
+   "name": "Motor mount 9 x 9 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-12x12",
+   "name": "Motor mount 12 x 12 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-16x16",
+   "name": "Motor mount 16 x 16 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-16x19",
+   "name": "Motor mount 16 x 19 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-19x19",
+   "name": "Motor mount 19 x 19 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-25x25",
+   "name": "Motor mount 25 x 25 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-15-30x30",
+   "name": "Motor mount 30 x 30 on 15 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 15,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-9x9",
+   "name": "Motor mount 9 x 9 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-12x12",
+   "name": "Motor mount 12 x 12 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-16x16",
+   "name": "Motor mount 16 x 16 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-16x19",
+   "name": "Motor mount 16 x 19 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-19x19",
+   "name": "Motor mount 19 x 19 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-25x25",
+   "name": "Motor mount 25 x 25 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-16-30x30",
+   "name": "Motor mount 30 x 30 on 16 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 16,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-9x9",
+   "name": "Motor mount 9 x 9 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-12x12",
+   "name": "Motor mount 12 x 12 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-16x16",
+   "name": "Motor mount 16 x 16 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-16x19",
+   "name": "Motor mount 16 x 19 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-19x19",
+   "name": "Motor mount 19 x 19 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-25x25",
+   "name": "Motor mount 25 x 25 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-18-30x30",
+   "name": "Motor mount 30 x 30 on 18 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 18,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-9x9",
+   "name": "Motor mount 9 x 9 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-12x12",
+   "name": "Motor mount 12 x 12 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-16x16",
+   "name": "Motor mount 16 x 16 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-16x19",
+   "name": "Motor mount 16 x 19 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-19x19",
+   "name": "Motor mount 19 x 19 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-25x25",
+   "name": "Motor mount 25 x 25 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-20-30x30",
+   "name": "Motor mount 30 x 30 on 20 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 20,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-9x9",
+   "name": "Motor mount 9 x 9 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-12x12",
+   "name": "Motor mount 12 x 12 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-16x16",
+   "name": "Motor mount 16 x 16 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-16x19",
+   "name": "Motor mount 16 x 19 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-19x19",
+   "name": "Motor mount 19 x 19 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-25x25",
+   "name": "Motor mount 25 x 25 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-22-30x30",
+   "name": "Motor mount 30 x 30 on 22 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 22,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-9x9",
+   "name": "Motor mount 9 x 9 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-12x12",
+   "name": "Motor mount 12 x 12 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-16x16",
+   "name": "Motor mount 16 x 16 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-16x19",
+   "name": "Motor mount 16 x 19 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-19x19",
+   "name": "Motor mount 19 x 19 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-25x25",
+   "name": "Motor mount 25 x 25 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-round-25-30x30",
+   "name": "Motor mount 30 x 30 on 25 mm round arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm round arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "round"
+   ],
+   "params": {
+    "tubeShape": "round",
+    "tubeSize": 25,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-9x9",
+   "name": "Motor mount 9 x 9 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-12x12",
+   "name": "Motor mount 12 x 12 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-16x16",
+   "name": "Motor mount 16 x 16 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-16x19",
+   "name": "Motor mount 16 x 19 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-19x19",
+   "name": "Motor mount 19 x 19 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-25x25",
+   "name": "Motor mount 25 x 25 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-10-30x30",
+   "name": "Motor mount 30 x 30 on 10 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 10 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 10,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-9x9",
+   "name": "Motor mount 9 x 9 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-12x12",
+   "name": "Motor mount 12 x 12 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-16x16",
+   "name": "Motor mount 16 x 16 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-16x19",
+   "name": "Motor mount 16 x 19 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-19x19",
+   "name": "Motor mount 19 x 19 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-25x25",
+   "name": "Motor mount 25 x 25 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-12-30x30",
+   "name": "Motor mount 30 x 30 on 12 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 12 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 12,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-9x9",
+   "name": "Motor mount 9 x 9 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-12x12",
+   "name": "Motor mount 12 x 12 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-16x16",
+   "name": "Motor mount 16 x 16 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-16x19",
+   "name": "Motor mount 16 x 19 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-19x19",
+   "name": "Motor mount 19 x 19 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-25x25",
+   "name": "Motor mount 25 x 25 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-14-30x30",
+   "name": "Motor mount 30 x 30 on 14 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 14 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 14,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-9x9",
+   "name": "Motor mount 9 x 9 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-12x12",
+   "name": "Motor mount 12 x 12 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-16x16",
+   "name": "Motor mount 16 x 16 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-16x19",
+   "name": "Motor mount 16 x 19 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-19x19",
+   "name": "Motor mount 19 x 19 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-25x25",
+   "name": "Motor mount 25 x 25 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-15-30x30",
+   "name": "Motor mount 30 x 30 on 15 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 15 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 15,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-9x9",
+   "name": "Motor mount 9 x 9 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-12x12",
+   "name": "Motor mount 12 x 12 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-16x16",
+   "name": "Motor mount 16 x 16 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-16x19",
+   "name": "Motor mount 16 x 19 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-19x19",
+   "name": "Motor mount 19 x 19 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-25x25",
+   "name": "Motor mount 25 x 25 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-16-30x30",
+   "name": "Motor mount 30 x 30 on 16 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 16 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 16,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-9x9",
+   "name": "Motor mount 9 x 9 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-12x12",
+   "name": "Motor mount 12 x 12 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-16x16",
+   "name": "Motor mount 16 x 16 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-16x19",
+   "name": "Motor mount 16 x 19 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-19x19",
+   "name": "Motor mount 19 x 19 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-25x25",
+   "name": "Motor mount 25 x 25 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-18-30x30",
+   "name": "Motor mount 30 x 30 on 18 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 18 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 18,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-9x9",
+   "name": "Motor mount 9 x 9 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-12x12",
+   "name": "Motor mount 12 x 12 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-16x16",
+   "name": "Motor mount 16 x 16 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-16x19",
+   "name": "Motor mount 16 x 19 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-19x19",
+   "name": "Motor mount 19 x 19 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-25x25",
+   "name": "Motor mount 25 x 25 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-20-30x30",
+   "name": "Motor mount 30 x 30 on 20 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 20 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 20,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-9x9",
+   "name": "Motor mount 9 x 9 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-12x12",
+   "name": "Motor mount 12 x 12 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-16x16",
+   "name": "Motor mount 16 x 16 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-16x19",
+   "name": "Motor mount 16 x 19 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-19x19",
+   "name": "Motor mount 19 x 19 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-25x25",
+   "name": "Motor mount 25 x 25 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-22-30x30",
+   "name": "Motor mount 30 x 30 on 22 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 22 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 22,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-9x9",
+   "name": "Motor mount 9 x 9 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 9 x 9 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "9x9",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 32,
+    "centerHole": 4
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-12x12",
+   "name": "Motor mount 12 x 12 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 12 x 12 mm (M2). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "12x12",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 36,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-16x16",
+   "name": "Motor mount 16 x 16 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 16 x 16 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x16",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 42,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-16x19",
+   "name": "Motor mount 16 x 19 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 16 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "16x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 44,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-19x19",
+   "name": "Motor mount 19 x 19 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 19 x 19 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "19x19",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 46,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-25x25",
+   "name": "Motor mount 25 x 25 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 25 x 25 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "25x25",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 54,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  },
+  {
+   "id": "motor-mount-square-25-30x30",
+   "name": "Motor mount 30 x 30 on 25 mm square arm",
+   "generator": "motor-mount",
+   "description": "Clamps a 25 mm square arm. Motor holes 30 x 30 mm (M3). Check your motor's pattern.",
+   "tags": [
+    "motor",
+    "mount",
+    "arm",
+    "30x30",
+    "square"
+   ],
+   "params": {
+    "tubeShape": "square",
+    "tubeSize": 25,
+    "motorPatternA": 30,
+    "motorPatternB": 30,
+    "motorBolt": "M3",
+    "padDiameter": 62,
+    "centerHole": 8
+   },
+   "series": "motor-mounts"
+  }
+ ]
+}
