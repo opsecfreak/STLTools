@@ -9,6 +9,7 @@ import { listPresets, getPreset } from '../src/core/presets.js';
 const USAGE = `stltools - parametric STL generator (units: mm)
 
 Usage:
+  stltools app [--lan] [--port 3000]    Start the web app (opens a browser window)
   stltools list                         List generators
   stltools info <generator>             Show parameters and defaults
   stltools gen <generator> [options]    Generate STL files
@@ -118,6 +119,7 @@ async function main() {
   const [cmd, id] = positional;
   if (opts.help || !cmd) return console.log(USAGE);
   if (cmd === 'list') return cmdList();
+  if (cmd === 'app' || cmd === 'serve') return import('./stltools-app.js'); // web UI launcher (reads its own flags)
   if (cmd === 'presets') return cmdPresets(id);
   if (!id) throw new Error(`"${cmd}" needs a generator id. Run "stltools list".`);
   if (cmd === 'info') return cmdInfo(id);
