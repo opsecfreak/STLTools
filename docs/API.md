@@ -57,7 +57,7 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 
 | Method | Path | Body | Returns |
 |---|---|---|---|
-| GET | `/api/parts` | | `{ categories[], items: [{ id, category, name, detail, qty, ownership, ownershipKey, projects, dims, dimsSource, dimsFlag, printNeed, notes, edited }], seeds[] }` |
+| GET | `/api/parts` | | `{ categories[], items: [{ id, category, name, detail, qty, ownership, ownershipKey, projects, dims, dimsSource, dimsFlag, printNeed, notes, presets[], edited }], seeds[] }` (`presets`: preset ids that fit the part) |
 | POST | `/api/parts` | `{ id: "ABC01", name, category, ownership, dims, ... }` | new part (201) |
 | GET / PUT / DELETE | `/api/parts/:id` | partial part | an edited part is never overwritten by a seed |
 | POST | `/api/parts/import?overwrite=1` | components.json (`{ categories, items: [{ id, dims_mm, dims_source, print_need, ... }] }`) | `{ added, updated, kept, total }` |
@@ -66,6 +66,14 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 
 `dimsFlag`: `measure`, `conflict`, `unverified`, `standard`, `given`, `none`.
 `ownershipKey`: `Owned`, `Confirm`, `Planned`.
+
+## Collections (1.0)
+
+| Method | Path | Body | Returns |
+|---|---|---|---|
+| GET / POST | `/api/collections` | `{ name, color?: "#rrggbb", description?, items?: [{ kind, id }] }` | list (by name) / new collection |
+| GET / PUT / DELETE | `/api/collections/:id` | partial collection | |
+| POST | `/api/collections/:id/toggle` | `{ kind: preset\|design\|generator\|stl\|project, id }` | the collection (item added, or removed if it was there) |
 
 ## Designs, projects, favorites
 

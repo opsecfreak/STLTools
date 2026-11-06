@@ -1,0 +1,403 @@
+{
+ "group": "Shaft support sizes",
+ "section": "robotics",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "shaft-support-3",
+   "name": "Shaft support 3 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 3 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "3mm"
+   ],
+   "params": {
+    "rod": 3,
+    "centerHeight": 13,
+    "width": 40,
+    "bolt": "M3",
+    "pinch": "M2.5",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-3-tall",
+   "name": "Shaft support 3 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 3 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "3mm"
+   ],
+   "params": {
+    "rod": 3,
+    "centerHeight": 16,
+    "width": 40,
+    "bolt": "M3",
+    "pinch": "M2.5",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-4",
+   "name": "Shaft support 4 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 4 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "4mm"
+   ],
+   "params": {
+    "rod": 4,
+    "centerHeight": 16,
+    "width": 42,
+    "bolt": "M3",
+    "pinch": "M2.5",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-4-tall",
+   "name": "Shaft support 4 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 4 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "4mm"
+   ],
+   "params": {
+    "rod": 4,
+    "centerHeight": 19,
+    "width": 42,
+    "bolt": "M3",
+    "pinch": "M2.5",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-5",
+   "name": "Shaft support 5 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 5 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "5mm"
+   ],
+   "params": {
+    "rod": 5,
+    "centerHeight": 18,
+    "width": 44,
+    "bolt": "M3",
+    "pinch": "M3",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-5-tall",
+   "name": "Shaft support 5 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 5 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "5mm"
+   ],
+   "params": {
+    "rod": 5,
+    "centerHeight": 22,
+    "width": 44,
+    "bolt": "M3",
+    "pinch": "M3",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-6",
+   "name": "Shaft support 6 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 6 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "6mm"
+   ],
+   "params": {
+    "rod": 6,
+    "centerHeight": 20,
+    "width": 46,
+    "bolt": "M4",
+    "pinch": "M3",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-6-tall",
+   "name": "Shaft support 6 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 6 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "6mm"
+   ],
+   "params": {
+    "rod": 6,
+    "centerHeight": 25,
+    "width": 46,
+    "bolt": "M4",
+    "pinch": "M3",
+    "thickness": 10
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-8",
+   "name": "Shaft support 8 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 8 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "8mm"
+   ],
+   "params": {
+    "rod": 8,
+    "centerHeight": 25,
+    "width": 50,
+    "bolt": "M4",
+    "pinch": "M3",
+    "thickness": 12
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-8-tall",
+   "name": "Shaft support 8 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 8 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "8mm"
+   ],
+   "params": {
+    "rod": 8,
+    "centerHeight": 32,
+    "width": 50,
+    "bolt": "M4",
+    "pinch": "M3",
+    "thickness": 12
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-10",
+   "name": "Shaft support 10 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 10 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "10mm"
+   ],
+   "params": {
+    "rod": 10,
+    "centerHeight": 30,
+    "width": 54,
+    "bolt": "M4",
+    "pinch": "M4",
+    "thickness": 15
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-10-tall",
+   "name": "Shaft support 10 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 10 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "10mm"
+   ],
+   "params": {
+    "rod": 10,
+    "centerHeight": 38,
+    "width": 54,
+    "bolt": "M4",
+    "pinch": "M4",
+    "thickness": 15
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-12",
+   "name": "Shaft support 12 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 12 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "12mm"
+   ],
+   "params": {
+    "rod": 12,
+    "centerHeight": 35,
+    "width": 58,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 18
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-12-tall",
+   "name": "Shaft support 12 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 12 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "12mm"
+   ],
+   "params": {
+    "rod": 12,
+    "centerHeight": 44,
+    "width": 58,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 18
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-16",
+   "name": "Shaft support 16 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 16 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "16mm"
+   ],
+   "params": {
+    "rod": 16,
+    "centerHeight": 44,
+    "width": 66,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 24
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-16-tall",
+   "name": "Shaft support 16 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 16 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "16mm"
+   ],
+   "params": {
+    "rod": 16,
+    "centerHeight": 57,
+    "width": 66,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 24
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-20",
+   "name": "Shaft support 20 mm rod",
+   "generator": "shaft-support",
+   "description": "Shaft support 20 mm rod.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "20mm"
+   ],
+   "params": {
+    "rod": 20,
+    "centerHeight": 54,
+    "width": 74,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 30
+   },
+   "series": "shaft-supports"
+  },
+  {
+   "id": "shaft-support-20-tall",
+   "name": "Shaft support 20 mm rod, tall",
+   "generator": "shaft-support",
+   "description": "Shaft support 20 mm rod, tall.",
+   "tags": [
+    "shaft",
+    "rod",
+    "linear",
+    "sk",
+    "20mm"
+   ],
+   "params": {
+    "rod": 20,
+    "centerHeight": 70,
+    "width": 74,
+    "bolt": "M5",
+    "pinch": "M4",
+    "thickness": 30
+   },
+   "series": "shaft-supports"
+  }
+ ]
+}

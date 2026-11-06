@@ -67,6 +67,8 @@ function clean(raw, prev = {}) {
     dimsFlag: dimsFlag(dims, dimsSource),
     printNeed: pick('printNeed', 400, 'Print need'),
     notes: pick('notes', 2000),
+    // presets that fit this part (preset ids); My Parts lists them and the ownership filter follows them
+    presets: (Array.isArray(raw.presets ?? prev.presets) ? raw.presets ?? prev.presets : []).map(String).filter((x) => /^[a-z0-9][a-z0-9-]{1,80}$/.test(x)).slice(0, 50),
   };
 }
 
@@ -76,7 +78,7 @@ export function fromComponents(json) {
   if (!Array.isArray(items)) throw new CatalogError('Not a components file (no items list)');
   return {
     categories: Array.isArray(json.categories) ? json.categories.map(String) : [...new Set(items.map((i) => i.category))],
-    items: items.map((i) => ({ id: i.id, category: i.category, name: i.name, detail: i.detail, qty: i.qty, ownership: i.ownership, projects: i.projects, dims: i.dims_mm ?? i.dims, dimsSource: i.dims_source ?? i.dimsSource, printNeed: i.print_need ?? i.printNeed, notes: i.notes })),
+    items: items.map((i) => ({ id: i.id, category: i.category, name: i.name, detail: i.detail, qty: i.qty, ownership: i.ownership, projects: i.projects, dims: i.dims_mm ?? i.dims, dimsSource: i.dims_source ?? i.dimsSource, printNeed: i.print_need ?? i.printNeed, notes: i.notes, presets: i.presets })),
   };
 }
 

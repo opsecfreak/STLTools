@@ -1,0 +1,1099 @@
+{
+ "group": "Drawer unit sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "drawers-2x-60-20",
+   "name": "Drawer unit, 2 drawers 60 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 60 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-60-30",
+   "name": "Drawer unit, 2 drawers 60 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 60 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-60-45",
+   "name": "Drawer unit, 2 drawers 60 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 60 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-80-20",
+   "name": "Drawer unit, 2 drawers 80 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 80 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-80-30",
+   "name": "Drawer unit, 2 drawers 80 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 80 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-80-45",
+   "name": "Drawer unit, 2 drawers 80 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 80 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-100-20",
+   "name": "Drawer unit, 2 drawers 100 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 100 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-100-30",
+   "name": "Drawer unit, 2 drawers 100 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 100 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-100-45",
+   "name": "Drawer unit, 2 drawers 100 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 100 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-130-20",
+   "name": "Drawer unit, 2 drawers 130 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 130 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-130-30",
+   "name": "Drawer unit, 2 drawers 130 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 130 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-2x-130-45",
+   "name": "Drawer unit, 2 drawers 130 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 2 drawers 130 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "2 drawers"
+   ],
+   "params": {
+    "drawers": 2,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-60-20",
+   "name": "Drawer unit, 3 drawers 60 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 60 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-60-30",
+   "name": "Drawer unit, 3 drawers 60 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 60 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-60-45",
+   "name": "Drawer unit, 3 drawers 60 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 60 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-80-20",
+   "name": "Drawer unit, 3 drawers 80 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 80 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-80-30",
+   "name": "Drawer unit, 3 drawers 80 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 80 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-80-45",
+   "name": "Drawer unit, 3 drawers 80 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 80 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-100-20",
+   "name": "Drawer unit, 3 drawers 100 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 100 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-100-30",
+   "name": "Drawer unit, 3 drawers 100 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 100 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-100-45",
+   "name": "Drawer unit, 3 drawers 100 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 100 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-130-20",
+   "name": "Drawer unit, 3 drawers 130 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 130 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-130-30",
+   "name": "Drawer unit, 3 drawers 130 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 130 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-3x-130-45",
+   "name": "Drawer unit, 3 drawers 130 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 3 drawers 130 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "3 drawers"
+   ],
+   "params": {
+    "drawers": 3,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-60-20",
+   "name": "Drawer unit, 4 drawers 60 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 60 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-60-30",
+   "name": "Drawer unit, 4 drawers 60 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 60 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-60-45",
+   "name": "Drawer unit, 4 drawers 60 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 60 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-80-20",
+   "name": "Drawer unit, 4 drawers 80 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 80 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-80-30",
+   "name": "Drawer unit, 4 drawers 80 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 80 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-80-45",
+   "name": "Drawer unit, 4 drawers 80 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 80 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-100-20",
+   "name": "Drawer unit, 4 drawers 100 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 100 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-100-30",
+   "name": "Drawer unit, 4 drawers 100 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 100 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-100-45",
+   "name": "Drawer unit, 4 drawers 100 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 100 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-130-20",
+   "name": "Drawer unit, 4 drawers 130 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 130 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-130-30",
+   "name": "Drawer unit, 4 drawers 130 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 130 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-4x-130-45",
+   "name": "Drawer unit, 4 drawers 130 x 120 x 45 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 4 drawers 130 x 120 x 45 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "4 drawers"
+   ],
+   "params": {
+    "drawers": 4,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 45,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-60-20",
+   "name": "Drawer unit, 5 drawers 60 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 60 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-60-30",
+   "name": "Drawer unit, 5 drawers 60 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 60 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-80-20",
+   "name": "Drawer unit, 5 drawers 80 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 80 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-80-30",
+   "name": "Drawer unit, 5 drawers 80 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 80 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-100-20",
+   "name": "Drawer unit, 5 drawers 100 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 100 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-100-30",
+   "name": "Drawer unit, 5 drawers 100 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 100 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-130-20",
+   "name": "Drawer unit, 5 drawers 130 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 130 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-5x-130-30",
+   "name": "Drawer unit, 5 drawers 130 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 5 drawers 130 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "5 drawers"
+   ],
+   "params": {
+    "drawers": 5,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-60-20",
+   "name": "Drawer unit, 6 drawers 60 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 60 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-60-30",
+   "name": "Drawer unit, 6 drawers 60 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 60 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 60,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-80-20",
+   "name": "Drawer unit, 6 drawers 80 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 80 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-80-30",
+   "name": "Drawer unit, 6 drawers 80 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 80 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 80,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 0
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-100-20",
+   "name": "Drawer unit, 6 drawers 100 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 100 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-100-30",
+   "name": "Drawer unit, 6 drawers 100 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 100 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 100,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-130-20",
+   "name": "Drawer unit, 6 drawers 130 x 120 x 20 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 130 x 120 x 20 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 20,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  },
+  {
+   "id": "drawers-6x-130-30",
+   "name": "Drawer unit, 6 drawers 130 x 120 x 30 mm",
+   "generator": "drawer-unit",
+   "description": "Drawer unit, 6 drawers 130 x 120 x 30 mm.",
+   "tags": [
+    "drawer",
+    "cabinet",
+    "storage",
+    "assembly",
+    "6 drawers"
+   ],
+   "params": {
+    "drawers": 6,
+    "drawerWidth": 130,
+    "drawerDepth": 120,
+    "drawerHeight": 30,
+    "dividers": 1
+   },
+   "series": "drawer-units"
+  }
+ ]
+}

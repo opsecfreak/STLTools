@@ -15,9 +15,9 @@ const FLAG_LABEL = { measure: 'Needs measurement', conflict: 'Sizes conflict: me
 
 /** Ownership of a preset: its part in My Parts, else the preset's own field. */
 export function ownershipOf(preset) {
-  if (!preset?.component) return preset?.ownership ?? null;
-  const p = ctx?.state.parts?.find((x) => x.id === preset.component);
-  return p?.ownershipKey ?? preset.ownership ?? null;
+  const parts = ctx?.state.parts ?? [];
+  const p = (preset?.component && parts.find((x) => x.id === preset.component)) || parts.find((x) => x.presets?.includes(preset?.id));
+  return p?.ownershipKey ?? preset?.ownership ?? null;
 }
 
 export function ownBadge(own) {
@@ -41,7 +41,10 @@ export async function renderParts(page, focusId = '') {
   const cat = el('select', {}, el('option', { value: '', textContent: 'All categories' }), ...d.categories.map((c) => el('option', { value: c, textContent: c, selected: saved.cat === c })));
   const list = el('div', { className: 'parts-list' });
 
-  const presetsFor = (id) => ctx.state.presets.filter((p) => p.component === id);
+  const presetsFor = (id) => {
+    const part = d.items.find((x) => x.id === id);
+    return ctx.state.presets.filter((p) => p.component === id || part?.presets?.includes(p.id));
+  };
   const counts = (items) => ['Owned', 'Confirm', 'Planned'].map((k) => `${items.filter((i) => i.ownershipKey === k).length} ${k.toLowerCase()}`).join(', ');
 
   const draw = () => {

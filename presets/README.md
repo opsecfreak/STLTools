@@ -29,7 +29,7 @@ Ready-made designs. Each preset is a generator plus the values that differ from 
 | `21-robot-hardware.json` | Robotics | 2020 / 3030 / 4040 brackets, motor clamps, repair cradles |
 | `22-hardware-parts.json` | By part category | Holders, trays, cases and mounts for specific hardware (Pixhawk, F722 stacks, TF-Luna, LoRa boards, servos, cells...), with `category` and `measure` |
 | `23-assemblies.json` | Robotics | Gimbal assemblies: servo pan-tilt (9 g, MG996R), brushless 2-axis frames (SimpleBGC) |
-| `50-series-*.json` | All tabs | Size series (about 3,000): clamps per tube size, spacers per bolt and length, gears, pulleys, bins... **Generated** by `scripts/build-series.mjs`: edit the script, not the files |
+| `50-series-*.json` | All tabs | Size series (about 3,200, incl. cell holders, shaft supports, drawer units, spool arms, quad arms, drill guides in 1.0): clamps per tube size, spacers per bolt and length, gears, pulleys, bins... **Generated** by `scripts/build-series.mjs`: edit the script, not the files |
 
 Your own presets go in `custom/presets/` (see [custom/README.md](../custom/README.md)).
 

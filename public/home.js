@@ -64,6 +64,7 @@ export function starButton(kind, id) {
 /** Places in the app that global search can jump to. */
 export const PAGES = [
   ['settings', 'Settings', 'Theme, live preview, 3D view, labels, printers, estimates, backup', ['options', 'preferences', 'config']],
+  ['browse', 'Browse', 'Everything with filters: type, tab, category, generator, tags, collections, size series', ['filter', 'categories', 'facets', 'collections']],
   ['parts', 'My Parts', 'Parts you own or plan to get: ownership, sizes to measure, matching presets', ['inventory', 'components', 'owned']],
   ['settings/printers', 'Settings: Printers', 'Connect, test and save Klipper / Moonraker printers (Sovol SV07)', ['sv07', 'sovol', 'moonraker', 'mainsail', 'connect', 'api key']],
   ['settings/print', 'Settings: Print estimates', 'Printer profile, layer height, walls, infill, material, calibration', ['time', 'filament', 'estimate', 'calibrate']],
@@ -86,7 +87,7 @@ const defaultsOf = (gen) => Object.fromEntries(Object.entries(gen.params).map(([
 let indexCache = null;
 let indexSources = [];
 function buildIndex() {
-  const sources = [ctx.state.generators, ctx.state.presets, ctx.state.designs, ctx.state.library, ctx.state.items, ctx.state.parts, projects];
+  const sources = [ctx.state.generators, ctx.state.presets, ctx.state.designs, ctx.state.library, ctx.state.items, ctx.state.parts, projects, ctx.state.collections];
   if (indexCache && sources.every((x, i) => x === indexSources[i])) return indexCache;
   indexSources = sources;
   indexCache = buildIndexNow();
@@ -149,7 +150,10 @@ function buildIndexNow() {
   for (const [hash, title, description, tags] of PAGES) {
     items.push({ kind: 'page', id: hash, title, sub: 'Page', description, section: null, sections: [], generator: null, group: 'Pages', tags, params: {}, ref: { hash } });
   }
+  const inCol = new Map();
+  for (const c of ctx.state.collections ?? []) for (const i of c.items) inCol.set(`${i.kind}:${i.id}`, [...(inCol.get(`${i.kind}:${i.id}`) ?? []), c.id]);
   for (const it of items) {
+    it.collections = inCol.get(`${it.kind}:${it.id}`) ?? [];
     it.text = [it.title, it.sub, it.description, it.group, it.generator, it.generatorName, it.id, ...it.tags, ...it.sections.map((s) => SECTION_NAMES[s])].join(' ').toLowerCase();
   }
   return items;
@@ -205,6 +209,7 @@ function filterMatch(it, f) {
   else if (k === 'cat' || k === 'category') ok = (it.category ?? it.group ?? '').toLowerCase().includes(f.value);
   else if (k === 'part' || k === 'component') ok = (it.component ?? '').toLowerCase() === f.value;
   else if (k === 'series') ok = (it.series ?? '').includes(f.value);
+  else if (k === 'col' || k === 'collection') ok = it.collections.some((id) => (ctx.state.collections ?? []).find((c) => c.id === id)?.name.toLowerCase().includes(f.value));
   else {
     const key = Object.keys(it.params).find((p) => p.toLowerCase() === k);
     ok = key ? compare(it.params[key], f.op, f.value) : false;
@@ -297,7 +302,7 @@ const KIND_LABEL = { preset: 'Preset', design: 'Saved', generator: 'Generator', 
 export function card(it, view = 'grid') {
   const actions = el('div', { className: 'card-actions' }, ['page', 'item', 'part'].includes(it.kind) ? null : starButton(it.kind, it.id));
   if (!['project', 'page', 'item', 'part'].includes(it.kind)) {
-    actions.append(el('button', { type: 'button', className: 'icon', textContent: '+', title: 'Add to a project', 'aria-label': 'Add to a project', onclick: (e) => { e.stopPropagation(); addToProject(selectionFromItem(it)); } }));
+    actions.append(el('button', { type: 'button', className: 'icon', textContent: '+', title: 'Add to a project or a collection', 'aria-label': 'Add to a project or a collection', onclick: (e) => { e.stopPropagation(); addToSomething(it); } }));
   }
   const body = el('div', { className: 'card-body' },
     el('div', { className: 'card-title', textContent: it.title }),
@@ -305,7 +310,8 @@ export function card(it, view = 'grid') {
     it.ownership || it.measure?.length ? el('div', { className: 'card-flags' }, ownBadge(it.ownership), it.measure?.length ? el('span', { className: 'flag flag-measure', textContent: 'Needs measurement' }) : null) : null,
     it.kind === 'project' ? projectProgress(it.ref) : null,
     view === 'list' && it.description ? el('div', { className: 'card-desc', textContent: it.description }) : null);
-  const c = el('article', { className: `card-item kind-${it.kind} ${view}`, tabIndex: 0, title: it.description || it.title },
+  const cardTip = ctx.state.cardTips?.() === false ? null : [it.title, it.sub, it.description].filter(Boolean).join('\n');
+  const c = el('article', { className: `card-item kind-${it.kind} ${view}`, tabIndex: 0, title: cardTip },
     el('div', { className: 'card-thumb' }, itemThumb(it), el('span', { className: `badge kind-${it.kind}`, textContent: KIND_LABEL[it.kind] })),
     body, actions);
   c.onclick = () => openItem(it);
@@ -333,12 +339,48 @@ function selectionFromItem(it) {
   return { kind: 'custom', generator: it.generator, params: it.params, name: it.title };
 }
 
+/** "+" on a card: add to a project, or put it in a collection (toggle). */
+export async function addToSomething(it) {
+  await refreshProjects();
+  const cols = ctx.state.collections ?? [];
+  const canCollect = ['preset', 'design', 'generator', 'stl', 'project'].includes(it.kind);
+  const choices = [
+    ...(it.kind === 'project' ? [] : projects.map((p) => ({ label: `Project: ${p.name} (${p.items.length})`, value: `p:${p.id}` }))),
+    ...(canCollect ? cols.map((c) => ({ label: `${c.items.some((i) => i.kind === it.kind && i.id === it.id) ? 'Remove from' : 'Collection:'} ${c.name} (${c.items.length})`, value: `c:${c.id}` })) : []),
+    ...(it.kind === 'project' ? [] : [{ label: 'New project...', value: 'p:__new__', secondary: true }]),
+    ...(canCollect ? [{ label: 'New collection...', value: 'c:__new__', secondary: true }] : []),
+  ];
+  const pick = await chooseDialog('Add to...', choices, { message: it.title });
+  if (!pick) return;
+  try {
+    if (pick.startsWith('c:')) {
+      let id = pick.slice(2);
+      if (id === '__new__') {
+        const r = await chooseDialog('New collection', [{ label: 'Create and add', value: 'ok' }], { input: { placeholder: 'Collection name, e.g. Bench tools, Long-range quad, Gifts' } });
+        if (!r?.text) return;
+        id = (await api('POST', '/api/collections', { name: r.text })).id;
+      }
+      const c = await api('POST', `/api/collections/${id}/toggle`, { kind: it.kind, id: it.id });
+      await ctx.refreshCollections?.();
+      ctx.toast?.(`${c.items.some((i) => i.kind === it.kind && i.id === it.id) ? 'Added to' : 'Removed from'} "${c.name}".`);
+      return;
+    }
+    const target = pick.slice(2);
+    if (target === '__new__') return addToProject(selectionFromItem(it), true);
+    const p = await api('POST', `/api/projects/${target}/items`, { ...selectionFromItem(it), qty: 1 });
+    await refreshProjects();
+    ctx.toast?.(`Added to "${p.name}".`);
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
 /** Add a part to a project. sel = { kind: preset|design|custom, ref?, generator?, params?, name } */
-export async function addToProject(sel) {
+export async function addToProject(sel, newOnly = false) {
   await refreshProjects();
   const choices = projects.map((p) => ({ label: `${p.name} (${p.items.length})`, value: p.id }));
   choices.push({ label: 'New project...', value: '__new__', secondary: true });
-  let target = await chooseDialog('Add to project', choices, { message: `Part: ${sel.name}` });
+  let target = newOnly ? '__new__' : await chooseDialog('Add to project', choices, { message: `Part: ${sel.name}` });
   if (!target) return;
   try {
     if (target === '__new__') {
@@ -638,6 +680,7 @@ function drawDashboard(dash, redraw) {
       tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
       tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
       tile('printers', 'Printers', 'Status, files, upload (view only)', 'tile-printers'),
+      tile('browse', 'Browse', `${ctx.state.presets.length.toLocaleString()} presets by category, tag and collection`, 'tile-browse'),
       tile('parts', 'My Parts', `${(ctx.state.parts ?? []).length} parts, ${(ctx.state.parts ?? []).filter((x) => x.ownershipKey === 'Owned').length} owned`, 'tile-parts'),
       tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings'))),
     el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),
@@ -671,3 +714,5 @@ function mul(A, B) {
   for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) for (let k = 0; k < 4; k++) out[c * 4 + r] += A[k * 4 + r] * B[c * 4 + k];
   return out;
 }
+
+export { selectionFromItem };

@@ -36,7 +36,7 @@ const mock = await startMockMoonraker({});
 const post = (path, body, method = 'POST') => fetch(base + path, { method, body: JSON.stringify(body) }).then((r) => r.json());
 
 // demo data (My Parts from the MTS starter set)
-await post('/api/parts/seed', { set: 'mts-v1' });
+await post('/api/parts/seed', { set: 'example' });
 const printer = await post('/api/printers', { name: 'SV07', url: `127.0.0.1:${mock.port}`, model: 'sovol-sv07' });
 await post('/api/settings', { printers: { defaultPrinter: printer.id } }, 'PUT');
 const d1 = await post('/api/designs', { name: 'ESC tray 16 mm arm, long', generator: 'component-mount', params: { itemLength: 60 }, section: 'quads' });
@@ -88,6 +88,18 @@ await shot('settings-printers', 'settings/printers', 2000, async () => {
 });
 await shot('printers', 'printers', 5000);
 await shot('my-parts', 'parts', 4000);
+await page.evaluate(async () => { const c = await (await fetch('/api/collections', { method: 'POST', body: JSON.stringify({ name: 'Bench tools', color: '#1a7f37' }) })).json(); for (const id of ['drill-guide-2-8-1', 'hw-heat-set-insert-test-m3', 'spool-arm-52-1']) await fetch(`/api/collections/${c.id}/toggle`, { method: 'POST', body: JSON.stringify({ kind: 'preset', id }) }); });
+await shot('browse', 'browse', 5000, async () => {
+  await page.locator('.facet-row', { hasText: 'Shop' }).first().click();
+  await page.waitForTimeout(2500);
+});
+await shot('tooltip', 'accessories', 3000, async () => {
+  if (await page.locator('.vt-panel').isVisible()) await page.locator('.vt-panel .vt', { hasText: 'x' }).click();
+  await page.mouse.move(5, 5);
+  await page.waitForTimeout(300);
+  await page.locator('#params .field:not([hidden]) label').nth(2).hover();
+  await page.waitForTimeout(900);
+});
 await shot('needs-measurement', 'quads', 2500, async () => {
   await page.fill('#presetSearch', 'pixhawk v5');
   await page.locator('#presetList li').first().click();

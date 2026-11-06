@@ -1,0 +1,11 @@
+STL Tools
+Copyright 2026 the STL Tools authors (https://github.com/opsecfreak/STLTools)
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This software includes or uses third-party components under their own licenses:
+- manifold-3d (Apache-2.0): geometry kernel
+- three.js (MIT): 3D preview in the browser
+- opentype.js (MIT): text outlines for labels
+- Roboto Condensed font via @fontsource/roboto-condensed (SIL Open Font License 1.1)
+- Node.js runtime bundled in the release packages (MIT and others, see node/LICENSE in each package)
