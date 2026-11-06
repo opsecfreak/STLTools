@@ -134,7 +134,10 @@
       "tags": [
         "camera"
       ],
-      "params": {}
+      "params": {},
+      "component": "VID03",
+      "ownership": "Owned",
+      "category": "Video: cameras, VTX, OSD"
     },
     {
       "id": "cam-cage-nano",

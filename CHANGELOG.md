@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-mts.1 - 2026-11-06 (MTS personal edition)
+
+Public STL Tools 1.0.0 plus the MTS shop data. Changed: My Parts starter list `seed/mts-v1` (98 parts in 14 categories with ownership, quantity, sizes and measure / conflict / unverified flags; 25 print ideas; the PTZ, CGO3+ top plate, SV07 plane and Tattu / ZD550 tray specs attached to their projects). Presets `mts-*` (104) linked to those parts, plus part links on the Pi, TF-Luna, XIAO, lidar, Typhoon and gimbal presets; the public `hw-*` copies and the example list are left out so nothing shows twice. The app shows "MTS personal edition" next to the version.
+Fixed: n/a.
+Untested: same as 1.0.0 (new parts as prints; sizes marked MEASURE).
+
 ## Unreleased (main)
 
 Changed: personal editions: EDITION.json marks a build like the MTS personal edition (branch `mts-personal`), shown next to the version in the app; versions with a suffix (`1.0.0-mts.1`) publish as pre-releases so the public Latest release stays; tests skip public-only checks on a personal edition. README and AGENTS.md describe the branches.

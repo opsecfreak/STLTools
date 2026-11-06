@@ -1,4 +1,11 @@
-# STL Tools
+# STL Tools: MTS personal edition
+
+> **This is branch `mts-personal`: the personalized build for MobileTechSpecialists.** It is the newest public STL Tools plus the shop's own parts list (98 parts), print ideas, assembly specs and the presets linked to those parts. Download it from the [`v1.0.0-mts.1` pre-release](https://github.com/opsecfreak/STLTools/releases/tag/v1.0.0-mts.1). The public edition is on [`main`](https://github.com/opsecfreak/STLTools/tree/main) ([Latest release](https://github.com/opsecfreak/STLTools/releases/latest)).
+>
+> First start: open **My Parts** > **Load this list** (MTS starter data). Your projects and ownership filters then use your parts.
+>
+> Updating this edition: merge `main` into `mts-personal`, set `package.json` to `<new public version>-mts.<n>`, add a CHANGELOG section, then run **Actions > Release > Run workflow** on branch `mts-personal`.
+
 
 **Version 1.0, open source (Apache-2.0).** A parametric STL generator for drones, RC planes, robotics and the workshop. Pick one of **3,661 ready-made designs** from **54 generators**, change any size, see the print time and filament for your printer, and download watertight STL files that are already in print orientation.
 
