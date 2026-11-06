@@ -15,6 +15,7 @@ const ORDER = [
   ['print', 'Print estimates'],
   ['viewer', '3D view'],
   ['ui', 'Appearance'],
+  ['tips', 'Tooltips and help'],
   ['labels', 'Paper labels'],
   ['data', 'Data and backup'],
   ['about', 'About'],

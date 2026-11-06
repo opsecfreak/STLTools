@@ -21,10 +21,7 @@
         "frontTo",
         "sideHeight"
       ],
-      "section": "robotics",
-      "component": "SBC02",
-      "ownership": "Confirm",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi5-case-fan30",
@@ -46,10 +43,7 @@
       "verify": [
         "headroom"
       ],
-      "section": "robotics",
-      "component": "SBC01",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi5-case-ears",
@@ -67,10 +61,7 @@
         "ears": true
       },
       "group": "Raspberry Pi",
-      "section": "robotics",
-      "component": "SBC01",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi5-case-tall-hat",
@@ -93,10 +84,7 @@
       "verify": [
         "headroom"
       ],
-      "section": "robotics",
-      "component": "SBC01",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi4-case-vents",
@@ -116,10 +104,7 @@
       "verify": [
         "frontTo"
       ],
-      "section": "robotics",
-      "component": "SBC04",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi4-case-fan30",
@@ -137,10 +122,7 @@
         "cooling": "fan30"
       },
       "group": "Raspberry Pi",
-      "section": "robotics",
-      "component": "SBC04",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi3-case-vents",
@@ -156,10 +138,7 @@
         "board": "pi3"
       },
       "group": "Raspberry Pi",
-      "section": "robotics",
-      "component": "SBC04",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi5-pad-plate",
@@ -182,10 +161,7 @@
         "straps": 0
       },
       "group": "Raspberry Pi",
-      "section": "robotics",
-      "component": "SBC01",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "pi5-pad-on-tube-16",
@@ -214,10 +190,7 @@
       "verify": [
         "tubeOD"
       ],
-      "section": "robotics",
-      "component": "SBC01",
-      "ownership": "Owned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "xiao-c6-clip-plate",
@@ -245,10 +218,7 @@
       "verify": [
         "bodyDepth"
       ],
-      "section": "robotics",
-      "component": "MCU03",
-      "ownership": "Planned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "xiao-c6-clip-tape",
@@ -275,10 +245,7 @@
       "verify": [
         "bodyDepth"
       ],
-      "section": "robotics",
-      "component": "MCU03",
-      "ownership": "Planned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "xiao-c6-clip-tube-10",
@@ -308,10 +275,7 @@
         "bodyDepth",
         "tubeOD"
       ],
-      "section": "robotics",
-      "component": "MCU03",
-      "ownership": "Planned",
-      "category": "Single-board computers and microcontrollers"
+      "section": "robotics"
     },
     {
       "id": "tfluna-plate",
@@ -337,10 +301,7 @@
         "bodyWidth",
         "bodyDepth"
       ],
-      "section": "robotics",
-      "component": "SEN02",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "tfluna-tilt-30",
@@ -366,10 +327,7 @@
         "bodyWidth",
         "bodyDepth"
       ],
-      "section": "robotics",
-      "component": "SEN02",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "tfluna-tube-16",
@@ -396,10 +354,7 @@
         "bodyDepth",
         "tubeOD"
       ],
-      "section": "robotics",
-      "component": "SEN02",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "tfluna-tape",
@@ -423,10 +378,7 @@
         "bodyWidth",
         "bodyDepth"
       ],
-      "section": "robotics",
-      "component": "SEN02",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "tfmini-s-plate",
@@ -493,10 +445,7 @@
         "holeSpacingY",
         "lidarHole"
       ],
-      "section": "robotics",
-      "component": "SEN04",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "lidar-puck-tube",
@@ -519,10 +468,7 @@
         "holeSpacingY",
         "tubeOD"
       ],
-      "section": "robotics",
-      "component": "SEN04",
-      "ownership": "Owned",
-      "category": "Sensors: lidar, rangefinder, flow, GPS"
+      "section": "robotics"
     },
     {
       "id": "typhoon-h-repair-cradle",
@@ -551,10 +497,7 @@
         "clearHeight"
       ],
       "section": "quads",
-      "group": "Yuneec Typhoon H",
-      "component": "AIR04",
-      "ownership": "Owned",
-      "category": "Airframes and drones"
+      "group": "Yuneec Typhoon H"
     },
     {
       "id": "typhoon-h-gear-clamp",
@@ -580,10 +523,7 @@
         "tubeOD"
       ],
       "section": "quads",
-      "group": "Yuneec Typhoon H",
-      "component": "AIR04",
-      "ownership": "Owned",
-      "category": "Airframes and drones"
+      "group": "Yuneec Typhoon H"
     },
     {
       "id": "typhoon-h-gear-tfluna",
@@ -612,10 +552,7 @@
         "tubeOD"
       ],
       "section": "quads",
-      "group": "Yuneec Typhoon H",
-      "component": "AIR04",
-      "ownership": "Owned",
-      "category": "Airframes and drones"
+      "group": "Yuneec Typhoon H"
     },
     {
       "id": "typhoon-h-gear-xiao",
@@ -646,10 +583,7 @@
         "bodyDepth"
       ],
       "section": "quads",
-      "group": "Yuneec Typhoon H",
-      "component": "AIR04",
-      "ownership": "Owned",
-      "category": "Airframes and drones"
+      "group": "Yuneec Typhoon H"
     },
     {
       "id": "typhoon-h-gimbal-cradle",
@@ -675,10 +609,7 @@
         "notchWidth"
       ],
       "section": "quads",
-      "group": "Yuneec Typhoon H",
-      "component": "VID06",
-      "ownership": "Owned",
-      "category": "Video: cameras, VTX, OSD"
+      "group": "Yuneec Typhoon H"
     }
   ]
 }

@@ -1,42 +1,69 @@
 # STL Tools
 
-Parametric STL generator for a drone / RC / robotics shop. Pick one of 3,410 ready-made designs (Raspberry Pi 5 / 4 cases, TF-Luna and lidar brackets, XIAO ESP32 clips, Typhoon H480 / H520 bench parts, tube clamps, bins, gears...), change any size, see the print time on your Sovol SV07, get a watertight STL.
+**Version 1.0, open source (Apache-2.0).** A parametric STL generator for drones, RC planes, robotics and the workshop. Pick one of **3,661 ready-made designs** from **54 generators**, change any size, see the print time and filament for your printer, and download watertight STL files that are already in print orientation.
 
-Runs on a Windows or Linux desktop (main target), macOS or a Raspberry Pi. Open it in a browser, or as its own app window on the desktop.
+Examples: tube clamps and joints for any tube size, Raspberry Pi cases, sensor and lidar brackets, flight controller mounts, servo and brushless gimbals, gears and pulleys, bearing blocks, battery cell holders, drawer units, stacking bins, hooks and tool racks.
 
-![Home: search everything, favorites with 3D previews, printer status](docs/screenshots/home.png)
+It runs on a Windows or Linux desktop (the main target), macOS or a Raspberry Pi, and opens in your browser or as its own app window. Nothing is uploaded anywhere: STL Tools is a small local server on your own computer.
+
+![Home: search everything, quick-make buttons, favorites with 3D previews](docs/screenshots/home.png)
+
+## Quick start
+
+1. Open [Releases](https://github.com/opsecfreak/STLTools/releases) and download the newest file for your computer (Windows, macOS Apple / Intel, Linux, Raspberry Pi 64 / 32-bit). Each package includes Node.js.
+2. Unpack it and start it: **Start STL Tools.bat** (Windows), **STL Tools.app** (macOS), `./start.sh` (Linux / Pi).
+3. On **Home**, press a **Make something** button (for example *Tube clamp*), set the sizes, press **Download STL**.
+
+Full steps: [docs/INSTALL.md](docs/INSTALL.md). From source: [Run from source](#run-from-source-developers).
+
+## What it does
 
 | | |
 |---|---|
-| ![Designer: Pi 5 case, live 3D view, SV07 print estimate](docs/screenshots/designer-pi5-case.png) | ![TF-Luna bracket with "measure before printing" fields and the 3D view settings](docs/screenshots/designer-tfluna-verify.png) |
-| **Designer**: every size is a field, the part rebuilds as you type, the estimate shows time and filament for the SV07. | **Measure flags**: datasheet sizes are highlighted until you check them. The 3D view has its own settings panel. |
-| ![Global search from any page](docs/screenshots/search.png) | ![Project with parts, quantities, estimate and export](docs/screenshots/project.png) |
-| **Global search** in the header (press `/`): parts, presets, STLs, projects, settings. | **Projects**: parts lists, one-ZIP download, print time for the whole build, export to another computer. |
-| ![Settings: connect and test the SV07](docs/screenshots/settings-printers.png) | ![Printers page: status, temperatures, files, webcam (view only)](docs/screenshots/printers.png) |
-| **Settings > Printers**: add the SV07, test the connection step by step. | **Printers**: status, files, history, webcam, G-code upload. View only. |
-| ![Import STL and project files](docs/screenshots/import.png) | ![Dark mode, Typhoon repair cradle](docs/screenshots/dark-mode.png) |
-| **Import**: STL files, project files, design files. | **Dark mode** and the 3D view settings. |
-| ![My Parts: ownership, sizes to measure, matching presets](docs/screenshots/my-parts.png) | ![A part with no measured size: fields stay empty until measured](docs/screenshots/needs-measurement.png) |
-| **My Parts**: your parts list with ownership, sizes and the presets for each part. | **Needs measurement**: no invented sizes; type yours to generate. |
-| ![Servo pan-tilt gimbal assembly with per-part print estimates](docs/screenshots/assembly-gimbal.png) | ![Project assembly view with item positions and per-part estimates](docs/screenshots/project-assembly.png) |
-| **Assemblies**: parts shown put together, with time and grams per part. | **Project assembly**: place any parts together; per-part times and totals. |
-
-- **Web UI**: Home with search, favorites and grid / list views; tabs for Shop, Planes, Quadcopters, Accessories, Robotics, Projects, My Designs, STL Files, Import, Printers and Settings. Live 3D preview with view buttons, display modes (shaded, edges, wireframe, x-ray), layer cut, printer bed outline and screenshots.
-- **Assemblies**: multi-part designs shown put together or as a print plate (servo pan-tilt and brushless 2-axis gimbals), and project assemblies where you place any parts together in 3D.
-- **Simple or detailed**: Simple mode shows only the main sizes ("Make something" on Home); "All settings" shows every wall, clearance and screw.
-- **Per-part estimates**: time, grams and metres of filament for every part, with totals for a design or a whole project.
-- **My Parts**: your parts (Owned / Confirm / Planned) with sizes and measure flags; filter every preset list to the parts you own. Starter data from the MTS parts list in [seed/mts-v1](seed/mts-v1/README.md).
-- **Size series**: about 3,000 checked sizes of clamps, spacers, gears, pulleys, bearings, bins and more ([presets/README.md](presets/README.md)).
-- **Print estimates**: time, filament (g and m) and optional cost for the selected printer profile; bed-fit warning. Sovol SV07 profile included; add more with [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
-- **Projects** group the parts for a build (quantity, notes, printed checkbox), download as one ZIP and export / import between computers.
-- **STL Files**: import STL files you already have; view, estimate, tag, add to projects.
-- **Printers**: view your Klipper / Mainsail printers (Sovol SV07 and others) on the LAN. View only: it cannot start, stop or change a print. See [docs/PRINTERS.md](docs/PRINTERS.md).
-- **Settings** stored on the server, so every device sees the same ones.
-- **CLI** for scripting and batch jobs. **Library** for other Node projects.
+| **Designer** | Every size is a field. **Simple** mode shows the main sizes, **All settings** shows every wall, clearance and screw. Live preview rebuilds the part as you type. |
+| **3,661 presets** | Hand-made designs plus about 3,200 checked size series (clamps per tube size, spacers per bolt and length, gears, pulleys, 32 bearing sizes, cell holders, drawers...). Every series preset is generated and checked before it ships. |
+| **Browse and organize** | **Browse** filters everything by type, tab, category, generator, tags, size series, measuring status and your own **Collections**. Favorites, global search (`/`) with a query syntax (`tubeOD:16`, `teeth>=30`, `tag:esc`). |
+| **Assemblies** | Multi-part designs shown put together or as a print plate: servo pan-tilt gimbal, brushless 2-axis gimbal frame, drawer unit. Projects can place any parts together in 3D. |
+| **Print estimates** | Time, grams, metres and cost per part and in total, bed-fit check, for your printer profile (Sovol SV07 and generic profiles included; add yours: [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md)). |
+| **Projects** | Parts lists with quantities, notes and printed checkboxes, one-ZIP download with a parts list, export / import between computers. |
+| **My Parts** | Your own parts list (Owned / Confirm / Planned) with sizes and "needs measurement" flags; filter presets to what you own. Start from the example list or import your own `components.json` ([format](seed/example/README.md)). |
+| **No guessed sizes** | Sizes nobody measured stay empty and Generate waits until you type them. Datasheet values are highlighted to check. |
+| **STL Files** | Import STL files you already have: view, estimate, tag, add to projects. |
+| **Printers (view only)** | Status, temperatures, progress, files, history and webcam of Klipper / Moonraker printers (Mainsail, Fluidd, Sovol SV07) on your LAN, plus G-code upload that never starts a print ([docs/PRINTERS.md](docs/PRINTERS.md)). |
+| **Help where you need it** | Tooltips on every setting with its range, default and name; Settings > Tooltips and help sets delay, size and where help text shows. |
+| **CLI and API** | `stltools gen`, `stltools preset` for scripts; an HTTP API for everything the UI does ([docs/API.md](docs/API.md)). |
 
 Units are millimeters, because slicers read STL as mm.
 
-## Download and run
+## Screenshots
+
+| | |
+|---|---|
+| ![Designer: Pi 5 case, live 3D view, print estimate](docs/screenshots/designer-pi5-case.png) | ![Browse with facets and collections](docs/screenshots/browse.png) |
+| **Designer**: live 3D view, per-part time and filament. | **Browse**: filter 3,661 presets by type, tab, category, tag, collection. |
+| ![Servo pan-tilt gimbal assembly with per-part print estimates](docs/screenshots/assembly-gimbal.png) | ![Project assembly view with item positions and per-part estimates](docs/screenshots/project-assembly.png) |
+| **Assemblies**: parts shown put together, time and grams per part. | **Project assembly**: place any parts; per-part times and totals. |
+| ![TF-Luna bracket with fields to check and the 3D view settings](docs/screenshots/designer-tfluna-verify.png) | ![A part with no measured size: fields stay empty until measured](docs/screenshots/needs-measurement.png) |
+| **Check flags**: datasheet sizes highlighted; the 3D view has its own settings. | **Needs measurement**: no invented sizes. |
+| ![Tooltip with range, default and setting name](docs/screenshots/tooltip.png) | ![My Parts with the example list](docs/screenshots/my-parts.png) |
+| **Tooltips**: range, default and name on every setting. | **My Parts**: ownership, sizes, matching presets. |
+| ![Global search from any page](docs/screenshots/search.png) | ![Project with parts, quantities, estimate and export](docs/screenshots/project.png) |
+| **Global search** (`/`) across parts, presets, STLs, projects, settings. | **Projects**: parts lists, one-ZIP download, export. |
+| ![Settings: connect and test a Klipper printer](docs/screenshots/settings-printers.png) | ![Printers page: status, temperatures, files, webcam (view only)](docs/screenshots/printers.png) |
+| **Settings > Printers**: connection test step by step. | **Printers**: view only, never controls a print. |
+| ![Import STL and project files](docs/screenshots/import.png) | ![Dark mode](docs/screenshots/dark-mode.png) |
+| **Import**: STL, project and design files. | **Dark mode**. |
+
+## License and branches
+
+STL Tools is licensed under the [Apache License 2.0](LICENSE); third-party components are listed in [NOTICE](NOTICE).
+
+- `main`: the public release line (1.0 and later), with a generic example parts list.
+- `mts-personal-data`: a snapshot (v0.8.0) of one repair shop's real parts list, print ideas and assembly specs, kept as an example of a full My Parts setup. It is not part of the release; see [MTS-PERSONAL-DATA.md](https://github.com/opsecfreak/STLTools/blob/mts-personal-data/MTS-PERSONAL-DATA.md) on that branch.
+
+Contributions: [CONTRIBUTING.md](CONTRIBUTING.md). Developers and AI agents: [AGENTS.md](AGENTS.md).
+
+## Download and run (details)
 
 No install of Node.js or anything else needed: each release package includes it.
 
@@ -64,18 +91,20 @@ Step-by-step instructions for every system, including a Raspberry Pi shop server
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the server, generators, data folder and UI fit together |
 | [docs/API.md](docs/API.md) | Every HTTP endpoint with request and response shapes |
 | [CHANGELOG.md](CHANGELOG.md) | Versions |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to add generators, presets and printer profiles by pull request |
+| [seed/example/README.md](seed/example/README.md) | My Parts list format (`components.json`) |
 
 ## What it makes
 
-48 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
+54 generators, grouped by tab. Every size is a parameter: tube OD and ID, clearances, wall, bolt size (M2 to M5), hole patterns, angles.
 
 | Tab | Generators | Presets |
 |-----|-----------|---------|
-| Shop | `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card`, `fit-test` (heat-set insert, hole and press-fit test coupons) | 770 |
+| Shop | `drawer-unit` (assembly), `spool-holder`, `drill-guide`, `stack-bin` (stacking bins, label slot / raised / recessed text), `parts-box`, `holder-block` (bits, batteries, SD cards), `hook`, `tool-rack`, `label-card`, `fit-test` (heat-set insert, hole and press-fit test coupons) | 841 |
 | Planes | `rc-wing` (wingspan, chords, sweep, washout, spar tubes, ailerons / elevator / rudder cut as separate parts, servo pocket + wire channel), `control-horn`, `servo-mount`, `pin-hinge`, `firewall-mount` (down / right thrust), `fuselage-former`, `rc-wheel` | 247 |
-| Quadcopters | `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, `repair-stand` (bench cradles), plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires; Yuneec Typhoon H480 / H520 bench and gear-leg parts (measure first) | 459 |
-| Accessories | `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 860 |
-| Robotics | `servo-gimbal` and `brushless-gimbal` (assemblies), `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, `sbc-case` (Raspberry Pi 5 / 4 / 3 or any board: port windows, fan or vents, ears), `sensor-bracket` (TF-Luna, TFmini, XIAO boards: snap lips, tilt wedge, plate / tube saddle / tape), `lidar-mount` (puck lidar plates), `extrusion-bracket` (2020 / 3030 / 4040), `motor-clamp` (N20, 130, 25 / 37 mm gear motors), plus board / sensor / battery mounts | 1074 |
+| Quadcopters | `drone-arm` (printed arms), `multirotor-frame` (3 to 8 arms), `motor-mount` (clamps round or square arm tubes), `prop-guard`, `landing-leg`, `repair-stand` (bench cradles), plus arm mounts for ESCs, receivers, VTX, FC, GPS posts, batteries, lights, wires; Yuneec Typhoon H480 / H520 bench and gear-leg parts (measure first) | 495 |
+| Accessories | `cell-holder` (18650 / 21700 / 26650 / AA / AAA packs and storage), `tube-clamp` (split, mount plate, saddle, parallel, cross, snap-on clip, two-piece mid-tube, collar), `component-mount` (tray / board pad / cradle / cup / cable clips / support post on a zip-tie saddle, bolt-on clamp, screw plate or tape: ESCs, receivers, batteries, VTX, FC, GPS posts, lights, sensors, Pi boards), `tube-joint` (straight, elbow, tee, cross, Y, radial hub, 3D corners), `tube-cap` (plug, cap, angled foot), `spacer` (spacers, standoffs, washers, bushings), `gps-mast`, `antenna-mount`, `zip-tie-mount`, `camera-mount`, `action-cam-mount`, `connector-mount`, `fc-adapter`, `soft-grommet`, `damper-plate` | 986 |
+| Robotics | `shaft-support` (SK-style rod supports), `servo-gimbal` and `brushless-gimbal` (assemblies), `gear` (spur, helical, herringbone, rack), `pulley` (GT2-style, idler), `stepper-mount` (NEMA 11 / 14 / 17 / 23), `bearing-block`, `shaft-coupler`, `link-bar`, `knob`, `enclosure`, `sbc-case` (Raspberry Pi 5 / 4 / 3 or any board: port windows, fan or vents, ears), `sensor-bracket` (TF-Luna, TFmini, XIAO boards: snap lips, tilt wedge, plate / tube saddle / tape), `lidar-mount` (puck lidar plates), `extrusion-bracket` (2020 / 3030 / 4040), `motor-clamp` (N20, 130, 25 / 37 mm gear motors), plus board / sensor / battery mounts | 1092 |
 
 Generators also show in other tabs where they fit (tube clamps under Quadcopters and Robotics, for example). Tick **show all** to pick any generator from any tab.
 

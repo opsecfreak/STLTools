@@ -1,0 +1,835 @@
+{
+ "group": "Printed arm sizes",
+ "section": "quads",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "quad-arm-50-9x9",
+   "name": "Printed arm 50 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-50-12x12",
+   "name": "Printed arm 50 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-50-16x16",
+   "name": "Printed arm 50 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-50-16x19",
+   "name": "Printed arm 50 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-50-19x19",
+   "name": "Printed arm 50 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-50-25x25",
+   "name": "Printed arm 50 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 50 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "50mm"
+   ],
+   "params": {
+    "length": 50,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-9x9",
+   "name": "Printed arm 70 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-12x12",
+   "name": "Printed arm 70 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-16x16",
+   "name": "Printed arm 70 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-16x19",
+   "name": "Printed arm 70 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-19x19",
+   "name": "Printed arm 70 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-70-25x25",
+   "name": "Printed arm 70 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 70 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "70mm"
+   ],
+   "params": {
+    "length": 70,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-9x9",
+   "name": "Printed arm 90 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-12x12",
+   "name": "Printed arm 90 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-16x16",
+   "name": "Printed arm 90 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-16x19",
+   "name": "Printed arm 90 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-19x19",
+   "name": "Printed arm 90 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-90-25x25",
+   "name": "Printed arm 90 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 90 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "90mm"
+   ],
+   "params": {
+    "length": 90,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-9x9",
+   "name": "Printed arm 110 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-12x12",
+   "name": "Printed arm 110 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-16x16",
+   "name": "Printed arm 110 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-16x19",
+   "name": "Printed arm 110 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-19x19",
+   "name": "Printed arm 110 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-110-25x25",
+   "name": "Printed arm 110 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 110 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "110mm"
+   ],
+   "params": {
+    "length": 110,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-9x9",
+   "name": "Printed arm 130 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-12x12",
+   "name": "Printed arm 130 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-16x16",
+   "name": "Printed arm 130 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-16x19",
+   "name": "Printed arm 130 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-19x19",
+   "name": "Printed arm 130 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-130-25x25",
+   "name": "Printed arm 130 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 130 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "130mm"
+   ],
+   "params": {
+    "length": 130,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-9x9",
+   "name": "Printed arm 160 mm, 9 x 9 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 9 x 9 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "9x9",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 9,
+    "motorPatternB": 9,
+    "motorBolt": "M2",
+    "padDiameter": 16,
+    "width": 10,
+    "centerHole": 4
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-12x12",
+   "name": "Printed arm 160 mm, 12 x 12 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 12 x 12 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "12x12",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 12,
+    "motorPatternB": 12,
+    "motorBolt": "M2",
+    "padDiameter": 20,
+    "width": 10,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-16x16",
+   "name": "Printed arm 160 mm, 16 x 16 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 16 x 16 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x16",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 16,
+    "motorPatternB": 16,
+    "motorBolt": "M3",
+    "padDiameter": 26,
+    "width": 13,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-16x19",
+   "name": "Printed arm 160 mm, 16 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 16 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "16x19",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 16,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 30,
+    "width": 15,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-19x19",
+   "name": "Printed arm 160 mm, 19 x 19 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 19 x 19 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "19x19",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 19,
+    "motorPatternB": 19,
+    "motorBolt": "M3",
+    "padDiameter": 32,
+    "width": 16,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  },
+  {
+   "id": "quad-arm-160-25x25",
+   "name": "Printed arm 160 mm, 25 x 25 motor",
+   "generator": "drone-arm",
+   "description": "Printed arm 160 mm, 25 x 25 motor.",
+   "tags": [
+    "arm",
+    "frame",
+    "multirotor",
+    "25x25",
+    "160mm"
+   ],
+   "params": {
+    "length": 160,
+    "motorPatternA": 25,
+    "motorPatternB": 25,
+    "motorBolt": "M3",
+    "padDiameter": 40,
+    "width": 20,
+    "centerHole": 8
+   },
+   "series": "quad-arms"
+  }
+ ]
+}

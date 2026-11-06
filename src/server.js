@@ -32,7 +32,9 @@
 //   GET /shared/estimate.js            the estimator, same file the server uses
 //   v7:
 //   GET /api/parts   POST /api/parts (add)   PUT/DELETE /api/parts/:id   POST /api/parts/import (components.json)
-//   GET /api/parts/seeds   POST /api/parts/seed { set: "mts-v1" }  (parts + project ideas + assemblies)
+//   GET /api/parts/seeds   POST /api/parts/seed { set: "example" }  (parts + project ideas + assemblies)
+//   1.0:
+//   GET/POST /api/collections   PUT/DELETE /api/collections/:id   POST /api/collections/:id/toggle { kind, id }
 // Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data)
@@ -58,6 +60,7 @@ import { createLibrary, MAX_STL_BYTES } from './core/library.js';
 import { listProfiles, getProfile, profileIssues } from './core/profiles.js';
 import { estimateParts, formatDuration } from './core/estimate.js';
 import { createParts, readSeed, fromComponents } from './core/parts.js';
+import { createCollections } from './core/collections.js';
 import { randomBytes } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 
@@ -195,8 +198,8 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
 
 // ---------------------------------------------------------------- seed sets (v7)
 
-// Which assembly spec belongs to which print candidate (seed/mts-v1/assemblies/*.md).
-const ASSEMBLY_FOR = [[/PTZ/i, 'PR01'], [/CGO3/i, 'PR02'], [/SV07_twin|plane/i, 'PR03'], [/Tattu|ZD550/i, 'PR04']];
+// A seed's assemblies/<file>.md spec belongs to the print candidate whose `assembly`
+// field names that file; specs without a candidate become their own projects.
 
 /** "SEN01, MOT04 x2, PWR01-PWR06, BAT05/BAT06" -> [{ id, qty }] */
 export function parseComponentRefs(s) {
@@ -226,8 +229,8 @@ async function loadSeed(set) {
   const specs = new Map();
   const loose = [];
   for (const a of assemblies) {
-    const hit = ASSEMBLY_FOR.find(([re]) => re.test(a.file));
-    if (hit) specs.set(hit[1], a);
+    const owner = (candidates.items ?? []).find((c) => c.assembly === a.file);
+    if (owner) specs.set(owner.id, a);
     else loose.push(a);
   }
   // Files named in the spec's "Source files" section. A line that names a .zip lists what is
@@ -362,10 +365,28 @@ async function route(req, res) {
     return send(res, 200, { profile: profile.id, ...estimateParts(b.stats.slice(0, 500), profile, { ...cfg.print, ...(b.opts ?? {}) }, b.qty) });
   }
   if (path === '/api/backup' && req.method === 'GET') {
-    const [cfg, ds, ps, items, cats, favs, prs, lib, pts] = await Promise.all([settings.get(), designs.list(), projects.list(), catalog.items(), catalog.categories(), favorites.list(), printers.list(), library.list(), parts.list()]);
-    return send(res, 200, { format: 'stltools-backup', version: 1, app: PKG.version, exportedAt: new Date().toISOString(), note: 'API keys and STL files are not included. Copy the data folder for a full backup.', settings: cfg, designs: ds, projects: ps, catalog: items, categories: cats, favorites: favs, printers: prs, library: lib, parts: pts }, { 'content-disposition': 'attachment; filename="stltools-backup.json"' });
+    const [cfg, ds, ps, items, cats, favs, prs, lib, pts, cols] = await Promise.all([settings.get(), designs.list(), projects.list(), catalog.items(), catalog.categories(), favorites.list(), printers.list(), library.list(), parts.list(), collections.list()]);
+    return send(res, 200, { format: 'stltools-backup', version: 1, app: PKG.version, exportedAt: new Date().toISOString(), note: 'API keys and STL files are not included. Copy the data folder for a full backup.', settings: cfg, designs: ds, projects: ps, catalog: items, categories: cats, favorites: favs, printers: prs, library: lib, parts: pts, collections: cols }, { 'content-disposition': 'attachment; filename="stltools-backup.json"' });
   }
   if (path === '/api/thumbs' && req.method === 'DELETE') { await thumbs.clear(); return send(res, 204, ''); }
+
+  // ---- collections (1.0) ----
+  if (path === '/api/collections') {
+    if (req.method === 'GET') return send(res, 200, await collections.list());
+    if (req.method === 'POST') return send(res, 201, await collections.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  m = path.match(/^\/api\/collections\/(col-[a-f0-9]{8})(\/toggle)?$/);
+  if (m) {
+    if (m[2]) {
+      if (req.method !== 'POST') return send(res, 405, 'Use POST');
+      return send(res, 200, await collections.toggle(m[1], await readBody(req)));
+    }
+    if (req.method === 'GET') return send(res, 200, await collections.get(m[1]));
+    if (req.method === 'PUT') return send(res, 200, await collections.update(m[1], await readBody(req)));
+    if (req.method === 'DELETE') { await collections.remove(m[1]); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
 
   // ---- My Parts (v7) ----
   if (path === '/api/parts') {
@@ -588,6 +609,7 @@ let printers = createPrinters({ dataDir: catalog.dataDir });
 let settings = createSettings({ dataDir: catalog.dataDir });
 let library = createLibrary({ dataDir: catalog.dataDir });
 let parts = createParts({ dataDir: catalog.dataDir, seedDir: SEED_DIR });
+let collections = createCollections({ dataDir: catalog.dataDir });
 projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
 export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
@@ -601,6 +623,7 @@ export function startServer({ host = HOST, port = PORT, dataDir } = {}) {
     printers = createPrinters({ dataDir });
     settings = createSettings({ dataDir });
     parts = createParts({ dataDir, seedDir: SEED_DIR });
+    collections = createCollections({ dataDir });
   }
   const server = createServer(async (req, res) => {
     try {

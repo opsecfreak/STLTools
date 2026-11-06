@@ -33,6 +33,17 @@ export const SCHEMA = {
       confirmDelete: bool(true, 'Ask before deleting'),
     },
   },
+  tips: {
+    label: 'Tooltips and help',
+    fields: {
+      tooltips: bool(true, 'Show tooltips when you point at buttons and settings'),
+      tooltipDelay: numb(350, 0, 3000, 50, 'Tooltip delay', 'ms', 'How long to point before a tooltip shows.'),
+      tooltipSize: sel('normal', [['normal', 'Normal'], ['large', 'Large'], ['compact', 'Compact']], 'Tooltip size'),
+      fieldHelp: sel('inline', [['inline', 'Under each setting'], ['tooltip', 'In the tooltip only'], ['off', 'Hidden']], 'Help text for part settings'),
+      fieldDetails: bool(true, 'Tooltips on part settings show range, default and setting name', 'For example: 3 to 80 mm, default 10, name tubeOD (for the CLI and search).'),
+      cardDetails: bool(true, 'Tooltips on cards show the full description'),
+    },
+  },
   viewer: {
     label: '3D view',
     fields: {

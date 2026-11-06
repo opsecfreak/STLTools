@@ -162,3 +162,41 @@ export async function putFile(url, file) {
   if (!res.ok) throw new Error(data.error || res.statusText);
   return data;
 }
+
+// ---------------------------------------------------------------- tooltips (1.0)
+// One tooltip for the whole app. Any element with a `title` (or data-tip) gets it:
+// the native title is moved to data-tip on first hover so the browser's own
+// tooltip does not show twice. Settings > Tooltips and help: on/off, delay, size.
+let tipEl = null;
+let tipTimer = null;
+export function initTooltips() {
+  tipEl = el('div', { className: 'tooltip', role: 'tooltip', hidden: true });
+  document.body.append(tipEl);
+  const hide = () => { clearTimeout(tipTimer); tipEl.hidden = true; };
+  document.addEventListener('mouseover', (e) => {
+    const t = e.target.closest?.('[title], [data-tip]');
+    if (!t) return;
+    if (t.title) { t.dataset.tip = t.title; t.removeAttribute('title'); }
+    const text = t.dataset.tip;
+    const cfg = settingsCache?.tips;
+    if (!text || cfg?.tooltips === false) return;
+    clearTimeout(tipTimer);
+    tipTimer = setTimeout(() => {
+      tipEl.textContent = text;
+      tipEl.className = `tooltip tip-${cfg?.tooltipSize ?? 'normal'}`;
+      tipEl.hidden = false;
+      const r = t.getBoundingClientRect();
+      const w = tipEl.offsetWidth;
+      const h = tipEl.offsetHeight;
+      let x = Math.min(window.innerWidth - w - 8, Math.max(8, r.left + r.width / 2 - w / 2));
+      let y = r.bottom + 8;
+      if (y + h > window.innerHeight - 8) y = r.top - h - 8;
+      tipEl.style.left = `${x}px`;
+      tipEl.style.top = `${Math.max(8, y)}px`;
+    }, cfg?.tooltipDelay ?? 350);
+  });
+  document.addEventListener('mouseout', (e) => { if (e.target.closest?.('[data-tip]')) hide(); });
+  document.addEventListener('mousedown', hide);
+  document.addEventListener('keydown', hide);
+  window.addEventListener('scroll', hide, true);
+}

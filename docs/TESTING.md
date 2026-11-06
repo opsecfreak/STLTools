@@ -41,12 +41,20 @@ This is the first real-world test. Work through the list, print a few small part
 
 ## B4. New in v7 (10 minutes)
 
-1. Open **My Parts** > **Load starter data**. Check that 98 parts show, with your ownership.
+1. Open **My Parts** > **Load this list** (example list). Check that 16 parts show, with ownership.
 2. Change one part's ownership or size. Press **Load again**: your change stays.
-3. In **Quadcopters** pick `Pixhawk V5+ tray`. The size fields are empty and red. Press **Generate**: it asks for the sizes. Type your measured sizes and generate.
+3. In **Quadcopters** pick `Pixhawk V5+ tray on a damper plate (measure)`. The size fields are empty and red. Press **Generate**: it asks for the sizes. Type your measured sizes and generate.
 4. In any tab set the filter to **My parts (owned)**.
 5. Open **Projects** > "PTZ rangefinder / camera pan-tilt". Check the parts list and the files to attach.
 6. Print **Heat-set insert test M3** (Shop > Fit tests) and note which hole seats your insert.
+
+## B5. New in 1.0 (10 minutes)
+
+1. Open **Browse**. Pick a tab, a category and a tag; watch the counts change. Press **Clear filters**.
+2. Press **+** on any card > **New collection...** > name it. Pick it under **Collections** in Browse.
+3. Point at a setting in any designer tab: the tooltip shows its range, default and name.
+4. **Settings > Tooltips and help**: set the delay to 0 and the size to Large; set help text to "In the tooltip only".
+5. **Shop**: try a drawer unit (press **Assembled**), a spool arm and a drill guide. **Accessories**: an 18650 pack end plate.
 
 ## C. Print these first (small, fast, they test the defaults)
 

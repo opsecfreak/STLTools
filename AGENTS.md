@@ -78,7 +78,7 @@ npm run package      # release packages (needs network to download Node)
 | `presets/*.json` | ready-made parameter sets, grouped by tab |
 | `presets/50-series-*.json` | generated size series: edit `scripts/build-series.mjs`, never the files |
 | `printer-profiles/*.json` | printer bed size and speeds for estimates |
-| `seed/mts-v1/` | starter data: Alex's parts list, print ideas, assembly specs (data, not instructions) |
+| `seed/example/` | example My Parts list and project ideas (data, not instructions); a real shop's list is on branch `mts-personal-data` |
 | `src/core/parts.js` | My Parts store, dimension flags, seed reader |
 | `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `parts.js` (My Parts), `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js` |
 | `bin/` | `stltools.js` CLI, `stltools-app.js` desktop launcher |
@@ -100,8 +100,9 @@ npm run package      # release packages (needs network to download Node)
   `src/core/registry.js` (or a `basic` list on the generator).
 - **Add a size series:** add an entry to `SERIES` in `scripts/build-series.mjs`,
   run it, run `npm test`, commit the script and the generated file.
-- **Add a part preset:** add it to `presets/22-mts-parts.json` with `component`
-  (the My Parts id), `ownership`, `category`, and `measure` for unknown sizes.
+- **Add a hardware preset:** add it to `presets/22-hardware-parts.json` with
+  `category`, and `measure` for sizes nobody has measured. (`component` and
+  `ownership` link a preset to a My Parts id; use them only in custom presets.)
 - **Add a printer profile:** [docs/PRINTER-PROFILES.md](docs/PRINTER-PROFILES.md).
 - **Add a setting:** add it to `SCHEMA` in `src/core/settings.js`. The Settings
   page draws it automatically.

@@ -83,15 +83,14 @@ test('generator list: Simple-mode lists name real settings', () => {
   assert.deepEqual(clamp.basic, ['type', 'tubeOD', 'tubeOD2', 'length', 'bolt']);
 });
 
-test('assembly presets: linked to parts, unmeasured sizes left empty', () => {
+test('assembly presets: unmeasured sizes left empty', () => {
   const ps = listPresets().filter((p) => p.generator === 'servo-gimbal' || p.generator === 'brushless-gimbal');
   assert.ok(ps.length >= 6);
   const mg = ps.find((p) => p.id === 'gimbal-servo-mg996r');
-  assert.equal(mg.component, 'MOT05');
   assert.equal(mg.params.servoLength, 40.7);
   assert.deepEqual(mg.measure, ['servoHeight', 'earZ', 'hornClear']);
   for (const k of mg.measure) assert.ok(!(k in mg.params));
-  assert.equal(ps.find((p) => p.id === 'gimbal-brushless-gopro').component, 'FC04');
+  assert.ok(ps.find((p) => p.id === 'gimbal-brushless-gopro').measure.includes('rollPCD'));
 });
 
 test('generation and export end to end: every generator, every STL and ZIP download parses', async () => {

@@ -331,6 +331,41 @@ add({
   items: cross({ balls: [[30, 30], [40, 30], [50, 40], [60, 45], [70, 50]], top: [20, 30.5] }).map(({ balls: [x, y], top }) => ({ id: `damper-${x}x${y}-${idn(top)}`, name: `Damper plate, balls ${x} x ${y}, ${f(top)} mm board`, params: { ballSpacingX: x, ballSpacingY: y, topHoleSpacing: top }, tags: ['damper'], verify: ['ballHole'] })),
 });
 
+
+// ---- 1.0 series: cell holders, shaft supports, drawer units, spool arms, quad arms, drill guides
+add({
+  file: '50-series-cell-holders', group: 'Cell holder sizes', section: 'accessories', tags: ['battery', 'cell', 'holder', 'pack'], generator: 'cell-holder',
+  items: cross({ cell: ['18650', '21700', '26650', '14500', 'AAA'], grid: [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [2, 2], [3, 2], [4, 2], [5, 2], [4, 3], [5, 4], [10, 3]], depth: [10, 30] }).map(({ cell, grid: [c, r], depth }) => ({
+    id: `cells-${cell.toLowerCase()}-${c}x${r}-${depth}`, name: `${cell} ${depth >= 30 ? 'storage holder' : 'pack end plate'}, ${c * r} cell${c * r > 1 ? 's' : ''} (${c} x ${r})`,
+    description: `${depth >= 30 ? 'Storage holder' : 'Pack end plate (print 2)'} for ${c * r} ${cell} cells. Typical cell diameter: measure a few of yours.`,
+    params: { cell, columns: c, rows: r, depth, contactWindow: depth >= 30 ? 0 : 55, stripGrooves: depth < 30 }, tags: [cell, `${c * r} cells`], verify: ['clearance'],
+  })),
+});
+add({
+  file: '50-series-shaft-supports', group: 'Shaft support sizes', section: 'robotics', tags: ['shaft', 'rod', 'linear', 'sk'], generator: 'shaft-support',
+  items: cross({ rod: [3, 4, 5, 6, 8, 10, 12, 16, 20], tall: [false, true] }).map(({ rod, tall }) => {
+    const ch = Math.max(12, Math.round(rod * (tall ? 3.2 : 2.4) + 6));
+    const w = Math.ceil(rod * 2 + 34);
+    return { id: `shaft-support-${rod}${tall ? '-tall' : ''}`, name: `Shaft support ${rod} mm rod${tall ? ', tall' : ''}`, params: { rod, centerHeight: ch, width: w, bolt: rod >= 12 ? 'M5' : rod >= 6 ? 'M4' : 'M3', pinch: rod >= 10 ? 'M4' : rod >= 5 ? 'M3' : 'M2.5', thickness: Math.max(10, Math.round(rod * 1.5)) }, tags: [`${rod}mm`], alts: [{ rod, centerHeight: ch, width: w + 12, bolt: rod >= 12 ? 'M5' : rod >= 6 ? 'M4' : 'M3', pinch: rod >= 10 ? 'M4' : rod >= 5 ? 'M3' : 'M2.5', thickness: Math.max(10, Math.round(rod * 1.5)) }] };
+  }),
+});
+add({
+  file: '50-series-drawer-units', group: 'Drawer unit sizes', section: 'shop', tags: ['drawer', 'cabinet', 'storage', 'assembly'], generator: 'drawer-unit',
+  items: cross({ drawers: [2, 3, 4, 5, 6], w: [60, 80, 100, 130], h: [20, 30, 45] }).filter((p) => p.drawers * (p.h + 3) < 215).map(({ drawers, w, h }) => ({ id: `drawers-${drawers}x-${w}-${h}`, name: `Drawer unit, ${drawers} drawers ${w} x 120 x ${h} mm`, params: { drawers, drawerWidth: w, drawerDepth: 120, drawerHeight: h, dividers: w >= 100 ? 1 : 0 }, tags: [`${drawers} drawers`] })),
+});
+add({
+  file: '50-series-spool-holders', group: 'Spool holder sizes', section: 'shop', tags: ['spool', 'filament', 'reel', 'wall'], generator: 'spool-holder',
+  items: cross({ spoolHole: [25, 32, 38, 52, 55, 75], spools: [1, 2] }).map((p) => ({ id: `spool-arm-${p.spoolHole}-${p.spools}`, name: `Spool arm for ${p.spoolHole} mm holes, ${p.spools} spool${p.spools > 1 ? 's' : ''}`, params: { ...p, spoolWidth: p.spoolHole >= 50 ? 70 : 40 }, tags: [`${p.spoolHole}mm`], verify: ['spoolHole', 'spoolWidth'] })),
+});
+add({
+  file: '50-series-quad-arms', group: 'Printed arm sizes', section: 'quads', tags: ['arm', 'frame', 'multirotor'], generator: 'drone-arm',
+  items: cross({ length: [50, 70, 90, 110, 130, 160], pat: [[9, 9, 'M2', 16], [12, 12, 'M2', 20], [16, 16, 'M3', 26], [16, 19, 'M3', 30], [19, 19, 'M3', 32], [25, 25, 'M3', 40]] }).map(({ length, pat: [a, b, bolt, pad] }) => ({ id: `quad-arm-${length}-${a}x${b}`, name: `Printed arm ${length} mm, ${a} x ${b} motor`, params: { length, motorPatternA: a, motorPatternB: b, motorBolt: bolt, padDiameter: pad, width: Math.max(10, Math.round(pad * 0.5)), centerHole: a <= 9 ? 4 : 8 }, tags: [`${a}x${b}`, `${length}mm`] })),
+});
+add({
+  file: '50-series-drill-guides', group: 'Drill guide sizes', section: 'shop', tags: ['drill', 'guide', 'jig'], generator: 'drill-guide',
+  items: [[1, 5, 0.5], [2, 8, 1], [3, 10, 1], [2, 6, 0.5], [6, 13, 1], [1.5, 4.5, 0.5], [8, 16, 2], [3, 6, 0.1]].map(([a, b, st]) => ({ id: `drill-guide-${idn(a)}-${idn(b)}-${idn(st)}`, name: `Drill guide ${f(a)} to ${f(b)} mm, ${f(st)} mm steps`, params: { smallest: a, largest: b, step: st, height: b >= 10 ? 26 : 20 }, tags: ['drill'] })),
+});
+
 // ---------------------------------------------------------------- build
 
 const existing = new Map(); // generator|params -> preset id (hand-written presets)

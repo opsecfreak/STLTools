@@ -1,0 +1,283 @@
+{
+ "group": "Spool holder sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "spool-arm-25-1",
+   "name": "Spool arm for 25 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 25 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "25mm"
+   ],
+   "params": {
+    "spoolHole": 25,
+    "spools": 1,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-25-2",
+   "name": "Spool arm for 25 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 25 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "25mm"
+   ],
+   "params": {
+    "spoolHole": 25,
+    "spools": 2,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-32-1",
+   "name": "Spool arm for 32 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 32 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "32mm"
+   ],
+   "params": {
+    "spoolHole": 32,
+    "spools": 1,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-32-2",
+   "name": "Spool arm for 32 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 32 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "32mm"
+   ],
+   "params": {
+    "spoolHole": 32,
+    "spools": 2,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-38-1",
+   "name": "Spool arm for 38 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 38 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "38mm"
+   ],
+   "params": {
+    "spoolHole": 38,
+    "spools": 1,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-38-2",
+   "name": "Spool arm for 38 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 38 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "38mm"
+   ],
+   "params": {
+    "spoolHole": 38,
+    "spools": 2,
+    "spoolWidth": 40
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-52-1",
+   "name": "Spool arm for 52 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 52 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "52mm"
+   ],
+   "params": {
+    "spoolHole": 52,
+    "spools": 1,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-52-2",
+   "name": "Spool arm for 52 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 52 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "52mm"
+   ],
+   "params": {
+    "spoolHole": 52,
+    "spools": 2,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-55-1",
+   "name": "Spool arm for 55 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 55 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "55mm"
+   ],
+   "params": {
+    "spoolHole": 55,
+    "spools": 1,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-55-2",
+   "name": "Spool arm for 55 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 55 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "55mm"
+   ],
+   "params": {
+    "spoolHole": 55,
+    "spools": 2,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-75-1",
+   "name": "Spool arm for 75 mm holes, 1 spool",
+   "generator": "spool-holder",
+   "description": "Spool arm for 75 mm holes, 1 spool.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "75mm"
+   ],
+   "params": {
+    "spoolHole": 75,
+    "spools": 1,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  },
+  {
+   "id": "spool-arm-75-2",
+   "name": "Spool arm for 75 mm holes, 2 spools",
+   "generator": "spool-holder",
+   "description": "Spool arm for 75 mm holes, 2 spools.",
+   "tags": [
+    "spool",
+    "filament",
+    "reel",
+    "wall",
+    "75mm"
+   ],
+   "params": {
+    "spoolHole": 75,
+    "spools": 2,
+    "spoolWidth": 70
+   },
+   "series": "spool-holders",
+   "verify": [
+    "spoolHole",
+    "spoolWidth"
+   ]
+  }
+ ]
+}

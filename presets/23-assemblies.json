@@ -76,7 +76,7 @@
       "id": "gimbal-servo-mg996r",
       "name": "Pan-tilt gimbal, MG996R servos",
       "generator": "servo-gimbal",
-      "description": "Standard-size metal gear servos. Body 40.7 x 19.7, ear holes 49.5 apart, shaft 10 from the end (from your parts list). Measure the body height, ear height and horn face height.",
+      "description": "Standard-size metal gear servos. Body 40.7 x 19.7, ear holes 49.5 apart, shaft 10 from the end. Measure the body height, ear height and horn face height.",
       "tags": [
         "gimbal",
         "pan tilt",
@@ -108,16 +108,13 @@
         "servoWidth",
         "earSpacing",
         "shaftFromEnd"
-      ],
-      "component": "MOT05",
-      "ownership": "Confirm",
-      "category": "Motors, props, servos and steppers"
+      ]
     },
     {
       "id": "gimbal-brushless-gopro",
       "name": "Brushless 2-axis gimbal frame, GoPro Hero 3 (SimpleBGC)",
       "generator": "brushless-gimbal",
-      "description": "Roll + tilt frame for your SimpleBGC 2-axis controller and a GoPro-size camera. Measure the motors (diameter, height, hole circle) and the camera before printing.",
+      "description": "Roll + tilt frame for a SimpleBGC 2-axis controller and a GoPro-size camera. Measure the motors (diameter, height, hole circle) and the camera before printing.",
       "tags": [
         "gimbal",
         "brushless",
@@ -134,10 +131,7 @@
         "cameraWidth",
         "cameraHeight",
         "cameraDepth"
-      ],
-      "component": "FC04",
-      "ownership": "Owned",
-      "category": "Flight controllers and gimbal controllers"
+      ]
     },
     {
       "id": "gimbal-brushless-small",

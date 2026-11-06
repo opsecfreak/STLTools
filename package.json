@@ -1,7 +1,7 @@
 {
   "name": "stltools",
-  "version": "0.8.0",
-  "description": "Parametric STL generator for a drone, RC and robotics shop: bins, labels, tube clamps and joints, quad and plane parts, gears and mounts. Web UI + CLI.",
+  "version": "1.0.0",
+  "description": "Parametric STL generator for drone, RC, robotics and workshop parts: thousands of presets, assemblies, print time estimates, Klipper printer status (view only). Web UI + CLI.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
@@ -21,12 +21,28 @@
     "type": "git",
     "url": "git+https://github.com/opsecfreak/STLTools.git"
   },
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "private": true,
   "dependencies": {
     "@fontsource/roboto-condensed": "5.2.8",
     "manifold-3d": "3.5.3",
     "opentype.js": "1.3.4",
     "three": "0.170.0"
-  }
+  },
+  "author": "opsecfreak",
+  "homepage": "https://github.com/opsecfreak/STLTools#readme",
+  "bugs": {
+    "url": "https://github.com/opsecfreak/STLTools/issues"
+  },
+  "keywords": [
+    "stl",
+    "3d-printing",
+    "parametric",
+    "cad",
+    "drone",
+    "rc",
+    "robotics",
+    "klipper",
+    "manifold"
+  ]
 }

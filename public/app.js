@@ -8,7 +8,7 @@
 //   #projects #project/<id> #stls #stl/<id> #import #printers #settings[/<section>]
 import { createViewer } from './viewer.js';
 
-import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete } from './lib.js';
+import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete, initTooltips } from './lib.js';
 import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton, stopProjectView } from './home.js';
 import { renderPrinters, stopPrinters } from './printers.js';
 import { initViewTools, createEstimateBox } from './viewtools.js';
@@ -16,12 +16,14 @@ import { initGlobalSearch } from './search.js';
 import { initSettings, renderSettings } from './settings.js';
 import { initFiles, renderImport, renderStls, renderStlPane } from './files.js';
 import { initParts, renderParts, refreshParts, ownershipOf, ownBadge } from './parts.js';
+import { initBrowse, renderBrowse } from './browse.js';
 
 await loadSettings().catch(() => null);
+initTooltips();
 
 const state = {
   tab: 'shop', shopSub: 'design',
-  generators: [], presets: [], categories: [], items: [], designs: [], library: [], parts: [], partCategories: [],
+  generators: [], presets: [], categories: [], items: [], designs: [], library: [], parts: [], partCategories: [], collections: [],
   current: null, preset: null, design: null,
   lastResult: null, pendingOverrides: null, editing: null,
 };
@@ -29,7 +31,10 @@ const state = {
 const viewer = createViewer($('viewer'), settings()?.viewer ?? {});
 const viewTools = initViewTools(viewer, $('viewTools'));
 const estimate = createEstimateBox($('estimate'), viewer, { onShowPart: (i) => state.shown?.[i] && viewer.show([state.shown[i]]).then(() => viewTools.reset()) });
-onSettings((cfg, patch) => { if (patch.viewer) viewer.setOptions(cfg.viewer); });
+onSettings((cfg, patch) => {
+  if (patch.viewer) viewer.setOptions(cfg.viewer);
+  if (patch.tips && state.current) loadGenerator(state.current.id, readForm(state.current), { preset: state.preset, design: state.design });
+});
 
 /** Geometry stats for a local STL (same fields as the server's meshStats). */
 function geometryStats(g) {
@@ -145,7 +150,14 @@ function buildForm(gen, values, verify = [], measure = []) {
     }
     input.id = fieldId(key);
     input.name = key;
-    if (def.help) wrap.append(el('div', { className: 'help', textContent: def.help }));
+    const tips = settings()?.tips ?? {};
+    const range = def.type === 'number' || def.type === 'integer'
+      ? `${def.min ?? ''} to ${def.max ?? ''}${def.unit ? ` ${def.unit}` : ''}, default ${def.default}`
+      : def.type === 'select' ? `${def.options.length} choices, default ${def.options.find((o) => (o.value ?? o) === def.default)?.label ?? def.default}`
+        : def.type === 'boolean' ? `default ${def.default ? 'on' : 'off'}` : def.default ? `default "${def.default}"` : '';
+    const tip = [def.label, tips.fieldHelp !== 'off' && def.help ? def.help : '', tips.fieldDetails !== false ? `${range}. Setting name: ${key}` : ''].filter(Boolean).join('\n');
+    wrap.dataset.tip = tip;
+    if (def.help && (tips.fieldHelp ?? 'inline') === 'inline') wrap.append(el('div', { className: 'help', textContent: def.help }));
     if (verify.includes(key) || measure.includes(key)) {
       wrap.classList.add(measure.includes(key) ? 'measure' : 'verify');
       groups.get(g).open = true;
@@ -353,7 +365,7 @@ function showPane(name) {
 }
 
 // ---------- routing: #home #shop ... #projects #project/<id> #printers #library ----------
-const PAGES = ['home', 'projects', 'printers', 'settings', 'import', 'stls', 'parts'];
+const PAGES = ['home', 'projects', 'printers', 'settings', 'import', 'stls', 'parts', 'browse'];
 
 function markTab(tab) {
   for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === tab);
@@ -377,6 +389,7 @@ async function showPage(name, arg) {
     else if (name === 'import') renderImport(page);
     else if (name === 'stls') { await refreshLibrary(); renderStls(page); }
     else if (name === 'parts') await renderParts(page, arg);
+    else if (name === 'browse') { await Promise.all([refreshCollections(), refreshLibrary()]); renderBrowse(page, arg ?? ''); }
   } catch (err) {
     page.replaceChildren(el('p', { className: 'error', textContent: err.message }));
   }
@@ -427,6 +440,11 @@ async function showStl(id) {
   } catch (err) {
     $('pane-stl').replaceChildren(el('p', { className: 'error', textContent: err.message }), el('a', { href: '#stls', textContent: 'Back to STL Files' }));
   }
+}
+
+async function refreshCollections() {
+  state.collections = await api('GET', '/api/collections');
+  return state.collections;
 }
 
 async function refreshLibrary() {
@@ -780,6 +798,8 @@ if (version.issues.length) {
 resetItemForm();
 await Promise.all([refreshDesigns().catch(() => {}), refreshLibrary().catch(() => {}), api('GET', '/api/catalog').then((i) => { state.items = i; }).catch(() => {})]);
 initFiles({ state, refreshLibrary, refreshDesigns });
+initBrowse({ state, refreshCollections });
+await refreshCollections().catch(() => {});
 initParts({ state, openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); } });
 await refreshParts().catch(() => {});
 initSettings({
@@ -789,6 +809,7 @@ initSettings({
 initGlobalSearch();
 headerPrinterChip();
 state.viewerSettings = () => settings()?.viewer ?? {};
+state.cardTips = () => settings()?.tips?.cardDetails;
 await initHome({
   state,
   openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); },
@@ -803,6 +824,7 @@ await initHome({
   goTab: (t) => go(t),
   refreshDesigns,
   refreshLibrary,
+  refreshCollections,
   openStl: (id) => go(`stl/${id}`),
   openShopItem: async (item) => { state.shopSub = 'catalog'; go('shop', { keepForm: true }); switchShopSub('catalog'); await refreshShop(); editItem(state.items.find((i) => i.code === item.code) ?? item); },
   toast: (msg) => setStatus(msg),

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 - 2026-11-06 (first public release)
+
+Changed: open source under Apache-2.0 (LICENSE, NOTICE, CONTRIBUTING). Browse page: everything with facet filters and counts (type, tab, category, generator, tags, size series, measuring, ownership) and Collections, your own named groups of presets, designs, generators, STLs and projects ("+" on any card). Tooltips on every button and setting, with range, default and setting name; Settings > Tooltips and help sets on/off, delay, size, where help text shows, and card details. 6 new generators: battery cell holders (18650 / 21700 / 26650 / 14500 / AA / AAA, pack end plates with strip grooves, storage), SK-style shaft supports, drawer unit (assembly with N drawers), spool holder arm, printed multirotor arm, drill guide; 251 new checked size-series presets (3,661 total, 54 generators). The shipped parts list is now a generic example (seed/example); the hardware holder presets stay, with neutral ids (hw-...). The previous personal parts data lives on branch `mts-personal-data`.
+Fixed: n/a.
+Untested: the new parts as prints (cell diameters vary by maker: measure; drawer and spool fits need a test print); tooltips on touch screens (they show on mouse hover only).
+Breaking: preset ids `mts-*` were renamed to `hw-*` (projects or shop items that used an `mts-*` preset show it as missing; re-add it or import the parts list from branch `mts-personal-data`).
+
 ## v8 (0.8.0) - 2026-11-06
 
 Changed: assemblies: generators can return parts that fit together, shown "Assembled" (one color per part) or as a print plate in the 3D view; new `servo-gimbal` (pan-tilt on 9 g to MG996R servos: base, pan bracket, camera arm with FPV cheeks / tripod plate) and `brushless-gimbal` (roll + tilt frame for a SimpleBGC 2-axis controller: damper top plate, roll arm, camera cage) with 6 presets (MG996R and SimpleBGC linked to My Parts; unknown sizes left to measure). Per-part print estimate table under the 3D view: size, quantity, time, grams and metres, layers, bed fit, STL link, totals. Projects: "Show parts, print times and 3D assembly" builds every part, shows the per-part table and a 3D view where each item can be moved and turned (saved with the project); the ZIP README lists time and grams per STL. Simple / All settings switch in the designer (main sizes only, or everything) and a "Make something" row on Home for quick parts. End-to-end test of generation and export for all 48 generators (API STL and ZIP downloads parsed back, CLI files).

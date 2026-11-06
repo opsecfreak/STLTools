@@ -1,0 +1,133 @@
+{
+ "group": "Drill guide sizes",
+ "section": "shop",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "drill-guide-1-5-0p5",
+   "name": "Drill guide 1 to 5 mm, 0.5 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 1 to 5 mm, 0.5 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 1,
+    "largest": 5,
+    "step": 0.5,
+    "height": 20
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-2-8-1",
+   "name": "Drill guide 2 to 8 mm, 1 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 2 to 8 mm, 1 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 2,
+    "largest": 8,
+    "step": 1,
+    "height": 20
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-3-10-1",
+   "name": "Drill guide 3 to 10 mm, 1 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 3 to 10 mm, 1 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 3,
+    "largest": 10,
+    "step": 1,
+    "height": 26
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-2-6-0p5",
+   "name": "Drill guide 2 to 6 mm, 0.5 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 2 to 6 mm, 0.5 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 2,
+    "largest": 6,
+    "step": 0.5,
+    "height": 20
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-6-13-1",
+   "name": "Drill guide 6 to 13 mm, 1 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 6 to 13 mm, 1 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 6,
+    "largest": 13,
+    "step": 1,
+    "height": 26
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-1p5-4p5-0p5",
+   "name": "Drill guide 1.5 to 4.5 mm, 0.5 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 1.5 to 4.5 mm, 0.5 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 1.5,
+    "largest": 4.5,
+    "step": 0.5,
+    "height": 20
+   },
+   "series": "drill-guides"
+  },
+  {
+   "id": "drill-guide-8-16-2",
+   "name": "Drill guide 8 to 16 mm, 2 mm steps",
+   "generator": "drill-guide",
+   "description": "Drill guide 8 to 16 mm, 2 mm steps.",
+   "tags": [
+    "drill",
+    "guide",
+    "jig"
+   ],
+   "params": {
+    "smallest": 8,
+    "largest": 16,
+    "step": 2,
+    "height": 26
+   },
+   "series": "drill-guides"
+  }
+ ]
+}

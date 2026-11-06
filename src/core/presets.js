@@ -44,7 +44,7 @@ function loadDir(dir, strict, presets, seen) {
           if (!Array.isArray(p.measure) || p.measure.some((k) => !g.params[k] || !['number', 'integer'].includes(g.params[k].type))) throw new Error('measure must list number parameters of its generator');
           if (p.measure.some((k) => k in (p.params ?? {}))) throw new Error('measure fields must not have values in params');
         }
-        // "component" links the preset to a part in My Parts (seed/mts-v1); "ownership" is the fallback
+        // "component" links the preset to a part id in My Parts (custom presets); "ownership" is the fallback
         if (p.ownership !== undefined && !['Owned', 'Confirm', 'Planned'].includes(p.ownership)) throw new Error('ownership must be Owned, Confirm or Planned');
         const section = p.section ?? data.section ?? (g.sections ?? ['shop'])[0];
         if (!SECTION_IDS.includes(section)) throw new Error(`unknown section "${section}"`);

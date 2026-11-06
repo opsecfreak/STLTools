@@ -1,0 +1,3283 @@
+{
+ "group": "Cell holder sizes",
+ "section": "accessories",
+ "generatedBy": "scripts/build-series.mjs (do not edit by hand)",
+ "presets": [
+  {
+   "id": "cells-18650-1x1-10",
+   "name": "18650 pack end plate, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 1 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 1,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-1x1-30",
+   "name": "18650 storage holder, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 1 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 1,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-2x1-10",
+   "name": "18650 pack end plate, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 2 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 2,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-2x1-30",
+   "name": "18650 storage holder, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 2 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 2,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-3x1-10",
+   "name": "18650 pack end plate, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 3 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 3,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-3x1-30",
+   "name": "18650 storage holder, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 3 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 3,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x1-10",
+   "name": "18650 pack end plate, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x1-30",
+   "name": "18650 storage holder, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x1-10",
+   "name": "18650 pack end plate, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 5 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x1-30",
+   "name": "18650 storage holder, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 5 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-6x1-10",
+   "name": "18650 pack end plate, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 6,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-6x1-30",
+   "name": "18650 storage holder, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 6,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-2x2-10",
+   "name": "18650 pack end plate, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 2,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-2x2-30",
+   "name": "18650 storage holder, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 2,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-3x2-10",
+   "name": "18650 pack end plate, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 3,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-3x2-30",
+   "name": "18650 storage holder, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 3,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x2-10",
+   "name": "18650 pack end plate, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 8 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x2-30",
+   "name": "18650 storage holder, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 8 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x2-10",
+   "name": "18650 pack end plate, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 10 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x2-30",
+   "name": "18650 storage holder, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 10 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x3-10",
+   "name": "18650 pack end plate, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 12 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-4x3-30",
+   "name": "18650 storage holder, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 12 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 4,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x4-10",
+   "name": "18650 pack end plate, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 20 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 4,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-5x4-30",
+   "name": "18650 storage holder, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 20 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 5,
+    "rows": 4,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-10x3-10",
+   "name": "18650 pack end plate, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 30 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 10,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-18650-10x3-30",
+   "name": "18650 storage holder, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 30 18650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "18650",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "18650",
+    "columns": 10,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-1x1-10",
+   "name": "21700 pack end plate, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 1 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 1,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-1x1-30",
+   "name": "21700 storage holder, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 1 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 1,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-2x1-10",
+   "name": "21700 pack end plate, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 2 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 2,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-2x1-30",
+   "name": "21700 storage holder, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 2 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 2,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-3x1-10",
+   "name": "21700 pack end plate, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 3 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 3,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-3x1-30",
+   "name": "21700 storage holder, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 3 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 3,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x1-10",
+   "name": "21700 pack end plate, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x1-30",
+   "name": "21700 storage holder, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x1-10",
+   "name": "21700 pack end plate, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 5 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x1-30",
+   "name": "21700 storage holder, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 5 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-6x1-10",
+   "name": "21700 pack end plate, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 6,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-6x1-30",
+   "name": "21700 storage holder, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 6,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-2x2-10",
+   "name": "21700 pack end plate, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 2,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-2x2-30",
+   "name": "21700 storage holder, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 2,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-3x2-10",
+   "name": "21700 pack end plate, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 3,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-3x2-30",
+   "name": "21700 storage holder, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 3,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x2-10",
+   "name": "21700 pack end plate, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 8 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x2-30",
+   "name": "21700 storage holder, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 8 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x2-10",
+   "name": "21700 pack end plate, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 10 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x2-30",
+   "name": "21700 storage holder, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 10 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x3-10",
+   "name": "21700 pack end plate, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 12 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-4x3-30",
+   "name": "21700 storage holder, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 12 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 4,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x4-10",
+   "name": "21700 pack end plate, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 20 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 4,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-21700-5x4-30",
+   "name": "21700 storage holder, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 20 21700 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "21700",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "21700",
+    "columns": 5,
+    "rows": 4,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-1x1-10",
+   "name": "26650 pack end plate, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 1 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 1,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-1x1-30",
+   "name": "26650 storage holder, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 1 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 1,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-2x1-10",
+   "name": "26650 pack end plate, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 2 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 2,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-2x1-30",
+   "name": "26650 storage holder, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 2 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 2,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-3x1-10",
+   "name": "26650 pack end plate, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 3 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 3,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-3x1-30",
+   "name": "26650 storage holder, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 3 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 3,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x1-10",
+   "name": "26650 pack end plate, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x1-30",
+   "name": "26650 storage holder, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x1-10",
+   "name": "26650 pack end plate, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 5 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x1-30",
+   "name": "26650 storage holder, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 5 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-6x1-10",
+   "name": "26650 pack end plate, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 6,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-6x1-30",
+   "name": "26650 storage holder, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 6,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-2x2-10",
+   "name": "26650 pack end plate, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 2,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-2x2-30",
+   "name": "26650 storage holder, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 2,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-3x2-10",
+   "name": "26650 pack end plate, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 3,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-3x2-30",
+   "name": "26650 storage holder, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 3,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x2-10",
+   "name": "26650 pack end plate, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 8 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x2-30",
+   "name": "26650 storage holder, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 8 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x2-10",
+   "name": "26650 pack end plate, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 10 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x2-30",
+   "name": "26650 storage holder, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 10 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x3-10",
+   "name": "26650 pack end plate, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 12 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-4x3-30",
+   "name": "26650 storage holder, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 12 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 4,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x4-10",
+   "name": "26650 pack end plate, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 20 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 4,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-26650-5x4-30",
+   "name": "26650 storage holder, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 20 26650 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "26650",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "26650",
+    "columns": 5,
+    "rows": 4,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-1x1-10",
+   "name": "14500 pack end plate, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 1 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 1,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-1x1-30",
+   "name": "14500 storage holder, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 1 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 1,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-2x1-10",
+   "name": "14500 pack end plate, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 2 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 2,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-2x1-30",
+   "name": "14500 storage holder, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 2 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 2,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-3x1-10",
+   "name": "14500 pack end plate, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 3 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 3,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-3x1-30",
+   "name": "14500 storage holder, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 3 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 3,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x1-10",
+   "name": "14500 pack end plate, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x1-30",
+   "name": "14500 storage holder, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x1-10",
+   "name": "14500 pack end plate, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 5 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x1-30",
+   "name": "14500 storage holder, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 5 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-6x1-10",
+   "name": "14500 pack end plate, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 6,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-6x1-30",
+   "name": "14500 storage holder, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 6,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-2x2-10",
+   "name": "14500 pack end plate, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 2,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-2x2-30",
+   "name": "14500 storage holder, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 2,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-3x2-10",
+   "name": "14500 pack end plate, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 3,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-3x2-30",
+   "name": "14500 storage holder, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 3,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x2-10",
+   "name": "14500 pack end plate, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 8 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x2-30",
+   "name": "14500 storage holder, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 8 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x2-10",
+   "name": "14500 pack end plate, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 10 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x2-30",
+   "name": "14500 storage holder, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 10 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x3-10",
+   "name": "14500 pack end plate, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 12 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-4x3-30",
+   "name": "14500 storage holder, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 12 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 4,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x4-10",
+   "name": "14500 pack end plate, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 20 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 4,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-5x4-30",
+   "name": "14500 storage holder, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 20 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 5,
+    "rows": 4,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-10x3-10",
+   "name": "14500 pack end plate, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 30 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 10,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-14500-10x3-30",
+   "name": "14500 storage holder, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 30 14500 cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "14500",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "14500",
+    "columns": 10,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-1x1-10",
+   "name": "AAA pack end plate, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 1 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 1,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-1x1-30",
+   "name": "AAA storage holder, 1 cell (1 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 1 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "1 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 1,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-2x1-10",
+   "name": "AAA pack end plate, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 2 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 2,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-2x1-30",
+   "name": "AAA storage holder, 2 cells (2 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 2 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "2 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 2,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-3x1-10",
+   "name": "AAA pack end plate, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 3 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 3,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-3x1-30",
+   "name": "AAA storage holder, 3 cells (3 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 3 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "3 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 3,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x1-10",
+   "name": "AAA pack end plate, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x1-30",
+   "name": "AAA storage holder, 4 cells (4 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x1-10",
+   "name": "AAA pack end plate, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 5 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x1-30",
+   "name": "AAA storage holder, 5 cells (5 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 5 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "5 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-6x1-10",
+   "name": "AAA pack end plate, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 6,
+    "rows": 1,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-6x1-30",
+   "name": "AAA storage holder, 6 cells (6 x 1)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 6,
+    "rows": 1,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-2x2-10",
+   "name": "AAA pack end plate, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 4 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 2,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-2x2-30",
+   "name": "AAA storage holder, 4 cells (2 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 4 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "4 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 2,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-3x2-10",
+   "name": "AAA pack end plate, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 6 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 3,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-3x2-30",
+   "name": "AAA storage holder, 6 cells (3 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 6 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "6 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 3,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x2-10",
+   "name": "AAA pack end plate, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 8 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x2-30",
+   "name": "AAA storage holder, 8 cells (4 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 8 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "8 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x2-10",
+   "name": "AAA pack end plate, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 10 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 2,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x2-30",
+   "name": "AAA storage holder, 10 cells (5 x 2)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 10 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "10 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 2,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x3-10",
+   "name": "AAA pack end plate, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 12 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-4x3-30",
+   "name": "AAA storage holder, 12 cells (4 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 12 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "12 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 4,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x4-10",
+   "name": "AAA pack end plate, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 20 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 4,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-5x4-30",
+   "name": "AAA storage holder, 20 cells (5 x 4)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 20 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "20 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 5,
+    "rows": 4,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-10x3-10",
+   "name": "AAA pack end plate, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Pack end plate (print 2) for 30 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 10,
+    "rows": 3,
+    "depth": 10,
+    "contactWindow": 55,
+    "stripGrooves": true
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  },
+  {
+   "id": "cells-aaa-10x3-30",
+   "name": "AAA storage holder, 30 cells (10 x 3)",
+   "generator": "cell-holder",
+   "description": "Storage holder for 30 AAA cells. Typical cell diameter: measure a few of yours.",
+   "tags": [
+    "battery",
+    "cell",
+    "holder",
+    "pack",
+    "AAA",
+    "30 cells"
+   ],
+   "params": {
+    "cell": "AAA",
+    "columns": 10,
+    "rows": 3,
+    "depth": 30,
+    "contactWindow": 0,
+    "stripGrooves": false
+   },
+   "series": "cell-holders",
+   "verify": [
+    "clearance"
+   ]
+  }
+ ]
+}
