@@ -6,6 +6,20 @@ The repository is private, so sign in to GitHub in your browser before you downl
 
 Desktop vs Raspberry Pi: a desktop GPU can use 3D view quality **Ultra** (Settings > 3D view). On a Pi or a phone, set quality **Low** and turn off card previews if pages feel slow.
 
+## 0. With Node.js already installed: npm package
+
+If you have Node.js 18 or newer, install the package and start the app:
+
+```bash
+npm install -g https://github.com/opsecfreak/STLTools/releases/latest/download/stltools-1.0.1.tgz
+```
+
+```bash
+stltools app
+```
+
+`stltools app --lan` serves phones and tablets on your network; `stltools list`, `stltools gen`, `stltools preset` work from any folder. Your data goes to the same per-user folder as the desktop packages. Update by installing the newer `.tgz`; remove with `npm uninstall -g stltools`. When the package is on npmjs.com: `npm install -g stltools` or `npx stltools app`.
+
 ## 1. Download
 
 1. Open the repository on GitHub: https://github.com/opsecfreak/STLTools

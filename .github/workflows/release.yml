@@ -56,6 +56,11 @@ jobs:
       - name: Build packages
         if: steps.tag.outputs.mode != 'skip'
         run: node scripts/package.mjs
+      - name: npm package file (install with npm install -g <release link>)
+        if: steps.tag.outputs.mode != 'skip'
+        run: |
+          npm pack --pack-destination dist
+          (cd dist && sha256sum stltools-*.tgz >> SHA256SUMS.txt)
       - name: Publish release
         if: steps.tag.outputs.mode != 'skip'
         env:
@@ -71,7 +76,19 @@ jobs:
             *-mts.*) EXTRA="--prerelease --latest=false"; TITLE="STL Tools $TAG (MTS personal edition)" ;;
             *-*) EXTRA="--prerelease --latest=false" ;;
           esac
-          gh release create "$TAG" dist/*.zip dist/*.tar.gz dist/SHA256SUMS.txt \
+          gh release create "$TAG" dist/*.zip dist/*.tar.gz dist/*.tgz dist/SHA256SUMS.txt \
             --target "$GITHUB_SHA" \
             --title "$TITLE" \
             --notes-file dist/RELEASE_NOTES.md $EXTRA
+      # Public versions only (no suffix): publish to npmjs.com when the repository
+      # has an NPM_TOKEN secret (Settings > Secrets and variables > Actions).
+      - name: Publish to npm
+        if: steps.tag.outputs.mode != 'skip' && !contains(steps.tag.outputs.tag, '-')
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "No NPM_TOKEN secret: skipping npm publish (the .tgz is on the release)."; exit 0; fi
+          VER=$(node -p "require('./package.json').version")
+          if npm view "stltools@$VER" version >/dev/null 2>&1; then echo "stltools@$VER is already on npm."; exit 0; fi
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm publish --access public

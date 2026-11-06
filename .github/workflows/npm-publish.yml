@@ -1,0 +1,32 @@
+name: Publish to npm
+
+# Publishes the current package.json version of the chosen branch to
+# npmjs.com as "stltools". Needs the repository secret NPM_TOKEN (an npm
+# "Automation" access token). Start it by hand: Actions > Publish to npm >
+# Run workflow. Public versions only: versions with a suffix are refused.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          VER=$(node -p "require('./package.json').version")
+          case "$VER" in *-*) echo "Version $VER has a suffix (personal edition): not published to npm."; exit 1 ;; esac
+          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "Add the NPM_TOKEN repository secret first."; exit 1; fi
+          if npm view "stltools@$VER" version >/dev/null 2>&1; then echo "stltools@$VER is already on npm."; exit 0; fi
+          npm publish --access public

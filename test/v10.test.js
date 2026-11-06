@@ -111,3 +111,14 @@ test('example parts list: every linked preset exists', { skip: !existsSync('seed
   const parts = await (await fetch(`${base}/api/parts`)).json();
   assert.deepEqual(parts.items.find((x) => x.id === 'SEN01').presets, ['tfluna-plate', 'tfluna-tape']);
 });
+
+test('npm package: publishable, ships the app, not the tests or screenshots', async () => {
+  const pkg = JSON.parse(await readFile('package.json', 'utf8'));
+  assert.ok(!pkg.private, 'publishable');
+  assert.equal(pkg.publishConfig.access, 'public');
+  assert.deepEqual(pkg.bin, { stltools: 'bin/stltools.js', 'stltools-app': 'bin/stltools-app.js' });
+  for (const d of ['bin/', 'src/', 'public/', 'presets/', 'printer-profiles/', 'seed/', 'LICENSE', 'NOTICE']) assert.ok(pkg.files.includes(d), `files: ${d}`);
+  assert.ok(pkg.files.includes('!docs/screenshots/'));
+  assert.ok(!pkg.files.some((f) => f.startsWith('test')));
+  assert.match(await readFile('bin/stltools.js', 'utf8'), /cmd === 'app'/);
+});
