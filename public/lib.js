@@ -122,6 +122,19 @@ export async function saveSettings(patch) {
   return settingsCache;
 }
 
+// Printer features are optional (Settings > Printers > Printer features): 'on', 'off',
+// or 'auto' = shown when at least one printer is saved. Elements marked
+// data-needs-printers are hidden by CSS while <body data-printers="off">.
+let printersOn = false;
+export const printersVisible = () => printersOn;
+export async function refreshPrinterVisibility() {
+  const mode = settingsCache?.printers.enabled ?? 'auto';
+  if (mode === 'auto') printersOn = (await api('GET', '/api/printers').catch(() => [])).length > 0;
+  else printersOn = mode === 'on';
+  document.body.dataset.printers = printersOn ? 'on' : 'off';
+  return printersOn;
+}
+
 /** Run fn(settings, patch) after every saveSettings(). Returns an unsubscribe function. */
 export function onSettings(fn) {
   settingsListeners.add(fn);

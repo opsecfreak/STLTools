@@ -1,5 +1,7 @@
 # Example parts list
 
+> See also: [User guide: My Parts](../../docs/USER-GUIDE.md#my-parts) | [API: My Parts](../../docs/API.md#my-parts-v7) | [All docs](../../docs/README.md)
+
 A small example of a My Parts list: 16 common hobby parts in 7 categories,
 with ownership (Owned / Confirm / Planned), sizes where a published standard
 exists, and MEASURE where you must measure your own part. Load it from

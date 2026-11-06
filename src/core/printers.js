@@ -2,7 +2,8 @@
 // that run Mainsail or Fluidd). VIEW ONLY, by design:
 //
 //   allowed:  status, temperatures, progress, layer, file list + thumbnails,
-//             file metadata, print history, webcam snapshots,
+//             file metadata, print history, webcam snapshots and live MJPEG video,
+//             machine limits (toolhead + configfile query) for estimates,
 //             uploading a G-code file with print=false (never starts a job)
 //   never:    start / pause / resume / cancel, G-code commands, emergency stop,
 //             restarts, deleting or moving files, changing settings
@@ -18,6 +19,7 @@ import { randomBytes } from 'node:crypto';
 import { networkInterfaces } from 'node:os';
 import { createJsonFile } from './jsonstore.js';
 import { CatalogError } from './catalog.js';
+import { getProfile } from './profiles.js';
 
 // Printer host boards (the SV07 runs Klipper on a small ARM board) can be slow
 // while printing, so allow a few seconds before calling it offline.
@@ -73,8 +75,8 @@ async function mr(printer, path, { method = 'GET', body, headers = {}, raw = fal
   return data.result ?? data;
 }
 
-function snapshotUrl(printer, cam) {
-  const u = String(cam.snapshot_url ?? '');
+function snapshotUrl(printer, cam, key = 'snapshot_url') {
+  const u = String(cam[key] ?? '');
   if (!u) return null;
   if (/^https?:\/\//i.test(u)) return u;
   // Relative webcam paths are served by the printer's web server (Mainsail /
@@ -84,6 +86,13 @@ function snapshotUrl(printer, cam) {
   const host = base.port === '7125' ? base.hostname : base.host;
   return `${base.protocol}//${host}${u.startsWith('/') ? '' : '/'}${u}`;
 }
+
+// Mainsail / Fluidd default camera paths (crowsnest or mjpg-streamer behind nginx).
+// Used only when Moonraker lists no webcam; the profile's "webcam" block wins.
+const DEFAULT_CAM = { stream: '/webcam/?action=stream', snapshot: '/webcam/?action=snapshot' };
+// Moonraker webcam services whose stream_url is plain MJPEG (can be shown in an <img>).
+const MJPEG_SERVICES = new Set(['mjpegstreamer', 'uv4l-mjpeg', '']);
+const MAX_STREAMS_PER_PRINTER = 3;
 
 const cleanModel = (m) => (m && /^[a-z0-9][a-z0-9-]{1,40}$/.test(String(m)) ? String(m) : '');
 
@@ -97,6 +106,8 @@ export function guessModel(hostname) {
 export function createPrinters({ dataDir }) {
   const file = createJsonFile(join(dataDir, 'printers.json'), []);
   const metaCache = new Map(); // `${id}|${filename}|${modified}` -> metadata
+  const checks = new Map(); // id -> { ok, at, klippy?, error? } from the last connection check
+  const openStreams = new Map(); // id -> open webcam streams
 
   const find = async (id) => {
     const p = (await file.get()).find((x) => x.id === id);
@@ -106,7 +117,7 @@ export function createPrinters({ dataDir }) {
 
   const api = {
     async list() {
-      return (await file.get()).map(publicView);
+      return (await file.get()).map((p) => ({ ...publicView(p), lastCheck: checks.get(p.id) ?? null }));
     },
 
     async add({ name, url, apiKey, model }) {
@@ -132,6 +143,7 @@ export function createPrinters({ dataDir }) {
         ...cur,
         name: name !== undefined ? String(name).trim().slice(0, 60) || cur.name : cur.name,
         url: url !== undefined ? normalizeUrl(url) : cur.url,
+        machine: url !== undefined && normalizeUrl(url) !== cur.url ? undefined : cur.machine,
         apiKey: apiKey === undefined ? cur.apiKey : String(apiKey).trim().slice(0, 200),
         model: model === undefined ? cur.model ?? '' : cleanModel(model),
       };
@@ -203,12 +215,24 @@ export function createPrinters({ dataDir }) {
         if (g.permissions && !String(g.permissions).includes('w')) throw new Error('The gcodes folder is read-only.');
         return 'gcodes folder is writable (uploads always use print=false).';
       }, 'Uploads need a writable gcodes folder in Moonraker.');
-      await run('Webcam', async () => {
-        const r = await mr(p, '/server/webcams/list');
-        const cams = (r.webcams ?? []).filter((c) => c.enabled !== false);
-        return cams.length ? `${cams.length} webcam(s): ${cams.map((c) => c.name).join(', ')}.` : 'No webcam configured (optional).';
-      }, 'Optional. Configure the camera in Mainsail.');
+      let machine = null;
+      await run('Printer limits (for estimates)', async () => {
+        const q = await mr(p, '/printer/objects/query?toolhead&configfile=settings');
+        const th = q.status?.toolhead ?? {};
+        const ex = q.status?.configfile?.settings?.extruder ?? {};
+        const lo = th.axis_minimum ?? [];
+        const hi = th.axis_maximum ?? [];
+        machine = { x: hi[0] - Math.max(0, lo[0] ?? 0), y: hi[1] - Math.max(0, lo[1] ?? 0), z: hi[2] - Math.max(0, lo[2] ?? 0) };
+        return `Travel ${[machine.x, machine.y, machine.z].map((v) => (Number.isFinite(v) ? v.toFixed(0) : '?')).join(' x ')} mm, max ${th.max_velocity ?? '?'} mm/s, accel ${th.max_accel ?? '?'} mm/s2, nozzle ${ex.nozzle_diameter ?? '?'} mm.`;
+      }, 'Optional. Estimates then use the printer profile only.');
       const model = guessModel(hostname, info);
+      await run('Webcam', async () => {
+        const cams = await api.cameras({ ...p, model });
+        if (!cams.length) return 'No webcam found (optional).';
+        const c = cams[0];
+        const kind = c.stream_url && MJPEG_SERVICES.has(c.service ?? '') ? 'live video + snapshots' : c.snapshot_url ? 'snapshots' : 'not viewable here';
+        return `${cams.length} webcam(s): ${cams.map((x) => x.name).join(', ')}. ${kind}${c.guessed ? ' (found at the Mainsail default path)' : ''}.`;
+      }, 'Optional. Configure the camera in Mainsail (Settings > Webcams).');
       return { ok: steps.every((s) => s.ok), steps, url: p.url, hostname, model };
     },
 
@@ -328,17 +352,46 @@ export function createPrinters({ dataDir }) {
       }));
     },
 
+    /**
+     * Cameras as Mainsail / Fluidd show them. Source order: Moonraker's webcam list
+     * (Mainsail and Fluidd save their camera settings there), else the printer
+     * profile's webcam paths, else the Mainsail defaults. A guessed camera is
+     * marked guessed: true and only shown when its snapshot answers.
+     *   -> [{ index, name, service, stream: bool, snapshot: bool, flipH, flipV, rotation, fps, guessed }]
+     */
+    async cameras(p) {
+      const r = await mr(p, '/server/webcams/list').catch(() => ({ webcams: [] }));
+      const listed = (r.webcams ?? []).filter((c) => c.enabled !== false && (c.snapshot_url || c.stream_url));
+      if (listed.length) return listed.map((c) => ({ ...c, guessed: false }));
+      const prof = getProfile(p.model)?.webcam ?? DEFAULT_CAM;
+      const cam = { name: 'webcam', service: 'mjpegstreamer', stream_url: prof.stream ?? DEFAULT_CAM.stream, snapshot_url: prof.snapshot ?? DEFAULT_CAM.snapshot, guessed: true };
+      try {
+        const res = await fetch(snapshotUrl(p, cam), { signal: AbortSignal.timeout(3000) });
+        await res.body?.cancel();
+        if (res.ok && /^image\//.test(res.headers.get('content-type') ?? '')) return [cam];
+      } catch { /* no camera at the default path */ }
+      return [];
+    },
+
     async webcams(id) {
       const p = await find(id);
-      const r = await mr(p, '/server/webcams/list').catch(() => ({ webcams: [] }));
-      return (r.webcams ?? []).filter((c) => c.enabled !== false && c.snapshot_url).map((c, i) => ({ index: i, name: c.name, flipH: Boolean(c.flip_horizontal), flipV: Boolean(c.flip_vertical), rotation: c.rotation ?? 0 }));
+      return (await api.cameras(p)).map((c, i) => ({
+        index: i,
+        name: c.name,
+        service: c.service ?? '',
+        stream: Boolean(c.stream_url) && MJPEG_SERVICES.has(c.service ?? ''),
+        snapshot: Boolean(c.snapshot_url),
+        flipH: Boolean(c.flip_horizontal),
+        flipV: Boolean(c.flip_vertical),
+        rotation: c.rotation ?? 0,
+        fps: c.target_fps ?? null,
+        guessed: c.guessed,
+      }));
     },
 
     async snapshot(id, index = 0) {
       const p = await find(id);
-      const r = await mr(p, '/server/webcams/list');
-      const cams = (r.webcams ?? []).filter((c) => c.enabled !== false && c.snapshot_url);
-      const cam = cams[index];
+      const cam = (await api.cameras(p)).filter((c) => c.snapshot_url)[index];
       if (!cam) throw new CatalogError('No webcam with a snapshot URL', 404);
       const url = snapshotUrl(p, cam);
       if (!isLanHost(new URL(url).hostname)) throw new CatalogError('Webcam is not on the local network');
@@ -352,6 +405,96 @@ export function createPrinters({ dataDir }) {
       const data = Buffer.from(await res.arrayBuffer());
       if (data.length > 8 * 1024 * 1024) throw Object.assign(new Error('Snapshot too large'), { status: 502 });
       return { type: res.headers.get('content-type') ?? 'image/jpeg', data };
+    },
+
+    /**
+     * Live MJPEG video from the printer's camera (the stream Mainsail shows).
+     * GET only, same LAN rule as snapshots. Returns { type, body, close } where body
+     * is a web ReadableStream; the caller pipes it and calls close() when the
+     * browser goes away. At most 3 open streams per printer (Pi-friendly).
+     */
+    async stream(id, index = 0) {
+      const p = await find(id);
+      if ((openStreams.get(id) ?? 0) >= MAX_STREAMS_PER_PRINTER) throw new CatalogError('Too many open video streams for this printer. Close a tab.', 429);
+      const cam = (await api.cameras(p)).filter((c) => c.snapshot_url || c.stream_url)[index];
+      if (!cam?.stream_url) throw new CatalogError('This webcam has no stream URL. Use snapshots.', 404);
+      if (!MJPEG_SERVICES.has(cam.service ?? '')) throw new CatalogError(`Webcam service "${cam.service}" is not MJPEG. Use snapshots, or open Mainsail for its video.`, 415);
+      const url = snapshotUrl(p, cam, 'stream_url');
+      if (!isLanHost(new URL(url).hostname)) throw new CatalogError('Webcam is not on the local network');
+      const ctrl = new AbortController();
+      const connect = setTimeout(() => ctrl.abort(), TIMEOUT);
+      let res;
+      try {
+        res = await fetch(url, { signal: ctrl.signal });
+      } catch (err) {
+        throw Object.assign(new Error(`Webcam stream did not answer: ${err.cause?.code ?? err.message}`), { status: 502 });
+      } finally {
+        clearTimeout(connect);
+      }
+      if (!res.ok || !res.body) { ctrl.abort(); throw Object.assign(new Error(`Webcam stream answered HTTP ${res.status}`), { status: 502 }); }
+      openStreams.set(id, (openStreams.get(id) ?? 0) + 1);
+      let closed = false;
+      return {
+        type: res.headers.get('content-type') ?? 'multipart/x-mixed-replace',
+        body: res.body,
+        close: () => {
+          if (closed) return;
+          closed = true;
+          openStreams.set(id, Math.max(0, (openStreams.get(id) ?? 1) - 1));
+          ctrl.abort();
+        },
+      };
+    },
+
+    /**
+     * The printer's own limits from Klipper's config, for estimates: one read-only
+     * query of toolhead + configfile. Saved on the printer as `machine`.
+     *   -> { bed: {x,y,z}, maxVelocity, maxAccel, nozzle, filamentDiameter, kinematics, readAt }
+     */
+    async machine(id) {
+      const p = await find(id);
+      const q = await mr(p, '/printer/objects/query?toolhead&configfile=settings');
+      const th = q.status?.toolhead ?? {};
+      const cfg = q.status?.configfile?.settings ?? {};
+      const lo = th.axis_minimum ?? [];
+      const hi = th.axis_maximum ?? [];
+      const span = (i) => (Number.isFinite(hi[i]) && Number.isFinite(lo[i]) ? Math.round((hi[i] - Math.max(0, lo[i])) * 10) / 10 : null);
+      const pos = (v) => (Number.isFinite(Number(v)) && Number(v) > 0 ? Number(v) : null);
+      const bed = { x: span(0), y: span(1), z: span(2) };
+      const m = {
+        bed: bed.x && bed.y && bed.z ? bed : null,
+        maxVelocity: pos(th.max_velocity ?? cfg.printer?.max_velocity),
+        maxAccel: pos(th.max_accel ?? cfg.printer?.max_accel),
+        nozzle: pos(cfg.extruder?.nozzle_diameter),
+        filamentDiameter: pos(cfg.extruder?.filament_diameter),
+        kinematics: String(cfg.printer?.kinematics ?? '').slice(0, 20) || null,
+        readAt: new Date().toISOString(),
+      };
+      const list = await file.get();
+      await file.set(list.map((x) => (x.id === id ? { ...x, machine: m } : x)));
+      return m;
+    },
+
+    /** Read-only "are you there?" for one printer; remembered for the UI. */
+    async check(id) {
+      const p = await find(id);
+      const at = new Date().toISOString();
+      try {
+        const info = await mr(p, '/server/info', { timeout: 4000 });
+        const result = { ok: true, at, klippy: info.klippy_state ?? null };
+        checks.set(id, result);
+        if (!p.machine) await api.machine(id).catch(() => null);
+        return result;
+      } catch (err) {
+        const result = { ok: false, at, error: err.message };
+        checks.set(id, result);
+        return result;
+      }
+    },
+
+    async checkAll() {
+      const list = await file.get();
+      return Object.fromEntries(await Promise.all(list.map(async (p) => [p.id, await api.check(p.id)])));
     },
 
     /** Upload a G-code file to the printer's gcodes folder. Never starts a print (print=false). */

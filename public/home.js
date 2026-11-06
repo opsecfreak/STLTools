@@ -5,7 +5,7 @@
 //   item (shop catalog), page (Settings sections, Import, Printers...).
 // search(query, opts) is used by Home, the header's global search
 // (public/search.js) and the project part picker. Query syntax: see parseQuery.
-import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete } from './lib.js';
+import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete, printersVisible } from './lib.js';
 import { thumbImg, thumbStl } from './thumbs.js';
 import { formatDuration } from '/shared/estimate.js';
 import { ownershipOf, ownBadge } from './parts.js';
@@ -679,7 +679,7 @@ function drawDashboard(dash, redraw) {
     el('section', {}, el('div', { className: 'tiles' }, ...tiles,
       tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
       tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
-      tile('printers', 'Printers', 'Status, files, upload (view only)', 'tile-printers'),
+      printersVisible() ? tile('printers', 'Printers', 'Status, live webcam, files, upload (view only)', 'tile-printers') : null,
       tile('browse', 'Browse', `${ctx.state.presets.length.toLocaleString()} presets by category, tag and collection`, 'tile-browse'),
       tile('parts', 'My Parts', `${(ctx.state.parts ?? []).length} parts, ${(ctx.state.parts ?? []).filter((x) => x.ownershipKey === 'Owned').length} owned`, 'tile-parts'),
       tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings'))),

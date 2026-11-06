@@ -1,5 +1,7 @@
 # Printer profiles and print estimates
 
+> See also: [Printers: estimates from your actual printer](PRINTERS.md#estimates-from-your-actual-printer) | [User guide: print time](USER-GUIDE.md#print-time-and-filament) | [All docs](README.md)
+
 A printer profile tells STL Tools the build volume and typical speeds of a
 printer. It is used for:
 

@@ -212,7 +212,7 @@ test('printers: SV07 connection test step by step, model guess, saved model, rea
   const before = mock.requests.length;
   const d = (await j('POST', '/api/printers/diagnose', { url: `127.0.0.1:${mock.port}` })).body;
   assert.equal(d.ok, true, JSON.stringify(d.steps));
-  assert.deepEqual(d.steps.map((s) => s.step), ['Address', 'Moonraker answers', 'Printer info', 'Status query', 'File list', 'Upload folder', 'Webcam']);
+  assert.deepEqual(d.steps.map((s) => s.step), ['Address', 'Moonraker answers', 'Printer info', 'Status query', 'File list', 'Upload folder', 'Printer limits (for estimates)', 'Webcam']);
   assert.equal(d.model, 'sovol-sv07', 'hostname sv07-* suggests the SV07 profile');
   for (const r of mock.requests.slice(before)) assert.equal(r.method, 'GET', `diagnose sent ${r.method} ${r.path}`);
 

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security problem
+    url: https://github.com/opsecfreak/STLTools/security/advisories/new
+    about: Report security problems privately, not as a public issue.
+  - name: Documentation
+    url: https://github.com/opsecfreak/STLTools/blob/main/docs/README.md
+    about: Install, Raspberry Pi, self-hosting, printers, troubleshooting.

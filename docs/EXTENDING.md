@@ -1,5 +1,7 @@
 # Extending STL Tools without breaking it
 
+> See also: [Generators](../src/generators/README.md) | [Presets](../presets/README.md) | [custom/](../custom/README.md) | [Contributing](../CONTRIBUTING.md) | [All docs](README.md)
+
 The project is built so new parts can be added without touching existing ones.
 
 ## What loads automatically

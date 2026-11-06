@@ -39,6 +39,8 @@ const post = (path, body, method = 'POST') => fetch(base + path, { method, body:
 await post('/api/parts/seed', { set: 'example' });
 const printer = await post('/api/printers', { name: 'SV07', url: `127.0.0.1:${mock.port}`, model: 'sovol-sv07' });
 await post('/api/settings', { printers: { defaultPrinter: printer.id } }, 'PUT');
+await fetch(`${base}/api/printers/${printer.id}/machine`);
+await post('/api/printers/check', {});
 const d1 = await post('/api/designs', { name: 'ESC tray 16 mm arm, long', generator: 'component-mount', params: { itemLength: 60 }, section: 'quads' });
 await post('/api/designs', { name: 'Clamp 12 mm gear leg', generator: 'tube-clamp', params: { tubeOD: 12 }, section: 'accessories' });
 const gen = await post('/api/generate/lidar-mount', {});
@@ -87,6 +89,7 @@ await shot('settings-printers', 'settings/printers', 2000, async () => {
   await page.waitForTimeout(1500);
 });
 await shot('printers', 'printers', 5000);
+await shot('settings-hosting', 'settings/hosting', 2500);
 await shot('my-parts', 'parts', 4000);
 await page.evaluate(async () => { const c = await (await fetch('/api/collections', { method: 'POST', body: JSON.stringify({ name: 'Bench tools', color: '#1a7f37' }) })).json(); for (const id of ['drill-guide-2-8-1', 'hw-heat-set-insert-test-m3', 'spool-arm-52-1']) await fetch(`/api/collections/${c.id}/toggle`, { method: 'POST', body: JSON.stringify({ kind: 'preset', id }) }); });
 await shot('browse', 'browse', 5000, async () => {
@@ -123,6 +126,8 @@ await shot('dark-mode', 'quads', 2000, async () => {
   await page.waitForTimeout(3500);
 });
 await browser.close();
+srv.closeAllConnections?.();
 srv.close();
+mock.server.closeAllConnections?.();
 mock.server.close();
 rmSync(dataDir, { recursive: true, force: true });

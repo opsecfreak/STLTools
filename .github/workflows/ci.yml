@@ -1,5 +1,13 @@
 name: CI
 
+# What runs where:
+#   test          Linux x64, Node 18 / 20 / 22 (18 = Raspberry Pi OS Bookworm apt package)
+#   test-os       Windows x64, macOS ARM64, Linux ARM64 (the Raspberry Pi 4 / 5 CPU), Node 22
+#   installer     deploy/install-pi.sh for real (system user, unit file, update, uninstall) on x64 and ARM64
+#   ui            the web UI in Chromium (pages, 3D view, live webcam, printer toggle, no-WebGL fallback)
+#                 on Linux and Windows
+#   packages      builds every release package, checks binaries and scripts, then runs the
+#                 Windows x64 package on Windows and the Linux ARM64 package on ARM64
 on:
   push:
     branches: ['**']
@@ -14,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20, 22] # 18 = Raspberry Pi OS Bookworm apt package
+        node: [18, 20, 22]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,3 +31,138 @@ jobs:
           cache: npm
       - run: npm ci --no-audit --no-fund
       - run: npm test
+
+  test-os:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+
+  installer:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm]
+        node: [18, 22]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --omit=dev --no-audit --no-fund
+      - name: Pi installer (system user, unit file, update, uninstall)
+        run: sudo env "PATH=$PATH" bash scripts/test-pi-install.sh
+
+  ui:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm install --no-save --no-audit --no-fund playwright@1.49.1
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/ui-smoke.mjs
+
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: .cache/node
+          key: node-runtimes-${{ hashFiles('scripts/package.mjs') }}
+      - run: npm ci --no-audit --no-fund
+      - run: node scripts/package.mjs any-os windows-x64 linux-x64 linux-arm64 linux-armv7l macos-arm64 macos-x64
+      - run: node scripts/check-packages.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-packages
+          path: |
+            dist/stltools-*-windows-x64.zip
+            dist/stltools-*-linux-arm64.tar.gz
+          retention-days: 3
+
+  package-windows:
+    needs: packages
+    runs-on: windows-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ci-packages
+      - name: Run the Windows package (bundled Node.js, temp and USB portable modes)
+        shell: pwsh
+        run: |
+          $zip = Get-ChildItem stltools-*-windows-x64.zip | Select-Object -First 1
+          Expand-Archive $zip.FullName -DestinationPath pkg
+          $root = (Get-ChildItem pkg -Directory | Select-Object -First 1).FullName
+          & "$root\node\node.exe" --version
+          # one-time session: answers, then stops by itself
+          $p = Start-Process -FilePath "$root\node\node.exe" -ArgumentList "`"$root\app\bin\stltools-app.js`"", '--temp', '--no-browser', '--port', '3901', '--hours', '0.01' -PassThru -NoNewWindow
+          $ok = $false
+          for ($i = 0; $i -lt 60; $i++) { try { $v = Invoke-RestMethod http://127.0.0.1:3901/api/hosting; $ok = $true; break } catch { Start-Sleep 1 } }
+          if (-not $ok) { throw 'Windows package did not answer' }
+          if ($v.mode -ne 'temp') { throw "mode $($v.mode)" }
+          $g = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:3901/api/generate/tube-clamp -Body '{"tubeOD":16}'
+          if ($g.parts.Count -lt 1) { throw 'generate failed' }
+          $stl = Invoke-WebRequest -Uri ("http://127.0.0.1:3901" + $g.parts[0].url) -UseBasicParsing
+          if ($stl.RawContentLength -lt 1000) { throw 'STL too small' }
+          $p.WaitForExit(90000) | Out-Null
+          if (-not $p.HasExited) { throw 'did not stop by itself' }
+          # USB portable start script: data next to the package
+          $b = Start-Process -FilePath cmd.exe -ArgumentList '/c', "`"$root\Start STL Tools (USB portable).bat`" --no-browser --port 3902 --hours 0.005" -PassThru -NoNewWindow
+          $ok = $false
+          for ($i = 0; $i -lt 60; $i++) { try { $h = Invoke-RestMethod http://127.0.0.1:3902/api/hosting; $ok = $true; break } catch { Start-Sleep 1 } }
+          if (-not $ok) { throw 'portable start script did not answer' }
+          if ($h.mode -ne 'portable') { throw "mode $($h.mode)" }
+          if (-not (Test-Path "$root\stltools-data\data")) { throw 'no stltools-data folder next to the package' }
+          $b.WaitForExit(60000) | Out-Null
+          Write-Host 'Windows package OK'
+
+  package-arm64:
+    needs: packages
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ci-packages
+          path: dist
+      - name: Run the Linux ARM64 package (Raspberry Pi 4 / 5 CPU) from a "USB" folder
+        run: |
+          mkdir -p usb && tar -xzf dist/stltools-*-linux-arm64.tar.gz -C usb
+          root="$(ls -d usb/stltools-*-linux-arm64)"
+          "$root/node/bin/node" -p "process.arch"
+          "$root/start-portable.sh" --no-browser --port 3903 --hours 0.01 &
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:3903/api/hosting > h.json 2>/dev/null && break; sleep 1; done
+          grep -q '"mode":"portable"' h.json
+          grep -q '"arch":"arm64"' h.json
+          curl -fsS -X POST http://127.0.0.1:3903/api/generate/spacer -d '{"length":12}' | grep -q '"parts"'
+          test -d "$root/stltools-data/data"
+          wait
+      - name: Pi installer from the package (its own Node.js and node_modules, no npm)
+        run: |
+          root="$(cd usb/stltools-*-linux-arm64 && pwd)"
+          sudo env "PATH=$PATH" SOURCE_DIR="$root/app" USE_PACKAGE_NODE=1 bash scripts/test-pi-install.sh | tee pi.log
+          grep -q "/opt/stltools-node/bin/node" pi.log

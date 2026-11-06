@@ -15,9 +15,14 @@
 //
 // Options: --port 3000   --lan (listen on all interfaces, for phones/tablets)
 //          --no-browser  --browser  --data <folder>
+//          --portable    keep all data next to the app (USB drive). Same as a file
+//                        named portable.txt next to the start script.
+//          --temp        one-time session: data in a temp folder, deleted on exit
+//          --hours <n>   stop by itself after n hours (e.g. 2 or 0.5)
+// Without --lan / --port, Settings > Hosting (data/settings.json) decides.
 
-import { mkdirSync, existsSync, copyFileSync, writeFileSync, accessSync, constants as fsConstants } from 'node:fs';
-import { homedir, networkInterfaces } from 'node:os';
+import { mkdirSync, existsSync, copyFileSync, writeFileSync, readFileSync, accessSync, mkdtempSync, rmSync, constants as fsConstants } from 'node:fs';
+import { homedir, networkInterfaces, tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
@@ -37,8 +42,17 @@ if (major < 18) {
   process.exit(1);
 }
 
+// Release packages put app/ next to node/ and the start scripts (the package root).
+// On macOS the app sits in "STL Tools.app/Contents/Resources/app": use the folder that holds the .app.
+const macBundle = APP_ROOT.match(/^(.*)[\\/][^\\/]+\.app[\\/]Contents[\\/]Resources[\\/]app$/);
+const PACKAGE_ROOT = macBundle ? macBundle[1] : dirname(APP_ROOT);
+const portableMarker = [join(PACKAGE_ROOT, 'portable.txt'), join(APP_ROOT, 'portable.txt')].find((f) => existsSync(f));
+const MODE = flag('temp') ? 'temp' : flag('portable') || portableMarker ? 'portable' : opt('data') ? 'custom' : 'desktop';
+
 function userFolder() {
   if (opt('data')) return opt('data');
+  if (MODE === 'temp') return mkdtempSync(join(tmpdir(), 'stltools-temp-'));
+  if (MODE === 'portable') return join(portableMarker ? dirname(portableMarker) : PACKAGE_ROOT, 'stltools-data');
   if (process.env.STLTOOLS_HOME) return process.env.STLTOOLS_HOME;
   if (process.platform === 'win32') return join(process.env.APPDATA ?? join(homedir(), 'AppData', 'Roaming'), 'STLTools');
   if (process.platform === 'darwin') return join(homedir(), 'Library', 'Application Support', 'STLTools');
@@ -46,8 +60,8 @@ function userFolder() {
 }
 
 const home = userFolder();
-const dataDir = process.env.STLTOOLS_DATA ?? join(home, 'data');
-const customDir = process.env.STLTOOLS_CUSTOM ?? join(home, 'custom');
+const dataDir = process.env.STLTOOLS_DATA || join(home, 'data');
+const customDir = process.env.STLTOOLS_CUSTOM || join(home, 'custom');
 for (const d of [dataDir, join(customDir, 'generators'), join(customDir, 'presets')]) mkdirSync(d, { recursive: true });
 const readme = join(APP_ROOT, 'custom', 'README.md');
 if (existsSync(readme) && !existsSync(join(customDir, 'README.md'))) copyFileSync(readme, join(customDir, 'README.md'));
@@ -57,8 +71,20 @@ for (const ex of ['generators/_example-bracket.js', 'presets/_example-presets.js
   if (existsSync(join(APP_ROOT, 'custom', ex)) && !existsSync(join(customDir, ex))) copyFileSync(join(APP_ROOT, 'custom', ex), join(customDir, ex));
 }
 
-const host = flag('lan') ? '0.0.0.0' : process.env.HOST ?? '127.0.0.1';
-const firstPort = Number(opt('port') ?? process.env.PORT ?? 3000);
+if (MODE === 'temp') {
+  // one-time session: remove everything when STL Tools stops
+  const cleanup = () => { try { rmSync(home, { recursive: true, force: true }); } catch { /* already gone */ } };
+  process.on('exit', cleanup);
+  for (const sig of ['SIGINT', 'SIGTERM', 'SIGHUP']) process.on(sig, () => process.exit(0));
+}
+
+// Settings > Hosting (saved by the app) apply when no flag or variable says otherwise.
+let hosting = {};
+try { hosting = JSON.parse(readFileSync(join(dataDir, 'settings.json'), 'utf8')).hosting ?? {}; } catch { /* first start */ }
+const host = flag('lan') ? '0.0.0.0' : process.env.HOST ?? (hosting.lan ? '0.0.0.0' : '127.0.0.1');
+const firstPort = Number(opt('port') ?? process.env.PORT ?? hosting.port ?? 3000);
+const hours = Number(opt('hours') ?? hosting.autoStopHours ?? 0);
+const stopAt = hours > 0 ? new Date(Date.now() + hours * 3600e3) : null;
 
 async function isStlTools(port) {
   try {
@@ -132,6 +158,8 @@ if (port >= firstPort + 20) {
 // The server and registry read these at import time, so set them first.
 process.env.STLTOOLS_DATA = dataDir;
 process.env.STLTOOLS_CUSTOM = customDir;
+process.env.STLTOOLS_MODE = MODE;
+if (stopAt) process.env.STLTOOLS_STOP_AT = stopAt.toISOString();
 const { startServer } = await import('../src/server.js');
 const { initKernel } = await import('../src/core/kernel.js');
 const { registryIssues } = await import('../src/core/registry.js');
@@ -151,6 +179,13 @@ console.log(`  Your data:   ${dataDir}`);
 console.log(`  Your custom: ${customDir}`);
 const issues = [...registryIssues(), ...presetIssues()];
 if (issues.length) console.log(`  Skipped custom files:\n    ${issues.join('\n    ')}`);
+if (MODE === 'portable') console.log('  Portable:    all data stays in the folder above (USB drive). Unplug only after stopping.');
+if (MODE === 'temp') console.log('  Temporary:   this session and its data are deleted when you stop STL Tools.');
+if (stopAt) {
+  console.log(`  Auto-stop:   at ${stopAt.toLocaleTimeString()} (${hours} h)`);
+  setTimeout(() => { console.log('Time limit reached: stopping STL Tools.'); process.exit(0); }, hours * 3600e3).unref?.();
+  setTimeout(() => process.exit(0), hours * 3600e3);
+}
 console.log('  Close this window (or press Ctrl+C) to stop.');
 console.log('');
 openBrowser(url);

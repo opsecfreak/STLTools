@@ -8,7 +8,7 @@
 // Printer manager rules (view only, like the Printers page):
 //   - "Test connection" runs read-only Moonraker requests and shows each step.
 //   - API keys are write-only here: the server never sends them back.
-import { el, api, settings, saveSettings, toast, confirmDelete, debounce } from './lib.js';
+import { el, api, settings, saveSettings, toast, confirmDelete, debounce, refreshPrinterVisibility, fmtAgo } from './lib.js';
 
 const ORDER = [
   ['printers', 'Printers'],
@@ -17,6 +17,7 @@ const ORDER = [
   ['ui', 'Appearance'],
   ['tips', 'Tooltips and help'],
   ['labels', 'Paper labels'],
+  ['hosting', 'Self-hosting'],
   ['data', 'Data and backup'],
   ['about', 'About'],
 ];
@@ -38,7 +39,9 @@ export async function renderSettings(page, focus = '') {
     const sec = el('section', { id: `set-${id}`, className: 'card settings-section' }, el('h3', { textContent: label }));
     body.append(sec);
     if (id === 'printers') await printerManager(sec, profiles);
+    if (id === 'hosting') await hostingSection(sec);
     if (schema[id]) sec.append(schemaForm(id, schema[id], profiles));
+    if (id === 'hosting') sec.append(await pinBox());
     if (id === 'labels') {
       sec.append(el('div', { className: 'row' },
         el('a', { className: 'button secondary', href: '/labels.html', target: '_blank', textContent: 'Preview paper labels' }),
@@ -128,8 +131,14 @@ async function printerManager(sec, profiles) {
       const model = modelSelect(p.model);
       const out = el('div');
       const isDef = el('input', { type: 'radio', name: 'defPrinter', checked: def === p.id, onchange: async () => { await saveSettings({ printers: { defaultPrinter: p.id } }); ctx?.refreshEstimate?.(); toast(`${p.name} is the default printer`, 'ok'); } });
+      const lc = p.lastCheck;
+      const m = p.machine;
       return el('div', { className: 'printer-row' },
         el('div', { className: 'row' }, name, addr, model),
+        el('p', { className: `muted ${lc && !lc.ok ? 'error' : ''}`, textContent: [
+          lc ? (lc.ok ? `Connected ${fmtAgo(lc.at)} (Klipper ${lc.klippy}).` : `Not reachable at the last check ${fmtAgo(lc.at)}: ${lc.error}`) : 'Not checked yet.',
+          m ? `Own limits for estimates: ${m.bed ? `${m.bed.x} x ${m.bed.y} x ${m.bed.z} mm, ` : ''}${m.maxVelocity ?? '?'} mm/s, accel ${m.maxAccel ?? '?'}, nozzle ${m.nozzle ?? '?'} mm.` : 'Limits not read yet (Test connection or "Read limits").',
+        ].join(' ') }),
         el('div', { className: 'row' }, key, p.hasApiKey ? el('label', { className: 'check-inline' }, clearKey, ' remove saved key') : null,
           el('label', { className: 'check-inline' }, isDef, ' default printer')),
         el('div', { className: 'row' },
@@ -144,11 +153,15 @@ async function printerManager(sec, profiles) {
             out.replaceChildren(el('p', { className: 'muted', textContent: 'Testing (read-only requests)...' }));
             try { out.replaceChildren(stepList(await api('POST', '/api/printers/diagnose', { id: p.id, url: addr.value, apiKey: key.value || undefined }))); } catch (err) { out.replaceChildren(el('p', { className: 'error', textContent: err.message })); } finally { e.target.disabled = false; }
           } }),
+          el('button', { type: 'button', className: 'secondary', textContent: 'Read limits', title: 'Read bed size, max speed, acceleration and nozzle from Klipper (read-only) for estimates', onclick: async () => {
+            try { await api('GET', `/api/printers/${p.id}/machine`); toast('Limits read from the printer', 'ok'); ctx?.refreshEstimate?.(); draw(); } catch (err) { toast(err.message, 'error'); }
+          } }),
           el('a', { className: 'button secondary', href: '#printers', textContent: 'Open status' }),
           el('button', { type: 'button', className: 'secondary', textContent: 'Remove', onclick: async () => {
             if (!confirmDelete(`Remove ${p.name} from STL Tools? Nothing on the printer changes.`)) return;
             await api('DELETE', `/api/printers/${p.id}`);
             if (def === p.id) await saveSettings({ printers: { defaultPrinter: '' } });
+            await refreshPrinterVisibility();
             draw();
           } })),
         out);
@@ -176,6 +189,8 @@ async function printerManager(sec, profiles) {
         if (!r.steps.find((s) => s.step === 'Moonraker answers')?.ok) { toast('Not added: Moonraker did not answer. See the steps.', 'error'); return; }
         const p = await api('POST', '/api/printers', { name: name.value || r.hostname || '', url: r.url, apiKey: key.value || undefined, model: model.value });
         if (!settings().printers.defaultPrinter) await saveSettings({ printers: { defaultPrinter: p.id } });
+        await api('GET', `/api/printers/${p.id}/machine`).catch(() => null);
+        await refreshPrinterVisibility();
         toast(`Added ${p.name}`, 'ok');
         ctx?.refreshEstimate?.();
         draw();
@@ -201,10 +216,57 @@ async function printerManager(sec, profiles) {
         } catch (err) { scanOut.replaceChildren(el('p', { className: 'error', textContent: err.message })); } finally { e.target.disabled = false; }
       } })),
     out, scanOut);
-    wrap.replaceChildren(...(rows.length ? rows : [el('p', { className: 'muted', textContent: 'No printers yet.' })]), add);
+    const checkAll = printers.length ? el('div', { className: 'row' }, el('button', { type: 'button', className: 'secondary small', textContent: 'Check connections now', onclick: async () => { await api('POST', '/api/printers/check'); draw(); } })) : null;
+    wrap.replaceChildren(...(rows.length ? rows : [el('p', { className: 'muted', textContent: 'No printers yet. No networked printer? Leave this empty or set Printer features to Off below: everything else works without one, and estimates use the printer profile.' })]), ...[checkAll, add].filter(Boolean));
     // keep the radio in step with the saved default (it may change in another tab)
   }
   await draw();
+}
+
+// ---------------------------------------------------------------- self-hosting
+
+const MODE_TEXT = {
+  desktop: 'Desktop app: data in your user folder.',
+  portable: 'Portable (USB drive): data next to the app. Stop STL Tools before you unplug the drive.',
+  temp: 'One-time session: everything is deleted when STL Tools stops. Download what you need.',
+  custom: 'Desktop app with a custom data folder (--data).',
+  service: 'Service (Raspberry Pi or server): starts at boot.',
+  server: 'Server started from the command line (npm start).',
+};
+
+async function hostingSection(sec) {
+  const h = await api('GET', '/api/hosting');
+  sec.append(...[
+    el('p', {}, el('strong', { textContent: MODE_TEXT[h.mode] ?? h.mode })),
+    el('dl', { className: 'facts' }, ...[
+      ['Runs on', `${h.board ?? `${h.platform} ${h.arch}`}, Node ${h.node}`],
+      ['Listens on', h.lan ? `all network interfaces, port ${h.port}` : `this computer only (127.0.0.1:${h.port})`],
+      ['Open from other devices', h.lan ? '' : 'Off. Turn on "Reachable from other devices" below and restart, or start with --lan.'],
+      ['Stops by itself', h.stopAt ? new Date(h.stopAt).toLocaleString() : 'No'],
+      ['Access PIN', h.pin ? 'On: other devices must enter it' : 'Off'],
+      ['Data folder', h.dataDir],
+    ].flatMap(([k, v]) => [el('dt', { textContent: k }), el('dd', {}, k === 'Open from other devices' && h.lan ? el('span', {}, ...h.addresses.flatMap((a, i) => [i ? ', ' : '', el('a', { href: a, textContent: a })])) : v)])),
+    h.lan && !h.pin ? el('p', { className: 'est-warn', textContent: 'Anyone on this network can open STL Tools. Set an access PIN below, or keep it on a network you trust.' }) : null,
+    el('p', { className: 'muted', textContent: 'Ways to run it: desktop app, USB drive (portable), one-time session, or a Raspberry Pi 4 / 5 service. See docs/SELF-HOSTING.md and docs/RASPBERRY-PI.md.' })].filter(Boolean));
+}
+
+async function pinBox() {
+  const h = await api('GET', '/api/hosting');
+  const pin = el('input', { type: 'password', inputMode: 'numeric', placeholder: h.pin ? 'New PIN (empty = remove)' : 'New PIN (4 to 32 characters)', autocomplete: 'new-password', 'aria-label': 'New PIN' });
+  const cur = el('input', { type: 'password', inputMode: 'numeric', placeholder: 'Current PIN', autocomplete: 'current-password', 'aria-label': 'Current PIN', hidden: !h.pin });
+  const save = el('button', { type: 'button', textContent: h.pin ? 'Change or remove PIN' : 'Set PIN', onclick: async () => {
+    try {
+      const r = await api('PUT', '/api/hosting/pin', { pin: pin.value, current: cur.value || undefined });
+      toast(r.pin ? 'PIN set. Other devices must enter it; this computer never needs it.' : 'PIN removed', 'ok', 5000);
+      const box = await pinBox();
+      wrap.replaceWith(box);
+    } catch (err) { toast(err.message, 'error'); }
+  } });
+  const wrap = el('div', { className: 'pin-box' },
+    el('h4', { textContent: 'LAN access PIN' }),
+    el('p', { className: 'muted', textContent: 'Phones, tablets and PCs on the network enter it once. The computer that runs STL Tools never needs it, so you cannot lock yourself out. Stored as a hash, never as the PIN.' }),
+    el('div', { className: 'row' }, cur, pin, save));
+  return wrap;
 }
 
 // ---------------------------------------------------------------- data, about

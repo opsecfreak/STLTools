@@ -1,5 +1,7 @@
 # Architecture
 
+> See also: [API](API.md) | [AGENTS.md](../AGENTS.md) | [Extending](EXTENDING.md) | [Self-hosting](SELF-HOSTING.md) | [All docs](README.md)
+
 ```
  Browser (public/*.js, three.js)                    Node server (src/server.js)
  ───────────────────────────────                    ──────────────────────────────────────────
@@ -11,8 +13,13 @@
  printers.js Printers (view only)                    │              favorites, catalog, library,
  viewer.js   3D view + thumbnailer                   │              printers   (data folder)
  viewtools.js 3D controls + estimate ◀─/shared/estimate.js (same file as src/core/estimate.js)
+                                                     ├─▶ hosting.js  run mode, LAN PIN gate (before route())
                                                      └─▶ printers.js ──LAN──▶ Moonraker (SV07)
-                                                                       read-only GETs, upload print=false
+                                                                       read-only GETs, upload print=false,
+                                                                       webcam MJPEG piped through /stream
+ bin/stltools-app.js (desktop launcher): data folder by mode (desktop, --portable,
+ --temp, --data), port, LAN and auto-stop from flags or Settings > Self-hosting,
+ then imports src/server.js with STLTOOLS_MODE / STLTOOLS_STOP_AT set.
 ```
 
 ## Generation flow
@@ -57,11 +64,42 @@ user's calibration factor.
 `core/printers.js` has no pass-through. Each function maps to one fixed
 Moonraker GET (`/server/info`, `/printer/info`, `/printer/objects/query`,
 `/server/files/list|metadata|roots`, `/server/history/list`,
-`/server/webcams/list`, thumbnails, snapshots) plus one upload
+`/server/webcams/list`, thumbnails, snapshots, the toolhead + configfile
+query for `machine()`, the webcam MJPEG stream) plus one upload
 (`POST /server/files/upload` with `print=false`). Only LAN addresses are
 accepted. `diagnose()` runs the read-only checks one by one for the Settings
 page. The Sovol SV07 runs Klipper + Moonraker + Mainsail, so it uses this path
 on port 80 (Mainsail's nginx forwards the API) or 7125 (Moonraker directly).
+
+Webcam: `cameras()` reads Moonraker's webcam list, else the profile's
+`webcam` paths, else the Mainsail defaults (tried with one snapshot). The
+stream route pipes the upstream MJPEG body to the browser and aborts the
+upstream fetch when the browser disconnects (max 3 per printer).
+
+Estimates: `machine()` reads bed travel, max velocity / accel, nozzle and
+filament diameter; `profileFromMachine()` in `estimate.js` merges them into the
+printer's profile; `GET /api/estimate-targets` gives the browser the merged
+profiles so browser and server estimates match.
+
+The front end hides printer UI (`data-needs-printers`) when Settings >
+Printers > Printer features is off, or "auto" with no printer saved. Without
+WebGL, `createViewer()` returns a fallback with the same interface (a parts
+list with sizes).
+
+## Self-hosting and access (1.1)
+
+- `bin/stltools-app.js` picks the data folder: per-user (desktop), next to the
+  package (`--portable` or `portable.txt`; on macOS next to the `.app`), a new
+  temp folder deleted on exit (`--temp`), or `--data`. `--hours` / Settings >
+  Self-hosting > autoStopHours exit the process after a time.
+- `src/core/hosting.js`: the LAN access PIN (scrypt hash, random secret,
+  HMAC cookie token, 5 tries per minute per address). `startServer()` checks
+  `hosting.allowed(req)` before `route()`: loopback is always allowed; other
+  clients without the cookie get the login page (HTML) or 401 (API).
+- `GET /api/hosting` reports mode, listen address, LAN URLs, PIN state, board
+  model (`/proc/device-tree/model`) and the data folder.
+- A 15 s timer runs `printers.checkAll()` every `printers.checkMinutes`
+  (read-only `/server/info`; results in memory, shown as `lastCheck`).
 
 ## Front end
 

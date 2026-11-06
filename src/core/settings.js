@@ -88,9 +88,22 @@ export const SCHEMA = {
   printers: {
     label: 'Printers',
     fields: {
+      enabled: sel('auto', [['auto', 'Show when a printer is saved'], ['on', 'Always show'], ['off', 'Off (I have no networked printer)']], 'Printer features', 'Off hides the Printers page, the header status chip and printer tiles. Estimates still use the printer profile.'),
       defaultPrinter: { type: 'string', default: '', label: 'Default printer (id)', maxLength: 40 },
       uploadFolder: { type: 'string', default: 'stltools', label: 'Upload folder on the printer', maxLength: 80, pattern: '^[A-Za-z0-9 _./-]*$' },
       pollSeconds: numb(3, 2, 60, 1, 'Status refresh', 's'),
+      checkMinutes: numb(5, 0, 240, 1, 'Background connection check', 'min', 'STL Tools asks each saved printer "are you there?" this often (read-only). 0 = only when you open a printer page.'),
+      useMachine: bool(true, "Estimates use the printer's own Klipper limits", 'Bed size, max speed, acceleration and nozzle read from the connected printer (read-only) replace the profile values.'),
+      webcam: sel('stream', [['stream', 'Live video (MJPEG stream)'], ['snapshot', 'Snapshots'], ['off', 'Off']], 'Webcam on the Printers page', 'Live video uses the camera stream Mainsail / Fluidd shows. Snapshots use less network and CPU (good for a Pi).'),
+      snapshotSeconds: numb(3, 1, 60, 1, 'Snapshot refresh', 's'),
+    },
+  },
+  hosting: {
+    label: 'Self-hosting',
+    fields: {
+      lan: bool(false, 'Reachable from other devices on my network (LAN)', 'Applies at the next start of the desktop app. A Pi service set up by the installer is always on the LAN. Set an access PIN below when you turn this on.'),
+      port: { type: 'integer', default: 3000, min: 1024, max: 65535, label: 'Port', help: 'Applies at the next start. If it is in use, the next free port is taken.' },
+      autoStopHours: numb(0, 0, 72, 0.5, 'Stop by itself after', 'h', '0 = run until you close it. Good for a session of a few hours on a shared PC.'),
     },
   },
 };

@@ -514,3 +514,9 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; backgrou
 .tag-chip.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 .tile-browse { border-left-color: #0a7ea4; }
 @media (max-width: 860px) { .browse-layout { grid-template-columns: 1fr; } .browse-side { position: static; max-height: none; } }
+
+/* 1.1: no-WebGL fallback for the 3D view */
+.viewer-fallback { position: absolute; inset: 0; padding: 1rem 1.25rem; overflow: auto; color: var(--text); font-size: 0.92rem; }
+.viewer-fallback p { max-width: 46rem; margin: 0 0 0.75rem; }
+.viewer-fallback ul { margin: 0; padding-left: 1.2rem; }
+body[data-printers="off"] [data-needs-printers] { display: none !important; }

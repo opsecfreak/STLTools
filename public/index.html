@@ -22,7 +22,7 @@
         <input id="globalSearch" type="search" placeholder="Search everything: parts, presets, STLs, projects, settings  ( / )" aria-label="Search everything" autocomplete="off">
         <div id="globalResults" class="global-results" hidden></div>
       </div>
-      <a href="#printers" id="printerChip" class="chip header-chip" hidden></a>
+      <a href="#printers" id="printerChip" class="chip header-chip" data-needs-printers hidden></a>
       <button type="button" class="tab icon-tab" data-tab="settings" title="Settings" aria-label="Settings">⚙ Settings</button>
     </div>
     <nav class="tabs" role="tablist" aria-label="Sections">
@@ -40,8 +40,8 @@
       <button type="button" role="tab" data-tab="library" class="tab">My Designs</button>
       <button type="button" role="tab" data-tab="stls" class="tab">STL Files</button>
       <button type="button" role="tab" data-tab="import" class="tab">Import</button>
-      <span class="tab-sep" aria-hidden="true"></span>
-      <button type="button" role="tab" data-tab="printers" class="tab">Printers</button>
+      <span class="tab-sep" aria-hidden="true" data-needs-printers></span>
+      <button type="button" role="tab" data-tab="printers" class="tab" data-needs-printers>Printers</button>
     </nav>
   </header>
   <main>

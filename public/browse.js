@@ -71,7 +71,7 @@ export function renderBrowse(page, focus = '') {
     const seriesC = count(res, (it) => it.series);
     const ownC = count(res, (it) => it.ownership);
     const byN = (m) => [...m.entries()].sort((a, b) => b[1] - a[1]);
-    side.replaceChildren(
+    side.replaceChildren(...[
       el('section', { className: 'facet' }, el('h4', { textContent: 'Type' }),
         ...KINDS.map(([k, label]) => el('label', { className: 'check-inline facet-check' }, el('input', { type: 'checkbox', checked: st.kinds.includes(k), onchange: (e) => set({ kinds: e.target.checked ? [...st.kinds, k] : st.kinds.filter((x) => x !== k) }) }), ` ${label}`, el('span', { className: 'facet-n', textContent: String(kinds.get(k) ?? 0) })))),
       facet('Tab', SECTIONS.map((s) => [s, SECTION_NAMES[s], tabs.get(s) ?? 0]), st.tab, (v) => set({ tab: v })),
@@ -82,7 +82,7 @@ export function renderBrowse(page, focus = '') {
       collectionsFacet(cols, colC),
       facet('Origin', [['hand', 'Hand-made presets', (kinds.get('preset') ?? 0) - [...seriesC.values()].reduce((a, b) => a + b, 0)], ['series', 'Size series (all)', [...seriesC.values()].reduce((a, b) => a + b, 0)], ...byN(seriesC).map(([sv, n]) => [sv, `Series: ${sv}`, n])], st.origin, (v) => set({ origin: v }), { max: 4 }),
       facet('Measuring', [['yes', 'Needs measurement', res.filter((it) => it.measure?.length).length], ['no', 'Ready to print', res.filter((it) => !it.measure?.length).length]], st.measure, (v) => set({ measure: v })),
-      ownC.size ? facet('Ownership (My Parts)', ['Owned', 'Confirm', 'Planned'].map((o) => [o, o, ownC.get(o) ?? 0]), st.own, (v) => set({ own: v })) : null);
+      ownC.size ? facet('Ownership (My Parts)', ['Owned', 'Confirm', 'Planned'].map((o) => [o, o, ownC.get(o) ?? 0]), st.own, (v) => set({ own: v })) : null].filter(Boolean));
   }
 
   function collectionsFacet(cols, colC) {
@@ -125,9 +125,9 @@ export function renderBrowse(page, focus = '') {
     drawSide(res);
     const sort = el('select', { 'aria-label': 'Sort', onchange: (e) => set({ sort: e.target.value }) }, ...[['name', 'Name'], ['relevance', 'Best match'], ['tab', 'Tab'], ['recent', 'Recently changed']].map(([v, l]) => el('option', { value: v, textContent: l, selected: st.sort === v })));
     const active = [st.q, st.tab, st.group, st.generator, st.collection, st.origin, st.measure, st.own, ...st.tags, ...st.kinds].filter(Boolean).length;
-    head.replaceChildren(el('strong', { textContent: `${res.length.toLocaleString()} result${res.length === 1 ? '' : 's'}` }), sort,
+    head.replaceChildren(...[el('strong', { textContent: `${res.length.toLocaleString()} result${res.length === 1 ? '' : 's'}` }), sort,
       el('button', { type: 'button', className: 'secondary small', textContent: viewMode() === 'grid' ? 'List view' : 'Grid view', onclick: () => { store.set('view', viewMode() === 'grid' ? 'list' : 'grid'); draw(); } }),
-      active ? el('button', { type: 'button', className: 'secondary small', textContent: `Clear ${active} filter${active > 1 ? 's' : ''}`, onclick: () => { q.value = ''; set({ q: '', kinds: [], tab: '', group: '', generator: '', tags: [], collection: '', origin: '', measure: '', own: '' }); } }) : null);
+      active ? el('button', { type: 'button', className: 'secondary small', textContent: `Clear ${active} filter${active > 1 ? 's' : ''}`, onclick: () => { q.value = ''; set({ q: '', kinds: [], tab: '', group: '', generator: '', tags: [], collection: '', origin: '', measure: '', own: '' }); } }) : null].filter(Boolean));
     grid.replaceChildren(cardList(res.slice(0, shown), viewMode(), 'Nothing matches these filters.'));
     more.replaceChildren(...(res.length > shown ? [el('button', { type: 'button', className: 'secondary', textContent: `Show ${Math.min(PAGE, res.length - shown)} more of ${(res.length - shown).toLocaleString()}`, onclick: () => { shown += PAGE; draw(); } })] : []));
   }

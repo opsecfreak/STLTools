@@ -1,5 +1,7 @@
 # First test: what to try and how to report back
 
+> See also: [User guide](USER-GUIDE.md) | [Troubleshooting](TROUBLESHOOTING.md) | [All docs](README.md)
+
 This is the first real-world test. Work through the list, print a few small parts, and send the feedback block at the end.
 
 ## A. Install and start (10 minutes)
@@ -55,6 +57,17 @@ This is the first real-world test. Work through the list, print a few small part
 3. Point at a setting in any designer tab: the tooltip shows its range, default and name.
 4. **Settings > Tooltips and help**: set the delay to 0 and the size to Large; set help text to "In the tooltip only".
 5. **Shop**: try a drawer unit (press **Assembled**), a spool arm and a drill guide. **Accessories**: an 18650 pack end plate.
+
+## B6. New in 1.1 (15 minutes)
+
+1. **Settings > Self-hosting**: check the mode line, the addresses and the data folder.
+2. USB drive: unpack the package on a stick, start **Start STL Tools (USB portable)**, save a design, stop, start again: the design is still there and `stltools-data` is on the stick.
+3. One-time session: start **Start STL Tools (one-time session)** (or `--temp --hours 0.1`), save a design, close it: nothing is left in your data folder.
+4. LAN: turn on "Reachable from other devices", restart, set an access PIN, open the address on your phone, enter the PIN.
+5. **Settings > Printers**: Test connection on your SV07 (new step "Printer limits"), press **Read limits**, then check the estimate box says "(own limits)". Note the bed size and speeds it shows: ______
+6. **Printers** page: is the webcam live video? Does it match Mainsail? If not, which camera service does Mainsail show (Settings > Webcams): ______
+7. **Settings > Printers > Printer features: Off**: the Printers tab disappears; set it back.
+8. Raspberry Pi 4 / 5: follow docs/RASPBERRY-PI.md step 3A. Time to install: ______. Time to generate a tube clamp and a 4-drawer unit: ______ / ______.
 
 ## C. Print these first (small, fast, they test the defaults)
 

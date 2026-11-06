@@ -32,7 +32,77 @@ const QUALITY = {
 
 export const DEFAULT_VIEWER = { quality: 'high', shading: 'shaded', color: '#3d8bfd', shadows: true, grid: true, bed: true, axes: false, dimensions: true, ortho: false, autoRotate: false };
 
+/** True when this browser can draw 3D (WebGL). Old GPUs, remote desktops and some VMs cannot. */
+export function webglAvailable() {
+  try {
+    const c = document.createElement('canvas');
+    return Boolean(c.getContext('webgl2') || c.getContext('webgl'));
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * 3D view, or a plain fallback panel when WebGL is not available (the rest of
+ * the app, generation, estimates and downloads work the same either way).
+ */
 export function createViewer(container, initial = {}) {
+  if (webglAvailable()) {
+    try {
+      return createWebglViewer(container, initial);
+    } catch (err) {
+      console.warn('3D view failed, using the fallback:', err);
+    }
+  }
+  return createFallbackViewer(container, initial);
+}
+
+/** Same interface as the 3D viewer, without WebGL: a note plus a list of the parts and their sizes. */
+function createFallbackViewer(container, initial = {}) {
+  let opts = { ...DEFAULT_VIEWER, ...initial };
+  let size = null;
+  let layout = 'plate';
+  const box = document.createElement('div');
+  box.className = 'viewer-fallback';
+  const note = document.createElement('p');
+  note.textContent = '3D preview is off: this browser has no WebGL (old graphics driver, remote desktop or a VM). Generating, estimates and STL downloads still work. Try Chrome or Edge with hardware acceleration on, or Settings > 3D view > Render quality: Low.';
+  const list = document.createElement('ul');
+  box.append(note, list);
+  container.appendChild(box);
+  const loader = new STLLoader();
+  return {
+    async show(parts) {
+      list.replaceChildren();
+      const all = new THREE.Box3();
+      for (const part of parts ?? []) {
+        let g = part.geometry;
+        try { g ??= loader.parse(await (await fetch(part.url)).arrayBuffer()); } catch { continue; }
+        g.computeBoundingBox();
+        all.union(g.boundingBox);
+        const s = g.boundingBox.getSize(new THREE.Vector3());
+        const li = document.createElement('li');
+        li.textContent = `${part.name ?? 'part'}: ${s.x.toFixed(1)} x ${s.y.toFixed(1)} x ${s.z.toFixed(1)} mm`;
+        list.appendChild(li);
+      }
+      size = all.isEmpty() ? null : all.getSize(new THREE.Vector3()).toArray();
+    },
+    setLayout: (l) => { layout = l; },
+    layout: () => layout,
+    canAssemble: () => false,
+    setOptions: (p = {}) => { opts = { ...opts, ...p }; },
+    setBed() {},
+    setView() {},
+    setClip() {},
+    parse: (arrayBuffer) => loader.parse(arrayBuffer),
+    bounds: () => (size ? { size } : null),
+    screenshot: () => Promise.resolve(null),
+    options: () => ({ ...opts }),
+    fallback: true,
+    dispose() { box.remove(); },
+  };
+}
+
+function createWebglViewer(container, initial = {}) {
   let opts = { ...DEFAULT_VIEWER, ...initial };
   const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
   renderer.localClippingEnabled = true;
@@ -344,6 +414,7 @@ export function createViewer(container, initial = {}) {
  * cards (browsers allow only a few). render(parts) -> PNG Blob.
  */
 export function createThumbnailer(width = 400, height = 300) {
+  if (!webglAvailable()) throw new Error('No WebGL: card previews are off');
   const canvas = document.createElement('canvas');
   canvas.width = width;
   canvas.height = height;
