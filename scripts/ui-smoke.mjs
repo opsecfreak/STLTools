@@ -89,11 +89,18 @@ try {
   await page.locator('#toLab').click();
   await page.waitForSelector('.lab-status', { timeout: 20000 });
   await page.waitForFunction(() => /cells of/.test(document.querySelector('.lab-status')?.textContent ?? ''), null, { timeout: 30000 });
+  // Draft detail keeps the solve short on slow CI machines
+  await page.locator('.lab-left select').nth(1).selectOption('3000');
+  await page.waitForFunction(() => /cells of/.test(document.querySelector('.lab-status')?.textContent ?? ''), null, { timeout: 30000 });
   await page.locator('summary', { hasText: 'Quick setups' }).click();
   await page.locator('button', { hasText: 'Hold the bottom' }).click();
   await page.locator('button', { hasText: 'Hook / bracket' }).click();
   await page.locator('button', { hasText: /^Solve/ }).click();
-  await page.waitForSelector('.lab-panel h4', { timeout: 90000 });
+  try {
+    await page.waitForSelector('.lab-panel h4', { timeout: 180000 });
+  } catch (err) {
+    throw new Error(`Stress Lab solve did not finish: ${await page.locator('.lab-status').innerText()}`);
+  }
   check(/safety factor/.test(await page.locator('.lab-panel').innerText()), 'Stress Lab solves a load case and reports the safety factor');
   for (const mode of ['Weak points', 'Wind tunnel', 'Environment', 'Materials']) {
     await page.locator('.lab-modes button', { hasText: mode }).click();

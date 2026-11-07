@@ -124,6 +124,7 @@ test('materials data: every entry sourced from a maker datasheet, no Bambu Lab, 
 });
 
 test('bed mesh and logs: read-only, secrets hidden in logs', async () => {
+  await j('PUT', `/api/printers/${pr.id}`, { url: `127.0.0.1:${mock.port}` }); // the previous test moved it to "localhost" (IPv6 on some systems)
   const before = mock.requests.length;
   const m = (await j('GET', `/api/printers/${pr.id}/mesh`)).body;
   assert.deepEqual(Object.keys(m.profiles), ['default']);
