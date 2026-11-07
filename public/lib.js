@@ -111,6 +111,22 @@ export async function loadSettings() {
   return settingsCache;
 }
 
+/** A length in mm, shown in the unit chosen in Settings > Appearance (mm, cm, in). */
+export function fmtLen(mm, digits = 1) {
+  const u = settingsCache?.ui?.units ?? 'mm';
+  if (!Number.isFinite(Number(mm))) return '-';
+  if (u === 'in') return `${(mm / 25.4).toFixed(digits + 2)} in`;
+  if (u === 'cm') return `${(mm / 10).toFixed(digits + 1)} cm`;
+  return `${Number(mm).toFixed(digits)} mm`;
+}
+/** Several lengths "a x b x c unit". */
+export function fmtSize(arr, digits = 1) {
+  const u = settingsCache?.ui?.units ?? 'mm';
+  const f = u === 'in' ? 1 / 25.4 : u === 'cm' ? 0.1 : 1;
+  const d = u === 'in' ? digits + 2 : u === 'cm' ? digits + 1 : digits;
+  return `${arr.map((v) => (v * f).toFixed(d)).join(' x ')} ${u}`;
+}
+
 /** Current settings (call loadSettings() once at start-up). */
 export const settings = () => settingsCache;
 

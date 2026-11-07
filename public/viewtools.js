@@ -8,7 +8,7 @@
 //                                    infill, material, and the time / filament estimate
 //                                    for what the viewer shows. Uses /shared/estimate.js
 //                                    (the same code the server uses for project ZIPs).
-import { el, api, settings, saveSettings, debounce, toast, downloadBlob, store } from './lib.js';
+import { el, api, settings, saveSettings, debounce, toast, downloadBlob, store, fmtSize } from './lib.js';
 import { estimateParts, formatDuration, MATERIALS } from '/shared/estimate.js';
 
 const SHADING = [['shaded', 'Shaded'], ['edges', 'Edges'], ['wireframe', 'Wire'], ['xray', 'X-ray']];
@@ -139,13 +139,13 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
     const pieces = qty.reduce((a, b) => a + b, 0);
     const misfit = e.parts.filter((p) => !p.fit.fits).length;
     const table = el('table', { className: 'est-table' },
-      el('thead', {}, el('tr', {}, ...['Part', 'Size (mm)', 'Qty', 'Time', 'Filament', 'Layers', 'Bed', ''].map((h) => el('th', { textContent: h })))),
+      el('thead', {}, el('tr', {}, ...['Part', 'Size', 'Qty', 'Time', 'Filament', 'Layers', 'Bed', ''].map((h) => el('th', { textContent: h })))),
       el('tbody', {}, ...rows.map((r, i) => {
         const p = e.parts[i];
         const n = qty[i];
         return el('tr', { className: p.fit.fits ? '' : 'misfit' },
           el('td', {}, onShowPart && rows.length > 1 ? el('a', { href: '#', textContent: r.name ?? `Part ${i + 1}`, title: 'Show only this part', onclick: (ev) => { ev.preventDefault(); onShowPart(i); } }) : document.createTextNode(r.name ?? `Part ${i + 1}`)),
-          el('td', { textContent: r.stats.size.map((v) => (+v).toFixed(1)).join(' x ') }),
+          el('td', { textContent: fmtSize(r.stats.size.map(Number)) }),
           el('td', { textContent: String(n) }),
           el('td', { textContent: formatDuration(p.seconds * n) + (n > 1 ? ` (${formatDuration(p.seconds)} each)` : '') }),
           el('td', { textContent: `${g(p.grams * n)}, ${((p.filamentMm * n) / 1000).toFixed(2)} m` }),

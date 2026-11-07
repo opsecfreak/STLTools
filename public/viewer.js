@@ -21,7 +21,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
-import { isDark } from './lib.js';
+import { isDark, fmtSize } from './lib.js';
 
 const QUALITY = {
   ultra: { ratio: () => Math.min(3, (window.devicePixelRatio || 1) * 1.5), shadowMap: 4096, soft: true },
@@ -81,7 +81,7 @@ function createFallbackViewer(container, initial = {}) {
         all.union(g.boundingBox);
         const s = g.boundingBox.getSize(new THREE.Vector3());
         const li = document.createElement('li');
-        li.textContent = `${part.name ?? 'part'}: ${s.x.toFixed(1)} x ${s.y.toFixed(1)} x ${s.z.toFixed(1)} mm`;
+        li.textContent = `${part.name ?? 'part'}: ${fmtSize([s.x, s.y, s.z])}`;
         list.appendChild(li);
       }
       size = all.isEmpty() ? null : all.getSize(new THREE.Vector3()).toArray();
@@ -233,7 +233,7 @@ function createWebglViewer(container, initial = {}) {
       return p.z > bed.z || !((p.x <= bed.x && p.y <= bed.y) || (p.y <= bed.x && p.x <= bed.y));
     }).length : 0;
     dims.hidden = false;
-    dims.textContent = `${meshes.length > 1 ? (layout === 'assembled' && canAssemble(lastParts) ? 'Assembled: ' : 'All parts: ') : ''}X ${s.x.toFixed(1)}  Y ${s.y.toFixed(1)}  Z ${s.z.toFixed(1)} mm${tooBig ? `  (${meshes.length > 1 ? `${tooBig} part${tooBig > 1 ? 's' : ''}` : 'part'} larger than the bed)` : ''}`;
+    dims.textContent = `${meshes.length > 1 ? (layout === 'assembled' && canAssemble(lastParts) ? 'Assembled: ' : 'All parts: ') : ''}X x Y x Z ${fmtSize([s.x, s.y, s.z])}${tooBig ? `  (${meshes.length > 1 ? `${tooBig} part${tooBig > 1 ? 's' : ''}` : 'part'} larger than the bed)` : ''}`;
     dims.classList.toggle('too-big', tooBig > 0);
   }
 

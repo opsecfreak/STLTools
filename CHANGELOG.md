@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: Settings > Appearance > Show sizes in: mm, cm or inches. The 3D view size label, the estimate table and a "= 0.63 in" hint next to every mm setting follow it. You still type settings in mm; STL files stay mm.
+Fixed: n/a.
+Untested: typing settings directly in inches (not built: entry stays mm on purpose, so presets and the CLI stay unambiguous).
+
 ## 1.3.1-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: Save design on a changed preset or design saves as "<name> MOD <your text>" and keeps the original. Print estimate quality dropdown (0.28 Draft, 0.20 Standard, 0.12 Fine, Strong, MTS SV07 v3) next to the material. Settings > Filament prices: a price per kg for each material (blank until you enter it; falls back to the general price). Settings page: search box (fields and sections), compact layout.

@@ -8,7 +8,7 @@
 //   #projects #project/<id> #stls #stl/<id> #import #printers #settings[/<section>]
 import { createViewer } from './viewer.js';
 
-import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete, initTooltips, refreshPrinterVisibility, printersVisible } from './lib.js';
+import { $, el, api, store, SECTIONS, SECTION_NAMES, loadSettings, settings, saveSettings, onSettings, toast, debounce, confirmDelete, initTooltips, refreshPrinterVisibility, printersVisible, fmtLen } from './lib.js';
 import { initHome, renderHome, renderProjects, renderProject, addToProject, starButton, stopProjectView } from './home.js';
 import { renderPrinters, stopPrinters } from './printers.js';
 import { initViewTools, createEstimateBox } from './viewtools.js';
@@ -36,7 +36,7 @@ const estimate = createEstimateBox($('estimate'), viewer, { onShowPart: (i) => s
 onSettings((cfg, patch) => {
   if (patch.viewer) viewer.setOptions(cfg.viewer);
   if (patch.printers) refreshPrinterVisibility();
-  if (patch.tips && state.current) loadGenerator(state.current.id, readForm(state.current), { preset: state.preset, design: state.design });
+  if ((patch.tips || patch.ui?.units) && state.current) loadGenerator(state.current.id, readForm(state.current), { preset: state.preset, design: state.design });
 });
 
 /** Geometry stats for a local STL (same fields as the server's meshStats). */
@@ -148,6 +148,14 @@ function buildForm(gen, values, verify = [], measure = []) {
         if (def.max !== undefined) input.max = def.max;
       }
       input.value = measure.includes(key) ? '' : value;
+      // mm settings: show the value in the chosen display unit too (entry stays in mm)
+      if (def.unit === 'mm' && (settings()?.ui.units ?? 'mm') !== 'mm') {
+        const conv = el('span', { className: 'unit conv' });
+        const upd = () => { conv.textContent = input.value === '' ? '' : `= ${fmtLen(Number(input.value), 1)}`; };
+        input.addEventListener('input', upd);
+        label.append(conv);
+        queueMicrotask(upd);
+      }
       if (measure.includes(key)) { input.placeholder = 'measure'; input.required = true; }
       label.htmlFor = fieldId(key);
       wrap.append(label, input);

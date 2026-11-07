@@ -571,3 +571,4 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .settings-layout.compact .settings-section { padding: 10px 14px; margin-bottom: 10px; }
 .settings-layout.compact .settings-grid { gap: 6px 14px; }
 .settings-layout.compact .help { font-size: 12px; }
+.unit.conv { margin-left: 6px; color: var(--muted); font-weight: normal; }
