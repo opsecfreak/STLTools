@@ -27,21 +27,31 @@ after(async () => {
 });
 const j = (method, path, body) => fetch(base + path, { method, body: body ? JSON.stringify(body) : undefined }).then(async (r) => ({ status: r.status, body: r.status === 204 ? null : await r.json().catch(() => null) }));
 
-test('collections: create, toggle items in and out, rename, delete, in backup', async () => {
+test('collections: STL files only; presets and designs become frozen STL copies; toggle, rename, delete, in backup', async () => {
   const c = (await j('POST', '/api/collections', { name: 'Bench tools', color: '#ff8800' })).body;
   assert.match(c.id, /^col-[a-f0-9]{8}$/);
   let r = (await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'preset', id: 'clamp-split-16' })).body;
-  assert.deepEqual(r.items, [{ kind: 'preset', id: 'clamp-split-16' }]);
-  r = (await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'stl', id: 'stl-12345678' })).body;
-  assert.equal(r.items.length, 2);
+  assert.equal(r.items.length, 1);
+  assert.equal(r.items[0].kind, 'stl', 'a preset is stored as its STL copy');
+  const lib = (await j('GET', '/api/library')).body;
+  const copy = lib.find((e) => e.id === r.items[0].id);
+  assert.equal(copy.folder, 'Collections');
+  assert.match(copy.notes, /src:preset:clamp-split-16/);
   r = (await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'preset', id: 'clamp-split-16' })).body;
-  assert.deepEqual(r.items, [{ kind: 'stl', id: 'stl-12345678' }], 'second toggle removes');
-  assert.equal((await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'bogus', id: 'x' })).body.items.length, 1, 'unknown kinds ignored');
+  assert.deepEqual(r.items, [], 'second toggle removes the copy from the collection');
+  r = (await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'preset', id: 'clamp-split-16' })).body;
+  assert.equal(r.items[0].id, copy.id, 'the same copy is reused');
+  assert.equal((await j('POST', `/api/collections/${c.id}/toggle`, { kind: 'bogus', id: 'x' })).status, 400);
   assert.equal((await j('PUT', `/api/collections/${c.id}`, { name: 'Shop tools' })).body.name, 'Shop tools');
   assert.equal((await j('POST', '/api/collections', { name: '' })).status, 400);
+  // an old collection with preset items is converted when read
+  const old = (await j('POST', '/api/collections', { name: 'Old', items: [{ kind: 'preset', id: 'clamp-split-16' }, { kind: 'stl', id: copy.id }] })).body;
+  const after = (await j('GET', '/api/collections')).body.find((x) => x.id === old.id);
+  assert.deepEqual(after.items, [{ kind: 'stl', id: copy.id }]);
   const backup = await (await fetch(`${base}/api/backup`)).json();
-  assert.equal(backup.collections.length, 1);
+  assert.equal(backup.collections.length, 2);
   assert.equal((await j('DELETE', `/api/collections/${c.id}`)).status, 204);
+  assert.equal((await j('DELETE', `/api/collections/${old.id}`)).status, 204);
   assert.deepEqual((await j('GET', '/api/collections')).body, []);
 });
 

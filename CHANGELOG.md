@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.3-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: collections hold STL files only (your choice B). Adding a preset, saved design, generator or project to a collection saves frozen STL copies in STL Files > Collections and adds those; adding the same item again reuses its copy; existing collections are converted the first time they are read (`POST /api/collections/convert` runs it by hand). Presets that still need measured sizes are kept as they are until measured.
+Fixed: n/a.
+Untested: converting very large projects (every part is built once).
+
 ## 1.4.2-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: new generator **Weatherproof Box (gasket lid)** (`sealed-box`): box, lid with a gasket groove, printed TPU gasket; the lid rests on the rim so the groove depth sets the squeeze (25 % default, editable); screws through ears outside the seal (thread into plastic or heat-set inserts); optional cable gland hole (PG7 / PG9 / PG11 / M12 / M16 / M20) on any wall; warnings when the rim is too narrow or the gland too big. 5 presets (Shop > Weatherproof boxes), including Pi 5 and small sensor boxes.

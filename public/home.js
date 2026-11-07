@@ -361,9 +361,11 @@ export async function addToSomething(it) {
         if (!r?.text) return;
         id = (await api('POST', '/api/collections', { name: r.text })).id;
       }
+      ctx.toast?.(it.kind === 'stl' ? 'Updating the collection...' : 'Saving an STL copy for the collection...');
       const c = await api('POST', `/api/collections/${id}/toggle`, { kind: it.kind, id: it.id });
-      await ctx.refreshCollections?.();
-      ctx.toast?.(`${c.items.some((i) => i.kind === it.kind && i.id === it.id) ? 'Added to' : 'Removed from'} "${c.name}".`);
+      await Promise.all([ctx.refreshCollections?.(), ctx.refreshLibrary?.()]);
+      const added = it.kind === 'stl' ? c.items.some((i) => i.id === it.id) : (c.added?.length ?? 0) > 0;
+      ctx.toast?.(`${added ? (it.kind === 'stl' ? 'Added to' : `Saved ${c.added.length} STL cop${c.added.length > 1 ? 'ies' : 'y'} (STL Files > Collections) in`) : 'Removed from'} "${c.name}".`);
       return;
     }
     const target = pick.slice(2);

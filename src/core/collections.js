@@ -1,6 +1,7 @@
-// Collections: your own named groups of anything in the app (presets, saved
-// designs, generators, STL files, projects). A preset can be in many
-// collections. Used by Browse (a facet) and the "+" button on every card.
+// Collections: your own named groups of STL files (MTS edition: STL-only). Adding a
+// preset, design, generator or project through the API saves frozen STL copies in
+// the STL library and adds those (server.js stlIdsFor); old collections with other
+// kinds are converted on first read. Used by Browse and the "+" button on every card.
 // Stored in <data>/collections.json.
 
 import { join } from 'node:path';

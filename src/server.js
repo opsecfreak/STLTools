@@ -450,6 +450,56 @@ async function splitAndArrange(b) {
 }
 const Manifold_add = (k, a, b) => a.add(b);
 
+/**
+ * Collections hold STL files only (owner's choice, option B): a preset, saved design,
+ * generator or project put in a collection is generated once and saved as frozen STL
+ * copies in the STL library (folder "Collections"); the collection lists those STLs.
+ * A copy is reused when the same item is added again (marked in the entry's notes).
+ */
+async function stlIdsFor(item) {
+  const marker = `src:${item.kind}:${item.id}`;
+  const lib = await library.list();
+  const existing = lib.filter((e) => (e.notes ?? '').includes(marker)).map((e) => e.id);
+  if (existing.length) return existing;
+  const save = async (name, mesh, label) => (await library.add(toStl(mesh, { name }), { filename: `${slug(name)}.stl`, name: name.slice(0, 120), folder: 'Collections', tags: ['collection', item.kind], notes: `Frozen copy of ${label}. ${marker}` })).id;
+  if (item.kind === 'preset' || item.kind === 'design' || item.kind === 'generator') {
+    let generator, params, name;
+    if (item.kind === 'preset') { const pr = listPresets().find((x) => x.id === item.id); if (!pr) throw new CatalogError(`No preset ${item.id}`, 404); if (pr.measure?.length) throw new CatalogError(`${pr.name} needs measured sizes first: open it, type them, save it as a design, then add the design.`); ({ generator, params, name } = pr); }
+    else if (item.kind === 'design') { const d = await designs.get(item.id); ({ generator, params, name } = d); }
+    else { generator = item.id; params = {}; name = listGenerators().find((g) => g.id === item.id)?.name ?? item.id; }
+    const r = await generate(generator, params ?? {});
+    const ids = [];
+    for (const pt of r.parts) ids.push(await save(r.parts.length > 1 ? `${name} - ${pt.name}` : name, pt.mesh, `${item.kind} "${name}"`));
+    return ids;
+  }
+  if (item.kind === 'project') {
+    const pj = await projects.get(item.id);
+    const built = await buildProject(pj);
+    const job = jobs.get(built.zip.split('/').pop());
+    const ids = [];
+    for (const [file, buf] of job.files) ids.push((await library.add(buf, { filename: `${slug(file)}.stl`, name: `${pj.name} - ${file}`.slice(0, 120), folder: 'Collections', tags: ['collection', 'project'], notes: `Frozen copy from project "${pj.name}". ${marker}` })).id);
+    return ids;
+  }
+  if (item.kind === 'stl') return [item.id];
+  throw new CatalogError(`Unknown item kind "${item.kind}"`);
+}
+
+/** Turn every non-STL item of every collection into STL items (runs once after an upgrade, then only for new items). */
+async function convertCollections() {
+  const report = [];
+  for (const c of await collections.list()) {
+    if (c.items.every((i) => i.kind === 'stl')) continue;
+    const items = [];
+    for (const it of c.items) {
+      if (it.kind === 'stl') { if (!items.some((x) => x.id === it.id)) items.push(it); continue; }
+      try { for (const id of await stlIdsFor(it)) if (!items.some((x) => x.id === id)) items.push({ kind: 'stl', id }); report.push(`${c.name}: ${it.kind} ${it.id} -> STL`); }
+      catch (err) { items.push(it); report.push(`${c.name}: ${it.kind} ${it.id} kept (${err.message})`); }
+    }
+    await collections.update(c.id, { items });
+  }
+  return report;
+}
+
 /** Serve a file from baseDir without allowing ../ escapes. */
 async function serveStatic(res, baseDir, relPath) {
   const full = normalize(join(baseDir, relPath));
@@ -557,8 +607,13 @@ async function route(req, res) {
   }
 
   // ---- collections (1.0) ----
+  if (path === '/api/collections/convert' && req.method === 'POST') return send(res, 200, { report: await convertCollections() });
   if (path === '/api/collections') {
-    if (req.method === 'GET') return send(res, 200, await collections.list());
+    if (req.method === 'GET') {
+      const list = await collections.list();
+      if (list.some((c) => c.items.some((i) => i.kind !== 'stl'))) await convertCollections();
+      return send(res, 200, await collections.list());
+    }
     if (req.method === 'POST') return send(res, 201, await collections.add(await readBody(req)));
     return send(res, 405, 'Method not allowed');
   }
@@ -566,7 +621,16 @@ async function route(req, res) {
   if (m) {
     if (m[2]) {
       if (req.method !== 'POST') return send(res, 405, 'Use POST');
-      return send(res, 200, await collections.toggle(m[1], await readBody(req)));
+      const item = await readBody(req);
+      if (item.kind && item.kind !== 'stl') {
+        // STL-only collections: add (or remove) the frozen STL copies of this item
+        const ids = await stlIdsFor({ kind: String(item.kind), id: String(item.id ?? '') });
+        const c = await collections.get(m[1]);
+        const all = ids.every((id) => c.items.some((i) => i.kind === 'stl' && i.id === id));
+        const items = all ? c.items.filter((i) => !(i.kind === 'stl' && ids.includes(i.id))) : [...c.items, ...ids.filter((id) => !c.items.some((i) => i.id === id)).map((id) => ({ kind: 'stl', id }))];
+        return send(res, 200, { ...(await collections.update(m[1], { items })), added: all ? [] : ids, removed: all ? ids : [] });
+      }
+      return send(res, 200, await collections.toggle(m[1], item));
     }
     if (req.method === 'GET') return send(res, 200, await collections.get(m[1]));
     if (req.method === 'PUT') return send(res, 200, await collections.update(m[1], await readBody(req)));
