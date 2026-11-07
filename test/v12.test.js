@@ -122,3 +122,18 @@ test('materials data: every entry sourced from a maker datasheet, no Bambu Lab, 
   }
   assert.ok(doc.materials.some((m) => m.brand === 'eSUN' && m.tensile?.z), 'eSUN with Z-direction data');
 });
+
+test('bed mesh and logs: read-only, secrets hidden in logs', async () => {
+  const before = mock.requests.length;
+  const m = (await j('GET', `/api/printers/${pr.id}/mesh`)).body;
+  assert.deepEqual(Object.keys(m.profiles), ['default']);
+  assert.equal(m.profiles.default.points.length, 3);
+  assert.equal(m.profiles.default.params.x_count, 3);
+  const logs = (await j('GET', `/api/printers/${pr.id}/logs`)).body;
+  assert.deepEqual(logs.map((l) => l.path), ['klippy.log', 'crowsnest.log']);
+  const kl = (await j('GET', `/api/printers/${pr.id}/logs?file=klippy.log`)).body;
+  assert.match(kl.text, /MCU version v0.11.0-41/);
+  assert.ok(!kl.text.includes('PLACEHOLDER_KEY'));
+  assert.equal((await j('GET', `/api/printers/${pr.id}/logs?file=../printer.cfg`)).status, 400);
+  assert.ok(mock.requests.slice(before).every((r) => r.method === 'GET'));
+});

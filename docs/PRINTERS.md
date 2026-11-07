@@ -122,7 +122,10 @@ Printers page > **Printer details (read-only)**:
 - **Health check**: the effective Klipper settings (`configfile.settings`, which include Klipper's defaults), read with GET requests only: motion limits (max_velocity, max_accel, max_accel_to_decel, square_corner_velocity), extruder (nozzle, pressure_advance, rotation_distance), probe z_offset, input shaper, saved bed mesh profiles and flatness, every filament sensor (enabled, filament detected, **pause_on_runout** flagged WARN when false), MCU firmware vs host Klipper version, pending SAVE_CONFIG, Klipper config warnings, host OS / CPU / memory / services, print totals.
 - **Config files**: `printer.cfg` first, then the other files in Moonraker's config folder (`moonraker.conf`, `crowsnest.conf`, macros), with line numbers, section highlighting and find. Lines that look like keys, tokens or passwords, and user:password@ / token@ in URLs, are hidden on the server before the text reaches the browser.
 
-STL Tools does not edit config, run G-code or restart services. Change config in Mainsail.
+- **Bed mesh**: each saved mesh profile as a heat map seen from above (front at the bottom), with its range; a point more than 0.2 mm off the mean of its neighbours is boxed in red (re-probe before saving).
+- **Logs**: klippy.log, moonraker.log, crowsnest.log and the rest of Moonraker's logs folder: the last 400 KB, with find; errors and shutdowns highlighted, key and token lines hidden.
+
+STL Tools does not edit config or save meshes. Change config in Mainsail (control mode can send G-code; see below).
 
 ## Connecting: what the test does with your address
 

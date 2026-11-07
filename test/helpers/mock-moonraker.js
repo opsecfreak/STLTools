@@ -56,18 +56,21 @@ export function startMockMoonraker({ port = 0, state = 'printing', webcams = 'li
     }
     if (p === '/printer/objects/list') return json({ objects: ['configfile', 'toolhead', 'bed_mesh', 'print_stats', 'mcu', 'filament_switch_sensor my_sensor', 'extruder', 'heater_bed', 'webhooks', 'virtual_sdcard', 'display_status'] });
     if (p === '/server/files/list' && url.searchParams.get('root') === 'config') return json([{ path: 'printer.cfg', size: MOCK_PRINTER_CFG.length, modified: 1762370000, permissions: 'rw' }, { path: 'moonraker.conf', size: MOCK_MOONRAKER_CONF.length, modified: 1762370000, permissions: 'rw' }, { path: '.theme/x.css', size: 1, modified: 1 }]);
+    if (p === '/server/files/list' && url.searchParams.get('root') === 'logs') return json([{ path: 'klippy.log', size: 60, modified: 1762370000 }, { path: 'crowsnest.log', size: 40, modified: 1762300000 }]);
+    if (p === '/server/files/logs/klippy.log') { res.writeHead(200); return res.end('Start printer at Thu Nov 6\nMCU version v0.11.0-41\napi_key = PLACEHOLDER_KEY\n'); }
+    if (p === '/server/files/logs/crowsnest.log') { res.writeHead(200); return res.end('crowsnest: ustreamer on /dev/video4 port 8080\n'); }
     if (p === '/server/files/config/printer.cfg') { res.writeHead(200, { 'content-type': 'application/octet-stream' }); return res.end(MOCK_PRINTER_CFG); }
     if (p === '/server/files/config/moonraker.conf') { res.writeHead(200, { 'content-type': 'application/octet-stream' }); return res.end(MOCK_MOONRAKER_CONF); }
     if (p === '/machine/system_info') return json({ system_info: { distribution: { name: 'Armbian', version: '10' }, cpu_info: { cpu_count: 4, processor: 'aarch64', total_memory: 1012000 }, python: { version_string: '3.7.3 (default)' }, available_services: ['klipper', 'moonraker', 'crowsnest'] } });
     if (p === '/server/history/totals') return json({ job_totals: { total_jobs: 166, total_time: 400000, total_print_time: 343080, total_filament_used: 880000, longest_print: 20000 } });
     if (p === '/server/info') return json({ klippy_connected: true, klippy_state: 'ready', moonraker_version: 'v0.9.3-mock' });
     if (p === '/printer/info') return json({ state: 'ready', state_message: 'Printer is ready', hostname, software_version: 'v0.11.0-122' });
-    if (p === '/printer/objects/query' && (url.searchParams.has('toolhead') || url.searchParams.has('configfile'))) {
+    if (p === '/printer/objects/query' && (url.searchParams.has('toolhead') || url.searchParams.has('configfile') || url.searchParams.has('bed_mesh'))) {
       const has = (k) => url.searchParams.has(k);
       const status = {};
       if (has('toolhead')) status.toolhead = { axis_minimum: MOCK_MACHINE.axis_minimum, axis_maximum: MOCK_MACHINE.axis_maximum, max_velocity: MOCK_MACHINE.max_velocity, max_accel: MOCK_MACHINE.max_accel };
       if (has('configfile')) status.configfile = { save_config_pending: false, warnings: [], settings: { printer: { kinematics: 'cartesian', max_velocity: MOCK_MACHINE.max_velocity, max_accel: MOCK_MACHINE.max_accel, max_accel_to_decel: 2000, square_corner_velocity: 3 }, extruder: { nozzle_diameter: MOCK_MACHINE.nozzle, filament_diameter: MOCK_MACHINE.filament, pressure_advance: 0.04, pressure_advance_smooth_time: 0.035, rotation_distance: 4.59 }, probe: { z_offset: 0.44 }, input_shaper: { shaper_type_x: 'ei', shaper_freq_x: 44.2, shaper_type_y: 'mzv', shaper_freq_y: 32 }, 'filament_switch_sensor my_sensor': { pause_on_runout: false } } };
-      if (has('bed_mesh')) status.bed_mesh = { profile_name: '', profiles: { default: { points: [[-0.043, 0.01], [0.05, 0.097]] } } };
+      if (has('bed_mesh')) status.bed_mesh = { profile_name: '', mesh_min: [20, 20], mesh_max: [190, 200], probed_matrix: [], profiles: { default: { points: [[-0.043, 0.01, 0.02], [0.05, 0.097, 0.03], [0.0, 0.02, -0.01]], mesh_params: { min_x: 20, max_x: 190, min_y: 20, max_y: 200, x_count: 3, y_count: 3 } } } };
       if (has('mcu')) status.mcu = { mcu_version: 'v0.11.0-41' };
       if (has('filament_switch_sensor my_sensor')) status['filament_switch_sensor my_sensor'] = { enabled: true, filament_detected: true };
       if (has('print_stats')) status.print_stats = { state: sim.state };

@@ -131,6 +131,11 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET | `/api/printers/:id/stream?cam=0` | | live MJPEG (`multipart/x-mixed-replace`), piped from the printer; 415 if the camera is not MJPEG, 429 over 3 streams per printer |
 | GET | `/api/printers/:id/machine` | | reads and saves `{ bed: {x,y,z}, maxVelocity, maxAccel, nozzle, filamentDiameter, kinematics, readAt }` from Klipper (read-only query) |
 | GET | `/api/printers/:id/health` | | `{ checks: [{ level: ok\|info\|warn, title, detail }], facts }` from read-only Klipper / Moonraker queries |
+| GET | `/api/printers/:id/mesh` | | `{ loaded, min, max, probed, profiles: { name: { points[][], params } } }` |
+| GET | `/api/printers/:id/logs[?file=klippy.log]` | | log list, or `{ path, bytes, truncated, text }` (last 400 KB, secrets hidden) |
+| POST | `/api/split` | `{ job, parts?, qty?: { part: n }, library?, profile?, joint: pins\|filament\|none, pinDiameter, pinLength, clearance, spacing, margin }` | `{ zip, pieces[], plates: [{ name, url, items, estimate }], cuts, pins, readme }` |
+| GET / POST | `/api/materials` | material | datasheet + your materials / new material (201) |
+| PUT / DELETE | `/api/materials/:id` | partial material | your copy / 204 (datasheet entries cannot be deleted) |
 | GET | `/api/printers/:id/config` | | config files `[{ path, size, modified }]` (printer.cfg first) |
 | GET | `/api/printers/:id/config?file=printer.cfg` | | `{ path, text, bytes }`, secrets hidden; 400 for paths outside the config folder or other file types |
 | GET / PUT | `/api/printers/:id/control` | `{ enabled: true, acknowledge: true }` or `{ enabled: false }` | `{ enabled, actions[] }` / the printer; 400 without `acknowledge` |

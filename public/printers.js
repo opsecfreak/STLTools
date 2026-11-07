@@ -300,6 +300,67 @@ export async function renderPrinters(page, focusId = null) {
       for (const b of tabs.children) b.classList.toggle('active', b.dataset.k === which);
       out.replaceChildren(el('p', { className: 'muted', textContent: 'Reading from the printer (read-only)...' }));
       try {
+        if (which === 'mesh') {
+          const m = await api('GET', `/api/printers/${p.id}/mesh`);
+          const names = Object.keys(m.profiles);
+          if (!names.length) { out.replaceChildren(el('p', { className: 'muted', textContent: 'No saved bed mesh on this printer.' })); return; }
+          const pick = el('select', {}, ...names.map((n) => el('option', { value: n, textContent: `${n}${n === m.loaded ? ' (loaded)' : ''}`, selected: n === (m.loaded || 'default') })));
+          const cv = el('canvas', { width: 520, height: 420, className: 'lab-canvas' });
+          const info = el('p', {});
+          const draw = () => {
+            const pr = m.profiles[pick.value];
+            const pts = pr.points;
+            const rows = pts.length, cols = pts[0]?.length ?? 0;
+            const flat = pts.flat();
+            const lo = Math.min(...flat), hi = Math.max(...flat), span = Math.max(Math.abs(lo), Math.abs(hi)) || 1;
+            const c = cv.getContext('2d');
+            c.clearRect(0, 0, cv.width, cv.height);
+            const cw = (cv.width - 40) / cols, ch = (cv.height - 40) / rows;
+            // outliers: a point more than 0.2 mm off the mean of its neighbours
+            const out = [];
+            for (let r = 0; r < rows; r++) for (let k = 0; k < cols; k++) {
+              const nb = [[r - 1, k], [r + 1, k], [r, k - 1], [r, k + 1]].filter(([a, b]) => a >= 0 && b >= 0 && a < rows && b < cols).map(([a, b]) => pts[a][b]);
+              const mean = nb.reduce((x, y) => x + y, 0) / nb.length;
+              if (Math.abs(pts[r][k] - mean) > 0.2) out.push([r, k]);
+              const v = pts[r][k] / span; // -1..1
+              const col = v >= 0 ? [255, Math.round(255 * (1 - v)), Math.round(255 * (1 - v))] : [Math.round(255 * (1 + v)), Math.round(255 * (1 + v)), 255];
+              c.fillStyle = `rgb(${col.join(',')})`;
+              const x = 20 + k * cw, y = cv.height - 20 - (r + 1) * ch; // row 0 = front (min Y) at the bottom
+              c.fillRect(x, y, cw - 2, ch - 2);
+              c.fillStyle = '#222'; c.font = '12px sans-serif'; c.textAlign = 'center';
+              c.fillText(pts[r][k].toFixed(3), x + cw / 2, y + ch / 2 + 4);
+              if (out.some(([a, b]) => a === r && b === k)) { c.strokeStyle = '#d00'; c.lineWidth = 3; c.strokeRect(x + 1, y + 1, cw - 4, ch - 4); }
+            }
+            info.replaceChildren(el('strong', { textContent: `Range ${(hi - lo).toFixed(3)} mm (${lo.toFixed(3)} to ${hi.toFixed(3)}), ${cols} x ${rows} points` }),
+              pr.params.min_x !== undefined ? ` over X ${pr.params.min_x}-${pr.params.max_x}, Y ${pr.params.min_y}-${pr.params.max_y} mm.` : '.',
+              out.length ? el('span', { className: 'error', textContent: ` ${out.length} point(s) more than 0.2 mm off their neighbours (red box): re-probe before saving this mesh.` }) : ' No point is more than 0.2 mm off its neighbours.');
+          };
+          pick.onchange = draw;
+          out.replaceChildren(el('div', { className: 'row' }, el('span', { textContent: 'Profile ' }), pick), cv, info,
+            el('p', { className: 'muted', textContent: 'Seen from above, front of the bed at the bottom. Red = high, blue = low. Read-only: probe and save meshes in Mainsail.' }));
+          draw();
+          return;
+        }
+        if (which === 'logs') {
+          const files = await api('GET', `/api/printers/${p.id}/logs`);
+          if (!files.length) { out.replaceChildren(el('p', { className: 'muted', textContent: 'No log files listed by Moonraker.' })); return; }
+          const pick = el('select', {}, ...files.map((f) => el('option', { value: f.path, textContent: `${f.path} (${(f.size / 1024).toFixed(0)} KB, ${fmtAgo(f.modified)})` })));
+          const find = el('input', { type: 'search', placeholder: 'Find (e.g. error, shutdown, MCU, crowsnest)' });
+          const pre = el('pre', { className: 'cfg-view' });
+          let text = '';
+          const render = () => {
+            const q = find.value.trim().toLowerCase();
+            const lines = text.split('\n');
+            pre.replaceChildren(...lines.map((l) => el('div', { className: q && l.toLowerCase().includes(q) ? 'hit' : /error|shutdown|exception|refused/i.test(l) ? 'sec' : undefined, textContent: l })));
+            (pre.querySelector('.hit') ?? pre.lastElementChild)?.scrollIntoView({ block: 'center' });
+          };
+          const load = async () => { pre.textContent = 'Loading...'; const f = await api('GET', `/api/printers/${p.id}/logs?file=${encodeURIComponent(pick.value)}`); text = f.text; render(); };
+          pick.onchange = () => load().catch((err) => { pre.textContent = err.message; });
+          find.oninput = render;
+          out.replaceChildren(el('div', { className: 'row' }, pick, find), pre, el('p', { className: 'muted', textContent: 'Last 400 KB of the file, newest at the bottom. Errors and shutdowns are highlighted; key and token lines are hidden.' }));
+          await load();
+          return;
+        }
         if (which === 'health') {
           const h = await api('GET', `/api/printers/${p.id}/health`);
           out.replaceChildren(el('ul', { className: 'health' }, ...h.checks.map((c) => el('li', { className: `lvl-${c.level}` },
@@ -338,6 +399,8 @@ export async function renderPrinters(page, focusId = null) {
     tabs.append(
       el('button', { type: 'button', className: 'secondary small', dataset: { k: 'health' }, textContent: 'Health check', onclick: () => show('health') }),
       el('button', { type: 'button', className: 'secondary small', dataset: { k: 'config' }, textContent: 'Config files (printer.cfg)', onclick: () => show('config') }),
+      el('button', { type: 'button', className: 'secondary small', dataset: { k: 'mesh' }, textContent: 'Bed mesh', onclick: () => show('mesh') }),
+      el('button', { type: 'button', className: 'secondary small', dataset: { k: 'logs' }, textContent: 'Logs', onclick: () => show('logs') }),
       el('a', { className: 'button secondary small', href: p.url, target: '_blank', rel: 'noopener', textContent: 'Open Mainsail' }));
     return el('div', { className: 'card insights-box' }, el('h3', { textContent: 'Printer details (read-only)' }),
       el('p', { className: 'muted', textContent: 'Health check reads the live Klipper setup: motion limits, pressure advance, input shaper, bed mesh, filament sensor, MCU firmware, host system and print totals. Config files shows printer.cfg and the rest.' }), tabs, out);

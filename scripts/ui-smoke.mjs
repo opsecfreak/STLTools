@@ -117,6 +117,12 @@ try {
   await page.locator('.insights-box button', { hasText: 'Config files' }).click();
   await page.waitForSelector('.cfg-view .sec', { timeout: 10000 });
   check(/max_velocity/.test(await page.locator('.cfg-view').innerText()), 'printer.cfg viewer shows the file');
+  await page.locator('.insights-box button', { hasText: 'Bed mesh' }).click();
+  await page.waitForSelector('.insights-box canvas', { timeout: 10000 });
+  check(/Range .* mm/.test(await page.locator('.insights-box').innerText()), 'bed mesh heat map shows the range');
+  await page.locator('.insights-box button', { hasText: 'Logs' }).click();
+  await page.waitForSelector('.insights-box .cfg-view div', { timeout: 10000 });
+  check(/MCU version/.test(await page.locator('.insights-box .cfg-view').innerText()), 'log viewer shows klippy.log');
   // control mode: off by default, warning dialog to turn on, confirm per action, logged
   check(/Control: off/.test(await page.locator('.control-box').innerText()), 'printer control is off by default');
   page.on('dialog', (d) => d.accept());

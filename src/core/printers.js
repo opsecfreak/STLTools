@@ -689,6 +689,36 @@ export function createPrinters({ dataDir }) {
       return { checks, facts: { klipper: host, objects: objects.length, state: pinfo?.state ?? null } };
     },
 
+    /** Saved bed mesh profiles and the loaded mesh (read-only bed_mesh query). */
+    async mesh(id) {
+      const p = await find(id);
+      const q = await mr(p, '/printer/objects/query?bed_mesh');
+      const bm = q.status?.bed_mesh ?? {};
+      const profiles = Object.fromEntries(Object.entries(bm.profiles ?? {}).map(([name, pr]) => [name, { points: pr.points ?? [], params: pr.mesh_params ?? {} }]));
+      return { loaded: bm.profile_name || '', min: bm.mesh_min ?? null, max: bm.mesh_max ?? null, probed: bm.probed_matrix ?? [], profiles };
+    },
+
+    /** Log files (klippy.log, moonraker.log, crowsnest.log ...), read-only. */
+    async logFiles(id) {
+      const p = await find(id);
+      const list = await mr(p, '/server/files/list?root=logs').catch(() => []);
+      return list.map((f) => ({ path: f.path ?? f.filename, size: f.size, modified: f.modified }))
+        .filter((f) => f.path && /\.(log|txt)(\.\d+)?$/i.test(f.path) && !f.path.includes('..'))
+        .sort((a, b) => b.modified - a.modified);
+    },
+
+    /** The last part of one log file (up to 400 KB), secrets hidden. */
+    async logFile(id, path) {
+      const p = await find(id);
+      const clean = String(path ?? '');
+      if (!/\.(log|txt)(\.\d+)?$/i.test(clean) || clean.includes('..') || clean.startsWith('/')) throw new CatalogError('Not a log file path');
+      const res = await mr(p, `/server/files/logs/${clean.split('/').map(encodeURIComponent).join('/')}`, { raw: true, timeout: 20000 });
+      const buf = Buffer.from(await res.arrayBuffer());
+      const max = 400 * 1024;
+      const tail = buf.length > max ? buf.subarray(buf.length - max) : buf;
+      return { path: clean, bytes: buf.length, truncated: buf.length > max, text: redactSecrets(tail.toString('utf8')) };
+    },
+
     /** Read-only "are you there?" for one printer; remembered for the UI. */
     async check(id) {
       const p = await find(id);

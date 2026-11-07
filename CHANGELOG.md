@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: Printers > Printer details: **Bed mesh** heat map of each saved profile (values, range, points more than 0.2 mm off their neighbours boxed in red: re-probe before saving) and **Logs** viewer (klippy.log, moonraker.log, crowsnest.log: last 400 KB, find, errors highlighted, key lines hidden). Both read-only (`GET /api/printers/:id/mesh`, `/logs[?file=]`).
+Fixed: n/a.
+Untested: against the shop SV07 (fake Moonraker only).
+
 ## 1.4.0-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: **Split / arrange** next to Download in every designer tab (`POST /api/split`, src/core/split.js). Parts larger than the chosen printer's bed are cut into equal pieces along their longest side (piece length from the flat bed size so pieces lie down), with alignment holes on every cut (printed pins with their own STL, 1.75 mm filament pins, or glue only; pin size and hole clearance settable); then every piece and copy (quantities per part) is packed onto as few plates as possible, standing as designed when it fits, with a time and filament estimate per plate, plate STLs, piece STLs and an assembly README in one ZIP. Works on generated parts and on imported STLs.

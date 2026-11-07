@@ -749,6 +749,11 @@ async function route(req, res) {
     if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
     if (sub === 'machine') return send(res, 200, await printers.machine(id));
     if (sub === 'health') return send(res, 200, await printers.health(id));
+    if (sub === 'mesh') return send(res, 200, await printers.mesh(id));
+    if (sub === 'logs') {
+      const file = url.searchParams.get('file');
+      return send(res, 200, file ? await printers.logFile(id, file) : await printers.logFiles(id));
+    }
     if (sub === 'config') {
       const file = url.searchParams.get('file');
       return send(res, 200, file ? await printers.configFile(id, file) : await printers.configFiles(id));
