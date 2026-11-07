@@ -1,0 +1,239 @@
+{
+  "group": "Modular quad frames and antennas",
+  "section": "quads",
+  "presets": [
+    {
+      "id": "quad-modular-5in-bolted",
+      "name": "Modular quad 5 in, 250 mm, bolted arms, 30.5 stack",
+      "generator": "quad-modular",
+      "description": "Four separate arms on 2 M3 screws each with nuts under the plate, 25 mm M3 standoffs, 30.5 x 30.5 stack, cable grooves, SMA tab. Motor pattern 16 x 19 fits most 22xx-23xx motors: check yours.",
+      "tags": [
+        "quad",
+        "frame",
+        "5 inch",
+        "assembly",
+        "modular"
+      ],
+      "params": {},
+      "verify": [
+        "motorPatternA",
+        "motorPatternB"
+      ]
+    },
+    {
+      "id": "quad-modular-5in-dovetail",
+      "name": "Modular quad 5 in, dovetail quick-swap arms",
+      "generator": "quad-modular",
+      "description": "Arms drop into dovetail sockets and are held by one M3 screw each: swap a broken arm in a minute. Print one socket and arm first to check the 0.2 mm clearance.",
+      "tags": [
+        "quad",
+        "frame",
+        "5 inch",
+        "assembly",
+        "modular",
+        "quick swap"
+      ],
+      "params": {
+        "joint": "dovetail"
+      },
+      "verify": [
+        "motorPatternA",
+        "motorPatternB",
+        "jointClearance"
+      ]
+    },
+    {
+      "id": "quad-modular-5in-inserts-printed",
+      "name": "Modular quad 5 in, heat-set inserts, printed standoffs",
+      "generator": "quad-modular",
+      "description": "Arms carry M3 heat-set inserts, screws from under the plate; standoffs printed too. The insert hole depends on your inserts: print the fit-test coupon and type the hole size.",
+      "tags": [
+        "quad",
+        "frame",
+        "5 inch",
+        "assembly",
+        "modular",
+        "inserts"
+      ],
+      "params": {
+        "joint": "insert",
+        "standoffs": "printed"
+      },
+      "verify": [
+        "motorPatternA",
+        "motorPatternB"
+      ],
+      "measure": [
+        "insertHole"
+      ]
+    },
+    {
+      "id": "quad-modular-3in-m2",
+      "name": "Modular quad 3 in, 150 mm, M2, 20 x 20 stack",
+      "generator": "quad-modular",
+      "description": "Small frame: M2 arm screws into heat-set inserts, M2 standoffs 20 mm, 20 x 20 stack. Motor pattern 12 x 12 M2 is common for 13xx-14xx motors: check yours. Type your M2 insert hole size.",
+      "tags": [
+        "quad",
+        "frame",
+        "3 inch",
+        "assembly",
+        "modular",
+        "inserts"
+      ],
+      "params": {
+        "wheelbase": 150,
+        "propInches": 3,
+        "stack": "20",
+        "armWidth": 10,
+        "armThickness": 5,
+        "rootLength": 22,
+        "joint": "insert",
+        "armBolt": "M2",
+        "insertDepth": 3.5,
+        "standoffBolt": "M2",
+        "plateGap": 20,
+        "bottomThickness": 3,
+        "topThickness": 2.5,
+        "motorPad": 20,
+        "motorPatternA": 12,
+        "motorPatternB": 12,
+        "motorBolt": "M2",
+        "motorCenterHole": 5,
+        "strapWidth": 16
+      },
+      "verify": [
+        "motorPatternA",
+        "motorPatternB"
+      ],
+      "measure": [
+        "insertHole"
+      ]
+    },
+    {
+      "id": "quad-modular-7in-m4",
+      "name": "Modular quad 7 in, 320 mm, M4 bolted arms",
+      "generator": "quad-modular",
+      "description": "Long-range size: wider, thicker arms on M4 screws and nuts, 30 mm gap for the stack and receiver. Check the motor pattern against your 28xx motor.",
+      "tags": [
+        "quad",
+        "frame",
+        "7 inch",
+        "assembly",
+        "modular"
+      ],
+      "params": {
+        "wheelbase": 320,
+        "propInches": 7,
+        "armWidth": 18,
+        "armThickness": 7,
+        "rootLength": 36,
+        "armBolt": "M4",
+        "bottomThickness": 4.5,
+        "plateGap": 30,
+        "motorPad": 32
+      },
+      "verify": [
+        "motorPatternA",
+        "motorPatternB"
+      ]
+    },
+    {
+      "id": "quad-modular-5in-stretch",
+      "name": "Modular quad 5 in, stretch X (arms 38 deg from the nose)",
+      "generator": "quad-modular",
+      "description": "Arms closer to the nose line: longer than wide, less prop wash in the camera view. Bolted arms, 30.5 stack.",
+      "tags": [
+        "quad",
+        "frame",
+        "5 inch",
+        "assembly",
+        "modular",
+        "stretch x"
+      ],
+      "params": {
+        "armAngle": 38
+      },
+      "verify": [
+        "motorPatternA",
+        "motorPatternB"
+      ]
+    },
+    {
+      "id": "antenna-tubes-v-standoff",
+      "name": "Receiver antennas, V pair on a round standoff",
+      "generator": "antenna-tube-holder",
+      "description": "Two dipole antenna tubes at 45 deg each side (90 deg apart) on a clip that pushes onto a frame standoff. Measure the tube and the standoff.",
+      "tags": [
+        "antenna",
+        "receiver",
+        "u.fl",
+        "ipex",
+        "standoff"
+      ],
+      "params": {},
+      "measure": [
+        "tubeOD",
+        "standoffSize"
+      ]
+    },
+    {
+      "id": "antenna-tubes-v-hex",
+      "name": "Receiver antennas, V pair on a hex standoff",
+      "generator": "antenna-tube-holder",
+      "description": "Same V pair for hex standoffs (aluminium or nylon). Measure across the flats.",
+      "tags": [
+        "antenna",
+        "receiver",
+        "u.fl",
+        "ipex",
+        "standoff"
+      ],
+      "params": {
+        "standoffShape": "hex"
+      },
+      "measure": [
+        "tubeOD",
+        "standoffSize"
+      ]
+    },
+    {
+      "id": "antenna-tube-single-arm",
+      "name": "Single antenna tube on an arm, zip tie",
+      "generator": "antenna-tube-holder",
+      "description": "One antenna tube tilted 30 deg back, tied to an arm or boom with a zip tie. Measure the tube.",
+      "tags": [
+        "antenna",
+        "vtx",
+        "receiver",
+        "u.fl",
+        "arm"
+      ],
+      "params": {
+        "count": 1,
+        "tilt": 30,
+        "mount": "zip"
+      },
+      "measure": [
+        "tubeOD"
+      ]
+    },
+    {
+      "id": "antenna-tubes-v-screw",
+      "name": "Receiver antennas, V pair, screw mount",
+      "generator": "antenna-tube-holder",
+      "description": "V pair on a flat foot with one M3 screw: for a plate, a fuselage floor or a robot deck.",
+      "tags": [
+        "antenna",
+        "receiver",
+        "u.fl",
+        "ipex"
+      ],
+      "params": {
+        "mount": "screw"
+      },
+      "measure": [
+        "tubeOD"
+      ]
+    }
+  ]
+}

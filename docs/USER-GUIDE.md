@@ -69,6 +69,13 @@ The estimate box under the 3D view shows time, grams, meters and (with a price s
 
 Some generators make several parts that belong together (servo pan-tilt gimbal, brushless 2-axis gimbal, drawer unit). The 3D view toggles between **Assembled** (each part in its place, one color each) and **Print plate** (laid out to print). The estimate table lists each part with its quantity; click a part name to show only that part.
 
+## Quad frames, boards, cameras, antennas (MTS edition)
+
+- **Modular Quad Frame** (Quadcopters): bottom and top plates, four separate arms (one STL, print 4) and optional printed standoffs. Pick the arm joint: 2 screws with nuts, 2 screws into heat-set inserts, or a dovetail socket with 1 screw for quick swaps. The notes list the screws, nuts and standoffs to buy. The 3D view shows all four arms in place.
+- **Microcontroller Board Holder**: snap-lip cradle (boards without holes) or posts (Pico, Nano), USB opening, on screw tabs, tape, zip ties or a 20 x 20 / 30.5 x 30.5 stack plate. Presets for XIAO, Pico, ESP32 DevKitC / S3, Blue Pill, Black Pill, Nano: board sizes from datasheets are highlighted to check; clone boards are left to measure.
+- **Camera Board Case**: front with the lens hole and posts, back with screw holes, ribbon slot and a 1/4-20 tripod nut (or a screw tab). Pi Camera Module 2 / 3 presets: measure the lens position and lens block first.
+- **Antenna Tube Holder**: one or a V pair of dipole antenna tubes on a standoff clip, a zip tie or a screw.
+
 ## Projects
 
 A project is a parts list for a build: presets, saved designs, custom parts and imported STLs, each with a quantity, note and "printed" checkbox.

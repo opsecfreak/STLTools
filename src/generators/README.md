@@ -103,7 +103,8 @@ return { parts: [
 (`assembled`) that puts the printed STL back in place. The 3D view's
 "Assembled" button uses it; downloads stay in print orientation. Mark the
 generator `assembly: true` so the UI lists it with the assemblies. Optional
-per part: `qty` (print this many).
+per part: `qty` (print this many) and `copies` (more assembled matrices, one per
+extra copy, so the Assembled view shows all of them; see `quad-modular.js`).
 
 ## Simple mode
 

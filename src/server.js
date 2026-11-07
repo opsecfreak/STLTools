@@ -565,7 +565,7 @@ function publish(id, result, extra = {}) {
   const key = jobKey(id, result.params, extra.item?.code ?? '', extra.item?.updatedAt ?? '');
   const files = new Map();
   const prefix = extra.item ? extra.item.code : id;
-  const parts = result.parts.map(({ name, mesh, assembled, qty }) => {
+  const parts = result.parts.map(({ name, mesh, assembled, qty, copies }) => {
     files.set(name, toStl(mesh, { name: `${prefix}-${name}` }));
     return {
       name,
@@ -573,6 +573,7 @@ function publish(id, result, extra = {}) {
       filename: `${prefix}-${name}.stl`,
       stats: meshStats(mesh),
       ...(assembled ? { assembled } : {}),
+      ...(copies ? { copies } : {}),
       ...(qty ? { qty } : {}),
     };
   });

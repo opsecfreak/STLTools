@@ -323,11 +323,21 @@ function createWebglViewer(container, initial = {}) {
       mesh.userData.name = part.name;
       mesh.castShadow = renderer.shadowMap.enabled;
       next.push(mesh);
+      // more copies of the same part in their assembled places (e.g. 4 arms)
+      if (assembled) for (const m of part.copies ?? []) {
+        const copy = new THREE.Mesh(geometry, mat);
+        copy.matrixAutoUpdate = false;
+        copy.matrix.fromArray(m);
+        copy.userData.name = part.name;
+        copy.userData.copy = true;
+        copy.castShadow = mesh.castShadow;
+        next.push(copy);
+      }
     }
     group.clear();
     for (const m of meshes) {
       m.userData.edges?.geometry.dispose();
-      if (m.material !== material) m.material.dispose();
+      if (m.material !== material && !m.userData.copy) m.material.dispose();
     }
     meshes = next;
     for (const m of meshes) group.add(m);

@@ -1,0 +1,405 @@
+{
+  "group": "Board holders and camera cases",
+  "section": "robotics",
+  "presets": [
+    {
+      "id": "mcu-xiao-cradle-tabs",
+      "name": "Seeed XIAO cradle, screw tabs",
+      "generator": "mcu-holder",
+      "description": "Snap-lip cradle for a XIAO (21 x 17.8 mm board, Seeed wiki) with a USB-C opening and two M3 tabs. Measure the PCB thickness.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "seeed",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "boardLength": 21,
+        "boardWidth": 17.8,
+        "usbWidth": 10
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth"
+      ],
+      "measure": [
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-xiao-cradle-stack20",
+      "name": "Seeed XIAO cradle on a 20 x 20 stack",
+      "generator": "mcu-holder",
+      "description": "XIAO cradle on a plate with 20 x 20 holes: stacks on a flight controller or the modular quad frame.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "seeed",
+        "board",
+        "mcu",
+        "fc stack"
+      ],
+      "params": {
+        "boardLength": 21,
+        "boardWidth": 17.8,
+        "base": "stack20",
+        "baseScrew": "M2"
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth"
+      ],
+      "measure": [
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-xiao-cradle-tape",
+      "name": "Seeed XIAO cradle, flat for tape",
+      "generator": "mcu-holder",
+      "description": "XIAO cradle with a flat back for double-sided tape.",
+      "tags": [
+        "xiao",
+        "esp32",
+        "seeed",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "boardLength": 21,
+        "boardWidth": 17.8,
+        "base": "tape"
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth"
+      ],
+      "measure": [
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-pico-posts",
+      "name": "Raspberry Pi Pico / Pico W / Pico 2 on posts",
+      "generator": "mcu-holder",
+      "description": "Four posts on the Pico hole pattern (51 x 21 mm board, 2.1 mm holes 47 x 11.4 mm apart, Pico datasheet) for M2 screws, screw tabs. Check against your board.",
+      "tags": [
+        "pico",
+        "rp2040",
+        "rp2350",
+        "raspberry pi",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "style": "posts",
+        "boardLength": 51,
+        "boardWidth": 21,
+        "holeSpacingL": 47,
+        "holeSpacingW": 11.4,
+        "postScrew": "M2"
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth",
+        "holeSpacingL",
+        "holeSpacingW"
+      ]
+    },
+    {
+      "id": "mcu-pico-posts-stack30",
+      "name": "Raspberry Pi Pico on posts, 30.5 x 30.5 stack",
+      "generator": "mcu-holder",
+      "description": "Pico posts on a plate with 30.5 x 30.5 M3 holes for a flight controller stack or the modular quad frame.",
+      "tags": [
+        "pico",
+        "rp2040",
+        "raspberry pi",
+        "board",
+        "mcu",
+        "fc stack"
+      ],
+      "params": {
+        "style": "posts",
+        "boardLength": 51,
+        "boardWidth": 21,
+        "holeSpacingL": 47,
+        "holeSpacingW": 11.4,
+        "postScrew": "M2",
+        "base": "stack30"
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth",
+        "holeSpacingL",
+        "holeSpacingW"
+      ]
+    },
+    {
+      "id": "mcu-pico-cradle-zip",
+      "name": "Raspberry Pi Pico cradle, zip ties",
+      "generator": "mcu-holder",
+      "description": "Snap-lip cradle (no screws) with zip-tie channels under the floor. Measure the PCB thickness.",
+      "tags": [
+        "pico",
+        "rp2040",
+        "raspberry pi",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "boardLength": 51,
+        "boardWidth": 21,
+        "base": "zip"
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth"
+      ],
+      "measure": [
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-esp32-devkitc-cradle",
+      "name": "ESP32 DevKitC cradle, header pins down",
+      "generator": "mcu-holder",
+      "description": "Cradle for an ESP32 DevKitC with headers soldered pins down (9 mm under the board). DevKit clones differ in size: measure yours.",
+      "tags": [
+        "esp32",
+        "devkit",
+        "espressif",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "underClearance": 9,
+        "usbWidth": 12
+      },
+      "measure": [
+        "boardLength",
+        "boardWidth",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-esp32-s3-devkitc-cradle",
+      "name": "ESP32-S3 DevKitC-1 cradle, header pins down",
+      "generator": "mcu-holder",
+      "description": "Cradle for an ESP32-S3 DevKitC-1 with headers pins down. Measure your board: the two USB-C ports sit on one end.",
+      "tags": [
+        "esp32",
+        "esp32-s3",
+        "devkit",
+        "espressif",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "underClearance": 9,
+        "usbWidth": 18
+      },
+      "measure": [
+        "boardLength",
+        "boardWidth",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-bluepill-cradle",
+      "name": "STM32 Blue Pill cradle, header pins down",
+      "generator": "mcu-holder",
+      "description": "Cradle for an STM32F103 Blue Pill (no mounting holes) with headers pins down. Clone boards vary: measure yours.",
+      "tags": [
+        "stm32",
+        "blue pill",
+        "stm32f103",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "underClearance": 9
+      },
+      "measure": [
+        "boardLength",
+        "boardWidth",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-blackpill-cradle",
+      "name": "STM32 Black Pill (WeAct) cradle, header pins down",
+      "generator": "mcu-holder",
+      "description": "Cradle for a WeAct STM32F401 / F411 Black Pill with headers pins down. Measure your board.",
+      "tags": [
+        "stm32",
+        "black pill",
+        "stm32f411",
+        "weact",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "underClearance": 9
+      },
+      "measure": [
+        "boardLength",
+        "boardWidth",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-nano-cradle",
+      "name": "Arduino Nano cradle, header pins down",
+      "generator": "mcu-holder",
+      "description": "Cradle for an Arduino Nano class board (18 x 45 mm, Arduino docs) with headers pins down. Clones vary: check yours.",
+      "tags": [
+        "arduino",
+        "nano",
+        "atmega328",
+        "board",
+        "mcu"
+      ],
+      "params": {
+        "boardLength": 45,
+        "boardWidth": 18,
+        "underClearance": 9
+      },
+      "verify": [
+        "boardLength",
+        "boardWidth"
+      ],
+      "measure": [
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "mcu-custom-cradle-stack30",
+      "name": "Any small board, cradle on a 30.5 stack",
+      "generator": "mcu-holder",
+      "description": "Snap-lip cradle on a 30.5 x 30.5 plate: type your board's sizes.",
+      "tags": [
+        "board",
+        "mcu",
+        "fc stack"
+      ],
+      "params": {
+        "base": "stack30"
+      },
+      "measure": [
+        "boardLength",
+        "boardWidth",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "picam-v2-tripod",
+      "name": "Pi Camera Module 2 case, tripod nut",
+      "generator": "pi-camera-case",
+      "description": "Front with the lens hole, back with a 1/4-20 tripod nut and a ribbon slot. Board 25 x 24 mm with M2 holes 21 x 12.5 mm apart are the usual Camera Module 2 values: check yours. Measure the lens position and lens block.",
+      "tags": [
+        "raspberry pi",
+        "camera",
+        "camera module 2",
+        "case",
+        "tripod"
+      ],
+      "params": {},
+      "verify": [
+        "boardWidth",
+        "boardHeight",
+        "holeSpacingX",
+        "holeSpacingY",
+        "holeFromTop",
+        "lensFromCenter",
+        "ribbonWidth"
+      ],
+      "measure": [
+        "lensFromTop",
+        "lensHole",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "picam-v3-tripod",
+      "name": "Pi Camera Module 3 case, tripod nut",
+      "generator": "pi-camera-case",
+      "description": "Same case for Camera Module 3 (same board outline and hole pattern as Module 2: check yours). The autofocus lens block is taller: measure it and the lens position.",
+      "tags": [
+        "raspberry pi",
+        "camera",
+        "camera module 3",
+        "case",
+        "tripod"
+      ],
+      "params": {},
+      "verify": [
+        "boardWidth",
+        "boardHeight",
+        "holeSpacingX",
+        "holeSpacingY",
+        "holeFromTop",
+        "lensFromCenter",
+        "ribbonWidth"
+      ],
+      "measure": [
+        "lensFromTop",
+        "lensHole",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "picam-v3-tab",
+      "name": "Pi Camera Module 3 case, screw tab",
+      "generator": "pi-camera-case",
+      "description": "Camera Module 3 case with an M3 screw tab below: for a robot deck, a quad top plate or a bracket.",
+      "tags": [
+        "raspberry pi",
+        "camera",
+        "camera module 3",
+        "case"
+      ],
+      "params": {
+        "mount": "tab"
+      },
+      "verify": [
+        "boardWidth",
+        "boardHeight",
+        "holeSpacingX",
+        "holeSpacingY",
+        "holeFromTop",
+        "lensFromCenter",
+        "ribbonWidth"
+      ],
+      "measure": [
+        "lensFromTop",
+        "lensHole",
+        "pcbThickness"
+      ]
+    },
+    {
+      "id": "picam-custom-flat",
+      "name": "Small camera board case, flat back (type your sizes)",
+      "generator": "pi-camera-case",
+      "description": "Any small camera board with four holes: type the board, holes and lens. Flat back for tape.",
+      "tags": [
+        "camera",
+        "case",
+        "esp32-cam"
+      ],
+      "params": {
+        "mount": "flat"
+      },
+      "measure": [
+        "boardWidth",
+        "boardHeight",
+        "holeSpacingX",
+        "holeFromTop",
+        "lensFromTop",
+        "lensHole",
+        "pcbThickness"
+      ]
+    }
+  ]
+}

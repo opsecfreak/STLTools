@@ -136,9 +136,10 @@ export async function generate(id, input = {}) {
     const result = g.generate(params, k, LIB);
     // `assembled` (optional, from k.pose()): 4x4 column-major matrix that moves the
     // print-oriented part to its place in the assembly, for the "Assembled" 3D view.
-    const parts = result.parts.map(({ name, manifold, assembled, qty, material }) => ({
+    // `copies` (optional): more assembled matrices for the other copies of a part with qty > 1.
+    const parts = result.parts.map(({ name, manifold, assembled, qty, material, copies }) => ({
       name, mesh: toPlainMesh(manifold),
-      ...(assembled ? { assembled } : {}), ...(qty > 1 ? { qty } : {}), ...(material ? { material } : {}),
+      ...(assembled ? { assembled } : {}), ...(qty > 1 ? { qty } : {}), ...(material ? { material } : {}), ...(Array.isArray(copies) && copies.length ? { copies } : {}),
     }));
     return { id, params, parts, warnings: result.warnings ?? [], notes: result.notes ?? [], meta: result.meta ?? {} };
   } finally {

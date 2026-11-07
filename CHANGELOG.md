@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: new generators **Modular Quad Frame** (`quad-modular`, assembly: plates, 4 arms with motor mounts, bolt / heat-set insert / dovetail joints with M2-M4 screws, M2 / M2.5 / M3 standoffs bought or printed, FC stack 20 / 25.5 / 30.5, cable grooves, zip-tie slots, wire and strap slots, SMA tab, prop and wheelbase checks), **Microcontroller Board Holder** (`mcu-holder`), **Camera Board Case** (`pi-camera-case`), **Antenna Tube Holder** (`antenna-tube-holder`). 26 presets (5 frames, 4 antenna holders, 12 board holders, 4 camera cases). Assemblies can show every copy of a part (`copies`).
+Fixed: n/a.
+Untested: real prints; dovetail clearance and snap-lip fit need a test print. Pi camera lens position, ESP32 DevKit, Blue / Black Pill and PCB thickness are left to measure (raspberrypi.com was not reachable from this session to confirm drawings).
+
 ## 1.6.0-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: **Layers** (designer, STL Files): a layer preview of the part from cross-sections (outer wall, inner walls, solid top / bottom skin, infill at 45 / -45 degrees) with the time of every layer, using the estimate box printer's speeds and flow cap; layer height, walls, top / bottom layers and infill editable in the window (`POST /api/layers`, src/core/layers.js). **G-code viewer**: printer files (**View**, `GET /api/printers/:id/gcode`, read-only), local files (Printers upload box, Import page); feature colors from ;TYPE: / ; FEATURE: comments, arcs, relative or absolute E, z-hops, travel, slicer estimate from the header. Both: 2D layer view (zoom, pan, layer below in gray), 3D stack, slider, arrow keys, Play, time-per-layer chart.
