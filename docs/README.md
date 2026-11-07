@@ -10,6 +10,7 @@ Every guide lives in this repository, so it matches the version you run (the pac
 | Run it on a Raspberry Pi 4 / 4B / 5 as a shop server | [RASPBERRY-PI.md](RASPBERRY-PI.md) |
 | Run it from a USB drive, for one session, for a few hours, or for my whole network | [SELF-HOSTING.md](SELF-HOSTING.md) |
 | Learn the app: parts, presets, projects, assemblies, estimates | [USER-GUIDE.md](USER-GUIDE.md) |
+| Test a part for stress, weak points, supports, airflow, heat, sun, rain | [STRESS-LAB.md](STRESS-LAB.md) |
 | Connect my Sovol SV07 or other Klipper printer, see its webcam | [PRINTERS.md](PRINTERS.md) |
 | Get print times that fit my printer | [PRINTER-PROFILES.md](PRINTER-PROFILES.md) |
 | Fix something | [TROUBLESHOOTING.md](TROUBLESHOOTING.md), [FAQ.md](FAQ.md) |

@@ -85,6 +85,24 @@ try {
   const status = await page.locator('#status').innerText();
   check(/part/.test(status) && !/^Generating/.test(status) && ((await page.locator('#dlStl').getAttribute('href')) !== before || await page.locator('#zipAll').isVisible()), `changing the generator regenerates the 3D view (${other}: ${status})`);
 
+  // 2b. Stress Lab from the designer: quick setup, solve in the worker, every mode opens
+  await page.locator('#toLab').click();
+  await page.waitForSelector('.lab-status', { timeout: 20000 });
+  await page.waitForFunction(() => /cells of/.test(document.querySelector('.lab-status')?.textContent ?? ''), null, { timeout: 30000 });
+  await page.locator('summary', { hasText: 'Quick setups' }).click();
+  await page.locator('button', { hasText: 'Hold the bottom' }).click();
+  await page.locator('button', { hasText: 'Hook / bracket' }).click();
+  await page.locator('button', { hasText: /^Solve/ }).click();
+  await page.waitForSelector('.lab-panel h4', { timeout: 90000 });
+  check(/safety factor/.test(await page.locator('.lab-panel').innerText()), 'Stress Lab solves a load case and reports the safety factor');
+  for (const mode of ['Weak points', 'Wind tunnel', 'Environment', 'Materials']) {
+    await page.locator('.lab-modes button', { hasText: mode }).click();
+    await page.waitForTimeout(1500);
+  }
+  check(/eSUN/.test(await page.locator('.lab-panel').innerText()), 'Stress Lab modes open (materials list shows datasheet entries)');
+  await page.evaluate(() => { location.hash = 'accessories'; });
+  await page.waitForTimeout(1500);
+
   // 3. live webcam
   await page.evaluate(() => { location.hash = 'printers'; });
   await page.waitForSelector('.cam-box img.cam', { timeout: 15000 });

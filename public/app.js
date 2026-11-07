@@ -17,6 +17,7 @@ import { initSettings, renderSettings } from './settings.js';
 import { initFiles, renderImport, renderStls, renderStlPane } from './files.js';
 import { initParts, renderParts, refreshParts, ownershipOf, ownBadge } from './parts.js';
 import { initBrowse, renderBrowse } from './browse.js';
+import { initLab, renderLab, stopLab } from './lab.js';
 
 await loadSettings().catch(() => null);
 await refreshPrinterVisibility();
@@ -73,6 +74,7 @@ function renderResult(result) {
   list($('notes'), result.notes);
   $('zipAll').hidden = !result.zip;
   if (result.zip) $('zipAll').href = result.zip;
+  $('toLab').hidden = false;
   $('dlStl').hidden = result.parts.length !== 1;
   if (result.parts.length === 1) { $('dlStl').href = result.parts[0].url; $('dlStl').download = result.parts[0].filename; }
   estimate.update(result.parts);
@@ -367,7 +369,7 @@ function showPane(name) {
 }
 
 // ---------- routing: #home #shop ... #projects #project/<id> #printers #library ----------
-const PAGES = ['home', 'projects', 'printers', 'settings', 'import', 'stls', 'parts', 'browse'];
+const PAGES = ['home', 'projects', 'printers', 'settings', 'import', 'stls', 'parts', 'browse', 'lab'];
 
 function markTab(tab) {
   for (const b of document.querySelectorAll('.tab')) b.classList.toggle('active', b.dataset.tab === tab);
@@ -376,6 +378,7 @@ function markTab(tab) {
 async function showPage(name, arg) {
   stopPrinters();
   stopProjectView();
+  stopLab();
   markTab(name === 'project' ? 'projects' : name);
   window.scrollTo(0, 0);
   document.querySelector('main').classList.add('full');
@@ -392,6 +395,7 @@ async function showPage(name, arg) {
     else if (name === 'stls') { await refreshLibrary(); renderStls(page); }
     else if (name === 'parts') await renderParts(page, arg);
     else if (name === 'browse') { await Promise.all([refreshCollections(), refreshLibrary()]); renderBrowse(page, arg ?? ''); }
+    else if (name === 'lab') await renderLab(page, arg ?? '');
   } catch (err) {
     page.replaceChildren(el('p', { className: 'error', textContent: err.message }));
   }
@@ -457,6 +461,7 @@ async function refreshLibrary() {
 function showTab(tab, { keepForm = false } = {}) {
   stopPrinters();
   stopProjectView();
+  stopLab();
   document.querySelector('main').classList.remove('full');
   $('page').hidden = true;
   state.tab = tab;
@@ -817,6 +822,12 @@ initGlobalSearch();
 headerPrinterChip();
 state.viewerSettings = () => settings()?.viewer ?? {};
 state.cardTips = () => settings()?.tips?.cardDetails;
+initLab({
+  currentParts: () => (state.shown ?? []).filter((p) => p.url).map((p) => ({ name: p.name, url: p.url })),
+  currentGenerator: () => state.current?.id ?? null,
+  openGenerator: (id) => { const g = state.generators.find((x) => x.id === id); if (g) { state.shopSub = 'design'; go(g.sections[0], { keepForm: true }); loadGenerator(id, state.lastResult?.params ?? null); run(); } },
+});
+
 await initHome({
   state,
   openPreset: (p) => { state.shopSub = 'design'; go(p.section, { keepForm: true }); loadPreset(p); },

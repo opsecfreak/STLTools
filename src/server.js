@@ -70,6 +70,7 @@ import { estimateParts, formatDuration, profileFromMachine } from './core/estima
 import { createHosting, isLoopback, lanUrls, boardModel, loginPage, COOKIE } from './core/hosting.js';
 import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { createCollections } from './core/collections.js';
+import { createMaterials } from './core/materials.js';
 import { randomBytes } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 
@@ -439,6 +440,19 @@ async function route(req, res) {
   }
   if (path === '/api/thumbs' && req.method === 'DELETE') { await thumbs.clear(); return send(res, 204, ''); }
 
+  // ---- materials for the Stress Lab (1.3-mts) ----
+  if (path === '/api/materials') {
+    if (req.method === 'GET') return send(res, 200, await materials.list());
+    if (req.method === 'POST') return send(res, 201, await materials.add(await readBody(req)));
+    return send(res, 405, 'Method not allowed');
+  }
+  m = path.match(/^\/api\/materials\/([a-z0-9-]{3,60})$/);
+  if (m) {
+    if (req.method === 'PUT') return send(res, 200, await materials.update(m[1], await readBody(req)));
+    if (req.method === 'DELETE') { await materials.remove(m[1]); return send(res, 204, ''); }
+    return send(res, 405, 'Method not allowed');
+  }
+
   // ---- collections (1.0) ----
   if (path === '/api/collections') {
     if (req.method === 'GET') return send(res, 200, await collections.list());
@@ -705,6 +719,9 @@ async function route(req, res) {
   if (path.startsWith('/vendor/three/')) return serveStatic(res, THREE_DIR, path.slice('/vendor/three/'.length));
   // browser-safe core modules shared with the UI (no Node imports inside)
   if (path === '/shared/estimate.js') return serveStatic(res, join(ROOT, 'src', 'core'), 'estimate.js');
+  // Stress Lab engines (voxel FEA, weak points, aero, environment): the same files Node tests use
+  m = path.match(/^\/shared\/lab\/([a-z]+\.js)$/);
+  if (m) return serveStatic(res, join(ROOT, 'src', 'core', 'lab'), m[1]);
   return serveStatic(res, PUBLIC_DIR, path === '/' ? 'index.html' : path.slice(1));
 }
 
@@ -719,6 +736,7 @@ let library = createLibrary({ dataDir: catalog.dataDir });
 let parts = createParts({ dataDir: catalog.dataDir, seedDir: SEED_DIR });
 let collections = createCollections({ dataDir: catalog.dataDir });
 let hosting = createHosting({ dataDir: catalog.dataDir });
+let materials = createMaterials({ dataDir: catalog.dataDir, root: ROOT });
 projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
 /** Background read-only connection checks (Settings > Printers > Background connection check). */
@@ -752,6 +770,7 @@ export function startServer({ host = HOST, port = PORT, dataDir, pinForLocal = f
     parts = createParts({ dataDir, seedDir: SEED_DIR });
     collections = createCollections({ dataDir });
     hosting = createHosting({ dataDir });
+    materials = createMaterials({ dataDir, root: ROOT });
   }
   const server = createServer(async (req, res) => {
     try {

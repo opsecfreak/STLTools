@@ -75,6 +75,7 @@ export const PAGES = [
   ['import', 'Import', 'Import STL files, project files and design files', ['upload', 'open']],
   ['stls', 'STL Files', 'Your imported STL library', ['library', 'models']],
   ['printers', 'Printers', 'Printer status, files, webcam, upload G-code (view only)', ['status', 'webcam', 'gcode']],
+  ['lab', 'Stress Lab', 'Stress test, weak points, supports, wind tunnel, heat, sun, rain', ['stress', 'fea', 'force', 'load', 'servo horn', 'wind tunnel', 'aero', 'wing', 'lift', 'drag', 'supports', 'overhang', 'uv', 'rain', 'heat', 'materials']],
   ['projects', 'Projects', 'Builds with parts lists and one-ZIP download', ['build']],
   ['library', 'My Designs', 'Saved designs', ['saved']],
 ];

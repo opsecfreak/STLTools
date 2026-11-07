@@ -542,3 +542,27 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .control-log ul { list-style: none; padding: 0; margin: 4px 0; font-size: 12px; max-height: 200px; overflow: auto; }
 .control-log li.fail { color: var(--fail); }
 .control-log li.ok { color: var(--muted); }
+/* Stress Lab */
+.lab-modes { margin: 8px 0 12px; }
+.lab-layout { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 12px; align-items: start; }
+.lab-left { display: flex; flex-direction: column; gap: 10px; }
+.lab-left .card { padding: 10px 12px; }
+.lab-left label { display: block; margin: 4px 0; font-size: 13px; }
+.lab-left input.num, .lab-right input.num { width: 6.5em; }
+.lab-right { position: relative; min-width: 0; }
+.lab-view { position: relative; height: 62vh; min-height: 360px; background: var(--viewer); border-radius: 8px; overflow: hidden; }
+.lab-view canvas { display: block; width: 100%; height: 100%; }
+.lab-legend { margin: 6px 0; font-size: 13px; }
+.lab-legend .row { flex-wrap: wrap; gap: 8px; align-items: center; }
+.lab-scale { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.lab-scale span { padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 12px; text-shadow: 0 1px 1px rgba(0,0,0,.5); }
+.lab-scale.grad { color: var(--muted); }
+.lab-labels { position: absolute; left: 0; top: 0; width: 100%; height: 62vh; min-height: 360px; pointer-events: none; overflow: hidden; }
+.lab-label { position: absolute; transform: translate(8px, -50%); font-size: 12px; padding: 1px 6px; border-radius: 4px; background: rgba(0,0,0,.65); color: #fff; white-space: nowrap; }
+.lab-label.bad { background: #b00020; } .lab-label.warn { background: #b26a00; } .lab-label.anchor { background: #2346c8; } .lab-label.load { background: #a02222; }
+.lab-tip { position: absolute; z-index: 5; background: rgba(0,0,0,.8); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 4px; pointer-events: none; }
+.lab-group { border-left: 4px solid var(--border); padding: 4px 8px; margin: 6px 0; font-size: 13px; }
+.lab-group.g-anchor { border-color: #2659f2; } .lab-group.g-force { border-color: #f22; } .lab-group.g-pressure { border-color: #f066bf; } .lab-group.g-torque { border-color: #9933e6; }
+.lab-presets button { display: block; margin: 4px 0; }
+.lab-canvas { width: 100%; max-width: 640px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; margin-top: 8px; }
+@media (max-width: 900px) { .lab-layout { grid-template-columns: 1fr; } }
