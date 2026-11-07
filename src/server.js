@@ -40,6 +40,8 @@
 //   GET /api/estimate-targets (printers with their own Klipper limits + profiles)
 //   GET /api/printers/:id/stream?cam=0 (live MJPEG)   GET /api/printers/:id/machine   POST /api/printers/check
 //   GET /api/printers/:id/health   GET /api/printers/:id/config[?file=printer.cfg]   (read-only, secrets hidden)
+//   Control (opt-in per printer, logged): GET/PUT /api/printers/:id/control  POST /api/printers/:id/control/<action>
+//   GET /api/printers/:id/control/log   PUT /api/printers/:id/upload?...&print=1&confirm=1
 // Full reference with request/response shapes: docs/API.md
 //
 // Env: HOST (default 127.0.0.1), PORT (default 3000), STLTOOLS_DATA (default ./data),
@@ -593,6 +595,22 @@ async function route(req, res) {
     if (!key && b.id) key = await printers.apiKeyOf(b.id); // re-test a saved printer without sending its key to the browser
     return send(res, 200, await printers.diagnose(b.url, key));
   }
+  // ---- printer control (opt-in per printer, logged; see core/printers.js) ----
+  m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})\/control(?:\/([a-z_]+))?$/);
+  if (m) {
+    const [, id, action] = m;
+    if (!action) {
+      if (req.method === 'GET') return send(res, 200, { enabled: Boolean((await printers.list()).find((x) => x.id === id)?.control?.enabled), actions: ['pause', 'resume', 'cancel', 'start', 'gcode', 'estop', 'firmware_restart', 'restart', 'service'] });
+      if (req.method === 'PUT') return send(res, 200, await printers.setControl(id, await readBody(req)));
+      return send(res, 405, 'Use GET or PUT');
+    }
+    if (action === 'log') {
+      if (req.method !== 'GET') return send(res, 405, 'Use GET');
+      return send(res, 200, await printers.controlLog(id, Number(url.searchParams.get('limit') ?? 100)));
+    }
+    if (req.method !== 'POST') return send(res, 405, 'Use POST');
+    return send(res, 200, await printers.control(id, action, await readBody(req)));
+  }
   m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})(?:\/([a-z]+))?$/);
   if (m) {
     const [, id, sub] = m;
@@ -604,6 +622,7 @@ async function route(req, res) {
     if (sub === 'upload') {
       if (req.method !== 'PUT') return send(res, 405, 'Use PUT');
       const data = await readRaw(req, MAX_UPLOAD_BYTES + 1);
+      if (url.searchParams.get('print') === '1') return send(res, 200, await printers.uploadAndPrint(id, url.searchParams.get('filename'), data, url.searchParams.get('path') ?? '', url.searchParams.get('confirm') === '1'));
       return send(res, 200, await printers.upload(id, url.searchParams.get('filename'), data, url.searchParams.get('path') ?? ''));
     }
     if (req.method !== 'GET') return send(res, 405, 'Read-only: use GET');

@@ -1,7 +1,10 @@
 // Printers page: Klipper / Moonraker printers (Sovol SV07, Mainsail, Fluidd) on the LAN.
-// VIEW ONLY: status, temperatures, progress, files, history, webcam, and G-code
-// upload that never starts a print. There are no control buttons anywhere.
-import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete, printersVisible } from './lib.js';
+// View only by default: status, temperatures, progress, files, history, webcam, and
+// G-code upload that never starts a print. Control (pause, resume, cancel, start,
+// console, e-stop, restarts) appears only after the user turns it on for that
+// printer and accepts the warning; each action asks for confirmation and is logged
+// on the server (core/printers.js control()).
+import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete, printersVisible, toast } from './lib.js';
 
 let timer = null;
 let alive = 0; // render generation; stops polling when the page changes
@@ -135,7 +138,7 @@ export async function renderPrinters(page, focusId = null) {
       return; // keep files / history / camera in place on status refresh
     }
     detail.dataset.printer = p.id;
-    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), insightsBox(p), el('div', { className: 'row' }, remove));
+    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), controlBox(p), insightsBox(p), el('div', { className: 'row' }, remove));
     // webcam: live MJPEG (the stream Mainsail shows) or snapshots, per Settings > Printers
     stopLive();
     const camMode = settings()?.printers.webcam ?? 'stream';
@@ -198,6 +201,7 @@ export async function renderPrinters(page, focusId = null) {
         files.replaceChildren(el('h3', { textContent: `Files on the printer (${list.length})` }), grid);
         for (const f of list.slice(0, 60)) {
           const tile = el('div', { className: 'file-tile' }, el('div', { className: 'file-thumb' }), el('div', { className: 'file-name', textContent: f.path }), el('div', { className: 'muted', textContent: `${fmtBytes(f.size)}, ${fmtAgo(f.modified)}` }));
+          if (p.control?.enabled) tile.append(el('button', { type: 'button', className: 'small', textContent: 'Print', title: 'Start this file on the printer (control mode)', onclick: () => doControl(p, 'start', { filename: f.path }, `Start printing ${f.path} on ${p.name}? Check the bed is clear and the right filament is loaded.`) }));
           grid.append(tile);
           api('GET', `/api/printers/${p.id}/metadata?filename=${encodeURIComponent(f.path)}`).then((m) => {
             if (m.thumbnail) tile.firstChild.append(el('img', { src: `/api/printers/${p.id}/thumb?path=${encodeURIComponent(m.thumbnail)}`, alt: '' }));
@@ -213,6 +217,79 @@ export async function renderPrinters(page, focusId = null) {
           el('span', { className: 'muted', textContent: `${fmtDuration(j.printDuration)}, ${fmtAgo(j.end ?? j.start)}` }))) : [el('p', { className: 'muted', textContent: 'No history yet.' })]));
       }).catch((err) => history.append(el('p', { className: 'error', textContent: err.message })));
     }
+  }
+
+  /** Run one control action after a confirm dialog; shows the result. */
+  async function doControl(p, action, args = {}, question = '') {
+    if (question && !confirm(question)) return null;
+    try {
+      const r = await api('POST', `/api/printers/${p.id}/control/${action}`, args);
+      toast(`${p.name}: ${action} sent`, 'ok');
+      detail.querySelector('.control-box')?.refreshLog?.();
+      lastFilesFor = null;
+      setTimeout(() => poll(), 800);
+      return r;
+    } catch (err) { toast(err.message, 'error', 8000); detail.querySelector('.control-box')?.refreshLog?.(); return null; }
+  }
+
+  /** Control panel: off by default; turning it on shows a warning that must be accepted. */
+  function controlBox(p) {
+    const box = el('div', { className: `card control-box ${p.control?.enabled ? 'on' : ''}` });
+    const logBox = el('div', { className: 'control-log' });
+    box.refreshLog = () => showLog();
+    const showLog = async () => {
+      const entries = await api('GET', `/api/printers/${p.id}/control/log?limit=30`).catch(() => []);
+      logBox.replaceChildren(el('h4', { textContent: 'Control log (this printer, newest first)' }), entries.length
+        ? el('ul', {}, ...entries.map((e) => el('li', { className: e.ok ? 'ok' : 'fail', textContent: `${new Date(e.at).toLocaleString()}  ${e.action}${e.args?.filename ? ` ${e.args.filename}` : ''}${e.args?.script ? ` "${e.args.script}"` : ''}${e.args?.service ? ` ${e.args.service}` : ''}: ${e.ok ? 'OK' : 'refused / failed'} ${e.result ?? ''}` })))
+        : el('p', { className: 'muted', textContent: 'No control actions yet.' }));
+    };
+    if (!p.control?.enabled) {
+      box.append(el('h3', { textContent: 'Control: off' }),
+        el('p', { className: 'muted', textContent: 'STL Tools only watches this printer. Turn on control to pause, resume, cancel and start prints, send console commands, emergency stop, and restart Klipper or the webcam service from here.' }),
+        el('button', { type: 'button', className: 'secondary', textContent: 'Turn on control...', onclick: async () => {
+          const ok = confirm([
+            `WARNING: turn on control for ${p.name}?`,
+            '',
+            'STL Tools will be able to START, PAUSE, CANCEL and EMERGENCY-STOP prints, send G-code (it can move the printer and heat the nozzle and bed), and restart Klipper, firmware and the webcam service on this printer.',
+            '',
+            '- Anyone who can open STL Tools can then do this: set an access PIN (Settings > Self-hosting) if others use your network.',
+            '- A start or a G-code command can crash the nozzle into a part left on the bed or heat an empty printer. Check the printer before every action.',
+            '- Every action asks first and is logged.',
+            '',
+            'Press OK to turn control on for this printer only.',
+          ].join('\n'));
+          if (!ok) return;
+          try { await api('PUT', `/api/printers/${p.id}/control`, { enabled: true, acknowledge: true }); toast(`Control on for ${p.name}`, 'ok'); renderPrinters(page, p.id); } catch (err) { toast(err.message, 'error'); }
+        } }), logBox);
+      showLog();
+      return box;
+    }
+    const btn = (label, action, question, cls = 'secondary') => el('button', { type: 'button', className: cls, textContent: label, onclick: () => doControl(p, action, {}, question) });
+    const script = el('input', { type: 'text', placeholder: 'G-code or macro, e.g. M115, G28, BED_MESH_PROFILE LOAD=default', maxLength: 2000, 'aria-label': 'G-code command' });
+    const send = async () => {
+      const sc = script.value.trim();
+      if (!sc) return;
+      if (/SAVE_CONFIG/i.test(sc) && !confirm('SAVE_CONFIG restarts Klipper and clears the live Z-tilt and loaded mesh. Send it?')) return;
+      if (await doControl(p, 'gcode', { script: sc }, `Send to ${p.name}:\n\n${sc}`)) { script.value = ''; showLog(); }
+    };
+    script.onkeydown = (e) => { if (e.key === 'Enter') send(); };
+    box.append(
+      el('div', { className: 'row' }, el('h3', { textContent: 'Control: on' }),
+        el('button', { type: 'button', className: 'secondary small', textContent: 'Turn off control', onclick: async () => { await api('PUT', `/api/printers/${p.id}/control`, { enabled: false }); toast('Control off', 'ok'); renderPrinters(page, p.id); } })),
+      el('div', { className: 'row control-buttons' },
+        btn('Pause', 'pause', `Pause the print on ${p.name}?`),
+        btn('Resume', 'resume', `Resume the print on ${p.name}? Check the part and nozzle first.`),
+        btn('Cancel print', 'cancel', `CANCEL the print on ${p.name}? This cannot be undone.`),
+        btn('Emergency stop', 'estop', `EMERGENCY STOP ${p.name}? Heaters and motors stop at once; Klipper then needs a firmware restart.`, 'danger')),
+      el('div', { className: 'row control-buttons' },
+        btn('Firmware restart', 'firmware_restart', `Firmware restart ${p.name}? Any print stops.`),
+        btn('Restart Klipper', 'restart', `Restart Klipper on ${p.name}? Any print stops.`),
+        el('button', { type: 'button', className: 'secondary', textContent: 'Restart webcam service', title: 'Restart crowsnest (webcam) on the printer host', onclick: () => doControl(p, 'service', { service: 'crowsnest' }, `Restart the crowsnest webcam service on ${p.name}? Printing is not affected.`) })),
+      el('div', { className: 'row' }, script, el('button', { type: 'button', textContent: 'Send', onclick: send })),
+      el('p', { className: 'muted', textContent: 'Each action asks first and is logged. Start a file with its Print button under "Files on the printer". Console replies show in Mainsail\'s console.' }),
+      logBox);
+    showLog();
+    return box;
   }
 
   /** Read-only look inside the printer: health check of its Klipper setup and its config files. */
@@ -269,15 +346,18 @@ export async function renderPrinters(page, focusId = null) {
   function uploadBox(p, done) {
     const input = el('input', { type: 'file', accept: '.gcode,.g,.gco,.bgcode', multiple: true });
     const folder = el('input', { type: 'text', value: settings()?.printers.uploadFolder ?? 'stltools', placeholder: 'folder on the printer (optional)', maxLength: 80 });
-    const msg = el('p', { className: 'muted', textContent: 'Upload only. Never starts a print. Slice your STL first (Orca, Prusa, Cura, Sovol slicer).' });
+    const andPrint = el('input', { type: 'checkbox' });
+    const msg = el('p', { className: 'muted', textContent: p.control?.enabled ? 'Uploads never start a print unless you tick "Start printing after upload" (control mode).' : 'Upload only. Never starts a print. Slice your STL first (OrcaSlicer with the Sovol profile, or your own preset).' });
     const send = async (files) => {
       for (const f of files) {
         msg.textContent = `Uploading ${f.name} (${fmtBytes(f.size)})...`;
         try {
-          const res = await fetch(`/api/printers/${p.id}/upload?filename=${encodeURIComponent(f.name)}&path=${encodeURIComponent(folder.value)}`, { method: 'PUT', body: f });
+          const print = andPrint.checked && files.length === 1;
+          if (print && !confirm(`Upload ${f.name} and START PRINTING it on ${p.name} right away? Check the bed is clear first.`)) { msg.textContent = 'Not uploaded.'; return; }
+          const res = await fetch(`/api/printers/${p.id}/upload?filename=${encodeURIComponent(f.name)}&path=${encodeURIComponent(folder.value)}${print ? '&print=1&confirm=1' : ''}`, { method: 'PUT', body: f });
           const data = await res.json();
           if (!res.ok) throw new Error(data.error);
-          msg.textContent = `Uploaded ${data.path}. Start it from Mainsail or the printer screen when you are ready.`;
+          msg.textContent = data.printStarted ? `Uploaded ${data.path} and started printing.` : `Uploaded ${data.path}. ${p.control?.enabled ? 'Press Print on the file to start it.' : 'Start it from Mainsail or the printer screen when you are ready.'}`;
         } catch (err) {
           msg.textContent = `Upload failed: ${err.message}`;
           return;
@@ -288,7 +368,7 @@ export async function renderPrinters(page, focusId = null) {
     input.onchange = () => send([...input.files]);
     const box = el('div', { className: 'card upload-box' }, el('h3', { textContent: 'Upload G-code' }),
       el('div', { className: 'dropzone', textContent: 'Drop G-code here, or ', onclick: () => input.click() }, el('u', { textContent: 'choose files' })),
-      el('label', {}, 'Folder ', folder), msg);
+      el('label', {}, 'Folder ', folder), p.control?.enabled ? el('label', { className: 'check-inline' }, andPrint, ' Start printing after upload (one file, asks first)') : null, msg);
     box.ondragover = (e) => { e.preventDefault(); box.classList.add('drag'); };
     box.ondragleave = () => box.classList.remove('drag');
     box.ondrop = (e) => { e.preventDefault(); box.classList.remove('drag'); send([...e.dataTransfer.files]); };

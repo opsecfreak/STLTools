@@ -1,0 +1,521 @@
+{
+  "format": "stltools-materials",
+  "version": 1,
+  "about": "Filament properties for the Stress Lab (roadmap 1.6), from maker datasheets only. Every entry names its document and URL. Units: MPa (strength, modulus), % (elongation), kJ/m2 (impact), C (temperatures), g/cm3 (density). 'xy' = in the layer plane, 'z' = across layers, 'any' = the sheet does not say. Missing = the sheet does not give it: never filled in by guess.",
+  "brands": {
+    "included": [
+      "eSUN",
+      "Polymaker",
+      "Prusament"
+    ],
+    "excluded": [
+      "Bambu Lab (owner's choice)"
+    ],
+    "pending": [
+      "Prusament PLA / PETG / ASA standard grades: Prusa's PDF text is font-scrambled, read the values by hand",
+      "Overture, SUNLU, Hatchbox, Elegoo: datasheets not yet collected"
+    ]
+  },
+  "materials": [
+    {
+      "id": "esun-pla-plus",
+      "brand": "eSUN",
+      "product": "PLA+",
+      "type": "PLA",
+      "density": 1.24,
+      "mfi": "3.7 g/10min (190 C / 2.16 kg)",
+      "hdt045": 53.78,
+      "tensile": {
+        "xy": 70.37,
+        "z": 36.36
+      },
+      "elongation": {
+        "xy": 4.14,
+        "z": 2.92
+      },
+      "flexStrength": {
+        "xy": 100.3,
+        "z": 56.4
+      },
+      "flexModulus": {
+        "xy": 3259.39,
+        "z": 2873.94
+      },
+      "izod": {
+        "xy": 7.27,
+        "z": 2.22
+      },
+      "uvResistant": false,
+      "drying": "50 C, 8-12 h",
+      "print": {
+        "nozzle": "210-230",
+        "bed": "45-60"
+      },
+      "specimen": {
+        "nozzle": 220,
+        "bed": 65,
+        "walls": 2,
+        "topBottom": 3,
+        "infill": 100,
+        "fan": 100,
+        "printer": "Bambu P1S 0.4 mm (eSUN's test printer, not a filament)",
+        "slicer": "OrcaSlicer 2.1.0 beta"
+      },
+      "standards": "GB/T 1040 tensile, GB/T 9341 flexural, GB/T 1843 Izod, GB/T 1634 HDT",
+      "source": {
+        "doc": "eSUN PLA+ Technical Data Sheet, Version 1.0, Feb 2026",
+        "url": "https://www.esun3d.com/media/esun/catalog/certification/product/PLA_3KG1.75MM/PLA_-TDS-en.pdf",
+        "accessed": "2026-11-06"
+      },
+      "notes": "Z (between layers) tensile strength is about half of X-Y. Older eSUN tables list PLA+ at 65 MPa tensile / 2102 MPa flexural modulus; this 2026 sheet supersedes them."
+    },
+    {
+      "id": "esun-pla",
+      "brand": "eSUN",
+      "product": "PLA",
+      "type": "PLA",
+      "density": 1.25,
+      "hdt045": 56,
+      "tensile": {
+        "any": 65
+      },
+      "elongation": {
+        "any": 8
+      },
+      "flexStrength": {
+        "any": 97
+      },
+      "flexModulus": {
+        "any": 3600
+      },
+      "izod": {
+        "any": 4
+      },
+      "print": {
+        "nozzle": "190-220",
+        "bed": "60-80"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      }
+    },
+    {
+      "id": "esun-petg",
+      "brand": "eSUN",
+      "product": "PETG",
+      "type": "PETG",
+      "density": 1.23,
+      "hdt045": 64,
+      "tensile": {
+        "any": 49
+      },
+      "elongation": {
+        "any": 280
+      },
+      "flexStrength": {
+        "any": 60
+      },
+      "flexModulus": {
+        "any": 1170
+      },
+      "izod": {
+        "any": 7.6
+      },
+      "print": {
+        "nozzle": "190-220 (as printed in the table; check the spool label)",
+        "bed": "60-80"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      },
+      "notes": "Elongation 280 % is for the raw material, not a printed part."
+    },
+    {
+      "id": "esun-abs-plus",
+      "brand": "eSUN",
+      "product": "ABS+",
+      "type": "ABS",
+      "density": 1.06,
+      "hdt045": 73,
+      "tensile": {
+        "any": 40
+      },
+      "elongation": {
+        "any": 30
+      },
+      "flexStrength": {
+        "any": 68
+      },
+      "flexModulus": {
+        "any": 2443
+      },
+      "izod": {
+        "any": 42
+      },
+      "print": {
+        "nozzle": "220-260",
+        "bed": "90-110"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      }
+    },
+    {
+      "id": "esun-easa",
+      "brand": "eSUN",
+      "product": "eASA",
+      "type": "ASA",
+      "density": 1.0,
+      "hdt045": 54,
+      "tensile": {
+        "any": 50
+      },
+      "elongation": {
+        "any": 30
+      },
+      "flexStrength": {
+        "any": 35
+      },
+      "flexModulus": {
+        "any": 4300
+      },
+      "izod": {
+        "any": 19
+      },
+      "print": {
+        "nozzle": "220-260",
+        "bed": "90-110"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      },
+      "notes": "Values as printed in eSUN's table (HDT 54 C and density 1.00 look low for ASA: confirm with the current eASA TDS before relying on them)."
+    },
+    {
+      "id": "esun-epa-cf",
+      "brand": "eSUN",
+      "product": "ePA-CF",
+      "type": "PA-CF",
+      "density": 1.24,
+      "hdt045": 120,
+      "tensile": {
+        "any": 85
+      },
+      "elongation": {
+        "any": 16
+      },
+      "flexStrength": {
+        "any": 98
+      },
+      "flexModulus": {
+        "any": 2300
+      },
+      "izod": {
+        "any": 15.5
+      },
+      "print": {
+        "nozzle": "230-260",
+        "bed": "80-90"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      },
+      "notes": "Hardened nozzle needed. Dry before use."
+    },
+    {
+      "id": "esun-eflex",
+      "brand": "eSUN",
+      "product": "eFlex (TPU)",
+      "type": "TPU",
+      "density": 1.12,
+      "tensile": {
+        "any": 52
+      },
+      "elongation": {
+        "any": 500
+      },
+      "print": {
+        "nozzle": "210-240",
+        "bed": "no heat"
+      },
+      "source": {
+        "doc": "eSUN 3D Printing Material Datasheet (brand table, undated, no X-Y / Z split)",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/eSUN_3D_Printing_Filament_Datasheet.pdf",
+        "accessed": "2026-11-06",
+        "orientation": "not stated"
+      }
+    },
+    {
+      "id": "polymaker-polylite-pla",
+      "brand": "Polymaker",
+      "product": "PolyLite PLA",
+      "type": "PLA",
+      "density": 1.17,
+      "tg": 61,
+      "vicat": 63,
+      "hdt045": 60,
+      "hdt18": 58,
+      "modulus": {
+        "xy": 3426.9,
+        "z": 3064.9
+      },
+      "tensile": {
+        "xy": 52.3,
+        "z": 40.5
+      },
+      "elongation": {
+        "xy": 6.3,
+        "z": 1.8
+      },
+      "flexModulus": {
+        "xy": 3230.9
+      },
+      "flexStrength": {
+        "xy": 86.9
+      },
+      "charpyNotched": {
+        "xy": 3.3
+      },
+      "print": {
+        "nozzle": "190-230",
+        "bed": "25-60"
+      },
+      "drying": "55 C, 6 h",
+      "specimen": {
+        "nozzle": 230,
+        "bed": 50,
+        "chamber": "ambient",
+        "walls": 2,
+        "topBottom": 3,
+        "infill": 100,
+        "fan": "on"
+      },
+      "standards": "ISO 527 / GB/T 1040 tensile, ISO 178 flexural, ISO 179 Charpy",
+      "source": {
+        "doc": "Polymaker wiki technical data sheet (PolyLite PLA)",
+        "url": "https://wiki.polymaker.com/polymaker-products/more-about-our-products/documents/technical-data-sheets/pla/polylite-tm-pla",
+        "accessed": "2026-11-06"
+      }
+    },
+    {
+      "id": "polymaker-polylite-petg",
+      "brand": "Polymaker",
+      "product": "PolyLite PETG",
+      "type": "PETG",
+      "density": 1.25,
+      "tg": 81,
+      "vicat": 84,
+      "hdt045": 78,
+      "hdt18": 75,
+      "modulus": {
+        "xy": 2116.8,
+        "z": 1898.7
+      },
+      "tensile": {
+        "xy": 50.8,
+        "z": 42.8
+      },
+      "elongation": {
+        "xy": 8.4,
+        "z": 3.3
+      },
+      "flexModulus": {
+        "xy": 1898.5
+      },
+      "flexStrength": {
+        "xy": 69.6
+      },
+      "charpyNotched": {
+        "xy": 2.6
+      },
+      "specimen": {
+        "nozzle": 240,
+        "bed": 80,
+        "chamber": "ambient",
+        "walls": 2,
+        "topBottom": 3,
+        "infill": 100,
+        "fan": "off"
+      },
+      "standards": "ISO 527, ISO 178, ISO 179",
+      "source": {
+        "doc": "Polymaker wiki technical data sheet (PolyLite PETG)",
+        "url": "https://wiki.polymaker.com/polymaker-products/more-about-our-products/documents/technical-data-sheets/petg-pet/polylite-tm-petg",
+        "accessed": "2026-11-06"
+      }
+    },
+    {
+      "id": "polymaker-polylite-abs",
+      "brand": "Polymaker",
+      "product": "PolyLite ABS",
+      "type": "ABS",
+      "density": 1.12,
+      "tg": 101,
+      "vicat": 104,
+      "hdt045": 100,
+      "hdt18": 98,
+      "modulus": {
+        "xy": 2246.6,
+        "z": 2080.9
+      },
+      "tensile": {
+        "xy": 33.4,
+        "z": 29.7
+      },
+      "elongation": {
+        "xy": 17.9,
+        "z": 3.1
+      },
+      "flexModulus": {
+        "xy": 2127.2
+      },
+      "flexStrength": {
+        "xy": 56.2
+      },
+      "charpyNotched": {
+        "xy": 18.0
+      },
+      "specimen": {
+        "nozzle": 260,
+        "bed": 90,
+        "chamber": "90 C chamber",
+        "walls": 2,
+        "topBottom": 3,
+        "infill": 100,
+        "fan": "off"
+      },
+      "standards": "ISO 527, ISO 178, ISO 179",
+      "source": {
+        "doc": "Polymaker wiki technical data sheet (PolyLite ABS)",
+        "url": "https://wiki.polymaker.com/polymaker-products/more-about-our-products/documents/technical-data-sheets/abs-asa/polylite-tm-abs",
+        "accessed": "2026-11-06"
+      },
+      "notes": "Specimens printed in a 90 C chamber; an open SV07 will be weaker between layers."
+    },
+    {
+      "id": "polymaker-asa",
+      "brand": "Polymaker",
+      "product": "Polymaker ASA",
+      "type": "ASA",
+      "density": 1.13,
+      "tg": 98,
+      "vicat": 105,
+      "hdt045": 103,
+      "hdt18": 100,
+      "modulus": {
+        "xy": 2379,
+        "z": 1965
+      },
+      "tensile": {
+        "xy": 43.8,
+        "z": 32
+      },
+      "elongation": {
+        "xy": 6.7,
+        "z": 1.65
+      },
+      "flexModulus": {
+        "xy": 3206
+      },
+      "flexStrength": {
+        "xy": 73.4
+      },
+      "charpyNotched": {
+        "xy": 10.3,
+        "z": 6.7
+      },
+      "specimen": {
+        "nozzle": 260,
+        "bed": 90,
+        "chamber": "90 C chamber",
+        "walls": 2,
+        "topBottom": 3,
+        "infill": 100,
+        "fan": "off"
+      },
+      "standards": "ISO 527, ISO 178, ISO 179",
+      "source": {
+        "doc": "Polymaker wiki technical data sheet (Polymaker ASA)",
+        "url": "https://wiki.polymaker.com/polymaker-products/more-about-our-products/documents/technical-data-sheets/abs-asa/polymaker-tm-asa",
+        "accessed": "2026-11-06"
+      },
+      "notes": "Specimens printed in a 90 C chamber; an open SV07 will be weaker between layers."
+    },
+    {
+      "id": "prusament-petg-v0",
+      "brand": "Prusament",
+      "product": "PETG V0 (flame retardant)",
+      "type": "PETG",
+      "density": 1.27,
+      "hdt045": 74,
+      "hdt18": 68,
+      "filamentYield": 39.4,
+      "interlayerAdhesion": 16.4,
+      "shoreD": 79,
+      "modulus": {
+        "xy": 1700,
+        "z": 1800
+      },
+      "tensileYield": {
+        "xy": 39,
+        "z": 42
+      },
+      "elongationAtYield": {
+        "xy": 3.5,
+        "z": 3.7
+      },
+      "flexStrength": {
+        "xy": 60,
+        "z": 64
+      },
+      "flexModulus": {
+        "xy": 1000,
+        "z": 1000
+      },
+      "charpy": {
+        "xy": 23,
+        "z": 33
+      },
+      "moisture": {
+        "24h": 0.13,
+        "7d": 0.19
+      },
+      "print": {
+        "nozzle": "230 +/- 10",
+        "bed": "80 +/- 10"
+      },
+      "specimen": {
+        "nozzle": 230,
+        "bed": 80,
+        "walls": 2,
+        "topBottom": 0,
+        "infill": 100,
+        "printer": "Original Prusa i3 MK3S+",
+        "slicer": "PrusaSlicer 2.6.0",
+        "layer": 0.2
+      },
+      "standards": "ISO 527-1, ISO 178, ISO 179-1, ISO 75",
+      "source": {
+        "doc": "Prusament PETG V0 Technical datasheet, Version 1.0, 2023-08-17",
+        "url": "https://cdn.shopify.com/s/files/1/1745/6181/files/prusament-petg-v0-technical-data-sheet.pdf",
+        "accessed": "2026-11-06"
+      },
+      "notes": "Prusa's 'vertical xz' specimens lie on edge, so they do NOT measure layer adhesion; use interlayerAdhesion (16.4 MPa) for the Z direction. This is the flame-retardant V0 grade, not standard Prusament PETG."
+    }
+  ]
+}

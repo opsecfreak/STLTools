@@ -133,10 +133,14 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET | `/api/printers/:id/health` | | `{ checks: [{ level: ok\|info\|warn, title, detail }], facts }` from read-only Klipper / Moonraker queries |
 | GET | `/api/printers/:id/config` | | config files `[{ path, size, modified }]` (printer.cfg first) |
 | GET | `/api/printers/:id/config?file=printer.cfg` | | `{ path, text, bytes }`, secrets hidden; 400 for paths outside the config folder or other file types |
+| GET / PUT | `/api/printers/:id/control` | `{ enabled: true, acknowledge: true }` or `{ enabled: false }` | `{ enabled, actions[] }` / the printer; 400 without `acknowledge` |
+| POST | `/api/printers/:id/control/:action` | `pause`, `resume`, `cancel`, `estop`, `firmware_restart`, `restart`; `start` `{ filename }`; `gcode` `{ script }`; `service` `{ service: crowsnest\|klipper\|moonraker-timelapse }` | `{ ok, action, result }`; 403 control off, 409 wrong printer state, 400 bad input |
+| GET | `/api/printers/:id/control/log?limit=` | | control log entries, newest first |
+| PUT | `/api/printers/:id/upload?filename=&path=&print=1&confirm=1` | raw G-code | `{ path, size, printStarted }` (control on only) |
 | POST | `/api/printers/check` | | `{ <id>: { ok, at, klippy? \| error } }`: read-only connection check of every printer now (also in `GET /api/printers` as `lastCheck`) |
 | PUT | `/api/printers/:id/upload?filename=x.gcode&path=folder` | raw G-code | `{ path }`; always `print=false` |
 
-Any other method on a printer sub-route returns 405 "Read-only".
+Any other method on a printer sub-route returns 405 "Read-only". Control routes are the only POSTs that reach the printer, and only with control on.
 
 ## Data
 

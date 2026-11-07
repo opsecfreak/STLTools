@@ -15,6 +15,8 @@ Every guide lives in this repository, so it matches the version you run (the pac
 | Fix something | [TROUBLESHOOTING.md](TROUBLESHOOTING.md), [FAQ.md](FAQ.md) |
 | Test a new version and send feedback | [TESTING.md](TESTING.md) |
 | See what comes next in the MTS edition | [ROADMAP-MTS.md](ROADMAP-MTS.md) |
+| How slicing for the SV07 works (Sovol / OrcaSlicer / Muse) | [SLICING-RESEARCH.md](SLICING-RESEARCH.md) |
+| Filament properties from maker datasheets | [../materials/README.md](../materials/README.md) |
 
 ## Make it yours
 

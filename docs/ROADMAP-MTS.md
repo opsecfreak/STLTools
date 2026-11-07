@@ -19,7 +19,8 @@ Status key: **Done**, **Next**, **Planned**, **Decide** (needs Alex's word first
 | Version | Status | Content |
 |---|---|---|
 | 1.0.1-mts.1 | Done, released | Public 1.0.1 + MTS parts list (98 parts), print ideas, assembly specs |
-| **1.1.0-mts.1** | **Done, on `mts-personal`, not released yet** | Public 1.1.0 (USB / one-time / Pi 4-5 hosting, LAN PIN, optional printers, live webcam, printer-based estimates) + shop printer fixes (below) + SV07 v3 profile + this roadmap |
+| 1.1.0-mts.1 | Done, on `mts-personal` | Public 1.1.0 (USB / one-time / Pi 4-5 hosting, LAN PIN, optional printers, live webcam, printer-based estimates) + shop printer fixes (below) + SV07 v3 profile + this roadmap |
+| **1.2.0-mts.1** | **Done, on `mts-personal`, not released yet** | Opt-in printer control with warning, confirm and log (moved up from the old 1.3 on your word); slicing research ([SLICING-RESEARCH.md](SLICING-RESEARCH.md)); materials data from eSUN, Polymaker and Prusament datasheets ([materials/](../materials/README.md)) |
 
 1.1.0-mts.1 shop printer fixes (from your 192.168.1.121 report):
 - The connection test failed with "Printer address is required" because Test connection ran with an empty field. The scan had found the printer (`mkspi` at `http://192.168.1.121`). Now: an empty field explains what to do, scan results have **Use and test**, port 7125 is tried by itself if port 80 does not forward the API, the name comes from Mainsail ("MTS-UAV SHOP PRINTER"), and `mkspi` selects the SV07 profile.
@@ -30,7 +31,7 @@ Status key: **Done**, **Next**, **Planned**, **Decide** (needs Alex's word first
 
 ## Version plan
 
-### 1.2.0-mts: easier picking, then settings (Next)
+### 1.3.0-mts: easier picking, then settings (Next)
 
 Goal: browse and look first, choose, then tune and generate. Lower clicks, less clutter.
 
@@ -48,39 +49,39 @@ Goal: browse and look first, choose, then tune and generate. Lower clicks, less 
 
 Acceptance: UI smoke test covers pick > tune > generate > save mod; units round-trip mm/in/cm; settings search finds every field.
 
-### 1.3.0-mts: the shop printer in depth (Planned, control part: Decide)
+### 1.4.0-mts: the shop printer in depth (Planned; control is done in 1.2.0-mts.1)
 
 Based on the Muse brief (STLTools-printer-connection.md) and SV07 guidelines.
 
 1. **Community printer profiles:** a profile library (shipped + `custom/printer-profiles` + import JSON), "duplicate and edit" in the UI, profile from the printer's live config (motion limits, nozzle) plus your slicer ini (import `.ini` from PrusaSlicer / Orca exports: speeds, accel, temps, flow cap, layers).
 2. **Live updates over Moonraker's websocket** (`printer.objects.subscribe`, `notify_gcode_response`, `notify_filelist_changed`) instead of the 3 s poll. Console output view (read-only).
 3. **Debug tools (read-only):** Klipper / Moonraker / crowsnest log viewer (`/server/files/logs`), objects browser (`/printer/objects/list` + query), bed mesh heightmap view, history totals and failure reasons by month, MCU / host version report. Warnings like "mesh point over 0.2 mm off its neighbours".
-4. **Opt-in control mode (Decide).** Per printer, off by default, as in the brief: pause / resume / cancel, start a file already on the printer, upload with `print=true` only after a confirm step, e-stop and restarts behind a confirm dialog, every call logged with time and result, shown in the Printers tab. Tests extend the fake Moonraker first; the read-only tests change in the same commit as the opt-in gate. This changes a hard rule of the app, so it waits for your explicit yes.
+4. **Opt-in control mode: Done in 1.2.0-mts.1** (your word 2026-11-07: "add printer control, but require the user to enable it and give them a warning"). Next here: console replies in STL Tools (websocket), temperature presets, a control-test that checks reachability without moving anything.
 5. **Pre-print checklist** from the SV07 guidelines as a page (bend test, heat 220/65 soak, Z_TILT, mesh load, header check), filled per print and saved with the job.
 
 Acceptance: against the fake Moonraker; no control call fires in connection tests; a dead webcam shows its state.
 
-### 1.4.0-mts: slicing preview, splitting, arranging (Planned)
+### 1.5.0-mts: slicing preview, splitting, arranging (Planned)
 
-1. **Slicer integration.** If PrusaSlicer (CLI) is installed on the STL Tools machine, slice with a chosen ini (default `sv07-alex-v3.ini`, kept in your data folder, not the repo) and show the result; upload stays `print=false`. Without a slicer: STL Tools' own layer preview (cut the mesh per layer, outlines, perimeters and simple infill, first-layer area, per-layer time). **Decide:** PrusaSlicer CLI on the server (best fidelity, not on the Pi) vs own preview only.
+1. **Slicing (research done, build on hold by your word):** STL Tools' own layer preview first, plus a G-code viewer for files on the printer. Sovol's slicer is OrcaSlicer with Sovol profiles (see [SLICING-RESEARCH.md](SLICING-RESEARCH.md)); the later option is OrcaSlicer's CLI on the PC with the shop values as Orca JSON, replacing Muse's PrusaSlicer conversion chain. PrusaSlicer: on hold. `sv07-alex-v3.ini` lives in the data folder, not git.
 2. **G-code viewer:** files from the printer or from the slicer, layer slider, speed and feature colors, travel moves.
 3. **Supports and overhangs:** overhang map (angle threshold from the profile, 45 deg default), bridge spans, islands, support area and volume estimate, "rotate to reduce supports" suggestions, build-plate-only vs everywhere preview.
 4. **Part splitter:** cut planes placed by hand or automatically to fit the SV07 bed (220 x 220 x 250) with joints: dovetail, alignment pins, M3 bolt bosses, glue lap. Made for the plane wings first (span split at ribs, spar channel kept continuous, joiner tube option).
 5. **Smart arrangement:** pack parts and copies on one or more SV07 plates (rotation allowed, spacing, brim margin), plate count, per-plate time and filament.
 6. **Anchoring:** every part placed flat on the plate in its best orientation (largest flat face, fewest overhangs, strongest layer direction for the load case of v1.5).
 
-### 1.5.0-mts: parts library growth (Planned)
+### 1.6.0-mts: parts library growth (Planned)
 
 1. **Modular quad frames as assemblies:** main plates, arms, arm locks / latches, motor mounts per motor pattern, battery tray, FC stack with nylon standoff sets (M2 / M2.5 / M3, 5 to 30 mm), cable routing channels and zip-tie slots. Joint options: printed latch, through bolts, or heat-set inserts M2 to M4 at any length (insert sizes from the fit-test coupon results you enter).
 2. **Microcontrollers and modules:** Seeed XIAO family (ESP32-C3, ESP32-S3, ESP32-C6, RP2040, nRF52840, SAMD21), ESP32 DevKit (30 and 38 pin), STM32 Blue Pill and Black Pill, Raspberry Pi Pico, Arduino Nano. Board outline sizes from the maker datasheets in `verify`; anything without a published drawing stays MEASURE.
 3. **Cameras and antennas:** Raspberry Pi Camera Module 2 / 3 housings and tilt mounts, SMA / RP-SMA bulkhead mounts, u.FL strain reliefs, dipole and patch antenna holders, angled antenna tubes.
 4. **Weatherproof enclosures:** project box lid with a gasket groove and a matching printed TPU gasket (or O-ring cord size), cable glands (PG7 / PG9 / M12 openings), vent cutouts. Groove size by the compression you set (default 25 %, editable); flag it as "test with your TPU".
 
-### 1.6.0-mts: Stress Lab (Planned, largest piece)
+### 1.7.0-mts: Stress Lab (Planned, largest piece)
 
 A new tab to see how and where a printed part could fail, before printing it.
 
-1. **Materials library, editable:** PLA, PETG, ABS, ASA, TPU 95A, Nylon, PLA-CF, PETG-CF, plus custom materials. Fields: stiffness (E), tensile strength, elongation, layer adhesion factor (Z vs XY), density, glass transition / heat deflection, moisture uptake, UV sensitivity, cost. Values come with a source (filament datasheet) or stay blank; your own test results override.
+1. **Materials library, editable:** started in 1.2.0-mts.1: `materials/filaments.json` (eSUN PLA+ with X-Y and Z values from its Feb 2026 datasheet, eSUN brand table, Polymaker PolyLite PLA / PETG / ABS and Polymaker ASA, Prusament PETG V0). Next: Overture, SUNLU, Hatchbox, Elegoo datasheets (no Bambu Lab, your word), editing in the UI, your own test results as entries.
 2. **Print settings in the model:** walls, infill %, pattern, layer height and **print orientation** change the effective section (shell plus infill) and the weak direction (between layers).
 3. **Solver:** voxel finite-element analysis (linear elastic) in a Web Worker in the browser: mesh to voxels (0.5 to 2 mm), anchors and loads, conjugate-gradient solve. Results: stress heatmap, deflection (exaggerated view), safety factor map, first-failure location. Stated as an estimate (+/- large); calibrate with a printed test bar.
 4. **Load cases and anchors:** pick faces to fix (bolt holes, clamp faces, build-plate face) and apply force, pressure, torque, or acceleration (g load for drone parts, crash drop height). Presets: servo horn at servo stall torque (you enter the servo's rated torque), tube clamp tightening, hook load, arm tip thrust per motor, landing impact.
@@ -88,7 +89,7 @@ A new tab to see how and where a printed part could fail, before printing it.
 6. **Views:** stress / deflection / safety factor / layer direction maps, cut plane through the part, probe a point, before / after compare, animation of the load ramping up, side-by-side material comparison (PLA vs PETG vs CF).
 7. **Supports in the same view:** the support and overhang map of v1.4, plus "layers that print over air" and bridge sag warnings.
 
-### 1.7.0-mts: wind tunnel and environment (Planned)
+### 1.8.0-mts: wind tunnel and environment (Planned)
 
 1. **Wind tunnel:** part anchored as mounted; flow direction and speed. Wings: airfoil section (2D panel method) and finite wing (lifting line): lift, drag, pitching moment vs angle of attack, stall onset estimate, load on the spar fed into the Stress Lab. Bodies and mounts: drag from frontal area and a drag coefficient you choose (with references). Adjust wing parameters, re-run, **save the variant** as a design.
 2. **Sunlight / UV:** time-lapse view of property loss and color change by material, from the material's UV fields (blank = not shown). Labeled illustrative unless you enter measured data.
@@ -103,17 +104,19 @@ Port the proven features to `main` without MTS data (parts list, shop printer pr
 
 ## Order and why
 
-1.2 first: everything later (Stress Lab, splitter, wind tunnel) needs the pick-then-tune flow, units and the better browser. 1.3 next because the printer is in daily use. 1.4 before 1.6 because orientation, supports and plate placement feed the Stress Lab. 1.5 can run in parallel with 1.4 (parts only).
+1.3 next: everything later (Stress Lab, splitter, wind tunnel) needs the pick-then-tune flow, units and the better browser. 1.4 then, because the printer is in daily use. 1.5 before 1.7 because orientation, supports and plate placement feed the Stress Lab. 1.6 can run in parallel with 1.5 (parts only).
 
-## Decisions needed from you
+## Decisions
 
-| # | Decision | Default if you say nothing |
+| # | Decision | Answer (2026-11-07) |
 |---|---|---|
-| 1 | Control mode for the shop printer (start / pause / cancel / e-stop, logged, confirm steps) | Stay view only |
-| 2 | Slicing: PrusaSlicer CLI on the PC running STL Tools, or STL Tools' own preview only | Own preview only |
-| 3 | Collections: move existing preset items out (STL-only collections) | Keep existing items, new ones STL only |
-| 4 | Where `sv07-alex-v3.ini` lives for slicing: your data folder (not in git) | Data folder |
-| 5 | Stress Lab material values: start from filament maker datasheets you choose (brand per material) | Blank until you pick |
+| 1 | Control mode for the shop printer | **Yes**: opt-in per printer, with a warning. Built in 1.2.0-mts.1. |
+| 2 | Slicing | **Hold off on PrusaSlicer.** Research Sovol's slicer and Muse's method first: done ([SLICING-RESEARCH.md](SLICING-RESEARCH.md)). Next build decision: own preview + OrcaSlicer CLI option. |
+| 3 | Collections: move existing preset items out | No answer: default applies (keep existing items, new ones STL only). |
+| 4 | Where `sv07-alex-v3.ini` lives | **Data folder, not git.** |
+| 5 | Stress Lab material values | **eSUN and the top few brands, no Bambu Lab.** Started: eSUN, Polymaker, Prusament. |
+
+Open: OrcaSlicer CLI integration (needs your word before building); which other brands after eSUN / Polymaker / Prusament.
 
 ## Known limits (honest)
 

@@ -10,11 +10,20 @@
 //
 // There is no generic proxy: each Moonraker call below is a fixed, read-only
 // endpoint, so nothing in STL Tools can control or break a print.
+//
+// CONTROL MODE (opt-in, per printer, off by default): the user can turn on
+// control for one printer after a warning. Only then do the fixed control calls
+// in control() work: pause, resume, cancel, start a file already on the printer,
+// upload-and-print, G-code console, emergency stop, Klipper / firmware restart,
+// restart crowsnest. Every control call (and every refusal) is logged to
+// <data>/printer-control.log (one JSON line each). Connection tests, status and
+// background checks never call a control endpoint.
 // Moonraker API: https://moonraker.readthedocs.io (external_api/printer, file_manager,
 // history, webcams). The optional API key is only stored on this server and is
 // never sent to the browser.
 
 import { join } from 'node:path';
+import { readFile, appendFile, mkdir } from 'node:fs/promises';
 import { randomBytes } from 'node:crypto';
 import { networkInterfaces } from 'node:os';
 import { createJsonFile } from './jsonstore.js';
@@ -95,6 +104,40 @@ const MJPEG_SERVICES = new Set(['mjpegstreamer', 'uv4l-mjpeg', '']);
 const MAX_STREAMS_PER_PRINTER = 3;
 const CONFIG_EXT = /\.(cfg|conf|txt|ini|json)$/i;
 
+// Control actions (only reachable when the user turned control on for that printer).
+const SERVICES = new Set(['crowsnest', 'klipper', 'moonraker-timelapse']);
+const CONTROL = {
+  pause: { path: () => '/printer/print/pause', states: ['printing'] },
+  resume: { path: () => '/printer/print/resume', states: ['paused'] },
+  cancel: { path: () => '/printer/print/cancel', states: ['printing', 'paused'] },
+  start: {
+    idleOnly: true,
+    path: ({ filename }) => {
+      const f = String(filename ?? '');
+      if (!GCODE_EXT.test(f) || f.includes('..') || f.startsWith('/')) throw new CatalogError('start needs the path of a G-code file on the printer');
+      return `/printer/print/start?filename=${encodeURIComponent(f)}`;
+    },
+  },
+  gcode: {
+    path: ({ script }) => {
+      const sc = String(script ?? '').trim();
+      if (!sc) throw new CatalogError('gcode needs a script, e.g. M115');
+      if (sc.length > 2000) throw new CatalogError('G-code script is longer than 2000 characters');
+      return `/printer/gcode/script?script=${encodeURIComponent(sc)}`;
+    },
+    timeout: 60000, // G28, BED_MESH_CALIBRATE etc. answer when done
+  },
+  estop: { path: () => '/printer/emergency_stop' },
+  firmware_restart: { path: () => '/printer/firmware_restart' },
+  restart: { path: () => '/printer/restart' },
+  service: {
+    path: ({ service }) => {
+      if (!SERVICES.has(String(service))) throw new CatalogError(`service must be one of ${[...SERVICES].join(', ')}`);
+      return `/machine/services/restart?service=${encodeURIComponent(service)}`;
+    },
+  },
+};
+
 /** Hide values of config lines that look like secrets before config text reaches a browser. */
 export function redactSecrets(text) {
   return String(text)
@@ -129,6 +172,12 @@ async function mainsailItem(p, key) {
 
 export function createPrinters({ dataDir }) {
   const file = createJsonFile(join(dataDir, 'printers.json'), []);
+  /** One JSON line per control call or refusal: time, printer, action, arguments, ok, result. */
+  const log = async (p, action, args, ok, result) => {
+    const safeArgs = Object.fromEntries(Object.entries(args ?? {}).filter(([k]) => ['filename', 'script', 'service', 'path'].includes(k)).map(([k, v]) => [k, String(v).slice(0, 500)]));
+    const line = JSON.stringify({ at: new Date().toISOString(), printer: p.id, name: p.name, action, args: safeArgs, ok, result: String(result ?? '').slice(0, 500) });
+    try { await mkdir(dataDir, { recursive: true }); await appendFile(join(dataDir, 'printer-control.log'), line + '\n'); } catch { /* logging must not break the call */ }
+  };
   const metaCache = new Map(); // `${id}|${filename}|${modified}` -> metadata
   const checks = new Map(); // id -> { ok, at, klippy?, error? } from the last connection check
   const openStreams = new Map(); // id -> open webcam streams
@@ -168,6 +217,8 @@ export function createPrinters({ dataDir }) {
         name: name !== undefined ? String(name).trim().slice(0, 60) || cur.name : cur.name,
         url: url !== undefined ? normalizeUrl(url) : cur.url,
         machine: url !== undefined && normalizeUrl(url) !== cur.url ? undefined : cur.machine,
+        // a new address may be a different printer: control has to be turned on again
+        control: url !== undefined && normalizeUrl(url) !== cur.url ? { enabled: false } : cur.control,
         apiKey: apiKey === undefined ? cur.apiKey : String(apiKey).trim().slice(0, 200),
         model: model === undefined ? cur.model ?? '' : cleanModel(model),
       };
@@ -658,6 +709,90 @@ export function createPrinters({ dataDir }) {
     async checkAll() {
       const list = await file.get();
       return Object.fromEntries(await Promise.all(list.map(async (p) => [p.id, await api.check(p.id)])));
+    },
+
+    // ---------------------------------------------------------------- control mode (opt-in)
+
+    /** Turn control on or off for one printer. Turning it on needs acknowledge: true (the user saw the warning). */
+    async setControl(id, { enabled, acknowledge } = {}) {
+      const list = await file.get();
+      const cur = await find(id);
+      if (enabled && acknowledge !== true) throw new CatalogError('Read the warning and confirm it to turn on control (acknowledge: true).');
+      const control = enabled ? { enabled: true, enabledAt: new Date().toISOString() } : { enabled: false, disabledAt: new Date().toISOString() };
+      await file.set(list.map((x) => (x.id === id ? { ...x, control } : x)));
+      await log(cur, enabled ? 'enable-control' : 'disable-control', {}, true, enabled ? 'control turned on after the warning' : 'control turned off');
+      return publicView({ ...cur, control });
+    },
+
+    /** Last control log entries for one printer (newest first). */
+    async controlLog(id, limit = 100) {
+      await find(id);
+      let text = '';
+      try { text = await readFile(join(dataDir, 'printer-control.log'), 'utf8'); } catch { return []; }
+      return text.trim().split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } })
+        .filter((e) => e && e.printer === id).reverse().slice(0, Math.min(500, limit));
+    },
+
+    /**
+     * Run one control action. Refused (403) unless control is on for this printer.
+     *   pause | resume | cancel | estop | firmware_restart | restart
+     *   start          { filename }  a G-code file already on the printer (idle printer only)
+     *   gcode          { script }    console command(s), max 2000 characters
+     *   service        { service }   crowsnest | klipper | moonraker-timelapse (host service restart)
+     */
+    async control(id, action, args = {}) {
+      const p = await find(id);
+      if (!p.control?.enabled) {
+        await log(p, action, args, false, 'refused: control is off for this printer');
+        throw new CatalogError('Control is off for this printer. Turn it on in the Printers tab (Control) first.', 403);
+      }
+      const spec = CONTROL[action];
+      if (!spec) throw new CatalogError(`Unknown control action "${action}"`, 404);
+      let path;
+      try {
+        if (spec.idleOnly || spec.states) {
+          const q = await mr(p, '/printer/objects/query?print_stats');
+          const state = q.status?.print_stats?.state ?? 'unknown';
+          if (spec.idleOnly && ['printing', 'paused'].includes(state)) throw new CatalogError(`The printer is ${state}. Start only works when it is idle.`, 409);
+          if (spec.states && !spec.states.includes(state)) throw new CatalogError(`Cannot ${action} while the printer is ${state}.`, 409);
+        }
+        path = spec.path(args);
+        const r = await mr(p, path, { method: 'POST', timeout: spec.timeout ?? TIMEOUT });
+        await log(p, action, args, true, typeof r === 'string' ? r : 'ok');
+        return { ok: true, action, result: r };
+      } catch (err) {
+        await log(p, action, args, false, err.message);
+        throw err;
+      }
+    },
+
+    /** Upload a G-code file and start it at once (print=true). Needs control on and confirm: true. */
+    async uploadAndPrint(id, filename, data, subdir = '', confirm = false) {
+      const p = await find(id);
+      if (!p.control?.enabled) {
+        await log(p, 'upload-and-print', { filename }, false, 'refused: control is off for this printer');
+        throw new CatalogError('Control is off for this printer.', 403);
+      }
+      if (!confirm) throw new CatalogError('Upload and print needs confirm=1 (the user confirmed starting the print).');
+      const q = await mr(p, '/printer/objects/query?print_stats');
+      const state = q.status?.print_stats?.state ?? 'unknown';
+      if (['printing', 'paused'].includes(state)) throw new CatalogError(`The printer is ${state}. Upload without printing, or wait.`, 409);
+      const name = String(filename ?? '').split(/[\\/]/).pop();
+      if (!GCODE_EXT.test(name)) throw new CatalogError('Only G-code files can be printed. Slice the STL first.');
+      const folder = String(subdir ?? '').replace(/[^A-Za-z0-9_\- /]/g, '').replace(/^\/+|\/+$/g, '').slice(0, 80);
+      const form = new FormData();
+      form.append('root', 'gcodes');
+      if (folder) form.append('path', folder);
+      form.append('print', 'true');
+      form.append('file', new Blob([data]), name);
+      try {
+        const r = await mr(p, '/server/files/upload', { method: 'POST', body: form, timeout: 120000 });
+        await log(p, 'upload-and-print', { filename: name, path: folder }, true, r.print_started ? 'uploaded, print started' : 'uploaded, printer did not start it');
+        return { path: r.item?.path ?? name, size: r.item?.size ?? data.length, printStarted: Boolean(r.print_started) };
+      } catch (err) {
+        await log(p, 'upload-and-print', { filename: name }, false, err.message);
+        throw err;
+      }
     },
 
     /** Upload a G-code file to the printer's gcodes folder. Never starts a print (print=false). */

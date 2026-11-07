@@ -99,6 +99,20 @@ try {
   await page.locator('.insights-box button', { hasText: 'Config files' }).click();
   await page.waitForSelector('.cfg-view .sec', { timeout: 10000 });
   check(/max_velocity/.test(await page.locator('.cfg-view').innerText()), 'printer.cfg viewer shows the file');
+  // control mode: off by default, warning dialog to turn on, confirm per action, logged
+  check(/Control: off/.test(await page.locator('.control-box').innerText()), 'printer control is off by default');
+  page.on('dialog', (d) => d.accept());
+  await page.locator('.control-box button', { hasText: 'Turn on control' }).click();
+  await page.waitForSelector('.control-box.on', { timeout: 10000 });
+  await page.locator('.control-box button', { hasText: 'Pause' }).click();
+  await page.waitForTimeout(1500);
+  check(mock.sim.state === 'paused', 'Pause (after confirm) paused the printer');
+  await page.locator('.control-box button', { hasText: 'Resume' }).click();
+  await page.waitForTimeout(1500);
+  check(mock.sim.state === 'printing' && /resume/.test(await page.locator('.control-log').innerText()), 'Resume works and the control log shows it');
+  await page.locator('.control-box button', { hasText: 'Turn off control' }).click();
+  await page.waitForSelector('.control-box:not(.on)', { timeout: 10000 });
+  page.removeAllListeners('dialog');
   await page.evaluate(() => { location.hash = 'home'; });
   for (let i = 0; i < 30 && mock.streams.closed < mock.streams.open; i++) await page.waitForTimeout(200);
   check(mock.streams.closed === mock.streams.open, `stream closed when leaving the Printers page (${mock.streams.closed}/${mock.streams.open})`);

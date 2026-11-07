@@ -23,6 +23,7 @@ export const MOCK_MOONRAKER_CONF = '[authorization]\ntrusted_clients:\n  192.168
 export function startMockMoonraker({ port = 0, state = 'printing', webcams = 'listed', webcamService = 'mjpegstreamer', webcamUp = true, hostname = 'sv07-mock', apiOnly = false } = {}) {
   const requests = [];
   const streams = { open: 0, closed: 0 };
+  const sim = { state, file: state === 'standby' ? '' : 'clamp-mount-16_PLA_0.2mm.gcode', gcode: [] };
   const uploads = [];
   const files = [
     { path: 'clamp-mount-16_PLA_0.2mm.gcode', modified: 1762370000, size: 482113, permissions: 'rw' },
@@ -36,6 +37,14 @@ export function startMockMoonraker({ port = 0, state = 'printing', webcams = 'li
     requests.push({ method: req.method, path: url.pathname, query: url.search, apiKey: req.headers['x-api-key'] ?? null });
     const json = (result, code = 200) => { res.writeHead(code, { 'content-type': 'application/json' }); res.end(JSON.stringify({ result })); };
     const p = url.pathname;
+    // control endpoints (only used when STL Tools control mode is on)
+    if (req.method === 'POST' && p === '/printer/print/pause') { sim.state = 'paused'; return json('ok'); }
+    if (req.method === 'POST' && p === '/printer/print/resume') { sim.state = 'printing'; return json('ok'); }
+    if (req.method === 'POST' && p === '/printer/print/cancel') { sim.state = 'cancelled'; return json('ok'); }
+    if (req.method === 'POST' && p === '/printer/print/start') { sim.state = 'printing'; sim.file = url.searchParams.get('filename'); return json('ok'); }
+    if (req.method === 'POST' && p === '/printer/gcode/script') { sim.gcode.push(url.searchParams.get('script')); return json('ok'); }
+    if (req.method === 'POST' && ['/printer/emergency_stop', '/printer/firmware_restart', '/printer/restart'].includes(p)) { sim.state = p.endsWith('stop') ? 'error' : 'standby'; return json('ok'); }
+    if (req.method === 'POST' && p === '/machine/services/restart') return json('ok');
     // apiOnly: a web server that does not forward the Moonraker API on this port (try :7125)
     if (apiOnly && !p.startsWith('/webcam')) { res.writeHead(404, { 'content-type': 'text/html' }); return res.end('<html>nginx</html>'); }
     if (p === '/server/database/item') {
@@ -61,12 +70,12 @@ export function startMockMoonraker({ port = 0, state = 'printing', webcams = 'li
       if (has('bed_mesh')) status.bed_mesh = { profile_name: '', profiles: { default: { points: [[-0.043, 0.01], [0.05, 0.097]] } } };
       if (has('mcu')) status.mcu = { mcu_version: 'v0.11.0-41' };
       if (has('filament_switch_sensor my_sensor')) status['filament_switch_sensor my_sensor'] = { enabled: true, filament_detected: true };
-      if (has('print_stats')) status.print_stats = { state };
+      if (has('print_stats')) status.print_stats = { state: sim.state };
       return json({ eventtime: 1, status });
     }
     if (p === '/printer/objects/query') {
       return json({ eventtime: 1, status: {
-        print_stats: { filename: state === 'standby' ? '' : files[0].path, state, print_duration: 1800, total_duration: 1900, filament_used: 2400.5, message: '', info: { total_layer: 120, current_layer: 48 } },
+        print_stats: { filename: sim.state === 'standby' ? '' : sim.file || files[0].path, state: sim.state, print_duration: 1800, total_duration: 1900, filament_used: 2400.5, message: '', info: { total_layer: 120, current_layer: 48 } },
         virtual_sdcard: { progress: state === 'standby' ? 0 : 0.4, is_active: state === 'printing' },
         display_status: { progress: state === 'standby' ? 0 : 0.4, message: null },
         extruder: { temperature: 214.8, target: 215 },
@@ -102,12 +111,13 @@ export function startMockMoonraker({ port = 0, state = 'printing', webcams = 'li
       const field = (name) => (text.match(new RegExp(`name="${name}"\\r\\n\\r\\n([^\\r]*)`)) ?? [])[1] ?? null;
       const filename = (text.match(/name="file"; filename="([^"]+)"/) ?? [])[1];
       uploads.push({ filename, root: field('root'), path: field('path'), print: field('print'), bytes: body.length });
+      if (field('print') === 'true') { sim.state = 'printing'; sim.file = filename; }
       files.unshift({ path: `${field('path') ? `${field('path')}/` : ''}${filename}`, modified: Date.now() / 1000, size: 10, permissions: 'rw' });
       res.writeHead(201, { 'content-type': 'application/json' });
-      return res.end(JSON.stringify({ result: { item: { path: filename, root: 'gcodes', size: 10 }, print_started: false, print_queued: false, action: 'create_file' } }));
+      return res.end(JSON.stringify({ result: { item: { path: filename, root: 'gcodes', size: 10 }, print_started: field('print') === 'true', print_queued: false, action: 'create_file' } }));
     }
     res.writeHead(404, { 'content-type': 'application/json' });
     res.end(JSON.stringify({ error: { code: 404, message: 'Not found' } }));
   });
-  return new Promise((resolve) => server.listen(port, '127.0.0.1', () => resolve({ server, port: server.address().port, requests, uploads, streams })));
+  return new Promise((resolve) => server.listen(port, '127.0.0.1', () => resolve({ server, port: server.address().port, requests, uploads, streams, sim })));
 }

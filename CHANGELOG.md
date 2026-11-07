@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: opt-in printer control, per printer, off by default: a warning must be accepted to turn it on; then pause, resume, cancel, print a file already on the printer, upload and print (one file, asks first), G-code console (extra warning for SAVE_CONFIG), emergency stop, firmware restart, Klipper restart, restart the crowsnest webcam service. Every action asks first; every action and every refusal is logged (`<data>/printer-control.log`, shown on the Printers page). State guards (no start while printing, no pause while idle); a new address turns control off. Slicing research (docs/SLICING-RESEARCH.md: Sovol's slicer is OrcaSlicer with Sovol profiles; Muse's PrusaSlicer chain and its known bugs; options). Materials data `materials/filaments.json` from eSUN, Polymaker and Prusament datasheets with sources (eSUN PLA+ Feb 2026: 70.4 MPa X-Y, 36.4 MPa Z).
+Fixed: n/a.
+Untested: control against the real SV07 (tested against the fake Moonraker and in the browser smoke test only); the crowsnest restart on the MKS Pi (Moonraker must allow it in its service list); the materials values in any simulation (the Stress Lab is not built yet).
+
 ## 1.1.0-mts.1 - 2026-11-06 (MTS personal edition)
 
 Public 1.1.0 (below) plus the MTS shop data, and for the shop's SV07 (MKS Pi host `mkspi`): a printer profile from the proven slicer preset sv07-alex-v3 (`sovol-sv07-mts-v3`: 220 x 220 x 250, 80 mm/s print, 50 outer wall, 25 first layer, 200 travel, 2000 accel, 20 mm3/s max flow, 0.2 / 0.3 mm layers, 3 walls, 15 % gyroid, 4 top / 3 bottom, 5 mm brim) as the default estimate profile, and docs/ROADMAP-MTS.md (the plan for the next MTS versions).

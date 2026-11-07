@@ -534,3 +534,11 @@ body[data-printers="off"] [data-needs-printers] { display: none !important; }
 .cfg-view .sec { color: var(--accent); font-weight: 600; }
 .cfg-view .cmt { color: var(--muted); }
 .cfg-view .hit { background: rgba(255, 200, 0, 0.25); }
+/* printer control (opt-in) */
+.control-box { margin-top: 12px; border-left: 4px solid var(--border); }
+.control-box.on { border-left-color: #cf222e; }
+.control-buttons button { margin-right: 6px; }
+button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
+.control-log ul { list-style: none; padding: 0; margin: 4px 0; font-size: 12px; max-height: 200px; overflow: auto; }
+.control-log li.fail { color: var(--fail); }
+.control-log li.ok { color: var(--muted); }

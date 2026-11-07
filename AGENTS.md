@@ -30,11 +30,17 @@ npm run package      # release packages (needs network to download Node)
 
 ## Hard rules (do not break these)
 
-1. **Printers are view only.** `src/core/printers.js` calls a fixed list of
-   read-only Moonraker endpoints. Uploads always send `print=false` and fail if
-   `print_started` comes back. Never add start, pause, cancel, G-code, delete,
-   restart or settings endpoints. `test/printers.test.js` fails on any control
-   request.
+1. **Printers are view only unless the user turns on control for that printer.**
+   `src/core/printers.js` calls a fixed list of read-only Moonraker endpoints.
+   Uploads send `print=false` and fail if `print_started` comes back. Control
+   actions (pause, resume, cancel, start, G-code, e-stop, restarts, crowsnest
+   restart, upload-and-print) exist only in `control()` / `uploadAndPrint()`,
+   are refused with 403 until `printers.json` has `control.enabled` (set by
+   `PUT /api/printers/:id/control` with `acknowledge: true` after the UI
+   warning), ask for confirmation in the UI, and are logged to
+   `<data>/printer-control.log`. Connection tests, status, health and
+   background checks never call them (`test/printers.test.js`, `test/v12.test.js`).
+   Never add a generic proxy or a control call outside that gate.
 2. **Every STL must be watertight.** Tests check `openEdgeCount` and
    `stlEdgeIssues` (edges that break after float32 rounding) for every select
    option of every generator and for presets. Geometry rules are in

@@ -1,6 +1,6 @@
 {
   "name": "stltools",
-  "version": "1.1.0-mts.1",
+  "version": "1.2.0-mts.1",
   "description": "Parametric STL generator for drone, RC, robotics and workshop parts: thousands of presets, assemblies, print time estimates, Klipper printer status (view only). Web UI + CLI.",
   "type": "module",
   "main": "src/index.js",
@@ -51,6 +51,7 @@
     "public/",
     "presets/",
     "printer-profiles/",
+    "materials/",
     "seed/",
     "custom/",
     "deploy/",

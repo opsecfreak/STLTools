@@ -6,7 +6,7 @@ Printers are optional. With none, everything else works and estimates use a prin
 
 > See also: [Printer profiles and estimates](PRINTER-PROFILES.md) | [Self-hosting](SELF-HOSTING.md#printers-are-optional) | [Raspberry Pi setup](RASPBERRY-PI.md#5-set-it-up) | [Troubleshooting](TROUBLESHOOTING.md#printers-and-webcam) | [All docs](README.md)
 
-## View only, by design
+## View only by default
 
 | STL Tools can | STL Tools cannot (no code for it) |
 |---|---|
@@ -47,6 +47,26 @@ Or press **Scan my network**. It looks for Moonraker on the server's own local n
 Saved printers can be edited, re-tested or removed in Settings > Printers. The API key field is write-only: a saved key is never shown again.
 
 Note: STL Tools runs on your PC or Pi, and that machine talks to the printer. Both must be on the same network (or the same Tailscale network). Only local addresses are accepted.
+
+## Control mode (MTS edition, opt-in per printer)
+
+Off by default: every printer starts view only. Printers page > the printer > **Control: off** > **Turn on control...** shows a warning; after you accept it, that printer (only that one) gets:
+
+| Control | Moonraker call | Guard |
+|---|---|---|
+| Pause / Resume / Cancel print | `POST /printer/print/pause` / `resume` / `cancel` | only while printing / paused; confirm dialog |
+| Print a file already on the printer (Print button on the file) | `POST /printer/print/start?filename=` | printer idle only; G-code files only; confirm |
+| Upload and print ("Start printing after upload") | `POST /server/files/upload` with `print=true` | one file, confirm, printer idle; without the tick uploads stay `print=false` |
+| Console (G-code or macro) | `POST /printer/gcode/script?script=` | max 2000 characters; confirm; extra warning for SAVE_CONFIG |
+| Emergency stop | `POST /printer/emergency_stop` | confirm |
+| Firmware restart / Restart Klipper | `POST /printer/firmware_restart` / `restart` | confirm |
+| Restart webcam service | `POST /machine/services/restart?service=crowsnest` | confirm; only crowsnest, klipper, moonraker-timelapse |
+
+- Every action, and every refusal while control is off, is logged with time, printer, action, arguments and result: `<data folder>/printer-control.log` (one JSON line each), shown under the control buttons.
+- Changing a printer's address turns its control off again (it may be another printer).
+- Connection tests, status, health checks and background checks never send a control request (tests check this).
+- Anyone who can open STL Tools can use control on a printer where it is on: set an access PIN (Settings > Self-hosting) when others share your network.
+- Turn it off with **Turn off control**.
 
 ## Printer features on or off
 

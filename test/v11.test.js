@@ -290,7 +290,7 @@ test('launcher portable: portable.txt next to app/ keeps data on the drive', { t
   try {
     const appDir = join(usb, 'app');
     await mkdir(appDir);
-    for (const d of ['bin', 'src', 'public', 'presets', 'printer-profiles', 'seed', 'custom', 'package.json']) if (existsSync(d)) await cp(d, join(appDir, d), { recursive: true });
+    for (const d of ['bin', 'src', 'public', 'presets', 'printer-profiles', 'materials', 'seed', 'custom', 'package.json']) if (existsSync(d)) await cp(d, join(appDir, d), { recursive: true });
     await symlink(resolve('node_modules'), join(appDir, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
     await writeFile(join(usb, 'portable.txt'), 'STL Tools keeps its data next to this file.\n');
     const port = freePort();
