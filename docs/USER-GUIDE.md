@@ -50,6 +50,14 @@ The estimate box under the 3D view shows time, grams, meters and (with a price s
 - Layer height, infill and material change the estimate at once and are remembered.
 - Calibrate once: Settings > Print estimates > Time calibration factor = slicer time / STL Tools time. Expect about +/- 25 % before calibration. Details: [PRINTER-PROFILES.md](PRINTER-PROFILES.md#calibrate-the-estimate).
 
+## Split and arrange (MTS edition)
+
+**Split / arrange** next to Download: parts larger than your printer's bed (chosen in the estimate box) are cut into equal pieces with alignment holes (printed pins, filament pins or glue only), and every piece is packed onto as few plates as possible with a time and filament estimate per plate. Download plates, pieces and an assembly README as one ZIP. Made for the plane wings first; works on any generated part or imported STL.
+
+## Stress Lab (MTS edition)
+
+**Stress test** next to Download, or the **Stress Lab** tab: forces, torques and g-loads on the 3D model, weak points and supports, a wind tunnel for wings and bodies, heat, sun, rain and drop checks. Guide: [STRESS-LAB.md](STRESS-LAB.md).
+
 ## Assemblies
 
 Some generators make several parts that belong together (servo pan-tilt gimbal, brushless 2-axis gimbal, drawer unit). The 3D view toggles between **Assembled** (each part in its place, one color each) and **Print plate** (laid out to print). The estimate table lists each part with its quantity; click a part name to show only that part.

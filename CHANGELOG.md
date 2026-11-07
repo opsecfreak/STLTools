@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: **Split / arrange** next to Download in every designer tab (`POST /api/split`, src/core/split.js). Parts larger than the chosen printer's bed are cut into equal pieces along their longest side (piece length from the flat bed size so pieces lie down), with alignment holes on every cut (printed pins with their own STL, 1.75 mm filament pins, or glue only; pin size and hole clearance settable); then every piece and copy (quantities per part) is packed onto as few plates as possible, standing as designed when it fits, with a time and filament estimate per plate, plate STLs, piece STLs and an assembly README in one ZIP. Works on generated parts and on imported STLs.
+Fixed: n/a.
+Untested: pin fit on a real print (start with 0.2 mm clearance, use the fit-test coupon to tune); splitting imported STLs that are not closed solids (refused with a message).
+
 ## 1.3.2-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: Settings > Appearance > Show sizes in: mm, cm or inches. The 3D view size label, the estimate table and a "= 0.63 in" hint next to every mm setting follow it. You still type settings in mm; STL files stay mm.

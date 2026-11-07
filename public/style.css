@@ -572,3 +572,12 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .settings-layout.compact .settings-grid { gap: 6px 14px; }
 .settings-layout.compact .help { font-size: 12px; }
 .unit.conv { margin-left: 6px; color: var(--muted); font-weight: normal; }
+/* split / arrange panel */
+.split-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50; display: flex; align-items: flex-start; justify-content: center; padding: 6vh 16px; overflow: auto; }
+.split-box { max-width: 860px; width: 100%; }
+.split-box .row { flex-wrap: wrap; gap: 8px; align-items: center; }
+.split-qty label { display: inline-block; margin: 2px 10px 2px 0; font-size: 13px; }
+.split-box { background: var(--panel); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.split-box input.num { width: 5.5em; display: inline-block; }
+.split-box label { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; font-size: 13px; }
+.split-box select { width: auto; }

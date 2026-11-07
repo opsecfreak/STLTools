@@ -18,6 +18,7 @@ import { initFiles, renderImport, renderStls, renderStlPane } from './files.js';
 import { initParts, renderParts, refreshParts, ownershipOf, ownBadge } from './parts.js';
 import { initBrowse, renderBrowse } from './browse.js';
 import { initLab, renderLab, stopLab } from './lab.js';
+import { openSplit } from './split.js';
 
 await loadSettings().catch(() => null);
 await refreshPrinterVisibility();
@@ -75,6 +76,7 @@ function renderResult(result) {
   $('zipAll').hidden = !result.zip;
   if (result.zip) $('zipAll').href = result.zip;
   $('toLab').hidden = false;
+  $('toSplit').hidden = false;
   $('dlStl').hidden = result.parts.length !== 1;
   if (result.parts.length === 1) { $('dlStl').href = result.parts[0].url; $('dlStl').download = result.parts[0].filename; }
   estimate.update(result.parts);
@@ -839,6 +841,12 @@ initGlobalSearch();
 headerPrinterChip();
 state.viewerSettings = () => settings()?.viewer ?? {};
 state.cardTips = () => settings()?.tips?.cardDetails;
+$('toSplit').onclick = () => {
+  const r = state.lastResult;
+  if (!r?.job) { toast('Generate a part first', 'error'); return; }
+  openSplit({ job: r.job, parts: r.parts.map((p) => ({ name: p.name, qty: p.qty ?? 1 })), viewer, profile: estimate.profile() });
+};
+
 initLab({
   currentParts: () => (state.shown ?? []).filter((p) => p.url).map((p) => ({ name: p.name, url: p.url })),
   currentGenerator: () => state.current?.id ?? null,

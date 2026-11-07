@@ -37,6 +37,15 @@ export function createScope() {
     CrossSection,
     track: t,
 
+    /** Solid from a triangle soup (an imported or generated STL): vertices are welded by position. */
+    fromTriangles(positions, indices) {
+      const mesh = new wasm.Mesh({ numProp: 3, vertProperties: Float32Array.from(positions), triVerts: Uint32Array.from(indices) });
+      mesh.merge();
+      const m = t(new Manifold(mesh));
+      if (m.status() !== 'NoError') throw new Error(`This mesh is not a closed solid (${m.status()}): it cannot be cut`);
+      return m;
+    },
+
     /** Centered rectangle with rounded corners (2D). r <= 0 gives sharp corners. */
     roundedRect(w, d, r, segmentsPerCorner = 12) {
       const rr = Math.min(r, w / 2 - 0.01, d / 2 - 0.01);

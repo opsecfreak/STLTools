@@ -54,6 +54,7 @@ import { fileURLToPath } from 'node:url';
 import { generate, listGenerators } from './core/registry.js';
 import { ParamError } from './core/params.js';
 import { toStl, meshStats } from './core/export.js';
+import { toPlainMesh } from './core/kernel.js';
 import { initKernel } from './core/kernel.js';
 import { listPresets, presetIssues } from './core/presets.js';
 import { registryIssues } from './core/registry.js';
@@ -71,6 +72,9 @@ import { createHosting, isLoopback, lanUrls, boardModel, loginPage, COOKIE } fro
 import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { createCollections } from './core/collections.js';
 import { createMaterials } from './core/materials.js';
+import { splitToFit, placeOnBed, arrange } from './core/split.js';
+import { createScope } from './core/kernel.js';
+import { parseStl } from './core/library.js';
 import { randomBytes } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 
@@ -348,6 +352,104 @@ async function projectEstimate(statsList, qty) {
   return { ...e, parts: undefined, perPart, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
 }
 
+/**
+ * Split the parts of a generated job (or a library STL) to fit the printer, then pack
+ * every piece (and the alignment pins) onto as few plates as possible.
+ * -> { zip, pieces: [...], plates: [{ name, url, filename, count, estimate }], cuts, pins, bed, profile }
+ */
+async function splitAndArrange(b) {
+  const cfg = await settings.get();
+  const profile = b.profile ? getProfile(b.profile) : await activeProfile(cfg);
+  if (!profile) throw new CatalogError('No printer profile');
+  const bed = profile.bed;
+  const margin = Math.max(0, Number(b.margin ?? 3));
+  const spacing = Math.max(0, Number(b.spacing ?? 5));
+  const joint = ['pins', 'filament', 'none'].includes(b.joint) ? b.joint : 'pins';
+  const pinDiameter = Math.min(10, Math.max(2, Number(b.pinDiameter ?? 4)));
+  const pinLength = Math.min(40, Math.max(4, Number(b.pinLength ?? 12)));
+  const clearance = Math.min(1, Math.max(0, Number(b.clearance ?? 0.2)));
+  const sources = [];
+  if (b.library) {
+    const e = await library.get(b.library);
+    sources.push({ name: e.name, buf: await library.file(b.library), qty: 1 });
+  } else {
+    const job = jobs.get(String(b.job ?? ''));
+    if (!job) throw new CatalogError('Generate the part again (the job expired)', 404);
+    const want = Array.isArray(b.parts) && b.parts.length ? new Set(b.parts) : null;
+    for (const [name, buf] of job.files) if (!want || want.has(name)) sources.push({ name, buf, qty: Math.max(1, Math.min(50, Number(b.qty?.[name] ?? 1))) });
+  }
+  if (!sources.length) throw new CatalogError('Nothing to split');
+  const k = createScope();
+  try {
+    const usable = { x: bed.x - 2 * margin, y: bed.y - 2 * margin, z: bed.z - margin };
+    const pieces = [];
+    const cuts = [];
+    let holes = 0;
+    for (const src of sources) {
+      const soup = parseStl(src.buf);
+      const solid = k.fromTriangles(soup.positions, soup.indices);
+      const r = splitToFit(k, solid, { bed, margin, joint, pinDiameter, pinLength, clearance });
+      cuts.push(...r.cuts.map((c) => ({ ...c, part: src.name })));
+      holes += r.cuts.reduce((n, c) => n + c.holes, 0) * src.qty;
+      r.pieces.forEach((pc, i) => {
+        const placed = placeOnBed(k, pc, usable);
+        pieces.push({ name: r.pieces.length > 1 ? `${src.name}-piece${i + 1}of${r.pieces.length}` : src.name, placed, qty: src.qty });
+      });
+    }
+    if (joint === 'pins' && holes) {
+      const pin = k.track(k.Manifold.cylinder(pinLength, pinDiameter / 2, pinDiameter / 2, 32));
+      pieces.push({ name: `alignment-pin-${pinDiameter}x${pinLength}mm`, placed: { manifold: pin, size: [pinDiameter, pinDiameter, pinLength] }, qty: holes, pin: true });
+    }
+    // one entry per copy for packing
+    const copies = pieces.flatMap((p, i) => Array.from({ length: p.qty }, () => ({ piece: i, w: p.placed.size[0], d: p.placed.size[1] })));
+    const plates = arrange(copies, { bed: { x: usable.x, y: usable.y }, spacing });
+    const files = new Map();
+    const pieceOut = pieces.map((p) => {
+      const mesh = toPlainMesh(p.placed.manifold);
+      files.set(p.name, toStl(mesh, { name: p.name }));
+      return { name: p.name, qty: p.qty, stats: meshStats(mesh), pin: Boolean(p.pin) };
+    });
+    const plateOut = plates.map((plate, n) => {
+      let all = null;
+      for (const it of plate) {
+        const src = pieces[copies[it.index].piece].placed.manifold;
+        const turned = it.rotated ? k.track(src.rotate([0, 0, 90]).translate([pieces[copies[it.index].piece].placed.size[1], 0, 0])) : src;
+        const moved = k.track(turned.translate([margin + it.x, margin + it.y, 0]));
+        all = all ? k.track(Manifold_add(k, all, moved)) : moved;
+      }
+      const name = `plate${n + 1}`;
+      const mesh = toPlainMesh(all);
+      files.set(name, toStl(mesh, { name }));
+      return { name, count: plate.length, stats: meshStats(mesh), items: plate.map((it) => pieces[copies[it.index].piece].name) };
+    });
+    // estimates per plate on the chosen printer
+    const opts = { ...cfg.print, filamentCostPerKg: cfg.filament?.[cfg.print.material] ?? cfg.print.filamentCostPerKg };
+    for (const pl of plateOut) {
+      const counts = new Map();
+      for (const nm of pl.items) counts.set(nm, (counts.get(nm) ?? 0) + 1);
+      const list = [...counts.keys()];
+      const e = estimateParts(list.map((nm) => pieceOut.find((p) => p.name === nm).stats), profile, opts, list.map((nm) => counts.get(nm)));
+      pl.estimate = { seconds: e.seconds, grams: e.grams, filamentMm: e.filamentMm, cost: e.cost, text: `${formatDuration(e.seconds)}, ${e.grams.toFixed(0)} g` };
+    }
+    const lines = [`Split for ${profile.name} (bed ${bed.x} x ${bed.y} x ${bed.z} mm, ${margin} mm margin)`, '',
+      ...cuts.map((c) => `${c.part}: cut across ${'XYZ'[c.axis]} at ${c.at.toFixed(1)} mm, ${c.holes} alignment hole(s)`), '',
+      joint === 'pins' ? `Alignment: ${holes} printed pins ${pinDiameter} x ${pinLength} mm (holes ${(pinDiameter + 2 * clearance).toFixed(2)} mm). Glue the pieces with the pins in place.` : joint === 'filament' ? `Alignment: ${holes} pieces of 1.75 mm filament, 10 mm long (holes ${(1.75 + 2 * clearance).toFixed(2)} mm).` : 'No alignment holes: glue the pieces face to face.', '',
+      ...plateOut.map((p) => `${p.name}: ${p.count} piece(s), about ${p.estimate.text}: ${p.items.join(', ')}`)];
+    const key = randomBytes(8).toString('hex');
+    remember(key, { prefix: 'split', files, extra: [{ name: 'README.txt', data: Buffer.from(lines.join('\n') + '\n') }] });
+    const link = (name) => ({ url: `/api/stl/${key}/${encodeURIComponent(name)}.stl`, filename: `split-${name}.stl` });
+    return {
+      zip: `/api/zip/${key}`, profile: profile.name, bed, cuts, pins: joint === 'pins' ? holes : 0, joint,
+      pieces: pieceOut.map((p) => ({ ...p, ...link(p.name) })),
+      plates: plateOut.map((p) => ({ ...p, ...link(p.name) })),
+      readme: lines.join('\n'),
+    };
+  } finally {
+    k.free?.();
+  }
+}
+const Manifold_add = (k, a, b) => a.add(b);
+
 /** Serve a file from baseDir without allowing ../ escapes. */
 async function serveStatic(res, baseDir, relPath) {
   const full = normalize(join(baseDir, relPath));
@@ -416,6 +518,7 @@ async function route(req, res) {
     return send(res, 200, { pin: r.pin }, r.token ? { 'set-cookie': pinCookie(r.token) } : {});
   }
   if (path === '/api/estimate-targets' && req.method === 'GET') return send(res, 200, await estimateTargets());
+  if (path === '/api/split' && req.method === 'POST') return send(res, 200, await splitAndArrange(await readBody(req)));
 
   // ---- settings, printer profiles, estimates (v6) ----
   if (path === '/api/settings') {
