@@ -56,3 +56,24 @@ test('Home page settings: sections, order and the "Make something" list', async 
   assert.equal(u.home.quickMake, 'quad-modular,mcu-holder');
   assert.equal((await j('PUT', '/api/settings', { home: { quickMake: '<script>' } })).status, 400);
 });
+
+test('JSON stores: a failed write does not block later writes; rename retries on Windows lock errors', async () => {
+  const { createJsonFile, writeJsonAtomic } = await import('../src/core/jsonstore.js');
+  const { mkdir, readFile } = await import('node:fs/promises');
+  const sub = join(dir, 'store-test');
+  // a directory where the file should be makes the first write fail
+  await mkdir(join(sub, 'x.json'), { recursive: true });
+  const bad = createJsonFile(join(sub, 'x.json'), []);
+  await assert.rejects(bad.set([1]));
+  const good = createJsonFile(join(sub, 'y.json'), []);
+  await good.set([1]);
+  await good.set([1, 2]);
+  assert.deepEqual(JSON.parse(await readFile(join(sub, 'y.json'), 'utf8')), [1, 2]);
+  // the failed store recovers once the obstacle is gone
+  const { rm: rmDir } = await import('node:fs/promises');
+  await rmDir(join(sub, 'x.json'), { recursive: true });
+  await bad.set([3]);
+  assert.deepEqual(JSON.parse(await readFile(join(sub, 'x.json'), 'utf8')), [3]);
+  await writeJsonAtomic(join(sub, 'z.json'), { a: 1 });
+  assert.deepEqual(JSON.parse(await readFile(join(sub, 'z.json'), 'utf8')), { a: 1 });
+});

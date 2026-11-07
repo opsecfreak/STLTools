@@ -26,15 +26,29 @@ export function createJsonFile(file, fallback) {
     async set(next) {
       value = next;
       loaded = true;
-      writing = writing.then(async () => {
-        await mkdir(dirname(file), { recursive: true });
-        await writeFile(`${file}.tmp`, JSON.stringify(value, null, 2) + '\n');
-        await rename(`${file}.tmp`, file);
-      });
+      // a failed write must not block every later one: chain on the settled promise
+      writing = writing.catch(() => {}).then(() => writeJsonAtomic(file, value));
       await writing;
       return value;
     },
   };
+}
+
+/**
+ * Write JSON to a temp file and rename it into place. On Windows the rename can fail for a
+ * moment (EPERM / EACCES / EBUSY) while an indexer, antivirus or another reader holds the
+ * file: retry a few times before giving up.
+ */
+export async function writeJsonAtomic(file, value) {
+  await mkdir(dirname(file), { recursive: true });
+  const tmp = `${file}.tmp`;
+  await writeFile(tmp, JSON.stringify(value, null, 2) + '\n');
+  for (let i = 0; ; i++) {
+    try { await rename(tmp, file); return; } catch (err) {
+      if (i >= 6 || !['EPERM', 'EACCES', 'EBUSY'].includes(err.code)) throw err;
+      await new Promise((ok) => setTimeout(ok, 40 * 2 ** i));
+    }
+  }
 }
 
 function structuredCloneSafe(v) {

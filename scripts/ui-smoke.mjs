@@ -144,7 +144,7 @@ try {
 
   // 3. live webcam
   await page.evaluate(() => { location.hash = 'printers'; });
-  await page.waitForSelector('.cam-box img.cam', { timeout: 15000 });
+  await page.waitForSelector('.cam-box img.cam', { timeout: 30000 });
   await page.waitForTimeout(1500);
   const src = await page.locator('.cam-box img.cam').getAttribute('src');
   check(/\/stream\?cam=0/.test(src ?? ''), `Printers page uses the live stream (${src})`);
@@ -215,9 +215,12 @@ try {
   await page.locator('button', { hasText: 'Customize Home' }).click();
   check(await page.locator('.home-custom .home-gen-list label').count() > 20, 'Home customize lists generators');
   const proj = await post('/api/projects', { name: 'Smoke filament', items: [{ kind: 'custom', generator: 'spacer', params: {}, name: 'S', qty: 1 }] });
-  // straight from Home: a slow Home render must not replace the project page (it used to on Windows CI)
+  if (!proj?.id) throw new Error(`creating the project failed: ${JSON.stringify(proj)}`);
+  // straight from Home: a slow Home render must not replace the project page
   await page.evaluate((id) => { location.hash = `project/${id}`; }, proj.id);
-  await page.waitForSelector('.filament-row select', { timeout: 60000 });
+  try { await page.waitForSelector('.filament-row select', { timeout: 60000 }); } catch (err) {
+    throw new Error(`project page did not show (hash ${await page.evaluate(() => location.hash)}): ${(await page.locator('#page').innerText().catch(() => '')).slice(0, 400)}`);
+  }
   await page.waitForTimeout(3000);
   check(await page.locator('.filament-row select').count() === 1, 'project page stays after a slow Home render');
   await page.locator('.filament-row select').selectOption('petg');

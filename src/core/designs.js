@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { getGenerator, migrateInput } from './registry.js';
 import { resolveParams } from './params.js';
 import { CatalogError } from './catalog.js';
+import { writeJsonAtomic } from './jsonstore.js';
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const SECTIONS = ['shop', 'planes', 'quads', 'accessories', 'robotics'];
@@ -31,11 +32,7 @@ export function createDesignStore({ dataDir = process.env.STLTOOLS_DATA ?? join(
   }
 
   function save() {
-    writing = writing.then(async () => {
-      await mkdir(dataDir, { recursive: true });
-      await writeFile(`${file}.tmp`, JSON.stringify(items, null, 2) + '\n');
-      await rename(`${file}.tmp`, file);
-    });
+    writing = writing.catch(() => {}).then(() => writeJsonAtomic(file, items));
     return writing;
   }
 

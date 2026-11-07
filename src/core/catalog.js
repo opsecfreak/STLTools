@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { getPreset } from './presets.js';
 import { getGenerator, generate, migrateInput } from './registry.js';
 import { resolveParams } from './params.js';
+import { writeJsonAtomic } from './jsonstore.js';
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 
@@ -66,12 +67,7 @@ export function createCatalog({ dataDir = process.env.STLTOOLS_DATA ?? join(ROOT
 
   // Write to a temp file, then rename, so a crash never leaves half a file.
   function save(which) {
-    writing = writing.then(async () => {
-      await mkdir(dataDir, { recursive: true });
-      const tmp = `${files[which]}.tmp`;
-      await writeFile(tmp, JSON.stringify(state[which], null, 2) + '\n');
-      await rename(tmp, files[which]);
-    });
+    writing = writing.catch(() => {}).then(() => writeJsonAtomic(files[which], state[which]));
     return writing;
   }
 
