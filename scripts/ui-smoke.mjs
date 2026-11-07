@@ -201,8 +201,11 @@ try {
   for (let i = 0; i < 30 && mock.streams.closed < mock.streams.open; i++) await page.waitForTimeout(200);
   check(mock.streams.closed === mock.streams.open, `stream closed when leaving the Printers page (${mock.streams.closed}/${mock.streams.open})`);
 
-  // 1.8: Browse families, Home customize, project filament
-  await page.evaluate(() => { location.hash = 'browse'; });
+  // 1.8: Browse families, Home customize, project filament. Card previews off for these steps:
+  // CI VMs render them in software WebGL, and a Families page queues dozens (minutes on Windows CI).
+  // The page tour above already covers previews.
+  await post('/api/settings', { ui: { thumbnails: false } }, 'PUT');
+  await page.goto(`${base}/#browse`);
   await page.waitForTimeout(2500);
   await page.locator('button', { hasText: /^Families$/ }).click();
   await page.waitForSelector('.families .family-top', { timeout: 10000 });
