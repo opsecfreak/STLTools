@@ -53,7 +53,7 @@ await fetch(`${base}/api/printers/${printer.id}/machine`);
 const exe = process.env.CHROMIUM_PATH || undefined;
 const browser = await chromium.launch({ executablePath: exe, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });
 try {
-  const page = await browser.newPage({ viewport: { width: 1280, height: 860 } });
+  let page = await browser.newPage({ viewport: { width: 1280, height: 860 } });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
@@ -205,6 +205,11 @@ try {
   // CI VMs render them in software WebGL, and a Families page queues dozens (minutes on Windows CI).
   // The page tour above already covers previews.
   await post('/api/settings', { ui: { thumbnails: false } }, 'PUT');
+  // a fresh tab: the steps above left several WebGL views on this one (designer, Stress Lab,
+  // layer and G-code 3D), which stalls software rendering on the Windows CI runner
+  await page.close();
+  page = await browser.newPage({ viewport: { width: 1280, height: 860 } });
+  page.on('pageerror', (e) => errors.push(e.message));
   await page.goto(`${base}/#browse`);
   await page.waitForTimeout(2500);
   await page.locator('button', { hasText: /^Families$/ }).click();
