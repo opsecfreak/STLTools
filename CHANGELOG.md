@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: Save design on a changed preset or design saves as "<name> MOD <your text>" and keeps the original. Print estimate quality dropdown (0.28 Draft, 0.20 Standard, 0.12 Fine, Strong, MTS SV07 v3) next to the material. Settings > Filament prices: a price per kg for each material (blank until you enter it; falls back to the general price). Settings page: search box (fields and sections), compact layout.
+Fixed: n/a.
+Untested: n/a (covered by the UI smoke test and a settings search check).
+
 ## 1.3.0-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: new **Stress Lab** tab (docs/STRESS-LAB.md), also reached with "Stress test" next to Download. Stress test: click the 3D part to add anchors, forces, pressures and torques (editable list), whole-part g-loads, quick setups (hold the bottom, hook / bracket, servo horn from stall torque); voxel finite-element solve in a background thread; safety factor, von Mises, across-layer stress, displacement and wall / infill views; 5 worst spots labeled with the reason; failure load; bend, cut plane, probe, load animation 0-200 %; instant material comparison. Weak points and supports: thin walls, overhangs, support columns and volume, narrowest layer, islands, per print orientation. Wind tunnel: wing section cut from the part in any orientation, Hess-Smith panel method (Cp, streamlines, Cl, Cm), lifting-line 3D lift and induced drag, skin-friction profile drag, polar, 3D pressure colors, airflow dots, lift and drag arrows, apply lift to the stress test; bodies: frontal area x reference Cd. Environment: heat vs datasheet HDT, sunlight time-lapse from your UV rate, rain pooling, moisture, drop impact as a g-load, fatigue from your S-N data. Materials & physics: datasheet library with sources, your own materials (`/api/materials`, `<data>/materials.json`), editable physics settings.

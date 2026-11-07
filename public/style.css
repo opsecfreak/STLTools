@@ -566,3 +566,8 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .lab-presets button { display: block; margin: 4px 0; }
 .lab-canvas { width: 100%; max-width: 640px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; margin-top: 8px; }
 @media (max-width: 900px) { .lab-layout { grid-template-columns: 1fr; } }
+/* settings: search and compact layout */
+.settings-find { width: 100%; max-width: 520px; margin-top: 6px; }
+.settings-layout.compact .settings-section { padding: 10px 14px; margin-bottom: 10px; }
+.settings-layout.compact .settings-grid { gap: 6px 14px; }
+.settings-layout.compact .help { font-size: 12px; }

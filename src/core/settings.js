@@ -72,6 +72,11 @@ export const SCHEMA = {
       filamentCostPerKg: numb(null, 0, 1000, 0.01, 'Filament cost per kg (blank = do not show cost)', '$'),
     },
   },
+  filament: {
+    label: 'Filament prices',
+    // per material, blank until you enter what you pay (no default prices)
+    fields: Object.fromEntries(Object.entries(MATERIALS).map(([k, m]) => [k, numb(null, 0, 1000, 0.01, `${m.name} price per kg (blank = the general price in Print estimates)`, '$')])),
+  },
   labels: {
     label: 'Paper labels',
     fields: {

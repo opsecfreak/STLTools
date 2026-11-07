@@ -343,7 +343,7 @@ async function projectEstimate(statsList, qty) {
   const cfg = await settings.get();
   const profile = await activeProfile(cfg);
   if (!profile) return null;
-  const e = estimateParts(statsList, profile, cfg.print, qty);
+  const e = estimateParts(statsList, profile, { ...cfg.print, filamentCostPerKg: cfg.filament?.[cfg.print.material] ?? cfg.print.filamentCostPerKg }, qty);
   const perPart = e.parts.map((p) => ({ seconds: p.seconds, grams: p.grams, filamentMm: p.filamentMm, layers: p.layers, fits: p.fit.fits }));
   return { ...e, parts: undefined, perPart, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
 }

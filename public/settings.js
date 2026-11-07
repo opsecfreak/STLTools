@@ -13,6 +13,7 @@ import { el, api, settings, saveSettings, toast, confirmDelete, debounce, refres
 const ORDER = [
   ['printers', 'Printers'],
   ['print', 'Print estimates'],
+  ['filament', 'Filament prices'],
   ['viewer', '3D view'],
   ['ui', 'Appearance'],
   ['tips', 'Tooltips and help'],
@@ -30,10 +31,24 @@ export async function renderSettings(page, focus = '') {
   const nav = el('nav', { className: 'settings-nav', 'aria-label': 'Settings sections' },
     ...ORDER.map(([id, label]) => el('a', { href: `#settings/${id}`, textContent: label, className: id === focus ? 'active' : '' })));
   const body = el('div', { className: 'settings-body' });
+  const find = el('input', { type: 'search', className: 'settings-find', placeholder: 'Search settings (e.g. infill, PIN, webcam, theme, tooltip)', 'aria-label': 'Search settings' });
+  find.oninput = () => {
+    const q = find.value.trim().toLowerCase();
+    for (const sec of body.querySelectorAll('.settings-section')) {
+      const secHit = !q || sec.querySelector('h3')?.textContent.toLowerCase().includes(q);
+      let any = false;
+      for (const f of sec.querySelectorAll('.set-field, .set-check')) {
+        const hit = !q || secHit || f.textContent.toLowerCase().includes(q);
+        f.hidden = !hit;
+        any ||= hit;
+      }
+      sec.hidden = Boolean(q) && !secHit && !any && !sec.textContent.toLowerCase().includes(q);
+    }
+  };
   page.replaceChildren(
     el('div', { className: 'page-head' }, el('h2', { textContent: 'Settings' }),
-      el('p', { className: 'muted', textContent: 'Saved on the STL Tools server, so every computer and phone that opens it uses the same settings. Changes save as you make them.' })),
-    el('div', { className: 'settings-layout' }, nav, body));
+      el('p', { className: 'muted', textContent: 'Saved on the STL Tools server, so every computer and phone that opens it uses the same settings. Changes save as you make them.' }), find),
+    el('div', { className: 'settings-layout compact' }, nav, body));
 
   for (const [id, label] of ORDER) {
     const sec = el('section', { id: `set-${id}`, className: 'card settings-section' }, el('h3', { textContent: label }));

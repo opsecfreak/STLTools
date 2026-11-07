@@ -587,9 +587,18 @@ function openDesign(d) {
 }
 
 async function saveDesign() {
-  const suggested = state.design?.name ?? state.preset?.name ?? state.current.name;
-  const name = prompt(state.design ? 'Save changes as (keep the name to overwrite):' : 'Name for this design:', suggested);
-  if (!name) return;
+  // A changed preset or design saves as "<original name> MOD <your text>"; the original stays.
+  const base = state.design?.name ?? state.preset?.name ?? state.current.name;
+  const changed = state.preset && !state.design ? Object.keys(overridesFromForm()).length > 0 : Boolean(state.design);
+  let name;
+  if (changed) {
+    const mod = prompt(`Save your changes as a new design:\n"${base.replace(/ MOD .*$/, '')} MOD <your text>"\n\nType the text after MOD (for example "longer arm, M3"). ${state.design ? 'Leave it empty to overwrite this design.' : ''}`, '');
+    if (mod === null) return;
+    name = mod.trim() ? `${base.replace(/ MOD .*$/, '')} MOD ${mod.trim()}`.slice(0, 120) : state.design ? state.design.name : `${base} MOD`;
+  } else {
+    name = prompt('Name for this design:', base);
+    if (!name) return;
+  }
   const body = { name, generator: state.current.id, params: readForm(state.current), section: state.tab, presetId: state.preset?.id ?? null };
   try {
     const saved = state.design && name === state.design.name

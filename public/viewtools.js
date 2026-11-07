@@ -102,6 +102,25 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
   const lh = el('input', { type: 'number', min: 0.04, max: 1, step: 0.02, className: 'est-num', title: 'Layer height (mm)' });
   const infill = el('input', { type: 'number', min: 0, max: 100, step: 5, className: 'est-num', title: 'Infill (%)' });
   const mat = el('select', { title: 'Material' }, ...Object.entries(MATERIALS).map(([k, m]) => el('option', { value: k, textContent: m.name })));
+  // quality presets: Orca-style starting points, plus the shop's proven SV07 preset (sv07-alex-v3)
+  const QUALITY = {
+    draft: { label: '0.28 Draft', layerHeight: 0.28, walls: 2, shellLayers: 3, infill: 10 },
+    standard: { label: '0.20 Standard', layerHeight: 0.2, walls: 3, shellLayers: 4, infill: 15 },
+    fine: { label: '0.12 Fine', layerHeight: 0.12, walls: 3, shellLayers: 5, infill: 15 },
+    strong: { label: 'Strong (4 walls, 25 %)', layerHeight: 0.2, walls: 4, shellLayers: 5, infill: 25 },
+    'mts-v3': { label: 'MTS SV07 v3 (0.20, 3 walls, 15 %)', layerHeight: 0.2, walls: 3, shellLayers: 4, infill: 15 },
+  };
+  const quality = el('select', { title: 'Quality preset: sets layer height, walls, top/bottom layers and infill' }, el('option', { value: '', textContent: 'Quality...' }), ...Object.entries(QUALITY).map(([k, q]) => el('option', { value: k, textContent: q.label })));
+  quality.onchange = () => {
+    const q = QUALITY[quality.value];
+    if (!q) return;
+    const patch = { layerHeight: q.layerHeight, walls: q.walls, shellLayers: q.shellLayers, infill: q.infill };
+    Object.assign(settings().print, patch);
+    lh.value = q.layerHeight; infill.value = q.infill;
+    store.set('estimateQuality', quality.value);
+    draw();
+    saveSoon(patch);
+  };
   const out = el('div', { className: 'est-out' });
   const saveSoon = debounce((patch) => saveSettings({ print: patch }).catch((e) => toast(e.message, 'error')), 500);
 
@@ -115,7 +134,8 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
     viewer.setBed(t.profile.bed);
     if (!rows.length) { out.replaceChildren(el('span', { className: 'muted', textContent: 'Generate or open a part to see its print time and filament.' })); return; }
     const qty = rows.map((r) => r.qty ?? 1);
-    const e = estimateParts(rows.map((r) => r.stats), t.profile, cfg, qty);
+    const costPerKg = settings()?.filament?.[cfg.material] ?? cfg.filamentCostPerKg;
+    const e = estimateParts(rows.map((r) => r.stats), t.profile, { ...cfg, filamentCostPerKg: costPerKg }, qty);
     const pieces = qty.reduce((a, b) => a + b, 0);
     const misfit = e.parts.filter((p) => !p.fit.fits).length;
     const table = el('table', { className: 'est-table' },
@@ -140,7 +160,7 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
       el('div', { className: 'est-main' },
         el('strong', { textContent: `About ${formatDuration(e.seconds)}` }),
         el('span', { textContent: `${g(e.grams)} ${MATERIALS[cfg.material]?.name ?? ''}, ${(e.filamentMm / 1000).toFixed(2)} m` }),
-        e.cost !== null ? el('span', { textContent: `filament cost ${e.cost.toFixed(2)}` }) : null,
+        e.cost !== null ? el('span', { textContent: `filament cost ${e.cost.toFixed(2)} (${costPerKg}/kg)` }) : el('span', { className: 'muted', textContent: 'cost: set a price per kg in Settings > Filament prices' }),
         el('span', { className: 'muted', textContent: `incl. ${formatDuration(e.heatUp)} heat-up` })),
       misfit ? el('div', { className: 'est-warn', textContent: `${misfit} part${misfit > 1 ? 's do' : ' does'} not fit the ${t.profile.name} bed.` }) : null,
       table,
@@ -158,14 +178,14 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
     pick.replaceChildren(...opts.map((o) => el('option', { value: o.value, textContent: o.label })));
     pick.value = opts.some((o) => o.value === saved) ? saved : opts.some((o) => o.value === def) ? def : opts[0]?.value ?? '';
     const cfg = s?.print;
-    if (cfg) { lh.value = cfg.layerHeight; infill.value = cfg.infill; mat.value = cfg.material; }
+    if (cfg) { lh.value = cfg.layerHeight; infill.value = cfg.infill; mat.value = cfg.material; quality.value = store.get('estimateQuality') ?? ''; }
     draw();
   }
 
   pick.onchange = () => { store.set('estimateTarget', pick.value); draw(); };
   const change = (key, v) => { settings().print[key] = v; draw(); saveSoon({ [key]: v }); };
-  lh.oninput = () => { const v = Number(lh.value); if (v >= 0.04 && v <= 1) change('layerHeight', v); };
-  infill.oninput = () => { const v = Number(infill.value); if (v >= 0 && v <= 100) change('infill', v); };
+  lh.oninput = () => { const v = Number(lh.value); if (v >= 0.04 && v <= 1) { quality.value = ''; change('layerHeight', v); } };
+  infill.oninput = () => { const v = Number(infill.value); if (v >= 0 && v <= 100) { quality.value = ''; change('infill', v); } };
   mat.onchange = () => change('material', mat.value);
 
   box.replaceChildren(
@@ -174,7 +194,7 @@ export function createEstimateBox(box, viewer, { onShowPart } = {}) {
       el('label', {}, 'on ', pick),
       el('label', {}, 'layer ', lh, ' mm'),
       el('label', {}, 'infill ', infill, ' %'),
-      mat),
+      mat, quality),
     out);
   refreshTargets();
   return {
