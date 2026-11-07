@@ -96,7 +96,7 @@ Projects also carry a priority, status (idea, active, done) and linked parts fro
 
 Your own parts list: what you own, need to confirm, or plan to buy, with sizes and where the size came from.
 
-- **Load the example list**, or **Import components.json** (format: [seed/example/README.md](../seed/example/README.md)).
+- **Load this list** (MTS starter data), or **Import components.json** (format: [seed/mts-v1/README.md](../seed/mts-v1/README.md)).
 - Sizes marked `MEASURE` or with a conflict are flagged; presets for those parts keep the sizes empty until you type them here.
 - Each part lists the presets that fit it. Home > "My parts only" (or `own:owned` in search) filters presets to what you own.
 
@@ -125,7 +125,7 @@ From quick to deep:
 |---|---|---|
 | Keep your own values | Save design (My Designs), or a collection | above |
 | Many sizes of one part | a preset file with your sizes in `custom/presets/` | [presets/README.md](../presets/README.md) |
-| Your parts list | `components.json` import in My Parts | [seed/example/README.md](../seed/example/README.md) |
+| Your parts list | `components.json` import in My Parts | [seed/mts-v1/README.md](../seed/mts-v1/README.md) |
 | Your printer | a printer profile JSON in `custom/printer-profiles/` | [PRINTER-PROFILES.md](PRINTER-PROFILES.md) |
 | A new kind of part | a generator in `custom/generators/` (a small JavaScript file with parameters and a build function) | [custom/README.md](../custom/README.md), [src/generators/README.md](../src/generators/README.md) |
 | Share it with everyone | a pull request on GitHub | [CONTRIBUTING.md](../CONTRIBUTING.md), [EXTENDING.md](EXTENDING.md) |

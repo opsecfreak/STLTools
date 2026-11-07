@@ -131,7 +131,7 @@ Do these once, from any device.
    - The Pi checks the printer every 5 minutes (Settings > Printers > Background connection check) and reads its bed size, speed and acceleration from Klipper, so print estimates fit that printer.
    - The Printers page shows the printer's live webcam (the same camera Mainsail shows). On a Pi 4 with several viewers, set Settings > Printers > Webcam to **Snapshots** to save CPU and network.
 3. **No printer?** Settings > Printers > Printer features: **Off** hides the Printers page. Estimates still use the printer profile (Settings > Print estimates).
-4. **Your parts:** My Parts > Load the example list, or import your own `components.json` ([format](../seed/example/README.md)).
+4. **Your parts:** My Parts > Load this list (MTS starter data), or import your own `components.json` ([format](../seed/mts-v1/README.md)).
 5. **Your own designs:** add generators and presets in `/opt/stltools/custom` (see [custom/README.md](../custom/README.md)), then `sudo systemctl restart stltools`.
 
 ## 6. Pi with a screen (kiosk)

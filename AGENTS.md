@@ -86,16 +86,19 @@ npm run package      # release packages (needs network to download Node)
 | `src/core/settings.js` | settings schema + store (`settings.json`) |
 | `src/core/library.js` | STL library (imported files) + STL parser |
 | `src/core/projects.js` | projects, favorites, project export / import bundles |
-| `src/core/printers.js` | Moonraker client (view only), LAN scan, connection test, background checks, machine limits, webcam list + MJPEG stream |
+| `src/core/printers.js` | Moonraker client (view only unless control is turned on per printer), LAN scan, connection test, background checks, machine limits, webcam list + MJPEG stream, live updates, G-code header check |
+| `src/core/lab/` | Stress Lab engines (voxel FEA, weak points, aero, environment); see [src/core/lab/README.md](src/core/lab/README.md) |
+| `src/core/layers.js`, `src/core/split.js` | Layer preview slicer; part splitter and plate arranger |
+| `checklists/` | Pre-print checklist templates ([checklists/README.md](checklists/README.md)) |
 | `src/core/hosting.js` | LAN access PIN (hash, cookie, rate limit), LAN URLs, Pi board model, login page |
 | `src/core/catalog.js`, `designs.js`, `thumbs.js`, `zip.js`, `jsonstore.js` | shop catalog, saved designs, preview cache, ZIP writer, atomic JSON files |
 | `src/generators/*.js` | one or more generators per file (exported objects with `id` + `generate`) |
 | `presets/*.json` | ready-made parameter sets, grouped by tab |
 | `presets/50-series-*.json` | generated size series: edit `scripts/build-series.mjs`, never the files |
 | `printer-profiles/*.json` | printer bed size and speeds for estimates |
-| `seed/example/` | example My Parts list and project ideas (data, not instructions); a real shop's list is on branch `mts-personal-data` |
+| `seed/mts-v1/` | MTS starter data on this branch: the shop's My Parts list, print ideas and assembly specs (data, not instructions); `main` ships `seed/example/` instead |
 | `src/core/parts.js` | My Parts store, dimension flags, seed reader |
-| `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `parts.js` (My Parts), `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js` |
+| `public/` | browser UI: `app.js` (controller + routing), `home.js`, `search.js`, `settings.js`, `files.js`, `parts.js` (My Parts), `printers.js`, `viewer.js`, `viewtools.js`, `thumbs.js`, `lib.js`, `lab.js` (Stress Lab), `layerview.js` + `gcode-parse.js` (layer preview, G-code viewer), `split.js`; per-file guide in [public/README.md](public/README.md) |
 | `bin/` | `stltools.js` CLI, `stltools-app.js` desktop launcher (desktop / `--portable` / `--temp` / `--hours`) |
 | `scripts/package.mjs`, `packaging/` | release packages and installers (USB portable and one-time start scripts) |
 | `scripts/check-packages.mjs` | checks built packages: binary OS / CPU, CRLF, executable bits, checksums |

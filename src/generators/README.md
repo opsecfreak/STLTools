@@ -33,6 +33,13 @@ Files in this folder load automatically (no registry edit). Every exported objec
 | `tube-joint.js`, `tube-cap.js` | Joints, plugs, caps, feet | Flat-bottom sockets / end down |
 | `spacer.js`, `gps-mast.js`, `small-mounts.js`, `fc-parts.js` | Hardware, GPS, antenna, zip-tie, cameras, panels, FC adapter, grommets, dampers | Upright / plate down |
 | `robotics.js` | gear, pulley, stepper-mount, bearing-block, shaft-coupler, link-bar, knob, enclosure | Flat / base down |
+| `quad-modular.js` | quad-modular (assembly: plates, 4 arms, standoffs; bolt / insert / dovetail joints) | Plates and arms flat, standoffs upright |
+| `board-mounts.js` | mcu-holder, pi-camera-case (assembly), antenna-tube-holder | Floor down / face down / as placed |
+| `sealed-box.js` | sealed-box (box, gasket-groove lid, TPU gasket) | Open side up / groove up / flat |
+| `gimbals.js` | servo-gimbal, brushless-gimbal (assemblies) | Each part turned flat with `k.pose()` |
+| `modules.js` | sbc-case, sensor-bracket, lidar-mount | Base down |
+| `workshop.js` | cell-holder, shaft-support, drawer-unit (assembly), spool-holder, drone-arm, drill-guide | Flat / upright |
+| `fit-test.js` | Heat-set insert, hole and press-fit test coupons | Flat |
 
 ## Parameter schema
 

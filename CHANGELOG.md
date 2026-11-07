@@ -5,6 +5,7 @@
 Changed: **pick then tune**: a "Make:" chip row per designer tab narrows the presets to one kind of part and opens it in Simple view. **Simple / Standard / Expert** views (Expert shows each setting's name, range and default). **Customizable Home** (sections, order, your own "Make something" list; Settings > Home page). **Browse > Families**: results nested by part, then main size, then the next setting. **Filament per project** and per part, estimates split by filament, filament line in the ZIP README.
 Fixed: CI on Node 18 / 20 (live-update test in polling mode) and the Windows UI smoke wait for the settings page.
 Untested: very long Families trees on a slow phone.
+Docs: README covers the Stress Lab, wind tunnel, environment checks, the direct printer connection, layer preview and G-code viewer, with new screenshots. Folder guides (wiki): src/core, src/core/lab, public, checklists, printer-profiles, scripts, test; docs hub lists them. Broken `seed/example` links on this branch now point to `seed/mts-v1` (format section added there).
 
 ## 1.7.0-mts.1 - 2026-11-07 (MTS personal edition)
 
