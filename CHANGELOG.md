@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: new generator **Weatherproof Box (gasket lid)** (`sealed-box`): box, lid with a gasket groove, printed TPU gasket; the lid rests on the rim so the groove depth sets the squeeze (25 % default, editable); screws through ears outside the seal (thread into plastic or heat-set inserts); optional cable gland hole (PG7 / PG9 / PG11 / M12 / M16 / M20) on any wall; warnings when the rim is too narrow or the gland too big. 5 presets (Shop > Weatherproof boxes), including Pi 5 and small sensor boxes.
+Fixed: n/a.
+Untested: a real seal test (print the gasket in TPU 95A, close with a paper towel inside, spray with water); gland hole sizes against your glands.
+
 ## 1.4.1-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: Printers > Printer details: **Bed mesh** heat map of each saved profile (values, range, points more than 0.2 mm off their neighbours boxed in red: re-probe before saving) and **Logs** viewer (klippy.log, moonraker.log, crowsnest.log: last 400 KB, find, errors highlighted, key lines hidden). Both read-only (`GET /api/printers/:id/mesh`, `/logs[?file=]`).

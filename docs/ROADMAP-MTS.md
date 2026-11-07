@@ -21,7 +21,17 @@ Status key: **Done**, **Next**, **Planned**, **Decide** (needs Alex's word first
 | 1.0.1-mts.1 | Done, released | Public 1.0.1 + MTS parts list (98 parts), print ideas, assembly specs |
 | 1.1.0-mts.1 | Done, on `mts-personal` | Public 1.1.0 (USB / one-time / Pi 4-5 hosting, LAN PIN, optional printers, live webcam, printer-based estimates) + shop printer fixes (below) + SV07 v3 profile + this roadmap |
 | 1.2.0-mts.1 | Done, on `mts-personal` | Opt-in printer control with warning, confirm and log (moved up from the old 1.3 on your word); slicing research ([SLICING-RESEARCH.md](SLICING-RESEARCH.md)); materials data from eSUN, Polymaker and Prusament datasheets ([materials/](../materials/README.md)) |
-| **1.3.0-mts.1** | **Done, on `mts-personal`, not released yet** | **Stress Lab** first (your word 2026-11-07: "start the stress lab and wind tunnel and environment stuff"): stress test with click-placed anchors and loads, weak points and supports, wind tunnel (3D), environment, materials and physics ([STRESS-LAB.md](STRESS-LAB.md)). The rest of the old 1.3 list (pick-then-tune UI, units, settings search, estimate presets, MOD saves, browse tree, collections) follows in 1.3.x. |
+| 1.3.0-mts.1 | Done | **Stress Lab** (your word 2026-11-07): stress test with click-placed anchors and loads, weak points and supports, wind tunnel (3D), environment, materials and physics ([STRESS-LAB.md](STRESS-LAB.md)) |
+| 1.3.1 / 1.3.2-mts.1 | Done | Save as "name MOD text", estimate quality presets, filament price per material, settings search and compact layout, sizes in mm / cm / in |
+| 1.4.0 / 1.4.1-mts.1 | Done | Split / arrange for the printer bed (alignment pins, plate packing, per-plate estimates); bed mesh heat map and log viewer |
+| **1.4.2-mts.1** | **Done, on `mts-personal`, not released yet** | Weatherproof box with TPU gasket and cable gland hole |
+
+Still open from the list (next, in this order):
+1. Pick-then-tune flow and Simple / Standard / Expert views; customizable Home; browse tree with size families nested (tube clamps by tube size) and a better search; projects with a filament per project; collections STL-only (**Decide** A / B / C).
+2. Parts: modular quad frames (arms, plates, latches, M2-M4 inserts, nylon standoffs, cable routing, motor mounts); XIAO family, ESP32 DevKit, STM32 Blue / Black Pill, Pi Pico mounts; Pi camera housings; antenna mounts (datasheet sizes with sources, the rest MEASURE).
+3. Printer depth: websocket live updates and console replies, profile library with .ini / Orca JSON import, pre-print checklist page.
+4. Slicing preview: own layer preview and a G-code viewer (OrcaSlicer CLI only on your word).
+5. Stress Lab extras: named physics profiles, save a load case with a design, more material brands (Overture, SUNLU, Hatchbox, Elegoo).
 
 1.1.0-mts.1 shop printer fixes (from your 192.168.1.121 report):
 - The connection test failed with "Printer address is required" because Test connection ran with an empty field. The scan had found the printer (`mkspi` at `http://192.168.1.121`). Now: an empty field explains what to do, scan results have **Use and test**, port 7125 is tried by itself if port 80 does not forward the API, the name comes from Mainsail ("MTS-UAV SHOP PRINTER"), and `mkspi` selects the SV07 profile.

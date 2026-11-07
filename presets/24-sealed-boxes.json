@@ -1,0 +1,107 @@
+{
+  "group": "Weatherproof boxes",
+  "section": "shop",
+  "presets": [
+    {
+      "id": "sealed-box-100x60x40",
+      "name": "Weatherproof box 100 x 60 x 40, gasket lid",
+      "generator": "sealed-box",
+      "description": "Box, gasket-groove lid and TPU gasket. Inside sizes are a starting point: measure your board and connectors. Gasket squeeze 25 %: test with your TPU.",
+      "tags": [
+        "box",
+        "outdoor",
+        "gasket"
+      ],
+      "params": {},
+      "verify": [
+        "compression"
+      ]
+    },
+    {
+      "id": "sealed-box-100x60x40-pg9",
+      "name": "Weatherproof box 100 x 60 x 40, PG9 cable gland",
+      "generator": "sealed-box",
+      "description": "Box, gasket-groove lid and TPU gasket. Inside sizes are a starting point: measure your board and connectors. Gasket squeeze 25 %: test with your TPU.",
+      "tags": [
+        "box",
+        "outdoor",
+        "gasket",
+        "cable gland"
+      ],
+      "params": {
+        "gland": "PG9"
+      },
+      "verify": [
+        "compression"
+      ]
+    },
+    {
+      "id": "sealed-box-150x100x60-m16",
+      "name": "Weatherproof box 150 x 100 x 60, M16 gland, inserts",
+      "generator": "sealed-box",
+      "description": "Box, gasket-groove lid and TPU gasket. Inside sizes are a starting point: measure your board and connectors. Gasket squeeze 25 %: test with your TPU.",
+      "tags": [
+        "box",
+        "outdoor",
+        "gasket",
+        "cable gland",
+        "heat-set insert"
+      ],
+      "params": {
+        "innerWidth": 150,
+        "innerDepth": 100,
+        "innerHeight": 60,
+        "gland": "M16",
+        "screwFix": "insert"
+      },
+      "verify": [
+        "compression",
+        "insertHole"
+      ]
+    },
+    {
+      "id": "sealed-box-pi5",
+      "name": "Weatherproof box for a Raspberry Pi 5 (inside 95 x 65 x 35), PG7 gland",
+      "generator": "sealed-box",
+      "description": "Box, gasket-groove lid and TPU gasket. Inside sizes are a starting point: measure your board and connectors. Gasket squeeze 25 %: test with your TPU.",
+      "tags": [
+        "box",
+        "outdoor",
+        "pi 5",
+        "raspberry pi"
+      ],
+      "params": {
+        "innerWidth": 95,
+        "innerDepth": 65,
+        "innerHeight": 35,
+        "gland": "PG7"
+      },
+      "verify": [
+        "compression"
+      ]
+    },
+    {
+      "id": "sealed-box-esp32-small",
+      "name": "Small weatherproof sensor box (inside 60 x 40 x 25), PG7 gland",
+      "generator": "sealed-box",
+      "description": "Box, gasket-groove lid and TPU gasket. Inside sizes are a starting point: measure your board and connectors. Gasket squeeze 25 %: test with your TPU.",
+      "tags": [
+        "box",
+        "outdoor",
+        "sensor",
+        "esp32",
+        "xiao"
+      ],
+      "params": {
+        "innerWidth": 60,
+        "innerDepth": 40,
+        "innerHeight": 25,
+        "gland": "PG7",
+        "glandWall": "front"
+      },
+      "verify": [
+        "compression"
+      ]
+    }
+  ]
+}
