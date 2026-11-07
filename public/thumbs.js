@@ -31,16 +31,21 @@ export function thumbImg(generator, params, alt = '') {
   return img;
 }
 
+const pendingByKey = new Map(); // key -> item still waiting for a URL (with the cards that want it)
+
 function request(img) {
   const key = JSON.stringify([img.dataset.generator, img._params]);
   if (known.has(key)) {
+    pendingByKey.get(key)?.imgs.push(img);
     known.get(key).then((url) => show(img, url));
     return;
   }
-  let resolve;
-  known.set(key, new Promise((r) => { resolve = r; }));
+  let done;
+  known.set(key, new Promise((r) => { done = r; }));
   known.get(key).then((url) => show(img, url));
-  pendingLookups.push({ generator: img.dataset.generator, params: img._params, resolve });
+  const item = { generator: img.dataset.generator, params: img._params, key, imgs: [img], resolve: (url) => { pendingByKey.delete(key); done(url); } };
+  pendingByKey.set(key, item);
+  pendingLookups.push(item);
   clearTimeout(lookupTimer);
   lookupTimer = setTimeout(flushLookups, 60);
 }
@@ -72,6 +77,8 @@ async function pump() {
   rendering = true;
   while (renderQueue.length) {
     const item = renderQueue.shift();
+    // the page with these cards was left: do not spend seconds of WebGL on them (they ask again when shown)
+    if (item.imgs && !item.imgs.some((i) => i.isConnected)) { known.delete(item.key); item.resolve(null); continue; }
     try {
       if (item.custom) { item.resolve(await item.custom()); continue; }
       thumbnailer ??= createThumbnailer();
