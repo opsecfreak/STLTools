@@ -5,6 +5,7 @@
 // printer and accepts the warning; each action asks for confirmation and is logged
 // on the server (core/printers.js control()).
 import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete, printersVisible, toast } from './lib.js';
+import { openGcode, pickGcodeFile } from './layerview.js';
 
 let timer = null;
 let alive = 0; // render generation; stops polling when the page changes
@@ -208,6 +209,7 @@ export async function renderPrinters(page, focusId = null) {
         files.replaceChildren(el('h3', { textContent: `Files on the printer (${list.length})` }), grid);
         for (const f of list.slice(0, 60)) {
           const tile = el('div', { className: 'file-tile' }, el('div', { className: 'file-thumb' }), el('div', { className: 'file-name', textContent: f.path }), el('div', { className: 'muted', textContent: `${fmtBytes(f.size)}, ${fmtAgo(f.modified)}` }));
+          tile.append(el('button', { type: 'button', className: 'small secondary', textContent: 'View', title: 'Open in the G-code viewer (layers, features, time per layer)', onclick: () => openGcode({ printerId: p.id, file: f.path, title: `G-code: ${f.path} on ${p.name}` }) }));
           if (p.control?.enabled) tile.append(el('button', { type: 'button', className: 'small', textContent: 'Print', title: 'Start this file on the printer (control mode)', onclick: () => doControl(p, 'start', { filename: f.path }, `Start printing ${f.path} on ${p.name}? Check the bed is clear and the right filament is loaded.${checklistDone.get(`${p.id}|${f.path}`) ? '' : '\n\nThe pre-print checklist for this file is NOT saved yet (Pre-print checklist box).'}`) }));
           grid.append(tile);
           api('GET', `/api/printers/${p.id}/metadata?filename=${encodeURIComponent(f.path)}`).then((m) => {
@@ -552,7 +554,7 @@ export async function renderPrinters(page, focusId = null) {
     input.onchange = () => send([...input.files]);
     const box = el('div', { className: 'card upload-box' }, el('h3', { textContent: 'Upload G-code' }),
       el('div', { className: 'dropzone', textContent: 'Drop G-code here, or ', onclick: () => input.click() }, el('u', { textContent: 'choose files' })),
-      el('label', {}, 'Folder ', folder), p.control?.enabled ? el('label', { className: 'check-inline' }, andPrint, ' Start printing after upload (one file, asks first)') : null, msg);
+      el('label', {}, 'Folder ', folder), el('button', { type: 'button', className: 'secondary small', textContent: 'View a G-code file first', onclick: () => pickGcodeFile() }), p.control?.enabled ? el('label', { className: 'check-inline' }, andPrint, ' Start printing after upload (one file, asks first)') : null, msg);
     box.ondragover = (e) => { e.preventDefault(); box.classList.add('drag'); };
     box.ondragleave = () => box.classList.remove('drag');
     box.ondrop = (e) => { e.preventDefault(); box.classList.remove('drag'); send([...e.dataTransfer.files]); };

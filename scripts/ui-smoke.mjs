@@ -85,6 +85,17 @@ try {
   const status = await page.locator('#status').innerText();
   check(/part/.test(status) && !/^Generating/.test(status) && ((await page.locator('#dlStl').getAttribute('href')) !== before || await page.locator('#zipAll').isVisible()), `changing the generator regenerates the 3D view (${other}: ${status})`);
 
+  // 2a. layer preview from the designer: 2D layer, time chart, 3D stack
+  await page.locator('#toLayers').click();
+  await page.waitForFunction(() => /\d+ layers/.test(document.querySelector('.layer-overlay')?.innerText ?? ''), null, { timeout: 30000 }).catch(() => {});
+  check(/\d+ layers/.test(await page.locator('.layer-overlay').innerText()), 'layer preview opens with layers and times');
+  check(await page.locator('.layer-legend label', { hasText: 'Infill' }).count() + await page.locator('.layer-legend label', { hasText: 'Solid skin' }).count() >= 1, 'layer preview shows feature colors');
+  await page.locator('.layer-overlay button', { hasText: 'Stack (3D)' }).click();
+  await page.waitForSelector('.layer-gl canvas', { timeout: 15000 }).catch(() => {});
+  check(await page.locator('.layer-gl canvas').count() === 1, 'layer stack in 3D');
+  await page.locator('.layer-overlay button', { hasText: 'Layer (top view)' }).click();
+  await page.locator('.layer-overlay button', { hasText: 'Close' }).click();
+
   // 2b. Stress Lab from the designer: quick setup, solve in the worker, every mode opens
   await page.locator('#toLab').click();
   await page.waitForSelector('.lab-status', { timeout: 20000 });
@@ -130,6 +141,11 @@ try {
   await page.locator('.insights-box button', { hasText: 'Logs' }).click();
   await page.waitForSelector('.insights-box .cfg-view div', { timeout: 10000 });
   check(/MCU version/.test(await page.locator('.insights-box .cfg-view').innerText()), 'log viewer shows klippy.log');
+  // 1.6: G-code viewer on a printer file
+  await page.locator('.file-tile button', { hasText: 'View' }).first().click();
+  await page.waitForFunction(() => /\d+ layers/.test(document.querySelector('.layer-overlay')?.innerText ?? ''), null, { timeout: 20000 }).catch(() => {});
+  check(/\d+ layers.*PrusaSlicer/.test(await page.locator('.layer-overlay').innerText()), 'G-code viewer reads a printer file');
+  await page.locator('.layer-overlay button', { hasText: 'Close' }).click();
   // 1.5: live updates, console, pre-print checklist with the header check, print log
   await page.waitForSelector('.status-box .live-dot.on', { timeout: 10000 }).catch(() => {});
   check(await page.locator('.status-box .live-dot.on').count() === 1, 'live updates on (event stream from the printer)');

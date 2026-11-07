@@ -156,6 +156,10 @@ Templates are JSON files in the `checklists` folder (`id`, `name`, `printerModel
 - `http://<ip>` (port 80) is Mainsail's web server; it forwards the Moonraker API. If it does not, the test tries `<ip>:7125` (Moonraker's own port) by itself and keeps the address that works.
 - The printer's name comes from Mainsail (Settings > General > Printer name) when it is set; the model is guessed from the Klipper host name (`mkspi`, the SV07's MKS Pi host board, or a name with `sv07` / `sovol`).
 
+## G-code viewer (1.6)
+
+Each file under **Files on the printer** has **View**: STL Tools downloads the file from the printer (read-only GET) and shows it layer by layer with the slicer's feature colors, travel, the time of every layer and the slicer's own estimate. **View a G-code file first** in the upload box opens a file from this computer before you upload it. Guide: [USER-GUIDE.md](USER-GUIDE.md#layer-preview-and-g-code-viewer-mts-edition).
+
 ## Upload G-code
 
 1. Slice the STL in your slicer (OrcaSlicer, Sovol slicer, PrusaSlicer, Cura) with your SV07 profile.

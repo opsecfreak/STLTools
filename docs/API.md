@@ -135,6 +135,8 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET | `/api/printers/:id/health` | | `{ checks: [{ level: ok\|info\|warn, title, detail }], facts }` from read-only Klipper / Moonraker queries |
 | GET | `/api/printers/:id/mesh` | | `{ loaded, min, max, probed, profiles: { name: { points[][], params } } }` |
 | GET | `/api/printers/:id/logs[?file=klippy.log]` | | log list, or `{ path, bytes, truncated, text }` (last 400 KB, secrets hidden) |
+| POST | `/api/layers` | `{ job, part?, library?, profile?, layerHeight?, walls?, shellLayers?, infill? }` (missing values from Settings > Print estimates) | `{ part, profile, layerHeight, lineWidth, bounds, layers: [{ z, outer: [[x,y,...]], inner, skin: [x1,y1,x2,y2,...], infill, seconds, mm }], totals, note }`; 404 expired job, 400 over 3000 layers |
+| GET | `/api/printers/:id/gcode?file=` | | the whole G-code file from the printer as text (read-only, up to 80 MB; 413 above) |
 | POST | `/api/split` | `{ job, parts?, qty?: { part: n }, library?, profile?, joint: pins\|filament\|none, pinDiameter, pinLength, clearance, spacing, margin }` | `{ zip, pieces[], plates: [{ name, url, items, estimate }], cuts, pins, readme }` |
 | GET / POST | `/api/materials` | material | datasheet + your materials / new material (201) |
 | PUT / DELETE | `/api/materials/:id` | partial material | your copy / 204 (datasheet entries cannot be deleted) |

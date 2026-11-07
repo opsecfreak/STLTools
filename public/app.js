@@ -19,6 +19,7 @@ import { initParts, renderParts, refreshParts, ownershipOf, ownBadge } from './p
 import { initBrowse, renderBrowse } from './browse.js';
 import { initLab, renderLab, stopLab } from './lab.js';
 import { openSplit } from './split.js';
+import { openPartLayers } from './layerview.js';
 
 await loadSettings().catch(() => null);
 await refreshPrinterVisibility();
@@ -77,6 +78,7 @@ function renderResult(result) {
   if (result.zip) $('zipAll').href = result.zip;
   $('toLab').hidden = false;
   $('toSplit').hidden = false;
+  $('toLayers').hidden = false;
   $('dlStl').hidden = result.parts.length !== 1;
   if (result.parts.length === 1) { $('dlStl').href = result.parts[0].url; $('dlStl').download = result.parts[0].filename; }
   estimate.update(result.parts);
@@ -845,6 +847,13 @@ $('toSplit').onclick = () => {
   const r = state.lastResult;
   if (!r?.job) { toast('Generate a part first', 'error'); return; }
   openSplit({ job: r.job, parts: r.parts.map((p) => ({ name: p.name, qty: p.qty ?? 1 })), viewer, profile: estimate.profile() });
+};
+
+$('toLayers').onclick = () => {
+  const r = state.lastResult;
+  if (!r?.job) { toast('Generate a part first', 'error'); return; }
+  const shown = (state.shown ?? []).length === 1 ? state.shown[0].name : null;
+  openPartLayers({ job: r.job, parts: r.parts.map((p) => p.name), part: shown && r.parts.some((p) => p.name === shown) ? shown : r.parts[0].name, profile: estimate.profile(), title: `Layer preview: ${state.current?.name ?? 'part'}` });
 };
 
 initLab({

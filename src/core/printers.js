@@ -774,6 +774,17 @@ export function createPrinters({ dataDir }) {
      * motion caps, caps restored at the end, temperatures, max volumetric speed.
      * -> { file, checks: [{ ok, title, detail }], found: {...} }
      */
+    /** Whole G-code file from the printer, for the G-code viewer (read-only; up to 80 MB). -> { path, size, stream } */
+    async gcodeFile(id, filename) {
+      const p = await find(id);
+      const f = String(filename ?? '');
+      if (!GCODE_EXT.test(f) || f.includes('..') || f.startsWith('/')) throw new CatalogError('Not a G-code file path');
+      const r = await mr(p, `/server/files/gcodes/${f.split('/').map(encodeURIComponent).join('/')}`, { raw: true });
+      const size = Number(r.headers.get('content-length') ?? 0);
+      if (size > 80 * 1024 * 1024) { r.body?.cancel?.(); throw new CatalogError(`${f} is ${(size / 1048576).toFixed(0)} MB: the viewer opens files up to 80 MB`, 413); }
+      return { path: f, size, body: r.body };
+    },
+
     async gcodeCheck(id, filename, rules = {}) {
       const p = await find(id);
       const f = String(filename ?? '');

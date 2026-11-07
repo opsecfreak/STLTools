@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: **Layers** (designer, STL Files): a layer preview of the part from cross-sections (outer wall, inner walls, solid top / bottom skin, infill at 45 / -45 degrees) with the time of every layer, using the estimate box printer's speeds and flow cap; layer height, walls, top / bottom layers and infill editable in the window (`POST /api/layers`, src/core/layers.js). **G-code viewer**: printer files (**View**, `GET /api/printers/:id/gcode`, read-only), local files (Printers upload box, Import page); feature colors from ;TYPE: / ; FEATURE: comments, arcs, relative or absolute E, z-hops, travel, slicer estimate from the header. Both: 2D layer view (zoom, pan, layer below in gray), 3D stack, slider, arrow keys, Play, time-per-layer chart.
+Fixed: n/a.
+Untested: very large G-code files (tested to a few MB; 80 MB limit); Cura and Sovol slicer files beyond the comment formats listed.
+
 ## 1.5.0-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: Printers page **live updates** (Moonraker websocket, read-only, passed to the page as server-sent events; 1 s polling on Node < 22) with a Live dot and a read-only **Console** box; **Pre-print checklist** (SV07 template from the shop guidelines, generic for other printers) with an automatic **G-code header check** (heat-first order, START_PRINT, job and restore speed caps, temperatures, max flow) and a print log; **profile import** from a PrusaSlicer .ini or OrcaSlicer .json (Settings > Print estimates). Setting: Settings > Printers > Live updates.

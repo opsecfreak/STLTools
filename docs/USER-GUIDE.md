@@ -54,6 +54,13 @@ The estimate box under the 3D view shows time, grams, meters and (with a price s
 
 **Split / arrange** next to Download: parts larger than your printer's bed (chosen in the estimate box) are cut into equal pieces with alignment holes (printed pins, filament pins or glue only), and every piece is packed onto as few plates as possible with a time and filament estimate per plate. Download plates, pieces and an assembly README as one ZIP. Made for the plane wings first; works on any generated part or imported STL.
 
+## Layer preview and G-code viewer (MTS edition)
+
+- **Layers** next to Download (designer tabs) or on an STL file in STL Files: the part cut into layers at your layer height, with outer wall, inner walls, solid skin (top and bottom) and infill in color, and the time of every layer. Change layer height, walls, top / bottom layers and infill in the window and press Update. It is a preview from cross-sections, not G-code: no seams, travel, supports or bridges.
+- **G-code viewer**: Printers > a file > **View** (read-only download from the printer), Printers > Upload G-code > **View a G-code file first**, or Import > **Open a G-code file**. Colors come from the slicer's feature comments (OrcaSlicer / Sovol slicer, PrusaSlicer, Cura). Travel moves can be shown.
+- Both: **Layer (top view)** with the layer below in gray (wheel zoom, drag pan, double-click reset) or **Stack (3D)** up to the chosen layer; slider, arrow keys, Play; a bar chart of time per layer (click to jump); feature toggles with total meters.
+- Times ignore acceleration, so they are lower than the slicer's. The G-code viewer shows the slicer's own estimate from the file next to it.
+
 ## Stress Lab (MTS edition)
 
 **Stress test** next to Download, or the **Stress Lab** tab: forces, torques and g-loads on the 3D model, weak points and supports, a wind tunnel for wings and bodies, heat, sun, rain and drop checks. Guide: [STRESS-LAB.md](STRESS-LAB.md).

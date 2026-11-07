@@ -8,6 +8,7 @@
 //   *.json with format "stltools-backup"   -> refused with an explanation (restore = copy the data folder)
 import { el, api, putFile, toast, confirmDelete, fmtBytes, fmtAgo, viewMode, store, debounce } from './lib.js';
 import { cardList, search, addToProject, starButton } from './home.js';
+import { openPartLayers, pickGcodeFile } from './layerview.js';
 
 let ctx = null; // { state, refreshLibrary, refreshDesigns }
 export function initFiles(context) { ctx = context; }
@@ -77,6 +78,9 @@ export function renderImport(page) {
       el('section', { className: 'card' }, el('h3', { textContent: 'Project files' }),
         el('p', { className: 'muted', textContent: 'A .stltools-project.json file from "Export project file" on another computer. It carries its saved designs and imported STLs.' }),
         dropzone('Import a project', '.json', go)),
+      el('section', { className: 'card' }, el('h3', { textContent: 'G-code viewer' }),
+        el('p', { className: 'muted', textContent: 'Open a sliced .gcode file to see it layer by layer: walls, infill, supports, travel and the time of every layer. Nothing is uploaded or stored.' }),
+        el('button', { type: 'button', className: 'secondary', textContent: 'Open a G-code file', onclick: () => pickGcodeFile() })),
       el('section', { className: 'card' }, el('h3', { textContent: 'Design files' }),
         el('p', { className: 'muted', textContent: 'A .params.json file from "Export settings file", or a My Designs export (a list).' }),
         dropzone('Import designs', '.json', go))),
@@ -140,6 +144,7 @@ export function renderStlPane(pane, e, { onChange, onDelete }) {
     el('div', { className: 'actions' },
       el('a', { className: 'button', href: `/api/library/${e.id}.stl`, download: e.filename, textContent: 'Download STL' }),
       el('button', { type: 'button', className: 'secondary', textContent: 'Add to project', onclick: () => addToProject({ kind: 'stl', ref: e.id, name: e.name }) }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Layers', title: 'Layer preview: walls, skin, infill and time per layer', onclick: () => openPartLayers({ library: e.id, title: `Layer preview: ${e.name}` }) }),
       el('button', { type: 'button', className: 'secondary', textContent: 'Delete', onclick: async () => {
         if (!confirmDelete(`Delete ${e.name} from the STL library? Projects that use it lose this part.`)) return;
         try { await api('DELETE', `/api/library/${e.id}`); onDelete?.(); } catch (err) { toast(err.message, 'error'); }

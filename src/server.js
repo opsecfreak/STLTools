@@ -74,6 +74,7 @@ import { createCollections } from './core/collections.js';
 import { createMaterials } from './core/materials.js';
 import { createJsonFile } from './core/jsonstore.js';
 import { splitToFit, placeOnBed, arrange } from './core/split.js';
+import { sliceLayers } from './core/layers.js';
 import { createScope } from './core/kernel.js';
 import { parseStl } from './core/library.js';
 import { randomBytes } from 'node:crypto';
@@ -358,6 +359,34 @@ async function projectEstimate(statsList, qty) {
  * every piece (and the alignment pins) onto as few plates as possible.
  * -> { zip, pieces: [...], plates: [{ name, url, filename, count, estimate }], cuts, pins, bed, profile }
  */
+/** Layer preview of one generated part or library STL (src/core/layers.js). */
+async function layerPreview(b) {
+  const cfg = await settings.get();
+  const profile = b.profile ? getProfile(b.profile) : await activeProfile(cfg);
+  if (!profile) throw new CatalogError('No printer profile');
+  let src;
+  if (b.library) src = { name: (await library.get(b.library)).name, buf: await library.file(b.library) };
+  else {
+    const job = jobs.get(String(b.job ?? ''));
+    if (!job) throw new CatalogError('Generate the part again (the job expired)', 404);
+    const name = b.part && job.files.has(b.part) ? b.part : [...job.files.keys()][0];
+    src = { name, buf: job.files.get(name) };
+  }
+  const k = createScope();
+  try {
+    const soup = parseStl(src.buf);
+    const solid = k.fromTriangles(soup.positions, soup.indices);
+    const pick = (v, d) => (v === undefined || v === null || v === '' ? d : Number(v));
+    const r = sliceLayers(k, solid, {
+      layerHeight: pick(b.layerHeight, cfg.print.layerHeight), walls: pick(b.walls, cfg.print.walls), shellLayers: pick(b.shellLayers, cfg.print.shellLayers), infill: pick(b.infill, cfg.print.infill),
+    }, profile);
+    r.totals.seconds = Math.round(r.totals.seconds * Math.max(0.1, Number(cfg.print.timeFactor ?? 1)));
+    return { part: src.name, profile: profile.id, ...r };
+  } catch (err) {
+    throw err instanceof CatalogError ? err : new CatalogError(err.message);
+  } finally { k.free(); }
+}
+
 async function splitAndArrange(b) {
   const cfg = await settings.get();
   const profile = b.profile ? getProfile(b.profile) : await activeProfile(cfg);
@@ -587,6 +616,7 @@ async function route(req, res) {
   }
   if (path === '/api/estimate-targets' && req.method === 'GET') return send(res, 200, await estimateTargets());
   if (path === '/api/split' && req.method === 'POST') return send(res, 200, await splitAndArrange(await readBody(req)));
+  if (path === '/api/layers' && req.method === 'POST') return send(res, 200, await layerPreview(await readBody(req)));
 
   // ---- settings, printer profiles, estimates (v6) ----
   if (path === '/api/settings') {
@@ -863,6 +893,14 @@ async function route(req, res) {
     if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
     if (sub === 'machine') return send(res, 200, await printers.machine(id));
     if (sub === 'health') return send(res, 200, await printers.health(id));
+    if (sub === 'gcode') {
+      const g = await printers.gcodeFile(id, url.searchParams.get('file'));
+      res.writeHead(200, { 'content-type': 'text/plain; charset=utf-8', ...(g.size ? { 'content-length': g.size } : {}), 'cache-control': 'no-store' });
+      const reader = g.body.getReader();
+      res.on('close', () => reader.cancel().catch(() => {}));
+      for (;;) { const { done, value } = await reader.read(); if (done) break; if (!res.write(value)) await new Promise((ok) => res.once('drain', ok)); }
+      return res.end();
+    }
     if (sub === 'gcodecheck') {
       const tpl = await checklistFor(id, url.searchParams.get('checklist'));
       return send(res, 200, { ...(await printers.gcodeCheck(id, url.searchParams.get('file'), tpl?.header ?? {})), checklist: tpl?.id ?? null });
