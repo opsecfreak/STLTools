@@ -55,7 +55,15 @@ jobs:
         run: npm test
       - name: Build packages
         if: steps.tag.outputs.mode != 'skip'
-        run: node scripts/package.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # release notes cover every version since the previous release of this edition
+          TAG="${{ steps.tag.outputs.tag }}"
+          case "$TAG" in *-mts.*) PAT='-mts\.' ;; *) PAT='^v[0-9]+\.[0-9]+\.[0-9]+$' ;; esac
+          PREV=$(gh release list --limit 50 --json tagName -q '.[].tagName' | grep -E "$PAT" | grep -vx "$TAG" | head -1 || true)
+          echo "Previous release: ${PREV:-none}"
+          RELEASE_NOTES_SINCE="$PREV" node scripts/package.mjs
       - name: npm package file (install with npm install -g <release link>)
         if: steps.tag.outputs.mode != 'skip'
         run: |

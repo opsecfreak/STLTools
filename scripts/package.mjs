@@ -210,7 +210,12 @@ for (const id of wanted) {
 log('checksums and release notes');
 writeFileSync(join(DIST, 'SHA256SUMS.txt'), assets.map((a) => `${sha256(join(DIST, a))}  ${a}`).join('\n') + '\n');
 const changelog = readFileSync(join(ROOT, 'CHANGELOG.md'), 'utf8');
-const latest = changelog.split(/\n(?=## )/).find((s) => s.startsWith('## ')) ?? '';
+// Every section since the previous release (RELEASE_NOTES_SINCE=1.4.2-mts.1, set by the release
+// workflow), so versions that were never released on their own still show up. Default: newest only.
+const sections = changelog.split(/\n(?=## )/).filter((s) => s.startsWith('## '));
+const since = process.env.RELEASE_NOTES_SINCE?.replace(/^v/, '');
+const stop = since ? sections.findIndex((s) => s.startsWith(`## ${since} `)) : -1;
+const latest = (stop > 0 ? sections.slice(0, stop) : sections.slice(0, 1)).map((s) => s.trim()).join('\n\n');
 const notes = `${latest.trim()}
 
 ## Download
