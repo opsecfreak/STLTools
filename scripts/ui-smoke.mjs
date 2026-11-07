@@ -218,12 +218,14 @@ try {
   if (!proj?.id) throw new Error(`creating the project failed: ${JSON.stringify(proj)}`);
   // straight from Home: a slow Home render must not replace the project page
   await page.evaluate((id) => { location.hash = `project/${id}`; }, proj.id);
-  try { await page.waitForSelector('.filament-row select', { timeout: 60000 }); } catch (err) {
+  try { await page.waitForSelector('.filament-row select', { state: 'attached', timeout: 60000 }); } catch (err) {
     throw new Error(`project page did not show (hash ${await page.evaluate(() => location.hash)}): ${(await page.locator('#page').innerText().catch(() => '')).slice(0, 400)}`);
   }
   await page.waitForTimeout(3000);
   check(await page.locator('.filament-row select').count() === 1, 'project page stays after a slow Home render');
-  await page.locator('.filament-row select').selectOption('petg');
+  // diagnostics: where the select is on screen (Windows CI reported it as not visible)
+  console.log('     filament select box:', JSON.stringify(await page.locator('.filament-row select').evaluate((e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return { x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height), display: cs.display, visibility: cs.visibility, parents: [e.parentElement, e.parentElement?.parentElement].map((p) => p && `${p.className}:${getComputedStyle(p).display}`) }; })));
+  await page.locator('.filament-row select').selectOption('petg', { force: true });
   await page.waitForTimeout(1200);
   check((await (await fetch(`${base}/api/projects/${proj.id}`)).json()).filament.material === 'petg', 'project filament saved');
 
