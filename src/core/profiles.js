@@ -62,6 +62,16 @@ function loadDir(dir, strict, out, seen) {
   }
 }
 
+// Profiles imported in the app (<data>/printer-profiles.json), set by the server at start-up.
+let userProfiles = [];
+export function setUserProfiles(list) {
+  userProfiles = [];
+  for (const p of list ?? []) {
+    try { userProfiles.push({ ...validateProfile(p), custom: true, imported: true }); } catch (err) { issues.push(`Imported profile ${p?.id}: ${err.message}`); }
+  }
+  cache = null;
+}
+
 export function listProfiles() {
   if (!cache) {
     issues = [];
@@ -69,6 +79,7 @@ export function listProfiles() {
     const seen = new Set();
     loadDir(join(ROOT, 'printer-profiles'), true, out, seen);
     for (const dir of CUSTOM_DIRS) loadDir(join(dir, 'printer-profiles'), false, out, seen);
+    for (const p of userProfiles) if (!seen.has(p.id)) { seen.add(p.id); out.push(p); }
     // named printers first (Sovol SV07...), generic starting points last
     cache = out.sort((a, b) => (a.maker === 'Generic') - (b.maker === 'Generic') || a.name.localeCompare(b.name));
   }
@@ -82,4 +93,61 @@ export function getProfile(id) {
 export function profileIssues() {
   listProfiles();
   return [...issues];
+}
+
+/**
+ * Build a printer profile from slicer settings you already use:
+ *   format 'ini'  PrusaSlicer / SuperSlicer export (key = value lines, e.g. sv07-alex-v3.ini)
+ *   format 'orca' OrcaSlicer JSON (machine, process or filament file; several can be merged by
+ *                 importing one after another into the same id)
+ * Only the values the file contains are taken; speeds given as % are skipped.
+ * -> { profile, used: [key...], skipped: [key...] }
+ */
+export function profileFromSlicer({ format, text, id, name, base }) {
+  const used = [], skipped = [];
+  let kv = {};
+  if (format === 'ini') {
+    for (const line of String(text).split(/\r?\n/)) {
+      const m = line.match(/^\s*([a-z0-9_]+)\s*=\s*(.*?)\s*$/i);
+      if (m) kv[m[1]] = m[2];
+    }
+  } else if (format === 'orca') {
+    const j = JSON.parse(text);
+    for (const [k, v] of Object.entries(j)) kv[k] = Array.isArray(v) ? v[0] : v;
+  } else throw new Error('format must be ini or orca');
+  const num = (k) => {
+    if (kv[k] === undefined) return undefined;
+    const sv = String(kv[k]);
+    if (sv.includes('%')) { skipped.push(`${k} (${sv}: percent)`); return undefined; }
+    const v = Number(sv);
+    if (!Number.isFinite(v) || v <= 0) { skipped.push(`${k} (${sv})`); return undefined; }
+    used.push(k);
+    return v;
+  };
+  const p = JSON.parse(JSON.stringify(base ?? { bed: {}, speeds: {} }));
+  p.id = id; p.name = name; p.maker = p.maker ?? 'Imported'; p.speeds = { ...(p.speeds ?? {}) }; p.bed = { ...(p.bed ?? {}) };
+  // bed: ini bed_shape "0x0,220x0,220x220,0x220", orca printable_area ["0x0","220x0",...]
+  const shape = format === 'ini' ? kv.bed_shape : (() => { try { return JSON.parse(text).printable_area?.join(','); } catch { return undefined; } })();
+  if (shape) {
+    const pts = String(shape).split(',').map((xy) => xy.split('x').map(Number));
+    if (pts.every((q) => q.length === 2 && q.every(Number.isFinite))) {
+      p.bed.x = Math.max(...pts.map((q) => q[0])) - Math.min(...pts.map((q) => q[0]));
+      p.bed.y = Math.max(...pts.map((q) => q[1])) - Math.min(...pts.map((q) => q[1]));
+      used.push(format === 'ini' ? 'bed_shape' : 'printable_area');
+    }
+  }
+  const map = format === 'ini'
+    ? { z: 'max_print_height', nozzle: 'nozzle_diameter', filamentDiameter: 'filament_diameter', outerWall: 'external_perimeter_speed', innerWall: 'perimeter_speed', infill: 'infill_speed', topBottom: 'top_solid_infill_speed', firstLayer: 'first_layer_speed', travel: 'travel_speed', acceleration: 'default_acceleration', maxVolumetricFlow: 'max_volumetric_speed' }
+    : { z: 'printable_height', nozzle: 'nozzle_diameter', filamentDiameter: 'filament_diameter', outerWall: 'outer_wall_speed', innerWall: 'inner_wall_speed', infill: 'sparse_infill_speed', topBottom: 'top_surface_speed', firstLayer: 'initial_layer_speed', travel: 'travel_speed', acceleration: 'default_acceleration', maxVolumetricFlow: 'filament_max_volumetric_speed' };
+  for (const [field, key] of Object.entries(map)) {
+    const v = num(key);
+    if (v === undefined) continue;
+    if (field === 'z') p.bed.z = v;
+    else if (['outerWall', 'innerWall', 'infill', 'topBottom', 'firstLayer', 'travel'].includes(field)) p.speeds[field] = v;
+    else p[field] = v;
+  }
+  p.verified = false;
+  p.notes = `Imported from a ${format === 'ini' ? 'PrusaSlicer .ini' : 'OrcaSlicer JSON'} file: ${used.length} values taken. Motion efficiency and layer overhead are not in slicer files: calibrate with the time factor.`;
+  p.sources = [`Imported ${new Date().toISOString().slice(0, 10)}: ${used.join(', ')}`];
+  return { profile: validateProfile(p), used, skipped };
 }

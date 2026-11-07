@@ -581,3 +581,15 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .split-box input.num { width: 5.5em; display: inline-block; }
 .split-box label { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; font-size: 13px; }
 .split-box select { width: auto; }
+
+/* 1.5 (MTS): live printer updates, console, pre-print checklist */
+.live-dot { margin-left: auto; font-size: 12px; color: var(--muted); }
+.live-dot.on { color: var(--ok); }
+.live-dot.on::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); margin-right: 5px; vertical-align: middle; }
+.console-view { max-height: 220px; overflow: auto; font-size: 12px; line-height: 1.45; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; margin: 8px 0; white-space: pre-wrap; }
+.console-view .sec { color: var(--fail); }
+.checklist { list-style: none; padding: 0; margin: 8px 0; }
+.checklist li { padding: 3px 0; }
+.checklist-box textarea { width: 100%; box-sizing: border-box; }
+.print-log ul { list-style: none; padding: 0; font-size: 13px; }
+.print-log li.fail { color: var(--fail); }

@@ -64,6 +64,16 @@ Rules: never guess bed sizes. Use the maker's published spec and list it in
 4. Restart STL Tools. The profile appears in Settings > Print estimates and in
    each printer's Model list. A broken file is skipped and listed in Settings > About.
 
+## Import a profile from your slicer (1.5)
+
+Settings > Print estimates > **Import a profile from your slicer**:
+
+1. Choose the file: a PrusaSlicer / SuperSlicer `.ini` (printer or config bundle export) or an OrcaSlicer machine or process `.json` (the Sovol slicer is OrcaSlicer).
+2. Pick the profile to start from (for the SV07: Sovol SV07), and type a name.
+3. Press **Import**. The result lists what was read and what was kept from the base profile.
+
+Read: bed size (`bed_shape` / `printable_area`), max height, perimeter / infill / travel / first-layer speeds, default acceleration, max volumetric speed. Speeds given as % are skipped (kept from the base), never guessed. The profile is stored in `<data folder>/printer-profiles.json` and shows in every profile list; delete it in the same box.
+
 ## Add a profile for everyone (GitHub pull request)
 
 1. Open the repository on GitHub and press **Fork** (or create a branch if you

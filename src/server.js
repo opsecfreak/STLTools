@@ -66,12 +66,13 @@ import { createThumbStore, jobKey } from './core/thumbs.js';
 import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
 import { createSettings } from './core/settings.js';
 import { createLibrary, MAX_STL_BYTES } from './core/library.js';
-import { listProfiles, getProfile, profileIssues } from './core/profiles.js';
+import { listProfiles, getProfile, profileIssues, profileFromSlicer, setUserProfiles } from './core/profiles.js';
 import { estimateParts, formatDuration, profileFromMachine } from './core/estimate.js';
 import { createHosting, isLoopback, lanUrls, boardModel, loginPage, COOKIE } from './core/hosting.js';
 import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { createCollections } from './core/collections.js';
 import { createMaterials } from './core/materials.js';
+import { createJsonFile } from './core/jsonstore.js';
 import { splitToFit, placeOnBed, arrange } from './core/split.js';
 import { createScope } from './core/kernel.js';
 import { parseStl } from './core/library.js';
@@ -500,6 +501,23 @@ async function convertCollections() {
   return report;
 }
 
+/** Pre-print checklist templates (checklists/*.json). */
+async function loadChecklists() {
+  const dir = join(ROOT, 'checklists');
+  const { readdir } = await import('node:fs/promises');
+  const files = await readdir(dir).catch(() => []);
+  const out = [];
+  for (const f of files.filter((x) => x.endsWith('.json')).sort()) out.push(JSON.parse(await readFile(join(dir, f), 'utf8')));
+  return out;
+}
+/** The checklist for a printer: by id, else the one listing the printer's model, else the generic one. */
+async function checklistFor(printerId, wanted) {
+  const all = await loadChecklists();
+  if (wanted) return all.find((c) => c.id === wanted) ?? null;
+  const pr = (await printers.list()).find((x) => x.id === printerId);
+  return all.find((c) => (c.printerModels ?? []).includes(pr?.model)) ?? all.find((c) => c.id === 'generic') ?? null;
+}
+
 /** Serve a file from baseDir without allowing ../ escapes. */
 async function serveStatic(res, baseDir, relPath) {
   const full = normalize(join(baseDir, relPath));
@@ -579,6 +597,38 @@ async function route(req, res) {
   if (path === '/api/settings/schema' && req.method === 'GET') return send(res, 200, settings.schema());
   if (path === '/api/settings/reset' && req.method === 'POST') return send(res, 200, await settings.reset((await readBody(req)).section));
   if (path === '/api/printer-profiles' && req.method === 'GET') return send(res, 200, listProfiles());
+  if (path === '/api/printer-profiles/import' && req.method === 'POST') {
+    const b = await readBody(req, 512 * 1024);
+    const id = String(b.id ?? '').trim() || `imported-${slug(b.name ?? 'printer')}`.slice(0, 40);
+    if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(id)) return send(res, 400, { error: 'id must be lowercase letters, digits and dashes' });
+    if (getProfile(id) && !getProfile(id).imported) return send(res, 400, { error: `${id} is a shipped profile: choose another id` });
+    let r;
+    try { r = profileFromSlicer({ format: b.format, text: String(b.text ?? ''), id, name: String(b.name ?? id).slice(0, 80), base: getProfile(b.base) ?? getProfile('generic-klipper-fast') }); } catch (err) { return send(res, 400, { error: err.message }); }
+    const list = (await importedProfiles.get()).filter((x) => x.id !== id);
+    await importedProfiles.set([...list, r.profile]);
+    setUserProfiles(await importedProfiles.get());
+    return send(res, 201, r);
+  }
+  m = path.match(/^\/api\/printer-profiles\/([a-z0-9-]{2,41})$/);
+  if (m && req.method === 'DELETE') {
+    const list = await importedProfiles.get();
+    if (!list.some((x) => x.id === m[1])) return send(res, 404, { error: 'Only imported profiles can be deleted' });
+    await importedProfiles.set(list.filter((x) => x.id !== m[1]));
+    setUserProfiles(await importedProfiles.get());
+    return send(res, 204, '');
+  }
+  if (path === '/api/checklists' && req.method === 'GET') return send(res, 200, await loadChecklists());
+  m = path.match(/^\/api\/printers\/(printer-[a-f0-9]{6})\/checklists$/);
+  if (m) {
+    if (req.method === 'GET') return send(res, 200, (await printLog.get()).filter((x) => x.printer === m[1]).reverse().slice(0, 100));
+    if (req.method === 'POST') {
+      const b = await readBody(req);
+      const entry = { id: randomBytes(4).toString('hex'), printer: m[1], at: new Date().toISOString(), file: String(b.file ?? '').slice(0, 300), checklist: String(b.checklist ?? '').slice(0, 60), done: (Array.isArray(b.done) ? b.done : []).map(String).slice(0, 50), notes: String(b.notes ?? '').slice(0, 4000), headerOk: b.headerOk === true ? true : b.headerOk === false ? false : null };
+      await printLog.set([...(await printLog.get()), entry].slice(-2000));
+      return send(res, 201, entry);
+    }
+    return send(res, 405, 'Method not allowed');
+  }
   if (path === '/api/estimate' && req.method === 'POST') {
     const b = await readBody(req);
     const cfg = await settings.get();
@@ -813,6 +863,19 @@ async function route(req, res) {
     if (sub === 'webcams') return send(res, 200, await printers.webcams(id));
     if (sub === 'machine') return send(res, 200, await printers.machine(id));
     if (sub === 'health') return send(res, 200, await printers.health(id));
+    if (sub === 'gcodecheck') {
+      const tpl = await checklistFor(id, url.searchParams.get('checklist'));
+      return send(res, 200, { ...(await printers.gcodeCheck(id, url.searchParams.get('file'), tpl?.header ?? {})), checklist: tpl?.id ?? null });
+    }
+    if (sub === 'events') {
+      // Server-sent events: live status and console lines (read-only)
+      res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-store', connection: 'keep-alive', 'x-accel-buffering': 'no' });
+      res.write(': live\n\n');
+      const off = printers.subscribe(id, (ev) => res.write(`event: ${ev.type}\ndata: ${JSON.stringify(ev)}\n\n`));
+      const beat = setInterval(() => res.write(': beat\n\n'), 20000);
+      req.on('close', () => { clearInterval(beat); off(); });
+      return;
+    }
     if (sub === 'mesh') return send(res, 200, await printers.mesh(id));
     if (sub === 'logs') {
       const file = url.searchParams.get('file');
@@ -909,6 +972,8 @@ let parts = createParts({ dataDir: catalog.dataDir, seedDir: SEED_DIR });
 let collections = createCollections({ dataDir: catalog.dataDir });
 let hosting = createHosting({ dataDir: catalog.dataDir });
 let materials = createMaterials({ dataDir: catalog.dataDir, root: ROOT });
+let importedProfiles = createJsonFile(join(catalog.dataDir, 'printer-profiles.json'), []);
+let printLog = createJsonFile(join(catalog.dataDir, 'print-log.json'), []);
 projects = createProjects({ dataDir: catalog.dataDir, designs, library });
 
 /** Background read-only connection checks (Settings > Printers > Background connection check). */
@@ -943,7 +1008,10 @@ export function startServer({ host = HOST, port = PORT, dataDir, pinForLocal = f
     collections = createCollections({ dataDir });
     hosting = createHosting({ dataDir });
     materials = createMaterials({ dataDir, root: ROOT });
+    importedProfiles = createJsonFile(join(dataDir, 'printer-profiles.json'), []);
+    printLog = createJsonFile(join(dataDir, 'print-log.json'), []);
   }
+  importedProfiles.get().then(setUserProfiles).catch(() => {});
   const server = createServer(async (req, res) => {
     try {
       if (!(await hosting.allowed(req, { trustLoopback }))) {

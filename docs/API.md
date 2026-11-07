@@ -44,6 +44,8 @@ With a PIN set, requests from other machines without the cookie get 401 (`/api/*
 | Method | Path | Body / query | Returns |
 |---|---|---|---|
 | GET | `/api/printer-profiles` | | profiles, named printers first |
+| POST | `/api/printer-profiles/import` | `{ format: ini\|orca, text, name, id?, base? }` | `{ profile, used[], skipped[] }` (201); stored in `<data>/printer-profiles.json`; shipped ids refused |
+| DELETE | `/api/printer-profiles/:id` | | 204 (imported profiles only) |
 | POST | `/api/estimate` | `{ stats: [stats...], profile?: "sovol-sv07", opts?: { layerHeight, walls, shellLayers, infill, material, timeFactor, filamentCostPerKg }, qty?: [n...] }` | `{ profile, seconds, heatUp, filamentMm, grams, cost, parts: [{ seconds, layers, grams, fit, breakdown }] }` |
 
 Without `profile`, the default printer's model is used, else Settings > Print estimates.
@@ -141,6 +143,10 @@ Without `profile`, the default printer's model is used, else Settings > Print es
 | GET / PUT | `/api/printers/:id/control` | `{ enabled: true, acknowledge: true }` or `{ enabled: false }` | `{ enabled, actions[] }` / the printer; 400 without `acknowledge` |
 | POST | `/api/printers/:id/control/:action` | `pause`, `resume`, `cancel`, `estop`, `firmware_restart`, `restart`; `start` `{ filename }`; `gcode` `{ script }`; `service` `{ service: crowsnest\|klipper\|moonraker-timelapse }` | `{ ok, action, result }`; 403 control off, 409 wrong printer state, 400 bad input |
 | GET | `/api/printers/:id/control/log?limit=` | | control log entries, newest first |
+| GET | `/api/printers/:id/events` | | server-sent events: `status` `{ status }`, `console` `{ line, at }`, `mode` `{ live }` (websocket or 1 s polling); read-only |
+| GET | `/api/checklists` | | checklist templates `[{ id, name, printerModels, items[], header }]` |
+| GET | `/api/printers/:id/gcodecheck?file=&checklist=` | | `{ file, checks: [{ ok, title, detail }], found, checklist }` (reads the start and end of the file, read-only) |
+| GET / POST | `/api/printers/:id/checklists` | `{ file, checklist, done[], notes, headerOk }` | print log for this printer (newest first) / new entry (201) |
 | PUT | `/api/printers/:id/upload?filename=&path=&print=1&confirm=1` | raw G-code | `{ path, size, printStarted }` (control on only) |
 | POST | `/api/printers/check` | | `{ <id>: { ok, at, klippy? \| error } }`: read-only connection check of every printer now (also in `GET /api/printers` as `lastCheck`) |
 | PUT | `/api/printers/:id/upload?filename=x.gcode&path=folder` | raw G-code | `{ path }`; always `print=false` |

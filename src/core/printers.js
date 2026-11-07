@@ -180,6 +180,55 @@ export function createPrinters({ dataDir }) {
   };
   const metaCache = new Map(); // `${id}|${filename}|${modified}` -> metadata
   const checks = new Map(); // id -> { ok, at, klippy?, error? } from the last connection check
+  const hubs = new Map(); // id -> live update hub (see subscribe)
+  const emit = (hub, ev) => { for (const fn of hub.listeners) { try { fn(ev); } catch { /* listener gone */ } } };
+  const liveStatus = (raw) => {
+    const ps = raw.print_stats ?? {};
+    const progress = raw.virtual_sdcard?.progress ?? raw.display_status?.progress ?? 0;
+    return {
+      state: ps.state ?? null, filename: ps.filename || null, progress, printDuration: ps.print_duration ?? null, filamentUsed: ps.filament_used ?? null,
+      layer: ps.info ? { current: ps.info.current_layer ?? null, total: ps.info.total_layer ?? null } : null,
+      message: ps.message || raw.webhooks?.state_message || '',
+      temps: { extruder: raw.extruder ? { actual: raw.extruder.temperature, target: raw.extruder.target } : null, bed: raw.heater_bed ? { actual: raw.heater_bed.temperature, target: raw.heater_bed.target } : null },
+      live: true, updatedAt: new Date().toISOString(),
+    };
+  };
+  const merge = (dst, src) => { for (const [k, v] of Object.entries(src ?? {})) dst[k] = v && typeof v === 'object' && !Array.isArray(v) ? merge(dst[k] ?? {}, v) : v; return dst; };
+  const startPolling = (id, hub) => {
+    hub.mode = 'polling';
+    emit(hub, { type: 'mode', live: false });
+    const tick = async () => { try { emit(hub, { type: 'status', status: { ...(await api.status(id)), live: false } }); } catch (err) { emit(hub, { type: 'status', status: { error: err.message } }); } };
+    tick();
+    hub.timer = setInterval(tick, 1000);
+  };
+  const startHub = async (id, hub) => {
+    const p = await find(id).catch(() => null);
+    if (!p) return;
+    if (typeof globalThis.WebSocket !== 'function') return startPolling(id, hub);
+    const u = new URL(p.url);
+    const ws = new globalThis.WebSocket(`${u.protocol === 'https:' ? 'wss' : 'ws'}://${u.host}/websocket`);
+    hub.ws = ws;
+    let opened = false;
+    const fallback = setTimeout(() => { if (!opened) { try { ws.close(); } catch { /* closed */ } if (hubs.get(id) === hub && !hub.timer) startPolling(id, hub); } }, 5000);
+    const send = (method, params, rid) => ws.send(JSON.stringify({ jsonrpc: '2.0', method, params, id: rid }));
+    ws.onopen = () => {
+      opened = true;
+      clearTimeout(fallback);
+      hub.mode = 'websocket';
+      emit(hub, { type: 'mode', live: true });
+      send('server.connection.identify', { client_name: 'STL Tools', version: '1', type: 'other', url: 'https://github.com/opsecfreak/STLTools', ...(p.apiKey ? { api_key: p.apiKey } : {}) }, 1);
+      send('printer.objects.subscribe', { objects: { print_stats: null, virtual_sdcard: ['progress'], display_status: ['progress'], extruder: ['temperature', 'target'], heater_bed: ['temperature', 'target'], webhooks: ['state', 'state_message'] } }, 2);
+    };
+    ws.onmessage = (e) => {
+      let msg;
+      try { msg = JSON.parse(typeof e.data === 'string' ? e.data : Buffer.from(e.data).toString()); } catch { return; }
+      if (msg.id === 2 && msg.result?.status) { merge(hub.raw, msg.result.status); emit(hub, { type: 'status', status: liveStatus(hub.raw) }); }
+      else if (msg.method === 'notify_status_update') { merge(hub.raw, msg.params?.[0]); emit(hub, { type: 'status', status: liveStatus(hub.raw) }); }
+      else if (msg.method === 'notify_gcode_response') emit(hub, { type: 'console', line: String(msg.params?.[0] ?? ''), at: new Date().toISOString() });
+    };
+    ws.onerror = () => {};
+    ws.onclose = () => { clearTimeout(fallback); if (hubs.get(id) === hub && hub.listeners.size && !hub.timer) startPolling(id, hub); };
+  };
   const openStreams = new Map(); // id -> open webcam streams
 
   const find = async (id) => {
@@ -717,6 +766,86 @@ export function createPrinters({ dataDir }) {
       const max = 400 * 1024;
       const tail = buf.length > max ? buf.subarray(buf.length - max) : buf;
       return { path: clean, bytes: buf.length, truncated: buf.length > max, text: redactSecrets(tail.toString('utf8')) };
+    },
+
+    /**
+     * Read the start and end of a G-code file on the printer (Range requests, read-only)
+     * and check it against a checklist's header rules: heat before the start macro, job
+     * motion caps, caps restored at the end, temperatures, max volumetric speed.
+     * -> { file, checks: [{ ok, title, detail }], found: {...} }
+     */
+    async gcodeCheck(id, filename, rules = {}) {
+      const p = await find(id);
+      const f = String(filename ?? '');
+      if (!GCODE_EXT.test(f) || f.includes('..') || f.startsWith('/')) throw new CatalogError('Not a G-code file path');
+      const path = `/server/files/gcodes/${f.split('/').map(encodeURIComponent).join('/')}`;
+      const head = (await (await mr(p, path, { raw: true, headers: { Range: 'bytes=0-131071' } })).text()).slice(0, 131072);
+      const tail = (await (await mr(p, path, { raw: true, headers: { Range: 'bytes=-98304' } })).text()).slice(-98304);
+      const lines = head.split(/\r?\n/);
+      const firstMove = lines.findIndex((l) => /^;\s*(LAYER_CHANGE|LAYER:|layer num\/total_layer_count)|^G1 [^;]*E\d/.test(l));
+      const start = lines.slice(0, firstMove > 0 ? firstMove : 400);
+      const idx = (re) => start.findIndex((l) => re.test(l.split(';')[0]));
+      const startAt = idx(new RegExp(`^\\s*${rules.startMacro ?? 'START_PRINT'}\\b`, 'i'));
+      const heatSet = Math.min(...[idx(/^M140\s/i), idx(/^M104\s/i)].filter((i) => i >= 0), Infinity);
+      const heatWait = Math.min(...[idx(/^M190\s/i), idx(/^M109\s/i)].filter((i) => i >= 0), Infinity);
+      const sv = (l) => { const m = l.match(/SET_VELOCITY_LIMIT\b(.*)/i); if (!m) return null; const g = (k) => Number((m[1].match(new RegExp(`${k}=([\\d.]+)`, 'i')) ?? [])[1]); return { velocity: g('VELOCITY'), accel: g('ACCEL'), accelToDecel: g('ACCEL_TO_DECEL'), scv: g('SQUARE_CORNER_VELOCITY') }; };
+      const caps = start.map(sv).find(Boolean) ?? null;
+      const tailLines = tail.split(/\r?\n/);
+      const restore = [...tailLines].reverse().map(sv).find(Boolean) ?? null;
+      const sval = (re) => { for (const l of start) { const m = l.split(';')[0].match(re); if (m) return Number(m[1]); } return null; };
+      const conf = {};
+      for (const l of tailLines) { const m = l.match(/^;\s*([a-z_]+)\s*=\s*(.+)$/i); if (m) conf[m[1]] = m[2].trim(); }
+      const confNum = (...keys) => { for (const k of keys) if (conf[k] !== undefined) { const v = Number(String(conf[k]).split(',')[0]); if (Number.isFinite(v)) return v; } return null; };
+      const found = {
+        startMacroLine: startAt, heatSetLine: Number.isFinite(heatSet) ? heatSet : -1, heatWaitLine: Number.isFinite(heatWait) ? heatWait : -1,
+        caps, restore,
+        firstNozzle: sval(/^M10[49]\s+[^;]*S([\d.]+)/i), firstBed: sval(/^M1[49]0\s+[^;]*S([\d.]+)/i),
+        nozzle: confNum('temperature', 'nozzle_temperature'), bed: confNum('bed_temperature', 'hot_plate_temp'),
+        maxVolumetric: confNum('max_volumetric_speed', 'filament_max_volumetric_speed'),
+      };
+      const checks = [];
+      const add = (ok, title, detail) => checks.push({ ok, title, detail });
+      if (rules.heatFirst) {
+        const ok = startAt >= 0 && found.heatSetLine >= 0 && found.heatSetLine < startAt && (found.heatWaitLine < 0 || found.heatWaitLine < startAt);
+        add(ok, 'Heat before the start macro', startAt < 0 ? `${rules.startMacro ?? 'START_PRINT'} not found in the start G-code` : ok ? `Heater commands (line ${found.heatSetLine + 1}) come before ${rules.startMacro ?? 'START_PRINT'} (line ${startAt + 1}).` : `${rules.startMacro ?? 'START_PRINT'} (line ${startAt + 1}) runs before the heaters are set: the purge would run cold.`);
+      }
+      const capText = (c) => (c ? `${c.velocity} / ${c.accel} / ${c.accelToDecel} / SCV ${c.scv}` : 'none');
+      const same = (a, b) => a && b && ['velocity', 'accel', 'accelToDecel', 'scv'].every((k) => b[k] === undefined || a[k] === b[k]);
+      if (rules.jobCaps) add(same(caps, rules.jobCaps), 'Job motion caps at the start', `found ${capText(caps)}, expected ${capText(rules.jobCaps)}`);
+      if (rules.restoreCaps) add(same(restore, rules.restoreCaps), 'Live caps restored at the end', `found ${capText(restore)}, expected ${capText(rules.restoreCaps)}`);
+      for (const [k, label] of [['firstNozzle', 'First-layer nozzle'], ['firstBed', 'First-layer bed'], ['nozzle', 'Nozzle (other layers)'], ['bed', 'Bed (other layers)'], ['maxVolumetric', 'Max volumetric speed']]) {
+        if (rules[k] === undefined) continue;
+        add(found[k] === rules[k], label, `found ${found[k] ?? 'not in the file'}, expected ${rules[k]}`);
+      }
+      return { file: f, checks, found };
+    },
+
+    // ---------------------------------------------------------------- live updates
+
+    /**
+     * Live status and console lines for one printer. Uses Moonraker's websocket
+     * (printer.objects.subscribe, notify_status_update, notify_gcode_response) when this
+     * Node has WebSocket (22+, the release packages), else polls status every second.
+     * Read-only: only subscribe / identify calls are sent. Returns an unsubscribe function.
+     *   fn({ type: 'status', status }) | fn({ type: 'console', line, at }) | fn({ type: 'mode', live })
+     */
+    subscribe(id, fn) {
+      let hub = hubs.get(id);
+      if (!hub) {
+        hub = { listeners: new Set(), raw: {}, ws: null, timer: null };
+        hubs.set(id, hub);
+        startHub(id, hub);
+      }
+      hub.listeners.add(fn);
+      if (hub.mode) fn({ type: 'mode', live: hub.mode === 'websocket' });
+      return () => {
+        hub.listeners.delete(fn);
+        if (!hub.listeners.size) {
+          clearInterval(hub.timer);
+          try { hub.ws?.close(); } catch { /* closed */ }
+          hubs.delete(id);
+        }
+      };
     },
 
     /** Read-only "are you there?" for one printer; remembered for the UI. */

@@ -98,6 +98,7 @@ export const SCHEMA = {
       defaultPrinter: { type: 'string', default: '', label: 'Default printer (id)', maxLength: 40 },
       uploadFolder: { type: 'string', default: 'stltools', label: 'Upload folder on the printer', maxLength: 80, pattern: '^[A-Za-z0-9 _./-]*$' },
       pollSeconds: numb(3, 2, 60, 1, 'Status refresh', 's'),
+      live: bool(true, 'Live updates on the Printers page', 'Status, temperatures and console lines arrive as they happen (Moonraker websocket, read-only). Off: refresh every "Status refresh" seconds.'),
       checkMinutes: numb(5, 0, 240, 1, 'Background connection check', 'min', 'STL Tools asks each saved printer "are you there?" this often (read-only). 0 = only when you open a printer page.'),
       useMachine: bool(true, "Estimates use the printer's own Klipper limits", 'Bed size, max speed, acceleration and nozzle read from the connected printer (read-only) replace the profile values.'),
       webcam: sel('stream', [['stream', 'Live video (MJPEG stream)'], ['snapshot', 'Snapshots'], ['off', 'Off']], 'Webcam on the Printers page', 'Live video uses the camera stream Mainsail / Fluidd shows. Snapshots use less network and CPU (good for a Pi).'),

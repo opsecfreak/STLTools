@@ -130,6 +130,22 @@ try {
   await page.locator('.insights-box button', { hasText: 'Logs' }).click();
   await page.waitForSelector('.insights-box .cfg-view div', { timeout: 10000 });
   check(/MCU version/.test(await page.locator('.insights-box .cfg-view').innerText()), 'log viewer shows klippy.log');
+  // 1.5: live updates, console, pre-print checklist with the header check, print log
+  await page.waitForSelector('.status-box .live-dot.on', { timeout: 10000 }).catch(() => {});
+  check(await page.locator('.status-box .live-dot.on').count() === 1, 'live updates on (event stream from the printer)');
+  mock.sim.console('// smoke console line');
+  await page.waitForFunction(() => document.querySelector('.console-box')?.innerText.includes('smoke console line'), null, { timeout: 8000 }).catch(() => {});
+  check(/smoke console line/.test(await page.locator('.console-box').innerText()), 'console box shows printer replies');
+  await page.waitForSelector('.checklist-box select', { timeout: 10000 });
+  check(/SV07 pre-print checklist/.test(await page.locator('.checklist-box').innerText()), 'SV07 checklist picked for the SV07');
+  const gfile = await page.locator('.checklist-box select').nth(1).locator('option').nth(1).getAttribute('value');
+  await page.locator('.checklist-box select').nth(1).selectOption(gfile);
+  await page.waitForSelector('.checklist-box .header-check li', { timeout: 10000 });
+  check(/Header check passed/.test(await page.locator('.checklist-box .header-check').innerText()), `G-code header check passes on ${gfile}`);
+  for (const c of await page.locator('.checklist-box .checklist input').all()) await c.check();
+  await page.locator('.checklist-box button', { hasText: 'Save to print log' }).click();
+  await page.waitForFunction(() => /header OK/.test(document.querySelector('.print-log')?.innerText ?? ''), null, { timeout: 8000 }).catch(() => {});
+  check(/header OK/.test(await page.locator('.print-log').innerText()), 'checklist saved to the print log');
   // control mode: off by default, warning dialog to turn on, confirm per action, logged
   check(/Control: off/.test(await page.locator('.control-box').innerText()), 'printer control is off by default');
   page.on('dialog', (d) => d.accept());
@@ -160,6 +176,15 @@ try {
   await page.locator('#set-printers select').filter({ hasText: 'Always show' }).selectOption('auto');
   await page.waitForTimeout(800);
   check(await page.locator('nav [data-tab="printers"]').isVisible(), 'Auto shows it again');
+  // 1.5: printer profile import from a slicer .ini
+  await page.evaluate(() => { location.hash = 'settings/print'; });
+  await page.waitForSelector('#set-print .profile-import', { timeout: 10000 });
+  await page.locator('#set-print .profile-import summary').click();
+  await page.locator('#set-print .profile-import input[type=file]').setInputFiles({ name: 'smoke.ini', mimeType: 'text/plain', buffer: Buffer.from('bed_shape = 0x0,220x0,220x220,0x220\nmax_print_height = 250\nperimeter_speed = 50\ninfill_speed = 80\ndefault_acceleration = 2000\nfilament_max_volumetric_speed = 20\n') });
+  await page.locator('#set-print .profile-import input[placeholder^="Name"]').fill('Smoke SV07');
+  await page.locator('#set-print .profile-import button', { hasText: 'Import' }).click();
+  await page.waitForFunction(() => /Imported Smoke SV07/.test(document.querySelector('#set-print .profile-import')?.innerText ?? ''), null, { timeout: 8000 }).catch(() => {});
+  check(/220 x 220 x 250/.test(await page.locator('#set-print .profile-import').innerText()), 'slicer .ini imported as a printer profile');
   await page.close();
 
   // 5. no WebGL

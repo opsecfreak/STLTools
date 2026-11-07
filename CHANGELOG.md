@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: Printers page **live updates** (Moonraker websocket, read-only, passed to the page as server-sent events; 1 s polling on Node < 22) with a Live dot and a read-only **Console** box; **Pre-print checklist** (SV07 template from the shop guidelines, generic for other printers) with an automatic **G-code header check** (heat-first order, START_PRINT, job and restore speed caps, temperatures, max flow) and a print log; **profile import** from a PrusaSlicer .ini or OrcaSlicer .json (Settings > Print estimates). Setting: Settings > Printers > Live updates.
+Fixed: n/a.
+Untested: websocket against the shop SV07 (fake Moonraker only); Orca process files from the Sovol slicer itself.
+
 ## 1.4.3-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: collections hold STL files only (your choice B). Adding a preset, saved design, generator or project to a collection saves frozen STL copies in STL Files > Collections and adds those; adding the same item again reuses its copy; existing collections are converted the first time they are read (`POST /api/collections/convert` runs it by hand). Presets that still need measured sizes are kept as they are until measured.

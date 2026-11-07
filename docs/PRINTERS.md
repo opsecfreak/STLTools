@@ -127,6 +127,29 @@ Printers page > **Printer details (read-only)**:
 
 STL Tools does not edit config or save meshes. Change config in Mainsail (control mode can send G-code; see below).
 
+## Live updates and console (1.5)
+
+The selected printer updates as things happen: STL Tools opens Moonraker's websocket (`ws://<printer>/websocket`, read-only: it identifies itself and subscribes to print, temperature and display status) and passes the updates to the page as server-sent events. The status box shows a green **Live** dot. The other printers and the "time left" estimate still refresh every 15 seconds.
+
+- **Console (read-only)** shows what Klipper prints to its console since the page opened: M117 / RESPOND messages, macro output, errors (`!!` lines in red). Sending commands needs control mode.
+- Node 18 to 21 have no built-in websocket: STL Tools then asks the printer every second instead (the dot still says Live; point at it to see which). Node 22 or newer uses the websocket.
+- Off: Settings > Printers > Live updates on the Printers page. The page then refreshes every "Status refresh" seconds.
+
+## Pre-print checklist and G-code header check (1.5)
+
+Printers page > **Pre-print checklist**:
+
+1. The checklist for the printer's model is picked (SV07: the 8 steps from the shop SV07 guidelines; other printers: a short generic list). Pick another one from the list if you want.
+2. Pick the G-code file on the printer. STL Tools reads the start and end of the file (HTTP Range, read-only) and checks:
+   - heat before start (the bed and nozzle temperatures come before `START_PRINT`), the start macro name;
+   - the job speed caps (`SET_VELOCITY_LIMIT` at the start) and the restore caps at the end;
+   - first-layer and other temperatures against the checklist;
+   - max volumetric speed in the slicer config block at the end of the file.
+3. Tick the items, add notes (spool, dryer time), press **Save to print log**. The log shows on the same box, newest first.
+4. With control on, the **Print** button on a file says so when no complete checklist was saved for that file in this session.
+
+Templates are JSON files in the `checklists` folder (`id`, `name`, `printerModels`, `items`, `header` rules). The SV07 rules: heat first, `START_PRINT`, job caps 200 mm/s / 2000 / 1000 / SCV 3, restore caps 225 / 4500 / 2000 / 3, first layer 220 / 65 C, then 215 / 63 C, max flow 20 mm3/s. Stored log: `<data folder>/print-log.json`.
+
 ## Connecting: what the test does with your address
 
 - Empty address: the test says so and points to **Scan my network**. Scan results have **Use and test**, which fills the address and runs the test at once.
@@ -164,7 +187,7 @@ STL files are refused on purpose: the printer can only print G-code. Slicing on 
 
 ## What is stored
 
-`<data folder>/printers.json`: name, address, model (printer profile) and the optional API key. Remove a printer in the Printers tab; nothing on the printer changes.
+`<data folder>/printers.json`: name, address, model (printer profile) and the optional API key. `print-log.json`: saved pre-print checklists. `printer-control.log`: control actions. `printer-profiles.json`: profiles imported from a slicer. Remove a printer in the Printers tab; nothing on the printer changes.
 
 ## Other printer models
 
@@ -175,5 +198,4 @@ Printers without Klipper / Moonraker (Bambu, Prusa Connect, OctoPrint) are not s
 ## Not built yet
 
 - Slicing on the server, then sending the G-code to the printer.
-- Live push updates (the page polls every 3 seconds, every 15 seconds when the tab is hidden).
 - WebRTC / HLS video (shown as snapshots).

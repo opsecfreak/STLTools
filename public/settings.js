@@ -70,12 +70,45 @@ export async function renderSettings(page, focus = '') {
           el('li', { textContent: 'Slice the same STL in your slicer with your SV07 profile. Note the slicer time.' }),
           el('li', { textContent: 'Set Time calibration factor = slicer time / STL Tools time (for example 52 min / 40 min = 1.3).' }),
           el('li', { textContent: 'Check with a second, different part. Real print times are in Printers > Print history.' }))),
-      el('p', { className: 'muted', textContent: `Profiles: ${profiles.map((p) => p.name).join(', ')}.${cur && !cur.verified ? ` ${cur.name}: ${cur.notes}` : ''} Add your own: docs/PRINTER-PROFILES.md.` }));
+      el('p', { className: 'muted', textContent: `Profiles: ${profiles.map((p) => p.name).join(', ')}.${cur && !cur.verified ? ` ${cur.name}: ${cur.notes}` : ''} Add your own: docs/PRINTER-PROFILES.md.` }),
+      profileImport(profiles));
     }
     if (id === 'data') dataSection(sec, version);
     if (id === 'about') aboutSection(sec, version);
   }
   if (focus) document.getElementById(`set-${focus}`)?.scrollIntoView({ block: 'start' });
+}
+
+/** Import a printer profile from a slicer file (PrusaSlicer / SuperSlicer .ini, OrcaSlicer machine or process .json). */
+function profileImport(profiles) {
+  const file = el('input', { type: 'file', accept: '.ini,.json', 'aria-label': 'Slicer profile file' });
+  const name = el('input', { type: 'text', maxLength: 80, placeholder: 'Name, e.g. SV07 (my v3 profile)' });
+  const id = el('input', { type: 'text', maxLength: 41, placeholder: 'id (optional), e.g. sv07-my-v3' });
+  const base = el('select', { 'aria-label': 'Start from' }, ...profiles.filter((p) => !p.imported).map((p) => el('option', { value: p.id, textContent: `Start from: ${p.name}`, selected: p.id === 'sovol-sv07' })));
+  const out = el('div', {});
+  const list = el('ul', { className: 'health' });
+  const drawList = (ps) => list.replaceChildren(...ps.filter((p) => p.imported).map((p) => el('li', {},
+    el('strong', { textContent: `${p.name} (${p.id}): ` }), `bed ${p.bed?.x ?? '?'} x ${p.bed?.y ?? '?'} x ${p.bed?.z ?? '?'} mm, `,
+    el('button', { type: 'button', className: 'secondary small', textContent: 'Delete', onclick: async () => {
+      if (!confirmDelete(`Delete the imported profile ${p.name}?`)) return;
+      try { await api('DELETE', `/api/printer-profiles/${p.id}`); drawList(await api('GET', '/api/printer-profiles')); toast('Deleted', 'ok'); } catch (err) { toast(err.message, 'error'); }
+    } }))));
+  drawList(profiles);
+  const go = el('button', { type: 'button', textContent: 'Import', onclick: async () => {
+    const f = file.files[0];
+    if (!f) { out.replaceChildren(el('p', { className: 'error', textContent: 'Choose a .ini or .json file first.' })); return; }
+    try {
+      const r = await api('POST', '/api/printer-profiles/import', { format: /\.json$/i.test(f.name) ? 'orca' : 'ini', text: await f.text(), name: name.value || f.name.replace(/\.[^.]+$/, ''), id: id.value.trim() || undefined, base: base.value });
+      out.replaceChildren(el('p', { textContent: `Imported ${r.profile.name} (${r.profile.id}). Pick it under Printer profile above, or in the estimate box.` }),
+        el('p', { className: 'muted', textContent: `Read: ${r.used.join(', ') || 'nothing'}.` }),
+        r.skipped.length ? el('p', { className: 'muted', textContent: `Not used (kept from the base profile): ${r.skipped.join(', ')}.` }) : null);
+      drawList(await api('GET', '/api/printer-profiles'));
+    } catch (err) { out.replaceChildren(el('p', { className: 'error', textContent: err.message })); }
+  } });
+  return el('details', { className: 'profile-import' }, el('summary', { textContent: 'Import a profile from your slicer' }),
+    el('p', { className: 'muted', textContent: 'PrusaSlicer / SuperSlicer config bundle or printer .ini, or an OrcaSlicer machine / process .json (the Sovol slicer is OrcaSlicer). Bed size, speeds, acceleration and max flow are read; anything missing or given as a % comes from the base profile. The file is stored in your data folder, not uploaded anywhere.' }),
+    el('div', { className: 'row' }, file, base), el('div', { className: 'row' }, name, id), el('div', { className: 'row' }, go), out,
+    el('h4', { textContent: 'Imported profiles' }), list);
 }
 
 // ---------------------------------------------------------------- schema form

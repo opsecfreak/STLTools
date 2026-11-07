@@ -96,7 +96,7 @@ Import STL files you already have (Import tab or drag and drop): 3D view, size, 
 
 ## Printers
 
-Optional. Add a Klipper / Moonraker printer (Sovol SV07, any Mainsail or Fluidd printer) in Settings > Printers to see status, temperatures, progress, files, print history and the live webcam, and to upload G-code (never starts a print). Off: Settings > Printers > Printer features. Guide: [PRINTERS.md](PRINTERS.md).
+Optional. Add a Klipper / Moonraker printer (Sovol SV07, any Mainsail or Fluidd printer) in Settings > Printers to see live status, temperatures, progress, console, files, print history and the webcam, run a pre-print checklist with an automatic G-code header check, and upload G-code (never starts a print unless you turn on control). Off: Settings > Printers > Printer features. Guide: [PRINTERS.md](PRINTERS.md).
 
 ## Grow the catalog
 

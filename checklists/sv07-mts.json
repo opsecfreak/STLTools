@@ -1,0 +1,24 @@
+{
+  "id": "sv07-mts",
+  "name": "SV07 pre-print checklist (MTS shop)",
+  "printerModels": ["sovol-sv07", "sovol-sv07-mts-v3"],
+  "source": "SV07-GUIDELINES.md section 8 (2026-11-06)",
+  "items": [
+    "Go-ahead given for THIS print, and the support scope if it has supports",
+    "Filament bend test done (dry 45 C 4-6 h or swap if it snaps); spool noted",
+    "Heated 220 / 65, soaked 5 min, Z_TILT_ADJUST hot, BED_MESH_PROFILE LOAD=default, no SAVE_CONFIG after",
+    "Sliced from v3 (or a named copy of it); G-code header checked (see the automatic check)",
+    "Uploaded with print=false and the file read back on the printer",
+    "First layer checked by telemetry and in person (camera frames are not proof)",
+    "Tall part: watching closely between 60 and 75 min",
+    "Session logged (dated folder)"
+  ],
+  "header": {
+    "heatFirst": true,
+    "startMacro": "START_PRINT",
+    "jobCaps": { "velocity": 200, "accel": 2000, "accelToDecel": 1000, "scv": 3 },
+    "restoreCaps": { "velocity": 225, "accel": 4500, "accelToDecel": 2000, "scv": 3 },
+    "firstNozzle": 220, "nozzle": 215, "firstBed": 65, "bed": 63,
+    "maxVolumetric": 20
+  }
+}

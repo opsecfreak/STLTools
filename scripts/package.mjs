@@ -47,7 +47,7 @@ rmSync(BUILD, { recursive: true, force: true });
 mkdirSync(BUILD, { recursive: true });
 for (const f of existsSync(DIST) ? readdirSync(DIST) : []) if (/\.(zip|tar\.gz)$|^SHA256SUMS|^RELEASE_NOTES/.test(f)) rmSync(join(DIST, f));
 const APP = join(BUILD, 'app');
-for (const item of ['bin', 'src', 'public', 'presets', 'printer-profiles', 'materials', 'seed', 'custom', 'deploy', 'docs', 'package.json', 'package-lock.json', 'README.md', 'CHANGELOG.md', 'AGENTS.md', 'LICENSE', 'NOTICE', 'EDITION.json']) {
+for (const item of ['bin', 'src', 'public', 'presets', 'printer-profiles', 'materials', 'checklists', 'seed', 'custom', 'deploy', 'docs', 'package.json', 'package-lock.json', 'README.md', 'CHANGELOG.md', 'AGENTS.md', 'LICENSE', 'NOTICE', 'EDITION.json']) {
   if (!existsSync(join(ROOT, item))) continue; // EDITION.json exists only on personal editions
   // README screenshots stay on GitHub; the packages do not need them
   cpSync(join(ROOT, item), join(APP, item), { recursive: true, filter: (src) => !src.includes(`${join('docs', 'screenshots')}`) });

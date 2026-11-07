@@ -1,0 +1,14 @@
+{
+  "id": "generic",
+  "name": "General pre-print checklist",
+  "printerModels": [],
+  "source": "STL Tools",
+  "items": [
+    "Bed clean and clear; the right build plate on",
+    "Right filament loaded, dry, enough left on the spool",
+    "Sliced for this printer, nozzle and filament",
+    "First layer watched",
+    "Supports and brim as intended"
+  ],
+  "header": { "heatFirst": true }
+}

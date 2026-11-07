@@ -9,6 +9,7 @@ import { el, api, fmtDuration, fmtBytes, fmtAgo, store, settings, confirmDelete,
 let timer = null;
 let alive = 0; // render generation; stops polling when the page changes
 let liveImg = null; // the <img> showing a live MJPEG stream; cleared to close the connection
+let liveSrc = null; // EventSource for live status / console lines of the selected printer
 
 // A 1x1 GIF: pointing the <img> at it aborts the MJPEG load at once (removing src does not always).
 const BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
@@ -20,6 +21,7 @@ export function stopPrinters() {
   alive++;
   clearTimeout(timer);
   stopLive();
+  if (liveSrc) { liveSrc.close(); liveSrc = null; }
 }
 
 const STATE_LABEL = { printing: 'Printing', paused: 'Paused', complete: 'Complete', cancelled: 'Cancelled', error: 'Error', standby: 'Idle', ready: 'Idle', startup: 'Starting', shutdown: 'Shutdown', offline: 'Offline' };
@@ -34,6 +36,9 @@ export async function renderPrinters(page, focusId = null) {
   let selected = focusId ?? store.get('printer') ?? printers[0]?.id ?? null;
   if (selected && !printers.some((p) => p.id === selected)) selected = printers[0]?.id ?? null;
   const statusById = new Map();
+  const consoleById = new Map(); // printer id -> [{ line, at }] (newest last)
+  let liveFor = null, liveMode = null; // printer id with an open event stream; 'websocket' | 'polling' | null
+  const checklistDone = new Map(); // "printer|file" -> true once a checklist was saved this session
 
   // ---- add printer form ----
   const name = el('input', { type: 'text', placeholder: 'Name, e.g. SV07', maxLength: 60 });
@@ -107,7 +112,8 @@ export async function renderPrinters(page, focusId = null) {
     else {
       const active = s.state === 'printing' || s.state === 'paused';
       statusBox.append(...[
-        el('div', { className: 'row' }, el('span', { className: `state-pill state-${s.state}`, textContent: STATE_LABEL[s.state] ?? s.state }), el('strong', { textContent: s.filename ?? 'No active print' })),
+        el('div', { className: 'row' }, el('span', { className: `state-pill state-${s.state}`, textContent: STATE_LABEL[s.state] ?? s.state }), el('strong', { textContent: s.filename ?? 'No active print' }),
+          el('span', { className: `live-dot ${liveFor === p.id && liveMode ? 'on' : ''}`, title: liveFor === p.id && liveMode === 'websocket' ? 'Live from the Moonraker websocket (read-only)' : liveFor === p.id && liveMode === 'polling' ? 'Live: this Node version has no websocket, STL Tools asks every second' : 'Refreshes every few seconds', textContent: liveFor === p.id && liveMode ? 'Live' : `Every ${settings()?.printers.pollSeconds ?? 3} s` })),
         active ? el('div', { className: 'progress big' }, el('div', { className: 'bar', style: `width:${(s.progress * 100).toFixed(1)}%` })) : null,
         el('dl', { className: 'facts' },
           ...[
@@ -138,7 +144,8 @@ export async function renderPrinters(page, focusId = null) {
       return; // keep files / history / camera in place on status refresh
     }
     detail.dataset.printer = p.id;
-    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), controlBox(p), insightsBox(p), el('div', { className: 'row' }, remove));
+    detail.replaceChildren(el('div', { className: 'detail-grid' }, statusBox, cam, upload, files, history), checklistBox(p), consoleBox(p), controlBox(p), insightsBox(p), el('div', { className: 'row' }, remove));
+    openLive(p);
     // webcam: live MJPEG (the stream Mainsail shows) or snapshots, per Settings > Printers
     stopLive();
     const camMode = settings()?.printers.webcam ?? 'stream';
@@ -201,7 +208,7 @@ export async function renderPrinters(page, focusId = null) {
         files.replaceChildren(el('h3', { textContent: `Files on the printer (${list.length})` }), grid);
         for (const f of list.slice(0, 60)) {
           const tile = el('div', { className: 'file-tile' }, el('div', { className: 'file-thumb' }), el('div', { className: 'file-name', textContent: f.path }), el('div', { className: 'muted', textContent: `${fmtBytes(f.size)}, ${fmtAgo(f.modified)}` }));
-          if (p.control?.enabled) tile.append(el('button', { type: 'button', className: 'small', textContent: 'Print', title: 'Start this file on the printer (control mode)', onclick: () => doControl(p, 'start', { filename: f.path }, `Start printing ${f.path} on ${p.name}? Check the bed is clear and the right filament is loaded.`) }));
+          if (p.control?.enabled) tile.append(el('button', { type: 'button', className: 'small', textContent: 'Print', title: 'Start this file on the printer (control mode)', onclick: () => doControl(p, 'start', { filename: f.path }, `Start printing ${f.path} on ${p.name}? Check the bed is clear and the right filament is loaded.${checklistDone.get(`${p.id}|${f.path}`) ? '' : '\n\nThe pre-print checklist for this file is NOT saved yet (Pre-print checklist box).'}`) }));
           grid.append(tile);
           api('GET', `/api/printers/${p.id}/metadata?filename=${encodeURIComponent(f.path)}`).then((m) => {
             if (m.thumbnail) tile.firstChild.append(el('img', { src: `/api/printers/${p.id}/thumb?path=${encodeURIComponent(m.thumbnail)}`, alt: '' }));
@@ -286,7 +293,7 @@ export async function renderPrinters(page, focusId = null) {
         btn('Restart Klipper', 'restart', `Restart Klipper on ${p.name}? Any print stops.`),
         el('button', { type: 'button', className: 'secondary', textContent: 'Restart webcam service', title: 'Restart crowsnest (webcam) on the printer host', onclick: () => doControl(p, 'service', { service: 'crowsnest' }, `Restart the crowsnest webcam service on ${p.name}? Printing is not affected.`) })),
       el('div', { className: 'row' }, script, el('button', { type: 'button', textContent: 'Send', onclick: send })),
-      el('p', { className: 'muted', textContent: 'Each action asks first and is logged. Start a file with its Print button under "Files on the printer". Console replies show in Mainsail\'s console.' }),
+      el('p', { className: 'muted', textContent: 'Each action asks first and is logged. Start a file with its Print button under "Files on the printer". Replies show in the Console box (live updates on) and in Mainsail.' }),
       logBox);
     showLog();
     return box;
@@ -406,6 +413,120 @@ export async function renderPrinters(page, focusId = null) {
       el('p', { className: 'muted', textContent: 'Health check reads the live Klipper setup: motion limits, pressure advance, input shaper, bed mesh, filament sensor, MCU firmware, host system and print totals. Config files shows printer.cfg and the rest.' }), tabs, out);
   }
 
+  /** Live status and console lines over server-sent events (read-only). Falls back to polling when off or unsupported. */
+  function openLive(p) {
+    if (liveFor === p.id && liveSrc) return;
+    if (liveSrc) { liveSrc.close(); liveSrc = null; }
+    liveFor = null; liveMode = null;
+    if (settings()?.printers.live === false || typeof EventSource !== 'function') return;
+    const es = new EventSource(`/api/printers/${p.id}/events`);
+    liveSrc = es; liveFor = p.id;
+    let drawQueued = false;
+    const redraw = () => {
+      if (drawQueued) return;
+      drawQueued = true;
+      setTimeout(() => { drawQueued = false; if (gen !== alive || liveSrc !== es) return; drawCards(); drawDetail(); }, 500);
+    };
+    es.addEventListener('mode', (e) => { liveMode = JSON.parse(e.data).live ? 'websocket' : 'polling'; redraw(); });
+    es.addEventListener('status', (e) => {
+      const st = JSON.parse(e.data).status ?? {};
+      if (st.error) { statusById.set(p.id, { error: st.error }); redraw(); return; }
+      const old = statusById.get(p.id);
+      const merged = { ...(old && !old.error ? old : {}) };
+      for (const [k, v] of Object.entries(st)) if (v !== null && v !== undefined && k !== 'temps') merged[k] = v;
+      merged.temps = { extruder: st.temps?.extruder ?? old?.temps?.extruder ?? null, bed: st.temps?.bed ?? old?.temps?.bed ?? null };
+      if (!st.filename) merged.filename = null;
+      merged.klippy ??= 'ready';
+      statusById.set(p.id, merged);
+      redraw();
+    });
+    es.addEventListener('console', (e) => {
+      const ev = JSON.parse(e.data);
+      const list = consoleById.get(p.id) ?? [];
+      list.push(ev);
+      if (list.length > 300) list.splice(0, list.length - 300);
+      consoleById.set(p.id, list);
+      detail.querySelector('.console-box')?.refresh?.();
+    });
+    es.onerror = () => { if (liveSrc === es) { liveMode = null; redraw(); } };
+  }
+
+  /** Printer console replies (notify_gcode_response), read-only. */
+  function consoleBox(p) {
+    const pre = el('pre', { className: 'console-view' });
+    const box = el('div', { className: 'card console-box' }, el('h3', { textContent: 'Console (read-only)' }), pre,
+      el('p', { className: 'muted', textContent: settings()?.printers.live === false ? 'Live updates are off (Settings > Printers), so no console lines arrive.' : 'Replies and messages from Klipper since this page opened (M117, RESPOND, errors, macro output). Sending commands needs control mode.' }));
+    box.refresh = () => {
+      const lines = consoleById.get(p.id) ?? [];
+      pre.replaceChildren(...(lines.length ? lines.map((l) => el('div', { className: /^!!|error/i.test(l.line) ? 'sec' : undefined, textContent: `${new Date(l.at).toLocaleTimeString()}  ${l.line}` })) : [el('div', { className: 'muted', textContent: 'No console lines yet.' })]));
+      pre.scrollTop = pre.scrollHeight;
+    };
+    box.refresh();
+    return box;
+  }
+
+  /** Pre-print checklist: template items, automatic G-code header check, notes, saved to the print log. */
+  function checklistBox(p) {
+    const box = el('div', { className: 'card checklist-box' }, el('h3', { textContent: 'Pre-print checklist' }), el('p', { className: 'muted', textContent: 'Loading...' }));
+    Promise.all([api('GET', '/api/checklists'), api('GET', `/api/printers/${p.id}/files`).catch(() => []), api('GET', `/api/printers/${p.id}/checklists`).catch(() => [])]).then(([tpls, files, log]) => {
+      if (!tpls.length) { box.replaceChildren(el('h3', { textContent: 'Pre-print checklist' }), el('p', { className: 'muted', textContent: 'No checklist templates found (checklists folder).' })); return; }
+      const def = tpls.find((t) => (t.printerModels ?? []).includes(p.model)) ?? tpls.find((t) => t.id === 'generic') ?? tpls[0];
+      const tplPick = el('select', { 'aria-label': 'Checklist' }, ...tpls.map((t) => el('option', { value: t.id, textContent: t.name, selected: t.id === def.id })));
+      const filePick = el('select', { 'aria-label': 'G-code file' }, el('option', { value: '', textContent: files.length ? 'Pick the G-code file' : 'No G-code files on the printer' }),
+        ...[...files].sort((a, b) => b.modified - a.modified).slice(0, 200).map((f) => el('option', { value: f.path, textContent: f.path })));
+      const items = el('ul', { className: 'checklist' });
+      const checkOut = el('div', { className: 'header-check' });
+      const notes = el('textarea', { rows: 2, maxLength: 4000, placeholder: 'Notes: spool, dryer time, anything odd' });
+      const msg = el('p', { className: 'muted' });
+      const hist = el('div', { className: 'print-log' });
+      let headerOk = null;
+      const tpl = () => tpls.find((t) => t.id === tplPick.value);
+      const drawItems = () => {
+        items.replaceChildren(...tpl().items.map((it, i) => el('li', {}, el('label', { className: 'check-inline' }, el('input', { type: 'checkbox', dataset: { i } }), ` ${it}`))));
+        const t = tpl();
+        if (t.source) items.append(el('li', { className: 'muted', textContent: `From: ${t.source}` }));
+      };
+      const drawHist = (entries) => {
+        hist.replaceChildren(el('h4', { textContent: 'Print log (this printer, newest first)' }), entries.length
+          ? el('ul', {}, ...entries.slice(0, 15).map((e) => el('li', { className: e.headerOk === false ? 'fail' : 'ok', textContent: `${new Date(e.at).toLocaleString()}  ${e.file || '(no file)'}: ${e.done.length} item(s) ticked${e.headerOk === true ? ', header OK' : e.headerOk === false ? ', header FAILED' : ''}${e.notes ? `. ${e.notes}` : ''}` })))
+          : el('p', { className: 'muted', textContent: 'Nothing logged yet.' }));
+      };
+      const runCheck = async () => {
+        headerOk = null;
+        if (!filePick.value) { checkOut.replaceChildren(el('p', { className: 'muted', textContent: 'Pick a file first.' })); return; }
+        checkOut.replaceChildren(el('p', { className: 'muted', textContent: 'Reading the start and end of the file from the printer (read-only)...' }));
+        try {
+          const r = await api('GET', `/api/printers/${p.id}/gcodecheck?file=${encodeURIComponent(filePick.value)}&checklist=${encodeURIComponent(tplPick.value)}`);
+          headerOk = r.checks.every((c) => c.ok !== false);
+          checkOut.replaceChildren(el('ul', { className: 'health' }, ...r.checks.map((c) => el('li', { className: `lvl-${c.ok === false ? 'warn' : c.ok ? 'ok' : 'info'}` },
+            el('strong', { textContent: `${c.ok === false ? 'FAIL' : c.ok ? 'OK' : 'INFO'}  ${c.title}: ` }), document.createTextNode(c.detail ?? '')))),
+          el('p', { className: headerOk ? 'muted' : 'error', textContent: headerOk ? 'Header check passed.' : 'Header check found problems: re-slice before printing.' }));
+        } catch (err) { checkOut.replaceChildren(el('p', { className: 'error', textContent: err.message })); }
+      };
+      tplPick.onchange = () => { drawItems(); if (filePick.value) runCheck(); };
+      filePick.onchange = runCheck;
+      const save = el('button', { type: 'button', textContent: 'Save to print log', onclick: async () => {
+        const done = [...items.querySelectorAll('input[type=checkbox]:checked')].map((c) => tpl().items[Number(c.dataset.i)]);
+        const missing = tpl().items.length - done.length;
+        if (missing && !confirm(`${missing} item(s) not ticked. Save anyway?`)) return;
+        try {
+          await api('POST', `/api/printers/${p.id}/checklists`, { file: filePick.value, checklist: tplPick.value, done, notes: notes.value, headerOk });
+          if (filePick.value && !missing && headerOk !== false) checklistDone.set(`${p.id}|${filePick.value}`, true);
+          msg.textContent = 'Saved.';
+          notes.value = '';
+          drawHist(await api('GET', `/api/printers/${p.id}/checklists`));
+        } catch (err) { msg.textContent = err.message; }
+      } });
+      box.replaceChildren(el('h3', { textContent: 'Pre-print checklist' }),
+        el('div', { className: 'row' }, tplPick, filePick, el('button', { type: 'button', className: 'secondary', textContent: 'Check G-code header', onclick: runCheck })),
+        checkOut, items, notes, el('div', { className: 'row' }, save), msg, hist,
+        el('p', { className: 'muted', textContent: 'The header check reads the file on the printer (read-only): heat-before-start order, speed caps, temperatures and max flow against the checklist rules. Templates: checklists folder.' }));
+      drawItems();
+      drawHist(log);
+    }).catch((err) => box.replaceChildren(el('h3', { textContent: 'Pre-print checklist' }), el('p', { className: 'error', textContent: err.message })));
+    return box;
+  }
+
   function uploadBox(p, done) {
     const input = el('input', { type: 'file', accept: '.gcode,.g,.gco,.bgcode', multiple: true });
     const folder = el('input', { type: 'text', value: settings()?.printers.uploadFolder ?? 'stltools', placeholder: 'folder on the printer (optional)', maxLength: 80 });
@@ -447,7 +568,8 @@ export async function renderPrinters(page, focusId = null) {
     drawCards();
     drawDetail();
     const every = (settings()?.printers.pollSeconds ?? 3) * 1000;
-    timer = setTimeout(poll, document.hidden ? Math.max(15000, every) : every);
+    // with a live stream the selected printer updates by itself; the poll only fills in time left and thumbnails
+    timer = setTimeout(poll, document.hidden || (liveSrc && liveMode) ? Math.max(15000, every) : every);
   }
   drawCards();
   drawDetail(true);
