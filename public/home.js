@@ -5,7 +5,7 @@
 //   item (shop catalog), page (Settings sections, Import, Printers...).
 // search(query, opts) is used by Home, the header's global search
 // (public/search.js) and the project part picker. Query syntax: see parseQuery.
-import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete, printersVisible } from './lib.js';
+import { el, api, store, debounce, fmtAgo, chooseDialog, SECTIONS, SECTION_NAMES, viewMode, toast, confirmDelete, printersVisible, settings, saveSettings } from './lib.js';
 import { thumbImg, thumbStl } from './thumbs.js';
 import { formatDuration } from '/shared/estimate.js';
 import { ownershipOf, ownBadge } from './parts.js';
@@ -448,6 +448,13 @@ export async function renderProject(page, id) {
     el('span', { className: 'muted' }, 'Import the STL files on ', el('a', { href: '#import', textContent: 'Import' }), ', then add them to this project.')) : null;
   const tags = el('input', { type: 'text', value: p.tags.join(', '), placeholder: 'tags, comma separated', oninput: () => saveSoon({ tags: tags.value.split(',').map((t) => t.trim()).filter(Boolean) }) });
   const desc = el('textarea', { rows: Math.min(18, Math.max(2, (p.description.match(/\n/g) ?? []).length + 1)), value: p.description, placeholder: 'Notes: frame size, motors, what this build is for...', oninput: () => saveSoon({ description: desc.value }) });
+  // 1.8: filament for the whole project; a part can use another (e.g. TPU), set on its card
+  const MATS = [['', 'Filament from Settings'], ['pla', 'PLA'], ['petg', 'PETG'], ['abs', 'ABS'], ['asa', 'ASA'], ['tpu', 'TPU'], ['pla-cf', 'PLA-CF'], ['petg-cf', 'PETG-CF'], ['nylon', 'Nylon']];
+  const fil = { material: '', color: '', brand: '', note: '', ...(p.filament ?? {}) };
+  const filSave = () => saveSoon({ filament: { ...fil } });
+  const filMat = el('select', { 'aria-label': 'Project filament', onchange: () => { fil.material = filMat.value; save({ filament: { ...fil } }); } }, ...MATS.map(([v, l]) => el('option', { value: v, textContent: v ? l : `${l} (${(settings()?.print.material ?? 'pla').toUpperCase()})`, selected: fil.material === v })));
+  const filIn = (k, ph, max) => { const i = el('input', { type: 'text', value: fil[k], placeholder: ph, maxLength: max, oninput: () => { fil[k] = i.value; filSave(); } }); return i; };
+  const filBox = el('div', { className: 'row filament-row' }, el('strong', { textContent: 'Filament' }), filMat, filIn('color', 'color', 40), filIn('brand', 'brand / product', 60), filIn('note', 'spool, dryer, notes', 200));
   const stats = el('div', { className: 'muted' });
   const drawStats = () => {
     const qty = p.items.reduce((n, i) => n + i.qty, 0);
@@ -477,13 +484,15 @@ export async function renderProject(page, id) {
       const qty = el('input', { type: 'number', min: 1, max: 999, value: it.qty, className: 'qty', 'aria-label': 'Quantity', onclick: (e) => e.stopPropagation(), oninput: () => { it.qty = Math.max(1, Number(qty.value) || 1); saveSoon({ items: p.items }); } });
       const printed = el('input', { type: 'checkbox', checked: it.printed, 'aria-label': 'Printed', onchange: () => { it.printed = printed.checked; save({ items: p.items }); } });
       const note = el('input', { type: 'text', value: it.note, placeholder: 'note (material, color...)', maxLength: 300, oninput: () => { it.note = note.value; saveSoon({ items: p.items }); } });
+      const mat = el('select', { 'aria-label': 'Filament for this part', title: 'Filament for this part (blank = the project filament)', onchange: () => { it.material = mat.value; save({ items: p.items }); } },
+        ...MATS.map(([v, l]) => el('option', { value: v, textContent: v ? l : 'Project filament', selected: (it.material ?? '') === v })));
       const move = (d) => { const j = idx + d; if (j < 0 || j >= p.items.length) return; [p.items[idx], p.items[j]] = [p.items[j], p.items[idx]]; save({ items: p.items }).then(drawItems); };
       return el('article', { className: `card-item project-part ${it.printed ? 'printed' : ''}` },
         el('div', { className: 'card-thumb' }, sel?.stl ? thumbStl(sel.stl) : sel ? thumbImg(sel.generator, sel.params, it.name) : el('div', { className: 'thumb empty', textContent: 'Missing' }), el('span', { className: 'badge', textContent: it.kind === 'custom' ? 'Custom' : KIND_LABEL[it.kind] })),
         el('div', { className: 'card-body' },
           el('div', { className: 'card-title', textContent: it.name }),
           el('div', { className: 'part-row' }, el('label', {}, 'Qty ', qty), el('label', {}, printed, ' printed')),
-          note),
+          mat, note),
         el('div', { className: 'card-actions vertical' },
           el('button', { type: 'button', className: 'icon', textContent: 'Open', onclick: () => openProjectItem(it) }),
           el('button', { type: 'button', className: 'icon', textContent: '↑', title: 'Move up', onclick: () => move(-1) }),
@@ -511,7 +520,8 @@ export async function renderProject(page, id) {
 
   const estLine = el('p', { className: 'est-line' });
   const showEstimate = (e) => {
-    estLine.textContent = e ? `Estimate on ${e.profile}: about ${formatDuration(e.seconds)} printing, ${e.grams.toFixed(0)} g filament (${(e.filamentMm / 1000).toFixed(1)} m)${e.cost !== null ? `, cost ${e.cost.toFixed(2)}` : ''}. ${e.settings}. Your slicer gives the real time.` : '';
+    const mats = e?.byMaterial?.length > 1 ? ` By filament: ${e.byMaterial.map((b) => `${b.name} ${b.grams.toFixed(0)} g, ${formatDuration(b.seconds)}`).join('; ')}.` : '';
+    estLine.textContent = e ? `Estimate on ${e.profile}: about ${formatDuration(e.seconds)} printing, ${e.grams.toFixed(0)} g filament (${(e.filamentMm / 1000).toFixed(1)} m)${e.cost !== null ? `, cost ${e.cost.toFixed(2)}` : ''}. ${e.settings}.${mats} Your slicer gives the real time.` : '';
   };
   const estBtn = el('button', { type: 'button', className: 'secondary', textContent: 'Estimate print time', onclick: async (e) => {
     e.target.disabled = true;
@@ -567,7 +577,7 @@ export async function renderProject(page, id) {
     el('div', { className: 'page-head' },
       el('a', { href: '#projects', className: 'back', textContent: '< Projects' }),
       el('div', { className: 'row' }, nameIn, starButton('project', p.id), status, priority),
-      tags, comps, missing, desc, stats,
+      tags, comps, missing, desc, filBox, stats,
       el('div', { className: 'row' }, zipBtn('Download all parts (ZIP)', false), zipBtn('Only unprinted (ZIP)', true), estBtn, exportBtn,
         el('button', { type: 'button', className: 'secondary', textContent: 'Delete project', onclick: async () => {
           if (!confirmDelete(`Delete project "${p.name}"? Parts and saved designs are not deleted.`)) return;
@@ -666,32 +676,75 @@ function drawDashboard(dash, redraw) {
       el('li', {}, 'Press Save design to keep your settings, or Add to project to collect the parts for a build.'),
       el('li', {}, 'Connect your Sovol SV07 in Settings > Printers to see its status and upload G-code (view only).'),
       el('li', {}, 'Import STL files you already have in Import. Press / anywhere to search everything.'))) : null;
-  const QUICK = [
+  const DEFAULT_QUICK = [
     ['stack-bin', 'Bin', 'stacking parts bin'], ['parts-box', 'Box with lid', 'compartments'], ['tube-clamp', 'Tube clamp', 'any tube size'],
     ['component-mount', 'Mount for a part', 'ESC, RX, battery, board'], ['sbc-case', 'Pi case', 'Pi 5 / 4 / 3'], ['sensor-bracket', 'Sensor bracket', 'TF-Luna, XIAO, modules'],
     ['spacer', 'Spacer / washer', 'any bolt'], ['gear', 'Gear', 'spur, helical, rack'], ['enclosure', 'Enclosure', 'box + lid'],
     ['servo-gimbal', 'Pan-tilt gimbal', 'assembly, 3 parts'], ['brushless-gimbal', 'Brushless gimbal', 'assembly, 3 parts'], ['fit-test', 'Fit test', 'inserts, holes'],
-  ].filter(([id]) => generators.some((g) => g.id === id));
+  ];
+  const H = settings()?.home ?? {};
+  const own = (H.quickMake ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+  const QUICK = (own.length ? own.map((id) => DEFAULT_QUICK.find((q) => q[0] === id) ?? [id, generators.find((g) => g.id === id)?.name.replace(/ \(assembly\)$/, '') ?? id, generators.find((g) => g.id === id)?.sections.map((x) => SECTION_NAMES[x]).slice(0, 2).join(', ') ?? '']) : DEFAULT_QUICK)
+    .filter(([id]) => generators.some((g) => g.id === id));
+  const custom = el('div', { className: 'home-custom', hidden: true });
+  const customize = el('button', { type: 'button', className: 'secondary small', textContent: 'Customize Home', onclick: () => { custom.hidden = !custom.hidden; if (!custom.hidden) drawCustomize(custom, generators, QUICK.map((q) => q[0]), redraw); } });
   const quick = el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Make something' }),
-    el('span', { className: 'muted', textContent: 'Opens in Simple mode: a few sizes, then Download. Switch to "All settings" for full control, or combine parts in a project for big builds.' })),
+    el('span', { className: 'muted', textContent: 'Opens in Simple view: a few sizes, then Download. Standard and Expert show more settings; combine parts in a project for big builds.' })),
   el('div', { className: 'quick-make' }, ...QUICK.map(([id, title, sub]) => el('button', { type: 'button', onclick: () => { store.set('formMode', 'simple'); ctx.openGenerator(id); } }, title, el('span', { textContent: sub })))));
-  dash.replaceChildren(...[
-    chips,
-    start,
-    quick,
-    el('section', {}, el('div', { className: 'tiles' }, ...tiles,
+  const on = (k) => H[k] !== false;
+  const tilesSec = el('section', {}, el('div', { className: 'tiles' }, ...tiles,
       tile('stls', 'STL Files', `${lib.length} imported STL file${lib.length === 1 ? '' : 's'}`, 'tile-stls'),
       tile('import', 'Import', 'STL files, project files, design files', 'tile-import'),
       printersVisible() ? tile('printers', 'Printers', 'Status, live webcam, files, upload (view only)', 'tile-printers') : null,
       tile('browse', 'Browse', `${ctx.state.presets.length.toLocaleString()} presets by category, tag and collection`, 'tile-browse'),
       tile('parts', 'My Parts', `${(ctx.state.parts ?? []).length} parts, ${(ctx.state.parts ?? []).filter((x) => x.ownershipKey === 'Owned').length} owned`, 'tile-parts'),
-      tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings'))),
-    el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),
-      cardList(favItems, view, 'Star presets, designs, generators or projects to pin them here.')),
-    el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Projects' }), el('a', { href: '#projects', textContent: 'All projects' })),
-      cardList(projItems, view, 'No projects yet. Open Projects to create one.')),
-    el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Recent saved designs' }), el('a', { href: '#library', textContent: 'My Designs' })),
-      cardList(designItems, view, designs.length ? '' : 'Press "Save design" in any tab to keep your settings.'))].filter(Boolean));
+      tile('settings', 'Settings', 'Printers, 3D view, labels, estimates', 'tile-settings')));
+  const favSec = el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: `Favorites (${favItems.length})` }), viewToggle(redraw)),
+    cardList(favItems, view, 'Star presets, designs, generators or projects to pin them here.'));
+  const projSec = el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Projects' }), el('a', { href: '#projects', textContent: 'All projects' })),
+    cardList(projItems, view, 'No projects yet. Open Projects to create one.'));
+  const designSec = el('section', {}, el('div', { className: 'row section-head' }, el('h3', { textContent: 'Recent saved designs' }), el('a', { href: '#library', textContent: 'My Designs' })),
+    cardList(designItems, view, designs.length ? '' : 'Press "Save design" in any tab to keep your settings.'));
+  const blocks = { quick: on('showQuick') ? quick : null, tiles: on('showTiles') ? tilesSec : null, fav: on('showFavorites') ? favSec : null, proj: on('showProjects') ? projSec : null, designs: on('showDesigns') ? designSec : null };
+  const order = { 'make-first': ['quick', 'tiles', 'fav', 'proj', 'designs'], 'favorites-first': ['fav', 'quick', 'proj', 'tiles', 'designs'], 'projects-first': ['proj', 'fav', 'quick', 'tiles', 'designs'] }[H.order ?? 'make-first'] ?? ['quick', 'tiles', 'fav', 'proj', 'designs'];
+  dash.replaceChildren(...[
+    el('div', { className: 'row home-tools' }, customize), custom,
+    on('showPrinters') ? chips : null,
+    on('showStart') ? start : null,
+    ...order.map((k) => blocks[k])].filter(Boolean));
+}
+
+/** Home > Customize: which sections show, their order, and the "Make something" buttons (saved in Settings > Home page). */
+function drawCustomize(box, generators, current, redraw) {
+  const H = settings()?.home ?? {};
+  const SECT = [['showQuick', 'Make something'], ['showTiles', 'Tab and page tiles'], ['showFavorites', 'Favorites'], ['showProjects', 'Projects'], ['showDesigns', 'Recent saved designs'], ['showPrinters', 'Printer status chips'], ['showStart', 'Getting started']];
+  const checks = SECT.map(([k, l]) => { const c = el('input', { type: 'checkbox', checked: H[k] !== false, dataset: { k } }); return el('label', { className: 'check-inline' }, c, ` ${l}`); });
+  const order = el('select', {}, ...[['make-first', 'Make something first'], ['favorites-first', 'Favorites first'], ['projects-first', 'Projects first']].map(([v, l]) => el('option', { value: v, textContent: l, selected: (H.order ?? 'make-first') === v })));
+  const find = el('input', { type: 'search', placeholder: 'Find a generator' });
+  const chosen = new Set(current);
+  const list = el('div', { className: 'home-gen-list' });
+  const drawList = () => {
+    const q = find.value.trim().toLowerCase();
+    list.replaceChildren(...generators.filter((g) => !q || `${g.id} ${g.name}`.toLowerCase().includes(q)).map((g) => {
+      const c = el('input', { type: 'checkbox', checked: chosen.has(g.id), onchange: () => { if (c.checked) chosen.add(g.id); else chosen.delete(g.id); } });
+      return el('label', { className: 'check-inline' }, c, ` ${g.name}`);
+    }));
+  };
+  find.oninput = drawList;
+  drawList();
+  const save = async () => {
+    const patch = Object.fromEntries(checks.map((l) => { const c = l.querySelector('input'); return [c.dataset.k, c.checked]; }));
+    // keep the order the user had, then new picks in list order
+    const ids = [...current.filter((id) => chosen.has(id)), ...generators.map((g) => g.id).filter((id) => chosen.has(id) && !current.includes(id))];
+    try { await saveSettings({ home: { ...patch, order: order.value, quickMake: ids.join(',') } }); toast('Home saved', 'ok'); redraw(); } catch (err) { toast(err.message, 'error'); }
+  };
+  box.replaceChildren(el('div', { className: 'card' },
+    el('h3', { textContent: 'Customize Home' }),
+    el('div', { className: 'row wrap' }, ...checks), el('label', {}, 'Order ', order),
+    el('h4', { textContent: 'Make something: pick the parts you make most' }), find, list,
+    el('div', { className: 'row' }, el('button', { type: 'button', textContent: 'Save', onclick: save }),
+      el('button', { type: 'button', className: 'secondary', textContent: 'Built-in list', onclick: async () => { await saveSettings({ home: { quickMake: '' } }); toast('Back to the built-in list', 'ok'); redraw(); } }),
+      el('span', { className: 'muted', textContent: 'Saved on the server: every device that opens STL Tools sees the same Home.' }))));
 }
 
 // ---------------------------------------------------------------- project 3D view helpers

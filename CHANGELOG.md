@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.0-mts.1 - 2026-11-07 (MTS personal edition)
+
+Changed: **pick then tune**: a "Make:" chip row per designer tab narrows the presets to one kind of part and opens it in Simple view. **Simple / Standard / Expert** views (Expert shows each setting's name, range and default). **Customizable Home** (sections, order, your own "Make something" list; Settings > Home page). **Browse > Families**: results nested by part, then main size, then the next setting. **Filament per project** and per part, estimates split by filament, filament line in the ZIP README.
+Fixed: CI on Node 18 / 20 (live-update test in polling mode) and the Windows UI smoke wait for the settings page.
+Untested: very long Families trees on a slow phone.
+
 ## 1.7.0-mts.1 - 2026-11-07 (MTS personal edition)
 
 Changed: new generators **Modular Quad Frame** (`quad-modular`, assembly: plates, 4 arms with motor mounts, bolt / heat-set insert / dovetail joints with M2-M4 screws, M2 / M2.5 / M3 standoffs bought or printed, FC stack 20 / 25.5 / 30.5, cable grooves, zip-tie slots, wire and strap slots, SMA tab, prop and wheelbase checks), **Microcontroller Board Holder** (`mcu-holder`), **Camera Board Case** (`pi-camera-case`), **Antenna Tube Holder** (`antenna-tube-holder`). 26 presets (5 frames, 4 antenna holders, 12 board holders, 4 camera cases). Assemblies can show every copy of a part (`copies`).

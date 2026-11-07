@@ -85,6 +85,27 @@ try {
   const status = await page.locator('#status').innerText();
   check(/part/.test(status) && !/^Generating/.test(status) && ((await page.locator('#dlStl').getAttribute('href')) !== before || await page.locator('#zipAll').isVisible()), `changing the generator regenerates the 3D view (${other}: ${status})`);
 
+  // 1.8: Simple / Standard / Expert views, pick then tune
+  const visibleFields = () => page.locator('#params .field:visible').count();
+  await page.locator('.mode-toggle .subtab[data-mode="simple"]').click();
+  const nSimple = await visibleFields();
+  await page.locator('.mode-toggle .subtab[data-mode="standard"]').click();
+  const nStd = await visibleFields();
+  await page.locator('.mode-toggle .subtab[data-mode="all"]').click();
+  const nAll = await visibleFields();
+  check(nSimple <= nStd && nStd <= nAll && nSimple < nAll, `Simple ${nSimple} <= Standard ${nStd} <= Expert ${nAll} settings`);
+  check(await page.locator('#params .pkey:visible').count() > 0, 'Expert shows setting names and ranges');
+  await page.locator('.mode-toggle .subtab[data-mode="simple"]').click();
+  const chips = page.locator('#pickRow .pick-chip');
+  check(await chips.count() > 2, 'pick row lists the kinds of parts in the tab');
+  await chips.nth(1).click();
+  await page.waitForTimeout(2500);
+  const pickedGen = await page.locator('#generator').inputValue();
+  const listN = await page.locator('#presetList li[data-id]').count();
+  check(listN > 0 && await page.locator('#pickRow .pick-chip.active').count() === 1, `picking a kind narrows the presets (${pickedGen}: ${listN})`);
+  await chips.first().click();
+  await page.waitForTimeout(800);
+
   // 2a. layer preview from the designer: 2D layer, time chart, 3D stack
   await page.locator('#toLayers').click();
   await page.waitForFunction(() => /\d+ layers/.test(document.querySelector('.layer-overlay')?.innerText ?? ''), null, { timeout: 30000 }).catch(() => {});
@@ -179,6 +200,26 @@ try {
   await page.evaluate(() => { location.hash = 'home'; });
   for (let i = 0; i < 30 && mock.streams.closed < mock.streams.open; i++) await page.waitForTimeout(200);
   check(mock.streams.closed === mock.streams.open, `stream closed when leaving the Printers page (${mock.streams.closed}/${mock.streams.open})`);
+
+  // 1.8: Browse families, Home customize, project filament
+  await page.evaluate(() => { location.hash = 'browse'; });
+  await page.waitForTimeout(2500);
+  await page.locator('button', { hasText: /^Families$/ }).click();
+  await page.waitForSelector('.families .family-top', { timeout: 10000 });
+  await page.locator('.families .family-top > summary').first().click();
+  await page.waitForTimeout(800);
+  check(await page.locator('.families .family-top[open] .family, .families .family-top[open] .card-item').count() > 0, 'Browse families open into sizes or parts');
+  await page.locator('button', { hasText: /^Flat list$/ }).click();
+  await page.evaluate(() => { location.hash = 'home'; });
+  await page.waitForSelector('button:has-text("Customize Home")', { timeout: 10000 });
+  await page.locator('button', { hasText: 'Customize Home' }).click();
+  check(await page.locator('.home-custom .home-gen-list label').count() > 20, 'Home customize lists generators');
+  const proj = await post('/api/projects', { name: 'Smoke filament', items: [{ kind: 'custom', generator: 'spacer', params: {}, name: 'S', qty: 1 }] });
+  await page.evaluate((id) => { location.hash = `project/${id}`; }, proj.id);
+  await page.waitForSelector('.filament-row select', { timeout: 10000 });
+  await page.locator('.filament-row select').selectOption('petg');
+  await page.waitForTimeout(1200);
+  check((await (await fetch(`${base}/api/projects/${proj.id}`)).json()).filament.material === 'petg', 'project filament saved');
 
   // 4. hosting + printer toggle
   await page.evaluate(() => { location.hash = 'settings/hosting'; });

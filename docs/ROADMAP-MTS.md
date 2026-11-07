@@ -24,14 +24,19 @@ Status key: **Done**, **Next**, **Planned**, **Decide** (needs Alex's word first
 | 1.3.0-mts.1 | Done | **Stress Lab** (your word 2026-11-07): stress test with click-placed anchors and loads, weak points and supports, wind tunnel (3D), environment, materials and physics ([STRESS-LAB.md](STRESS-LAB.md)) |
 | 1.3.1 / 1.3.2-mts.1 | Done | Save as "name MOD text", estimate quality presets, filament price per material, settings search and compact layout, sizes in mm / cm / in |
 | 1.4.0 / 1.4.1-mts.1 | Done | Split / arrange for the printer bed (alignment pins, plate packing, per-plate estimates); bed mesh heat map and log viewer |
-| **1.4.2-mts.1** | **Done, on `mts-personal`, not released yet** | Weatherproof box with TPU gasket and cable gland hole |
+| 1.4.2-mts.1 | Done, released (pre-release) | Weatherproof box with TPU gasket and cable gland hole |
+| 1.4.3-mts.1 | Done | Collections hold STL files only (your choice B: existing items converted) |
+| 1.5.0-mts.1 | Done | Live printer updates (Moonraker websocket) and console, pre-print checklist with G-code header check and print log, slicer profile import (.ini / Orca JSON) |
+| 1.6.0-mts.1 | Done | Layer preview of parts and a G-code viewer (printer and local files) |
+| 1.7.0-mts.1 | Done | Modular quad frame assembly, microcontroller board holder, camera board case, antenna tube holder, 26 presets |
+| **1.8.0-mts.1** | **Done, on `mts-personal`, not released yet** | Pick then tune, Simple / Standard / Expert, customizable Home, Browse families, filament per project |
 
-Still open from the list (next, in this order):
-1. Pick-then-tune flow and Simple / Standard / Expert views; customizable Home; browse tree with size families nested (tube clamps by tube size) and a better search; projects with a filament per project; collections STL-only (**Decide** A / B / C).
-2. Parts: modular quad frames (arms, plates, latches, M2-M4 inserts, nylon standoffs, cable routing, motor mounts); XIAO family, ESP32 DevKit, STM32 Blue / Black Pill, Pi Pico mounts; Pi camera housings; antenna mounts (datasheet sizes with sources, the rest MEASURE).
-3. Printer depth: websocket live updates and console replies, profile library with .ini / Orca JSON import, pre-print checklist page.
-4. Slicing preview: own layer preview and a G-code viewer (OrcaSlicer CLI only on your word).
-5. Stress Lab extras: named physics profiles, save a load case with a design, more material brands (Overture, SUNLU, Hatchbox, Elegoo).
+Still open (next, in this order):
+1. Release 1.8.0-mts.1 as a pre-release after you check it on the shop SV07 (live updates, checklist, G-code viewer against real files).
+2. Stress Lab extras: named physics profiles, save a load case with a design, more material brands (Overture, SUNLU, Hatchbox, Elegoo).
+3. Search suggestions with filters while typing; 3D view section box, measure tool and explode slider.
+4. Sizes to measure for the new presets: Pi Camera Module 2 / 3 lens position and lens block, ESP32 DevKitC / S3, Blue Pill, Black Pill, PCB thicknesses (raspberrypi.com and the board makers were not reachable from the build session; allow those hosts or measure).
+5. OrcaSlicer CLI slicing on the PC: only on your word.
 
 1.1.0-mts.1 shop printer fixes (from your 192.168.1.121 report):
 - The connection test failed with "Printer address is required" because Test connection ran with an empty field. The scan had found the printer (`mkspi` at `http://192.168.1.121`). Now: an empty field explains what to do, scan results have **Use and test**, port 7125 is tried by itself if port 80 does not forward the API, the name comes from Mainsail ("MTS-UAV SHOP PRINTER"), and `mkspi` selects the SV07 profile.

@@ -67,7 +67,7 @@ import { createPrinters, scanLan, MAX_UPLOAD_BYTES } from './core/printers.js';
 import { createSettings } from './core/settings.js';
 import { createLibrary, MAX_STL_BYTES } from './core/library.js';
 import { listProfiles, getProfile, profileIssues, profileFromSlicer, setUserProfiles } from './core/profiles.js';
-import { estimateParts, formatDuration, profileFromMachine } from './core/estimate.js';
+import { estimateParts, formatDuration, profileFromMachine, MATERIALS } from './core/estimate.js';
 import { createHosting, isLoopback, lanUrls, boardModel, loginPage, COOKIE } from './core/hosting.js';
 import { createParts, readSeed, fromComponents } from './core/parts.js';
 import { createCollections } from './core/collections.js';
@@ -169,6 +169,10 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
   const errors = [];
   const allStats = [];
   const allQty = [];
+  const allMat = []; // material per STL: the item's, else the part's own (e.g. a TPU gasket), else the project's
+  const cfgNow = await settings.get();
+  const projMat = project.filament?.material || cfgNow.print.material;
+  const partMat = (m) => { const k = String(m ?? '').toLowerCase(); return Object.hasOwn(MATERIALS, k) ? k : null; };
   const partList = []; // one entry per STL: for the project's parts table and 3D assembly view
   let n = 0;
   for (const item of project.items) {
@@ -181,7 +185,8 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
         files.set(base, resolved.stl);
         allStats.push(resolved.entry.stats);
         allQty.push(item.qty);
-        partList.push({ item: n - 1, uid: item.uid, name: item.name, file: base, stats: resolved.entry.stats, qty: item.qty });
+        allMat.push(item.material || projMat);
+        partList.push({ item: n - 1, uid: item.uid, name: item.name, file: base, stats: resolved.entry.stats, qty: item.qty, material: item.material || projMat });
       } else {
         const r = await generate(resolved.generator, resolved.params);
         for (const pt of r.parts) {
@@ -190,7 +195,9 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
           files.set(file, toStl(pt.mesh, { name: file }));
           allStats.push(stats);
           allQty.push(item.qty * (pt.qty ?? 1));
-          partList.push({ item: n - 1, uid: item.uid, name: r.parts.length > 1 ? `${item.name}: ${pt.name}` : item.name, file, stats, qty: item.qty * (pt.qty ?? 1), ...(pt.assembled ? { assembled: pt.assembled } : {}) });
+          const mat = item.material || partMat(pt.material) || projMat;
+          allMat.push(mat);
+          partList.push({ item: n - 1, uid: item.uid, name: r.parts.length > 1 ? `${item.name}: ${pt.name}` : item.name, file, stats, qty: item.qty * (pt.qty ?? 1), material: mat, ...(pt.assembled ? { assembled: pt.assembled } : {}) });
         }
       }
       lines.push(`${n}. ${item.name}  x${item.qty}${item.printed ? '  (printed)' : ''}${item.note ? `  - ${item.note}` : ''}`);
@@ -199,13 +206,15 @@ async function buildProject(project, { onlyUnprinted = false } = {}) {
       lines.push(`${n}. ${item.name}  NOT BUILT: ${err.message}`);
     }
   }
-  const est = await projectEstimate(allStats, allQty);
+  const f = project.filament ?? {};
+  lines.splice(3, 0, `Filament: ${MATERIALS[projMat]?.name ?? projMat}${f.material ? '' : ' (from Settings)'}${f.color ? `, ${f.color}` : ''}${f.brand ? `, ${f.brand}` : ''}${f.note ? `. ${f.note}` : ''}`, '');
+  const est = await projectEstimate(allStats, allQty, allMat);
   if (est) {
     lines.push('', `Estimate on ${est.profile} (${est.settings}): about ${formatDuration(est.seconds)} printing, ${est.grams.toFixed(0)} g filament (${(est.filamentMm / 1000).toFixed(1)} m). Your slicer gives the real time.`, '', 'Per STL file (each, then x quantity):');
     partList.forEach((pt, i) => {
       const e = est.perPart[i];
       pt.estimate = e;
-      lines.push(`  ${pt.file}.stl  x${pt.qty}: ${formatDuration(e.seconds)}, ${e.grams.toFixed(1)} g each; ${pt.stats.size.map((v) => v.toFixed(1)).join(' x ')} mm${e.fits ? '' : '  DOES NOT FIT THE BED'}`);
+      lines.push(`  ${pt.file}.stl  x${pt.qty}: ${MATERIALS[pt.material]?.name ?? pt.material}, ${formatDuration(e.seconds)}, ${e.grams.toFixed(1)} g each; ${pt.stats.size.map((v) => v.toFixed(1)).join(' x ')} mm${e.fits ? '' : '  DOES NOT FIT THE BED'}`);
     });
   }
   const key = randomBytes(8).toString('hex');
@@ -344,14 +353,27 @@ async function hostingStatus(req) {
 
 const pinCookie = (token) => `${COOKIE}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=31536000`;
 
-async function projectEstimate(statsList, qty) {
+async function projectEstimate(statsList, qty, mats = []) {
   if (!statsList.length) return null;
   const cfg = await settings.get();
   const profile = await activeProfile(cfg);
   if (!profile) return null;
-  const e = estimateParts(statsList, profile, { ...cfg.print, filamentCostPerKg: cfg.filament?.[cfg.print.material] ?? cfg.print.filamentCostPerKg }, qty);
-  const perPart = e.parts.map((p) => ({ seconds: p.seconds, grams: p.grams, filamentMm: p.filamentMm, layers: p.layers, fits: p.fit.fits }));
-  return { ...e, parts: undefined, perPart, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${cfg.print.material.toUpperCase()}` };
+  // one estimate per material (each material is its own print run: heat-up counted once per material)
+  const groups = new Map();
+  statsList.forEach((s, i) => { const m = mats[i] || cfg.print.material; if (!groups.has(m)) groups.set(m, []); groups.get(m).push(i); });
+  const perPart = new Array(statsList.length);
+  const total = { seconds: 0, grams: 0, filamentMm: 0, cost: null, heatUp: 0 };
+  const byMaterial = [];
+  for (const [m, idx] of groups) {
+    const cost = cfg.filament?.[m] ?? (m === cfg.print.material ? cfg.print.filamentCostPerKg : null);
+    const e = estimateParts(idx.map((i) => statsList[i]), profile, { ...cfg.print, material: m, filamentCostPerKg: cost }, idx.map((i) => qty[i]));
+    e.parts.forEach((p, j) => { perPart[idx[j]] = { seconds: p.seconds, grams: p.grams, filamentMm: p.filamentMm, layers: p.layers, fits: p.fit.fits, material: m }; });
+    total.seconds += e.seconds; total.grams += e.grams; total.filamentMm += e.filamentMm; total.heatUp += e.heatUp ?? 0;
+    if (e.cost !== null && e.cost !== undefined) total.cost = (total.cost ?? 0) + e.cost;
+    byMaterial.push({ material: m, name: MATERIALS[m]?.name ?? m, seconds: e.seconds, grams: e.grams, filamentMm: e.filamentMm, cost: e.cost ?? null });
+  }
+  const names = byMaterial.map((b) => b.name).join(' + ');
+  return { ...total, perPart, byMaterial, profile: profile.name, settings: `${cfg.print.layerHeight} mm layers, ${cfg.print.walls} walls, ${cfg.print.infill}% infill, ${names}` };
 }
 
 /**

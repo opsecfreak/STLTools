@@ -16,6 +16,7 @@ const ORDER = [
   ['filament', 'Filament prices'],
   ['viewer', '3D view'],
   ['ui', 'Appearance'],
+  ['home', 'Home page'],
   ['tips', 'Tooltips and help'],
   ['labels', 'Paper labels'],
   ['hosting', 'Self-hosting'],

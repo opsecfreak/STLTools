@@ -55,6 +55,7 @@
           <button type="button" data-sub="design" class="subtab active">Designs</button>
           <button type="button" data-sub="catalog" class="subtab">Shop catalog</button>
         </div>
+        <div id="pickRow" class="pick-row" aria-label="What do you want to make?"></div>
         <div class="presets">
           <div class="row">
             <input id="presetSearch" type="search" placeholder="Search presets" aria-label="Search presets">
@@ -80,7 +81,8 @@
         <div class="form-tools">
           <div class="subtabs mode-toggle" role="group" aria-label="How many settings to show">
             <button type="button" class="subtab" data-mode="simple" title="Only the main sizes">Simple</button>
-            <button type="button" class="subtab" data-mode="all" title="Every setting">All settings</button>
+            <button type="button" class="subtab" data-mode="standard" title="The main sizes and the rest of their groups">Standard</button>
+            <button type="button" class="subtab" data-mode="all" title="Every setting, with its name and range">Expert</button>
           </div>
           <label class="check-inline" title="Rebuild the part when a value changes (Settings > Appearance)"><input type="checkbox" id="liveToggle"> Live preview</label>
           <button type="button" id="expandAll" class="secondary small">Expand all</button>

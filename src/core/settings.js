@@ -34,6 +34,20 @@ export const SCHEMA = {
       confirmDelete: bool(true, 'Ask before deleting'),
     },
   },
+  home: {
+    label: 'Home page',
+    fields: {
+      showStart: bool(true, 'Getting started (only while you have no designs, projects or STL files)'),
+      showQuick: bool(true, 'Make something'),
+      quickMake: { type: 'string', default: '', label: 'Make something: generators (ids, comma separated; blank = the built-in list)', maxLength: 800, pattern: '^[a-z0-9, -]*$', help: 'Easier: Home > Customize, tick the ones you use.' },
+      showTiles: bool(true, 'Tab and page tiles'),
+      showFavorites: bool(true, 'Favorites'),
+      showProjects: bool(true, 'Projects'),
+      showDesigns: bool(true, 'Recent saved designs'),
+      showPrinters: bool(true, 'Printer status chips'),
+      order: sel('make-first', [['make-first', 'Make something first'], ['favorites-first', 'Favorites first'], ['projects-first', 'Projects first']], 'Order'),
+    },
+  },
   tips: {
     label: 'Tooltips and help',
     fields: {

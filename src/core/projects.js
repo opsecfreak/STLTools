@@ -20,6 +20,9 @@ import { getGenerator, migrateInput } from './registry.js';
 import { getPreset } from './presets.js';
 import { resolveParams } from './params.js';
 import { CatalogError } from './catalog.js';
+import { MATERIALS } from './estimate.js';
+
+const material = (v) => (Object.hasOwn(MATERIALS, String(v ?? '')) ? String(v) : '');
 
 const STATUSES = ['idea', 'active', 'printing', 'done'];
 export const PRIORITIES = ['', 'high', 'medium', 'low'];
@@ -48,6 +51,7 @@ export function createProjects({ dataDir, designs, library = null }) {
       qty: Math.max(1, Math.min(999, Math.round(Number(raw.qty ?? 1)) || 1)),
       note: text(raw.note, 'Note', 300),
       printed: Boolean(raw.printed),
+      material: material(raw.material), // '' = the project's filament
     };
     // v8: where the item sits in the project's assembly view (mm, degrees)
     if (raw.place && typeof raw.place === 'object') {
@@ -92,7 +96,10 @@ export function createProjects({ dataDir, designs, library = null }) {
       .filter((c) => c && /^[A-Z]{2,4}\d{2,3}$/.test(c.id)).slice(0, 100).map((c) => ({ id: c.id, qty: Math.max(1, Math.min(999, Math.round(Number(c.qty ?? 1)) || 1)) }));
     const filesMissing = (Array.isArray(raw.filesMissing ?? prev.filesMissing) ? raw.filesMissing ?? prev.filesMissing : []).map((x) => text(x, 'File name', 200)).filter(Boolean).slice(0, 100);
     const source = text(raw.source ?? prev.source, 'Source', 120);
-    return { name, description: text(raw.description ?? prev.description, 'Description', 20000), status, tags, items, priority, components, filesMissing, source };
+    // 1.8: filament for the whole project (blank material = Settings > Print estimates); parts can override it
+    const f = raw.filament ?? prev.filament ?? {};
+    const filament = { material: material(f.material), color: text(f.color ?? '', 'Color', 40), brand: text(f.brand ?? '', 'Brand', 60), note: text(f.note ?? '', 'Filament note', 200) };
+    return { name, description: text(raw.description ?? prev.description, 'Description', 20000), status, tags, items, priority, components, filesMissing, source, filament };
   }
 
   /** Fill in a missing part name from the saved design or library STL it points at. */
@@ -158,7 +165,7 @@ export function createProjects({ dataDir, designs, library = null }) {
       const p = await api.get(id);
       const out = {
         format: BUNDLE_FORMAT, version: 1, app: appVersion, exportedAt: new Date().toISOString(),
-        project: { name: p.name, description: p.description, status: p.status, tags: p.tags, items: p.items },
+        project: { name: p.name, description: p.description, status: p.status, tags: p.tags, items: p.items, filament: p.filament },
         designs: [], stls: [],
       };
       for (const it of p.items) {
@@ -209,7 +216,7 @@ export function createProjects({ dataDir, designs, library = null }) {
         }
         try { items.push(cleanItem(await withName(it))); } catch (err) { warnings.push(`Part "${it.name ?? '?'}": ${err.message}. Skipped.`); }
       }
-      const project = await api.add({ name: src.name || 'Imported project', description: src.description, status: src.status, tags: src.tags, items });
+      const project = await api.add({ name: src.name || 'Imported project', description: src.description, status: src.status, tags: src.tags, items, filament: src.filament });
       return { project, warnings };
     },
   };

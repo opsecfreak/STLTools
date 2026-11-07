@@ -120,6 +120,58 @@ export function renderBrowse(page, focus = '') {
     } catch (err) { toast(err.message, 'error'); }
   }
 
+  // Families: results nested by generator, then by the setting that sorts them best (tube size,
+  // screw size, teeth...), then by the next one when a branch is still long.
+  const fmtVal = (def, v) => {
+    if (def?.type === 'select') return (def.options.find((o) => (o.value ?? o) === v)?.label ?? String(v));
+    if (typeof v === 'boolean') return v ? 'yes' : 'no';
+    return `${v}${def?.unit ? ` ${def.unit}` : ''}`;
+  };
+  const splitKey = (gen, items, skip = []) => {
+    const keys = [...(gen?.basic ?? []), ...Object.keys(gen?.params ?? {})].filter((k, i, a) => a.indexOf(k) === i && !skip.includes(k));
+    let best = null;
+    for (const k of keys) {
+      const vals = new Set(items.map((it) => JSON.stringify(it.params?.[k])));
+      if (vals.size < 2 || vals.size > 40) continue;
+      const score = (gen.basic?.includes(k) ? 100 : 0) - Math.abs(vals.size - 8); // prefer main settings with a handful of values
+      if (!best || score > best.score) best = { k, score };
+    }
+    return best?.k ?? null;
+  };
+  const familyTree = (items, gen, depth, skip, openKey) => {
+    const k = depth < 2 && items.length > 12 ? splitKey(gen, items, skip) : null;
+    if (!k) return cardList(items.slice(0, 120), viewMode(), '');
+    const def = gen.params[k];
+    const groups = new Map();
+    for (const it of items) { const v = it.params?.[k]; const key = JSON.stringify(v); if (!groups.has(key)) groups.set(key, { v, items: [] }); groups.get(key).items.push(it); }
+    const sorted = [...groups.values()].sort((a, b) => (typeof a.v === 'number' && typeof b.v === 'number' ? a.v - b.v : String(a.v).localeCompare(String(b.v))));
+    return el('div', { className: 'family-level' }, ...sorted.map((g) => {
+      const id = `${openKey}|${k}=${JSON.stringify(g.v)}`;
+      const d = el('details', { className: 'family', open: openFams.has(id) }, el('summary', {}, el('span', { textContent: `${def?.label ?? k}: ${g.v === undefined || g.v === null ? 'blank' : fmtVal(def, g.v)}` }), el('span', { className: 'facet-n', textContent: String(g.items.length) })));
+      d.ontoggle = () => { if (d.open) { openFams.add(id); if (d.children.length === 1) d.append(familyTree(g.items, gen, depth + 1, [...skip, k], id)); } else openFams.delete(id); store.set('browseOpen', [...openFams].slice(-200)); };
+      if (d.open) d.append(familyTree(g.items, gen, depth + 1, [...skip, k], id));
+      return d;
+    }));
+  };
+  const openFams = new Set(store.get('browseOpen') ?? []);
+  function drawFamilies(res) {
+    const gens = ctx.state.generators;
+    const byGen = new Map();
+    const loose = [];
+    for (const it of res) {
+      if ((it.kind === 'preset' || it.kind === 'design') && it.generator) { if (!byGen.has(it.generator)) byGen.set(it.generator, []); byGen.get(it.generator).push(it); } else loose.push(it);
+    }
+    const blocks = [...byGen.entries()].sort((a, b) => b[1].length - a[1].length).map(([gid, items]) => {
+      const gen = gens.find((g) => g.id === gid);
+      const id = `g:${gid}`;
+      const d = el('details', { className: 'family family-top', open: openFams.has(id) }, el('summary', {}, el('strong', { textContent: gen?.name ?? gid }), el('span', { className: 'facet-n', textContent: String(items.length) })));
+      d.ontoggle = () => { if (d.open) { openFams.add(id); if (d.children.length === 1) d.append(familyTree(items, gen, 0, [], id)); } else openFams.delete(id); store.set('browseOpen', [...openFams].slice(-200)); };
+      if (d.open) d.append(familyTree(items, gen, 0, [], id));
+      return d;
+    });
+    return el('div', { className: 'families' }, ...blocks, loose.length ? el('details', { className: 'family family-top' }, el('summary', {}, el('strong', { textContent: 'Other (generators, projects, STL files, parts)' }), el('span', { className: 'facet-n', textContent: String(loose.length) })), cardList(loose.slice(0, 200), viewMode(), '')) : null);
+  }
+
   function draw() {
     const res = filtered();
     drawSide(res);
@@ -127,7 +179,9 @@ export function renderBrowse(page, focus = '') {
     const active = [st.q, st.tab, st.group, st.generator, st.collection, st.origin, st.measure, st.own, ...st.tags, ...st.kinds].filter(Boolean).length;
     head.replaceChildren(...[el('strong', { textContent: `${res.length.toLocaleString()} result${res.length === 1 ? '' : 's'}` }), sort,
       el('button', { type: 'button', className: 'secondary small', textContent: viewMode() === 'grid' ? 'List view' : 'Grid view', onclick: () => { store.set('view', viewMode() === 'grid' ? 'list' : 'grid'); draw(); } }),
+      el('button', { type: 'button', className: `secondary small ${st.families ? 'active' : ''}`, textContent: st.families ? 'Flat list' : 'Families', title: 'Nest results by part, then by size (tube size, screw, teeth...)', onclick: () => set({ families: !st.families }) }),
       active ? el('button', { type: 'button', className: 'secondary small', textContent: `Clear ${active} filter${active > 1 ? 's' : ''}`, onclick: () => { q.value = ''; set({ q: '', kinds: [], tab: '', group: '', generator: '', tags: [], collection: '', origin: '', measure: '', own: '' }); } }) : null].filter(Boolean));
+    if (st.families) { grid.replaceChildren(res.length ? drawFamilies(res) : el('p', { className: 'muted', textContent: 'Nothing matches these filters.' })); more.replaceChildren(); return; }
     grid.replaceChildren(cardList(res.slice(0, shown), viewMode(), 'Nothing matches these filters.'));
     more.replaceChildren(...(res.length > shown ? [el('button', { type: 'button', className: 'secondary', textContent: `Show ${Math.min(PAGE, res.length - shown)} more of ${(res.length - shown).toLocaleString()}`, onclick: () => { shown += PAGE; draw(); } })] : []));
   }

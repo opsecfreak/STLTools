@@ -202,22 +202,32 @@ function applyFormMode(gen, values, verify = [], measure = []) {
   const firstGroup = gen.params[keys[0]]?.group ?? 'Parameters';
   const changed = state.preset?.generator === gen.id ? Object.keys(state.preset.params ?? {}) : [];
   const basic = new Set([...(gen.basic?.length ? gen.basic : keys.filter((k) => (gen.params[k].group ?? 'Parameters') === firstGroup)), ...changed, ...verify, ...measure]);
+  // Standard: the Simple fields plus the rest of the groups they live in
+  const groupsOf = new Set([...basic].map((k) => gen.params[k]?.group ?? 'Parameters'));
+  const shown = (key) => mode === 'all' || basic.has(key) || (mode === 'standard' && groupsOf.has(gen.params[key].group ?? 'Parameters'));
+  $('params').classList.toggle('expert', mode === 'all');
   let hidden = 0;
   for (const key of keys) {
     const wrap = $(fieldId(key))?.closest('.field');
     if (!wrap) continue;
-    const hide = mode === 'simple' && !basic.has(key);
+    const hide = !shown(key);
     wrap.hidden = hide;
     if (hide) hidden++;
+    if (mode === 'all' && !wrap.querySelector('.pkey')) {
+      const d = gen.params[key];
+      const range = d.min !== undefined ? ` ${d.min} to ${d.max}${d.unit ? ` ${d.unit}` : ''}` : d.type === 'select' ? ` ${d.options.length} options` : '';
+      wrap.append(el('span', { className: 'pkey', textContent: `${key}:${range}, default ${d.default === null ? 'blank' : d.default}` }));
+    }
   }
   for (const box of document.querySelectorAll('#params details.pgroup-box')) {
     const any = [...box.querySelectorAll('.field')].some((f) => !f.hidden);
     box.hidden = !any;
-    if (mode === 'simple' && any) box.open = true;
+    if (mode !== 'all' && any) box.open = true;
   }
   $('params').querySelector('.more-settings')?.remove();
   if (hidden) {
-    $('params').append(el('button', { type: 'button', className: 'secondary small more-settings', textContent: `${hidden} more setting${hidden > 1 ? 's' : ''} (walls, clearances, screws...): show all`, onclick: () => setFormMode('all') }));
+    const next = mode === 'simple' ? 'standard' : 'all';
+    $('params').append(el('button', { type: 'button', className: 'secondary small more-settings', textContent: `${hidden} more setting${hidden > 1 ? 's' : ''} (walls, clearances, screws...): show ${next === 'all' ? 'Expert' : 'Standard'}`, onclick: () => setFormMode(next) }));
   }
 }
 
@@ -289,6 +299,11 @@ function currentSelection() {
 
 function loadPreset(preset, generateNow = true) {
   const gen = state.generators.find((g) => g.id === preset.generator);
+  if (state.pick?.[state.tab] && state.pick[state.tab] !== preset.generator) { // opened from elsewhere: drop the pick filter
+    state.pick[state.tab] = undefined;
+    store.set('pick', state.pick);
+    renderPicker(); renderPresetGroups(); renderPresets();
+  }
   loadGenerator(gen.id, { ...defaultsOf(gen), ...preset.params }, { preset });
   store.set(`preset:${state.tab}`, preset.id);
   if (preset.measure?.length) {
@@ -335,7 +350,36 @@ function overridesFromForm() {
 
 // ---------- preset browser ----------
 function presetsForTab() {
-  return state.presets.filter((p) => p.section === state.tab);
+  const pick = state.pick?.[state.tab];
+  return state.presets.filter((p) => p.section === state.tab && (!pick || p.generator === pick));
+}
+
+// Pick then tune: one chip per kind of part in this tab (its generator, with its preset count).
+// Picking one narrows the preset list to it and opens it in Simple view; the form is the "tune" step.
+function renderPicker() {
+  const row = $('pickRow');
+  if (!row) return;
+  state.pick ??= store.get('pick') ?? {};
+  const gens = state.generators.filter((g) => g.sections.includes(state.tab));
+  const count = (id) => state.presets.filter((p) => p.section === state.tab && p.generator === id).length;
+  const cur = state.pick[state.tab] ?? '';
+  const chip = (id, label, n, title) => el('button', { type: 'button', className: `pick-chip ${cur === id ? 'active' : ''}`, title, onclick: () => pickKind(id) }, label, n ? el('span', { className: 'n', textContent: String(n) }) : null);
+  row.replaceChildren(el('span', { className: 'pick-label', textContent: 'Make:' }), chip('', 'Everything', 0, 'All presets in this tab'),
+    ...gens.map((g) => [g, count(g.id)]).sort((a, b) => b[1] - a[1]).map(([g, n]) => chip(g.id, g.name.replace(/ \(assembly\)$/, ''), n, n ? g.description : `${g.description} (no presets here: starts from the default sizes)`)));
+}
+
+function pickKind(id) {
+  state.pick[state.tab] = id || undefined;
+  store.set('pick', state.pick);
+  $('presetGroup').value = '';
+  renderPicker();
+  renderPresetGroups();
+  renderPresets();
+  if (!id) return;
+  store.set('formMode', 'simple');
+  const first = presetsForTab().find((p) => !p.measure?.length) ?? presetsForTab()[0];
+  if (first) loadPreset(first);
+  else { loadGenerator(id); run({ silent: true }); }
 }
 
 function renderPresetGroups() {
@@ -488,6 +532,7 @@ function showTab(tab, { keepForm = false } = {}) {
   showPane(tab === 'shop' && state.shopSub === 'catalog' ? 'catalog' : 'design');
   if (tab === 'shop' && state.shopSub === 'catalog') refreshShop().catch((err) => setStatus(err.message, true));
   fillGeneratorSelect();
+  renderPicker();
   renderPresetGroups();
   renderPresets();
   if (!keepForm) {

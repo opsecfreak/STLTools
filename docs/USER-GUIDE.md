@@ -4,7 +4,7 @@ From a first part in one minute to your own generators. Each section links to th
 
 > See also: [Install](INSTALL.md) | [Self-hosting](SELF-HOSTING.md) | [FAQ](FAQ.md) | [Troubleshooting](TROUBLESHOOTING.md) | [All docs](README.md)
 
-**Contents:** [The screen](#the-screen) | [Make a part](#make-a-part) | [Simple or all settings](#simple-or-all-settings) | [Find things](#find-things) | [Check the size before you print](#check-the-size-before-you-print) | [Print time and filament](#print-time-and-filament) | [Assemblies](#assemblies) | [Projects](#projects) | [My Parts](#my-parts) | [Collections and favorites](#collections-and-favorites) | [Shop catalog and labels](#shop-catalog-and-labels) | [STL files](#stl-files) | [Printers](#printers) | [Grow the catalog](#grow-the-catalog) | [Keyboard](#keyboard)
+**Contents:** [The screen](#the-screen) | [Make a part](#make-a-part) | [Pick, then tune](#pick-then-tune-simple-standard-expert) | [Find things](#find-things) | [Check the size before you print](#check-the-size-before-you-print) | [Print time and filament](#print-time-and-filament) | [Assemblies](#assemblies) | [Projects](#projects) | [My Parts](#my-parts) | [Collections and favorites](#collections-and-favorites) | [Shop catalog and labels](#shop-catalog-and-labels) | [STL files](#stl-files) | [Printers](#printers) | [Grow the catalog](#grow-the-catalog) | [Keyboard](#keyboard)
 
 ## The screen
 
@@ -23,16 +23,19 @@ From a first part in one minute to your own generators. Each section links to th
 
 Every STL is checked watertight and comes in print orientation. Units are millimeters.
 
-## Simple or all settings
+## Pick, then tune: Simple, Standard, Expert
 
+- **Make:** row at the top of each designer tab: one chip per kind of part (with its preset count, most used first). Pick one: the preset list narrows to it and the part opens in Simple view. **Everything** shows all presets again.
 - **Simple** shows the few sizes that matter for that part (tube size, length, screw).
-- **All settings** shows every wall, clearance, fillet and screw option, in groups. Settings > Appearance > Collapse parameter groups opens one group at a time.
+- **Standard** adds the rest of those groups (walls, clearances next to the main sizes).
+- **Expert** shows every setting, with its name, range and default under it (the name works in the CLI and in search). Settings > Appearance > Collapse parameter groups opens one group at a time.
 - Point at a setting for its range, default and name (the name works in the CLI and in search: `tubeOD:16`). Settings > Tooltips and help sets delay, size and where help shows.
 
 ## Find things
 
 - **Global search** (`/` anywhere): presets, generators, saved designs, projects, STL files, My Parts, settings pages. Query syntax: `tubeOD:16`, `teeth>=30`, `tag:esc`, `own:owned`, `gen:tube-clamp`, `series:gears`, `"exact phrase"`, `-exclude` (full list: the search help on Home).
-- **Browse**: every preset with filters: type, tab, category, generator, tags, size series, "needs measurement", your collections. Grid or list view.
+- **Browse**: every preset with filters: type, tab, category, generator, tags, size series, "needs measurement", your collections. Grid or list view, or **Families**: nested by part, then by its main size (tube size, screw, teeth...), then by the next setting when a branch is long.
+- **Home > Customize Home**: which sections show (Make something, tiles, favorites, projects, recent designs, printer chips, getting started), their order, and which parts the "Make something" buttons open. Saved in Settings > Home page, so every device shows the same Home.
 - **Preset list** in each designer tab: search box and group filter.
 
 ## Check the size before you print
@@ -86,6 +89,8 @@ A project is a parts list for a build: presets, saved designs, custom parts and 
 4. **Export** a project file (with its designs and STLs) to move it to another computer; **Import** it there.
 
 Projects also carry a priority, status (idea, active, done) and linked parts from My Parts.
+
+**Filament per project:** pick the project's filament (material, color, brand, notes) under the description; each part card can use another one (for example TPU feet). Parts a generator marks for a material (the sealed box gasket: TPU) use it by themselves. Estimates add up per filament, and the ZIP README lists the filament.
 
 ## My Parts
 

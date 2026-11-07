@@ -607,3 +607,24 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .layer-opts input.num { width: 5em; }
 .layer-box button.active { outline: 2px solid var(--accent); }
 .layer-canvas[hidden], .layer-gl[hidden] { display: none; }
+
+/* 1.8 (MTS): pick then tune, Standard / Expert views */
+.pick-row { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0 8px; scrollbar-width: thin; }
+.pick-label { align-self: center; font-size: 13px; color: var(--muted); flex: none; }
+.pick-chip { flex: none; border: 1px solid var(--border); background: var(--panel); color: inherit; border-radius: 999px; padding: 4px 10px; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.pick-chip .n { margin-left: 6px; color: var(--muted); font-size: 11px; }
+.pick-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pick-chip.active .n { color: rgba(255,255,255,.8); }
+.field .pkey { display: none; }
+#params.expert .field .pkey { display: block; font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; margin-top: 2px; }
+.home-tools { justify-content: flex-end; }
+.home-custom .row.wrap { flex-wrap: wrap; gap: 6px 14px; }
+.home-gen-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 2px 12px; max-height: 260px; overflow: auto; margin: 6px 0; font-size: 13px; }
+.families { display: flex; flex-direction: column; gap: 6px; }
+.family > summary { display: flex; gap: 8px; align-items: center; cursor: pointer; padding: 6px 8px; border-radius: 6px; }
+.family > summary:hover { background: var(--bg); }
+.family-top { border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
+.family-level { padding-left: 16px; border-left: 2px solid var(--border); margin: 4px 0 6px 10px; }
+.filament-row { flex-wrap: wrap; gap: 6px; align-items: center; }
+.filament-row input { width: auto; flex: 1 1 120px; }
+.project-part select { width: 100%; margin: 4px 0; }
