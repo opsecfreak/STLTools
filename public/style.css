@@ -628,3 +628,4 @@ button.danger { background: #cf222e; color: #fff; border-color: #cf222e; }
 .filament-row { flex-wrap: wrap; gap: 6px; align-items: center; }
 .filament-row input { width: auto; flex: 1 1 120px; }
 .project-part select { width: 100%; margin: 4px 0; }
+.page-view { display: contents; }

@@ -215,8 +215,11 @@ try {
   await page.locator('button', { hasText: 'Customize Home' }).click();
   check(await page.locator('.home-custom .home-gen-list label').count() > 20, 'Home customize lists generators');
   const proj = await post('/api/projects', { name: 'Smoke filament', items: [{ kind: 'custom', generator: 'spacer', params: {}, name: 'S', qty: 1 }] });
+  // straight from Home: a slow Home render must not replace the project page (it used to on Windows CI)
   await page.evaluate((id) => { location.hash = `project/${id}`; }, proj.id);
-  await page.waitForSelector('.filament-row select', { timeout: 10000 });
+  await page.waitForSelector('.filament-row select', { timeout: 60000 });
+  await page.waitForTimeout(3000);
+  check(await page.locator('.filament-row select').count() === 1, 'project page stays after a slow Home render');
   await page.locator('.filament-row select').selectOption('petg');
   await page.waitForTimeout(1200);
   check((await (await fetch(`${base}/api/projects/${proj.id}`)).json()).filament.material === 'petg', 'project filament saved');

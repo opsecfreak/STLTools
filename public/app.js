@@ -438,9 +438,12 @@ async function showPage(name, arg) {
   markTab(name === 'project' ? 'projects' : name);
   window.scrollTo(0, 0);
   document.querySelector('main').classList.add('full');
-  const page = $('page');
-  page.hidden = false;
-  page.replaceChildren(el('p', { className: 'muted', textContent: 'Loading...' }));
+  // Each navigation renders into its own container: a slow render of the page before
+  // (Home still loading previews, say) then writes into a detached element and can never
+  // replace the page the user moved on to.
+  $('page').hidden = false;
+  const page = el('div', { className: 'page-view' }, el('p', { className: 'muted', textContent: 'Loading...' }));
+  $('page').replaceChildren(page);
   try {
     if (name === 'home') await renderHome(page);
     else if (name === 'projects') await renderProjects(page);
