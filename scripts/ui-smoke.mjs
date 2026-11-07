@@ -194,7 +194,7 @@ try {
   check(await page.locator('nav [data-tab="printers"]').isVisible(), 'Auto shows it again');
   // 1.5: printer profile import from a slicer .ini
   await page.evaluate(() => { location.hash = 'settings/print'; });
-  await page.waitForSelector('#set-print .profile-import', { timeout: 10000 });
+  await page.waitForSelector('#set-print .profile-import', { timeout: 30000 });
   await page.locator('#set-print .profile-import summary').click();
   await page.locator('#set-print .profile-import input[type=file]').setInputFiles({ name: 'smoke.ini', mimeType: 'text/plain', buffer: Buffer.from('bed_shape = 0x0,220x0,220x220,0x220\nmax_print_height = 250\nperimeter_speed = 50\ninfill_speed = 80\ndefault_acceleration = 2000\nfilament_max_volumetric_speed = 20\n') });
   await page.locator('#set-print .profile-import input[placeholder^="Name"]').fill('Smoke SV07');

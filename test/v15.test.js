@@ -109,9 +109,12 @@ test('live updates: status events (websocket when available, else polling), cons
   const got = await events(`/api/printers/${pr.id}/events`, (g) => {
     for (const e of g) if (e.type === 'status' && e.status.temps?.extruder) temps.add(e.status.temps.extruder.actual);
     if (hasWs && g.some((e) => e.type === 'mode' && e.live) && !g.consoleSent) { g.consoleSent = true; setTimeout(() => mock.sim.console('// Klipper state: Ready'), 100); }
-    return temps.size >= 2 && (!hasWs || g.some((e) => e.type === 'console'));
+    // websocket: temperatures change between pushes and a console line arrives; polling: the fake
+    // printer's HTTP status is static, so three status events a second apart are enough
+    return hasWs ? temps.size >= 2 && g.some((e) => e.type === 'console') : g.filter((e) => e.type === 'status').length >= 3;
   });
-  assert.ok(temps.size >= 2, 'temperatures change live');
+  if (hasWs) assert.ok(temps.size >= 2, 'temperatures change live');
+  else assert.ok(got.filter((e) => e.type === 'status' && e.status.state === 'printing').length >= 3, 'status every second by polling');
   assert.equal(got.find((e) => e.type === 'mode').live, hasWs, hasWs ? 'websocket' : 'polling');
   if (hasWs) {
     assert.equal(got.find((e) => e.type === 'console').line, '// Klipper state: Ready');
